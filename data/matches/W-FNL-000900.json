@@ -14,7 +14,7 @@
  "phaseDesc": "Women Women's Round",
  "unitDesc": "Women Women's Round Match 9",
  "unitNum": "19",
- "duration": "",
+ "duration": "00:30:00",
  "periods": [
   {
    "desc": "1st Half",
@@ -73,7 +73,7 @@
    "wlt": "T",
    "rank": "",
    "stats": {
-    "2MINUTES": "1",
+    "2MINUTES": "2",
     "6M_GOALS": "1",
     "6M_SHOTS": "2",
     "7M_GOALS": "2",
@@ -96,8 +96,7 @@
     "GK_WING_SHOTS": "1",
     "GOALS": "6",
     "SHOTS": "17",
-    "WING_SHOTS": "4",
-    "YELLOW_CARDS": "0"
+    "WING_SHOTS": "4"
    },
    "shot": {
     "LW": {
@@ -239,7 +238,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "29:17",
      "stats": {
       "6M_GOALS": "1",
       "6M_RIGHT_GOALS": "1",
@@ -261,7 +260,7 @@
       "FIELD_SHOTS": "6",
       "GOALS": "3",
       "SHOTS": "6",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "1757"
      },
      "shot": {
       "LW": {
@@ -490,7 +489,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "11:45",
+     "time": "19:38",
      "stats": {
       "2MINUTES": "1",
       "6M_RIGHT_WING_SAVES": "1",
@@ -506,7 +505,7 @@
       "FIELD_SHOTS": "2",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "705",
+      "TIME_PLAYED": "1178",
       "WING_SAVES": "1",
       "WING_SHOTS": "1"
      },
@@ -737,7 +736,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "03:48",
      "stats": {
       "9M_CENTER_MISSED": "1",
       "9M_CENTER_SHOTS": "1",
@@ -746,7 +745,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "228"
      },
      "shot": {
       "LW": {
@@ -975,16 +974,18 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "11:24",
+     "time": "16:33",
      "stats": {
+      "2MINUTES": "1",
       "9M_CENTER_SAVES": "1",
       "9M_CENTER_SHOTS": "1",
       "9M_SAVES": "1",
       "9M_SHOTS": "1",
+      "FAIRPLAY_POINTS": "2",
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "684"
+      "TIME_PLAYED": "993"
      },
      "shot": {
       "LW": {
@@ -1681,7 +1682,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "00:00",
+     "time": "29:38",
      "stats": {
       "GK_6M_GOALS": "3",
       "GK_6M_GOALS_SHOTS": "3/4",
@@ -1753,7 +1754,7 @@
       "GK_WING_GOALS_SHOTS": "1/1",
       "GK_WING_SAVES_SHOTS": "0/1",
       "GK_WING_SHOTS": "1",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "1778"
      },
      "shot": {
       "LW": {
@@ -2456,9 +2457,9 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "09:50",
      "stats": {
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "590"
      },
      "shot": {
       "LW": {
@@ -3387,7 +3388,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "13:02",
+     "time": "19:31",
      "stats": {
       "6M_LEFT_WING_MISSED": "1",
       "6M_LEFT_WING_SAVES": "1",
@@ -3395,7 +3396,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "2",
       "SHOTS": "2",
-      "TIME_PLAYED": "782",
+      "TIME_PLAYED": "1171",
       "WING_MISSED": "1",
       "WING_SAVES": "1",
       "WING_SHOTS": "2"
@@ -3723,7 +3724,7 @@
     "blocks": 0,
     "blocked": 0,
     "turnovers": 0,
-    "twoMin": 1,
+    "twoMin": 2,
     "yc": 0,
     "rc": 0
    },
@@ -4024,6 +4025,14 @@
      "steals": 0,
      "sevenMConceded": 1,
      "twoMin": 0
+    },
+    {
+     "bib": "7",
+     "name": "MULLAEVA S",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
     }
    ],
    "possessions": {
@@ -4033,7 +4042,7 @@
     "missed": 11,
     "saves": 5,
     "turnovers": 9,
-    "twoMin": 1,
+    "twoMin": 2,
     "assists": 1,
     "offReb": 0,
     "defReb": 4,
@@ -4117,6 +4126,19 @@
      "assists": 0,
      "offReb": 0,
      "defReb": 1
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 1,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
     }
    ],
    "situations": {
@@ -4610,7 +4632,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "13:12",
      "stats": {
       "9M_CENTER_GOALS": "1",
       "9M_CENTER_SAVES": "1",
@@ -4627,7 +4649,7 @@
       "FIELD_SHOTS": "3",
       "GOALS": "2",
       "SHOTS": "3",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "792"
      },
      "shot": {
       "LW": {
@@ -4856,7 +4878,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "13:28",
      "stats": {
       "7M_GOALS": "1",
       "7M_SHOTS": "1",
@@ -4873,7 +4895,7 @@
       "FIELD_SHOTS": "2",
       "GOALS": "2",
       "SHOTS": "3",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "808"
      },
      "shot": {
       "LW": {
@@ -5102,7 +5124,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "02:50",
+     "time": "17:02",
      "stats": {
       "6M_GOALS": "1",
       "6M_RIGHT_GOALS": "1",
@@ -5116,7 +5138,7 @@
       "FIELD_SHOTS": "3",
       "GOALS": "3",
       "SHOTS": "3",
-      "TIME_PLAYED": "170"
+      "TIME_PLAYED": "1022"
      },
      "shot": {
       "LW": {
@@ -5812,7 +5834,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "13:38",
      "stats": {
       "ASSISTS": "1",
       "BT_GOALS": "1",
@@ -5823,7 +5845,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "818"
      },
      "shot": {
       "LW": {
@@ -6292,7 +6314,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "10:48",
+     "time": "11:33",
      "stats": {
       "GK_6M_LEFT_WING_GOALS_TOTAL_SHOTS": "0/1",
       "GK_6M_LEFT_WING_TOTAL_SHOTS": "1",
@@ -6331,7 +6353,7 @@
       "GK_WING_SAVES": "2",
       "GK_WING_SAVES_SHOTS": "2/2",
       "GK_WING_SHOTS": "2",
-      "TIME_PLAYED": "648"
+      "TIME_PLAYED": "693"
      },
      "shot": {
       "LW": {
@@ -6560,12 +6582,12 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "13:33",
+     "time": "15:55",
      "stats": {
       "2MINUTES": "1",
       "ASSISTS": "1",
       "FAIRPLAY_POINTS": "2",
-      "TIME_PLAYED": "813"
+      "TIME_PLAYED": "955"
      },
      "shot": {
       "LW": {
@@ -6794,7 +6816,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "12:02",
+     "time": "13:08",
      "stats": {
       "6M_RIGHT_WING_POST": "1",
       "6M_RIGHT_WING_SHOTS": "1",
@@ -6806,7 +6828,7 @@
       "FIELD_SHOTS": "2",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "722",
+      "TIME_PLAYED": "788",
       "WING_POST": "1",
       "WING_SHOTS": "1"
      },
@@ -9118,5 +9140,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:07:47.904Z"
+ "updatedAt": "2026-09-22T09:15:13.807Z"
 }

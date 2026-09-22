@@ -14,7 +14,7 @@
  "phaseDesc": "Men Preliminary Round Group B",
  "unitDesc": "Men Preliminary Round Group B Match 6",
  "unitNum": "16",
- "duration": "",
+ "duration": "00:30:00",
  "periods": [
   {
    "desc": "1st Half",
@@ -81,9 +81,9 @@
     "9M_SHOTS": "8",
     "BT_GOALS": "4",
     "BT_SHOTS": "4",
-    "EFFICIENCY": "64",
+    "EFFICIENCY": "61",
     "FB_GOALS": "3",
-    "FB_SHOTS": "4",
+    "FB_SHOTS": "5",
     "GK_6M_SAVES": "1",
     "GK_6M_SHOTS": "6",
     "GK_7M_SAVES": "2",
@@ -98,7 +98,7 @@
     "GK_WING_SAVES": "1",
     "GK_WING_SHOTS": "2",
     "GOALS": "14",
-    "SHOTS": "22",
+    "SHOTS": "23",
     "WING_GOALS": "2",
     "WING_SHOTS": "2"
    },
@@ -149,7 +149,7 @@
     },
     "FB": {
      "g": 3,
-     "s": 4
+     "s": 5
     },
     "FLY": {
      "g": 0,
@@ -189,8 +189,8 @@
     },
     "C9": {
      "sv": 1,
-     "s": 7,
-     "g": 6
+     "s": 8,
+     "g": 7
     },
     "R9": {
      "sv": 0,
@@ -944,14 +944,9 @@
       "9M_CENTER_SHOTS": "2",
       "9M_MISSED": "2",
       "9M_SHOTS": "2",
-      "BT_GOALS": "1",
-      "BT_SHOTS": "1",
-      "EFFICIENCY": "33",
-      "FIELD_GOALS": "1",
-      "FIELD_GOALS_PERCENT": "33",
-      "FIELD_SHOTS": "3",
-      "GOALS": "1",
-      "SHOTS": "3",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "2",
+      "SHOTS": "2",
       "TIME_PLAYED": "1060"
      },
      "shot": {
@@ -996,8 +991,8 @@
        "s": 0
       },
       "BT": {
-       "g": 1,
-       "s": 1
+       "g": 0,
+       "s": 0
       },
       "FB": {
        "g": 0,
@@ -1181,7 +1176,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "10:00",
+     "time": "22:18",
      "stats": {
       "6M_CENTER_MISSED": "1",
       "6M_CENTER_SHOTS": "1",
@@ -1193,17 +1188,17 @@
       "9M_LEFT_GOALS": "1",
       "9M_LEFT_SHOTS": "1",
       "9M_SHOTS": "3",
-      "BT_GOALS": "1",
-      "BT_SHOTS": "1",
-      "EFFICIENCY": "83",
+      "BT_GOALS": "2",
+      "BT_SHOTS": "2",
+      "EFFICIENCY": "86",
       "FB_GOALS": "1",
       "FB_SHOTS": "1",
-      "FIELD_GOALS": "5",
-      "FIELD_GOALS_PERCENT": "83",
-      "FIELD_SHOTS": "6",
-      "GOALS": "5",
-      "SHOTS": "6",
-      "TIME_PLAYED": "600"
+      "FIELD_GOALS": "6",
+      "FIELD_GOALS_PERCENT": "86",
+      "FIELD_SHOTS": "7",
+      "GOALS": "6",
+      "SHOTS": "7",
+      "TIME_PLAYED": "1338"
      },
      "shot": {
       "LW": {
@@ -1247,8 +1242,8 @@
        "s": 0
       },
       "BT": {
-       "g": 1,
-       "s": 1
+       "g": 2,
+       "s": 2
       },
       "FB": {
        "g": 1,
@@ -1432,12 +1427,8 @@
      "func": "AA01",
      "captain": true,
      "isGK": true,
-     "time": "16:06",
+     "time": "27:38",
      "stats": {
-      "6M_GOALS": "0",
-      "6M_LEFT_GOALS": "0",
-      "6M_LEFT_SHOTS": "0",
-      "6M_SHOTS": "0",
       "GK_6M_CENTER_GOALS": "3",
       "GK_6M_CENTER_GOALS_SHOTS": "3/4",
       "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "3/4",
@@ -1476,9 +1467,9 @@
       "GK_7M_SHOTS": "3",
       "GK_7M_TOTAL_SHOTS": "3",
       "GK_9M_CENTER_GOALS": "2",
-      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "2/7",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "2/8",
       "GK_9M_CENTER_SAVES": "1",
-      "GK_9M_CENTER_TOTAL_SHOTS": "7",
+      "GK_9M_CENTER_TOTAL_SHOTS": "8",
       "GK_9M_GOALS": "3",
       "GK_9M_GOALS_SHOTS": "3/4",
       "GK_9M_RIGHT_GOALS": "1",
@@ -1523,9 +1514,7 @@
       "GK_WING_SAVES": "1",
       "GK_WING_SAVES_SHOTS": "1/2",
       "GK_WING_SHOTS": "2",
-      "GOALS": "0",
-      "SHOTS": "0",
-      "TIME_PLAYED": "966"
+      "TIME_PLAYED": "1658"
      },
      "shot": {
       "LW": {
@@ -1614,8 +1603,8 @@
       },
       "C9": {
        "sv": 1,
-       "s": 7,
-       "g": 6
+       "s": 8,
+       "g": 7
       },
       "R9": {
        "sv": 0,
@@ -1754,7 +1743,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "07:34",
+     "time": "09:02",
      "stats": {
       "BLOCKS": "1",
       "FB_POST": "1",
@@ -1762,7 +1751,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "454"
+      "TIME_PLAYED": "542"
      },
      "shot": {
       "LW": {
@@ -1991,7 +1980,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "15:12",
+     "time": "29:16",
      "stats": {
       "6M_GOALS": "1",
       "6M_RIGHT_GOALS": "1",
@@ -2008,13 +1997,15 @@
       "9M_SHOTS": "3",
       "BT_GOALS": "1",
       "BT_SHOTS": "1",
-      "EFFICIENCY": "60",
+      "EFFICIENCY": "50",
+      "FB_SAVES": "1",
+      "FB_SHOTS": "1",
       "FIELD_GOALS": "3",
-      "FIELD_GOALS_PERCENT": "60",
-      "FIELD_SHOTS": "5",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "6",
       "GOALS": "3",
-      "SHOTS": "5",
-      "TIME_PLAYED": "912"
+      "SHOTS": "6",
+      "TIME_PLAYED": "1756"
      },
      "shot": {
       "LW": {
@@ -2063,7 +2054,7 @@
       },
       "FB": {
        "g": 0,
-       "s": 0
+       "s": 1
       },
       "FLY": {
        "g": 0,
@@ -2714,11 +2705,11 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "10:36",
+     "time": "18:06",
      "stats": {
       "2MINUTES": "1",
       "FAIRPLAY_POINTS": "2",
-      "TIME_PLAYED": "636"
+      "TIME_PLAYED": "1086"
      },
      "shot": {
       "LW": {
@@ -3409,7 +3400,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "05:57",
+     "time": "07:56",
      "stats": {
       "6M_CENTER_MISSED": "1",
       "6M_CENTER_SHOTS": "1",
@@ -3419,7 +3410,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "357"
+      "TIME_PLAYED": "476"
      },
      "shot": {
       "LW": {
@@ -3879,7 +3870,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "14:45",
+     "time": "25:59",
      "stats": {
       "6M_RIGHT_WING_GOALS": "2",
       "6M_RIGHT_WING_SHOTS": "2",
@@ -3893,7 +3884,7 @@
       "FIELD_SHOTS": "4",
       "GOALS": "4",
       "SHOTS": "5",
-      "TIME_PLAYED": "885",
+      "TIME_PLAYED": "1559",
       "WING_GOALS": "2",
       "WING_SHOTS": "2"
      },
@@ -4256,7 +4247,7 @@
     [
      {
       "g": 9,
-      "s": 11
+      "s": 12
      },
      {
       "g": 0,
@@ -4440,9 +4431,9 @@
     {
      "min": "19:23",
      "period": "1",
-     "bib": "11",
-     "name": "ENAYATI O",
-     "role": "CB",
+     "bib": "13",
+     "name": "HEIDARIAN A",
+     "role": "LB",
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BL",
@@ -4529,6 +4520,18 @@
      "role": "RW",
      "zone": "R9",
      "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "14-13"
+    },
+    {
+     "min": "29:53",
+     "period": "1",
+     "bib": "23",
+     "name": "ORAEI M",
+     "role": "RW",
+     "zone": "FB",
+     "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
      "score": "14-13"
@@ -4621,17 +4624,17 @@
     }
    ],
    "possessions": {
-    "attacks": 27,
+    "attacks": 29,
     "goals": 14,
-    "shots": 22,
-    "missed": 8,
+    "shots": 23,
+    "missed": 9,
     "saves": 5,
     "turnovers": 7,
     "twoMin": 2,
     "assists": 2,
     "offReb": 0,
     "defReb": 5,
-    "eff": 51.9
+    "eff": 48.3
    },
    "timeline": [
     {
@@ -4701,24 +4704,37 @@
     },
     {
      "bucket": "25-30",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 2,
-     "shots": 4,
-     "missed": 2,
+     "shots": 5,
+     "missed": 3,
      "saves": 1,
      "turnovers": 1,
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
      "defReb": 1
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 1,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
     }
    ],
    "situations": {
     "equal": {
-     "attacks": 23,
+     "attacks": 25,
      "goals": 14,
-     "shots": 20,
-     "missed": 6,
+     "shots": 21,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4753,10 +4769,10 @@
    },
    "situationsDef": {
     "equal": {
-     "attacks": 29,
+     "attacks": 30,
      "goals": 12,
-     "shots": 18,
-     "missed": 6,
+     "shots": 19,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4809,10 +4825,10 @@
     "7M_GOALS": "1",
     "7M_SHOTS": "3",
     "9M_GOALS": "3",
-    "9M_SHOTS": "8",
+    "9M_SHOTS": "9",
     "BT_GOALS": "1",
     "BT_SHOTS": "1",
-    "EFFICIENCY": "59",
+    "EFFICIENCY": "57",
     "EG_GOALS": "1",
     "EG_SHOTS": "1",
     "FB_GOALS": "1",
@@ -4823,13 +4839,14 @@
     "GK_9M_SAVES": "2",
     "GK_9M_SHOTS": "6",
     "GK_BT_SHOTS": "4",
-    "GK_FB_SHOTS": "3",
-    "GK_SAVES": "3",
-    "GK_SAVES_PERCENT": "18",
-    "GK_SHOTS": "17",
+    "GK_FB_SAVES": "1",
+    "GK_FB_SHOTS": "4",
+    "GK_SAVES": "4",
+    "GK_SAVES_PERCENT": "22",
+    "GK_SHOTS": "18",
     "GK_WING_SHOTS": "2",
     "GOALS": "13",
-    "SHOTS": "22",
+    "SHOTS": "23",
     "WING_GOALS": "1",
     "WING_SHOTS": "2"
    },
@@ -4860,7 +4877,7 @@
     },
     "C9": {
      "g": 2,
-     "s": 7
+     "s": 8
     },
     "R9": {
      "g": 1,
@@ -4944,8 +4961,8 @@
      "g": 4
     },
     "FB": {
-     "sv": 0,
-     "s": 3,
+     "sv": 1,
+     "s": 4,
      "g": 3
     },
     "FLY": {
@@ -4973,7 +4990,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "06:59",
      "stats": {
       "9M_BLOCKED": "2",
       "9M_CENTER_BLOCKED": "2",
@@ -4983,7 +5000,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "2",
       "SHOTS": "2",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "419"
      },
      "shot": {
       "LW": {
@@ -5927,28 +5944,28 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "20:54",
      "stats": {
       "7M_GOALS": "1",
       "7M_SHOTS": "1",
       "9M_CENTER_GOALS": "1",
-      "9M_CENTER_MISSED": "1",
+      "9M_CENTER_MISSED": "2",
       "9M_CENTER_SAVES": "1",
-      "9M_CENTER_SHOTS": "3",
+      "9M_CENTER_SHOTS": "4",
       "9M_GOALS": "2",
-      "9M_MISSED": "1",
+      "9M_MISSED": "2",
       "9M_RIGHT_GOALS": "1",
       "9M_RIGHT_SHOTS": "1",
       "9M_SAVES": "1",
-      "9M_SHOTS": "4",
+      "9M_SHOTS": "5",
       "ASSISTS": "1",
-      "EFFICIENCY": "60",
+      "EFFICIENCY": "50",
       "FIELD_GOALS": "2",
-      "FIELD_GOALS_PERCENT": "50",
-      "FIELD_SHOTS": "4",
+      "FIELD_GOALS_PERCENT": "40",
+      "FIELD_SHOTS": "5",
       "GOALS": "3",
-      "SHOTS": "5",
-      "TIME_PLAYED": "0"
+      "SHOTS": "6",
+      "TIME_PLAYED": "1254"
      },
      "shot": {
       "LW": {
@@ -5977,7 +5994,7 @@
       },
       "C9": {
        "g": 1,
-       "s": 3
+       "s": 4
       },
       "R9": {
        "g": 1,
@@ -6643,14 +6660,14 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "07:10",
      "stats": {
       "6M_RIGHT_WING_SAVES": "1",
       "6M_RIGHT_WING_SHOTS": "1",
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "0",
+      "TIME_PLAYED": "430",
       "WING_SAVES": "1",
       "WING_SHOTS": "1"
      },
@@ -6881,15 +6898,10 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "00:00",
+     "time": "14:23",
      "stats": {
       "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "0/1",
       "GK_6M_CENTER_TOTAL_SHOTS": "1",
-      "GK_6M_GOALS": "0",
-      "GK_6M_LEFT_GOALS": "0",
-      "GK_6M_LEFT_SHOTS": "0",
-      "GK_6M_LEFT_TOTAL_SHOTS": "0",
-      "GK_6M_SHOTS": "0",
       "GK_7M_GOALS_SHOTS": "0/1",
       "GK_7M_GOALS_TOTAL_SHOTS": "0/1",
       "GK_7M_SAVES": "1",
@@ -6924,22 +6936,23 @@
       "GK_BT_SHOTS": "1",
       "GK_BT_TOTAL_SHOTS": "1",
       "GK_FB_GOALS": "1",
-      "GK_FB_GOALS_SHOTS": "1/1",
-      "GK_FB_GOALS_TOTAL_SHOTS": "1/2",
-      "GK_FB_SAVES_SHOTS": "0/1",
-      "GK_FB_SHOTS": "1",
-      "GK_FB_TOTAL_SHOTS": "2",
+      "GK_FB_GOALS_SHOTS": "1/2",
+      "GK_FB_GOALS_TOTAL_SHOTS": "1/3",
+      "GK_FB_SAVES": "1",
+      "GK_FB_SAVES_SHOTS": "1/2",
+      "GK_FB_SHOTS": "2",
+      "GK_FB_TOTAL_SHOTS": "3",
       "GK_GOALS": "5",
-      "GK_GOALS_BOT_LEFT_SHOTS": "3/5",
+      "GK_GOALS_BOT_LEFT_SHOTS": "3/6",
       "GK_GOALS_BOT_RIGHT_SHOTS": "2/2",
-      "GK_SAVES": "2",
-      "GK_SAVES_BOT_LEFT_SHOTS": "2/5",
+      "GK_SAVES": "3",
+      "GK_SAVES_BOT_LEFT_SHOTS": "3/6",
       "GK_SAVES_BOT_RIGHT_SHOTS": "0/2",
-      "GK_SAVES_PERCENT": "29",
-      "GK_SAVES_SHOTS": "2/7",
-      "GK_SHOTS": "7",
-      "GK_TOTAL_GOALS_SHOTS": "5/7",
-      "TIME_PLAYED": "0"
+      "GK_SAVES_PERCENT": "38",
+      "GK_SAVES_SHOTS": "3/8",
+      "GK_SHOTS": "8",
+      "GK_TOTAL_GOALS_SHOTS": "5/8",
+      "TIME_PLAYED": "863"
      },
      "shot": {
       "LW": {
@@ -7052,8 +7065,8 @@
        "g": 1
       },
       "FB": {
-       "sv": 0,
-       "s": 1,
+       "sv": 1,
+       "s": 2,
        "g": 1
       },
       "FLY": {
@@ -7099,8 +7112,8 @@
       ],
       [
        {
-        "sv": 2,
-        "s": 5,
+        "sv": 3,
+        "s": 6,
         "g": 3
        },
        {
@@ -7147,7 +7160,7 @@
       [
        {
         "g": 3,
-        "s": 5
+        "s": 6
        },
        {
         "g": 0,
@@ -7399,21 +7412,21 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "30:00",
      "stats": {
-      "6M_GOALS": "1",
-      "6M_LEFT_GOALS": "1",
-      "6M_LEFT_SHOTS": "1",
-      "6M_SHOTS": "1",
+      "6M_GOALS": "2",
+      "6M_LEFT_GOALS": "2",
+      "6M_LEFT_SHOTS": "2",
+      "6M_SHOTS": "2",
       "EFFICIENCY": "100",
       "FB_GOALS": "1",
       "FB_SHOTS": "1",
-      "FIELD_GOALS": "2",
+      "FIELD_GOALS": "3",
       "FIELD_GOALS_PERCENT": "100",
-      "FIELD_SHOTS": "2",
-      "GOALS": "2",
-      "SHOTS": "2",
-      "TIME_PLAYED": "0"
+      "FIELD_SHOTS": "3",
+      "GOALS": "3",
+      "SHOTS": "3",
+      "TIME_PLAYED": "1800"
      },
      "shot": {
       "LW": {
@@ -7421,8 +7434,8 @@
        "s": 0
       },
       "L6": {
-       "g": 1,
-       "s": 1
+       "g": 2,
+       "s": 2
       },
       "C6": {
        "g": 0,
@@ -7642,14 +7655,10 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "03:16",
+     "time": "09:49",
      "stats": {
-      "6M_GOALS": "1",
-      "6M_LEFT_GOALS": "1",
-      "6M_LEFT_SHOTS": "1",
       "6M_LEFT_WING_GOALS": "1",
       "6M_LEFT_WING_SHOTS": "1",
-      "6M_SHOTS": "1",
       "7M_SAVES": "1",
       "7M_SHOTS": "1",
       "9M_CENTER_MISSED": "1",
@@ -7657,13 +7666,13 @@
       "9M_MISSED": "1",
       "9M_SHOTS": "1",
       "ASSISTS": "2",
-      "EFFICIENCY": "50",
-      "FIELD_GOALS": "2",
-      "FIELD_GOALS_PERCENT": "67",
-      "FIELD_SHOTS": "3",
-      "GOALS": "2",
-      "SHOTS": "4",
-      "TIME_PLAYED": "196",
+      "EFFICIENCY": "33",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "3",
+      "TIME_PLAYED": "589",
       "WING_GOALS": "1",
       "WING_SHOTS": "1"
      },
@@ -7673,8 +7682,8 @@
        "s": 1
       },
       "L6": {
-       "g": 1,
-       "s": 1
+       "g": 0,
+       "s": 0
       },
       "C6": {
        "g": 0,
@@ -7896,18 +7905,18 @@
      "isGK": false,
      "time": "15:23",
      "stats": {
-      "6M_CENTER_GOALS": "2",
-      "6M_CENTER_SHOTS": "2",
-      "6M_GOALS": "2",
-      "6M_SHOTS": "2",
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_SHOTS": "1",
+      "6M_GOALS": "1",
+      "6M_SHOTS": "1",
       "EFFICIENCY": "100",
       "EG_GOALS": "1",
       "EG_SHOTS": "1",
-      "FIELD_GOALS": "3",
+      "FIELD_GOALS": "2",
       "FIELD_GOALS_PERCENT": "100",
-      "FIELD_SHOTS": "3",
-      "GOALS": "3",
-      "SHOTS": "3",
+      "FIELD_SHOTS": "2",
+      "GOALS": "2",
+      "SHOTS": "2",
       "TIME_PLAYED": "923"
      },
      "shot": {
@@ -7920,8 +7929,8 @@
        "s": 0
       },
       "C6": {
-       "g": 2,
-       "s": 2
+       "g": 1,
+       "s": 1
       },
       "R6": {
        "g": 0,
@@ -8139,7 +8148,17 @@
      "isGK": false,
      "time": "09:04",
      "stats": {
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_SHOTS": "1",
+      "6M_GOALS": "1",
+      "6M_SHOTS": "1",
       "ASSISTS": "1",
+      "EFFICIENCY": "100",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "100",
+      "FIELD_SHOTS": "1",
+      "GOALS": "1",
+      "SHOTS": "1",
       "TIME_PLAYED": "544"
      },
      "shot": {
@@ -8152,8 +8171,8 @@
        "s": 0
       },
       "C6": {
-       "g": 0,
-       "s": 0
+       "g": 1,
+       "s": 1
       },
       "R6": {
        "g": 0,
@@ -8369,7 +8388,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "14:35",
      "stats": {
       "6M_CENTER_SAVES": "1",
       "6M_CENTER_SHOTS": "1",
@@ -8378,7 +8397,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "875"
      },
      "shot": {
       "LW": {
@@ -8928,8 +8947,8 @@
     ],
     [
      {
-      "sv": 2,
-      "s": 11,
+      "sv": 3,
+      "s": 12,
       "g": 9
      },
      {
@@ -8976,7 +8995,7 @@
     [
      {
       "g": 9,
-      "s": 11
+      "s": 12
      },
      {
       "g": 0,
@@ -9142,9 +9161,9 @@
     {
      "min": "15:08",
      "period": "1",
-     "bib": "79",
-     "name": "PARK S",
-     "role": "PV",
+     "bib": "97",
+     "name": "KIM Y",
+     "role": "RB",
      "zone": "C6",
      "result": "GOAL",
      "goalZone": "BL",
@@ -9214,9 +9233,9 @@
     {
      "min": "21:29",
      "period": "1",
-     "bib": "77",
-     "name": "KIM R",
-     "role": "LB",
+     "bib": "74",
+     "name": "JEON J",
+     "role": "LW",
      "zone": "L6",
      "result": "GOAL",
      "goalZone": "BR",
@@ -9282,6 +9301,18 @@
      "goalZone": "TL",
      "assistBib": "26",
      "score": "14-13"
+    },
+    {
+     "min": "30:00",
+     "period": "1",
+     "bib": "26",
+     "name": "KIM J",
+     "role": "RB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-13"
     }
    ],
    "connections": [
@@ -9302,9 +9333,9 @@
      "fromBib": "30",
      "fromName": "LEE Y",
      "fromRole": "CB",
-     "toBib": "79",
-     "toName": "PARK S",
-     "toRole": "PV",
+     "toBib": "97",
+     "toName": "KIM Y",
+     "toRole": "RB",
      "count": 1,
      "goals": 1,
      "zones": {
@@ -9356,7 +9387,7 @@
     },
     {
      "from": "CB",
-     "to": "PV",
+     "to": "RB",
      "count": 1,
      "goals": 1
     },
@@ -9398,17 +9429,17 @@
     }
    ],
    "possessions": {
-    "attacks": 31,
+    "attacks": 32,
     "goals": 13,
-    "shots": 20,
-    "missed": 7,
-    "saves": 3,
-    "turnovers": 5,
+    "shots": 21,
+    "missed": 8,
+    "saves": 4,
+    "turnovers": 6,
     "twoMin": 0,
     "assists": 5,
     "offReb": 0,
-    "defReb": 3,
-    "eff": 41.9
+    "defReb": 4,
+    "eff": 40.6
    },
    "timeline": [
     {
@@ -9478,24 +9509,37 @@
     },
     {
      "bucket": "25-30",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 0,
      "shots": 3,
      "missed": 3,
-     "saves": 1,
-     "turnovers": 0,
+     "saves": 2,
+     "turnovers": 1,
      "twoMin": 0,
      "assists": 1,
      "offReb": 0,
-     "defReb": 1
+     "defReb": 2
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 0,
+     "goals": 0,
+     "shots": 1,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
     }
    ],
    "situations": {
     "equal": {
-     "attacks": 29,
+     "attacks": 30,
      "goals": 12,
-     "shots": 18,
-     "missed": 6,
+     "shots": 19,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -9530,10 +9574,10 @@
    },
    "situationsDef": {
     "equal": {
-     "attacks": 23,
+     "attacks": 25,
      "goals": 14,
-     "shots": 20,
-     "missed": 6,
+     "shots": 21,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -9574,5 +9618,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:07:47.731Z"
+ "updatedAt": "2026-09-22T09:15:13.184Z"
 }
