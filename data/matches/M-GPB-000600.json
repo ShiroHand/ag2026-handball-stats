@@ -92,10 +92,11 @@
     "GK_9M_SHOTS": "4",
     "GK_BT_SHOTS": "1",
     "GK_FB_SHOTS": "1",
-    "GK_SAVES": "4",
-    "GK_SAVES_PERCENT": "24",
-    "GK_SHOTS": "17",
-    "GK_WING_SHOTS": "1",
+    "GK_SAVES": "5",
+    "GK_SAVES_PERCENT": "28",
+    "GK_SHOTS": "18",
+    "GK_WING_SAVES": "1",
+    "GK_WING_SHOTS": "2",
     "GOALS": "14",
     "SHOTS": "22",
     "WING_GOALS": "2",
@@ -177,8 +178,8 @@
      "g": 0
     },
     "RW": {
-     "sv": 0,
-     "s": 0,
+     "sv": 1,
+     "s": 1,
      "g": 0
     },
     "L9": {
@@ -1458,6 +1459,12 @@
       "GK_6M_LEFT_WING_SAVES_SHOTS": "0/1",
       "GK_6M_LEFT_WING_SHOTS": "1",
       "GK_6M_LEFT_WING_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_WING_SHOTS": "1",
+      "GK_6M_RIGHT_WING_GOALS_SHOTS": "0/1",
+      "GK_6M_RIGHT_WING_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_RIGHT_WING_SAVES": "1",
+      "GK_6M_RIGHT_WING_SAVES_SHOTS": "1/1",
+      "GK_6M_RIGHT_WING_SHOTS": "1",
       "GK_6M_SAVES": "1",
       "GK_6M_SAVES_SHOTS": "1/6",
       "GK_6M_SHOTS": "6",
@@ -1499,19 +1506,23 @@
       "GK_GOALS_BOT_LEFT_SHOTS": "4/5",
       "GK_GOALS_BOT_RIGHT_SHOTS": "7/9",
       "GK_GOALS_MID_RIGHT_SHOTS": "0/1",
+      "GK_GOALS_TOP_LEFT_SHOTS": "0/1",
       "GK_GOALS_TOP_RIGHT_SHOTS": "1/1",
-      "GK_SAVES": "4",
+      "GK_SAVES": "5",
       "GK_SAVES_BOT_LEFT_SHOTS": "1/5",
       "GK_SAVES_BOT_RIGHT_SHOTS": "2/9",
       "GK_SAVES_MID_RIGHT_SHOTS": "1/1",
-      "GK_SAVES_PERCENT": "25",
-      "GK_SAVES_SHOTS": "4/16",
+      "GK_SAVES_PERCENT": "29",
+      "GK_SAVES_SHOTS": "5/17",
+      "GK_SAVES_TOP_LEFT_SHOTS": "1/1",
       "GK_SAVES_TOP_RIGHT_SHOTS": "0/1",
-      "GK_SHOTS": "16",
-      "GK_TOTAL_GOALS_SHOTS": "12/16",
+      "GK_SHOTS": "17",
+      "GK_TOTAL_GOALS_SHOTS": "12/17",
       "GK_WING_GOALS": "1",
-      "GK_WING_SAVES_SHOTS": "0/1",
-      "GK_WING_SHOTS": "1",
+      "GK_WING_GOALS_SHOTS": "1/2",
+      "GK_WING_SAVES": "1",
+      "GK_WING_SAVES_SHOTS": "1/2",
+      "GK_WING_SHOTS": "2",
       "GOALS": "0",
       "SHOTS": "0",
       "TIME_PLAYED": "966"
@@ -1592,8 +1603,8 @@
        "g": 0
       },
       "RW": {
-       "sv": 0,
-       "s": 0,
+       "sv": 1,
+       "s": 1,
        "g": 0
       },
       "L9": {
@@ -1640,8 +1651,8 @@
      "gkZone": [
       [
        {
-        "sv": 0,
-        "s": 0,
+        "sv": 1,
+        "s": 1,
         "g": 0
        },
        {
@@ -1694,7 +1705,7 @@
       [
        {
         "g": 0,
-        "s": 0
+        "s": 1
        },
        {
         "g": 0,
@@ -4109,8 +4120,8 @@
    "gkZone": [
     [
      {
-      "sv": 0,
-      "s": 0,
+      "sv": 1,
+      "s": 1,
       "g": 0
      },
      {
@@ -4163,7 +4174,7 @@
     [
      {
       "g": 0,
-      "s": 0
+      "s": 1
      },
      {
       "g": 0,
@@ -4614,12 +4625,12 @@
     "goals": 14,
     "shots": 22,
     "missed": 8,
-    "saves": 4,
+    "saves": 5,
     "turnovers": 7,
     "twoMin": 2,
     "assists": 2,
     "offReb": 0,
-    "defReb": 4,
+    "defReb": 5,
     "eff": 51.9
    },
    "timeline": [
@@ -4694,12 +4705,12 @@
      "goals": 2,
      "shots": 4,
      "missed": 2,
-     "saves": 0,
+     "saves": 1,
      "turnovers": 1,
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 1
     }
    ],
    "situations": {
@@ -4744,8 +4755,8 @@
     "equal": {
      "attacks": 29,
      "goals": 12,
-     "shots": 17,
-     "missed": 5,
+     "shots": 18,
+     "missed": 6,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4801,7 +4812,7 @@
     "9M_SHOTS": "8",
     "BT_GOALS": "1",
     "BT_SHOTS": "1",
-    "EFFICIENCY": "62",
+    "EFFICIENCY": "59",
     "EG_GOALS": "1",
     "EG_SHOTS": "1",
     "FB_GOALS": "1",
@@ -4818,9 +4829,9 @@
     "GK_SHOTS": "17",
     "GK_WING_SHOTS": "2",
     "GOALS": "13",
-    "SHOTS": "21",
+    "SHOTS": "22",
     "WING_GOALS": "1",
-    "WING_SHOTS": "1"
+    "WING_SHOTS": "2"
    },
    "shot": {
     "LW": {
@@ -4841,7 +4852,7 @@
     },
     "RW": {
      "g": 0,
-     "s": 0
+     "s": 1
     },
     "L9": {
      "g": 0,
@@ -5930,6 +5941,7 @@
       "9M_RIGHT_SHOTS": "1",
       "9M_SAVES": "1",
       "9M_SHOTS": "4",
+      "ASSISTS": "1",
       "EFFICIENCY": "60",
       "FIELD_GOALS": "2",
       "FIELD_GOALS_PERCENT": "50",
@@ -6633,7 +6645,14 @@
      "isGK": false,
      "time": "00:00",
      "stats": {
-      "TIME_PLAYED": "0"
+      "6M_RIGHT_WING_SAVES": "1",
+      "6M_RIGHT_WING_SHOTS": "1",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "1",
+      "SHOTS": "1",
+      "TIME_PLAYED": "0",
+      "WING_SAVES": "1",
+      "WING_SHOTS": "1"
      },
      "shot": {
       "LW": {
@@ -6654,7 +6673,7 @@
       },
       "RW": {
        "g": 0,
-       "s": 0
+       "s": 1
       },
       "L9": {
        "g": 0,
@@ -8970,7 +8989,7 @@
     ]
    ],
    "derived": {
-    "assists": 4,
+    "assists": 5,
     "steals": 0,
     "blocks": 0,
     "blocked": 2,
@@ -8983,7 +9002,7 @@
     [
      {
       "g": 0,
-      "s": 0
+      "s": 1
      },
      {
       "g": 0,
@@ -9251,6 +9270,18 @@
      "goalZone": "",
      "assistBib": "",
      "score": "13-13"
+    },
+    {
+     "min": "29:20",
+     "period": "1",
+     "bib": "65",
+     "name": "WON M",
+     "role": "RW",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "TL",
+     "assistBib": "26",
+     "score": "14-13"
     }
    ],
    "connections": [
@@ -9303,6 +9334,17 @@
      "count": 1,
      "goals": 0,
      "zones": {}
+    },
+    {
+     "fromBib": "26",
+     "fromName": "KIM J",
+     "fromRole": "RB",
+     "toBib": "65",
+     "toName": "WON M",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 0,
+     "zones": {}
     }
    ],
    "posLinks": [
@@ -9329,6 +9371,12 @@
      "to": "PV",
      "count": 1,
      "goals": 0
+    },
+    {
+     "from": "RB",
+     "to": "RW",
+     "count": 1,
+     "goals": 0
     }
    ],
    "defActs": [
@@ -9352,12 +9400,12 @@
    "possessions": {
     "attacks": 31,
     "goals": 13,
-    "shots": 19,
-    "missed": 6,
+    "shots": 20,
+    "missed": 7,
     "saves": 3,
     "turnovers": 5,
     "twoMin": 0,
-    "assists": 4,
+    "assists": 5,
     "offReb": 0,
     "defReb": 3,
     "eff": 41.9
@@ -9432,12 +9480,12 @@
      "bucket": "25-30",
      "attacks": 4,
      "goals": 0,
-     "shots": 2,
-     "missed": 2,
+     "shots": 3,
+     "missed": 3,
      "saves": 1,
      "turnovers": 0,
      "twoMin": 0,
-     "assists": 0,
+     "assists": 1,
      "offReb": 0,
      "defReb": 1
     }
@@ -9446,8 +9494,8 @@
     "equal": {
      "attacks": 29,
      "goals": 12,
-     "shots": 17,
-     "missed": 5,
+     "shots": 18,
+     "missed": 6,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -9526,5 +9574,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:07:02.787Z"
+ "updatedAt": "2026-09-22T09:07:47.731Z"
 }

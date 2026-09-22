@@ -79,9 +79,9 @@
     "7M_GOALS": "2",
     "7M_SHOTS": "2",
     "9M_GOALS": "3",
-    "9M_SHOTS": "4",
+    "9M_SHOTS": "5",
     "BT_SHOTS": "4",
-    "EFFICIENCY": "38",
+    "EFFICIENCY": "35",
     "GK_6M_SAVES": "1",
     "GK_6M_SHOTS": "4",
     "GK_7M_SAVES": "2",
@@ -95,7 +95,7 @@
     "GK_SHOTS": "23",
     "GK_WING_SHOTS": "1",
     "GOALS": "6",
-    "SHOTS": "16",
+    "SHOTS": "17",
     "WING_SHOTS": "4",
     "YELLOW_CARDS": "0"
    },
@@ -126,7 +126,7 @@
     },
     "C9": {
      "g": 2,
-     "s": 3
+     "s": 4
     },
     "R9": {
      "g": 1,
@@ -739,6 +739,13 @@
      "isGK": false,
      "time": "00:00",
      "stats": {
+      "9M_CENTER_MISSED": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_MISSED": "1",
+      "9M_SHOTS": "1",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "1",
+      "SHOTS": "1",
       "TIME_PLAYED": "0"
      },
      "shot": {
@@ -768,7 +775,7 @@
       },
       "C9": {
        "g": 0,
-       "s": 0
+       "s": 1
       },
       "R9": {
        "g": 0,
@@ -3956,6 +3963,18 @@
      "goalZone": "",
      "assistBib": "",
      "score": "6-18"
+    },
+    {
+     "min": "29:51",
+     "period": "1",
+     "bib": "5",
+     "name": "KELDIYOROVA S",
+     "role": "LB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "6-18"
     }
    ],
    "connections": [
@@ -4008,17 +4027,17 @@
     }
    ],
    "possessions": {
-    "attacks": 26,
+    "attacks": 27,
     "goals": 6,
-    "shots": 16,
-    "missed": 10,
+    "shots": 17,
+    "missed": 11,
     "saves": 5,
     "turnovers": 9,
     "twoMin": 1,
     "assists": 1,
     "offReb": 0,
     "defReb": 4,
-    "eff": 23.1
+    "eff": 22.2
    },
    "timeline": [
     {
@@ -4088,10 +4107,10 @@
     },
     {
      "bucket": "25-30",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 0,
-     "shots": 3,
-     "missed": 3,
+     "shots": 4,
+     "missed": 4,
      "saves": 1,
      "turnovers": 1,
      "twoMin": 0,
@@ -4102,10 +4121,10 @@
    ],
    "situations": {
     "equal": {
-     "attacks": 19,
+     "attacks": 20,
      "goals": 5,
-     "shots": 11,
-     "missed": 6,
+     "shots": 12,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4140,7 +4159,7 @@
    },
    "situationsDef": {
     "equal": {
-     "attacks": 18,
+     "attacks": 19,
      "goals": 14,
      "shots": 20,
      "missed": 6,
@@ -4307,8 +4326,8 @@
     },
     "C9": {
      "sv": 1,
-     "s": 3,
-     "g": 2
+     "s": 4,
+     "g": 3
     },
     "R9": {
      "sv": 0,
@@ -6284,8 +6303,8 @@
       "GK_6M_RIGHT_WING_SAVES_SHOTS": "2/2",
       "GK_6M_RIGHT_WING_SHOTS": "2",
       "GK_9M_CENTER_GOALS": "1",
-      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "1/1",
-      "GK_9M_CENTER_TOTAL_SHOTS": "1",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "1/2",
+      "GK_9M_CENTER_TOTAL_SHOTS": "2",
       "GK_9M_GOALS": "1",
       "GK_9M_GOALS_SHOTS": "1/1",
       "GK_9M_SAVES_SHOTS": "0/1",
@@ -6401,8 +6420,8 @@
       },
       "C9": {
        "sv": 0,
-       "s": 1,
-       "g": 1
+       "s": 2,
+       "g": 2
       },
       "R9": {
        "sv": 0,
@@ -8923,7 +8942,7 @@
     }
    ],
    "possessions": {
-    "attacks": 25,
+    "attacks": 26,
     "goals": 18,
     "shots": 27,
     "missed": 9,
@@ -8933,7 +8952,7 @@
     "assists": 8,
     "offReb": 1,
     "defReb": 7,
-    "eff": 72
+    "eff": 69.2
    },
    "timeline": [
     {
@@ -9003,7 +9022,7 @@
     },
     {
      "bucket": "25-30",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 2,
      "shots": 3,
      "missed": 1,
@@ -9017,7 +9036,7 @@
    ],
    "situations": {
     "equal": {
-     "attacks": 18,
+     "attacks": 19,
      "goals": 14,
      "shots": 20,
      "missed": 6,
@@ -9055,10 +9074,10 @@
    },
    "situationsDef": {
     "equal": {
-     "attacks": 19,
+     "attacks": 20,
      "goals": 5,
-     "shots": 11,
-     "missed": 6,
+     "shots": 12,
+     "missed": 7,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -9099,5 +9118,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:07:03.112Z"
+ "updatedAt": "2026-09-22T09:07:47.904Z"
 }
