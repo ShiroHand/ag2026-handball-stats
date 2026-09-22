@@ -1706,11 +1706,11 @@
       "GK_6M_SHOTS": "4",
       "GK_7M_GOALS": "2",
       "GK_7M_GOALS_SHOTS": "2/4",
-      "GK_7M_GOALS_TOTAL_SHOTS": "2/5",
+      "GK_7M_GOALS_TOTAL_SHOTS": "2/4",
       "GK_7M_SAVES": "2",
       "GK_7M_SAVES_SHOTS": "2/4",
       "GK_7M_SHOTS": "4",
-      "GK_7M_TOTAL_SHOTS": "5",
+      "GK_7M_TOTAL_SHOTS": "4",
       "GK_9M_CENTER_GOALS": "4",
       "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "4/8",
       "GK_9M_CENTER_SAVES": "2",
@@ -4195,8 +4195,8 @@
     "up": {
      "attacks": 5,
      "goals": 2,
-     "shots": 5,
-     "missed": 3,
+     "shots": 4,
+     "missed": 2,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4236,12 +4236,12 @@
     "6M_GOALS": "3",
     "6M_SHOTS": "4",
     "7M_GOALS": "2",
-    "7M_SHOTS": "5",
+    "7M_SHOTS": "4",
     "9M_GOALS": "4",
     "9M_SHOTS": "8",
     "BT_GOALS": "6",
     "BT_SHOTS": "6",
-    "EFFICIENCY": "67",
+    "EFFICIENCY": "69",
     "FB_GOALS": "2",
     "FB_SHOTS": "2",
     "GK_6M_SAVES": "1",
@@ -4257,7 +4257,7 @@
     "GK_WING_SAVES": "3",
     "GK_WING_SHOTS": "3",
     "GOALS": "18",
-    "SHOTS": "27",
+    "SHOTS": "26",
     "WING_GOALS": "1",
     "WING_SHOTS": "2"
    },
@@ -4296,7 +4296,7 @@
     },
     "P7": {
      "g": 2,
-     "s": 5
+     "s": 4
     },
     "EG": {
      "g": 0,
@@ -7599,9 +7599,8 @@
      "isGK": false,
      "time": "16:00",
      "stats": {
-      "7M_POST": "1",
       "7M_SAVES": "2",
-      "7M_SHOTS": "3",
+      "7M_SHOTS": "2",
       "9M_CENTER_MISSED": "1",
       "9M_CENTER_SHOTS": "1",
       "9M_MISSED": "1",
@@ -7609,12 +7608,12 @@
       "ASSISTS": "3",
       "BT_GOALS": "1",
       "BT_SHOTS": "1",
-      "EFFICIENCY": "20",
+      "EFFICIENCY": "25",
       "FIELD_GOALS": "1",
       "FIELD_GOALS_PERCENT": "50",
       "FIELD_SHOTS": "2",
       "GOALS": "1",
-      "SHOTS": "5",
+      "SHOTS": "4",
       "TIME_PLAYED": "960"
      },
      "shot": {
@@ -7652,7 +7651,7 @@
       },
       "P7": {
        "g": 0,
-       "s": 3
+       "s": 2
       },
       "EG": {
        "g": 0,
@@ -8512,18 +8511,6 @@
      "score": "0-2"
     },
     {
-     "min": "4:43",
-     "period": "1",
-     "bib": "28",
-     "name": "LIU X",
-     "role": "CB",
-     "zone": "P7",
-     "result": "POST",
-     "goalZone": "",
-     "assistBib": "",
-     "score": "1-2"
-    },
-    {
      "min": "5:27",
      "period": "1",
      "bib": "28",
@@ -8966,8 +8953,8 @@
    "possessions": {
     "attacks": 26,
     "goals": 18,
-    "shots": 27,
-    "missed": 9,
+    "shots": 26,
+    "missed": 8,
     "saves": 6,
     "turnovers": 2,
     "twoMin": 4,
@@ -8981,8 +8968,8 @@
      "bucket": "0-5",
      "attacks": 2,
      "goals": 2,
-     "shots": 4,
-     "missed": 2,
+     "shots": 3,
+     "missed": 1,
      "saves": 1,
      "turnovers": 1,
      "twoMin": 1,
@@ -9084,8 +9071,8 @@
     "down": {
      "attacks": 5,
      "goals": 2,
-     "shots": 5,
-     "missed": 3,
+     "shots": 4,
+     "missed": 2,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -9140,5 +9127,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:15:13.807Z"
+ "updatedAt": "2026-09-22T09:22:46.826Z"
 }

@@ -9850,9 +9850,9 @@
     {
      "min": "13:17",
      "period": "2",
-     "bib": "08",
+     "bib": "8",
      "name": "LIANG J",
-     "role": "OTH",
+     "role": "LB",
      "zone": "L6",
      "result": "SAVE",
      "goalZone": "ML",
@@ -9946,9 +9946,9 @@
     {
      "min": "23:56",
      "period": "2",
-     "bib": "03",
+     "bib": "3",
      "name": "PAN F",
-     "role": "OTH",
+     "role": "CB",
      "zone": "LW",
      "result": "SAVE",
      "goalZone": "TR",
@@ -9982,9 +9982,9 @@
     {
      "min": "27:55",
      "period": "2",
-     "bib": "08",
+     "bib": "8",
      "name": "LIANG J",
-     "role": "OTH",
+     "role": "LB",
      "zone": "L9",
      "result": "GOAL",
      "goalZone": "TR",
@@ -10000,7 +10000,7 @@
      "zone": "R6",
      "result": "GOAL",
      "goalZone": "BL",
-     "assistBib": "08",
+     "assistBib": "8",
      "score": "24-33"
     },
     {
@@ -10057,9 +10057,9 @@
      }
     },
     {
-     "fromBib": "08",
+     "fromBib": "8",
      "fromName": "LIANG J",
-     "fromRole": "OTH",
+     "fromRole": "LB",
      "toBib": "11",
      "toName": "LIU C",
      "toRole": "RB",
@@ -10090,7 +10090,7 @@
      "goals": 1
     },
     {
-     "from": "OTH",
+     "from": "LB",
      "to": "RB",
      "count": 1,
      "goals": 1
@@ -10114,7 +10114,7 @@
      "twoMin": 0
     },
     {
-     "bib": "03",
+     "bib": "3",
      "name": "PAN F",
      "blocks": 0,
      "steals": 0,
@@ -10406,5 +10406,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T09:06:55.658Z"
+ "updatedAt": "2026-09-22T09:22:38.942Z"
 }
