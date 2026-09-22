@@ -48,9 +48,27 @@ git push -u origin main
 **Settings → Actions → General → Workflow permissions** で
 `Read and write permissions` を選択して保存してください（Actions がデータ更新をコミットするため）。
 
-`.github/workflows/update-data.yml` が **10分ごと**に公式APIを取得し、
+`.github/workflows/update-data.yml` が定期的に公式APIを取得し、
 差分があれば `data/` を更新してコミットします。手動実行は
 **Actions → 公式データ自動更新 → Run workflow** から。
+
+### 定時実行が動かないときは
+
+GitHub の定時実行（cron）は**保証されていません**。特に `*/5` `*/10` のような
+短い間隔は混雑時に丸ごと落とされ、一度も発火しないことがあります。
+本リポジトリでは対策として、
+
+- 半端な分にずらした15分おき（`4,19,34,49 1-17 * * *`）
+- 毎時1回の保険（`52 * * * *`）
+
+の2本立てにしています。それでも遅れる／動かない場合は、手元から実行してください。
+
+```bash
+./update.sh
+```
+
+`git pull` → 公式API取得 → PDF取り込み → 差分があればコミットして push まで一気に行います。
+試合直後にすぐ反映させたいときはこちらが確実です。
 
 > 大会が終わったら `cron` の行をコメントアウトするか、ワークフローを無効化してください。
 
