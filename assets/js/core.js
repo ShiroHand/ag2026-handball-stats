@@ -136,6 +136,11 @@ export function renderChrome(active, tournament) {
         el('div', {text: 'データ更新: ' + (t.updatedAt ? jpStamp(t.updatedAt) : '—')}),
         el('div', {text: '出典: 公式リザルト (results.asiangames2026.org)'}))));
   document.body.prepend(bar);
+
+  /* データ更新バー（ヘッダ内に置く。各ページの再描画で消えないようにするため） */
+  import('./refresh.js').then(({refreshBar}) => {
+    bar.append(el('div', {class: 'refresh-wrap'}, refreshBar(tournament)));
+  }).catch(() => {});
 }
 
 export function renderFoot() {

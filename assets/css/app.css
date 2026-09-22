@@ -150,3 +150,15 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .secnav-a{font-size:12px;font-weight:600;color:var(--navy);background:var(--surface-2);
   border:1px solid var(--line);border-radius:999px;padding:4px 11px;white-space:nowrap}
 .secnav-a:hover{background:var(--blue-soft);border-color:var(--line-2);text-decoration:none}
+
+/* データ更新バー（ヘッダ内の2段目） */
+.refresh-wrap{border-top:1px solid var(--line);background:var(--surface-2)}
+.refresh-bar{max-width:1400px;margin:0 auto;padding:7px 16px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.refresh-title{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:.08em}
+.refresh-status{font-size:12.5px;color:var(--ink-2);flex:1;min-width:200px}
+.refresh-status.busy{color:var(--navy-2);font-weight:600}
+.refresh-status.ok{color:var(--good);font-weight:700}
+.refresh-status.warn{color:var(--bad);font-weight:700}
+.refresh-note{font-size:11px;color:var(--ink-3)}
+@media(max-width:700px){.refresh-status{flex-basis:100%}}
