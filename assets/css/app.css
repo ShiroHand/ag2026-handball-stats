@@ -151,6 +151,60 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
   border:1px solid var(--line);border-radius:999px;padding:4px 11px;white-space:nowrap}
 .secnav-a:hover{background:var(--blue-soft);border-color:var(--line-2);text-decoration:none}
 
+/* 選手の顔写真 */
+.photo{width:34px;height:34px;border-radius:50%;object-fit:cover;background:var(--surface-2);
+  border:1px solid var(--line-2);flex:none}
+.photo-ph{display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:.02em}
+.photo.lg{width:52px;height:52px}
+.photo.sm{width:24px;height:24px;font-size:9px}
+
+/* 顔写真つきランキング */
+.lead{display:flex;flex-direction:column}
+.lead-row{display:grid;grid-template-columns:22px auto auto minmax(90px,1.1fr) minmax(60px,2fr) 40px;
+  align-items:center;gap:8px;padding:4px 2px;border-bottom:1px solid var(--line)}
+.lead-row:last-child{border-bottom:0}
+.lead-rank{font-size:11px;font-weight:700;color:var(--ink-3);text-align:right}
+.lead-name{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-bar{height:10px;border-radius:5px;background:var(--surface-2);overflow:hidden}
+.lead-fill{display:block;height:100%;border-radius:5px}
+.lead-val{font-size:13px;font-weight:700;text-align:right;color:var(--navy)}
+
+/* 選手別イベント（記号タイムライン） */
+.eg-wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:0;
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.eg-head{height:26px;display:flex;align-items:center;font-size:11px;font-weight:700;
+  color:var(--navy);background:var(--blue-soft);padding:0 8px;white-space:nowrap}
+.eg-names{border-right:1px solid var(--line-2)}
+.eg-name{height:30px;display:flex;align-items:center;gap:7px;padding:0 9px 0 6px;white-space:nowrap}
+/* 見出しが1番目の子なので、選手1行目は even。グリッド側の縞と合わせる */
+.eg-name:nth-child(even){background:var(--surface-2)}
+.eg-photo{width:24px;height:24px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid var(--line-2);background:var(--surface-2)}
+.eg-photo.photo-ph{display:inline-flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:var(--ink-3)}
+.eg-bib{font-size:11px;font-weight:700;color:#fff;background:var(--navy);border-radius:4px;
+  min-width:20px;text-align:center;padding:1px 3px;font-variant-numeric:tabular-nums}
+.eg-pname{display:flex;flex-direction:column;line-height:1.12}
+.eg-pname b{font-size:12px;font-weight:700}
+.eg-pname small{font-size:9.5px;color:var(--ink-3)}
+.eg-grid{overflow-x:auto;min-width:0}
+.eg-svg{display:block}
+.eg-mark{cursor:default}
+.eg-stats{border-left:1px solid var(--line-2)}
+.eg-statrow{height:30px;display:grid;grid-template-columns:repeat(7,minmax(34px,auto));
+  align-items:center;font-size:11.5px}
+.eg-statrow span{text-align:center;padding:0 5px;white-space:nowrap}
+.eg-stats > .eg-statrow:nth-child(even){background:var(--surface-2)}
+.eg-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:11.5px;color:var(--ink-2)}
+.eg-leg-item{display:inline-flex;align-items:center;gap:5px}
+.eg-dot{width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;
+  justify-content:center;font-size:9.5px;font-weight:700;flex:none}
+@media(max-width:860px){
+  .eg-wrap{grid-template-columns:auto minmax(0,1fr)}
+  .eg-stats{display:none}
+}
+
 /* データ更新バー（ヘッダ内の2段目） */
 .refresh-wrap{border-top:1px solid var(--line);background:var(--surface-2)}
 .refresh-bar{max-width:1400px;margin:0 auto;padding:7px 16px;

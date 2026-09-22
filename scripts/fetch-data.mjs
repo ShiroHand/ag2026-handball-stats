@@ -288,6 +288,124 @@ function buildPossessions(acts, teams, orgs) {
   return out;
 }
 
+/* ---------------------------------------------------------------- 選手別イベント */
+/* アクションの gk フィールドは選手登録番号だが、結果JSONの Members には登録番号が無い。
+   そこで「そのGKが浴びた失点数・セーブ数」を公式の個人スタッツと突き合わせて特定する。 */
+function gkRegMap(acts, teams) {
+  const tally = {};
+  for (const a of acts) {
+    if (!ACT_ZONE[a.ac] || !a.gk) continue;
+    const so = a.c[0]?.org;
+    if (!so) continue;
+    const t = tally[a.gk] || (tally[a.gk] = {goal: 0, save: 0, shooterOrg: so});
+    if (a.r === 'GOAL') t.goal++; else if (a.r === 'SAVE') t.save++;
+  }
+  const orgs = Object.keys(teams);
+  const out = {};
+  for (const org of orgs) {
+    const opp = orgs.find(o => o !== org);
+    const regs = Object.entries(tally).filter(([, v]) => v.shooterOrg === opp);
+    const gks = (teams[org]?.players || []).filter(p => p.isGK);
+    const pairs = [];
+    for (const [reg, v] of regs) {
+      for (const g of gks) {
+        pairs.push({reg, g, d: Math.abs(v.goal - N(g.stats.GK_GOALS)) + Math.abs(v.save - N(g.stats.GK_SAVES))});
+      }
+    }
+    pairs.sort((x, y) => x.d - y.d);
+    const usedR = new Set(), usedB = new Set();
+    for (const p of pairs) {
+      if (usedR.has(p.reg) || usedB.has(p.g.bib)) continue;
+      usedR.add(p.reg); usedB.add(p.g.bib);
+      out[p.reg] = {org, bib: p.g.bib};
+    }
+  }
+  return out;
+}
+
+/* handball.ai 風の記号タイムライン用に、選手ごとの出来事を時刻つきで並べる。
+   type: G(得点) 7G(7m得点) X(ノーゴール) 7X(7m失敗) A(アシスト) L(ミス/テクニカル)
+         S(スティール) B(ブロック) 2M(2分退場) YC/RC(カード) 7C(7m献上)
+         GS(GKセーブ) GR(GK失点) GG(GKの得点) */
+function buildEvents(acts, teams) {
+  const gkOf = gkRegMap(acts, teams);
+  const ev = {};
+  for (const org of Object.keys(teams)) ev[org] = [];
+  const isGKbib = (org, bib) => !!teams[org]?.players.find(p => p.bib === bib)?.isGK;
+  const push = (org, a, bib, type, extra) => {
+    if (!ev[org] || !bib) return;
+    ev[org].push({sec: absSec(a.p, a.t), p: S(a.p), t: S(a.t), bib: S(bib), type, ...(extra || {})});
+  };
+
+  for (const a of acts) {
+    const actor = a.c[0];
+    const org = actor?.org;
+    const bib = S(actor?.bib);
+    if (!org || !ev[org]) continue;
+
+    switch (a.ac) {
+      case 'ASS': push(org, a, bib, 'A'); continue;
+      case 'ST':  push(org, a, bib, 'S'); continue;
+      case 'BLC': push(org, a, bib, 'B'); continue;
+      case 'TO':  push(org, a, bib, 'L'); continue;
+      case 'TMS': push(org, a, bib, '2M'); continue;
+      case 'FRP': push(org, a, bib, '7C'); continue;
+      case 'TYC': push(org, a, bib, 'YC'); continue;
+      case 'DRC': push(org, a, bib, 'RC'); continue;
+      case 'TFT': push(org, a, bib, 'L'); continue;
+      default: break;
+    }
+
+    const zone = ACT_ZONE[a.ac];
+    if (!zone) continue;
+    const goal = a.r === 'GOAL';
+    const seven = zone === 'P7';
+    const shooterGK = isGKbib(org, bib);
+    push(org, a, bib,
+      shooterGK && goal ? 'GG' : goal ? (seven ? '7G' : 'G') : (seven ? '7X' : 'X'),
+      {zone, result: S(a.r), gz: GZ[a.gz] ? a.gz : ''});
+
+    /* GKは「決められた(GR)」「セーブした(GS)」のみを記録する。
+       ポスト・枠外は GK の働きではないので付けない。 */
+    const g = gkOf[a.gk];
+    if (g && ev[g.org] && (goal || a.r === 'SAVE')) {
+      push(g.org, a, g.bib, goal ? 'GR' : 'GS', {zone, gz: GZ[a.gz] ? a.gz : ''});
+    }
+  }
+  for (const list of Object.values(ev)) list.sort((x, y) => x.sec - y.sec);
+  return ev;
+}
+
+/* エントリー名簿 → 「性別/国/氏名」で引ける登録番号表。
+   同姓同名（例: HKG の KAN Yik が2名）は曖昧なので引けないようにしておく。 */
+let ROSTER = {byName: new Map(), valid: new Set()};
+function buildRoster(roster) {
+  const byName = new Map(), valid = new Set(), dup = new Set();
+  for (const p of roster?.participants || []) {
+    const k = `${p.gender}/${p.org}/${S(p.name).toUpperCase()}`;
+    if (byName.has(k)) dup.add(k); else byName.set(k, S(p.reg));
+    valid.add(S(p.reg));
+  }
+  for (const k of dup) byName.delete(k);
+  return {byName, valid};
+}
+
+/* 選手登録番号（顔写真の取得に使う）を、アクションの出演者から拾う */
+function regMap(acts, teams) {
+  const out = {};
+  for (const org of Object.keys(teams)) out[org] = {};
+  for (const a of acts) {
+    for (const c of a.c || []) {
+      if (c.bib && c.reg && out[c.org] && !out[c.org][c.bib]) out[c.org][c.bib] = S(c.reg);
+    }
+  }
+  const gkOf = gkRegMap(acts, teams);
+  for (const [reg, g] of Object.entries(gkOf)) {
+    if (out[g.org] && !out[g.org][g.bib]) out[g.org][g.bib] = reg;
+  }
+  return out;
+}
+
 function buildPlay(rawActions, teams) {
   const acts = (rawActions || []).map(normAction).sort((x, y) => x.o - y.o);
   const byOrg = {};
@@ -461,10 +579,25 @@ function buildMatchFile(key, res, listed, rawActions) {
   }
   /* ポゼッション・リバウンド・数的状況・時間帯 */
   const orgsAll = Object.keys(teams);
-  const pos = buildPossessions((rawActions || []).map(normAction).sort((x, y) => x.o - y.o), teams, orgsAll);
+  const sorted = (rawActions || []).map(normAction).sort((x, y) => x.o - y.o);
+  const pos = buildPossessions(sorted, teams, orgsAll);
   for (const [org, p] of Object.entries(pos)) {
     if (!teams[org]) continue;
     Object.assign(teams[org], p);
+  }
+
+  /* 選手別の記号タイムライン + 登録番号（顔写真用）。
+     名簿（氏名一致）を第一候補、プレーバイプレー由来を補欠とする。 */
+  const evs = buildEvents(sorted, teams);
+  const regs = regMap(sorted, teams);
+  const gender = S(res.Info?.Event || listed?.event).startsWith('W') ? 'W' : 'M';
+  for (const org of orgsAll) {
+    teams[org].events = evs[org] || [];
+    for (const p of teams[org].players) {
+      const byName = ROSTER.byName.get(`${gender}/${org}/${S(p.name).toUpperCase()}`);
+      const byPlay = regs[org]?.[p.bib] || '';
+      p.reg = byName || (ROSTER.valid.size && !ROSTER.valid.has(byPlay) ? '' : byPlay);
+    }
   }
 
   const order = (res.Competitors || []).map(c => c.Org);
@@ -549,6 +682,25 @@ async function main() {
   const events = (disc.Events || []).map(e => ({
     key: e.EvKey, desc: e.Desc, gender: String(e.EvKey).startsWith('W') ? 'W' : 'M',
   }));
+
+  /* エントリー名簿（選手登録番号 = 顔写真のファイル名）。
+     公式APIが落ちていても既存の名簿を使い続けられるように、取れなければ前回分を読む。 */
+  let roster = null;
+  try {
+    const ent = bundle ? bundle.entries : await api(`/${DISC}/entries/list`, {optional: true});
+    const ps = (ent?.participants || []).filter(p => S(p.Type) === 'A');
+    if (ps.length) {
+      roster = {
+        updatedAt: new Date().toISOString(),
+        participants: ps.map(p => ({reg: S(p.Reg), org: S(p.Org), gender: S(p.Gender), name: S(p.Name)})),
+      };
+      await writeIfChanged(path.join(DATA, 'entries.json'), roster);
+    }
+  } catch { /* 名簿が取れなくても他の処理は続ける */ }
+  if (!roster) {
+    try { roster = JSON.parse(await fs.readFile(path.join(DATA, 'entries.json'), 'utf8')); } catch {}
+  }
+  ROSTER = buildRoster(roster);
 
   const targetDays = ONLY_DAY ? [ONLY_DAY] : days;
   const matches = [];

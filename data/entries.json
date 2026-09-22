@@ -1,0 +1,606 @@
+{
+ "updatedAt": "2026-09-22T00:00:00Z",
+ "partial": true,
+ "participants": [
+  {
+   "reg": "12430569",
+   "org": "CHN",
+   "gender": "M",
+   "name": "CHEN Minghao"
+  },
+  {
+   "reg": "12430971",
+   "org": "CHN",
+   "gender": "M",
+   "name": "CHEN Xu"
+  },
+  {
+   "reg": "12431796",
+   "org": "CHN",
+   "gender": "M",
+   "name": "HE Xinian"
+  },
+  {
+   "reg": "10933057",
+   "org": "CHN",
+   "gender": "W",
+   "name": "HOU Changqing"
+  },
+  {
+   "reg": "12431954",
+   "org": "CHN",
+   "gender": "M",
+   "name": "HU Jinming"
+  },
+  {
+   "reg": "10933406",
+   "org": "CHN",
+   "gender": "W",
+   "name": "HUANG Sitong"
+  },
+  {
+   "reg": "10933599",
+   "org": "CHN",
+   "gender": "W",
+   "name": "JIANG Xintong"
+  },
+  {
+   "reg": "12432482",
+   "org": "CHN",
+   "gender": "M",
+   "name": "LI Shuang"
+  },
+  {
+   "reg": "12432667",
+   "org": "CHN",
+   "gender": "M",
+   "name": "LI Shuo"
+  },
+  {
+   "reg": "12432905",
+   "org": "CHN",
+   "gender": "M",
+   "name": "LI Xiangjie"
+  },
+  {
+   "reg": "10934041",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LI Xiaoqing"
+  },
+  {
+   "reg": "10934470",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LIANG Jing"
+  },
+  {
+   "reg": "6597665",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LIU Chan"
+  },
+  {
+   "reg": "10935021",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LIU Xuedan"
+  },
+  {
+   "reg": "10935285",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LIU Yuting"
+  },
+  {
+   "reg": "10935479",
+   "org": "CHN",
+   "gender": "W",
+   "name": "LU Chang"
+  },
+  {
+   "reg": "10935592",
+   "org": "CHN",
+   "gender": "W",
+   "name": "PAN Fengying"
+  },
+  {
+   "reg": "10935782",
+   "org": "CHN",
+   "gender": "W",
+   "name": "QU Wenna"
+  },
+  {
+   "reg": "12434112",
+   "org": "CHN",
+   "gender": "M",
+   "name": "RAO Yuanyuan"
+  },
+  {
+   "reg": "10936002",
+   "org": "CHN",
+   "gender": "W",
+   "name": "SHI Zihan"
+  },
+  {
+   "reg": "12434390",
+   "org": "CHN",
+   "gender": "M",
+   "name": "SONG Ziyang"
+  },
+  {
+   "reg": "12434568",
+   "org": "CHN",
+   "gender": "M",
+   "name": "SUN Fangwei"
+  },
+  {
+   "reg": "12434726",
+   "org": "CHN",
+   "gender": "M",
+   "name": "WANG Hao"
+  },
+  {
+   "reg": "12435346",
+   "org": "CHN",
+   "gender": "M",
+   "name": "WANG Xiaofeng"
+  },
+  {
+   "reg": "12435970",
+   "org": "CHN",
+   "gender": "M",
+   "name": "XIE Qinglong"
+  },
+  {
+   "reg": "10937432",
+   "org": "CHN",
+   "gender": "W",
+   "name": "YANG Yue"
+  },
+  {
+   "reg": "10937611",
+   "org": "CHN",
+   "gender": "W",
+   "name": "YUAN Lingjie"
+  },
+  {
+   "reg": "12436787",
+   "org": "CHN",
+   "gender": "M",
+   "name": "ZHANG Jianjie"
+  },
+  {
+   "reg": "10938587",
+   "org": "CHN",
+   "gender": "W",
+   "name": "ZHANG Pingping"
+  },
+  {
+   "reg": "12437008",
+   "org": "CHN",
+   "gender": "M",
+   "name": "ZHANG Tianjin"
+  },
+  {
+   "reg": "12437218",
+   "org": "CHN",
+   "gender": "M",
+   "name": "ZHAO Kai"
+  },
+  {
+   "reg": "10939215",
+   "org": "CHN",
+   "gender": "W",
+   "name": "ZHENG Yun"
+  },
+  {
+   "reg": "12437474",
+   "org": "CHN",
+   "gender": "M",
+   "name": "ZHOU Ao"
+  },
+  {
+   "reg": "12438071",
+   "org": "CHN",
+   "gender": "M",
+   "name": "ZHU Zhengxiang"
+  },
+  {
+   "reg": "4006547",
+   "org": "HKG",
+   "gender": "W",
+   "name": "CHAN Kam"
+  },
+  {
+   "reg": "12040748",
+   "org": "HKG",
+   "gender": "M",
+   "name": "CHAN Tsz"
+  },
+  {
+   "reg": "4005704",
+   "org": "HKG",
+   "gender": "W",
+   "name": "CHEUNG Man"
+  },
+  {
+   "reg": "4007726",
+   "org": "HKG",
+   "gender": "W",
+   "name": "CHEUNG Mei"
+  },
+  {
+   "reg": "4005967",
+   "org": "HKG",
+   "gender": "W",
+   "name": "CHONG Sze"
+  },
+  {
+   "reg": "12041140",
+   "org": "HKG",
+   "gender": "M",
+   "name": "CHUNG Shu"
+  },
+  {
+   "reg": "4006774",
+   "org": "HKG",
+   "gender": "W",
+   "name": "FUNG Sze"
+  },
+  {
+   "reg": "12041295",
+   "org": "HKG",
+   "gender": "M",
+   "name": "HON Hok"
+  },
+  {
+   "reg": "1498133",
+   "org": "HKG",
+   "gender": "W",
+   "name": "HUNG Cheuk"
+  },
+  {
+   "reg": "4002437",
+   "org": "HKG",
+   "gender": "W",
+   "name": "HUNG Sin"
+  },
+  {
+   "reg": "12045943",
+   "org": "HKG",
+   "gender": "M",
+   "name": "KAN Yik"
+  },
+  {
+   "reg": "12041638",
+   "org": "HKG",
+   "gender": "M",
+   "name": "KAN Yik"
+  },
+  {
+   "reg": "12045256",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LAU Ka"
+  },
+  {
+   "reg": "12045668",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LAW Chun"
+  },
+  {
+   "reg": "12042385",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LEE Hau"
+  },
+  {
+   "reg": "12042282",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LEE Siu"
+  },
+  {
+   "reg": "12043082",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LEUNG Laam"
+  },
+  {
+   "reg": "12043253",
+   "org": "HKG",
+   "gender": "M",
+   "name": "LIN Yun"
+  },
+  {
+   "reg": "4004849",
+   "org": "HKG",
+   "gender": "W",
+   "name": "LIU Ho"
+  },
+  {
+   "reg": "4002768",
+   "org": "HKG",
+   "gender": "W",
+   "name": "LO Kei"
+  },
+  {
+   "reg": "4006138",
+   "org": "HKG",
+   "gender": "W",
+   "name": "SZE Yan"
+  },
+  {
+   "reg": "4005145",
+   "org": "HKG",
+   "gender": "W",
+   "name": "TAI Tsz"
+  },
+  {
+   "reg": "4003219",
+   "org": "HKG",
+   "gender": "W",
+   "name": "TSANG Yuen"
+  },
+  {
+   "reg": "12045563",
+   "org": "HKG",
+   "gender": "M",
+   "name": "TSE Wing"
+  },
+  {
+   "reg": "12043964",
+   "org": "HKG",
+   "gender": "M",
+   "name": "WONG Kin"
+  },
+  {
+   "reg": "12044235",
+   "org": "HKG",
+   "gender": "M",
+   "name": "WONG Ling"
+  },
+  {
+   "reg": "4008200",
+   "org": "HKG",
+   "gender": "W",
+   "name": "WONG Yee"
+  },
+  {
+   "reg": "4002070",
+   "org": "HKG",
+   "gender": "W",
+   "name": "WU Lei"
+  },
+  {
+   "reg": "4003064",
+   "org": "HKG",
+   "gender": "W",
+   "name": "YEUNG Chun"
+  },
+  {
+   "reg": "12044423",
+   "org": "HKG",
+   "gender": "M",
+   "name": "YIP Chi"
+  },
+  {
+   "reg": "4006421",
+   "org": "HKG",
+   "gender": "W",
+   "name": "YIU Hei"
+  },
+  {
+   "reg": "12044597",
+   "org": "HKG",
+   "gender": "M",
+   "name": "ZOU Yuk"
+  },
+  {
+   "reg": "8528203",
+   "org": "KOR",
+   "gender": "W",
+   "name": "CHA Seoyeon"
+  },
+  {
+   "reg": "8534238",
+   "org": "KOR",
+   "gender": "W",
+   "name": "GIM Boeun"
+  },
+  {
+   "reg": "8529847",
+   "org": "KOR",
+   "gender": "M",
+   "name": "HA Min"
+  },
+  {
+   "reg": "8524500",
+   "org": "KOR",
+   "gender": "W",
+   "name": "HAN Miseul"
+  },
+  {
+   "reg": "8537376",
+   "org": "KOR",
+   "gender": "M",
+   "name": "JEON Jinsoo"
+  },
+  {
+   "reg": "8534071",
+   "org": "KOR",
+   "gender": "W",
+   "name": "JEON Jiyeon"
+  },
+  {
+   "reg": "8535782",
+   "org": "KOR",
+   "gender": "W",
+   "name": "JEONG Jinhui"
+  },
+  {
+   "reg": "8530782",
+   "org": "KOR",
+   "gender": "M",
+   "name": "JIN Yusung"
+  },
+  {
+   "reg": "8535590",
+   "org": "KOR",
+   "gender": "W",
+   "name": "JO Eunbeen"
+  },
+  {
+   "reg": "8524327",
+   "org": "KOR",
+   "gender": "W",
+   "name": "KANG Eunhye"
+  },
+  {
+   "reg": "8536998",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Donguk"
+  },
+  {
+   "reg": "8530064",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Jinho"
+  },
+  {
+   "reg": "8528902",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Jinyoung"
+  },
+  {
+   "reg": "8532837",
+   "org": "KOR",
+   "gender": "W",
+   "name": "KIM Minseo"
+  },
+  {
+   "reg": "8530950",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Rakchan"
+  },
+  {
+   "reg": "8526420",
+   "org": "KOR",
+   "gender": "W",
+   "name": "KIM Sora"
+  },
+  {
+   "reg": "8530598",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Taegwan"
+  },
+  {
+   "reg": "8536634",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Taeung"
+  },
+  {
+   "reg": "8536213",
+   "org": "KOR",
+   "gender": "M",
+   "name": "KIM Yeonbin"
+  },
+  {
+   "reg": "8540033",
+   "org": "KOR",
+   "gender": "W",
+   "name": "KWON Han"
+  },
+  {
+   "reg": "8532956",
+   "org": "KOR",
+   "gender": "W",
+   "name": "LEE Hyewon"
+  },
+  {
+   "reg": "8533852",
+   "org": "KOR",
+   "gender": "W",
+   "name": "LEE Wonjung"
+  },
+  {
+   "reg": "8533273",
+   "org": "KOR",
+   "gender": "W",
+   "name": "LEE Yeongyeong"
+  },
+  {
+   "reg": "8530395",
+   "org": "KOR",
+   "gender": "M",
+   "name": "LEE Yoseb"
+  },
+  {
+   "reg": "8526210",
+   "org": "KOR",
+   "gender": "M",
+   "name": "PARK Jaeyong"
+  },
+  {
+   "reg": "8538240",
+   "org": "KOR",
+   "gender": "M",
+   "name": "PARK Kwangsoon"
+  },
+  {
+   "reg": "8533112",
+   "org": "KOR",
+   "gender": "W",
+   "name": "PARK Saeyoung"
+  },
+  {
+   "reg": "8529236",
+   "org": "KOR",
+   "gender": "M",
+   "name": "PARK Seung"
+  },
+  {
+   "reg": "8531644",
+   "org": "KOR",
+   "gender": "W",
+   "name": "RYU Eun"
+  },
+  {
+   "reg": "8537203",
+   "org": "KOR",
+   "gender": "M",
+   "name": "SONG Jeawoo"
+  },
+  {
+   "reg": "8528573",
+   "org": "KOR",
+   "gender": "M",
+   "name": "WON Minjun"
+  },
+  {
+   "reg": "8524636",
+   "org": "KOR",
+   "gender": "W",
+   "name": "WON Seonpil"
+  },
+  {
+   "reg": "8535977",
+   "org": "KOR",
+   "gender": "W",
+   "name": "WOO Bitna"
+  },
+  {
+   "reg": "8527560",
+   "org": "KOR",
+   "gender": "M",
+   "name": "YEON Minmo"
+  }
+ ]
+}

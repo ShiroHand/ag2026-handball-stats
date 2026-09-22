@@ -1,6 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
-        params, setParam, flagImg, CAT} from './core.js';
-import {hbars} from './charts.js';
+        params, setParam, flagImg, photoImg, CAT} from './core.js';
 
 const app = q('#app');
 let T = null;
@@ -62,9 +61,9 @@ function render() {
       el('h2', {text: '得点ランキング（実施済み試合の累計）'}),
       el('div', {class: 'grid g2'},
         el('div', {}, el('div', {class: 'sub', text: '得点'}),
-          hbars(scorers.slice(0, 12), {valueKey: 'v', labelKey: 'label', color: CAT[0]})),
+          leaderList(scorers.slice(0, 12), CAT[0])),
         el('div', {}, el('div', {class: 'sub', text: 'GKセーブ数'}),
-          hbars(topSavers(gender).slice(0, 12), {valueKey: 'v', labelKey: 'label', color: CAT[3]})))));
+          leaderList(topSavers(gender).slice(0, 12), CAT[3])))));
   }
 
   /* ---- 日程・結果 ---- */
@@ -151,6 +150,26 @@ function matchRow(m) {
 const RANK = {};       // gender -> {scorers, savers}
 let _details = null;
 
+/* 顔写真つきランキング */
+function leaderList(rows, color) {
+  if (!rows.length) return el('div', {class: 'empty', text: 'データがありません'});
+  const max = Math.max(...rows.map(r => r.v), 1);
+  const box = el('div', {class: 'lead'});
+  rows.forEach((r, i) => {
+    const bar = el('span', {class: 'lead-fill'});
+    bar.style.width = (r.v / max * 100) + '%';
+    bar.style.background = color;
+    box.append(el('div', {class: 'lead-row'},
+      el('span', {class: 'lead-rank', text: i + 1}),
+      photoImg(r.reg, r.name, 'photo sm'),
+      flagImg(r.code, 'flag sm'),
+      el('span', {class: 'lead-name', text: r.name}),
+      el('span', {class: 'lead-bar'}, bar),
+      el('span', {class: 'lead-val num', text: r.v})));
+  });
+  return box;
+}
+
 function topScorers(g) { return RANK[g]?.scorers || []; }
 function topSavers(g) { return RANK[g]?.savers || []; }
 
@@ -164,12 +183,18 @@ async function buildRanking(g) {
   const sc = new Map(), sv = new Map();
   files.filter(f => f.gender === g).forEach(f => {
     Object.values(f.teams).forEach(tm => tm.players.forEach(p => {
-      const key = `${tm.code}  ${p.nameS || p.name}`;
+      const key = `${tm.code}|${p.bib}|${p.nameS || p.name}`;
       const goals = n(p.stats.GOALS), saves = n(p.stats.GK_SAVES);
-      if (goals) sc.set(key, (sc.get(key) || 0) + goals);
-      if (saves) sv.set(key, (sv.get(key) || 0) + saves);
+      const put = (m, v) => {
+        const cur = m.get(key) || {code: tm.code, name: p.nameS || p.name, reg: p.reg || '', v: 0};
+        cur.v += v;
+        if (!cur.reg && p.reg) cur.reg = p.reg;
+        m.set(key, cur);
+      };
+      if (goals) put(sc, goals);
+      if (saves) put(sv, saves);
     }));
   });
-  const rows = (m) => [...m.entries()].sort((a, b) => b[1] - a[1]).map(([label, v]) => ({label, v}));
+  const rows = (m) => [...m.values()].sort((a, b) => b.v - a.v);
   RANK[g] = {scorers: rows(sc), savers: rows(sv)};
 }

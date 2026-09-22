@@ -129,8 +129,7 @@ export function renderChrome(active, tournament) {
         el('a', {href: 'match.html', class: active === 'match' ? 'on' : '', text: '試合レポート'}),
         el('a', {href: 'team.html', class: active === 'team' ? 'on' : '', text: 'チーム分析（攻撃）'}),
         el('a', {href: 'defense.html', class: active === 'defense' ? 'on' : '', text: '守備分析'}),
-        el('a', {href: 'situations.html', class: active === 'situations' ? 'on' : '', text: '局面分析'}),
-        el('a', {href: 'entry.html', class: active === 'entry' ? 'on' : '', text: 'データ入力'})),
+        el('a', {href: 'situations.html', class: active === 'situations' ? 'on' : '', text: '局面分析'})),
       el('div', {class: 'spacer'}),
       el('div', {class: 'stamp'},
         el('div', {text: 'データ更新: ' + (t.updatedAt ? jpStamp(t.updatedAt) : '—')}),
@@ -145,7 +144,35 @@ export function renderChrome(active, tournament) {
 
 export function renderFoot() {
   document.body.append(el('footer', {class: 'foot'},
-    '公式リザルトシステムのデータを自動取得して表示しています。戦術・システム情報は手入力データ（data/manual/）で補完されます。'));
+    '公式リザルトシステムのデータを自動取得して表示しています。選手の顔写真・記録はすべて公式リザルト由来です。'));
+}
+
+/* ---------- 選手の顔写真 ----------
+   公式の写真を scripts/fetch-photos.mjs が assets/photos/<登録番号>.jpg に取り込む。
+   未取得・登録番号なしのときは頭文字のバッジで代替する。 */
+export const photoLocal = (reg) => `assets/photos/${reg}.jpg`;
+export function initials(name) {
+  const s = String(name || '').trim();
+  if (!s) return '?';
+  const parts = s.split(/\s+/);
+  const a = (parts[0] || '')[0] || '';
+  const b = (parts[1] || '')[0] || (parts[0] || '')[1] || '';
+  return (a + b).toUpperCase();
+}
+/* まず頭文字バッジを出し、写真が読めたら差し替える。
+   （img を先に置くと、読み込み中や404のあいだ空の丸が見えてしまうため） */
+export function photoImg(reg, name, cls = 'photo') {
+  const ph = el('span', {class: cls + ' photo-ph', text: initials(name), title: name || ''});
+  if (!reg) return ph;
+  const probe = new Image();
+  probe.onload = () => {
+    if (!ph.isConnected) return;
+    const img = el('img', {class: cls, alt: name || '', title: name || ''});
+    img.src = probe.src;
+    ph.replaceWith(img);
+  };
+  probe.src = photoLocal(reg);
+  return ph;
 }
 
 /* ---------- ページ内セクション目次 ----------

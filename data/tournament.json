@@ -37,7 +37,7 @@
   },
   {
    "code": "CHN",
-   "name": "China",
+   "name": "People's Republic of China",
    "gender": "M",
    "event": "M.TEAM7-------------",
    "played": 2
@@ -51,10 +51,10 @@
   },
   {
    "code": "IRI",
-   "name": "IR Iran",
+   "name": "Islamic Republic of Iran",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 2
   },
   {
    "code": "JPN",
@@ -68,21 +68,21 @@
    "name": "Kazakhstan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 1
   },
   {
    "code": "KOR",
-   "name": "Korea",
+   "name": "Republic of Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 1
   },
   {
    "code": "KUW",
    "name": "Kuwait",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 2
   },
   {
    "code": "QAT",
@@ -93,35 +93,35 @@
   },
   {
    "code": "CHN",
-   "name": "China",
+   "name": "People's Republic of China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 1
   },
   {
    "code": "HKG",
    "name": "Hong Kong, China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 2
   },
   {
    "code": "JPN",
    "name": "Japan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 2
   },
   {
    "code": "KAZ",
    "name": "Kazakhstan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 2
   },
   {
    "code": "KOR",
-   "name": "Korea",
+   "name": "Republic of Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
    "played": 2
@@ -131,14 +131,14 @@
    "name": "Uzbekistan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 1
   },
   {
    "code": "VIE",
    "name": "Vietnam",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 2
   }
  ],
  "matches": [
@@ -160,7 +160,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "48",
     "winner": true
    },
@@ -197,7 +197,7 @@
    },
    "away": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "34",
     "winner": true
    },
@@ -253,7 +253,7 @@
    "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "IR Iran",
+    "name": "Islamic Republic of Iran",
     "score": "24",
     "winner": false
    },
@@ -315,7 +315,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "42",
     "winner": true
    },
@@ -346,7 +346,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "27",
     "winner": false
    },
@@ -501,7 +501,7 @@
    "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "IR Iran",
+    "name": "Islamic Republic of Iran",
     "score": "20",
     "winner": false
    },
@@ -532,7 +532,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "26",
     "winner": true
    },
@@ -563,7 +563,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "25",
     "winner": false
    },
@@ -589,23 +589,22 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 7",
    "unitNum": "17",
-   "status": "OFFICIAL",
-   "statusDesc": "Official",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "25",
+    "score": "",
     "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "29",
-    "winner": true
+    "score": "",
+    "winner": false
    },
-   "hasResult": true,
-   "hasStats": true
+   "hasResult": false
   },
   {
    "id": "M-GPB-000500",
@@ -620,23 +619,22 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 5",
    "unitNum": "15",
-   "status": "OFFICIAL",
-   "statusDesc": "Official",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
     "code": "KUW",
     "name": "Kuwait",
-    "score": "43",
-    "winner": true
+    "score": "",
+    "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "19",
+    "score": "",
     "winner": false
    },
-   "hasResult": true,
-   "hasStats": true
+   "hasResult": false
   },
   {
    "id": "W-FNL-000800",
@@ -651,23 +649,22 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 8",
    "unitNum": "18",
-   "status": "OFFICIAL",
-   "statusDesc": "Official",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "16",
+    "score": "",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "39",
-    "winner": true
+    "score": "",
+    "winner": false
    },
-   "hasResult": true,
-   "hasStats": true
+   "hasResult": false
   },
   {
    "id": "M-GPB-000600",
@@ -682,23 +679,22 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 6",
    "unitNum": "16",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "IR Iran",
-    "score": "14",
+    "name": "Islamic Republic of Iran",
+    "score": "",
     "winner": false
    },
    "away": {
     "code": "KOR",
-    "name": "Korea",
-    "score": "13",
+    "name": "Republic of Korea",
+    "score": "",
     "winner": false
    },
-   "hasResult": true,
-   "hasStats": true
+   "hasResult": false
   },
   {
    "id": "W-FNL-000900",
@@ -713,23 +709,22 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 9",
    "unitNum": "19",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
    "home": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "6",
+    "score": "",
     "winner": false
    },
    "away": {
     "code": "CHN",
-    "name": "China",
-    "score": "18",
+    "name": "People's Republic of China",
+    "score": "",
     "winner": false
    },
-   "hasResult": true,
-   "hasStats": true
+   "hasResult": false
   },
   {
    "id": "M-GPB-000700",
@@ -755,7 +750,7 @@
    },
    "away": {
     "code": "IRI",
-    "name": "IR Iran",
+    "name": "Islamic Republic of Iran",
     "score": "",
     "winner": false
    },
@@ -809,7 +804,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "",
     "winner": false
    },
@@ -845,7 +840,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
@@ -869,7 +864,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
@@ -899,7 +894,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "",
     "winner": false
    },
@@ -1049,13 +1044,13 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
    "away": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "",
     "winner": false
    },
@@ -1085,7 +1080,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
@@ -1199,7 +1194,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "",
     "winner": false
    },
@@ -1259,7 +1254,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
@@ -1349,7 +1344,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "China",
+    "name": "People's Republic of China",
     "score": "",
     "winner": false
    },
@@ -1385,7 +1380,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Korea",
+    "name": "Republic of Korea",
     "score": "",
     "winner": false
    },
@@ -1601,20 +1596,6 @@
       },
       {
        "rank": "2",
-       "org": "KUW",
-       "name": "Kuwait",
-       "pts": "4",
-       "played": "3",
-       "won": "2",
-       "lost": "1",
-       "tied": "0",
-       "for": "92",
-       "against": "69",
-       "diff": "23",
-       "qualified": ""
-      },
-      {
-       "rank": "3",
        "org": "KOR",
        "name": "Korea",
        "pts": "2",
@@ -1625,6 +1606,20 @@
        "for": "26",
        "against": "23",
        "diff": "3",
+       "qualified": ""
+      },
+      {
+       "rank": "3",
+       "org": "KUW",
+       "name": "Kuwait",
+       "pts": "2",
+       "played": "2",
+       "won": "1",
+       "lost": "1",
+       "tied": "0",
+       "for": "49",
+       "against": "50",
+       "diff": "-1",
        "qualified": ""
       },
       {
@@ -1646,13 +1641,13 @@
        "org": "KAZ",
        "name": "Kazakhstan",
        "pts": "0",
-       "played": "2",
+       "played": "1",
        "won": "0",
-       "lost": "2",
+       "lost": "1",
        "tied": "0",
-       "for": "39",
-       "against": "86",
-       "diff": "-47",
+       "for": "20",
+       "against": "43",
+       "diff": "-23",
        "qualified": ""
       }
      ]
@@ -1672,14 +1667,14 @@
        "rank": "1",
        "org": "JPN",
        "name": "Japan",
-       "pts": "6",
-       "played": "3",
-       "won": "3",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
        "lost": "0",
        "tied": "0",
-       "for": "122",
-       "against": "42",
-       "diff": "80",
+       "for": "83",
+       "against": "26",
+       "diff": "57",
        "qualified": ""
       },
       {
@@ -1715,27 +1710,27 @@
        "org": "HKG",
        "name": "Hong Kong, China",
        "pts": "2",
-       "played": "3",
+       "played": "2",
        "won": "1",
-       "lost": "2",
+       "lost": "1",
        "tied": "0",
-       "for": "58",
-       "against": "110",
-       "diff": "-52",
+       "for": "42",
+       "against": "71",
+       "diff": "-29",
        "qualified": ""
       },
       {
        "rank": "5",
-       "org": "KAZ",
-       "name": "Kazakhstan",
-       "pts": "2",
-       "played": "3",
-       "won": "1",
+       "org": "VIE",
+       "name": "Vietnam",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
        "lost": "2",
        "tied": "0",
-       "for": "71",
-       "against": "101",
-       "diff": "-30",
+       "for": "37",
+       "against": "66",
+       "diff": "-29",
        "qualified": ""
       },
       {
@@ -1754,16 +1749,16 @@
       },
       {
        "rank": "7",
-       "org": "VIE",
-       "name": "Vietnam",
+       "org": "KAZ",
+       "name": "Kazakhstan",
        "pts": "0",
-       "played": "3",
+       "played": "2",
        "won": "0",
-       "lost": "3",
+       "lost": "2",
        "tied": "0",
-       "for": "62",
-       "against": "95",
-       "diff": "-33",
+       "for": "42",
+       "against": "76",
+       "diff": "-34",
        "qualified": ""
       }
      ]
@@ -1785,12 +1780,7 @@
   "M-GPA-000300",
   "M-GPB-000300",
   "M-GPB-000400",
-  "M-GPA-000400",
-  "W-FNL-000700",
-  "M-GPB-000500",
-  "W-FNL-000800",
-  "M-GPB-000600",
-  "W-FNL-000900"
+  "M-GPA-000400"
  ],
- "updatedAt": "2026-09-22T09:07:03.114Z"
+ "updatedAt": "2026-09-22T09:32:43.900Z"
 }

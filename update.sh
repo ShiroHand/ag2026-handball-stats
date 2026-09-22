@@ -27,12 +27,15 @@ fi
 echo "▶ 国旗画像を確認します"
 node scripts/fetch-flags.mjs || true
 
-if git diff --quiet -- data assets/flags; then
+echo "▶ 選手の顔写真を確認します"
+node scripts/fetch-photos.mjs || true
+
+if git diff --quiet -- data assets/flags assets/photos; then
   echo "✔ 変更はありませんでした（すでに最新です）"
   exit 0
 fi
 
-git add data assets/flags
+git add data assets/flags assets/photos
 git commit --quiet -m "データ更新: $(date '+%Y-%m-%d %H:%M JST')"
 git push --quiet
 echo "✔ 更新して公開しました。1〜2分でサイトに反映されます。"

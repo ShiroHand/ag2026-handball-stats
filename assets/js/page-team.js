@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
+        params, setParam, flagImg, photoImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 
@@ -63,6 +63,7 @@ function agg(list) {
       if (!players.has(key)) players.set(key, {...p, stats: {}, games: 0, shot: {}, gk: {}});
       const a = players.get(key);
       a.games++;
+      if (!a.reg && p.reg) a.reg = p.reg;        // 登録番号（顔写真）は取れた試合のものを使う
       Object.entries(p.stats).forEach(([k, v]) => {
         if (/PERCENT|EFFICIENCY/.test(k)) return;
         a.stats[k] = (a.stats[k] || 0) + n(v);
@@ -245,7 +246,9 @@ function playersCard(A, games) {
     const st = p.stats, g = n(st.GOALS), s = n(st.SHOTS), sv = n(st.GK_SAVES), gs = n(st.GK_SHOTS);
     tb.append(el('tr', {},
       el('td', {class: 'num muted', text: p.bib}),
-      el('td', {text: p.nameS || p.name}),
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        photoImg(p.reg, p.nameS || p.name, 'photo sm'),
+        el('span', {text: p.nameS || p.name}))),
       el('td', {text: shortRole(p.role)}),
       el('td', {class: 'num', text: p.games}),
       el('td', {class: 'num', text: fmtSec(n(st.TIME_PLAYED))}),

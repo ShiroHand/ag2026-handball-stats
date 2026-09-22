@@ -1,7 +1,8 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES, sectionNav} from './core.js';
+        params, setParam, flagImg, photoImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, lineChart} from './charts.js';
 import {connectionSection, mergeConnections} from './connections.js';
+import {eventGridSection, symbolLegend} from './eventgrid.js';
 
 const app = q('#app');
 let T = null, M = null, MAN = null;
@@ -56,13 +57,9 @@ function render() {
     subtitle: 'この試合でどの選手・どのポジションから得点が生まれたか',
     emptyNote: 'この試合はアシストの記録がありません。',
   })));
+  [H, A].forEach(t => app.append(eventCard(t)));
   [H, A].forEach(t => app.append(playersCard(t)));
   if (MAN) app.append(manualCard());
-  else app.append(el('div', {class: 'card'},
-    el('h2', {text: '戦術・システム（手入力データ）'}),
-    el('div', {class: 'notice'},
-      `この試合の手入力データ（data/manual/${M.id}.json）はまだありません。`,
-      el('br'), '「データ入力」画面から攻撃システム・連携・タイムラインなどを追加できます。')));
 
   sectionNav(app);
 }
@@ -225,6 +222,19 @@ function gkCard(H, A) {
 }
 
 /* ------------------------------------------------------------------ 選手 */
+/* ------------------------------------------------------- 選手別イベント（記号） */
+function eventCard(t) {
+  /* 横軸の長さは延長を含めた実際の試合時間に合わせる */
+  const maxEv = Math.max(3600, ...(t.events || []).map(e => e.sec || 0));
+  const maxSec = Math.ceil(maxEv / 300) * 300;
+  const grid = eventGridSection(t, {maxSec});
+  return el('div', {class: 'card'},
+    el('h2', {}, flagImg(t.code, 'flag sm'), el('span', {text: ` ${t.name} — 選手別イベント`})),
+    el('div', {class: 'sub', text: '横軸は試合の経過時間。記号にカーソルを合わせると時刻と位置が出ます。'}),
+    grid,
+    symbolLegend(grid.usedSymbols));
+}
+
 function playersCard(t) {
   const ps = t.players.slice().sort((a, b) =>
     n(b.stats.TIME_PLAYED) - n(a.stats.TIME_PLAYED) || n(b.stats.GOALS) - n(a.stats.GOALS));
@@ -241,7 +251,8 @@ function playersCard(t) {
     T0.bd += n(st.BLOCKED); T0.tm += n(st['2MINUTES']); T0.sv += sv; T0.gs += gs;
     tb.append(el('tr', {},
       el('td', {class: 'num muted', text: p.bib}),
-      el('td', {}, el('div', {class: 'row', style: {gap: '6px'}},
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        photoImg(p.reg, p.nameS || p.name, 'photo sm'),
         el('span', {text: p.nameS || p.name}), p.captain ? el('span', {class: 'tag', text: 'C'}) : null)),
       el('td', {text: shortRole(p.role)}),
       el('td', {class: 'num', text: p.time || fmtSec(n(st.TIME_PLAYED))}),
