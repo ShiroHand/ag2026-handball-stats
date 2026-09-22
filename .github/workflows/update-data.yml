@@ -53,8 +53,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data assets/flags assets/photos
           if git diff --cached --quiet; then
-            echo "変更なし"
-          else
-            git commit -m "データ更新: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
-            git push
+            echo "変更なし"; exit 0
           fi
+          git commit -m "データ更新: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+          for i in 1 2 3; do
+            git push && exit 0
+            echo "push が弾かれました。取り込み直して再試行 ($i/3)"
+            git pull --rebase
+          done
+          echo "3回試しても push できませんでした" >&2; exit 1
