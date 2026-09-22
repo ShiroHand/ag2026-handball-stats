@@ -1,7 +1,108 @@
 {
- "updatedAt": "2026-09-22T00:00:00Z",
- "partial": true,
+ "updatedAt": "2026-09-22T09:41:00.151Z",
  "participants": [
+  {
+   "reg": "649612",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ABDULKARIM Abdulla"
+  },
+  {
+   "reg": "741675",
+   "org": "BRN",
+   "gender": "M",
+   "name": "AHMED Mohamed"
+  },
+  {
+   "reg": "4465350",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ALI Hasan"
+  },
+  {
+   "reg": "10101607",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ALI Mohamed"
+  },
+  {
+   "reg": "13653539",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ALSAYYAD Husain"
+  },
+  {
+   "reg": "13661109",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ALSHOWAIKH Salman"
+  },
+  {
+   "reg": "15851349",
+   "org": "BRN",
+   "gender": "M",
+   "name": "EID Ahmed"
+  },
+  {
+   "reg": "10111504",
+   "org": "BRN",
+   "gender": "M",
+   "name": "FADHUL Ahmed"
+  },
+  {
+   "reg": "651531",
+   "org": "BRN",
+   "gender": "M",
+   "name": "FARSAN Jaffar"
+  },
+  {
+   "reg": "13654776",
+   "org": "BRN",
+   "gender": "M",
+   "name": "ISA Hesham"
+  },
+  {
+   "reg": "739571",
+   "org": "BRN",
+   "gender": "M",
+   "name": "KADHEM Ahmed"
+  },
+  {
+   "reg": "742310",
+   "org": "BRN",
+   "gender": "M",
+   "name": "KHAMIS Jasim"
+  },
+  {
+   "reg": "15468988",
+   "org": "BRN",
+   "gender": "M",
+   "name": "MADAN Hasan"
+  },
+  {
+   "reg": "742838",
+   "org": "BRN",
+   "gender": "M",
+   "name": "MOHAMED Ali"
+  },
+  {
+   "reg": "645823",
+   "org": "BRN",
+   "gender": "M",
+   "name": "MOHAMED Mohamed"
+  },
+  {
+   "reg": "648953",
+   "org": "BRN",
+   "gender": "M",
+   "name": "RABIA Mohamed"
+  },
+  {
+   "reg": "747215",
+   "org": "BRN",
+   "gender": "M",
+   "name": "SHUBBAR Sayed"
+  },
   {
    "reg": "12430569",
    "org": "CHN",
@@ -399,6 +500,486 @@
    "name": "ZOU Yuk"
   },
   {
+   "reg": "12386294",
+   "org": "IRI",
+   "gender": "M",
+   "name": "ADELKHANI Roohollah"
+  },
+  {
+   "reg": "12381313",
+   "org": "IRI",
+   "gender": "M",
+   "name": "AMIRYOUSEFI Ali"
+  },
+  {
+   "reg": "12383716",
+   "org": "IRI",
+   "gender": "M",
+   "name": "ASARI Younes"
+  },
+  {
+   "reg": "12385868",
+   "org": "IRI",
+   "gender": "M",
+   "name": "BEHNAMNIA MOHAMMADMAHDI"
+  },
+  {
+   "reg": "12386402",
+   "org": "IRI",
+   "gender": "M",
+   "name": "ENAYATI Omid"
+  },
+  {
+   "reg": "12382915",
+   "org": "IRI",
+   "gender": "M",
+   "name": "FAROKHI Mohammadhossein"
+  },
+  {
+   "reg": "12385743",
+   "org": "IRI",
+   "gender": "M",
+   "name": "FATEHIZADEH Behshad"
+  },
+  {
+   "reg": "12382039",
+   "org": "IRI",
+   "gender": "M",
+   "name": "GHALANDARI Milad"
+  },
+  {
+   "reg": "12385985",
+   "org": "IRI",
+   "gender": "M",
+   "name": "HEIDARI Saber"
+  },
+  {
+   "reg": "12385520",
+   "org": "IRI",
+   "gender": "M",
+   "name": "HEIDARIAN Ali"
+  },
+  {
+   "reg": "12383126",
+   "org": "IRI",
+   "gender": "M",
+   "name": "KAZEMI Mohammadreza"
+  },
+  {
+   "reg": "12387451",
+   "org": "IRI",
+   "gender": "M",
+   "name": "ORAEI Mohammadreza"
+  },
+  {
+   "reg": "12383404",
+   "org": "IRI",
+   "gender": "M",
+   "name": "PIRZADEH Alireza"
+  },
+  {
+   "reg": "12387585",
+   "org": "IRI",
+   "gender": "M",
+   "name": "RAHNAMA Mehran"
+  },
+  {
+   "reg": "12387854",
+   "org": "IRI",
+   "gender": "M",
+   "name": "ROBAT Omid"
+  },
+  {
+   "reg": "12381198",
+   "org": "IRI",
+   "gender": "M",
+   "name": "SHOKOUHIPOUR Taha"
+  },
+  {
+   "reg": "12381421",
+   "org": "IRI",
+   "gender": "M",
+   "name": "SIAVOSHISHAHENAYATI Mohammad"
+  },
+  {
+   "reg": "908060",
+   "org": "JPN",
+   "gender": "W",
+   "name": "AIZAWA Natsuki"
+  },
+  {
+   "reg": "933788",
+   "org": "JPN",
+   "gender": "M",
+   "name": "BAIG Adam"
+  },
+  {
+   "reg": "932814",
+   "org": "JPN",
+   "gender": "M",
+   "name": "FUJISAKA Naoki"
+  },
+  {
+   "reg": "907327",
+   "org": "JPN",
+   "gender": "W",
+   "name": "FUJITA Asuka"
+  },
+  {
+   "reg": "931190",
+   "org": "JPN",
+   "gender": "M",
+   "name": "GOTO Hayato"
+  },
+  {
+   "reg": "7889874",
+   "org": "JPN",
+   "gender": "W",
+   "name": "GRAY Clare"
+  },
+  {
+   "reg": "929551",
+   "org": "JPN",
+   "gender": "M",
+   "name": "HASHIMOTO Akio"
+  },
+  {
+   "reg": "905263",
+   "org": "JPN",
+   "gender": "W",
+   "name": "HATSUMI Miyako"
+  },
+  {
+   "reg": "904456",
+   "org": "JPN",
+   "gender": "W",
+   "name": "HIGA Kaede"
+  },
+  {
+   "reg": "932036",
+   "org": "JPN",
+   "gender": "M",
+   "name": "ICHIHARA Soya"
+  },
+  {
+   "reg": "907501",
+   "org": "JPN",
+   "gender": "W",
+   "name": "ISHIKAWA Sora"
+  },
+  {
+   "reg": "933901",
+   "org": "JPN",
+   "gender": "M",
+   "name": "IWASHITA Yuta"
+  },
+  {
+   "reg": "908440",
+   "org": "JPN",
+   "gender": "W",
+   "name": "KAMETANI Sakura"
+  },
+  {
+   "reg": "908256",
+   "org": "JPN",
+   "gender": "W",
+   "name": "KINJO Arisa"
+  },
+  {
+   "reg": "902845",
+   "org": "JPN",
+   "gender": "W",
+   "name": "MATSUURA Minami"
+  },
+  {
+   "reg": "934005",
+   "org": "JPN",
+   "gender": "M",
+   "name": "MIZUMACHI Kotaro"
+  },
+  {
+   "reg": "933274",
+   "org": "JPN",
+   "gender": "M",
+   "name": "NAKAMURA Takumi"
+  },
+  {
+   "reg": "903620",
+   "org": "JPN",
+   "gender": "W",
+   "name": "NAKAO Ai"
+  },
+  {
+   "reg": "932450",
+   "org": "JPN",
+   "gender": "M",
+   "name": "NAKATA Kota"
+  },
+  {
+   "reg": "907812",
+   "org": "JPN",
+   "gender": "W",
+   "name": "NAKAYAMA Kaho"
+  },
+  {
+   "reg": "906307",
+   "org": "JPN",
+   "gender": "W",
+   "name": "SAHARA Naoko"
+  },
+  {
+   "reg": "933130",
+   "org": "JPN",
+   "gender": "M",
+   "name": "SAKURAI Tomoya"
+  },
+  {
+   "reg": "908582",
+   "org": "JPN",
+   "gender": "W",
+   "name": "SASAKI Haruno"
+  },
+  {
+   "reg": "933624",
+   "org": "JPN",
+   "gender": "M",
+   "name": "SUGIOKA Naoki"
+  },
+  {
+   "reg": "933423",
+   "org": "JPN",
+   "gender": "M",
+   "name": "TAMAKAWA Hiroyasu"
+  },
+  {
+   "reg": "931886",
+   "org": "JPN",
+   "gender": "M",
+   "name": "TANAKA Daisuke"
+  },
+  {
+   "reg": "932949",
+   "org": "JPN",
+   "gender": "M",
+   "name": "TSUTAYA Taiga"
+  },
+  {
+   "reg": "907648",
+   "org": "JPN",
+   "gender": "W",
+   "name": "UESHIMA Aki"
+  },
+  {
+   "reg": "901927",
+   "org": "JPN",
+   "gender": "W",
+   "name": "WADA Kaoru"
+  },
+  {
+   "reg": "934325",
+   "org": "JPN",
+   "gender": "M",
+   "name": "WATANABE Jin"
+  },
+  {
+   "reg": "906071",
+   "org": "JPN",
+   "gender": "W",
+   "name": "YOSHIDOME Yuki"
+  },
+  {
+   "reg": "934147",
+   "org": "JPN",
+   "gender": "M",
+   "name": "YOSHINO Tatsuki"
+  },
+  {
+   "reg": "8641278",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "ABDIKHAMIT Arailym"
+  },
+  {
+   "reg": "8641566",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "AITENOVA Zhannat"
+  },
+  {
+   "reg": "4619804",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "ANDRUSSYAK Rustam"
+  },
+  {
+   "reg": "4620499",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "GAZIYEV Odilzhan"
+  },
+  {
+   "reg": "4620756",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "IRISMETOV Daniyar"
+  },
+  {
+   "reg": "4621223",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "KALI Asset"
+  },
+  {
+   "reg": "8642526",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "KHARDINA Veronika"
+  },
+  {
+   "reg": "8642622",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "KHASSAKHANOVA Irina"
+  },
+  {
+   "reg": "8643198",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "KUANDYKOVA Zhanerke"
+  },
+  {
+   "reg": "4621581",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "MAKHMUDOV Adam"
+  },
+  {
+   "reg": "4621955",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "MURATOV Daulet"
+  },
+  {
+   "reg": "8643390",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "MYRZAMSEIITOVA Madina"
+  },
+  {
+   "reg": "4622239",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "NABIYEV Assylkhan"
+  },
+  {
+   "reg": "4622122",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "NADYRBEKOV Davlatbek"
+  },
+  {
+   "reg": "4621771",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "OSMANOV Ravil"
+  },
+  {
+   "reg": "4622422",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "OXIKBAYEV Askan"
+  },
+  {
+   "reg": "4622545",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "POBOCHENKO Ilya"
+  },
+  {
+   "reg": "8643102",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "RADAYEVA Kristina"
+  },
+  {
+   "reg": "4622698",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "RAKIMZHANOV Azizzhan"
+  },
+  {
+   "reg": "8643582",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "REJEMETOVA Sevara"
+  },
+  {
+   "reg": "4622937",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "SALMOV Mikhail"
+  },
+  {
+   "reg": "8642814",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "SEITKASSYM Zhanerke"
+  },
+  {
+   "reg": "8642238",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "SITNIKOVA Mariya"
+  },
+  {
+   "reg": "8642334",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "STEPANOVA Kristina"
+  },
+  {
+   "reg": "4623095",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "TILEKKABYL Dauren"
+  },
+  {
+   "reg": "8642430",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "TURSYN Aiym"
+  },
+  {
+   "reg": "4623527",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "YAKUBOVICH Daniil"
+  },
+  {
+   "reg": "4623734",
+   "org": "KAZ",
+   "gender": "M",
+   "name": "YAKUBOVICH Nikita"
+  },
+  {
+   "reg": "8641374",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "ZHAPAROVA Aida"
+  },
+  {
+   "reg": "8641854",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "ZHAPAROVA Damira"
+  },
+  {
+   "reg": "8643294",
+   "org": "KAZ",
+   "gender": "W",
+   "name": "ZVYAGINA Zlata"
+  },
+  {
    "reg": "8528203",
    "org": "KOR",
    "gender": "W",
@@ -601,6 +1182,426 @@
    "org": "KOR",
    "gender": "M",
    "name": "YEON Minmo"
+  },
+  {
+   "reg": "5605839",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALADWANI Humood"
+  },
+  {
+   "reg": "7465081",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALADWANI Saif"
+  },
+  {
+   "reg": "8415966",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALHADDAD Mahdi"
+  },
+  {
+   "reg": "7410519",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALI Saleh"
+  },
+  {
+   "reg": "11711713",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALKHAMEES Abdullah"
+  },
+  {
+   "reg": "9311444",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALMASHARI Fawaz"
+  },
+  {
+   "reg": "9764387",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALMUTAWA Husain"
+  },
+  {
+   "reg": "13265448",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALSANAD Salman"
+  },
+  {
+   "reg": "11719524",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALSANEA Mohamad"
+  },
+  {
+   "reg": "11714624",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALSHAMMARI Abdulaziz"
+  },
+  {
+   "reg": "7411962",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALSHAMMARI Abdulrahman"
+  },
+  {
+   "reg": "15001633",
+   "org": "KUW",
+   "gender": "M",
+   "name": "ALTHAFIRI Abdulaziz"
+  },
+  {
+   "reg": "11722211",
+   "org": "KUW",
+   "gender": "M",
+   "name": "BUYABES Mohammad"
+  },
+  {
+   "reg": "7405119",
+   "org": "KUW",
+   "gender": "M",
+   "name": "DASHTI Haider"
+  },
+  {
+   "reg": "11720713",
+   "org": "KUW",
+   "gender": "M",
+   "name": "GHADANFAR Mohammad"
+  },
+  {
+   "reg": "13263474",
+   "org": "KUW",
+   "gender": "M",
+   "name": "MOHAMMAD Husain"
+  },
+  {
+   "reg": "10230442",
+   "org": "KUW",
+   "gender": "M",
+   "name": "NAJEM Abdulaziz"
+  },
+  {
+   "reg": "355282",
+   "org": "KUW",
+   "gender": "M",
+   "name": "NAJEM Yousef"
+  },
+  {
+   "reg": "10759057",
+   "org": "KUW",
+   "gender": "M",
+   "name": "SAFAR Hasan"
+  },
+  {
+   "reg": "5573545",
+   "org": "KUW",
+   "gender": "M",
+   "name": "SALMEEN Abdulaziz"
+  },
+  {
+   "reg": "13955699",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ABDALLA Abdelrahman"
+  },
+  {
+   "reg": "16629148",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ABDELRHEM Ahmed"
+  },
+  {
+   "reg": "4574161",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ALI Youssef"
+  },
+  {
+   "reg": "7955821",
+   "org": "QAT",
+   "gender": "M",
+   "name": "BERRACHED Allaedine"
+  },
+  {
+   "reg": "7951163",
+   "org": "QAT",
+   "gender": "M",
+   "name": "CAPOTE Rafael"
+  },
+  {
+   "reg": "4573055",
+   "org": "QAT",
+   "gender": "M",
+   "name": "DHIB Saifdinne"
+  },
+  {
+   "reg": "13965879",
+   "org": "QAT",
+   "gender": "M",
+   "name": "EBAID Ebrahim"
+  },
+  {
+   "reg": "16634017",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ELMENIAWY Ahmed"
+  },
+  {
+   "reg": "13955250",
+   "org": "QAT",
+   "gender": "M",
+   "name": "GUEHIS Amine"
+  },
+  {
+   "reg": "13961526",
+   "org": "QAT",
+   "gender": "M",
+   "name": "HAMAM Mohamedali"
+  },
+  {
+   "reg": "16628760",
+   "org": "QAT",
+   "gender": "M",
+   "name": "HEIBA Moustafa"
+  },
+  {
+   "reg": "16624351",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MADADI Ahmad"
+  },
+  {
+   "reg": "13956482",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MARZO Frankis"
+  },
+  {
+   "reg": "4566605",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MEGDICH Nasreddine"
+  },
+  {
+   "reg": "7954936",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MEMISEVIC Eldar"
+  },
+  {
+   "reg": "16637053",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MESSAOUD Nidhal"
+  },
+  {
+   "reg": "7954394",
+   "org": "QAT",
+   "gender": "M",
+   "name": "MURAD Abdulrazzaq"
+  },
+  {
+   "reg": "7963924",
+   "org": "QAT",
+   "gender": "M",
+   "name": "SOUSSOU Malek"
+  },
+  {
+   "reg": "13951265",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ZAKKAR Ameen"
+  },
+  {
+   "reg": "4571353",
+   "org": "QAT",
+   "gender": "M",
+   "name": "ZEMZEMI Firas"
+  },
+  {
+   "reg": "5612771",
+   "org": "UZB",
+   "gender": "W",
+   "name": "BAYJANOVA Ilmira"
+  },
+  {
+   "reg": "5612894",
+   "org": "UZB",
+   "gender": "W",
+   "name": "BOTIROVA Zukhra"
+  },
+  {
+   "reg": "6280995",
+   "org": "UZB",
+   "gender": "W",
+   "name": "JURAEVA Mukaddas"
+  },
+  {
+   "reg": "5613345",
+   "org": "UZB",
+   "gender": "W",
+   "name": "KELDIYOROVA Shalola"
+  },
+  {
+   "reg": "5613594",
+   "org": "UZB",
+   "gender": "W",
+   "name": "KHUDOYAROVA Anastasiya"
+  },
+  {
+   "reg": "5613900",
+   "org": "UZB",
+   "gender": "W",
+   "name": "MAMIROVA Turoyim"
+  },
+  {
+   "reg": "5614017",
+   "org": "UZB",
+   "gender": "W",
+   "name": "MARIMBOEVA Zulaykho"
+  },
+  {
+   "reg": "5614223",
+   "org": "UZB",
+   "gender": "W",
+   "name": "MULLAEVA Sabina"
+  },
+  {
+   "reg": "5614619",
+   "org": "UZB",
+   "gender": "W",
+   "name": "POPOVICH Anna"
+  },
+  {
+   "reg": "4770847",
+   "org": "UZB",
+   "gender": "W",
+   "name": "RUZIEVA Ruksshona"
+  },
+  {
+   "reg": "5614962",
+   "org": "UZB",
+   "gender": "W",
+   "name": "SAFAROVA Khusniya"
+  },
+  {
+   "reg": "5615073",
+   "org": "UZB",
+   "gender": "W",
+   "name": "SAPARBAEVA Sarbinaz"
+  },
+  {
+   "reg": "5615430",
+   "org": "UZB",
+   "gender": "W",
+   "name": "SULTANOVA Dilnoza"
+  },
+  {
+   "reg": "5615892",
+   "org": "UZB",
+   "gender": "W",
+   "name": "YUSUFOVA Nilufar"
+  },
+  {
+   "reg": "1506878",
+   "org": "VIE",
+   "gender": "W",
+   "name": "DAM Thi"
+  },
+  {
+   "reg": "1507031",
+   "org": "VIE",
+   "gender": "W",
+   "name": "DO Huyen"
+  },
+  {
+   "reg": "1508507",
+   "org": "VIE",
+   "gender": "W",
+   "name": "DO NHU"
+  },
+  {
+   "reg": "1511611",
+   "org": "VIE",
+   "gender": "W",
+   "name": "DO Tu"
+  },
+  {
+   "reg": "1506751",
+   "org": "VIE",
+   "gender": "W",
+   "name": "HA HANH"
+  },
+  {
+   "reg": "1508801",
+   "org": "VIE",
+   "gender": "W",
+   "name": "HA Thu"
+  },
+  {
+   "reg": "1508094",
+   "org": "VIE",
+   "gender": "W",
+   "name": "HOANG Lan"
+  },
+  {
+   "reg": "1509458",
+   "org": "VIE",
+   "gender": "W",
+   "name": "HUYNH Gia"
+  },
+  {
+   "reg": "1507237",
+   "org": "VIE",
+   "gender": "W",
+   "name": "NGUYEN Anh"
+  },
+  {
+   "reg": "1510376",
+   "org": "VIE",
+   "gender": "W",
+   "name": "NGUYEN Diem"
+  },
+  {
+   "reg": "1509158",
+   "org": "VIE",
+   "gender": "W",
+   "name": "NGUYEN Ngoc"
+  },
+  {
+   "reg": "1507797",
+   "org": "VIE",
+   "gender": "W",
+   "name": "NGUYEN Thanh"
+  },
+  {
+   "reg": "1508229",
+   "org": "VIE",
+   "gender": "W",
+   "name": "PHAM Loan"
+  },
+  {
+   "reg": "1507541",
+   "org": "VIE",
+   "gender": "W",
+   "name": "PHUNG Linh"
+  },
+  {
+   "reg": "1508943",
+   "org": "VIE",
+   "gender": "W",
+   "name": "TRAN Hai"
+  },
+  {
+   "reg": "1510108",
+   "org": "VIE",
+   "gender": "W",
+   "name": "VO Be"
   }
  ]
 }
