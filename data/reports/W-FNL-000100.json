@@ -1,0 +1,130 @@
+{
+ "id": "W-FNL-000100",
+ "key": "W.TEAM7-------------.FNL-.000100--",
+ "codes": [
+  "KOR",
+  "HKG"
+ ],
+ "updatedAt": "2026-09-22T05:57:30.962Z",
+ "emptyGoal": {
+  "situations": {
+   "KOR": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 1,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "HKG": {
+    "v7x6": {
+     "attacks": 5,
+     "goals": 2,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 1,
+     "pct": 40,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "KOR": {
+    "v7x6": {
+     "30-35": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "v6x6": {},
+    "other": {}
+   },
+   "HKG": {
+    "v7x6": {
+     "55-60": {
+      "goals": 2,
+      "attacks": 4
+     }
+    },
+    "v6x6": {},
+    "other": {}
+   }
+  },
+  "duration": {
+   "KOR": {},
+   "HKG": {}
+  },
+  "substitutions": {
+   "KOR": {
+    "gkGk": 2,
+    "courtToGk": 3,
+    "courtToCourt": 92,
+    "total": 97
+   },
+   "HKG": {
+    "courtToGk": 14,
+    "courtToCourt": 80,
+    "total": 94
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-000100--.C77_1_0.pdf",
+ "teamStats": {
+  "HKG": {
+   "attacks": 58,
+   "efficiency": 28
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-000100--.C83_1_0.pdf"
+}

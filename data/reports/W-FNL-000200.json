@@ -1,0 +1,148 @@
+{
+ "id": "W-FNL-000200",
+ "key": "W.TEAM7-------------.FNL-.000200--",
+ "codes": [
+  "KAZ",
+  "CHN"
+ ],
+ "updatedAt": "2026-09-22T05:57:32.969Z",
+ "emptyGoal": {
+  "situations": {
+   "KAZ": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "CHN": {
+    "v7x6": {
+     "attacks": 3,
+     "goals": 2,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 67,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 1,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 1
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "KAZ": {
+    "v7x6": {},
+    "v6x6": {},
+    "other": {}
+   },
+   "CHN": {
+    "v7x6": {
+     "30-35": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "55-60": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "v6x6": {
+     "40-45": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "other": {}
+   }
+  },
+  "duration": {
+   "KAZ": {},
+   "CHN": {
+    "<15s": {
+     "goals": 1,
+     "attacks": 1
+    },
+    "15-30s": {
+     "goals": 1,
+     "attacks": 2
+    }
+   }
+  },
+  "substitutions": {
+   "KAZ": {
+    "gkGk": 4,
+    "courtToGk": 2,
+    "courtToCourt": 36,
+    "total": 42
+   },
+   "CHN": {
+    "gkGk": 2,
+    "courtToGk": 11,
+    "courtToCourt": 76,
+    "total": 89
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-000200--.C77_1_0.pdf",
+ "teamStats": {
+  "KAZ": {
+   "attacks": 59,
+   "efficiency": 41
+  },
+  "CHN": {
+   "attacks": 56,
+   "efficiency": 61
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-000200--.C83_1_0.pdf"
+}

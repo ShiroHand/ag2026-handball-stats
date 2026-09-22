@@ -1,0 +1,160 @@
+{
+ "id": "M-GPA-000200",
+ "key": "M.TEAM7-------------.GPA-.000200--",
+ "codes": [
+  "HKG",
+  "QAT"
+ ],
+ "updatedAt": "2026-09-22T05:57:45.515Z",
+ "emptyGoal": {
+  "situations": {
+   "HKG": {
+    "v7x6": {
+     "attacks": 1,
+     "goals": 1,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 100,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "QAT": {
+    "v7x6": {
+     "attacks": 2,
+     "goals": 1,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 50,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 4,
+     "goals": 3,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 1,
+     "pct": 75,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "HKG": {
+    "v7x6": {
+     "55-60": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "v6x6": {},
+    "other": {}
+   },
+   "QAT": {
+    "v7x6": {
+     "15-20": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "v6x6": {
+     "10-15": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "15-20": {
+      "goals": 1,
+      "attacks": 2
+     },
+     "55-60": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "other": {}
+   }
+  },
+  "duration": {
+   "HKG": {
+    "<15s": {
+     "goals": 1,
+     "attacks": 1
+    }
+   },
+   "QAT": {
+    "<15s": {
+     "goals": 1,
+     "attacks": 2
+    },
+    "30-45s": {
+     "goals": 3,
+     "attacks": 3
+    }
+   }
+  },
+  "substitutions": {
+   "HKG": {
+    "courtToGk": 2,
+    "courtToCourt": 80,
+    "total": 82
+   },
+   "QAT": {
+    "courtToGk": 5,
+    "courtToCourt": 61,
+    "total": 66
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLMTEAM7-------------GPA-000200--.C77_2_0.pdf",
+ "teamStats": {
+  "HKG": {
+   "attacks": 56,
+   "efficiency": 30
+  },
+  "QAT": {
+   "attacks": 56,
+   "efficiency": 71
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLMTEAM7-------------GPA-000200--.C83_2_0.pdf"
+}

@@ -214,7 +214,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -443,7 +445,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -672,7 +676,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -901,7 +907,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -1130,7 +1138,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -1359,7 +1369,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -1588,7 +1600,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -1817,7 +1831,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -2046,7 +2062,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -2275,7 +2293,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -2504,7 +2524,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -2733,7 +2755,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -2962,7 +2986,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -3191,7 +3217,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -3649,7 +3677,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -4020,7 +4050,107 @@
       "s": 0
      }
     ]
-   ]
+   ],
+   "shots": [],
+   "connections": [],
+   "posLinks": [],
+   "defActs": [],
+   "possessions": {
+    "attacks": 0,
+    "goals": 0,
+    "shots": 0,
+    "missed": 0,
+    "saves": 0,
+    "turnovers": 0,
+    "twoMin": 0,
+    "assists": 0,
+    "offReb": 0,
+    "defReb": 0,
+    "eff": 0
+   },
+   "timeline": [],
+   "situations": {
+    "equal": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 0,
+    "goalsFor": 0,
+    "shotsAgainst": 0,
+    "goalsAgainst": 0
+   }
   },
   "KAZ": {
    "code": "KAZ",
@@ -4171,7 +4301,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -4400,7 +4532,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -4629,7 +4763,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -4858,7 +4994,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -5087,7 +5225,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -5316,7 +5456,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -5545,7 +5687,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -5774,7 +5918,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -6003,7 +6149,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -6232,7 +6380,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -6461,7 +6611,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -6690,7 +6842,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -6919,7 +7073,9 @@
      "captain": false,
      "isGK": true,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -7148,7 +7304,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -7377,7 +7535,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -7606,7 +7766,9 @@
      "captain": false,
      "isGK": false,
      "time": "00:00",
-     "stats": {},
+     "stats": {
+      "TIME_PLAYED": "0"
+     },
      "shot": {
       "LW": {
        "g": 0,
@@ -7977,8 +8139,108 @@
       "s": 0
      }
     ]
-   ]
+   ],
+   "shots": [],
+   "connections": [],
+   "posLinks": [],
+   "defActs": [],
+   "possessions": {
+    "attacks": 0,
+    "goals": 0,
+    "shots": 0,
+    "missed": 0,
+    "saves": 0,
+    "turnovers": 0,
+    "twoMin": 0,
+    "assists": 0,
+    "offReb": 0,
+    "defReb": 0,
+    "eff": 0
+   },
+   "timeline": [],
+   "situations": {
+    "equal": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 0,
+    "goalsFor": 0,
+    "shotsAgainst": 0,
+    "goalsAgainst": 0
+   }
   }
  },
- "updatedAt": "2026-09-22T05:26:44.055Z"
+ "updatedAt": "2026-09-22T05:57:30.664Z"
 }
