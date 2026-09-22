@@ -37,7 +37,7 @@
   },
   {
    "code": "CHN",
-   "name": "People's Republic of China",
+   "name": "China",
    "gender": "M",
    "event": "M.TEAM7-------------",
    "played": 2
@@ -51,7 +51,7 @@
   },
   {
    "code": "IRI",
-   "name": "Islamic Republic of Iran",
+   "name": "IR Iran",
    "gender": "M",
    "event": "M.TEAM7-------------",
    "played": 2
@@ -68,11 +68,11 @@
    "name": "Kazakhstan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 1
+   "played": 2
   },
   {
    "code": "KOR",
-   "name": "Republic of Korea",
+   "name": "Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
    "played": 1
@@ -82,7 +82,7 @@
    "name": "Kuwait",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "QAT",
@@ -93,7 +93,7 @@
   },
   {
    "code": "CHN",
-   "name": "People's Republic of China",
+   "name": "China",
    "gender": "W",
    "event": "W.TEAM7-------------",
    "played": 1
@@ -117,11 +117,11 @@
    "name": "Kazakhstan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "KOR",
-   "name": "Republic of Korea",
+   "name": "Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
    "played": 2
@@ -138,7 +138,7 @@
    "name": "Vietnam",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 3
   }
  ],
  "matches": [
@@ -160,7 +160,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "48",
     "winner": true
    },
@@ -197,7 +197,7 @@
    },
    "away": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "34",
     "winner": true
    },
@@ -253,7 +253,7 @@
    "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "Islamic Republic of Iran",
+    "name": "IR Iran",
     "score": "24",
     "winner": false
    },
@@ -315,7 +315,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "42",
     "winner": true
    },
@@ -346,7 +346,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "27",
     "winner": false
    },
@@ -501,7 +501,7 @@
    "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "Islamic Republic of Iran",
+    "name": "IR Iran",
     "score": "20",
     "winner": false
    },
@@ -532,7 +532,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "26",
     "winner": true
    },
@@ -563,7 +563,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "25",
     "winner": false
    },
@@ -589,22 +589,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 7",
    "unitNum": "17",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "",
+    "score": "16",
     "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "19",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-GPB-000500",
@@ -619,22 +620,23 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 5",
    "unitNum": "15",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "GETTING_READY",
+   "statusDesc": "Getting Ready",
+   "isLive": true,
    "home": {
     "code": "KUW",
     "name": "Kuwait",
-    "score": "",
+    "score": "0",
     "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "0",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": false
   },
   {
    "id": "W-FNL-000800",
@@ -684,13 +686,13 @@
    "isLive": false,
    "home": {
     "code": "IRI",
-    "name": "Islamic Republic of Iran",
+    "name": "IR Iran",
     "score": "",
     "winner": false
    },
    "away": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -720,7 +722,7 @@
    },
    "away": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -750,7 +752,7 @@
    },
    "away": {
     "code": "IRI",
-    "name": "Islamic Republic of Iran",
+    "name": "IR Iran",
     "score": "",
     "winner": false
    },
@@ -804,7 +806,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -840,7 +842,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -864,7 +866,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -894,7 +896,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -1044,13 +1046,13 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
    "away": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -1080,7 +1082,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -1194,7 +1196,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -1254,7 +1256,7 @@
    "isLive": false,
    "home": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -1344,7 +1346,7 @@
    "isLive": false,
    "home": {
     "code": "CHN",
-    "name": "People's Republic of China",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -1380,7 +1382,7 @@
    },
    "away": {
     "code": "KOR",
-    "name": "Republic of Korea",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -1780,7 +1782,9 @@
   "M-GPA-000300",
   "M-GPB-000300",
   "M-GPB-000400",
-  "M-GPA-000400"
+  "M-GPA-000400",
+  "W-FNL-000700",
+  "M-GPB-000500"
  ],
- "updatedAt": "2026-09-22T04:01:38.664Z"
+ "updatedAt": "2026-09-22T05:26:44.056Z"
 }
