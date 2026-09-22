@@ -1,0 +1,1786 @@
+{
+ "name": "第20回アジア競技大会 愛知・名古屋 2026 — ハンドボール",
+ "nameEn": "20th Asian Games Aichi–Nagoya 2026 — Handball",
+ "discipline": "HBL",
+ "source": "https://results.asiangames2026.org/#/discipline/HBL",
+ "days": [
+  "2026-09-19",
+  "2026-09-20",
+  "2026-09-21",
+  "2026-09-22",
+  "2026-09-23",
+  "2026-09-25",
+  "2026-09-26",
+  "2026-09-27",
+  "2026-09-28",
+  "2026-09-29"
+ ],
+ "events": [
+  {
+   "key": "M.TEAM7-------------",
+   "desc": "Men",
+   "gender": "M"
+  },
+  {
+   "key": "W.TEAM7-------------",
+   "desc": "Women",
+   "gender": "W"
+  }
+ ],
+ "teams": [
+  {
+   "code": "BRN",
+   "name": "Bahrain",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "CHN",
+   "name": "People's Republic of China",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "HKG",
+   "name": "Hong Kong, China",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "IRI",
+   "name": "Islamic Republic of Iran",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "JPN",
+   "name": "Japan",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "KAZ",
+   "name": "Kazakhstan",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 1
+  },
+  {
+   "code": "KOR",
+   "name": "Republic of Korea",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 1
+  },
+  {
+   "code": "KUW",
+   "name": "Kuwait",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "QAT",
+   "name": "Qatar",
+   "gender": "M",
+   "event": "M.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "CHN",
+   "name": "People's Republic of China",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 1
+  },
+  {
+   "code": "HKG",
+   "name": "Hong Kong, China",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "JPN",
+   "name": "Japan",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "KAZ",
+   "name": "Kazakhstan",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "KOR",
+   "name": "Republic of Korea",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 2
+  },
+  {
+   "code": "UZB",
+   "name": "Uzbekistan",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 1
+  },
+  {
+   "code": "VIE",
+   "name": "Vietnam",
+   "gender": "W",
+   "event": "W.TEAM7-------------",
+   "played": 2
+  }
+ ],
+ "matches": [
+  {
+   "id": "W-FNL-000100",
+   "key": "W.TEAM7-------------.FNL-.000100--",
+   "date": "2026-09-19",
+   "dateTime": "2026-09-19T10:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 1",
+   "unitNum": "1",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "48",
+    "winner": true
+   },
+   "away": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "16",
+    "winner": false
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000200",
+   "key": "W.TEAM7-------------.FNL-.000200--",
+   "date": "2026-09-19",
+   "dateTime": "2026-09-19T10:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 2",
+   "unitNum": "3",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "24",
+    "winner": false
+   },
+   "away": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "34",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000300",
+   "key": "W.TEAM7-------------.FNL-.000300--",
+   "date": "2026-09-19",
+   "dateTime": "2026-09-19T12:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 3",
+   "unitNum": "4",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "40",
+    "winner": true
+   },
+   "away": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "14",
+    "winner": false
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPB-000100",
+   "key": "M.TEAM7-------------.GPB-.000100--",
+   "date": "2026-09-19",
+   "dateTime": "2026-09-19T12:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 1",
+   "unitNum": "2",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "IRI",
+    "name": "Islamic Republic of Iran",
+    "score": "24",
+    "winner": false
+   },
+   "away": {
+    "code": "KUW",
+    "name": "Kuwait",
+    "score": "26",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPB-000200",
+   "key": "M.TEAM7-------------.GPB-.000200--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T12:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 2",
+   "unitNum": "5",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "20",
+    "winner": false
+   },
+   "away": {
+    "code": "BRN",
+    "name": "Bahrain",
+    "score": "43",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000400",
+   "key": "W.TEAM7-------------.FNL-.000400--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T13:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 4",
+   "unitNum": "8",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "42",
+    "winner": true
+   },
+   "away": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "18",
+    "winner": false
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPA-000100",
+   "key": "M.TEAM7-------------.GPA-.000100--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 1",
+   "unitNum": "6",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "27",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "31",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000500",
+   "key": "W.TEAM7-------------.FNL-.000500--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T15:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 5",
+   "unitNum": "9",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "23",
+    "winner": false
+   },
+   "away": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "26",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPA-000200",
+   "key": "M.TEAM7-------------.GPA-.000200--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 2",
+   "unitNum": "7",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "17",
+    "winner": false
+   },
+   "away": {
+    "code": "QAT",
+    "name": "Qatar",
+    "score": "40",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000600",
+   "key": "W.TEAM7-------------.FNL-.000600--",
+   "date": "2026-09-20",
+   "dateTime": "2026-09-20T17:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 6",
+   "unitNum": "10",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "43",
+    "winner": true
+   },
+   "away": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "12",
+    "winner": false
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPA-000300",
+   "key": "M.TEAM7-------------.GPA-.000300--",
+   "date": "2026-09-21",
+   "dateTime": "2026-09-21T12:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 3",
+   "unitNum": "11",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "17",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "44",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPB-000300",
+   "key": "M.TEAM7-------------.GPB-.000300--",
+   "date": "2026-09-21",
+   "dateTime": "2026-09-21T14:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 3",
+   "unitNum": "12",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "IRI",
+    "name": "Islamic Republic of Iran",
+    "score": "20",
+    "winner": false
+   },
+   "away": {
+    "code": "BRN",
+    "name": "Bahrain",
+    "score": "34",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPB-000400",
+   "key": "M.TEAM7-------------.GPB-.000400--",
+   "date": "2026-09-21",
+   "dateTime": "2026-09-21T17:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 4",
+   "unitNum": "13",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "26",
+    "winner": true
+   },
+   "away": {
+    "code": "KUW",
+    "name": "Kuwait",
+    "score": "23",
+    "winner": false
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "M-GPA-000400",
+   "key": "M.TEAM7-------------.GPA-.000400--",
+   "date": "2026-09-21",
+   "dateTime": "2026-09-21T19:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 4",
+   "unitNum": "14",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "25",
+    "winner": false
+   },
+   "away": {
+    "code": "QAT",
+    "name": "Qatar",
+    "score": "30",
+    "winner": true
+   },
+   "hasResult": true,
+   "hasStats": true
+  },
+  {
+   "id": "W-FNL-000700",
+   "key": "W.TEAM7-------------.FNL-.000700--",
+   "date": "2026-09-22",
+   "dateTime": "2026-09-22T13:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 7",
+   "unitNum": "17",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-000500",
+   "key": "M.TEAM7-------------.GPB-.000500--",
+   "date": "2026-09-22",
+   "dateTime": "2026-09-22T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 5",
+   "unitNum": "15",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KUW",
+    "name": "Kuwait",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-000800",
+   "key": "W.TEAM7-------------.FNL-.000800--",
+   "date": "2026-09-22",
+   "dateTime": "2026-09-22T15:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 8",
+   "unitNum": "18",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-000600",
+   "key": "M.TEAM7-------------.GPB-.000600--",
+   "date": "2026-09-22",
+   "dateTime": "2026-09-22T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 6",
+   "unitNum": "16",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "IRI",
+    "name": "Islamic Republic of Iran",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-000900",
+   "key": "W.TEAM7-------------.FNL-.000900--",
+   "date": "2026-09-22",
+   "dateTime": "2026-09-22T17:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 9",
+   "unitNum": "19",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-000700",
+   "key": "M.TEAM7-------------.GPB-.000700--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T12:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 7",
+   "unitNum": "20",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "IRI",
+    "name": "Islamic Republic of Iran",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001000",
+   "key": "W.TEAM7-------------.FNL-.001000--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T13:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 10",
+   "unitNum": "23",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPA-000500",
+   "key": "M.TEAM7-------------.GPA-.000500--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 5",
+   "unitNum": "21",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001100",
+   "key": "W.TEAM7-------------.FNL-.001100--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T15:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 11",
+   "unitNum": "24",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-000800",
+   "key": "M.TEAM7-------------.GPB-.000800--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 8",
+   "unitNum": "22",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "BRN",
+    "name": "Bahrain",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001200",
+   "key": "W.TEAM7-------------.FNL-.001200--",
+   "date": "2026-09-23",
+   "dateTime": "2026-09-23T17:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 12",
+   "unitNum": "25",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001300",
+   "key": "W.TEAM7-------------.FNL-.001300--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T12:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 13",
+   "unitNum": "26",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-000900",
+   "key": "M.TEAM7-------------.GPB-.000900--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T13:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 9",
+   "unitNum": "29",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "BRN",
+    "name": "Bahrain",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KUW",
+    "name": "Kuwait",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001400",
+   "key": "W.TEAM7-------------.FNL-.001400--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 14",
+   "unitNum": "27",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPA-000600",
+   "key": "M.TEAM7-------------.GPA-.000600--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T15:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPA-",
+   "phaseDesc": "Men Preliminary Round Group A",
+   "unitDesc": "Men Preliminary Round Group A Match 6",
+   "unitNum": "30",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "QAT",
+    "name": "Qatar",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001500",
+   "key": "W.TEAM7-------------.FNL-.001500--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 15",
+   "unitNum": "28",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-GPB-001000",
+   "key": "M.TEAM7-------------.GPB-.001000--",
+   "date": "2026-09-25",
+   "dateTime": "2026-09-25T17:30:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.GPB-",
+   "phaseDesc": "Men Preliminary Round Group B",
+   "unitDesc": "Men Preliminary Round Group B Match 10",
+   "unitNum": "31",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-QFNL-000100",
+   "key": "M.TEAM7-------------.QFNL.000100--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T12:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.QFNL",
+   "phaseDesc": "Men Quarterfinal",
+   "unitDesc": "Men Quarterfinal Match 1",
+   "unitNum": "35",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001600",
+   "key": "W.TEAM7-------------.FNL-.001600--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T12:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 16",
+   "unitNum": "32",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KAZ",
+    "name": "Kazakhstan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-QFNL-000200",
+   "key": "M.TEAM7-------------.QFNL.000200--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T14:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.QFNL",
+   "phaseDesc": "Men Quarterfinal",
+   "unitDesc": "Men Quarterfinal Match 2",
+   "unitNum": "36",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001700",
+   "key": "W.TEAM7-------------.FNL-.001700--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 17",
+   "unitNum": "33",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-QFNL-000300",
+   "key": "M.TEAM7-------------.QFNL.000300--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T16:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.QFNL",
+   "phaseDesc": "Men Quarterfinal",
+   "unitDesc": "Men Quarterfinal Match 3",
+   "unitNum": "37",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001800",
+   "key": "W.TEAM7-------------.FNL-.001800--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 18",
+   "unitNum": "34",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-QFNL-000400",
+   "key": "M.TEAM7-------------.QFNL.000400--",
+   "date": "2026-09-26",
+   "dateTime": "2026-09-26T18:00:00+09:00",
+   "venue": "Kasugai City Gymnasium",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.QFNL",
+   "phaseDesc": "Men Quarterfinal",
+   "unitDesc": "Men Quarterfinal Match 4",
+   "unitNum": "38",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-001900",
+   "key": "W.TEAM7-------------.FNL-.001900--",
+   "date": "2026-09-27",
+   "dateTime": "2026-09-27T13:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 19",
+   "unitNum": "39",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "UZB",
+    "name": "Uzbekistan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "HKG",
+    "name": "Hong Kong, China",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-002000",
+   "key": "W.TEAM7-------------.FNL-.002000--",
+   "date": "2026-09-27",
+   "dateTime": "2026-09-27T15:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 20",
+   "unitNum": "40",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "CHN",
+    "name": "People's Republic of China",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "VIE",
+    "name": "Vietnam",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "W-FNL-002100",
+   "key": "W.TEAM7-------------.FNL-.002100--",
+   "date": "2026-09-27",
+   "dateTime": "2026-09-27T18:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "gender": "W",
+   "phase": "W.TEAM7-------------.FNL-",
+   "phaseDesc": "Women Women's Round",
+   "unitDesc": "Women Women's Round Match 21",
+   "unitNum": "41",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "JPN",
+    "name": "Japan",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "KOR",
+    "name": "Republic of Korea",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-SFNL-000100",
+   "key": "M.TEAM7-------------.SFNL.000100--",
+   "date": "2026-09-28",
+   "dateTime": "2026-09-28T15:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.SFNL",
+   "phaseDesc": "Men Semifinal",
+   "unitDesc": "Men Semifinal Match 1",
+   "unitNum": "42",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-SFNL-000200",
+   "key": "M.TEAM7-------------.SFNL.000200--",
+   "date": "2026-09-28",
+   "dateTime": "2026-09-28T17:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.SFNL",
+   "phaseDesc": "Men Semifinal",
+   "unitDesc": "Men Semifinal Match 2",
+   "unitNum": "43",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-FNL-000200",
+   "key": "M.TEAM7-------------.FNL-.000200--",
+   "date": "2026-09-29",
+   "dateTime": "2026-09-29T17:00:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.FNL-",
+   "phaseDesc": "Men Final",
+   "unitDesc": "Men Final Bronze Medal Match",
+   "unitNum": "44",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  },
+  {
+   "id": "M-FNL-000100",
+   "key": "M.TEAM7-------------.FNL-.000100--",
+   "date": "2026-09-29",
+   "dateTime": "2026-09-29T19:30:00+09:00",
+   "venue": "ENTRIO",
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "gender": "M",
+   "phase": "M.TEAM7-------------.FNL-",
+   "phaseDesc": "Men Final",
+   "unitDesc": "Men Final Gold Medal Match",
+   "unitNum": "45",
+   "status": "SCHEDULED",
+   "statusDesc": "Scheduled",
+   "isLive": false,
+   "home": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "away": {
+    "code": "",
+    "name": "",
+    "score": "",
+    "winner": false
+   },
+   "hasResult": false
+  }
+ ],
+ "standings": [
+  {
+   "event": "M.TEAM7-------------",
+   "eventDesc": "Men",
+   "groups": [
+    {
+     "key": "M.TEAM7-------------.GPA-",
+     "desc": "Group A",
+     "type": "POOL",
+     "rows": [
+      {
+       "rank": "1",
+       "org": "JPN",
+       "name": "Japan",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
+       "lost": "0",
+       "tied": "0",
+       "for": "75",
+       "against": "44",
+       "diff": "31",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
+       "org": "QAT",
+       "name": "Qatar",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
+       "lost": "0",
+       "tied": "0",
+       "for": "70",
+       "against": "42",
+       "diff": "28",
+       "qualified": ""
+      },
+      {
+       "rank": "3",
+       "org": "CHN",
+       "name": "China",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
+       "lost": "2",
+       "tied": "0",
+       "for": "52",
+       "against": "61",
+       "diff": "-9",
+       "qualified": ""
+      },
+      {
+       "rank": "4",
+       "org": "HKG",
+       "name": "Hong Kong, China",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
+       "lost": "2",
+       "tied": "0",
+       "for": "34",
+       "against": "84",
+       "diff": "-50",
+       "qualified": ""
+      }
+     ]
+    },
+    {
+     "key": "M.TEAM7-------------.GPB-",
+     "desc": "Group B",
+     "type": "POOL",
+     "rows": [
+      {
+       "rank": "1",
+       "org": "BRN",
+       "name": "Bahrain",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
+       "lost": "0",
+       "tied": "0",
+       "for": "77",
+       "against": "40",
+       "diff": "37",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
+       "org": "KOR",
+       "name": "Korea",
+       "pts": "2",
+       "played": "1",
+       "won": "1",
+       "lost": "0",
+       "tied": "0",
+       "for": "26",
+       "against": "23",
+       "diff": "3",
+       "qualified": ""
+      },
+      {
+       "rank": "3",
+       "org": "KUW",
+       "name": "Kuwait",
+       "pts": "2",
+       "played": "2",
+       "won": "1",
+       "lost": "1",
+       "tied": "0",
+       "for": "49",
+       "against": "50",
+       "diff": "-1",
+       "qualified": ""
+      },
+      {
+       "rank": "4",
+       "org": "IRI",
+       "name": "IR Iran",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
+       "lost": "2",
+       "tied": "0",
+       "for": "44",
+       "against": "60",
+       "diff": "-16",
+       "qualified": ""
+      },
+      {
+       "rank": "5",
+       "org": "KAZ",
+       "name": "Kazakhstan",
+       "pts": "0",
+       "played": "1",
+       "won": "0",
+       "lost": "1",
+       "tied": "0",
+       "for": "20",
+       "against": "43",
+       "diff": "-23",
+       "qualified": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "event": "W.TEAM7-------------",
+   "eventDesc": "Women",
+   "groups": [
+    {
+     "key": "W.TEAM7-------------.FNL-",
+     "desc": "Women's Round",
+     "type": "POOL",
+     "rows": [
+      {
+       "rank": "1",
+       "org": "JPN",
+       "name": "Japan",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
+       "lost": "0",
+       "tied": "0",
+       "for": "83",
+       "against": "26",
+       "diff": "57",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
+       "org": "KOR",
+       "name": "Korea",
+       "pts": "4",
+       "played": "2",
+       "won": "2",
+       "lost": "0",
+       "tied": "0",
+       "for": "90",
+       "against": "34",
+       "diff": "56",
+       "qualified": ""
+      },
+      {
+       "rank": "3",
+       "org": "CHN",
+       "name": "China",
+       "pts": "2",
+       "played": "1",
+       "won": "1",
+       "lost": "0",
+       "tied": "0",
+       "for": "34",
+       "against": "24",
+       "diff": "10",
+       "qualified": ""
+      },
+      {
+       "rank": "4",
+       "org": "HKG",
+       "name": "Hong Kong, China",
+       "pts": "2",
+       "played": "2",
+       "won": "1",
+       "lost": "1",
+       "tied": "0",
+       "for": "42",
+       "against": "71",
+       "diff": "-29",
+       "qualified": ""
+      },
+      {
+       "rank": "5",
+       "org": "VIE",
+       "name": "Vietnam",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
+       "lost": "2",
+       "tied": "0",
+       "for": "37",
+       "against": "66",
+       "diff": "-29",
+       "qualified": ""
+      },
+      {
+       "rank": "6",
+       "org": "UZB",
+       "name": "Uzbekistan",
+       "pts": "0",
+       "played": "1",
+       "won": "0",
+       "lost": "1",
+       "tied": "0",
+       "for": "12",
+       "against": "43",
+       "diff": "-31",
+       "qualified": ""
+      },
+      {
+       "rank": "7",
+       "org": "KAZ",
+       "name": "Kazakhstan",
+       "pts": "0",
+       "played": "2",
+       "won": "0",
+       "lost": "2",
+       "tied": "0",
+       "for": "42",
+       "against": "76",
+       "diff": "-34",
+       "qualified": ""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "detailIds": [
+  "W-FNL-000100",
+  "W-FNL-000200",
+  "W-FNL-000300",
+  "M-GPB-000100",
+  "M-GPB-000200",
+  "W-FNL-000400",
+  "M-GPA-000100",
+  "W-FNL-000500",
+  "M-GPA-000200",
+  "W-FNL-000600",
+  "M-GPA-000300",
+  "M-GPB-000300",
+  "M-GPB-000400",
+  "M-GPA-000400"
+ ],
+ "updatedAt": "2026-09-22T04:01:38.664Z"
+}

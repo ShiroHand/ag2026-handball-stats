@@ -1,0 +1,8803 @@
+{
+ "id": "M-GPA-000200",
+ "key": "M.TEAM7-------------.GPA-.000200--",
+ "status": "OFFICIAL",
+ "statusDesc": "Official",
+ "dateTime": "2026-09-20T17:30:00+09:00",
+ "date": "2026-09-20",
+ "venue": "ENTRIO",
+ "location": "ENTRIO",
+ "event": "M.TEAM7-------------",
+ "eventDesc": "Men",
+ "gender": "M",
+ "phase": "M.TEAM7-------------.GPA-",
+ "phaseDesc": "Men Preliminary Round Group A",
+ "unitDesc": "Men Preliminary Round Group A Match 2",
+ "unitNum": "7",
+ "duration": "01:00:00",
+ "periods": [
+  {
+   "desc": "1st Half",
+   "result": ""
+  },
+  {
+   "desc": "2nd Half",
+   "result": ""
+  }
+ ],
+ "officials": [
+  {
+   "func": "OFFIC",
+   "name": "LEE Seok",
+   "org": "KOR"
+  },
+  {
+   "func": "TK",
+   "name": "IMRAN Fadhil",
+   "org": "IRQ"
+  },
+  {
+   "func": "SK",
+   "name": "ALKOUDEMI T",
+   "org": "KSA"
+  },
+  {
+   "func": "RE",
+   "name": "MOHAMED A",
+   "org": "BRN"
+  },
+  {
+   "func": "RE",
+   "name": "ALARADI Maitham",
+   "org": "BRN"
+  },
+  {
+   "func": "RR",
+   "name": "ISMOILOV Khasan",
+   "org": "UZB"
+  },
+  {
+   "func": "RR",
+   "name": "ISMOILOV Khusan",
+   "org": "UZB"
+  }
+ ],
+ "home": "HKG",
+ "away": "QAT",
+ "teams": {
+  "HKG": {
+   "code": "HKG",
+   "name": "Hong Kong, China",
+   "nameS": "Hong Kong, China",
+   "score": 17,
+   "wlt": "L",
+   "rank": "2",
+   "stats": {
+    "2MINUTES": "1",
+    "6M_GOALS": "2",
+    "6M_SHOTS": "6",
+    "7M_GOALS": "2",
+    "7M_SHOTS": "4",
+    "9M_GOALS": "3",
+    "9M_SHOTS": "15",
+    "BT_GOALS": "7",
+    "BT_SHOTS": "9",
+    "EFFICIENCY": "40",
+    "FB_GOALS": "2",
+    "FB_SHOTS": "4",
+    "GK_6M_SAVES": "2",
+    "GK_6M_SHOTS": "11",
+    "GK_7M_SHOTS": "1",
+    "GK_9M_SAVES": "2",
+    "GK_9M_SHOTS": "7",
+    "GK_BT_SAVES": "3",
+    "GK_BT_SHOTS": "9",
+    "GK_FB_SHOTS": "14",
+    "GK_SAVES": "8",
+    "GK_SAVES_PERCENT": "17",
+    "GK_SHOTS": "48",
+    "GK_WING_SAVES": "1",
+    "GK_WING_SHOTS": "6",
+    "GOALS": "17",
+    "SHOTS": "43",
+    "WING_GOALS": "1",
+    "WING_SHOTS": "5"
+   },
+   "shot": {
+    "LW": {
+     "g": 0,
+     "s": 2
+    },
+    "L6": {
+     "g": 0,
+     "s": 0
+    },
+    "C6": {
+     "g": 1,
+     "s": 3
+    },
+    "R6": {
+     "g": 1,
+     "s": 3
+    },
+    "RW": {
+     "g": 1,
+     "s": 3
+    },
+    "L9": {
+     "g": 1,
+     "s": 4
+    },
+    "C9": {
+     "g": 2,
+     "s": 11
+    },
+    "R9": {
+     "g": 0,
+     "s": 0
+    },
+    "P7": {
+     "g": 2,
+     "s": 4
+    },
+    "EG": {
+     "g": 0,
+     "s": 0
+    },
+    "BT": {
+     "g": 7,
+     "s": 9
+    },
+    "FB": {
+     "g": 2,
+     "s": 4
+    },
+    "FLY": {
+     "g": 0,
+     "s": 0
+    }
+   },
+   "gk": {
+    "LW": {
+     "sv": 0,
+     "s": 1,
+     "g": 1
+    },
+    "L6": {
+     "sv": 0,
+     "s": 3,
+     "g": 3
+    },
+    "C6": {
+     "sv": 1,
+     "s": 6,
+     "g": 5
+    },
+    "R6": {
+     "sv": 1,
+     "s": 2,
+     "g": 1
+    },
+    "RW": {
+     "sv": 1,
+     "s": 5,
+     "g": 4
+    },
+    "L9": {
+     "sv": 0,
+     "s": 1,
+     "g": 1
+    },
+    "C9": {
+     "sv": 1,
+     "s": 5,
+     "g": 4
+    },
+    "R9": {
+     "sv": 1,
+     "s": 1,
+     "g": 0
+    },
+    "P7": {
+     "sv": 0,
+     "s": 1,
+     "g": 1
+    },
+    "EG": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    },
+    "BT": {
+     "sv": 3,
+     "s": 9,
+     "g": 6
+    },
+    "FB": {
+     "sv": 0,
+     "s": 14,
+     "g": 14
+    },
+    "FLY": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    }
+   },
+   "halves": [
+    {
+     "label": "1st Half",
+     "value": 8
+    },
+    {
+     "label": "2nd Half",
+     "value": 9
+    }
+   ],
+   "players": [
+    {
+     "bib": "3",
+     "name": "CHAN Tsz",
+     "nameS": "CHAN T",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "28:54",
+     "stats": {
+      "9M_CENTER_POST": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_LEFT_MISSED": "1",
+      "9M_LEFT_SHOTS": "1",
+      "9M_MISSED": "1",
+      "9M_POST": "1",
+      "9M_SHOTS": "2",
+      "ASSISTS": "1",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "2",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1734"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 1
+      },
+      "C9": {
+       "g": 0,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "7",
+     "name": "HON Hok",
+     "nameS": "HON H",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "12:50",
+     "stats": {
+      "TIME_PLAYED": "770"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "8",
+     "name": "WONG Ling",
+     "nameS": "WONG L",
+     "role": "GK",
+     "func": "AA01",
+     "captain": false,
+     "isGK": true,
+     "time": "22:47",
+     "stats": {
+      "GK_6M_CENTER_GOALS": "3",
+      "GK_6M_CENTER_GOALS_SHOTS": "3/3",
+      "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "3/3",
+      "GK_6M_CENTER_SAVES_SHOTS": "0/3",
+      "GK_6M_CENTER_SHOTS": "3",
+      "GK_6M_CENTER_TOTAL_SHOTS": "3",
+      "GK_6M_GOALS": "6",
+      "GK_6M_GOALS_SHOTS": "6/6",
+      "GK_6M_LEFT_GOALS": "2",
+      "GK_6M_LEFT_GOALS_SHOTS": "2/2",
+      "GK_6M_LEFT_GOALS_TOTAL_SHOTS": "2/2",
+      "GK_6M_LEFT_SAVES_SHOTS": "0/2",
+      "GK_6M_LEFT_SHOTS": "2",
+      "GK_6M_LEFT_TOTAL_SHOTS": "2",
+      "GK_6M_RIGHT_GOALS": "1",
+      "GK_6M_RIGHT_GOALS_SHOTS": "1/1",
+      "GK_6M_RIGHT_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_6M_RIGHT_SAVES_SHOTS": "0/1",
+      "GK_6M_RIGHT_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_WING_SHOTS": "2",
+      "GK_6M_RIGHT_WING_GOALS": "1",
+      "GK_6M_RIGHT_WING_GOALS_SHOTS": "1/2",
+      "GK_6M_RIGHT_WING_GOALS_TOTAL_SHOTS": "1/2",
+      "GK_6M_RIGHT_WING_SAVES": "1",
+      "GK_6M_RIGHT_WING_SAVES_SHOTS": "1/2",
+      "GK_6M_RIGHT_WING_SHOTS": "2",
+      "GK_6M_SAVES_SHOTS": "0/6",
+      "GK_6M_SHOTS": "6",
+      "GK_7M_GOALS": "1",
+      "GK_7M_GOALS_SHOTS": "1/1",
+      "GK_7M_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_7M_SAVES_SHOTS": "0/1",
+      "GK_7M_SHOTS": "1",
+      "GK_7M_TOTAL_SHOTS": "1",
+      "GK_9M_CENTER_GOALS": "1",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_9M_CENTER_TOTAL_SHOTS": "1",
+      "GK_9M_GOALS": "2",
+      "GK_9M_GOALS_SHOTS": "2/3",
+      "GK_9M_LEFT_GOALS": "1",
+      "GK_9M_LEFT_GOALS_SHOTS": "1/1",
+      "GK_9M_LEFT_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_9M_LEFT_SAVES_SHOTS": "0/1",
+      "GK_9M_LEFT_SHOTS": "1",
+      "GK_9M_LEFT_TOTAL_SHOTS": "1",
+      "GK_9M_RIGHT_GOALS_SHOTS": "0/1",
+      "GK_9M_RIGHT_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_9M_RIGHT_SAVES": "1",
+      "GK_9M_RIGHT_SAVES_SHOTS": "1/1",
+      "GK_9M_RIGHT_SHOTS": "1",
+      "GK_9M_RIGHT_TOTAL_SHOTS": "1",
+      "GK_9M_SAVES": "1",
+      "GK_9M_SAVES_SHOTS": "1/3",
+      "GK_9M_SHOTS": "3",
+      "GK_BT_GOALS": "3",
+      "GK_BT_GOALS_SHOTS": "3/4",
+      "GK_BT_GOALS_TOTAL_SHOTS": "3/4",
+      "GK_BT_SAVES": "1",
+      "GK_BT_SAVES_SHOTS": "1/4",
+      "GK_BT_SHOTS": "4",
+      "GK_BT_TOTAL_SHOTS": "4",
+      "GK_FB_GOALS": "3",
+      "GK_FB_GOALS_SHOTS": "3/3",
+      "GK_FB_GOALS_TOTAL_SHOTS": "3/3",
+      "GK_FB_SAVES_SHOTS": "0/3",
+      "GK_FB_SHOTS": "3",
+      "GK_FB_TOTAL_SHOTS": "3",
+      "GK_GOALS": "16",
+      "GK_GOALS_BOT_LEFT_SHOTS": "5/7",
+      "GK_GOALS_BOT_RIGHT_SHOTS": "4/4",
+      "GK_GOALS_MID_RIGHT_SHOTS": "1/1",
+      "GK_GOALS_TOP_CENTER_SHOTS": "1/1",
+      "GK_GOALS_TOP_LEFT_SHOTS": "4/4",
+      "GK_GOALS_TOP_RIGHT_SHOTS": "1/2",
+      "GK_SAVES": "3",
+      "GK_SAVES_BOT_LEFT_SHOTS": "2/7",
+      "GK_SAVES_BOT_RIGHT_SHOTS": "0/4",
+      "GK_SAVES_MID_RIGHT_SHOTS": "0/1",
+      "GK_SAVES_PERCENT": "16",
+      "GK_SAVES_SHOTS": "3/19",
+      "GK_SAVES_TOP_CENTER_SHOTS": "0/1",
+      "GK_SAVES_TOP_LEFT_SHOTS": "0/4",
+      "GK_SAVES_TOP_RIGHT_SHOTS": "1/2",
+      "GK_SHOTS": "19",
+      "GK_TOTAL_GOALS_SHOTS": "16/19",
+      "GK_WING_GOALS": "1",
+      "GK_WING_GOALS_SHOTS": "1/2",
+      "GK_WING_SAVES": "1",
+      "GK_WING_SAVES_SHOTS": "1/2",
+      "GK_WING_SHOTS": "2",
+      "TIME_PLAYED": "1367"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 2,
+       "g": 2
+      },
+      "C6": {
+       "sv": 0,
+       "s": 3,
+       "g": 3
+      },
+      "R6": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "RW": {
+       "sv": 1,
+       "s": 2,
+       "g": 1
+      },
+      "L9": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "C9": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "R9": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 1,
+       "s": 4,
+       "g": 3
+      },
+      "FB": {
+       "sv": 0,
+       "s": 3,
+       "g": 3
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 4,
+        "g": 4
+       },
+       {
+        "sv": 0,
+        "s": 1,
+        "g": 1
+       },
+       {
+        "sv": 1,
+        "s": 2,
+        "g": 1
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 1,
+        "g": 1
+       }
+      ],
+      [
+       {
+        "sv": 2,
+        "s": 7,
+        "g": 5
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 4,
+        "g": 4
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 4,
+        "s": 4
+       },
+       {
+        "g": 1,
+        "s": 1
+       },
+       {
+        "g": 1,
+        "s": 2
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 1,
+        "s": 1
+       }
+      ],
+      [
+       {
+        "g": 5,
+        "s": 7
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 4,
+        "s": 4
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "10",
+     "name": "TSE Wing",
+     "nameS": "TSE W",
+     "role": "CB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "13:31",
+     "stats": {
+      "9M_BLOCKED": "1",
+      "9M_CENTER_BLOCKED": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_LEFT_SAVES": "1",
+      "9M_LEFT_SHOTS": "1",
+      "9M_SAVES": "1",
+      "9M_SHOTS": "2",
+      "BLOCKED": "1",
+      "BT_GOALS": "1",
+      "BT_SHOTS": "1",
+      "EFFICIENCY": "33",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "33",
+      "FIELD_SHOTS": "3",
+      "GOALS": "1",
+      "SHOTS": "3",
+      "TIME_PLAYED": "811"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 1
+      },
+      "C9": {
+       "g": 0,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 1,
+       "s": 1
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "11",
+     "name": "LEE Siu",
+     "nameS": "LEE S",
+     "role": "RB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "37:43",
+     "stats": {
+      "7M_GOALS": "1",
+      "7M_SAVES": "1",
+      "7M_SHOTS": "2",
+      "9M_BLOCKED": "1",
+      "9M_CENTER_BLOCKED": "1",
+      "9M_CENTER_GOALS": "1",
+      "9M_CENTER_SHOTS": "2",
+      "9M_GOALS": "1",
+      "9M_SHOTS": "2",
+      "ASSISTS": "1",
+      "BLOCKED": "1",
+      "BT_GOALS": "2",
+      "BT_SHOTS": "2",
+      "EFFICIENCY": "67",
+      "FIELD_GOALS": "3",
+      "FIELD_GOALS_PERCENT": "75",
+      "FIELD_SHOTS": "4",
+      "GOALS": "4",
+      "SHOTS": "6",
+      "TIME_PLAYED": "2263"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 1,
+       "s": 2
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 1,
+       "s": 2
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 2,
+       "s": 2
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "15",
+     "name": "LAW Chun",
+     "nameS": "LAW C",
+     "role": "RB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "29:19",
+     "stats": {
+      "2MINUTES": "1",
+      "6M_MISSED": "1",
+      "6M_RIGHT_MISSED": "1",
+      "6M_RIGHT_SHOTS": "1",
+      "6M_SHOTS": "1",
+      "ASSISTS": "1",
+      "BT_GOALS": "2",
+      "BT_SAVES": "1",
+      "BT_SHOTS": "3",
+      "EFFICIENCY": "40",
+      "FAIRPLAY_POINTS": "2",
+      "FB_SAVES": "1",
+      "FB_SHOTS": "1",
+      "FIELD_GOALS": "2",
+      "FIELD_GOALS_PERCENT": "40",
+      "FIELD_SHOTS": "5",
+      "GOALS": "2",
+      "SHOTS": "5",
+      "TIME_PLAYED": "1759"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 1
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 2,
+       "s": 3
+      },
+      "FB": {
+       "g": 0,
+       "s": 1
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "21",
+     "name": "LEUNG Laam",
+     "nameS": "LEUNG L",
+     "role": "GK",
+     "func": "AA01",
+     "captain": false,
+     "isGK": true,
+     "time": "37:03",
+     "stats": {
+      "GK_6M_CENTER_GOALS": "2",
+      "GK_6M_CENTER_GOALS_SHOTS": "2/3",
+      "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "2/4",
+      "GK_6M_CENTER_SAVES": "1",
+      "GK_6M_CENTER_SAVES_SHOTS": "1/3",
+      "GK_6M_CENTER_SHOTS": "3",
+      "GK_6M_CENTER_TOTAL_SHOTS": "4",
+      "GK_6M_GOALS": "3",
+      "GK_6M_GOALS_SHOTS": "3/5",
+      "GK_6M_LEFT_GOALS": "1",
+      "GK_6M_LEFT_GOALS_SHOTS": "1/1",
+      "GK_6M_LEFT_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_6M_LEFT_SAVES_SHOTS": "0/1",
+      "GK_6M_LEFT_SHOTS": "1",
+      "GK_6M_LEFT_TOTAL_SHOTS": "1",
+      "GK_6M_LEFT_WING_GOALS": "1",
+      "GK_6M_LEFT_WING_GOALS_SHOTS": "1/1",
+      "GK_6M_LEFT_WING_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_6M_LEFT_WING_SAVES_SHOTS": "0/1",
+      "GK_6M_LEFT_WING_SHOTS": "1",
+      "GK_6M_LEFT_WING_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_GOALS_SHOTS": "0/1",
+      "GK_6M_RIGHT_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_RIGHT_SAVES": "1",
+      "GK_6M_RIGHT_SAVES_SHOTS": "1/1",
+      "GK_6M_RIGHT_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_WING_SHOTS": "3",
+      "GK_6M_RIGHT_WING_GOALS": "3",
+      "GK_6M_RIGHT_WING_GOALS_SHOTS": "3/3",
+      "GK_6M_RIGHT_WING_GOALS_TOTAL_SHOTS": "3/3",
+      "GK_6M_RIGHT_WING_SAVES_SHOTS": "0/3",
+      "GK_6M_RIGHT_WING_SHOTS": "3",
+      "GK_6M_SAVES": "2",
+      "GK_6M_SAVES_SHOTS": "2/5",
+      "GK_6M_SHOTS": "5",
+      "GK_9M_CENTER_GOALS": "3",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "3/4",
+      "GK_9M_CENTER_SAVES": "1",
+      "GK_9M_CENTER_TOTAL_SHOTS": "4",
+      "GK_9M_GOALS": "3",
+      "GK_9M_GOALS_SHOTS": "3/4",
+      "GK_9M_SAVES": "1",
+      "GK_9M_SAVES_SHOTS": "1/4",
+      "GK_9M_SHOTS": "4",
+      "GK_BT_GOALS": "3",
+      "GK_BT_GOALS_SHOTS": "3/5",
+      "GK_BT_GOALS_TOTAL_SHOTS": "3/6",
+      "GK_BT_SAVES": "2",
+      "GK_BT_SAVES_SHOTS": "2/5",
+      "GK_BT_SHOTS": "5",
+      "GK_BT_TOTAL_SHOTS": "6",
+      "GK_FB_GOALS": "11",
+      "GK_FB_GOALS_SHOTS": "11/11",
+      "GK_FB_GOALS_TOTAL_SHOTS": "11/12",
+      "GK_FB_SAVES_SHOTS": "0/11",
+      "GK_FB_SHOTS": "11",
+      "GK_FB_TOTAL_SHOTS": "12",
+      "GK_GOALS": "24",
+      "GK_GOALS_BOT_CENTER_SHOTS": "1/2",
+      "GK_GOALS_BOT_LEFT_SHOTS": "7/8",
+      "GK_GOALS_BOT_RIGHT_SHOTS": "6/7",
+      "GK_GOALS_MID_RIGHT_SHOTS": "1/2",
+      "GK_GOALS_TOP_LEFT_SHOTS": "6/7",
+      "GK_GOALS_TOP_RIGHT_SHOTS": "3/3",
+      "GK_SAVES": "5",
+      "GK_SAVES_BOT_CENTER_SHOTS": "1/2",
+      "GK_SAVES_BOT_LEFT_SHOTS": "1/8",
+      "GK_SAVES_BOT_RIGHT_SHOTS": "1/7",
+      "GK_SAVES_MID_RIGHT_SHOTS": "1/2",
+      "GK_SAVES_PERCENT": "17",
+      "GK_SAVES_SHOTS": "5/29",
+      "GK_SAVES_TOP_LEFT_SHOTS": "1/7",
+      "GK_SAVES_TOP_RIGHT_SHOTS": "0/3",
+      "GK_SHOTS": "29",
+      "GK_TOTAL_GOALS_SHOTS": "24/29",
+      "GK_WING_GOALS": "4",
+      "GK_WING_GOALS_SHOTS": "4/4",
+      "GK_WING_SAVES_SHOTS": "0/4",
+      "GK_WING_SHOTS": "4",
+      "TIME_PLAYED": "2223"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "L6": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "C6": {
+       "sv": 1,
+       "s": 3,
+       "g": 2
+      },
+      "R6": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 3,
+       "g": 3
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 1,
+       "s": 4,
+       "g": 3
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 2,
+       "s": 5,
+       "g": 3
+      },
+      "FB": {
+       "sv": 0,
+       "s": 11,
+       "g": 11
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 1,
+        "s": 7,
+        "g": 6
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 3,
+        "g": 3
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 1,
+        "s": 2,
+        "g": 1
+       }
+      ],
+      [
+       {
+        "sv": 1,
+        "s": 8,
+        "g": 7
+       },
+       {
+        "sv": 1,
+        "s": 2,
+        "g": 1
+       },
+       {
+        "sv": 1,
+        "s": 7,
+        "g": 6
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 6,
+        "s": 7
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 3,
+        "s": 3
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 1,
+        "s": 2
+       }
+      ],
+      [
+       {
+        "g": 7,
+        "s": 8
+       },
+       {
+        "g": 1,
+        "s": 2
+       },
+       {
+        "g": 6,
+        "s": 7
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "23",
+     "name": "ZOU Yuk",
+     "nameS": "ZOU Y",
+     "role": "LW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "26:55",
+     "stats": {
+      "6M_LEFT_WING_SAVES": "1",
+      "6M_LEFT_WING_SHOTS": "1",
+      "FB_MISSED": "1",
+      "FB_SHOTS": "1",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "2",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1615",
+      "WING_SAVES": "1",
+      "WING_SHOTS": "1"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 1
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 1
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "26",
+     "name": "LAU Ka",
+     "nameS": "LAU K",
+     "role": "RW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "29:58",
+     "stats": {
+      "TIME_PLAYED": "1798"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "34",
+     "name": "LEE Hau",
+     "nameS": "LEE H",
+     "role": "CB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "13:29",
+     "stats": {
+      "7M_GOALS": "1",
+      "7M_SHOTS": "1",
+      "9M_CENTER_SAVES": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_SAVES": "1",
+      "9M_SHOTS": "1",
+      "ASSISTS": "1",
+      "EFFICIENCY": "50",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "1",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "809"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 1,
+       "s": 1
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "65",
+     "name": "WONG Kin",
+     "nameS": "WONG K",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "37:06",
+     "stats": {
+      "6M_CENTER_SAVES": "1",
+      "6M_CENTER_SHOTS": "1",
+      "6M_GOALS": "1",
+      "6M_RIGHT_GOALS": "1",
+      "6M_RIGHT_SHOTS": "1",
+      "6M_SAVES": "1",
+      "6M_SHOTS": "2",
+      "EFFICIENCY": "50",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "2226"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 1
+      },
+      "R6": {
+       "g": 1,
+       "s": 1
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "72",
+     "name": "KAN Yik",
+     "nameS": "KAN Y",
+     "role": "LW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "33:28",
+     "stats": {
+      "6M_LEFT_WING_SAVES": "1",
+      "6M_LEFT_WING_SHOTS": "1",
+      "7M_SAVES": "1",
+      "7M_SHOTS": "1",
+      "FIELD_GOALS_PERCENT": "0",
+      "FIELD_SHOTS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "2008",
+      "WING_SAVES": "1",
+      "WING_SHOTS": "1"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 1
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 1
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "73",
+     "name": "KAN Yik",
+     "nameS": "KAN Y",
+     "role": "LW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "30:00",
+     "stats": {
+      "6M_POST": "1",
+      "6M_RIGHT_POST": "1",
+      "6M_RIGHT_SHOTS": "1",
+      "6M_RIGHT_WING_SAVES": "2",
+      "6M_RIGHT_WING_SHOTS": "2",
+      "6M_SHOTS": "1",
+      "EFFICIENCY": "40",
+      "FB_GOALS": "2",
+      "FB_SHOTS": "2",
+      "FIELD_GOALS": "2",
+      "FIELD_GOALS_PERCENT": "40",
+      "FIELD_SHOTS": "5",
+      "GOALS": "2",
+      "SHOTS": "5",
+      "TIME_PLAYED": "1800",
+      "WING_SAVES": "2",
+      "WING_SHOTS": "2"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 1
+      },
+      "RW": {
+       "g": 0,
+       "s": 2
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 2,
+       "s": 2
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "80",
+     "name": "CHUNG Shu",
+     "nameS": "CHUNG S",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "24:46",
+     "stats": {
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_POST": "1",
+      "6M_CENTER_SHOTS": "2",
+      "6M_GOALS": "1",
+      "6M_POST": "1",
+      "6M_SHOTS": "2",
+      "EFFICIENCY": "50",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1486"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 1,
+       "s": 2
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "82",
+     "name": "YIP Chi",
+     "nameS": "YIP C",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "05:17",
+     "stats": {
+      "TIME_PLAYED": "317"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "99",
+     "name": "LIN Yun",
+     "nameS": "LIN Y",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "33:41",
+     "stats": {
+      "6M_RIGHT_WING_GOALS": "1",
+      "6M_RIGHT_WING_SHOTS": "1",
+      "9M_BLOCKED": "2",
+      "9M_CENTER_BLOCKED": "2",
+      "9M_CENTER_GOALS": "1",
+      "9M_CENTER_SAVES": "3",
+      "9M_CENTER_SHOTS": "6",
+      "9M_GOALS": "2",
+      "9M_LEFT_GOALS": "1",
+      "9M_LEFT_MISSED": "1",
+      "9M_LEFT_SHOTS": "2",
+      "9M_MISSED": "1",
+      "9M_SAVES": "3",
+      "9M_SHOTS": "8",
+      "BLOCKED": "2",
+      "BT_GOALS": "2",
+      "BT_SAVES": "1",
+      "BT_SHOTS": "3",
+      "EFFICIENCY": "42",
+      "FIELD_GOALS": "5",
+      "FIELD_GOALS_PERCENT": "42",
+      "FIELD_SHOTS": "12",
+      "GOALS": "5",
+      "SHOTS": "12",
+      "TIME_PLAYED": "2021",
+      "WING_GOALS": "1",
+      "WING_SHOTS": "1"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 1,
+       "s": 1
+      },
+      "L9": {
+       "g": 1,
+       "s": 2
+      },
+      "C9": {
+       "g": 1,
+       "s": 6
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 2,
+       "s": 3
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    }
+   ],
+   "gkZone": [
+    [
+     {
+      "sv": 1,
+      "s": 11,
+      "g": 10
+     },
+     {
+      "sv": 0,
+      "s": 1,
+      "g": 1
+     },
+     {
+      "sv": 1,
+      "s": 5,
+      "g": 4
+     }
+    ],
+    [
+     {
+      "sv": 0,
+      "s": 0,
+      "g": 0
+     },
+     {
+      "sv": 0,
+      "s": 0,
+      "g": 0
+     },
+     {
+      "sv": 1,
+      "s": 3,
+      "g": 2
+     }
+    ],
+    [
+     {
+      "sv": 3,
+      "s": 15,
+      "g": 12
+     },
+     {
+      "sv": 1,
+      "s": 2,
+      "g": 1
+     },
+     {
+      "sv": 1,
+      "s": 11,
+      "g": 10
+     }
+    ]
+   ],
+   "concededZone": [
+    [
+     {
+      "g": 10,
+      "s": 11
+     },
+     {
+      "g": 1,
+      "s": 1
+     },
+     {
+      "g": 4,
+      "s": 5
+     }
+    ],
+    [
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 2,
+      "s": 3
+     }
+    ],
+    [
+     {
+      "g": 12,
+      "s": 15
+     },
+     {
+      "g": 1,
+      "s": 2
+     },
+     {
+      "g": 10,
+      "s": 11
+     }
+    ]
+   ],
+   "derived": {
+    "assists": 4,
+    "steals": 0,
+    "blocks": 0,
+    "blocked": 4,
+    "turnovers": 0,
+    "twoMin": 1,
+    "yc": 0,
+    "rc": 0
+   },
+   "shotZone": [
+    [
+     {
+      "g": 2,
+      "s": 4
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 2,
+      "s": 3
+     }
+    ],
+    [
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 0,
+      "s": 1
+     },
+     {
+      "g": 0,
+      "s": 2
+     }
+    ],
+    [
+     {
+      "g": 6,
+      "s": 12
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 6,
+      "s": 9
+     }
+    ]
+   ]
+  },
+  "QAT": {
+   "code": "QAT",
+   "name": "Qatar",
+   "nameS": "Qatar",
+   "score": 40,
+   "wlt": "W",
+   "rank": "1",
+   "stats": {
+    "2MINUTES": "3",
+    "6M_GOALS": "9",
+    "6M_SHOTS": "12",
+    "7M_GOALS": "1",
+    "7M_SHOTS": "1",
+    "9M_GOALS": "5",
+    "9M_SHOTS": "7",
+    "BT_GOALS": "6",
+    "BT_SHOTS": "10",
+    "EFFICIENCY": "78",
+    "FB_GOALS": "14",
+    "FB_SHOTS": "15",
+    "GK_6M_SAVES": "1",
+    "GK_6M_SHOTS": "3",
+    "GK_7M_SAVES": "2",
+    "GK_7M_SHOTS": "4",
+    "GK_9M_SAVES": "5",
+    "GK_9M_SHOTS": "8",
+    "GK_BT_SAVES": "2",
+    "GK_BT_SHOTS": "9",
+    "GK_FB_SAVES": "1",
+    "GK_FB_SHOTS": "3",
+    "GK_SAVES": "15",
+    "GK_SAVES_PERCENT": "47",
+    "GK_SHOTS": "32",
+    "GK_WING_SAVES": "4",
+    "GK_WING_SHOTS": "5",
+    "GOALS": "40",
+    "SHOTS": "51",
+    "WING_GOALS": "5",
+    "WING_SHOTS": "6"
+   },
+   "shot": {
+    "LW": {
+     "g": 1,
+     "s": 1
+    },
+    "L6": {
+     "g": 3,
+     "s": 3
+    },
+    "C6": {
+     "g": 5,
+     "s": 7
+    },
+    "R6": {
+     "g": 1,
+     "s": 2
+    },
+    "RW": {
+     "g": 4,
+     "s": 5
+    },
+    "L9": {
+     "g": 1,
+     "s": 1
+    },
+    "C9": {
+     "g": 4,
+     "s": 5
+    },
+    "R9": {
+     "g": 0,
+     "s": 1
+    },
+    "P7": {
+     "g": 1,
+     "s": 1
+    },
+    "EG": {
+     "g": 0,
+     "s": 0
+    },
+    "BT": {
+     "g": 6,
+     "s": 10
+    },
+    "FB": {
+     "g": 14,
+     "s": 15
+    },
+    "FLY": {
+     "g": 0,
+     "s": 0
+    }
+   },
+   "gk": {
+    "LW": {
+     "sv": 2,
+     "s": 2,
+     "g": 0
+    },
+    "L6": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    },
+    "C6": {
+     "sv": 1,
+     "s": 2,
+     "g": 1
+    },
+    "R6": {
+     "sv": 0,
+     "s": 2,
+     "g": 2
+    },
+    "RW": {
+     "sv": 2,
+     "s": 3,
+     "g": 1
+    },
+    "L9": {
+     "sv": 1,
+     "s": 2,
+     "g": 1
+    },
+    "C9": {
+     "sv": 4,
+     "s": 11,
+     "g": 7
+    },
+    "R9": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    },
+    "P7": {
+     "sv": 2,
+     "s": 4,
+     "g": 2
+    },
+    "EG": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    },
+    "BT": {
+     "sv": 2,
+     "s": 9,
+     "g": 7
+    },
+    "FB": {
+     "sv": 1,
+     "s": 3,
+     "g": 2
+    },
+    "FLY": {
+     "sv": 0,
+     "s": 0,
+     "g": 0
+    }
+   },
+   "halves": [
+    {
+     "label": "1st Half",
+     "value": 19
+    },
+    {
+     "label": "2nd Half",
+     "value": 21
+    }
+   ],
+   "players": [
+    {
+     "bib": "7",
+     "name": "MADADI Ahmad",
+     "nameS": "MADADI A",
+     "role": "LW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "20:10",
+     "stats": {
+      "7M_GOALS": "1",
+      "7M_SHOTS": "1",
+      "ASSISTS": "1",
+      "EFFICIENCY": "100",
+      "GOALS": "1",
+      "SHOTS": "1",
+      "TIME_PLAYED": "1210"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 1,
+       "s": 1
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "41",
+     "name": "ALI Youssef",
+     "nameS": "ALI Y",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "18:19",
+     "stats": {
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_MISSED": "1",
+      "6M_CENTER_SHOTS": "2",
+      "6M_GOALS": "1",
+      "6M_MISSED": "1",
+      "6M_SHOTS": "2",
+      "EFFICIENCY": "50",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1099"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 1,
+       "s": 2
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "12",
+     "name": "DHIB Saifdinne",
+     "nameS": "DHIB S",
+     "role": "GK",
+     "func": "",
+     "captain": false,
+     "isGK": true,
+     "time": "29:04",
+     "stats": {
+      "GK_6M_CENTER_GOALS": "1",
+      "GK_6M_CENTER_GOALS_SHOTS": "1/1",
+      "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "1/2",
+      "GK_6M_CENTER_SAVES_SHOTS": "0/1",
+      "GK_6M_CENTER_SHOTS": "1",
+      "GK_6M_CENTER_TOTAL_SHOTS": "2",
+      "GK_6M_GOALS": "1",
+      "GK_6M_GOALS_SHOTS": "1/1",
+      "GK_6M_LEFT_WING_GOALS_SHOTS": "0/1",
+      "GK_6M_LEFT_WING_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_LEFT_WING_SAVES": "1",
+      "GK_6M_LEFT_WING_SAVES_SHOTS": "1/1",
+      "GK_6M_LEFT_WING_SHOTS": "1",
+      "GK_6M_LEFT_WING_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_RIGHT_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_WING_SHOTS": "1",
+      "GK_6M_RIGHT_WING_GOALS": "1",
+      "GK_6M_RIGHT_WING_GOALS_SHOTS": "1/1",
+      "GK_6M_RIGHT_WING_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_6M_RIGHT_WING_SAVES_SHOTS": "0/1",
+      "GK_6M_RIGHT_WING_SHOTS": "1",
+      "GK_6M_SAVES_SHOTS": "0/1",
+      "GK_6M_SHOTS": "1",
+      "GK_7M_GOALS": "1",
+      "GK_7M_GOALS_SHOTS": "1/1",
+      "GK_7M_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_7M_SAVES_SHOTS": "0/1",
+      "GK_7M_SHOTS": "1",
+      "GK_7M_TOTAL_SHOTS": "1",
+      "GK_9M_CENTER_GOALS": "1",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "1/7",
+      "GK_9M_CENTER_SAVES": "4",
+      "GK_9M_CENTER_TOTAL_SHOTS": "7",
+      "GK_9M_GOALS": "2",
+      "GK_9M_GOALS_SHOTS": "2/6",
+      "GK_9M_LEFT_GOALS": "1",
+      "GK_9M_LEFT_GOALS_SHOTS": "1/1",
+      "GK_9M_LEFT_GOALS_TOTAL_SHOTS": "1/1",
+      "GK_9M_LEFT_SAVES_SHOTS": "0/1",
+      "GK_9M_LEFT_SHOTS": "1",
+      "GK_9M_LEFT_TOTAL_SHOTS": "1",
+      "GK_9M_SAVES": "4",
+      "GK_9M_SAVES_SHOTS": "4/6",
+      "GK_9M_SHOTS": "6",
+      "GK_BT_GOALS": "4",
+      "GK_BT_GOALS_SHOTS": "4/5",
+      "GK_BT_GOALS_TOTAL_SHOTS": "4/5",
+      "GK_BT_SAVES": "1",
+      "GK_BT_SAVES_SHOTS": "1/5",
+      "GK_BT_SHOTS": "5",
+      "GK_BT_TOTAL_SHOTS": "5",
+      "GK_FB_GOALS_SHOTS": "0/1",
+      "GK_FB_GOALS_TOTAL_SHOTS": "0/2",
+      "GK_FB_SAVES": "1",
+      "GK_FB_SAVES_SHOTS": "1/1",
+      "GK_FB_SHOTS": "1",
+      "GK_FB_TOTAL_SHOTS": "2",
+      "GK_GOALS": "9",
+      "GK_GOALS_BOT_LEFT_SHOTS": "3/7",
+      "GK_GOALS_BOT_RIGHT_SHOTS": "4/4",
+      "GK_GOALS_MID_RIGHT_SHOTS": "0/1",
+      "GK_GOALS_TOP_LEFT_SHOTS": "1/2",
+      "GK_GOALS_TOP_RIGHT_SHOTS": "0/1",
+      "GK_SAVES": "7",
+      "GK_SAVES_BOT_LEFT_SHOTS": "4/7",
+      "GK_SAVES_BOT_RIGHT_SHOTS": "0/4",
+      "GK_SAVES_MID_RIGHT_SHOTS": "1/1",
+      "GK_SAVES_PERCENT": "44",
+      "GK_SAVES_SHOTS": "7/16",
+      "GK_SAVES_TOP_LEFT_SHOTS": "1/2",
+      "GK_SAVES_TOP_RIGHT_SHOTS": "1/1",
+      "GK_SHOTS": "16",
+      "GK_TOTAL_GOALS_SHOTS": "9/16",
+      "GK_WING_GOALS": "1",
+      "GK_WING_GOALS_SHOTS": "1/2",
+      "GK_WING_SAVES": "1",
+      "GK_WING_SAVES_SHOTS": "1/2",
+      "GK_WING_SHOTS": "2",
+      "TIME_PLAYED": "1744"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "R6": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "RW": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "L9": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "C9": {
+       "sv": 4,
+       "s": 7,
+       "g": 3
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 1,
+       "s": 5,
+       "g": 4
+      },
+      "FB": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 1,
+        "s": 2,
+        "g": 1
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 1,
+        "s": 1,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 1,
+        "s": 1,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 4,
+        "s": 7,
+        "g": 3
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 4,
+        "g": 4
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 1,
+        "s": 2
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 1
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 1
+       }
+      ],
+      [
+       {
+        "g": 3,
+        "s": 7
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 4,
+        "s": 4
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "22",
+     "name": "ABDALLA Abdelrahman",
+     "nameS": "ABDALLA A",
+     "role": "CB",
+     "func": "",
+     "captain": false,
+     "isGK": false,
+     "time": "24:10",
+     "stats": {
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_SHOTS": "1",
+      "6M_GOALS": "1",
+      "6M_SHOTS": "1",
+      "9M_GOALS": "1",
+      "9M_LEFT_GOALS": "1",
+      "9M_LEFT_SHOTS": "1",
+      "9M_SHOTS": "1",
+      "ASSISTS": "1",
+      "BT_SAVES": "1",
+      "BT_SHOTS": "1",
+      "EFFICIENCY": "67",
+      "FIELD_GOALS": "2",
+      "FIELD_GOALS_PERCENT": "67",
+      "FIELD_SHOTS": "3",
+      "GOALS": "2",
+      "SHOTS": "3",
+      "TIME_PLAYED": "1450"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 1,
+       "s": 1
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 1,
+       "s": 1
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 1
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "69",
+     "name": "SOUSSOU Malek",
+     "nameS": "SOUSSOU M",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "20:27",
+     "stats": {
+      "6M_CENTER_GOALS": "1",
+      "6M_CENTER_SAVES": "1",
+      "6M_CENTER_SHOTS": "2",
+      "6M_GOALS": "1",
+      "6M_SAVES": "1",
+      "6M_SHOTS": "2",
+      "EFFICIENCY": "50",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1227"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 1,
+       "s": 2
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "10",
+     "name": "MARZO Frankis",
+     "nameS": "MARZO F",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "26:06",
+     "stats": {
+      "6M_GOALS": "1",
+      "6M_LEFT_GOALS": "1",
+      "6M_LEFT_SHOTS": "1",
+      "6M_SHOTS": "1",
+      "9M_CENTER_GOALS": "2",
+      "9M_CENTER_SHOTS": "2",
+      "9M_GOALS": "2",
+      "9M_SHOTS": "2",
+      "BLOCKS": "1",
+      "BT_GOALS": "2",
+      "BT_SHOTS": "2",
+      "EFFICIENCY": "88",
+      "FB_GOALS": "2",
+      "FB_MISSED": "1",
+      "FB_SHOTS": "3",
+      "FIELD_GOALS": "7",
+      "FIELD_GOALS_PERCENT": "88",
+      "FIELD_SHOTS": "8",
+      "GOALS": "7",
+      "SHOTS": "8",
+      "TIME_PLAYED": "1566"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 1,
+       "s": 1
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 2,
+       "s": 2
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 2,
+       "s": 2
+      },
+      "FB": {
+       "g": 2,
+       "s": 3
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "9",
+     "name": "CAPOTE Rafael",
+     "nameS": "CAPOTE R",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "14:14",
+     "stats": {
+      "6M_GOALS": "1",
+      "6M_LEFT_GOALS": "1",
+      "6M_LEFT_SHOTS": "1",
+      "6M_SHOTS": "1",
+      "BT_GOALS": "1",
+      "BT_SHOTS": "1",
+      "EFFICIENCY": "100",
+      "FIELD_GOALS": "2",
+      "FIELD_GOALS_PERCENT": "100",
+      "FIELD_SHOTS": "2",
+      "GOALS": "2",
+      "SHOTS": "2",
+      "TIME_PLAYED": "854"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 1,
+       "s": 1
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 1,
+       "s": 1
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "11",
+     "name": "MURAD Abdulrazzaq",
+     "nameS": "MURAD A",
+     "role": "LW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "38:56",
+     "stats": {
+      "6M_LEFT_WING_GOALS": "1",
+      "6M_LEFT_WING_SHOTS": "1",
+      "9M_CENTER_GOALS": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_GOALS": "1",
+      "9M_SHOTS": "1",
+      "EFFICIENCY": "100",
+      "FB_GOALS": "2",
+      "FB_SHOTS": "2",
+      "FIELD_GOALS": "4",
+      "FIELD_GOALS_PERCENT": "100",
+      "FIELD_SHOTS": "4",
+      "GOALS": "4",
+      "SHOTS": "4",
+      "TIME_PLAYED": "2336",
+      "WING_GOALS": "1",
+      "WING_SHOTS": "1"
+     },
+     "shot": {
+      "LW": {
+       "g": 1,
+       "s": 1
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 1,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 2,
+       "s": 2
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "13",
+     "name": "MEMISEVIC Eldar",
+     "nameS": "MEMISEVIC E",
+     "role": "RW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "29:05",
+     "stats": {
+      "6M_RIGHT_WING_GOALS": "2",
+      "6M_RIGHT_WING_SAVES": "1",
+      "6M_RIGHT_WING_SHOTS": "3",
+      "ASSISTS": "1",
+      "BT_GOALS": "1",
+      "BT_POST": "1",
+      "BT_SHOTS": "2",
+      "EFFICIENCY": "75",
+      "FB_GOALS": "3",
+      "FB_SHOTS": "3",
+      "FIELD_GOALS": "6",
+      "FIELD_GOALS_PERCENT": "75",
+      "FIELD_SHOTS": "8",
+      "GOALS": "6",
+      "SHOTS": "8",
+      "TIME_PLAYED": "1745",
+      "WING_GOALS": "2",
+      "WING_SAVES": "1",
+      "WING_SHOTS": "3"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 2,
+       "s": 3
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 1,
+       "s": 2
+      },
+      "FB": {
+       "g": 3,
+       "s": 3
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "15",
+     "name": "MEGDICH Nasreddine",
+     "nameS": "MEGDICH N",
+     "role": "RW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "35:08",
+     "stats": {
+      "2MINUTES": "1",
+      "6M_RIGHT_WING_GOALS": "2",
+      "6M_RIGHT_WING_SHOTS": "2",
+      "EFFICIENCY": "100",
+      "FAIRPLAY_POINTS": "2",
+      "FB_GOALS": "5",
+      "FB_SHOTS": "5",
+      "FIELD_GOALS": "7",
+      "FIELD_GOALS_PERCENT": "100",
+      "FIELD_SHOTS": "7",
+      "GOALS": "7",
+      "SHOTS": "7",
+      "TIME_PLAYED": "2108",
+      "WING_GOALS": "2",
+      "WING_SHOTS": "2"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 2,
+       "s": 2
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 5,
+       "s": 5
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "19",
+     "name": "ZEMZEMI Firas",
+     "nameS": "ZEMZEMI F",
+     "role": "RB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "31:51",
+     "stats": {
+      "2MINUTES": "1",
+      "6M_GOALS": "1",
+      "6M_RIGHT_GOALS": "1",
+      "6M_RIGHT_SAVES": "1",
+      "6M_RIGHT_SHOTS": "2",
+      "6M_SAVES": "1",
+      "6M_SHOTS": "2",
+      "9M_CENTER_GOALS": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_GOALS": "1",
+      "9M_RIGHT_SAVES": "1",
+      "9M_RIGHT_SHOTS": "1",
+      "9M_SAVES": "1",
+      "9M_SHOTS": "2",
+      "ASSISTS": "2",
+      "BT_GOALS": "1",
+      "BT_SAVES": "1",
+      "BT_SHOTS": "2",
+      "EFFICIENCY": "57",
+      "FAIRPLAY_POINTS": "2",
+      "FB_GOALS": "1",
+      "FB_SHOTS": "1",
+      "FIELD_GOALS": "4",
+      "FIELD_GOALS_PERCENT": "57",
+      "FIELD_SHOTS": "7",
+      "GOALS": "4",
+      "SHOTS": "7",
+      "TIME_PLAYED": "1911"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 1,
+       "s": 2
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 1,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 1
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 1,
+       "s": 2
+      },
+      "FB": {
+       "g": 1,
+       "s": 1
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "33",
+     "name": "ABDELRHEM Ahmed",
+     "nameS": "ABDELRHEM A",
+     "role": "GK",
+     "func": "AA01",
+     "captain": false,
+     "isGK": true,
+     "time": "28:15",
+     "stats": {
+      "GK_6M_CENTER_GOALS_SHOTS": "0/1",
+      "GK_6M_CENTER_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_CENTER_SAVES": "1",
+      "GK_6M_CENTER_SAVES_SHOTS": "1/1",
+      "GK_6M_CENTER_SHOTS": "1",
+      "GK_6M_CENTER_TOTAL_SHOTS": "1",
+      "GK_6M_GOALS": "1",
+      "GK_6M_GOALS_SHOTS": "1/2",
+      "GK_6M_LEFT_WING_GOALS_SHOTS": "0/1",
+      "GK_6M_LEFT_WING_GOALS_TOTAL_SHOTS": "0/1",
+      "GK_6M_LEFT_WING_SAVES": "1",
+      "GK_6M_LEFT_WING_SAVES_SHOTS": "1/1",
+      "GK_6M_LEFT_WING_SHOTS": "1",
+      "GK_6M_LEFT_WING_TOTAL_SHOTS": "1",
+      "GK_6M_RIGHT_GOALS": "1",
+      "GK_6M_RIGHT_GOALS_SHOTS": "1/1",
+      "GK_6M_RIGHT_GOALS_TOTAL_SHOTS": "1/2",
+      "GK_6M_RIGHT_SAVES_SHOTS": "0/1",
+      "GK_6M_RIGHT_SHOTS": "1",
+      "GK_6M_RIGHT_TOTAL_SHOTS": "2",
+      "GK_6M_RIGHT_TOTAL_WING_SHOTS": "2",
+      "GK_6M_RIGHT_WING_GOALS_SHOTS": "0/2",
+      "GK_6M_RIGHT_WING_GOALS_TOTAL_SHOTS": "0/2",
+      "GK_6M_RIGHT_WING_SAVES": "2",
+      "GK_6M_RIGHT_WING_SAVES_SHOTS": "2/2",
+      "GK_6M_RIGHT_WING_SHOTS": "2",
+      "GK_6M_SAVES": "1",
+      "GK_6M_SAVES_SHOTS": "1/2",
+      "GK_6M_SHOTS": "2",
+      "GK_7M_GOALS": "1",
+      "GK_7M_GOALS_SHOTS": "1/3",
+      "GK_7M_GOALS_TOTAL_SHOTS": "1/3",
+      "GK_7M_SAVES": "2",
+      "GK_7M_SAVES_SHOTS": "2/3",
+      "GK_7M_SHOTS": "3",
+      "GK_7M_TOTAL_SHOTS": "3",
+      "GK_9M_CENTER_GOALS": "1",
+      "GK_9M_CENTER_GOALS_TOTAL_SHOTS": "1/4",
+      "GK_9M_CENTER_TOTAL_SHOTS": "4",
+      "GK_9M_GOALS": "1",
+      "GK_9M_GOALS_SHOTS": "1/2",
+      "GK_9M_LEFT_GOALS_SHOTS": "0/1",
+      "GK_9M_LEFT_GOALS_TOTAL_SHOTS": "0/3",
+      "GK_9M_LEFT_SAVES": "1",
+      "GK_9M_LEFT_SAVES_SHOTS": "1/1",
+      "GK_9M_LEFT_SHOTS": "1",
+      "GK_9M_LEFT_TOTAL_SHOTS": "3",
+      "GK_9M_SAVES": "1",
+      "GK_9M_SAVES_SHOTS": "1/2",
+      "GK_9M_SHOTS": "2",
+      "GK_BT_GOALS": "3",
+      "GK_BT_GOALS_SHOTS": "3/4",
+      "GK_BT_GOALS_TOTAL_SHOTS": "3/4",
+      "GK_BT_SAVES": "1",
+      "GK_BT_SAVES_SHOTS": "1/4",
+      "GK_BT_SHOTS": "4",
+      "GK_BT_TOTAL_SHOTS": "4",
+      "GK_FB_GOALS": "2",
+      "GK_FB_GOALS_SHOTS": "2/2",
+      "GK_FB_GOALS_TOTAL_SHOTS": "2/2",
+      "GK_FB_SAVES_SHOTS": "0/2",
+      "GK_FB_SHOTS": "2",
+      "GK_FB_TOTAL_SHOTS": "2",
+      "GK_GOALS": "8",
+      "GK_GOALS_BOT_LEFT_SHOTS": "3/5",
+      "GK_GOALS_BOT_RIGHT_SHOTS": "2/5",
+      "GK_GOALS_MID_CENTER_SHOTS": "0/1",
+      "GK_GOALS_MID_RIGHT_SHOTS": "0/1",
+      "GK_GOALS_TOP_LEFT_SHOTS": "1/2",
+      "GK_GOALS_TOP_RIGHT_SHOTS": "2/2",
+      "GK_SAVES": "8",
+      "GK_SAVES_BOT_LEFT_SHOTS": "2/5",
+      "GK_SAVES_BOT_RIGHT_SHOTS": "3/5",
+      "GK_SAVES_MID_CENTER_SHOTS": "1/1",
+      "GK_SAVES_MID_RIGHT_SHOTS": "1/1",
+      "GK_SAVES_PERCENT": "50",
+      "GK_SAVES_SHOTS": "8/16",
+      "GK_SAVES_TOP_LEFT_SHOTS": "1/2",
+      "GK_SAVES_TOP_RIGHT_SHOTS": "0/2",
+      "GK_SHOTS": "16",
+      "GK_TOTAL_GOALS_SHOTS": "8/16",
+      "GK_WING_GOALS_SHOTS": "0/3",
+      "GK_WING_SAVES": "3",
+      "GK_WING_SAVES_SHOTS": "3/3",
+      "GK_WING_SHOTS": "3",
+      "TIME_PLAYED": "1695"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 1,
+       "g": 1
+      },
+      "RW": {
+       "sv": 2,
+       "s": 2,
+       "g": 0
+      },
+      "L9": {
+       "sv": 1,
+       "s": 1,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 4,
+       "g": 4
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 2,
+       "s": 3,
+       "g": 1
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 1,
+       "s": 4,
+       "g": 3
+      },
+      "FB": {
+       "sv": 0,
+       "s": 2,
+       "g": 2
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 1,
+        "s": 2,
+        "g": 1
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 2,
+        "g": 2
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 1,
+        "s": 1,
+        "g": 0
+       },
+       {
+        "sv": 1,
+        "s": 1,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 2,
+        "s": 5,
+        "g": 3
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 3,
+        "s": 5,
+        "g": 2
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 1,
+        "s": 2
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 2,
+        "s": 2
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 1
+       },
+       {
+        "g": 0,
+        "s": 1
+       }
+      ],
+      [
+       {
+        "g": 3,
+        "s": 5
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 2,
+        "s": 5
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "44",
+     "name": "GUEHIS Amine",
+     "nameS": "GUEHIS A",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "20:42",
+     "stats": {
+      "6M_CENTER_GOALS": "2",
+      "6M_CENTER_SHOTS": "2",
+      "6M_GOALS": "3",
+      "6M_LEFT_GOALS": "1",
+      "6M_LEFT_SHOTS": "1",
+      "6M_SHOTS": "3",
+      "ASSISTS": "1",
+      "EFFICIENCY": "100",
+      "FIELD_GOALS": "3",
+      "FIELD_GOALS_PERCENT": "100",
+      "FIELD_SHOTS": "3",
+      "GOALS": "3",
+      "SHOTS": "3",
+      "TIME_PLAYED": "1242"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 1,
+       "s": 1
+      },
+      "C6": {
+       "g": 2,
+       "s": 2
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "77",
+     "name": "HAMAM Mohamedali",
+     "nameS": "HAMAM M",
+     "role": "LB",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "28:31",
+     "stats": {
+      "2MINUTES": "1",
+      "9M_CENTER_SAVES": "1",
+      "9M_CENTER_SHOTS": "1",
+      "9M_SAVES": "1",
+      "9M_SHOTS": "1",
+      "ASSISTS": "2",
+      "BLOCKS": "1",
+      "BT_GOALS": "1",
+      "BT_SHOTS": "1",
+      "EFFICIENCY": "50",
+      "FAIRPLAY_POINTS": "2",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1711"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 1
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 1,
+       "s": 1
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "94",
+     "name": "ZAKKAR Ameen",
+     "nameS": "ZAKKAR A",
+     "role": "RW",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "19:03",
+     "stats": {
+      "ASSISTS": "1",
+      "BLOCKS": "1",
+      "TIME_PLAYED": "1143"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 0
+      },
+      "FB": {
+       "g": 0,
+       "s": 0
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    },
+    {
+     "bib": "98",
+     "name": "EBAID Ebrahim",
+     "nameS": "EBAID E",
+     "role": "P",
+     "func": "AA01",
+     "captain": false,
+     "isGK": false,
+     "time": "25:08",
+     "stats": {
+      "ASSISTS": "2",
+      "BLOCKS": "1",
+      "BT_SAVES": "1",
+      "BT_SHOTS": "1",
+      "EFFICIENCY": "50",
+      "FB_GOALS": "1",
+      "FB_SHOTS": "1",
+      "FIELD_GOALS": "1",
+      "FIELD_GOALS_PERCENT": "50",
+      "FIELD_SHOTS": "2",
+      "GOALS": "1",
+      "SHOTS": "2",
+      "TIME_PLAYED": "1508"
+     },
+     "shot": {
+      "LW": {
+       "g": 0,
+       "s": 0
+      },
+      "L6": {
+       "g": 0,
+       "s": 0
+      },
+      "C6": {
+       "g": 0,
+       "s": 0
+      },
+      "R6": {
+       "g": 0,
+       "s": 0
+      },
+      "RW": {
+       "g": 0,
+       "s": 0
+      },
+      "L9": {
+       "g": 0,
+       "s": 0
+      },
+      "C9": {
+       "g": 0,
+       "s": 0
+      },
+      "R9": {
+       "g": 0,
+       "s": 0
+      },
+      "P7": {
+       "g": 0,
+       "s": 0
+      },
+      "EG": {
+       "g": 0,
+       "s": 0
+      },
+      "BT": {
+       "g": 0,
+       "s": 1
+      },
+      "FB": {
+       "g": 1,
+       "s": 1
+      },
+      "FLY": {
+       "g": 0,
+       "s": 0
+      }
+     },
+     "gk": {
+      "LW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R6": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "RW": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "L9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "C9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "R9": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "P7": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "EG": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "BT": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FB": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      },
+      "FLY": {
+       "sv": 0,
+       "s": 0,
+       "g": 0
+      }
+     },
+     "gkZone": [
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ],
+      [
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       },
+       {
+        "sv": 0,
+        "s": 0,
+        "g": 0
+       }
+      ]
+     ],
+     "concededZone": [
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ],
+      [
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       },
+       {
+        "g": 0,
+        "s": 0
+       }
+      ]
+     ]
+    }
+   ],
+   "gkZone": [
+    [
+     {
+      "sv": 2,
+      "s": 4,
+      "g": 2
+     },
+     {
+      "sv": 0,
+      "s": 0,
+      "g": 0
+     },
+     {
+      "sv": 1,
+      "s": 3,
+      "g": 2
+     }
+    ],
+    [
+     {
+      "sv": 0,
+      "s": 0,
+      "g": 0
+     },
+     {
+      "sv": 1,
+      "s": 1,
+      "g": 0
+     },
+     {
+      "sv": 2,
+      "s": 2,
+      "g": 0
+     }
+    ],
+    [
+     {
+      "sv": 6,
+      "s": 12,
+      "g": 6
+     },
+     {
+      "sv": 0,
+      "s": 0,
+      "g": 0
+     },
+     {
+      "sv": 3,
+      "s": 9,
+      "g": 6
+     }
+    ]
+   ],
+   "concededZone": [
+    [
+     {
+      "g": 2,
+      "s": 4
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 2,
+      "s": 3
+     }
+    ],
+    [
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 0,
+      "s": 1
+     },
+     {
+      "g": 0,
+      "s": 2
+     }
+    ],
+    [
+     {
+      "g": 6,
+      "s": 12
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 6,
+      "s": 9
+     }
+    ]
+   ],
+   "derived": {
+    "assists": 11,
+    "steals": 0,
+    "blocks": 4,
+    "blocked": 0,
+    "turnovers": 0,
+    "twoMin": 3,
+    "yc": 0,
+    "rc": 0
+   },
+   "shotZone": [
+    [
+     {
+      "g": 10,
+      "s": 11
+     },
+     {
+      "g": 1,
+      "s": 1
+     },
+     {
+      "g": 4,
+      "s": 5
+     }
+    ],
+    [
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 0,
+      "s": 0
+     },
+     {
+      "g": 2,
+      "s": 3
+     }
+    ],
+    [
+     {
+      "g": 12,
+      "s": 15
+     },
+     {
+      "g": 1,
+      "s": 2
+     },
+     {
+      "g": 10,
+      "s": 11
+     }
+    ]
+   ]
+  }
+ },
+ "updatedAt": "2026-09-22T04:01:38.648Z"
+}

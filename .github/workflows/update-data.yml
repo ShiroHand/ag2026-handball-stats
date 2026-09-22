@@ -1,0 +1,47 @@
+name: 公式データ自動更新
+
+on:
+  schedule:
+    # 大会期間中は 10 分ごと（UTC）。GitHub 側の混雑で数分遅れることがあります。
+    - cron: '*/10 * * * *'
+  workflow_dispatch:        # 手動実行
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 公式リザルトAPIから取得
+        run: node scripts/fetch-data.mjs
+
+      - name: 国旗画像を取得（不足分のみ）
+        run: node scripts/fetch-flags.mjs || true
+
+      - name: 差分があればコミット
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data assets/flags
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "データ更新: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            git push
+          fi
