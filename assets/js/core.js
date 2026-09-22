@@ -160,17 +160,21 @@ export function setParam(k, v) {
   history.replaceState(null, '', u);
 }
 
-/* ---------- 国旗（ローカル優先 → 公式サイトにフォールバック） ---------- */
-export const flagLocal  = (code) => `assets/flags/${code}.png`;
-export const flagRemote = (code) => `https://results.asiangames2026.org/assets/png/${code}.png`;
+/* ---------- 国旗 ----------
+   公式サイトの画像URLはビルドハッシュ付きで固定できないため、
+   scripts/fetch-flags.mjs が assets/flags/<CODE>.png に取り込んだものを使う。
+   未取得のコードは国名コードのバッジで代替する。 */
+export const flagLocal = (code) => `assets/flags/${code}.png`;
 export function flagImg(code, cls = 'flag') {
-  const img = el('img', {class: cls, alt: code || '', loading: 'lazy'});
-  if (!code) { img.style.visibility = 'hidden'; return img; }
-  let stage = 0;
+  if (!code) {
+    const ph = el('span', {class: cls + ' flag-ph'});
+    ph.style.visibility = 'hidden';
+    return ph;
+  }
+  const img = el('img', {class: cls, alt: code, title: code, loading: 'lazy'});
   img.onerror = () => {
-    stage++;
-    if (stage === 1) img.src = flagRemote(code);
-    else img.style.visibility = 'hidden';
+    const ph = el('span', {class: cls + ' flag-ph', text: code});
+    img.replaceWith(ph);
   };
   img.src = flagLocal(code);
   return img;

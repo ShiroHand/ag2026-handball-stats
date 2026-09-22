@@ -129,3 +129,10 @@ hr.soft{border:0;border-top:1px solid var(--line);margin:14px 0}
 .pillbar{display:inline-flex;height:14px;border-radius:7px;overflow:hidden;background:var(--surface-2);min-width:60px;vertical-align:middle}
 .pillbar span{display:block;height:100%}
 footer.foot{max-width:1400px;margin:0 auto;padding:0 16px 40px;font-size:11px;color:var(--ink-3)}
+
+/* 国旗が未取得のときの代替バッジ */
+.flag-ph{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--surface-2);border:1px solid var(--line-2);border-radius:3px;
+  color:var(--ink-3);font-weight:700;font-size:10px;letter-spacing:.02em}
+.flag.flag-ph{width:44px;height:30px}
+.flag.sm.flag-ph{width:26px;height:18px;font-size:8px}
