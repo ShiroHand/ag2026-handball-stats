@@ -6660,7 +6660,7 @@
      "bib": "5",
      "name": "TURSYN Aiym",
      "nameS": "TURSYN A",
-     "role": "",
+     "role": "CB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -9998,7 +9998,7 @@
      "period": "1",
      "bib": "5",
      "name": "TURSYN A",
-     "role": "OTH",
+     "role": "CB",
      "zone": "C9",
      "result": "SAVE",
      "goalZone": "ML",
@@ -10641,5 +10641,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T05:57:26.822Z"
+ "updatedAt": "2026-09-22T09:06:57.562Z"
 }

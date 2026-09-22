@@ -1014,7 +1014,7 @@
      "bib": "5",
      "name": "TURSYN Aiym",
      "nameS": "TURSYN A",
-     "role": "",
+     "role": "CB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -5271,7 +5271,7 @@
    ],
    "players": [
     {
-     "bib": "01",
+     "bib": "1",
      "name": "LU Chang",
      "nameS": "LU C",
      "role": "GK",
@@ -5548,7 +5548,7 @@
      ]
     },
     {
-     "bib": "03",
+     "bib": "3",
      "name": "PAN Fengying",
      "nameS": "PAN F",
      "role": "CB",
@@ -5786,7 +5786,7 @@
      ]
     },
     {
-     "bib": "08",
+     "bib": "8",
      "name": "LIANG Jing",
      "nameS": "LIANG J",
      "role": "LB",
@@ -6032,7 +6032,7 @@
      ]
     },
     {
-     "bib": "09",
+     "bib": "9",
      "name": "JIANG Xintong",
      "nameS": "JIANG X",
      "role": "P",
@@ -7241,8 +7241,8 @@
     },
     {
      "bib": "16",
-     "name": "XUANG Sitong",
-     "nameS": "XUANG S",
+     "name": "HUANG Sitong",
+     "nameS": "HUANG S",
      "role": "GK",
      "func": "AA01",
      "captain": false,
@@ -9852,7 +9852,7 @@
      "period": "2",
      "bib": "08",
      "name": "LIANG J",
-     "role": "LB",
+     "role": "OTH",
      "zone": "L6",
      "result": "SAVE",
      "goalZone": "ML",
@@ -9948,7 +9948,7 @@
      "period": "2",
      "bib": "03",
      "name": "PAN F",
-     "role": "CB",
+     "role": "OTH",
      "zone": "LW",
      "result": "SAVE",
      "goalZone": "TR",
@@ -9984,7 +9984,7 @@
      "period": "2",
      "bib": "08",
      "name": "LIANG J",
-     "role": "LB",
+     "role": "OTH",
      "zone": "L9",
      "result": "GOAL",
      "goalZone": "TR",
@@ -10059,7 +10059,7 @@
     {
      "fromBib": "08",
      "fromName": "LIANG J",
-     "fromRole": "LB",
+     "fromRole": "OTH",
      "toBib": "11",
      "toName": "LIU C",
      "toRole": "RB",
@@ -10090,7 +10090,7 @@
      "goals": 1
     },
     {
-     "from": "LB",
+     "from": "OTH",
      "to": "RB",
      "count": 1,
      "goals": 1
@@ -10406,5 +10406,5 @@
    }
   }
  },
- "updatedAt": "2026-09-22T05:46:56.636Z"
+ "updatedAt": "2026-09-22T09:06:55.658Z"
 }
