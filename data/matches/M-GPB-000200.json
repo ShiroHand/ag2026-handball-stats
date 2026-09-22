@@ -4492,7 +4492,928 @@
       "s": 13
      }
     ]
-   ]
+   ],
+   "shots": [
+    {
+     "min": "00:47",
+     "period": "1",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "FB",
+     "result": "SAVE",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "0-0"
+    },
+    {
+     "min": "02:18",
+     "period": "1",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "0-1"
+    },
+    {
+     "min": "04:06",
+     "period": "1",
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "role": "RB",
+     "zone": "R9",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "0-3"
+    },
+    {
+     "min": "04:38",
+     "period": "1",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "71",
+     "score": "0-3"
+    },
+    {
+     "min": "04:53",
+     "period": "1",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "1-3"
+    },
+    {
+     "min": "05:54",
+     "period": "1",
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "role": "RB",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "2-3"
+    },
+    {
+     "min": "07:11",
+     "period": "1",
+     "bib": "13",
+     "name": "GAZIYEV O",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "2-4"
+    },
+    {
+     "min": "09:18",
+     "period": "1",
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "role": "RB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "2-5"
+    },
+    {
+     "min": "10:12",
+     "period": "1",
+     "bib": "13",
+     "name": "GAZIYEV O",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "2-6"
+    },
+    {
+     "min": "11:55",
+     "period": "1",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "3",
+     "score": "3-7"
+    },
+    {
+     "min": "12:12",
+     "period": "1",
+     "bib": "3",
+     "name": "MURATOV D",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "4-7"
+    },
+    {
+     "min": "13:36",
+     "period": "1",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "5-7"
+    },
+    {
+     "min": "14:58",
+     "period": "1",
+     "bib": "99",
+     "name": "IRISMETOV D",
+     "role": "CB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "6-8"
+    },
+    {
+     "min": "15:42",
+     "period": "1",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "C6",
+     "result": "SAVE",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "6-9"
+    },
+    {
+     "min": "17:23",
+     "period": "1",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "3",
+     "score": "7-10"
+    },
+    {
+     "min": "18:57",
+     "period": "1",
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "role": "RB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "7-11"
+    },
+    {
+     "min": "26:22",
+     "period": "1",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "R6",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "7-16"
+    },
+    {
+     "min": "26:50",
+     "period": "1",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "8-16"
+    },
+    {
+     "min": "27:24",
+     "period": "1",
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "role": "LB",
+     "zone": "P7",
+     "result": "SAVE",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "8-17"
+    },
+    {
+     "min": "29:21",
+     "period": "1",
+     "bib": "98",
+     "name": "RAKIMZHANOV A",
+     "role": "RW",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "17",
+     "score": "8-18"
+    },
+    {
+     "min": "29:54",
+     "period": "1",
+     "bib": "3",
+     "name": "MURATOV D",
+     "role": "RB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "8-19"
+    },
+    {
+     "min": "01:56",
+     "period": "2",
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "role": "RB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "8-20"
+    },
+    {
+     "min": "02:48",
+     "period": "2",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "8-21"
+    },
+    {
+     "min": "04:25",
+     "period": "2",
+     "bib": "13",
+     "name": "GAZIYEV O",
+     "role": "LB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "ML",
+     "assistBib": "",
+     "score": "9-23"
+    },
+    {
+     "min": "05:06",
+     "period": "2",
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "role": "LB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "17",
+     "score": "10-24"
+    },
+    {
+     "min": "07:09",
+     "period": "2",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "11-26"
+    },
+    {
+     "min": "09:58",
+     "period": "2",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "11-28"
+    },
+    {
+     "min": "10:29",
+     "period": "2",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "FB",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "11-28"
+    },
+    {
+     "min": "12:29",
+     "period": "2",
+     "bib": "13",
+     "name": "GAZIYEV O",
+     "role": "LB",
+     "zone": "L9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "11-30"
+    },
+    {
+     "min": "13:48",
+     "period": "2",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "12-30"
+    },
+    {
+     "min": "16:17",
+     "period": "2",
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "role": "LW",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "13-31"
+    },
+    {
+     "min": "17:46",
+     "period": "2",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "14-32"
+    },
+    {
+     "min": "19:22",
+     "period": "2",
+     "bib": "8",
+     "name": "SALMOV M",
+     "role": "CB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "15-33"
+    },
+    {
+     "min": "22:27",
+     "period": "2",
+     "bib": "3",
+     "name": "MURATOV D",
+     "role": "RB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "15-36"
+    },
+    {
+     "min": "23:14",
+     "period": "2",
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "role": "RW",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "15-37"
+    },
+    {
+     "min": "24:15",
+     "period": "2",
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "role": "LB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "17",
+     "score": "16-38"
+    },
+    {
+     "min": "25:02",
+     "period": "2",
+     "bib": "3",
+     "name": "MURATOV D",
+     "role": "RB",
+     "zone": "C9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "16-39"
+    },
+    {
+     "min": "26:15",
+     "period": "2",
+     "bib": "3",
+     "name": "MURATOV D",
+     "role": "RB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "17-40"
+    },
+    {
+     "min": "27:35",
+     "period": "2",
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "role": "LB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "18-41"
+    },
+    {
+     "min": "28:48",
+     "period": "2",
+     "bib": "99",
+     "name": "IRISMETOV D",
+     "role": "CB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "19-41"
+    },
+    {
+     "min": "30:00",
+     "period": "2",
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "role": "LB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "20-43"
+    }
+   ],
+   "connections": [
+    {
+     "fromBib": "17",
+     "fromName": "TILEKKABYL D",
+     "fromRole": "RW",
+     "toBib": "10",
+     "toName": "OXIKBAYEV A",
+     "toRole": "LB",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "C6": 2
+     }
+    },
+    {
+     "fromBib": "71",
+     "fromName": "YAKUBOVICH N",
+     "fromRole": "RB",
+     "toBib": "17",
+     "toName": "TILEKKABYL D",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 0,
+     "zones": {}
+    },
+    {
+     "fromBib": "3",
+     "fromName": "MURATOV D",
+     "fromRole": "RB",
+     "toBib": "8",
+     "toName": "SALMOV M",
+     "toRole": "CB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "R6": 1
+     }
+    },
+    {
+     "fromBib": "3",
+     "fromName": "MURATOV D",
+     "fromRole": "RB",
+     "toBib": "23",
+     "toName": "ANDRUSSYAK R",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "LW": 1
+     }
+    },
+    {
+     "fromBib": "17",
+     "fromName": "TILEKKABYL D",
+     "fromRole": "RW",
+     "toBib": "98",
+     "toName": "RAKIMZHANOV A",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 0,
+     "zones": {}
+    }
+   ],
+   "posLinks": [
+    {
+     "from": "RW",
+     "to": "LB",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "RB",
+     "to": "RW",
+     "count": 1,
+     "goals": 0
+    },
+    {
+     "from": "RB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "LW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RW",
+     "to": "RW",
+     "count": 1,
+     "goals": 0
+    }
+   ],
+   "defActs": [
+    {
+     "bib": "3",
+     "name": "MURATOV D",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 1,
+     "twoMin": 2
+    },
+    {
+     "bib": "98",
+     "name": "RAKIMZHANOV A",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "10",
+     "name": "OXIKBAYEV A",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    },
+    {
+     "bib": "13",
+     "name": "GAZIYEV O",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 1,
+     "twoMin": 0
+    },
+    {
+     "bib": "23",
+     "name": "ANDRUSSYAK R",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 1,
+     "twoMin": 0
+    },
+    {
+     "bib": "71",
+     "name": "YAKUBOVICH N",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 2,
+     "twoMin": 0
+    },
+    {
+     "bib": "99",
+     "name": "IRISMETOV D",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    },
+    {
+     "bib": "17",
+     "name": "TILEKKABYL D",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    }
+   ],
+   "possessions": {
+    "attacks": 62,
+    "goals": 20,
+    "shots": 41,
+    "missed": 21,
+    "saves": 11,
+    "turnovers": 15,
+    "twoMin": 5,
+    "assists": 6,
+    "offReb": 1,
+    "defReb": 11,
+    "eff": 32.3
+   },
+   "timeline": [
+    {
+     "bucket": "0-5",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 5,
+     "missed": 4,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 1,
+     "defReb": 0
+    },
+    {
+     "bucket": "5-10",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "10-15",
+     "attacks": 4,
+     "goals": 4,
+     "shots": 5,
+     "missed": 1,
+     "saves": 2,
+     "turnovers": 0,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "15-20",
+     "attacks": 4,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "20-25",
+     "attacks": 4,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 1,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "25-30",
+     "attacks": 8,
+     "goals": 1,
+     "shots": 5,
+     "missed": 4,
+     "saves": 2,
+     "turnovers": 3,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 6,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "35-40",
+     "attacks": 6,
+     "goals": 2,
+     "shots": 3,
+     "missed": 1,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "40-45",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 2,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "45-50",
+     "attacks": 5,
+     "goals": 3,
+     "shots": 3,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "50-55",
+     "attacks": 6,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "55-60",
+     "attacks": 3,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "60-65",
+     "attacks": 1,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   ],
+   "situations": {
+    "equal": {
+     "attacks": 48,
+     "goals": 17,
+     "shots": 36,
+     "missed": 19,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 3,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 11,
+     "goals": 2,
+     "shots": 4,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 52,
+     "goals": 34,
+     "shots": 45,
+     "missed": 11,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 2,
+     "goals": 2,
+     "shots": 2,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 7,
+     "goals": 7,
+     "shots": 9,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 0,
+    "goalsFor": 0,
+    "shotsAgainst": 2,
+    "goalsAgainst": 2
+   }
   },
   "BRN": {
    "code": "BRN",
@@ -8862,8 +9783,1171 @@
       "s": 11
      }
     ]
-   ]
+   ],
+   "shots": [
+    {
+     "min": "01:36",
+     "period": "1",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "0-1"
+    },
+    {
+     "min": "02:27",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "77",
+     "score": "0-2"
+    },
+    {
+     "min": "03:19",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "77",
+     "score": "0-3"
+    },
+    {
+     "min": "06:05",
+     "period": "1",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "2-4"
+    },
+    {
+     "min": "07:21",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "R6",
+     "result": "SAVE",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "2-4"
+    },
+    {
+     "min": "08:42",
+     "period": "1",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "95",
+     "score": "2-5"
+    },
+    {
+     "min": "09:24",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "2-6"
+    },
+    {
+     "min": "10:44",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "2-7"
+    },
+    {
+     "min": "12:06",
+     "period": "1",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "BC",
+     "assistBib": "",
+     "score": "3-7"
+    },
+    {
+     "min": "13:07",
+     "period": "1",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "4-7"
+    },
+    {
+     "min": "14:15",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "5-8"
+    },
+    {
+     "min": "15:05",
+     "period": "1",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "6-9"
+    },
+    {
+     "min": "16:54",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "",
+     "score": "6-10"
+    },
+    {
+     "min": "18:22",
+     "period": "1",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "88",
+     "score": "7-11"
+    },
+    {
+     "min": "19:08",
+     "period": "1",
+     "bib": "95",
+     "name": "MOHAMED M",
+     "role": "PV",
+     "zone": "L6",
+     "result": "SAVE",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "7-11"
+    },
+    {
+     "min": "20:05",
+     "period": "1",
+     "bib": "88",
+     "name": "ALI H",
+     "role": "RB",
+     "zone": "EG",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "7-12"
+    },
+    {
+     "min": "21:10",
+     "period": "1",
+     "bib": "29",
+     "name": "SHUBBAR S",
+     "role": "LW",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "95",
+     "score": "7-13"
+    },
+    {
+     "min": "23:05",
+     "period": "1",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "7-14"
+    },
+    {
+     "min": "24:02",
+     "period": "1",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "EG",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "7-15"
+    },
+    {
+     "min": "25:26",
+     "period": "1",
+     "bib": "10",
+     "name": "RABIA M",
+     "role": "CB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "7-16"
+    },
+    {
+     "min": "27:03",
+     "period": "1",
+     "bib": "24",
+     "name": "ABDULKARIM A",
+     "role": "LW",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "8-17"
+    },
+    {
+     "min": "28:29",
+     "period": "1",
+     "bib": "88",
+     "name": "ALI H",
+     "role": "RB",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "8-18"
+    },
+    {
+     "min": "28:56",
+     "period": "1",
+     "bib": "29",
+     "name": "SHUBBAR S",
+     "role": "LW",
+     "zone": "FB",
+     "result": "SAVE",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "8-18"
+    },
+    {
+     "min": "29:03",
+     "period": "1",
+     "bib": "29",
+     "name": "SHUBBAR S",
+     "role": "LW",
+     "zone": "FB",
+     "result": "SAVE",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "8-18"
+    },
+    {
+     "min": "29:34",
+     "period": "1",
+     "bib": "10",
+     "name": "RABIA M",
+     "role": "CB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "8-19"
+    },
+    {
+     "min": "14:40",
+     "period": "1",
+     "bib": "64",
+     "name": "MOHAMED A",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "88",
+     "score": "8-20"
+    },
+    {
+     "min": "02:38",
+     "period": "2",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "8-21"
+    },
+    {
+     "min": "03:23",
+     "period": "2",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "77",
+     "score": "8-22"
+    },
+    {
+     "min": "04:01",
+     "period": "2",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "8-23"
+    },
+    {
+     "min": "04:40",
+     "period": "2",
+     "bib": "93",
+     "name": "AHMED M",
+     "role": "RW",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "9-24"
+    },
+    {
+     "min": "05:15",
+     "period": "2",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "L6",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "10-24"
+    },
+    {
+     "min": "05:35",
+     "period": "2",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "10-25"
+    },
+    {
+     "min": "06:51",
+     "period": "2",
+     "bib": "17",
+     "name": "KADHEM A",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "10-26"
+    },
+    {
+     "min": "07:19",
+     "period": "2",
+     "bib": "93",
+     "name": "AHMED M",
+     "role": "RW",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "11-27"
+    },
+    {
+     "min": "08:33",
+     "period": "2",
+     "bib": "33",
+     "name": "MADAN H",
+     "role": "PV",
+     "zone": "C6",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "11-27"
+    },
+    {
+     "min": "09:33",
+     "period": "2",
+     "bib": "77",
+     "name": "KHAMIS J",
+     "role": "CB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "93",
+     "score": "11-28"
+    },
+    {
+     "min": "10:35",
+     "period": "2",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "ML",
+     "assistBib": "",
+     "score": "11-29"
+    },
+    {
+     "min": "11:19",
+     "period": "2",
+     "bib": "99",
+     "name": "ALSAYYAD H",
+     "role": "PV",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "11-30"
+    },
+    {
+     "min": "12:38",
+     "period": "2",
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "role": "RB",
+     "zone": "FB",
+     "result": "SAVE",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "11-30"
+    },
+    {
+     "min": "13:12",
+     "period": "2",
+     "bib": "99",
+     "name": "ALSAYYAD H",
+     "role": "PV",
+     "zone": "C9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "11-30"
+    },
+    {
+     "min": "14:28",
+     "period": "2",
+     "bib": "10",
+     "name": "RABIA M",
+     "role": "CB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "12-30"
+    },
+    {
+     "min": "15:36",
+     "period": "2",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "12-30"
+    },
+    {
+     "min": "15:52",
+     "period": "2",
+     "bib": "73",
+     "name": "EID A",
+     "role": "RW",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "12-31"
+    },
+    {
+     "min": "17:27",
+     "period": "2",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "13-32"
+    },
+    {
+     "min": "18:03",
+     "period": "2",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "24",
+     "score": "14-33"
+    },
+    {
+     "min": "20:02",
+     "period": "2",
+     "bib": "88",
+     "name": "ALI H",
+     "role": "RB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "15-34"
+    },
+    {
+     "min": "20:35",
+     "period": "2",
+     "bib": "73",
+     "name": "EID A",
+     "role": "RW",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "15-35"
+    },
+    {
+     "min": "21:42",
+     "period": "2",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "15-36"
+    },
+    {
+     "min": "22:41",
+     "period": "2",
+     "bib": "73",
+     "name": "EID A",
+     "role": "RW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "10",
+     "score": "15-37"
+    },
+    {
+     "min": "23:27",
+     "period": "2",
+     "bib": "24",
+     "name": "ABDULKARIM A",
+     "role": "LW",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "15-38"
+    },
+    {
+     "min": "24:29",
+     "period": "2",
+     "bib": "24",
+     "name": "ABDULKARIM A",
+     "role": "LW",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "16-39"
+    },
+    {
+     "min": "25:10",
+     "period": "2",
+     "bib": "10",
+     "name": "RABIA M",
+     "role": "CB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "16-40"
+    },
+    {
+     "min": "26:57",
+     "period": "2",
+     "bib": "88",
+     "name": "ALI H",
+     "role": "RB",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "17-41"
+    },
+    {
+     "min": "28:17",
+     "period": "2",
+     "bib": "29",
+     "name": "SHUBBAR S",
+     "role": "LW",
+     "zone": "C6",
+     "result": "SAVE",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "18-41"
+    },
+    {
+     "min": "29:27",
+     "period": "2",
+     "bib": "73",
+     "name": "EID A",
+     "role": "RW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "19-42"
+    },
+    {
+     "min": "30:00",
+     "period": "2",
+     "bib": "18",
+     "name": "FADHUL A",
+     "role": "OTH",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "19-43"
+    }
+   ],
+   "connections": [
+    {
+     "fromBib": "77",
+     "fromName": "KHAMIS J",
+     "fromRole": "CB",
+     "toBib": "13",
+     "toName": "ALSHOWAIKH S",
+     "toRole": "RB",
+     "count": 3,
+     "goals": 3,
+     "zones": {
+      "R6": 1,
+      "RW": 2
+     }
+    },
+    {
+     "fromBib": "95",
+     "fromName": "MOHAMED M",
+     "fromRole": "PV",
+     "toBib": "17",
+     "toName": "KADHEM A",
+     "toRole": "RB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "LW": 1
+     }
+    },
+    {
+     "fromBib": "88",
+     "fromName": "ALI H",
+     "fromRole": "RB",
+     "toBib": "18",
+     "toName": "FADHUL A",
+     "toRole": "OTH",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "RW": 1
+     }
+    },
+    {
+     "fromBib": "95",
+     "fromName": "MOHAMED M",
+     "fromRole": "PV",
+     "toBib": "29",
+     "toName": "SHUBBAR S",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "88",
+     "fromName": "ALI H",
+     "fromRole": "RB",
+     "toBib": "64",
+     "toName": "MOHAMED A",
+     "toRole": "RB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "FB": 1
+     }
+    },
+    {
+     "fromBib": "93",
+     "fromName": "AHMED M",
+     "fromRole": "RW",
+     "toBib": "77",
+     "toName": "KHAMIS J",
+     "toRole": "CB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "FB": 1
+     }
+    },
+    {
+     "fromBib": "24",
+     "fromName": "ABDULKARIM A",
+     "fromRole": "LW",
+     "toBib": "18",
+     "toName": "FADHUL A",
+     "toRole": "OTH",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "RW": 1
+     }
+    },
+    {
+     "fromBib": "10",
+     "fromName": "RABIA M",
+     "fromRole": "CB",
+     "toBib": "73",
+     "toName": "EID A",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "LW": 1
+     }
+    }
+   ],
+   "posLinks": [
+    {
+     "from": "CB",
+     "to": "RB",
+     "count": 3,
+     "goals": 3
+    },
+    {
+     "from": "PV",
+     "to": "RB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "OTH",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "PV",
+     "to": "LW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "RB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RW",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LW",
+     "to": "OTH",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "RW",
+     "count": 1,
+     "goals": 1
+    }
+   ],
+   "defActs": [
+    {
+     "bib": "93",
+     "name": "AHMED M",
+     "blocks": 3,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "29",
+     "name": "SHUBBAR S",
+     "blocks": 2,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    },
+    {
+     "bib": "33",
+     "name": "MADAN H",
+     "blocks": 2,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "88",
+     "name": "ALI H",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 1,
+     "twoMin": 0
+    },
+    {
+     "bib": "21",
+     "name": "ALI M",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "13",
+     "name": "ALSHOWAIKH S",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "24",
+     "name": "ABDULKARIM A",
+     "blocks": 1,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "64",
+     "name": "MOHAMED A",
+     "blocks": 1,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    }
+   ],
+   "possessions": {
+    "attacks": 61,
+    "goals": 43,
+    "shots": 56,
+    "missed": 13,
+    "saves": 15,
+    "turnovers": 8,
+    "twoMin": 1,
+    "assists": 10,
+    "offReb": 2,
+    "defReb": 15,
+    "eff": 70.5
+   },
+   "timeline": [
+    {
+     "bucket": "0-5",
+     "attacks": 5,
+     "goals": 3,
+     "shots": 3,
+     "missed": 0,
+     "saves": 4,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 2,
+     "offReb": 0,
+     "defReb": 3
+    },
+    {
+     "bucket": "5-10",
+     "attacks": 4,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "10-15",
+     "attacks": 4,
+     "goals": 3,
+     "shots": 5,
+     "missed": 2,
+     "saves": 1,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "15-20",
+     "attacks": 5,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 2,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "20-25",
+     "attacks": 3,
+     "goals": 4,
+     "shots": 4,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "25-30",
+     "attacks": 8,
+     "goals": 4,
+     "shots": 6,
+     "missed": 2,
+     "saves": 4,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 1,
+     "defReb": 4
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 5,
+     "goals": 4,
+     "shots": 4,
+     "missed": 0,
+     "saves": 2,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "35-40",
+     "attacks": 7,
+     "goals": 4,
+     "shots": 6,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "40-45",
+     "attacks": 3,
+     "goals": 2,
+     "shots": 5,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 1,
+     "defReb": 0
+    },
+    {
+     "bucket": "45-50",
+     "attacks": 6,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "50-55",
+     "attacks": 5,
+     "goals": 6,
+     "shots": 6,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "55-60",
+     "attacks": 5,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "60-65",
+     "attacks": 1,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   ],
+   "situations": {
+    "equal": {
+     "attacks": 52,
+     "goals": 34,
+     "shots": 45,
+     "missed": 11,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 7,
+     "goals": 7,
+     "shots": 9,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 2,
+     "goals": 2,
+     "shots": 2,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 48,
+     "goals": 17,
+     "shots": 36,
+     "missed": 19,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 11,
+     "goals": 2,
+     "shots": 4,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 3,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 2,
+    "goalsFor": 2,
+    "shotsAgainst": 0,
+    "goalsAgainst": 0
+   }
   }
  },
- "updatedAt": "2026-09-22T04:01:38.621Z"
+ "updatedAt": "2026-09-22T05:46:56.652Z"
 }

@@ -4453,7 +4453,969 @@
       "s": 5
      }
     ]
-   ]
+   ],
+   "shots": [
+    {
+     "min": "7:58",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "0-2"
+    },
+    {
+     "min": "8:24",
+     "period": "1",
+     "bib": "72",
+     "name": "KAN Y",
+     "role": "LW",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "99",
+     "score": "1-2"
+    },
+    {
+     "min": "9:29",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "2-2"
+    },
+    {
+     "min": "11:15",
+     "period": "1",
+     "bib": "65",
+     "name": "WONG K",
+     "role": "PV",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "11",
+     "score": "3-3"
+    },
+    {
+     "min": "12:26",
+     "period": "1",
+     "bib": "65",
+     "name": "WONG K",
+     "role": "PV",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "10",
+     "score": "4-6"
+    },
+    {
+     "min": "13:33",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "4-7"
+    },
+    {
+     "min": "14:04",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "10",
+     "score": "5-8"
+    },
+    {
+     "min": "16:38",
+     "period": "1",
+     "bib": "11",
+     "name": "LEE S",
+     "role": "RB",
+     "zone": "R9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "17:52",
+     "period": "1",
+     "bib": "73",
+     "name": "KAN Y",
+     "role": "LW",
+     "zone": "RW",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "18:39",
+     "period": "1",
+     "bib": "73",
+     "name": "KAN Y",
+     "role": "LW",
+     "zone": "R9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "19:36",
+     "period": "1",
+     "bib": "10",
+     "name": "TSE W",
+     "role": "CB",
+     "zone": "C6",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "19:44",
+     "period": "1",
+     "bib": "10",
+     "name": "TSE W",
+     "role": "CB",
+     "zone": "C6",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "21:48",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L9",
+     "result": "GOAL",
+     "goalZone": "ML",
+     "assistBib": "",
+     "score": "6-11"
+    },
+    {
+     "min": "23:06",
+     "period": "1",
+     "bib": "10",
+     "name": "TSE W",
+     "role": "CB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "ML",
+     "assistBib": "",
+     "score": "7-12"
+    },
+    {
+     "min": "24:09",
+     "period": "1",
+     "bib": "65",
+     "name": "WONG K",
+     "role": "PV",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "11",
+     "score": "8-14"
+    },
+    {
+     "min": "24:35",
+     "period": "1",
+     "bib": "65",
+     "name": "WONG K",
+     "role": "PV",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "9-14"
+    },
+    {
+     "min": "25:23",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "9-15"
+    },
+    {
+     "min": "26:11",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "9-17"
+    },
+    {
+     "min": "27:21",
+     "period": "1",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "10-17"
+    },
+    {
+     "min": "01:47",
+     "period": "2",
+     "bib": "11",
+     "name": "LEE S",
+     "role": "RB",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "11-20"
+    },
+    {
+     "min": "03:18",
+     "period": "2",
+     "bib": "26",
+     "name": "LAU K",
+     "role": "RW",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "10",
+     "score": "12-21"
+    },
+    {
+     "min": "03:51",
+     "period": "2",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "12-21"
+    },
+    {
+     "min": "04:34",
+     "period": "2",
+     "bib": "11",
+     "name": "LEE S",
+     "role": "RB",
+     "zone": "R6",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "12-22"
+    },
+    {
+     "min": "05:23",
+     "period": "2",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "12-23"
+    },
+    {
+     "min": "07:16",
+     "period": "2",
+     "bib": "10",
+     "name": "TSE W",
+     "role": "CB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "15",
+     "score": "13-25"
+    },
+    {
+     "min": "08:13",
+     "period": "2",
+     "bib": "15",
+     "name": "LAW C",
+     "role": "RB",
+     "zone": "R9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "13-26"
+    },
+    {
+     "min": "08:58",
+     "period": "2",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "13-27"
+    },
+    {
+     "min": "09:08",
+     "period": "2",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L6",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "13-27"
+    },
+    {
+     "min": "11:27",
+     "period": "2",
+     "bib": "26",
+     "name": "LAU K",
+     "role": "RW",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "14-28"
+    },
+    {
+     "min": "13:04",
+     "period": "2",
+     "bib": "99",
+     "name": "LIN Y",
+     "role": "LB",
+     "zone": "L9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-29"
+    },
+    {
+     "min": "14:32",
+     "period": "2",
+     "bib": "15",
+     "name": "LAW C",
+     "role": "RB",
+     "zone": "R9",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-30"
+    },
+    {
+     "min": "16:49",
+     "period": "2",
+     "bib": "80",
+     "name": "CHUNG S",
+     "role": "PV",
+     "zone": "C6",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-32"
+    },
+    {
+     "min": "18:18",
+     "period": "2",
+     "bib": "15",
+     "name": "LAW C",
+     "role": "RB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-33"
+    },
+    {
+     "min": "19:20",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-34"
+    },
+    {
+     "min": "19:58",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "ML",
+     "assistBib": "",
+     "score": "14-35"
+    },
+    {
+     "min": "21:05",
+     "period": "2",
+     "bib": "26",
+     "name": "LAU K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-36"
+    },
+    {
+     "min": "22:58",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "C9",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-38"
+    },
+    {
+     "min": "23:22",
+     "period": "2",
+     "bib": "15",
+     "name": "LAW C",
+     "role": "RB",
+     "zone": "BT",
+     "result": "SAVE",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "14-38"
+    },
+    {
+     "min": "24:58",
+     "period": "2",
+     "bib": "80",
+     "name": "CHUNG S",
+     "role": "PV",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "34",
+     "score": "15-39"
+    },
+    {
+     "min": "25:51",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "",
+     "score": "16-40"
+    },
+    {
+     "min": "26:43",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "L6",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "16-41"
+    },
+    {
+     "min": "27:43",
+     "period": "2",
+     "bib": "34",
+     "name": "LEE H",
+     "role": "CB",
+     "zone": "C9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "16-42"
+    },
+    {
+     "min": "28:40",
+     "period": "2",
+     "bib": "82",
+     "name": "YIP C",
+     "role": "LB",
+     "zone": "C9",
+     "result": "SAVE",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "16-44"
+    },
+    {
+     "min": "29:30",
+     "period": "2",
+     "bib": "34",
+     "name": "LEE H",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "17-44"
+    }
+   ],
+   "connections": [
+    {
+     "fromBib": "11",
+     "fromName": "LEE S",
+     "fromRole": "RB",
+     "toBib": "65",
+     "toName": "WONG K",
+     "toRole": "PV",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "R9": 1,
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "99",
+     "fromName": "LIN Y",
+     "fromRole": "LB",
+     "toBib": "72",
+     "toName": "KAN Y",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "10",
+     "fromName": "TSE W",
+     "fromRole": "CB",
+     "toBib": "65",
+     "toName": "WONG K",
+     "toRole": "PV",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "R6": 1
+     }
+    },
+    {
+     "fromBib": "10",
+     "fromName": "TSE W",
+     "fromRole": "CB",
+     "toBib": "99",
+     "toName": "LIN Y",
+     "toRole": "LB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "10",
+     "fromName": "TSE W",
+     "fromRole": "CB",
+     "toBib": "26",
+     "toName": "LAU K",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "R6": 1
+     }
+    },
+    {
+     "fromBib": "15",
+     "fromName": "LAW C",
+     "fromRole": "RB",
+     "toBib": "10",
+     "toName": "TSE W",
+     "toRole": "CB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "R6": 1
+     }
+    },
+    {
+     "fromBib": "34",
+     "fromName": "LEE H",
+     "fromRole": "CB",
+     "toBib": "80",
+     "toName": "CHUNG S",
+     "toRole": "PV",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    }
+   ],
+   "posLinks": [
+    {
+     "from": "RB",
+     "to": "PV",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "CB",
+     "to": "PV",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "LB",
+     "to": "LW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "LB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "RW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    }
+   ],
+   "defActs": [
+    {
+     "bib": "23",
+     "name": "ZOU Y",
+     "blocks": 0,
+     "steals": 1,
+     "sevenMConceded": 0,
+     "twoMin": 0
+    },
+    {
+     "bib": "11",
+     "name": "LEE S",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    },
+    {
+     "bib": "3",
+     "name": "CHAN T",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 1,
+     "twoMin": 0
+    },
+    {
+     "bib": "73",
+     "name": "KAN Y",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 1,
+     "twoMin": 1
+    }
+   ],
+   "possessions": {
+    "attacks": 53,
+    "goals": 17,
+    "shots": 44,
+    "missed": 27,
+    "saves": 5,
+    "turnovers": 12,
+    "twoMin": 2,
+    "assists": 8,
+    "offReb": 2,
+    "defReb": 2,
+    "eff": 32.1
+   },
+   "timeline": [
+    {
+     "bucket": "0-5",
+     "attacks": 2,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 2,
+     "turnovers": 0,
+     "twoMin": 1,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "5-10",
+     "attacks": 3,
+     "goals": 2,
+     "shots": 3,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "10-15",
+     "attacks": 6,
+     "goals": 3,
+     "shots": 4,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 3,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "15-20",
+     "attacks": 2,
+     "goals": 0,
+     "shots": 5,
+     "missed": 5,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 1,
+     "defReb": 1
+    },
+    {
+     "bucket": "20-25",
+     "attacks": 6,
+     "goals": 4,
+     "shots": 4,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "25-30",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 1,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 5,
+     "goals": 2,
+     "shots": 4,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "35-40",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 5,
+     "missed": 4,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 1,
+     "defReb": 0
+    },
+    {
+     "bucket": "40-45",
+     "attacks": 3,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "45-50",
+     "attacks": 5,
+     "goals": 0,
+     "shots": 4,
+     "missed": 4,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "50-55",
+     "attacks": 5,
+     "goals": 1,
+     "shots": 4,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "55-60",
+     "attacks": 6,
+     "goals": 2,
+     "shots": 5,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "60-65",
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   ],
+   "situations": {
+    "equal": {
+     "attacks": 49,
+     "goals": 16,
+     "shots": 41,
+     "missed": 25,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 2,
+     "goals": 0,
+     "shots": 2,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 2,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 39,
+     "goals": 41,
+     "shots": 51,
+     "missed": 10,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 2,
+     "goals": 2,
+     "shots": 2,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 1,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 0,
+    "goalsFor": 0,
+    "shotsAgainst": 0,
+    "goalsAgainst": 0
+   }
   },
   "JPN": {
    "code": "JPN",
@@ -8753,8 +9715,1206 @@
       "s": 10
      }
     ]
-   ]
+   ],
+   "shots": [
+    {
+     "min": "00:24",
+     "period": "1",
+     "bib": "32",
+     "name": "HASHIMOTO A",
+     "role": "PV",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "23",
+     "score": "0-1"
+    },
+    {
+     "min": "04:08",
+     "period": "1",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "5",
+     "score": "0-1"
+    },
+    {
+     "min": "04:22",
+     "period": "1",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "0-1"
+    },
+    {
+     "min": "6:40",
+     "period": "1",
+     "bib": "30",
+     "name": "FUJISAKA N",
+     "role": "CB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "23",
+     "score": "0-2"
+    },
+    {
+     "min": "10:23",
+     "period": "1",
+     "bib": "32",
+     "name": "HASHIMOTO A",
+     "role": "PV",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "2-3"
+    },
+    {
+     "min": "11:26",
+     "period": "1",
+     "bib": "24",
+     "name": "GOTO H",
+     "role": "LW",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "3-4"
+    },
+    {
+     "min": "11:31",
+     "period": "1",
+     "bib": "32",
+     "name": "HASHIMOTO A",
+     "role": "PV",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "3-5"
+    },
+    {
+     "min": "11:45",
+     "period": "1",
+     "bib": "20",
+     "name": "WATANABE J",
+     "role": "RB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "3-6"
+    },
+    {
+     "min": "12:43",
+     "period": "1",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "30",
+     "score": "4-7"
+    },
+    {
+     "min": "13:42",
+     "period": "1",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "P7",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "4-8"
+    },
+    {
+     "min": "15:56",
+     "period": "1",
+     "bib": "20",
+     "name": "WATANABE J",
+     "role": "RB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "23",
+     "score": "5-9"
+    },
+    {
+     "min": "16:08",
+     "period": "1",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "L9",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "30",
+     "score": "5-10"
+    },
+    {
+     "min": "17:13",
+     "period": "1",
+     "bib": "24",
+     "name": "GOTO H",
+     "role": "LW",
+     "zone": "LW",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "18:03",
+     "period": "1",
+     "bib": "20",
+     "name": "WATANABE J",
+     "role": "RB",
+     "zone": "R6",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "19:10",
+     "period": "1",
+     "bib": "24",
+     "name": "GOTO H",
+     "role": "LW",
+     "zone": "LW",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "20",
+     "score": "5-10"
+    },
+    {
+     "min": "20:03",
+     "period": "1",
+     "bib": "24",
+     "name": "GOTO H",
+     "role": "LW",
+     "zone": "LW",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "5-10"
+    },
+    {
+     "min": "21:12",
+     "period": "1",
+     "bib": "20",
+     "name": "WATANABE J",
+     "role": "RB",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "20",
+     "score": "5-11"
+    },
+    {
+     "min": "22:18",
+     "period": "1",
+     "bib": "20",
+     "name": "WATANABE J",
+     "role": "RB",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "6-12"
+    },
+    {
+     "min": "23:38",
+     "period": "1",
+     "bib": "30",
+     "name": "FUJISAKA N",
+     "role": "CB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "7-13"
+    },
+    {
+     "min": "23:46",
+     "period": "1",
+     "bib": "30",
+     "name": "FUJISAKA N",
+     "role": "CB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "7-14"
+    },
+    {
+     "min": "24:40",
+     "period": "1",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "9-15"
+    },
+    {
+     "min": "25:55",
+     "period": "1",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "38",
+     "score": "9-16"
+    },
+    {
+     "min": "26:05",
+     "period": "1",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "9-17"
+    },
+    {
+     "min": "27:31",
+     "period": "1",
+     "bib": "38",
+     "name": "MIZUMACHI K",
+     "role": "LB",
+     "zone": "L9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "10-18"
+    },
+    {
+     "min": "28:35",
+     "period": "1",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "7",
+     "score": "10-19"
+    },
+    {
+     "min": "00:34",
+     "period": "2",
+     "bib": "18",
+     "name": "ICHIHARA S",
+     "role": "PV",
+     "zone": "C6",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "14",
+     "score": "10-20"
+    },
+    {
+     "min": "02:17",
+     "period": "2",
+     "bib": "38",
+     "name": "MIZUMACHI K",
+     "role": "LB",
+     "zone": "R6",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "11-21"
+    },
+    {
+     "min": "03:43",
+     "period": "2",
+     "bib": "38",
+     "name": "MIZUMACHI K",
+     "role": "LB",
+     "zone": "L9",
+     "result": "POST",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "12-21"
+    },
+    {
+     "min": "04:02",
+     "period": "2",
+     "bib": "30",
+     "name": "FUJISAKA N",
+     "role": "CB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "12-22"
+    },
+    {
+     "min": "04:54",
+     "period": "2",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "38",
+     "score": "12-23"
+    },
+    {
+     "min": "05:36",
+     "period": "2",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "C6",
+     "result": "SAVE",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "12-23"
+    },
+    {
+     "min": "05:51",
+     "period": "2",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "MC",
+     "assistBib": "",
+     "score": "12-24"
+    },
+    {
+     "min": "06:31",
+     "period": "2",
+     "bib": "15",
+     "name": "BAIG A",
+     "role": "LB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "12-25"
+    },
+    {
+     "min": "07:24",
+     "period": "2",
+     "bib": "14",
+     "name": "TANAKA D",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "13-26"
+    },
+    {
+     "min": "08:22",
+     "period": "2",
+     "bib": "38",
+     "name": "MIZUMACHI K",
+     "role": "LB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "13-27"
+    },
+    {
+     "min": "09:33",
+     "period": "2",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "R9",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "13-28"
+    },
+    {
+     "min": "11:59",
+     "period": "2",
+     "bib": "23",
+     "name": "YOSHINO T",
+     "role": "LB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "14-29"
+    },
+    {
+     "min": "13:40",
+     "period": "2",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "14",
+     "score": "14-30"
+    },
+    {
+     "min": "15:05",
+     "period": "2",
+     "bib": "23",
+     "name": "YOSHINO T",
+     "role": "LB",
+     "zone": "L9",
+     "result": "SAVE",
+     "goalZone": "TC",
+     "assistBib": "",
+     "score": "14-30"
+    },
+    {
+     "min": "15:19",
+     "period": "2",
+     "bib": "14",
+     "name": "TANAKA D",
+     "role": "CB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "TL",
+     "assistBib": "",
+     "score": "14-31"
+    },
+    {
+     "min": "15:56",
+     "period": "2",
+     "bib": "15",
+     "name": "BAIG A",
+     "role": "LB",
+     "zone": "FB",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "",
+     "score": "14-32"
+    },
+    {
+     "min": "17:25",
+     "period": "2",
+     "bib": "19",
+     "name": "SUGIOKA N",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "BC",
+     "assistBib": "14",
+     "score": "14-33"
+    },
+    {
+     "min": "18:55",
+     "period": "2",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "38",
+     "score": "14-34"
+    },
+    {
+     "min": "19:32",
+     "period": "2",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "5",
+     "score": "14-35"
+    },
+    {
+     "min": "20:34",
+     "period": "2",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "14-36"
+    },
+    {
+     "min": "21:14",
+     "period": "2",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "MC",
+     "assistBib": "7",
+     "score": "14-37"
+    },
+    {
+     "min": "22:30",
+     "period": "2",
+     "bib": "5",
+     "name": "NAKATA K",
+     "role": "RW",
+     "zone": "RW",
+     "result": "GOAL",
+     "goalZone": "TR",
+     "assistBib": "7",
+     "score": "14-38"
+    },
+    {
+     "min": "23:10",
+     "period": "2",
+     "bib": "32",
+     "name": "HASHIMOTO A",
+     "role": "PV",
+     "zone": "C6",
+     "result": "MISS",
+     "goalZone": "",
+     "assistBib": "",
+     "score": "14-38"
+    },
+    {
+     "min": "24:38",
+     "period": "2",
+     "bib": "14",
+     "name": "TANAKA D",
+     "role": "CB",
+     "zone": "L6",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "7",
+     "score": "14-39"
+    },
+    {
+     "min": "25:09",
+     "period": "2",
+     "bib": "14",
+     "name": "TANAKA D",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "MR",
+     "assistBib": "",
+     "score": "15-40"
+    },
+    {
+     "min": "26:14",
+     "period": "2",
+     "bib": "14",
+     "name": "TANAKA D",
+     "role": "CB",
+     "zone": "BT",
+     "result": "GOAL",
+     "goalZone": "BL",
+     "assistBib": "",
+     "score": "16-41"
+    },
+    {
+     "min": "27:18",
+     "period": "2",
+     "bib": "24",
+     "name": "GOTO H",
+     "role": "LW",
+     "zone": "LW",
+     "result": "GOAL",
+     "goalZone": "TC",
+     "assistBib": "14",
+     "score": "16-42"
+    },
+    {
+     "min": "28:08",
+     "period": "2",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "16-43"
+    },
+    {
+     "min": "28:17",
+     "period": "2",
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "role": "RB",
+     "zone": "C9",
+     "result": "GOAL",
+     "goalZone": "BR",
+     "assistBib": "",
+     "score": "16-44"
+    }
+   ],
+   "connections": [
+    {
+     "fromBib": "7",
+     "fromName": "TSUTAYA T",
+     "fromRole": "RB",
+     "toBib": "5",
+     "toName": "NAKATA K",
+     "toRole": "RW",
+     "count": 3,
+     "goals": 3,
+     "zones": {
+      "RW": 3
+     }
+    },
+    {
+     "fromBib": "5",
+     "fromName": "NAKATA K",
+     "fromRole": "RW",
+     "toBib": "5",
+     "toName": "NAKATA K",
+     "toRole": "RW",
+     "count": 2,
+     "goals": 1,
+     "zones": {
+      "RW": 1
+     }
+    },
+    {
+     "fromBib": "30",
+     "fromName": "FUJISAKA N",
+     "fromRole": "CB",
+     "toBib": "5",
+     "toName": "NAKATA K",
+     "toRole": "RW",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "RW": 1,
+      "L9": 1
+     }
+    },
+    {
+     "fromBib": "38",
+     "fromName": "MIZUMACHI K",
+     "fromRole": "LB",
+     "toBib": "19",
+     "toName": "SUGIOKA N",
+     "toRole": "LW",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "L6": 1,
+      "LW": 1
+     }
+    },
+    {
+     "fromBib": "14",
+     "fromName": "TANAKA D",
+     "fromRole": "CB",
+     "toBib": "19",
+     "toName": "SUGIOKA N",
+     "toRole": "LW",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "LW": 2
+     }
+    },
+    {
+     "fromBib": "23",
+     "fromName": "YOSHINO T",
+     "fromRole": "LB",
+     "toBib": "32",
+     "toName": "HASHIMOTO A",
+     "toRole": "PV",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "L6": 1
+     }
+    },
+    {
+     "fromBib": "23",
+     "fromName": "YOSHINO T",
+     "fromRole": "LB",
+     "toBib": "30",
+     "toName": "FUJISAKA N",
+     "toRole": "CB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "L6": 1
+     }
+    },
+    {
+     "fromBib": "23",
+     "fromName": "YOSHINO T",
+     "fromRole": "LB",
+     "toBib": "20",
+     "toName": "WATANABE J",
+     "toRole": "RB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "L6": 1
+     }
+    },
+    {
+     "fromBib": "20",
+     "fromName": "WATANABE J",
+     "fromRole": "RB",
+     "toBib": "24",
+     "toName": "GOTO H",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 0,
+     "zones": {}
+    },
+    {
+     "fromBib": "20",
+     "fromName": "WATANABE J",
+     "fromRole": "RB",
+     "toBib": "20",
+     "toName": "WATANABE J",
+     "toRole": "RB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "14",
+     "fromName": "TANAKA D",
+     "fromRole": "CB",
+     "toBib": "18",
+     "toName": "ICHIHARA S",
+     "toRole": "PV",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "C6": 1
+     }
+    },
+    {
+     "fromBib": "38",
+     "fromName": "MIZUMACHI K",
+     "fromRole": "LB",
+     "toBib": "5",
+     "toName": "NAKATA K",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "RW": 1
+     }
+    },
+    {
+     "fromBib": "7",
+     "fromName": "TSUTAYA T",
+     "fromRole": "RB",
+     "toBib": "14",
+     "toName": "TANAKA D",
+     "toRole": "CB",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "L6": 1
+     }
+    },
+    {
+     "fromBib": "14",
+     "fromName": "TANAKA D",
+     "fromRole": "CB",
+     "toBib": "24",
+     "toName": "GOTO H",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "LW": 1
+     }
+    }
+   ],
+   "posLinks": [
+    {
+     "from": "RB",
+     "to": "RW",
+     "count": 3,
+     "goals": 3
+    },
+    {
+     "from": "CB",
+     "to": "LW",
+     "count": 3,
+     "goals": 3
+    },
+    {
+     "from": "RW",
+     "to": "RW",
+     "count": 2,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "RW",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "LB",
+     "to": "LW",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "LB",
+     "to": "PV",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "RB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "LW",
+     "count": 1,
+     "goals": 0
+    },
+    {
+     "from": "RB",
+     "to": "RB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "PV",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "RW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    }
+   ],
+   "defActs": [
+    {
+     "bib": "7",
+     "name": "TSUTAYA T",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 1,
+     "twoMin": 0
+    },
+    {
+     "bib": "15",
+     "name": "BAIG A",
+     "blocks": 0,
+     "steals": 0,
+     "sevenMConceded": 0,
+     "twoMin": 1
+    }
+   ],
+   "possessions": {
+    "attacks": 42,
+    "goals": 44,
+    "shots": 54,
+    "missed": 10,
+    "saves": 12,
+    "turnovers": 7,
+    "twoMin": 1,
+    "assists": 21,
+    "offReb": 0,
+    "defReb": 15,
+    "eff": 104.8
+   },
+   "timeline": [
+    {
+     "bucket": "0-5",
+     "attacks": 0,
+     "goals": 1,
+     "shots": 3,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 3,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "5-10",
+     "attacks": 4,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "10-15",
+     "attacks": 4,
+     "goals": 6,
+     "shots": 6,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 2,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "15-20",
+     "attacks": 5,
+     "goals": 2,
+     "shots": 5,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 2,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "20-25",
+     "attacks": 4,
+     "goals": 5,
+     "shots": 6,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0
+    },
+    {
+     "bucket": "25-30",
+     "attacks": 1,
+     "goals": 4,
+     "shots": 4,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 2,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "30-35",
+     "attacks": 4,
+     "goals": 4,
+     "shots": 5,
+     "missed": 1,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 2,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "35-40",
+     "attacks": 4,
+     "goals": 5,
+     "shots": 6,
+     "missed": 1,
+     "saves": 3,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "40-45",
+     "attacks": 1,
+     "goals": 2,
+     "shots": 2,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "45-50",
+     "attacks": 4,
+     "goals": 5,
+     "shots": 6,
+     "missed": 1,
+     "saves": 2,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 3,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "50-55",
+     "attacks": 4,
+     "goals": 4,
+     "shots": 5,
+     "missed": 1,
+     "saves": 1,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 3,
+     "offReb": 0,
+     "defReb": 1
+    },
+    {
+     "bucket": "55-60",
+     "attacks": 6,
+     "goals": 5,
+     "shots": 5,
+     "missed": 0,
+     "saves": 1,
+     "turnovers": 2,
+     "twoMin": 1,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 2
+    },
+    {
+     "bucket": "60-65",
+     "attacks": 1,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   ],
+   "situations": {
+    "equal": {
+     "attacks": 39,
+     "goals": 41,
+     "shots": 51,
+     "missed": 10,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 1,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 2,
+     "goals": 2,
+     "shots": 2,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "situationsDef": {
+    "equal": {
+     "attacks": 49,
+     "goals": 16,
+     "shots": 41,
+     "missed": 25,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "up": {
+     "attacks": 2,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "down": {
+     "attacks": 2,
+     "goals": 0,
+     "shots": 2,
+     "missed": 2,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "emptyGoal": {
+    "shotsFor": 0,
+    "goalsFor": 0,
+    "shotsAgainst": 0,
+    "goalsAgainst": 0
+   }
   }
  },
- "updatedAt": "2026-09-22T04:01:38.654Z"
+ "updatedAt": "2026-09-22T05:46:56.701Z"
 }

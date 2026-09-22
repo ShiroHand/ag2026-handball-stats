@@ -136,3 +136,8 @@ footer.foot{max-width:1400px;margin:0 auto;padding:0 16px 40px;font-size:11px;co
   color:var(--ink-3);font-weight:700;font-size:10px;letter-spacing:.02em}
 .flag.flag-ph{width:44px;height:30px}
 .flag.sm.flag-ph{width:26px;height:18px;font-size:8px}
+
+/* 連携マトリクス */
+table.matrix thead th{font-size:11px;padding:6px 4px}
+table.matrix tbody td{padding:4px 6px;font-size:12px}
+table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}

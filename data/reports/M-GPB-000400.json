@@ -1,0 +1,196 @@
+{
+ "codes": [
+  "KOR",
+  "KUW"
+ ],
+ "emptyGoal": {
+  "situations": {
+   "KOR": {
+    "v7x6": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 0,
+     "missed": 1,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 1,
+     "missed": 0,
+     "blocked": 0,
+     "post": 1,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "KUW": {
+    "v7x6": {
+     "attacks": 12,
+     "goals": 6,
+     "saves": 3,
+     "missed": 1,
+     "blocked": 0,
+     "post": 1,
+     "turnovers": 1,
+     "pct": 50,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 2,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 1,
+     "pct": 0,
+     "goalsAgainst": 1
+    },
+    "other": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 1,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "KOR": {
+    "v7x6": {
+     "10-15": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "v6x6": {
+     "30-35": {
+      "goals": 0,
+      "attacks": 1
+     },
+     "45-50": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "other": {}
+   },
+   "KUW": {
+    "v7x6": {
+     "35-40": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "40-45": {
+      "goals": 2,
+      "attacks": 2
+     },
+     "45-50": {
+      "goals": 1,
+      "attacks": 2
+     },
+     "50-55": {
+      "goals": 2,
+      "attacks": 4
+     },
+     "55-60": {
+      "goals": 0,
+      "attacks": 3
+     }
+    },
+    "v6x6": {
+     "35-40": {
+      "goals": 0,
+      "attacks": 1
+     },
+     "55-60": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "other": {
+     "30-35": {
+      "goals": 0,
+      "attacks": 1
+     }
+    }
+   }
+  },
+  "duration": {
+   "KOR": {
+    "30-45s": {
+     "goals": 0,
+     "attacks": 3
+    }
+   },
+   "KUW": {
+    "<15s": {
+     "goals": 1,
+     "attacks": 2
+    },
+    "15-30s": {
+     "goals": 3,
+     "attacks": 9
+    },
+    "30-45s": {
+     "goals": 1,
+     "attacks": 1
+    },
+    "45-60s": {
+     "goals": 1,
+     "attacks": 2
+    },
+    ">60s": {
+     "goals": 0,
+     "attacks": 1
+    }
+   }
+  },
+  "substitutions": {
+   "KOR": {
+    "courtToGk": 7,
+    "courtToCourt": 73,
+    "total": 80
+   },
+   "KUW": {
+    "courtToGk": 20,
+    "courtToCourt": 81,
+    "total": 101
+   }
+  }
+ },
+ "teamStats": {
+  "KOR": {
+   "attacks": 46,
+   "efficiency": 57
+  },
+  "KUW": {
+   "attacks": 47,
+   "efficiency": 49
+  }
+ },
+ "id": "M-GPB-000400",
+ "key": "M.TEAM7-------------.GPB-.000400--",
+ "updatedAt": "2026-09-22T05:52:10.197305Z"
+}

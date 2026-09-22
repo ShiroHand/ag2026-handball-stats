@@ -1,6 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES} from './core.js';
-import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend} from './charts.js';
+import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, lineChart} from './charts.js';
+import {connectionSection, mergeConnections} from './connections.js';
 
 const app = q('#app');
 let T = null, M = null, MAN = null;
@@ -49,6 +50,12 @@ function render() {
   app.append(phaseCard(H, A));
   app.append(shootingCard(H, A));
   app.append(gkCard(H, A));
+  app.append(timelineCard(H, A));
+  [H, A].forEach(t => app.append(connectionSection(mergeConnections([t]), {
+    title: `${t.name} — アシスト連携`,
+    subtitle: 'この試合でどの選手・どのポジションから得点が生まれたか',
+    emptyNote: 'この試合はアシストの記録がありません。',
+  })));
   [H, A].forEach(t => app.append(playersCard(t)));
   if (MAN) app.append(manualCard());
   else app.append(el('div', {class: 'card'},
@@ -122,6 +129,12 @@ function compareCard(H, A) {
     ['アシスト', H.derived.assists, A.derived.assists],
     ['ブロック', H.derived.blocks, A.derived.blocks],
     ['2分間退場', H.derived.twoMin, A.derived.twoMin],
+    ['攻撃回数', H.possessions?.attacks, A.possessions?.attacks],
+    ['守備回数', A.possessions?.attacks, H.possessions?.attacks],
+    ['攻撃効率 %', H.possessions?.eff, A.possessions?.eff],
+    ['ターンオーバー', H.possessions?.turnovers, A.possessions?.turnovers],
+    ['OFリバウンド', H.possessions?.offReb, A.possessions?.offReb],
+    ['DFリバウンド', H.possessions?.defReb, A.possessions?.defReb],
   ];
   rows.forEach(([label, l, r]) => {
     if (String(l).includes('/')) {
@@ -130,7 +143,8 @@ function compareCard(H, A) {
         el('div', {class: 'cmp-label', text: label}), el('div', {}),
         el('div', {class: 'cmp-val num', text: r})));
     } else {
-      box.append(compareRow(label, l, r, {hi: label === '2分間退場' ? 'low' : 'high'}));
+      const lower = ['2分間退場', 'ターンオーバー', '守備回数'].includes(label);
+      box.append(compareRow(label, l ?? 0, r ?? 0, {hi: lower ? 'low' : 'high'}));
     }
   });
   return box;
@@ -302,4 +316,73 @@ function manualCard() {
     if (t.comment) box.append(el('div', {class: 'sub', style: {marginTop: '6px'}, text: t.comment}));
   });
   return box;
+}
+
+
+/* ------------------------------------------------------------------ 5分刻み時系列 */
+const TL_METRICS = [
+  {key: 'attacks', label: '攻撃回数'},
+  {key: 'goals', label: '得点'},
+  {key: 'shots', label: 'シュート'},
+  {key: 'missed', label: 'ミス（不成功）'},
+  {key: 'saves', label: 'GKセーブ'},
+  {key: 'turnovers', label: 'ターンオーバー'},
+  {key: 'assists', label: 'アシスト'},
+  {key: 'offReb', label: 'OFリバウンド'},
+  {key: 'defReb', label: 'DFリバウンド'},
+  {key: 'twoMin', label: '2分間退場'},
+];
+
+function timelineCard(H, A) {
+  const buckets = [...new Set([...(H.timeline || []), ...(A.timeline || [])].map(x => x.bucket))]
+    .sort((a, b) => parseInt(a) - parseInt(b));
+  if (!buckets.length) {
+    return el('div', {class: 'card'}, el('h2', {text: '5分ごとの推移'}),
+      el('div', {class: 'empty', text: 'プレーバイプレーが未取得のため表示できません。'}));
+  }
+  const val = (t, b, k) => n((t.timeline || []).find(x => x.bucket === b)?.[k]);
+  const series = (t, k) => buckets.map(b => val(t, b, k));
+  const cum = (arr) => arr.reduce((acc, v) => (acc.push((acc[acc.length - 1] || 0) + v), acc), []);
+
+  /* 表: 指標ごとに 2 行（両チーム） */
+  const table = el('table', {});
+  table.append(el('thead', {}, el('tr', {},
+    el('th', {text: '指標'}), el('th', {text: 'チーム'}),
+    buckets.map(b => el('th', {text: b + '分'})), el('th', {text: '計'}))));
+  const tb = el('tbody', {});
+  TL_METRICS.forEach((m, i) => {
+    [H, A].forEach((t, j) => {
+      const vals = series(t, m.key);
+      const tr = el('tr', {style: i % 2 ? {background: 'var(--surface-2)'} : null},
+        j === 0 ? el('td', {rowspan: 2, style: {fontWeight: 700}, text: m.label}) : null,
+        el('td', {style: {fontWeight: 600, color: j ? 'var(--ink-2)' : 'var(--navy)'}, text: t.code}),
+        vals.map(v => el('td', {class: 'num', text: v || ''})),
+        el('td', {class: 'num', style: {fontWeight: 700}, text: vals.reduce((a, b2) => a + b2, 0)}));
+      tb.append(tr);
+    });
+  });
+  table.append(tb);
+
+  const chart = (key, label) => el('div', {},
+    el('div', {class: 'sec-title', text: label}),
+    lineChart([
+      {label: H.code, color: CAT[0], values: series(H, key)},
+      {label: A.code, color: CAT[4], values: series(A, key)},
+    ], buckets, {width: 560, height: 200}),
+    legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}]));
+
+  return el('div', {class: 'card'},
+    el('h2', {text: '5分ごとの推移'}),
+    el('div', {class: 'sub', text: '公式プレーバイプレーの時刻から5分区切りで集計。OFリバウンドは同一攻撃内の再シュート、DFリバウンドは相手のシュートをセーブ／ポストで回収した回数（推定）。'}),
+    el('div', {class: 'grid g2'}, chart('goals', '得点'), chart('attacks', '攻撃回数')),
+    el('div', {class: 'grid g2', style: {marginTop: '8px'}}, chart('shots', 'シュート'), chart('turnovers', 'ターンオーバー')),
+    el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '5分ごとの数値'}),
+    el('div', {class: 'tbl-scroll'}, table),
+    el('div', {style: {marginTop: '16px'}},
+      el('div', {class: 'sec-title', text: '累積得点の推移'}),
+      lineChart([
+        {label: H.code, color: CAT[0], values: cum(series(H, 'goals'))},
+        {label: A.code, color: CAT[4], values: cum(series(A, 'goals'))},
+      ], buckets, {width: 900, height: 220}),
+      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}])));
 }

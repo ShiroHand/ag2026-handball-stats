@@ -129,6 +129,7 @@ export function renderChrome(active, tournament) {
         el('a', {href: 'match.html', class: active === 'match' ? 'on' : '', text: '試合レポート'}),
         el('a', {href: 'team.html', class: active === 'team' ? 'on' : '', text: 'チーム分析（攻撃）'}),
         el('a', {href: 'defense.html', class: active === 'defense' ? 'on' : '', text: '守備分析'}),
+        el('a', {href: 'situations.html', class: active === 'situations' ? 'on' : '', text: '局面分析'}),
         el('a', {href: 'entry.html', class: active === 'entry' ? 'on' : '', text: 'データ入力'})),
       el('div', {class: 'spacer'}),
       el('div', {class: 'stamp'},
@@ -194,6 +195,10 @@ export const POSITIONS = [
   {key: 'EG',  label: '無人ゴール',  en: 'Opposite Field', x: 70, y: 84},
 ];
 export const POS_LABEL = Object.fromEntries(POSITIONS.map(p => [p.key, p.label]));
+/* コート図に出ない攻撃フェーズも含めた全ゾーン名 */
+export const ZONE_LABEL = {
+  ...POS_LABEL, BT: 'ブレイクスルー', FB: '速攻', FLY: 'フライング',
+};
 
 /* 選手ポジション表記 */
 export const ROLE_JP = {

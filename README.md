@@ -16,7 +16,8 @@
 | `index.html` | 大会トップ — 日程・結果、グループ順位表、得点/セーブランキング、チーム一覧 |
 | `match.html` | 試合レポート — 両チーム比較、攻撃内訳、シュートマップ（コート／ゴールマウス）、GK別セーブマップ、選手スタッツ |
 | `team.html` | チーム分析（攻撃）— 全試合を累積したスカウティングレポート、試合別推移、選手累計 |
-| `defense.html` | 守備分析 — 対戦相手の攻撃データを合計した被シュートマップ、失点コース、相手別守備成績、大会内守備ランキング |
+| `defense.html` | 守備分析 — 対戦相手の攻撃データを合計した被シュートマップ、失点コース、相手の連携図、相手別守備成績、大会内守備ランキング |
+| `situations.html` | 局面分析 — 攻撃回数・攻撃効率・リバウンド、数的状況別（均等/優位/不利）、無人ゴール、大会内効率ランキング |
 | `entry.html` | データ入力 — 戦術・システムなど公式データにない情報の手入力、手入力試合の作成 |
 
 ---
@@ -64,6 +65,14 @@ node scripts/fetch-data.mjs              # 全日程を更新
 node scripts/fetch-data.mjs --day 2026-09-25   # 指定日のみ
 node scripts/fetch-data.mjs --force      # 差分がなくても書き出す
 node scripts/fetch-flags.mjs             # 国旗画像を取得（不足分のみ）
+node scripts/fetch-reports.mjs           # 公式PDFレポート（7対6など）を取り込み
+```
+
+`fetch-reports.mjs` は PDF のテキスト化に `pdftotext`（poppler-utils）を使います。
+
+```bash
+brew install poppler          # macOS
+sudo apt install poppler-utils # Ubuntu
 ```
 
 ローカルで表示を確認するときは、`file://` ではなく簡易サーバ経由で開いてください。
@@ -109,6 +118,52 @@ data/
 | `teams.<略称>.gk` | GKの位置別被シュート → `{sv, s, g}` |
 | `teams.<略称>.gkZone` | GKのコース別セーブ 3×3 → `{sv, s, g}` |
 | `teams.<略称>.players[]` | 選手ごとの同じ構造 + `stats`（545項目から抽出） |
+| `teams.<略称>.connections[]` | アシスト連携 `{fromBib, fromName, fromRole, toBib, toName, toRole, count, goals, zones}` |
+| `teams.<略称>.posLinks[]` | ポジション間の連携 `{from, to, count, goals}`（LW/LB/CB/RB/RW/PV/GK） |
+| `teams.<略称>.shots[]` | 1本ごとのシュート `{min, period, bib, name, role, zone, result, goalZone, assistBib, score}` |
+| `teams.<略称>.defActs[]` | 守備アクション `{bib, name, blocks, steals, sevenMConceded, twoMin}` |
+| `teams.<略称>.possessions` | `{attacks, goals, shots, missed, saves, turnovers, offReb, defReb, eff}` |
+| `teams.<略称>.timeline[]` | 5分区切りの集計 `{bucket, attacks, goals, shots, missed, saves, turnovers, ...}` |
+| `teams.<略称>.situations` / `situationsDef` | 数的状況別（`equal` / `up` / `down`）の攻撃時・守備時 |
+| `teams.<略称>.emptyGoal` | 無人ゴールへのシュート `{shotsFor, goalsFor, shotsAgainst, goalsAgainst}` |
+
+### プレーバイプレーから導出している指標
+
+公式APIの `/{disc}/actions/Total/{ユニットキー}` に入っている
+1プレーごとの記録から、以下を計算しています。
+
+| 指標 | 導出方法 | 精度 |
+|---|---|---|
+| アシスト連携（誰→誰） | `ASS` アクションを、同じチームの次のシュートに結び付ける | 公式のアシスト総数と一致（277本中276本） |
+| 攻撃回数 / 守備回数 | `ATTACK` アクションの数 | 公式記録そのもの |
+| 攻撃効率 | 得点 ÷ 攻撃回数 | 計算値 |
+| オフェンスリバウンド | 同一攻撃内で、セーブ／ポスト／ブロックの後に同じチームが撃った再シュート | **推定** |
+| ディフェンスリバウンド | 相手の攻撃がセーブ／ポスト／ブロックで終わった回数 | **推定** |
+| 数的優位 / 不利 | `TMS`（2分間退場）の記録時刻から±2分の区間を復元し、攻撃開始時点の人数差で分類 | 退場時刻は公式記録、区間は計算 |
+| 5分ごとの推移 | 各アクションのタイムスタンプを5分で区切って集計 | 公式記録そのもの |
+
+### 7対6（エンプティーゴール）
+
+APIには7対6の攻撃回数が入っていませんが、**公式PDFレポート「Empty Goal Analysis」(C77)**
+に完全な集計があります。`scripts/fetch-reports.mjs` がこれを取り込み、
+`data/reports/<試合ID>.json` に保存します。
+
+| 取り込む内容 | 中身 |
+|---|---|
+| `emptyGoal.situations` | 7対6 / 6対6 / その他ごとの 攻撃回数・得点・セーブ・ミス・ブロック・ポスト・ターンオーバー・成功率・被無人ゴール |
+| `emptyGoal.timeline` | 上記の5分ごとの発生（得点/攻撃） |
+| `emptyGoal.duration` | 攻撃時間別（<15秒 〜 >60秒）の 得点/攻撃 |
+| `emptyGoal.substitutions` | GK↔コートプレーヤーの交代回数（7人攻撃への切替回数） |
+| `teamStats` | 公式の Number of Attacks と Scoring Efficiency（C83） |
+
+公式の攻撃回数とプレーバイプレー由来の攻撃回数は一致することを確認済みです
+（KOR-KUW戦: 公式46/47 対 導出46/47）。
+
+### Equality / Superiority / Inferiority
+
+公式PDFには含まれていない指標です（handball.ai のレポート独自）。
+本ダッシュボードでは `TMS`（2分間退場）の記録時刻から前後2分の区間を復元し、
+各攻撃の開始時点の人数差で分類して同等の表を作っています。
 
 ### 手入力データ `manual/*.json`
 

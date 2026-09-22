@@ -1,6 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, shortRole, CAT, SERIES} from './core.js';
 import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars} from './charts.js';
+import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -77,15 +78,23 @@ function defAgg(c) {
     me.players.forEach(p => {
       const key = p.bib + '|' + p.name;
       if (!ownDef.has(key)) ownDef.set(key, {bib: p.bib, name: p.nameS || p.name, role: p.role,
-        games: 0, blocks: 0, twoMin: 0, steals: 0, saves: 0, gkShots: 0, time: 0});
+        games: 0, blocks: 0, twoMin: 0, steals: 0, sevenMConceded: 0, saves: 0, gkShots: 0, time: 0});
       const a = ownDef.get(key);
       a.games++;
-      a.blocks += n(p.stats.BLOCKS);
-      a.twoMin += n(p.stats['2MINUTES']);
-      a.steals += n(p.stats.STEALS);
       a.saves += n(p.stats.GK_SAVES);
       a.gkShots += n(p.stats.GK_SHOTS);
       a.time += n(p.stats.TIME_PLAYED);
+    });
+    /* ブロック・スティール・被7m・2分はプレーバイプレー由来のほうが精度が高い */
+    (me.defActs || []).forEach(d => {
+      const hit = [...ownDef.values()].find(x => x.bib === d.bib);
+      const a = hit || (ownDef.set(d.bib + '|' + d.name, {bib: d.bib, name: d.name, role: '',
+        games: 0, blocks: 0, twoMin: 0, steals: 0, sevenMConceded: 0, saves: 0, gkShots: 0, time: 0}),
+        ownDef.get(d.bib + '|' + d.name));
+      a.blocks += n(d.blocks);
+      a.steals += n(d.steals);
+      a.twoMin += n(d.twoMin);
+      a.sevenMConceded = n(a.sevenMConceded) + n(d.sevenMConceded);
     });
   });
 
@@ -137,7 +146,8 @@ function render() {
     kpi('平均失点', (ga / D.list.length).toFixed(1), `総失点 ${ga}（${D.list.length}試合）`),
     kpi('被シュート決定率', pct(oppGoals, oppShots), `${oppGoals}/${oppShots}　低いほど良い`),
     kpi('GKセーブ率', pct(sv, gsh), `${sv}/${gsh}`),
-    kpi('1試合の被シュート', (oppShots / D.list.length).toFixed(1), `ブロック ${sumBy(D.ownDef, 'blocks')} 本`)));
+    kpi('1試合の被シュート', (oppShots / D.list.length).toFixed(1),
+      `ブロック ${sumBy(D.ownDef, 'blocks')} / スティール ${sumBy(D.ownDef, 'steals')}`)));
 
   /* --- 被シュートマップ --- */
   app.append(el('div', {class: 'card'},
@@ -168,6 +178,23 @@ function render() {
       el('div', {},
         el('div', {class: 'sec-title', text: '失点を許した相手選手'}),
         hbars(D.oppScorers.slice(0, 12), {valueKey: 'v', labelKey: 'label', color: CAT[4]})))));
+
+  /* --- 相手の連携（どう崩されたか） --- */
+  const opps = D.list.map(f => f.teams[oppOf(f, code)]);
+  const cs = connectionSection(mergeConnections(opps), {
+    title: '相手の連携 — どの形で崩されたか',
+    subtitle: '対戦相手のアシスト連携を合計。矢印が太い経路ほど繰り返し失点している形。',
+    tone: 'def',
+    emptyNote: '相手のアシスト記録がありません。',
+  });
+  const az = assistedZoneTable(opps);
+  if (az) {
+    cs.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: '失点位置ごとのアシスト率'}));
+    cs.append(az);
+    cs.append(el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: 'アシスト率が高い位置＝崩されて空いた失点、低い位置＝個人技や速攻で決められた失点。'}));
+  }
+  app.append(cs);
 
   /* --- 対戦相手別 --- */
   app.append(opponentCard(D));
@@ -276,11 +303,11 @@ function opponentCard(D) {
 }
 
 function ownDefCard(D) {
-  const ps = D.ownDef.filter(p => p.blocks || p.twoMin || p.gkShots || p.steals || p.time)
+  const ps = D.ownDef.filter(p => p.blocks || p.twoMin || p.gkShots || p.steals || p.sevenMConceded || p.time)
     .sort((a, b) => (b.blocks + b.steals) - (a.blocks + a.steals) || b.time - a.time);
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
-    ['#', '選手', 'Pos', '試合', '出場計', 'ブロック', 'スティール', '2分', 'セーブ', '被シュート', 'セーブ率']
+    ['#', '選手', 'Pos', '試合', '出場計', 'ブロック', 'スティール', '7m献上', '2分', 'セーブ', '被シュート', 'セーブ率']
       .map(h => el('th', {text: h})))));
   const tb = el('tbody', {});
   ps.forEach(p => tb.append(el('tr', {},
@@ -291,6 +318,7 @@ function ownDefCard(D) {
     el('td', {class: 'num', text: fmtSec(p.time)}),
     el('td', {class: 'num', style: {fontWeight: p.blocks ? 700 : 400}, text: p.blocks || ''}),
     el('td', {class: 'num', text: p.steals || ''}),
+    el('td', {class: 'num', text: p.sevenMConceded || ''}),
     el('td', {class: 'num', text: p.twoMin || ''}),
     el('td', {class: 'num', text: p.saves || ''}),
     el('td', {class: 'num', text: p.gkShots || ''}),

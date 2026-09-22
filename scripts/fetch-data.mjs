@@ -127,6 +127,253 @@ function sumZone(list, keys) {
 }
 const zoneEmpty = (z) => z.every(r => r.every(c => !N(c.s)));
 
+/* ---------------------------------------------------------------- プレーバイプレー */
+/* アクションコード → シュート位置キー */
+const ACT_ZONE = {
+  LW: 'LW', LSD: 'L6', CSD: 'C6', RSD: 'R6', RW: 'RW',
+  LLD: 'L9', CLD: 'C9', RLD: 'R9', PTY: 'P7', EG: 'EG',
+  BT: 'BT', FB: 'FB', FLY: 'FLY',
+};
+/* ゴールマウスのコース記号 → [行, 列] */
+const GZ = {TL: [0, 0], TC: [0, 1], TR: [0, 2], ML: [1, 0], MC: [1, 1], MR: [1, 2],
+  BL: [2, 0], BC: [2, 1], BR: [2, 2]};
+
+/* 選手ポジションの正規化（連携図のノード） */
+const ROLE_NODE = {
+  GK: 'GK', G: 'GK',
+  LW: 'LW', RW: 'RW', LB: 'LB', RB: 'RB', CB: 'CB',
+  P: 'PV', PV: 'PV', LP: 'PV',
+};
+const roleNode = (r) => ROLE_NODE[S(r).toUpperCase()] || 'OTH';
+
+/* API/バンドル両対応で 1 アクションを正規化 */
+function normAction(a) {
+  if (a.ac !== undefined) return a;                     // バンドル（取得済み）形式
+  const e = (c) => S((a.Extensions || []).find(x => x.Code === c)?.Value);
+  return {
+    o: a.Order, p: S(a.Period), t: S(a.TimeStamp), ac: S(a.Action), ad: S(a.ActionDesc),
+    r: S(a.Result), rd: S(a.ResultDesc), tm: S(a.Team), sh: S(a.ScoreH), sa: S(a.ScoreA),
+    gz: e('ActionGoalZone'), gk: e('ActionDataGoalkeeper'),
+    asN: e('ActionAssistant'), asR: e('ActionAssistantReg'),
+    c: (a.Competitors || []).map(c => ({reg: S(c.Reg), bib: S(c.Bib), org: S(c.Org), n: S(c.NameS || c.Name)})),
+  };
+}
+
+/* 時刻 "MM:SS" + ピリオド → 試合開始からの絶対秒 */
+function absSec(period, stamp) {
+  const p = parseInt(period, 10) || 1;
+  const [mm, ss] = S(stamp).split(':').map(x => parseInt(x, 10) || 0);
+  const base = p <= 2 ? (p - 1) * 30 * 60 : 60 * 60 + (p - 3) * 5 * 60;
+  return base + mm * 60 + ss;
+}
+const BUCKET = 5 * 60;
+const bucketLabel = (sec) => {
+  const b = Math.floor(sec / BUCKET) * 5;
+  return `${b}-${b + 5}`;
+};
+
+/* ポゼッション・リバウンド・数的状況・時間帯を組み立てる */
+function buildPossessions(acts, teams, orgs) {
+  const RECOVERED = new Set(['SAVE', 'POST', 'BLC']);   // 守備側がボールを回収し得る結末
+  const blank = () => ({attacks: 0, goals: 0, shots: 0, missed: 0, saves: 0,
+    turnovers: 0, twoMin: 0, assists: 0, offReb: 0, defReb: 0});
+  const T = {};
+  orgs.forEach(o => T[o] = {
+    poss: blank(), timeline: new Map(),
+    sit: {equal: blank(), up: blank(), down: blank()},
+    sitDef: {equal: blank(), up: blank(), down: blank()},
+    emptyGoal: {shotsFor: 0, goalsFor: 0, shotsAgainst: 0, goalsAgainst: 0},
+  });
+  const other = (o) => orgs.find(x => x !== o);
+  const tl = (o, sec) => {
+    const k = bucketLabel(sec);
+    if (!T[o].timeline.has(k)) T[o].timeline.set(k, {bucket: k, ...blank()});
+    return T[o].timeline.get(k);
+  };
+
+  /* 退場区間（2分）を先に集める */
+  const susp = [];
+  acts.forEach(a => {
+    if (a.ac !== 'TMS') return;
+    const org = a.c[0]?.org;
+    if (!org) return;
+    const s = absSec(a.p, a.t);
+    susp.push({org, from: s, to: s + 120});
+  });
+  const shortOf = (org, sec) => susp.filter(x => x.org === org && sec >= x.from && sec < x.to).length;
+  const sitKey = (org, sec) => {
+    const d = shortOf(other(org), sec) - shortOf(org, sec);
+    return d > 0 ? 'up' : (d < 0 ? 'down' : 'equal');
+  };
+
+  let cur = null;                       // 現在のポゼッション
+  const closePoss = () => {
+    if (!cur) return;
+    const last = cur.shots[cur.shots.length - 1];
+    if (last && RECOVERED.has(last.r)) {
+      const opp = other(cur.org);
+      if (opp) { T[opp].poss.defReb++; tl(opp, last.sec).defReb++; }
+    }
+    cur = null;
+  };
+
+  for (const a of acts) {
+    const org = a.c[0]?.org;
+    const sec = absSec(a.p, a.t);
+
+    if (a.ac === 'ATTACK') {
+      closePoss();
+      if (org && T[org]) {
+        const opp = other(org);
+        /* 攻撃開始時点の人数差でそのポゼッション全体を分類する（回数と得点の分母を揃えるため） */
+        cur = {org, shots: [], sec, kAtt: sitKey(org, sec), kDef: opp ? sitKey(opp, sec) : 'equal'};
+        T[org].poss.attacks++;
+        tl(org, sec).attacks++;
+        T[org].sit[cur.kAtt].attacks++;
+        if (opp) T[opp].sitDef[cur.kDef].attacks++;
+      }
+      continue;
+    }
+    if (a.ac === 'ENDP') { closePoss(); continue; }
+    if (a.ac === 'TO' && org && T[org]) { T[org].poss.turnovers++; tl(org, sec).turnovers++; closePoss(); continue; }
+    if (a.ac === 'TMS' && org && T[org]) { T[org].poss.twoMin++; tl(org, sec).twoMin++; continue; }
+    if (a.ac === 'ASS' && org && T[org]) { T[org].poss.assists++; tl(org, sec).assists++; continue; }
+
+    const zone = ACT_ZONE[a.ac];
+    if (!zone || !org || !T[org]) continue;
+
+    const opp = other(org);
+    const goal = a.r === 'GOAL';
+    const row = tl(org, sec);
+    T[org].poss.shots++; row.shots++;
+    if (goal) { T[org].poss.goals++; row.goals++; }
+    else { T[org].poss.missed++; row.missed++; }
+    if (a.r === 'SAVE' && opp) { T[opp].poss.saves++; tl(opp, sec).saves++; }
+
+    /* 数的状況（そのシュートが属する攻撃の開始時点で分類） */
+    const inPoss = cur && cur.org === org;
+    const k = inPoss ? cur.kAtt : sitKey(org, sec);
+    const st2 = T[org].sit[k];
+    st2.shots++; if (goal) st2.goals++; else st2.missed++;
+    if (opp) {
+      const kd = inPoss ? cur.kDef : sitKey(opp, sec);
+      const sd = T[opp].sitDef[kd];
+      sd.shots++; if (goal) sd.goals++; else sd.missed++;
+    }
+
+    /* 無人ゴール（相手がGKを下げていた局面の結果） */
+    if (a.ac === 'EG') {
+      T[org].emptyGoal.shotsFor++; if (goal) T[org].emptyGoal.goalsFor++;
+      if (opp) { T[opp].emptyGoal.shotsAgainst++; if (goal) T[opp].emptyGoal.goalsAgainst++; }
+    }
+
+    /* オフェンスリバウンド: 同じポゼッション内で前のシュートが弾かれた後の再シュート */
+    if (cur && cur.org === org) {
+      const prev = cur.shots[cur.shots.length - 1];
+      if (prev && RECOVERED.has(prev.r)) { T[org].poss.offReb++; row.offReb++; }
+      cur.shots.push({r: a.r, sec});
+      if (goal) closePoss();
+    }
+  }
+  closePoss();
+
+  const out = {};
+  for (const [org, x] of Object.entries(T)) {
+    out[org] = {
+      possessions: {...x.poss, eff: x.poss.attacks ? +(x.poss.goals / x.poss.attacks * 100).toFixed(1) : 0},
+      timeline: [...x.timeline.values()].sort((a, b) => parseInt(a.bucket) - parseInt(b.bucket)),
+      situations: x.sit, situationsDef: x.sitDef, emptyGoal: x.emptyGoal,
+    };
+  }
+  return out;
+}
+
+function buildPlay(rawActions, teams) {
+  const acts = (rawActions || []).map(normAction).sort((x, y) => x.o - y.o);
+  const byOrg = {};
+  for (const code of Object.keys(teams)) {
+    byOrg[code] = {
+      shots: [], connections: new Map(), posLinks: new Map(),
+      assistBy: new Map(), defActs: new Map(), timeline: [],
+    };
+  }
+  const roleOf = (org, bib) =>
+    roleNode(teams[org]?.players.find(p => p.bib === bib)?.role);
+
+  const pendingAss = {};                 // org -> {bib, name}
+  const bumpDef = (org, bib, name, key) => {
+    if (!byOrg[org] || !bib) return;
+    const m = byOrg[org].defActs;
+    if (!m.has(bib)) m.set(bib, {bib, name, blocks: 0, steals: 0, sevenMConceded: 0, twoMin: 0});
+    m.get(bib)[key]++;
+  };
+
+  for (const a of acts) {
+    const actor = a.c[0];
+    const org = actor?.org;
+
+    if (a.ac === 'ASS' && org) { pendingAss[org] = {bib: actor.bib, name: actor.n, o: a.o}; continue; }
+    if (a.ac === 'BLC' && org) { bumpDef(org, actor.bib, actor.n, 'blocks'); continue; }
+    if (a.ac === 'ST' && org) { bumpDef(org, actor.bib, actor.n, 'steals'); continue; }
+    if (a.ac === 'FRP' && org) { bumpDef(org, actor.bib, actor.n, 'sevenMConceded'); continue; }
+    if (a.ac === 'TMS' && org) { bumpDef(org, actor.bib, actor.n, 'twoMin'); continue; }
+    if (a.ac === 'TO' && org) { pendingAss[org] = null; continue; }
+    if (a.ac === 'ENDP') { for (const k of Object.keys(pendingAss)) pendingAss[k] = null; continue; }
+
+    const zone = ACT_ZONE[a.ac];
+    if (!zone || !org || !byOrg[org]) continue;
+
+    /* アシストは ASS アクションのみを正とする（公式の ASSISTS 集計と本数が一致することを確認済み）。
+       ゴール側の ActionAssistant フィールドは重複・取りこぼしがあるため使わない。
+       ASS は同じチームの次のシュートに結び付ける。 */
+    let asBib = '', asName = '';
+    const pa = pendingAss[org];
+    if (pa) { asBib = pa.bib; asName = pa.name; }
+    pendingAss[org] = null;
+
+    const T = byOrg[org];
+    const isGoal = a.r === 'GOAL';
+    T.shots.push({
+      min: S(a.t), period: S(a.p), bib: S(actor.bib), name: S(actor.n),
+      role: roleOf(org, actor.bib), zone, result: S(a.r),
+      goalZone: GZ[a.gz] ? a.gz : '', assistBib: asBib,
+      score: `${a.sh}-${a.sa}`,
+    });
+
+    if (!asBib) continue;
+
+    const from = roleOf(org, asBib), to = roleOf(org, actor.bib);
+    const ck = `${asBib}>${actor.bib}`;
+    if (!T.connections.has(ck)) T.connections.set(ck, {
+      fromBib: asBib, fromName: asName, fromRole: from,
+      toBib: S(actor.bib), toName: S(actor.n), toRole: to,
+      count: 0, goals: 0, zones: {},
+    });
+    const c = T.connections.get(ck);
+    c.count++;
+    if (isGoal) { c.goals++; c.zones[zone] = (c.zones[zone] || 0) + 1; }
+
+    const pk = `${from}>${to}`;
+    if (!T.posLinks.has(pk)) T.posLinks.set(pk, {from, to, count: 0, goals: 0});
+    const pl = T.posLinks.get(pk);
+    pl.count++; if (isGoal) pl.goals++;
+
+    T.assistBy.set(asBib, (T.assistBy.get(asBib) || 0) + 1);
+  }
+
+  const out = {};
+  for (const [org, T] of Object.entries(byOrg)) {
+    out[org] = {
+      shots: T.shots,
+      connections: [...T.connections.values()].sort((a, b) => b.count - a.count),
+      posLinks: [...T.posLinks.values()].sort((a, b) => b.count - a.count),
+      defActs: [...T.defActs.values()].sort((a, b) =>
+        (b.blocks + b.steals) - (a.blocks + a.steals)),
+    };
+  }
+  return out;
+}
+
 /* ---------------------------------------------------------------- build */
 /* 選手のゾーン別を合計してチームのシュートマップを作る（チーム統計は集約値のみのため） */
 function sumMaps(list, keys) {
@@ -139,7 +386,7 @@ function sumMaps(list, keys) {
 }
 const mapEmpty = (m, k = 's') => Object.values(m).every(v => !N(v[k]));
 
-function buildMatchFile(key, res, listed) {
+function buildMatchFile(key, res, listed, rawActions) {
   const info = res.Info || {};
   const teams = {};
   for (const c of res.Competitors || []) {
@@ -203,6 +450,23 @@ function buildMatchFile(key, res, listed) {
     teams[orgs[0]].shotZone = teams[orgs[1]].concededZone;
     teams[orgs[1]].shotZone = teams[orgs[0]].concededZone;
   }
+  /* プレーバイプレーから連携・シュートイベント・守備アクションを抽出 */
+  const play = buildPlay(rawActions, teams);
+  for (const [org, p] of Object.entries(play)) {
+    if (!teams[org]) continue;
+    teams[org].shots = p.shots;
+    teams[org].connections = p.connections;
+    teams[org].posLinks = p.posLinks;
+    teams[org].defActs = p.defActs;
+  }
+  /* ポゼッション・リバウンド・数的状況・時間帯 */
+  const orgsAll = Object.keys(teams);
+  const pos = buildPossessions((rawActions || []).map(normAction).sort((x, y) => x.o - y.o), teams, orgsAll);
+  for (const [org, p] of Object.entries(pos)) {
+    if (!teams[org]) continue;
+    Object.assign(teams[org], p);
+  }
+
   const order = (res.Competitors || []).map(c => c.Org);
   const src = {...listed, ...info};
   return {
@@ -321,7 +585,9 @@ async function main() {
     if (!m.hasResult) continue;
     const res = bundle ? bundle.results[m.key] : await api(`/${DISC}/results/${m.key}`, {optional: true});
     if (!res || !res.Competitors?.length) continue;
-    const file = buildMatchFile(m.key, res, m);
+    const acts = bundle ? (bundle.actions || {})[m.key]
+                        : await api(`/${DISC}/actions/Total/${m.key}`, {optional: true});
+    const file = buildMatchFile(m.key, res, m, acts);
     m.hasStats = Object.values(file.teams).some(t => Object.keys(t.stats || {}).length > 3);
     if (await writeIfChanged(path.join(DATA, 'matches', file.id + '.json'), file)) changed++;
     ids.push(file.id);

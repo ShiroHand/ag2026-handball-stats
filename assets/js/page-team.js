@@ -1,6 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, shortRole, CAT, SERIES} from './core.js';
 import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars} from './charts.js';
+import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -149,6 +150,21 @@ function render() {
           {label: 'セーブ', value: n(A.stats.GK_SAVES), color: '#16385c'},
         ], {centerTop: pct(A.stats.GK_SAVES, A.stats.GK_SHOTS), centerSub: 'セーブ率'}),
         legend([{label: '失点', color: '#2ba3e0'}, {label: 'セーブ', color: '#16385c'}])))));
+
+  /* 連携（アシスト） */
+  const mine = list.map(f => f.teams[code]);
+  const cs = connectionSection(mergeConnections(mine), {
+    title: '連携（アシスト）— 全試合累計',
+    subtitle: 'どの選手からどの選手へ、どのポジション間で得点が生まれているか',
+  });
+  const az = assistedZoneTable(mine);
+  if (az) {
+    cs.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: '得点位置ごとのアシスト率'}));
+    cs.append(az);
+    cs.append(el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: 'アシスト率が低い位置は個人技・速攻など単独で完結している得点が多いことを示します。'}));
+  }
+  app.append(cs);
 
   /* 試合別推移 */
   app.append(developmentCard(list));

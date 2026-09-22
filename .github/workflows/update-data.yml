@@ -28,8 +28,14 @@ jobs:
         with:
           node-version: '20'
 
+      - name: PDF解析ツールを導入
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
       - name: 公式リザルトAPIから取得
         run: node scripts/fetch-data.mjs
+
+      - name: 公式PDFレポートを取り込み（7対6など）
+        run: node scripts/fetch-reports.mjs || true
 
       - name: 国旗画像を取得（不足分のみ）
         run: node scripts/fetch-flags.mjs || true

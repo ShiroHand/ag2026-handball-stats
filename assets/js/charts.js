@@ -158,11 +158,11 @@ export function goalMap(zones, outside = {}, {width = 380} = {}) {
 }
 
 /* ---------- 横棒ランキング ---------- */
-export function hbars(rows, {valueKey = 'v', labelKey = 'label', max = null, color = '#2ba3e0', fmtv = (v) => v, height = 22} = {}) {
+export function hbars(rows, {valueKey = 'v', labelKey = 'label', max = null, color = '#2ba3e0', fmtv = (v) => v, height = 22, labelWidth = '210px'} = {}) {
   const m = max ?? Math.max(1, ...rows.map(r => n(r[valueKey])));
   return el('div', {},
     rows.map(r => el('div', {class: 'row', style: {gap: '8px', margin: '3px 0'}},
-      el('div', {style: {width: '150px', fontSize: '12px'}, class: 'nowrap', text: r[labelKey]}),
+      el('div', {style: {width: labelWidth, fontSize: '11.5px'}, class: 'nowrap', text: r[labelKey]}),
       el('div', {style: {flex: '1'}},
         el('div', {class: 'bar', style: {height: '12px'}},
           el('div', {class: 'fill', style: {width: (n(r[valueKey]) / m * 100) + '%', background: r.color || color}}))),
@@ -228,3 +228,135 @@ export function lineChart(series, labels, {width = 820, height = 210, yTitle = '
 }
 
 export {SERIES};
+
+/* ---------- ポジション連携図（パスネットワーク） ---------- */
+/* links: [{from, to, count, goals}] / ノードはハンドボールの基本ポジション */
+export const PASS_NODES = {
+  LW: {label: 'LW', jp: '左ウイング', x: 13, y: 26},
+  PV: {label: 'PV', jp: 'ピボット',   x: 50, y: 33},
+  RW: {label: 'RW', jp: '右ウイング', x: 87, y: 26},
+  LB: {label: 'LB', jp: '左バック',   x: 25, y: 62},
+  CB: {label: 'CB', jp: 'センター',   x: 50, y: 70},
+  RB: {label: 'RB', jp: '右バック',   x: 75, y: 62},
+  GK: {label: 'GK', jp: 'GK',         x: 50, y: 88},
+  OTH: {label: '—', jp: 'その他',     x: 88, y: 84},
+};
+
+export function passMap(links, {width = 460, metric = 'count', title = ''} = {}) {
+  const used = new Set();
+  links.forEach(l => { used.add(l.from); used.add(l.to); });
+  const max = Math.max(1, ...links.map(l => n(l[metric])));
+
+  const root = svg('svg', {class: 'chart', viewBox: '0 0 100 96'});
+  root.setAttribute('style', `width:100%;max-width:${width}px;height:auto`);
+  const cid = 'pc' + Math.random().toString(36).slice(2, 8);
+  const aid = 'ah' + Math.random().toString(36).slice(2, 8);
+  root.append(svg('defs', {},
+    svg('clipPath', {id: cid}, svg('rect', {x: 0, y: 0, width: 100, height: 96, rx: 3})),
+    svg('marker', {id: aid, viewBox: '0 0 10 10', refX: 8, refY: 5,
+      markerWidth: 5, markerHeight: 5, orient: 'auto-start-reverse'},
+      svg('path', {d: 'M 0 1 L 9 5 L 0 9 z', fill: '#ffffff'}))));
+
+  const court = svg('g', {'clip-path': `url(#${cid})`});
+  court.append(svg('rect', {x: 0, y: 0, width: 100, height: 96, fill: '#7fc0f2'}));
+  court.append(svg('path', {d: 'M 9 0 A 41 33 0 0 0 91 0 Z', fill: '#1d3f66'}));
+  court.append(svg('path', {d: 'M 9 0 A 41 33 0 0 0 91 0', fill: 'none', stroke: '#fff', 'stroke-width': .7}));
+  court.append(svg('path', {d: 'M -2 0 A 52 48 0 0 0 102 0', fill: 'none', stroke: '#fff',
+    'stroke-width': .6, 'stroke-dasharray': '2.4 2.2'}));
+  court.append(svg('rect', {x: 42, y: 0, width: 16, height: 1.8, fill: '#fff'}));
+  root.append(court);
+
+  /* 矢印（本数が多いものほど太く不透明に） */
+  links.slice().sort((a, b) => n(a[metric]) - n(b[metric])).forEach(l => {
+    const A = PASS_NODES[l.from], B = PASS_NODES[l.to];
+    if (!A || !B) return;
+    const v = n(l[metric]);
+    if (!v) return;
+    const w = 0.7 + (v / max) * 3.2;
+    const op = 0.42 + (v / max) * 0.58;
+    const g = svg('g', {opacity: op});
+
+    if (l.from === l.to) {                     // 自分から自分（同ポジション間）
+      const r = 7.2;
+      g.append(svg('path', {
+        d: `M ${A.x - 3} ${A.y - 4} a ${r} ${r} 0 1 1 6 0`,
+        fill: 'none', stroke: '#ffffff', 'stroke-width': w,
+        'marker-end': `url(#${aid})`, 'stroke-linecap': 'round'}));
+    } else {
+      const mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+      const dx = B.x - A.x, dy = B.y - A.y;
+      const len = Math.hypot(dx, dy) || 1;
+      const bow = Math.min(9, len * 0.22);
+      const cx = mx - (dy / len) * bow, cy = my + (dx / len) * bow;
+      /* ノードの縁で止める */
+      const t0 = 5.6 / len, t1 = 1 - 6.4 / len;
+      const pt = (t) => {
+        const u = 1 - t;
+        return [u * u * A.x + 2 * u * t * cx + t * t * B.x,
+                u * u * A.y + 2 * u * t * cy + t * t * B.y];
+      };
+      const p0 = pt(t0), p1 = pt(t1);
+      g.append(svg('path', {d: `M ${p0[0]} ${p0[1]} Q ${cx} ${cy} ${p1[0]} ${p1[1]}`,
+        fill: 'none', stroke: '#ffffff', 'stroke-width': w,
+        'marker-end': `url(#${aid})`, 'stroke-linecap': 'round'}));
+      const lp = pt(0.5);
+      g.append(svg('circle', {cx: lp[0], cy: lp[1], r: 3, fill: '#16385c', opacity: .9}));
+      g.append(svg('text', {x: lp[0], y: lp[1] + 1.5, 'text-anchor': 'middle',
+        'font-size': 3.4, 'font-weight': 700, fill: '#ffffff'}, String(v)));
+    }
+    tip(g, `<b>${A.jp} → ${B.jp}</b><br>アシスト ${n(l.count)} 本 / 得点 ${n(l.goals)}`);
+    root.append(g);
+  });
+
+  /* ノード */
+  Object.entries(PASS_NODES).forEach(([k, p]) => {
+    if (!used.has(k)) return;
+    const out = links.filter(l => l.from === k).reduce((a, l) => a + n(l[metric]), 0);
+    const inn = links.filter(l => l.to === k).reduce((a, l) => a + n(l[metric]), 0);
+    const g = svg('g', {});
+    g.append(svg('circle', {cx: p.x, cy: p.y, r: 5.4, fill: '#16385c',
+      stroke: '#ffffff', 'stroke-width': .8}));
+    g.append(svg('text', {x: p.x, y: p.y + 1.6, 'text-anchor': 'middle',
+      'font-size': 4, 'font-weight': 700, fill: '#ffffff'}, p.label));
+    tip(g, `<b>${p.jp}</b><br>出し手として ${out} 本<br>受け手として ${inn} 本`);
+    root.append(g);
+  });
+
+  const box = el('div', {});
+  if (title) box.append(el('div', {class: 'sec-title', text: title}));
+  box.append(el('div', {class: 'mapbox'}, root));
+  box.append(el('div', {class: 'ramp'},
+    el('span', {class: 'muted', text: '矢印 = アシストの向き / 太さと数字 = 本数'})));
+  return box;
+}
+
+/* ---------- 連携マトリクス（出し手 × 受け手） ---------- */
+export function matrixTable(rows, cols, get, {rowLabel = '出し手＼受け手', fmtv = (v) => v || ''} = {}) {
+  const max = Math.max(1, ...rows.flatMap(r => cols.map(c => n(get(r, c)))));
+  const table = el('table', {class: 'matrix'});
+  table.append(el('thead', {}, el('tr', {},
+    el('th', {text: rowLabel}), cols.map(c => el('th', {text: c.label})), el('th', {text: '計'}))));
+  const tb = el('tbody', {});
+  rows.forEach(r => {
+    const tot = cols.reduce((a, c) => a + n(get(r, c)), 0);
+    tb.append(el('tr', {},
+      el('td', {text: r.label}),
+      cols.map(c => {
+        const v = n(get(r, c));
+        const td = el('td', {class: 'num', text: fmtv(v)});
+        if (v) {
+          td.style.background = `rgba(43,163,224,${0.12 + (v / max) * 0.6})`;
+          td.style.fontWeight = '700';
+          td.style.color = v / max > 0.6 ? '#fff' : 'inherit';
+        }
+        return td;
+      }),
+      el('td', {class: 'num', style: {fontWeight: 700}, text: tot || ''})));
+  });
+  const totRow = el('tr', {class: 'total'}, el('td', {text: '計'}),
+    cols.map(c => el('td', {class: 'num', text: rows.reduce((a, r) => a + n(get(r, c)), 0) || ''})),
+    el('td', {class: 'num', text: rows.reduce((a, r) => a + cols.reduce((b, c) => b + n(get(r, c)), 0), 0)}));
+  tb.append(totRow);
+  table.append(tb);
+  return el('div', {class: 'tbl-scroll'}, table);
+}
