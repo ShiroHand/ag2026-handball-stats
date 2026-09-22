@@ -1,8 +1,0 @@
-国旗画像の取得を修正
-
-公式サイトの国旗はビルドハッシュ付きファイル名で配信されており
-固定URLが存在しないため、メインJSから実ファイル名を抽出してから
-ダウンロードする方式に変更。未取得の国はコードのバッジで代替表示する。
-
-Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01WjxecFPazrZpYALnSG2RmT

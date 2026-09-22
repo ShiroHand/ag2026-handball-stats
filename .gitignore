@@ -1,3 +1,7 @@
 .DS_Store
 node_modules/
 *.log
+
+# 作業中に出た一時ファイルの退避先（リポジトリには含めない）
+_to_delete/
+*.tar.gz
