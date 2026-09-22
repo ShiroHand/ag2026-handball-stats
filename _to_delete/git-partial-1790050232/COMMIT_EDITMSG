@@ -1,0 +1,7 @@
+初期コミット: アジア大会2026 ハンドボール ダッシュボード
+
+公式リザルトAPIから取得した日程・結果・選手スタッツを可視化する静的サイト。
+GitHub Actions で10分ごとに data/ を自動更新する。
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01WjxecFPazrZpYALnSG2RmT

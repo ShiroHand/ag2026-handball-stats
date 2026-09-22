@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = shiro
+	email = shiro@rs.tus.ac.jp
+[remote "origin"]
+	url = https://github.com/ShiroHand/ag2026-handball-stats.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

@@ -1,0 +1,7 @@
+URLのg=パラメータで男女を明示指定できるよう修正
+
+同一略称のチームが男女に存在する場合（JPN など）、
+g=W 指定時に男子側が選ばれてしまう不具合を修正。
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01WjxecFPazrZpYALnSG2RmT

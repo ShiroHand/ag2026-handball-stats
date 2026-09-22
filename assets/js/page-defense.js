@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, shortRole, CAT, SERIES} from './core.js';
+        params, setParam, flagImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 
@@ -204,6 +204,8 @@ function render() {
 
   /* --- 大会内ランキング --- */
   app.append(rankingCard());
+
+  sectionNav(app);
 }
 
 const sumBy = (arr, k) => arr.reduce((a, b) => a + n(b[k]), 0);

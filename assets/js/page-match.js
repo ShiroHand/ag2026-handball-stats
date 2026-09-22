@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES} from './core.js';
+        params, setParam, flagImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, lineChart} from './charts.js';
 import {connectionSection, mergeConnections} from './connections.js';
 
@@ -63,6 +63,8 @@ function render() {
     el('div', {class: 'notice'},
       `この試合の手入力データ（data/manual/${M.id}.json）はまだありません。`,
       el('br'), '「データ入力」画面から攻撃システム・連携・タイムラインなどを追加できます。')));
+
+  sectionNav(app);
 }
 
 /* ------------------------------------------------------------------ 試合選択 */

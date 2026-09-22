@@ -141,3 +141,12 @@ footer.foot{max-width:1400px;margin:0 auto;padding:0 16px 40px;font-size:11px;co
 table.matrix thead th{font-size:11px;padding:6px 4px}
 table.matrix tbody td{padding:4px 6px;font-size:12px}
 table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
+
+/* ページ内セクション目次 */
+.secnav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:9px 12px;margin-bottom:16px}
+.secnav-label{font-size:11px;font-weight:700;color:var(--ink-3);margin-right:4px;white-space:nowrap}
+.secnav-a{font-size:12px;font-weight:600;color:var(--navy);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:999px;padding:4px 11px;white-space:nowrap}
+.secnav-a:hover{background:var(--blue-soft);border-color:var(--line-2);text-decoration:none}

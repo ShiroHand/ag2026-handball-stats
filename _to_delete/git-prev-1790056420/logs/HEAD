@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 3e5e20f0e9beb18289ba34564f5826e355230126 shiro <shiro@rs.tus.ac.jp> 1790050982 +0000	commit (initial): 初期コミット: アジア大会2026 ハンドボール ダッシュボード
+3e5e20f0e9beb18289ba34564f5826e355230126 0000000000000000000000000000000000000000 shiro <shiro@rs.tus.ac.jp> 1790050982 +0000	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 3e5e20f0e9beb18289ba34564f5826e355230126 shiro <shiro@rs.tus.ac.jp> 1790050982 +0000	Branch: renamed refs/heads/master to refs/heads/main
+3e5e20f0e9beb18289ba34564f5826e355230126 4f7ea952aa9e822a2d5e44331e2db57330ff0645 shiro <shiro@rs.tus.ac.jp> 1790051043 +0000	commit: URLのg=パラメータで男女を明示指定できるよう修正
+4f7ea952aa9e822a2d5e44331e2db57330ff0645 0000000000000000000000000000000000000000 shiro <shiro@rs.tus.ac.jp> 1790054657 +0000	Branch: renamed refs/heads/main to refs/heads/main
+4f7ea952aa9e822a2d5e44331e2db57330ff0645 4f7ea952aa9e822a2d5e44331e2db57330ff0645 shiro <shiro@rs.tus.ac.jp> 1790054657 +0000	Branch: renamed refs/heads/main to refs/heads/main
+4f7ea952aa9e822a2d5e44331e2db57330ff0645 0f0987561504b951e762c043798e0edea174327d shiro <shiro@rs.tus.ac.jp> 1790054973 +0000	commit: 国旗画像の取得を修正
+0f0987561504b951e762c043798e0edea174327d e5739efa5b608f38863ef991db9b6b994f7926ac shiro <shiro@rs.tus.ac.jp> 1790054973 +0000	pull --rebase --no-edit origin main (start): checkout e5739efa5b608f38863ef991db9b6b994f7926ac
+e5739efa5b608f38863ef991db9b6b994f7926ac 355f591a0f88a0c90157ab7adf37300b4760a13e shiro <shiro@rs.tus.ac.jp> 1790054973 +0000	pull --rebase --no-edit origin main (pick): 国旗画像の取得を修正
+355f591a0f88a0c90157ab7adf37300b4760a13e 355f591a0f88a0c90157ab7adf37300b4760a13e shiro <shiro@rs.tus.ac.jp> 1790054973 +0000	pull --rebase --no-edit origin main (finish): returning to refs/heads/main

@@ -1,0 +1,12 @@
+アシスト連携図・攻撃回数/リバウンド・5分推移・7対6分析を追加
+
+- プレーバイプレー(/actions/Total/) を取り込み、アシストの出し手→受け手、
+  ポジション間のパス図、1本ごとのシュートイベント、守備アクションを生成
+- 攻撃回数/守備回数/攻撃効率、オフェンス・ディフェンスリバウンド（推定）を集計
+- 試合レポートに5分ごとの推移（表＋折れ線）を追加
+- 局面分析ページ(situations.html)を新設。数的優位/不利（2分間退場の時刻から復元）と
+  公式PDF Empty Goal Analysis(C77) 由来の7対6データを表示
+- fetch-reports.mjs を追加し、公式PDFレポートを pdftotext で解析して取り込む
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01WjxecFPazrZpYALnSG2RmT

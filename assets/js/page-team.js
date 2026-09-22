@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, shortRole, CAT, SERIES} from './core.js';
+        params, setParam, flagImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 
@@ -171,6 +171,8 @@ function render() {
 
   /* 選手累計 */
   app.append(playersCard(A, list.length));
+
+  sectionNav(app);
 }
 
 function oppOf(f) { return f.home === code ? f.away : f.home; }

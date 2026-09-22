@@ -143,6 +143,38 @@ export function renderFoot() {
     '公式リザルトシステムのデータを自動取得して表示しています。戦術・システム情報は手入力データ（data/manual/）で補完されます。'));
 }
 
+/* ---------- ページ内セクション目次 ----------
+   長いページの先頭に、各カード見出しへ飛ぶチップを並べる。
+   描画が終わったあとに呼ぶこと。 */
+export function sectionNav(host) {
+  host.querySelector('.secnav')?.remove();
+  const cards = [...host.querySelectorAll(':scope > .card')];
+  const items = [];
+  cards.forEach((card, i) => {
+    const h = card.querySelector(':scope > h2');
+    if (!h) return;
+    const id = 'sec' + i;
+    card.id = id;
+    const label = h.textContent
+      .replace(/（[^）]*）/g, '')      // 全角かっこの補足を落とす
+      .split(/\s[—–]\s/)[0]           // 「— 全試合累計」などの副題を落とす
+      .trim();
+    items.push({id, label: label || h.textContent.trim()});
+  });
+  if (items.length < 3) return;
+  const nav = el('div', {class: 'secnav'},
+    el('span', {class: 'secnav-label', text: 'このページの内容'}),
+    items.map(it => el('a', {
+      href: '#' + it.id, class: 'secnav-a', text: it.label,
+      onclick: (e) => {
+        e.preventDefault();
+        const t = document.getElementById(it.id);
+        if (t) scrollTo({top: t.getBoundingClientRect().top + scrollY - 66, behavior: 'smooth'});
+      },
+    })));
+  host.prepend(nav);
+}
+
 export function setBusy(host, msg = '読み込み中…') {
   host.innerHTML = '';
   host.append(el('div', {class: 'empty', text: msg}));

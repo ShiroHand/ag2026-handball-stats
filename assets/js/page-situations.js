@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, CAT} from './core.js';
+        params, setParam, flagImg, CAT, sectionNav} from './core.js';
 import {hbars, legend, lineChart} from './charts.js';
 
 const app = q('#app');
@@ -135,6 +135,8 @@ function render() {
 
   /* ---- 大会内ランキング ---- */
   app.append(rankingCard());
+
+  sectionNav(app);
 }
 
 function kpi(k, v, s) {
