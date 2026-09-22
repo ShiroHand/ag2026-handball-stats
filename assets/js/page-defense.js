@@ -15,8 +15,14 @@ async function init() {
   FILES = (await Promise.all((T.detailIds || []).map(id =>
     loadJSON(`data/matches/${id}.json`, {optional: true})))).filter(Boolean);
   code = params.get('team') || (T.teams.find(t => t.gender === gender && t.played)?.code) || T.teams[0]?.code;
-  const t0 = T.teams.find(t => t.code === code);
-  if (t0) gender = t0.gender;
+  /* g が明示されていればそれを優先。指定がなければチームの所属カテゴリに合わせる */
+  if (!params.get('g')) {
+    const t0 = T.teams.find(t => t.code === code);
+    if (t0) gender = t0.gender;
+  } else if (!T.teams.some(t => t.code === code && t.gender === gender)) {
+    const alt = T.teams.find(t => t.gender === gender && t.played) || T.teams.find(t => t.gender === gender);
+    if (alt) code = alt.code;
+  }
   render();
 }
 
