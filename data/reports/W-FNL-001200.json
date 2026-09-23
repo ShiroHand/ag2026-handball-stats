@@ -1,0 +1,218 @@
+{
+ "id": "W-FNL-001200",
+ "key": "W.TEAM7-------------.FNL-.001200--",
+ "codes": [
+  "CHN",
+  "JPN"
+ ],
+ "updatedAt": "2026-09-23T11:17:41.275Z",
+ "emptyGoal": {
+  "situations": {
+   "CHN": {
+    "v7x6": {
+     "attacks": 30,
+     "goals": 17,
+     "saves": 8,
+     "missed": 3,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 3,
+     "pct": 57,
+     "goalsAgainst": 6
+    },
+    "v6x6": {
+     "attacks": 5,
+     "goals": 1,
+     "saves": 1,
+     "missed": 1,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 2,
+     "pct": 20,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "JPN": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 2,
+     "goals": 2,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 100,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "CHN": {
+    "v7x6": {
+     "0-5": {
+      "goals": 1,
+      "attacks": 2
+     },
+     "5-10": {
+      "goals": 5,
+      "attacks": 5
+     },
+     "10-15": {
+      "goals": 3,
+      "attacks": 4
+     },
+     "15-20": {
+      "goals": 2,
+      "attacks": 5
+     },
+     "20-25": {
+      "goals": 2,
+      "attacks": 5
+     },
+     "25-30": {
+      "goals": 0,
+      "attacks": 1
+     },
+     "35-40": {
+      "goals": 2,
+      "attacks": 2
+     },
+     "40-45": {
+      "goals": 0,
+      "attacks": 1
+     },
+     "45-50": {
+      "goals": 0,
+      "attacks": 2
+     },
+     "50-55": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "55-60": {
+      "goals": 1,
+      "attacks": 3
+     }
+    },
+    "v6x6": {
+     "0-5": {
+      "goals": 0,
+      "attacks": 2
+     },
+     "40-45": {
+      "goals": 0,
+      "attacks": 1
+     },
+     "50-55": {
+      "goals": 1,
+      "attacks": 2
+     }
+    },
+    "other": {}
+   },
+   "JPN": {
+    "v7x6": {},
+    "v6x6": {
+     "35-40": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "40-45": {
+      "goals": 1,
+      "attacks": 1
+     }
+    },
+    "other": {}
+   }
+  },
+  "duration": {
+   "CHN": {
+    "<15s": {
+     "goals": 4,
+     "attacks": 7
+    },
+    "15-30s": {
+     "goals": 9,
+     "attacks": 16
+    },
+    "30-45s": {
+     "goals": 2,
+     "attacks": 8
+    },
+    "45-60s": {
+     "goals": 2,
+     "attacks": 3
+    },
+    ">60s": {
+     "goals": 1,
+     "attacks": 2
+    }
+   },
+   "JPN": {
+    "15-30s": {
+     "goals": 2,
+     "attacks": 2
+    }
+   }
+  },
+  "substitutions": {
+   "CHN": {
+    "gkGk": 1,
+    "courtToGk": 33,
+    "courtToCourt": 70,
+    "total": 104
+   },
+   "JPN": {
+    "gkGk": 1,
+    "courtToGk": 2,
+    "courtToCourt": 113,
+    "total": 116
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001200--.C77_1_0.pdf",
+ "teamStats": {
+  "CHN": {
+   "attacks": 54,
+   "efficiency": 50
+  },
+  "JPN": {
+   "attacks": 55,
+   "efficiency": 60
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001200--.C83_1_0.pdf"
+}

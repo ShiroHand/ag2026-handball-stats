@@ -899,8 +899,8 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 12",
    "unitNum": "25",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "CHN",
@@ -1676,6 +1676,20 @@
      "rows": [
       {
        "rank": "1",
+       "org": "JPN",
+       "name": "Japan",
+       "pts": "8",
+       "played": "4",
+       "won": "4",
+       "lost": "0",
+       "tied": "0",
+       "for": "155",
+       "against": "69",
+       "diff": "86",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
        "org": "KOR",
        "name": "Korea",
        "pts": "6",
@@ -1689,31 +1703,17 @@
        "qualified": ""
       },
       {
-       "rank": "2",
-       "org": "JPN",
-       "name": "Japan",
-       "pts": "6",
-       "played": "3",
-       "won": "3",
-       "lost": "0",
-       "tied": "0",
-       "for": "122",
-       "against": "42",
-       "diff": "80",
-       "qualified": ""
-      },
-      {
        "rank": "3",
        "org": "CHN",
        "name": "China",
        "pts": "4",
-       "played": "2",
+       "played": "3",
        "won": "2",
-       "lost": "0",
+       "lost": "1",
        "tied": "0",
-       "for": "71",
-       "against": "38",
-       "diff": "33",
+       "for": "98",
+       "against": "71",
+       "diff": "27",
        "qualified": ""
       },
       {
@@ -1804,5 +1804,5 @@
   "M-GPB-000800",
   "W-FNL-001200"
  ],
- "updatedAt": "2026-09-23T10:19:22.575Z"
+ "updatedAt": "2026-09-23T11:17:40.913Z"
 }

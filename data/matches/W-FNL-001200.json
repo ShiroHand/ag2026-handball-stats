@@ -1,8 +1,8 @@
 {
  "id": "W-FNL-001200",
  "key": "W.TEAM7-------------.FNL-.001200--",
- "status": "UNOFFICIAL",
- "statusDesc": "Unofficial",
+ "status": "OFFICIAL",
+ "statusDesc": "Official",
  "dateTime": "2026-09-23T17:30:00+09:00",
  "date": "2026-09-23",
  "venue": "Kasugai City Gymnasium",
@@ -13050,5 +13050,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-23T10:19:22.572Z"
+ "updatedAt": "2026-09-23T11:17:40.910Z"
 }
