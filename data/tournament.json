@@ -33,7 +33,7 @@
    "name": "Bahrain",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "CHN",
@@ -75,7 +75,7 @@
    "name": "Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "KUW",
@@ -96,7 +96,7 @@
    "name": "China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "HKG",
@@ -110,7 +110,7 @@
    "name": "Japan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "KAZ",
@@ -837,8 +837,8 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 11",
    "unitNum": "24",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "UZB",
@@ -868,22 +868,23 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 8",
    "unitNum": "22",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
+    "score": "21",
     "winner": false
    },
    "away": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "",
-    "winner": false
+    "score": "30",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001200",
@@ -898,22 +899,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 12",
    "unitNum": "25",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "UNOFFICIAL",
+   "statusDesc": "Unofficial",
    "isLive": false,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "",
+    "score": "27",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
-    "winner": false
+    "score": "33",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001300",
@@ -1593,14 +1595,14 @@
        "rank": "1",
        "org": "BRN",
        "name": "Bahrain",
-       "pts": "4",
-       "played": "2",
-       "won": "2",
+       "pts": "6",
+       "played": "3",
+       "won": "3",
        "lost": "0",
        "tied": "0",
-       "for": "77",
-       "against": "40",
-       "diff": "37",
+       "for": "107",
+       "against": "61",
+       "diff": "46",
        "qualified": ""
       },
       {
@@ -1622,13 +1624,13 @@
        "org": "KOR",
        "name": "Korea",
        "pts": "3",
-       "played": "2",
+       "played": "3",
        "won": "1",
-       "lost": "0",
+       "lost": "1",
        "tied": "1",
-       "for": "52",
-       "against": "49",
-       "diff": "3",
+       "for": "73",
+       "against": "79",
+       "diff": "-6",
        "qualified": ""
       },
       {
@@ -1674,6 +1676,20 @@
      "rows": [
       {
        "rank": "1",
+       "org": "KOR",
+       "name": "Korea",
+       "pts": "6",
+       "played": "3",
+       "won": "3",
+       "lost": "0",
+       "tied": "0",
+       "for": "133",
+       "against": "47",
+       "diff": "86",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
        "org": "JPN",
        "name": "Japan",
        "pts": "6",
@@ -1684,20 +1700,6 @@
        "for": "122",
        "against": "42",
        "diff": "80",
-       "qualified": ""
-      },
-      {
-       "rank": "2",
-       "org": "KOR",
-       "name": "Korea",
-       "pts": "4",
-       "played": "2",
-       "won": "2",
-       "lost": "0",
-       "tied": "0",
-       "for": "90",
-       "against": "34",
-       "diff": "56",
        "qualified": ""
       },
       {
@@ -1761,13 +1763,13 @@
        "org": "UZB",
        "name": "Uzbekistan",
        "pts": "0",
-       "played": "2",
+       "played": "3",
        "won": "0",
-       "lost": "2",
+       "lost": "3",
        "tied": "0",
-       "for": "26",
-       "against": "80",
-       "diff": "-54",
+       "for": "39",
+       "against": "123",
+       "diff": "-84",
        "qualified": ""
       }
      ]
@@ -1798,7 +1800,9 @@
   "M-GPB-000700",
   "W-FNL-001000",
   "M-GPA-000500",
-  "W-FNL-001100"
+  "W-FNL-001100",
+  "M-GPB-000800",
+  "W-FNL-001200"
  ],
- "updatedAt": "2026-09-23T08:16:19.221Z"
+ "updatedAt": "2026-09-23T10:19:22.575Z"
 }
