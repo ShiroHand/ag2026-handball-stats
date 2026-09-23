@@ -1,0 +1,169 @@
+{
+ "id": "M-GPB-000700",
+ "key": "M.TEAM7-------------.GPB-.000700--",
+ "codes": [
+  "KAZ",
+  "IRI"
+ ],
+ "updatedAt": "2026-09-23T05:18:29.390Z",
+ "emptyGoal": {
+  "situations": {
+   "KAZ": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 2,
+     "goals": 1,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 1,
+     "pct": 50,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 1,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "IRI": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 1,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 3,
+     "goals": 2,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 1,
+     "pct": 67,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "KAZ": {
+    "v7x6": {},
+    "v6x6": {
+     "5-10": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "35-40": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "other": {
+     "55-60": {
+      "goals": 0,
+      "attacks": 1
+     }
+    }
+   },
+   "IRI": {
+    "v7x6": {
+     "15-20": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "v6x6": {
+     "30-35": {
+      "goals": 1,
+      "attacks": 1
+     },
+     "55-60": {
+      "goals": 1,
+      "attacks": 2
+     }
+    },
+    "other": {}
+   }
+  },
+  "duration": {
+   "KAZ": {
+    "30-45s": {
+     "goals": 1,
+     "attacks": 3
+    }
+   },
+   "IRI": {
+    "<15s": {
+     "goals": 1,
+     "attacks": 1
+    },
+    "15-30s": {
+     "goals": 0,
+     "attacks": 1
+    },
+    "30-45s": {
+     "goals": 1,
+     "attacks": 2
+    }
+   }
+  },
+  "substitutions": {
+   "KAZ": {
+    "courtToGk": 7,
+    "courtToCourt": 88,
+    "total": 95
+   },
+   "IRI": {
+    "courtToGk": 6,
+    "courtToCourt": 85,
+    "total": 91
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLMTEAM7-------------GPB-000700--.C77_1_0.pdf",
+ "teamStats": {
+  "KAZ": {
+   "attacks": 44,
+   "efficiency": 52
+  },
+  "IRI": {
+   "attacks": 45,
+   "efficiency": 62
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLMTEAM7-------------GPB-000700--.C83_1_0.pdf"
+}

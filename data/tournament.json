@@ -54,7 +54,7 @@
    "name": "IR Iran",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "JPN",
@@ -68,7 +68,7 @@
    "name": "Kazakhstan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "KOR",
@@ -103,7 +103,7 @@
    "name": "Hong Kong, China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "JPN",
@@ -117,7 +117,7 @@
    "name": "Kazakhstan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "KOR",
@@ -744,22 +744,23 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 7",
    "unitNum": "20",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "23",
     "winner": false
    },
    "away": {
     "code": "IRI",
     "name": "IR Iran",
-    "score": "",
-    "winner": false
+    "score": "28",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001000",
@@ -774,22 +775,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 10",
    "unitNum": "23",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "",
+    "score": "13",
     "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "21",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-GPA-000500",
@@ -1631,14 +1633,14 @@
        "rank": "4",
        "org": "IRI",
        "name": "IR Iran",
-       "pts": "1",
-       "played": "3",
-       "won": "0",
+       "pts": "3",
+       "played": "4",
+       "won": "1",
        "lost": "2",
        "tied": "1",
-       "for": "70",
-       "against": "86",
-       "diff": "-16",
+       "for": "98",
+       "against": "109",
+       "diff": "-11",
        "qualified": ""
       },
       {
@@ -1646,13 +1648,13 @@
        "org": "KAZ",
        "name": "Kazakhstan",
        "pts": "0",
-       "played": "2",
+       "played": "3",
        "won": "0",
-       "lost": "2",
+       "lost": "3",
        "tied": "0",
-       "for": "39",
-       "against": "86",
-       "diff": "-47",
+       "for": "62",
+       "against": "114",
+       "diff": "-52",
        "qualified": ""
       }
      ]
@@ -1790,7 +1792,9 @@
   "M-GPB-000500",
   "W-FNL-000800",
   "M-GPB-000600",
-  "W-FNL-000900"
+  "W-FNL-000900",
+  "M-GPB-000700",
+  "W-FNL-001000"
  ],
- "updatedAt": "2026-09-22T11:07:03.514Z"
+ "updatedAt": "2026-09-23T05:18:29.011Z"
 }
