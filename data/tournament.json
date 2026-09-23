@@ -40,14 +40,14 @@
    "name": "China",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "HKG",
    "name": "Hong Kong, China",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "IRI",
@@ -124,14 +124,14 @@
    "name": "Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "UZB",
    "name": "Uzbekistan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "VIE",
@@ -775,9 +775,9 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 10",
    "unitNum": "23",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "HKG",
     "name": "Hong Kong, China",
@@ -788,7 +788,7 @@
     "code": "KAZ",
     "name": "Kazakhstan",
     "score": "34",
-    "winner": false
+    "winner": true
    },
    "hasResult": true,
    "hasStats": true
@@ -806,22 +806,23 @@
    "phaseDesc": "Men Preliminary Round Group A",
    "unitDesc": "Men Preliminary Round Group A Match 5",
    "unitNum": "21",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "",
-    "winner": false
+    "score": "38",
+    "winner": true
    },
    "away": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "",
+    "score": "26",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001100",
@@ -836,22 +837,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 11",
    "unitNum": "24",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "UNOFFICIAL",
+   "statusDesc": "Unofficial",
    "isLive": false,
    "home": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "",
+    "score": "13",
     "winner": false
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
-    "winner": false
+    "score": "43",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-GPB-000800",
@@ -1556,14 +1558,14 @@
        "rank": "3",
        "org": "CHN",
        "name": "China",
-       "pts": "0",
-       "played": "2",
-       "won": "0",
+       "pts": "2",
+       "played": "3",
+       "won": "1",
        "lost": "2",
        "tied": "0",
-       "for": "52",
-       "against": "61",
-       "diff": "-9",
+       "for": "90",
+       "against": "87",
+       "diff": "3",
        "qualified": ""
       },
       {
@@ -1571,13 +1573,13 @@
        "org": "HKG",
        "name": "Hong Kong, China",
        "pts": "0",
-       "played": "2",
+       "played": "3",
        "won": "0",
-       "lost": "2",
+       "lost": "3",
        "tied": "0",
-       "for": "34",
-       "against": "84",
-       "diff": "-50",
+       "for": "60",
+       "against": "122",
+       "diff": "-62",
        "qualified": ""
       }
      ]
@@ -1716,14 +1718,14 @@
        "rank": "4",
        "org": "KAZ",
        "name": "Kazakhstan",
-       "pts": "2",
-       "played": "3",
-       "won": "1",
+       "pts": "4",
+       "played": "4",
+       "won": "2",
        "lost": "2",
        "tied": "0",
-       "for": "71",
-       "against": "101",
-       "diff": "-30",
+       "for": "105",
+       "against": "128",
+       "diff": "-23",
        "qualified": ""
       },
       {
@@ -1731,13 +1733,13 @@
        "org": "HKG",
        "name": "Hong Kong, China",
        "pts": "2",
-       "played": "3",
+       "played": "4",
        "won": "1",
-       "lost": "2",
+       "lost": "3",
        "tied": "0",
-       "for": "58",
-       "against": "110",
-       "diff": "-52",
+       "for": "85",
+       "against": "144",
+       "diff": "-59",
        "qualified": ""
       },
       {
@@ -1794,7 +1796,9 @@
   "M-GPB-000600",
   "W-FNL-000900",
   "M-GPB-000700",
-  "W-FNL-001000"
+  "W-FNL-001000",
+  "M-GPA-000500",
+  "W-FNL-001100"
  ],
- "updatedAt": "2026-09-23T05:50:08.688Z"
+ "updatedAt": "2026-09-23T08:16:19.221Z"
 }

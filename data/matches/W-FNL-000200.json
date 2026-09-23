@@ -9541,7 +9541,7 @@
      "nameS": "LIU X",
      "role": "CB",
      "func": "AA01",
-     "captain": true,
+     "captain": false,
      "isGK": false,
      "time": "39:34",
      "stats": {
@@ -12256,5 +12256,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-22T09:41:01.315Z"
+ "updatedAt": "2026-09-23T08:16:10.127Z"
 }
