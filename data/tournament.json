@@ -781,13 +781,13 @@
    "home": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "13",
+    "score": "27",
     "winner": false
    },
    "away": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "21",
+    "score": "34",
     "winner": false
    },
    "hasResult": true,
@@ -1796,5 +1796,5 @@
   "M-GPB-000700",
   "W-FNL-001000"
  ],
- "updatedAt": "2026-09-23T05:18:29.011Z"
+ "updatedAt": "2026-09-23T05:50:08.688Z"
 }

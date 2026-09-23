@@ -1500,7 +1500,7 @@
     },
     {
      "bib": "7",
-     "name": "HA HANH",
+     "name": "HA Hanh",
      "nameS": "HA H",
      "role": "CB",
      "func": "AA01",
@@ -3771,7 +3771,7 @@
     },
     {
      "bib": "26",
-     "name": "DO NHU",
+     "name": "DO Nhu",
      "nameS": "DO N",
      "role": "LB",
      "func": "AA01",
@@ -12634,5 +12634,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-23T05:18:26.298Z"
+ "updatedAt": "2026-09-23T05:50:06.096Z"
 }
