@@ -5344,6 +5344,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "P7",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5363,6 +5364,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -5382,6 +5384,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "L9",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -5401,6 +5404,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "C9",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -5424,12 +5428,23 @@
      "gz": ""
     },
     {
+     "sec": 388,
+     "p": "1",
+     "t": "06:28",
+     "bib": "66",
+     "type": "GO",
+     "zone": "LW",
+     "result": "MISS",
+     "gz": ""
+    },
+    {
      "sec": 466,
      "p": "1",
      "t": "07:46",
      "bib": "66",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5466,6 +5481,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "FB",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -5475,6 +5491,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "R6",
+     "result": "SAVE",
      "gz": "ML"
     },
     {
@@ -5498,6 +5515,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "L9",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -5507,6 +5525,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "R6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5526,6 +5545,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "C6",
+     "result": "SAVE",
      "gz": "BR"
     },
     {
@@ -5555,6 +5575,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "BT",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -5574,6 +5595,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "R6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5603,6 +5625,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "R9",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -5619,6 +5642,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "RW",
+     "result": "GOAL",
      "gz": "BC"
     },
     {
@@ -5649,12 +5673,23 @@
      "gz": "BL"
     },
     {
+     "sec": 1465,
+     "p": "1",
+     "t": "24:25",
+     "bib": "66",
+     "type": "GO",
+     "zone": "C6",
+     "result": "MISS",
+     "gz": ""
+    },
+    {
      "sec": 1518,
      "p": "1",
      "t": "25:18",
      "bib": "66",
      "type": "GS",
      "zone": "R6",
+     "result": "SAVE",
      "gz": "ML"
     },
     {
@@ -5674,6 +5709,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5693,6 +5729,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "C9",
+     "result": "SAVE",
      "gz": "TR"
     },
     {
@@ -5712,6 +5749,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "L6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5728,6 +5766,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5747,6 +5786,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "C9",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5773,6 +5813,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "TC"
     },
     {
@@ -5789,6 +5830,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "FB",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -5805,6 +5847,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5824,6 +5867,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -5833,6 +5877,7 @@
      "bib": "97",
      "type": "GR",
      "zone": "FB",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5852,6 +5897,7 @@
      "bib": "97",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -5871,6 +5917,7 @@
      "bib": "97",
      "type": "GR",
      "zone": "L6",
+     "result": "GOAL",
      "gz": "MR"
     },
     {
@@ -5890,6 +5937,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -5923,6 +5971,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "P7",
+     "result": "GOAL",
      "gz": "ML"
     },
     {
@@ -5959,6 +6008,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "RW",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -5985,6 +6035,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "BC"
     },
     {
@@ -5994,6 +6045,7 @@
      "bib": "66",
      "type": "GS",
      "zone": "BT",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -6023,6 +6075,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "LW",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -6056,6 +6109,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "P7",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -6075,6 +6129,7 @@
      "bib": "66",
      "type": "GR",
      "zone": "FB",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -6084,6 +6139,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "BT",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -6107,6 +6163,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "P7",
+     "result": "SAVE",
      "gz": "BR"
     },
     {
@@ -6116,6 +6173,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "C6",
+     "result": "SAVE",
      "gz": "ML"
     },
     {
@@ -6142,6 +6200,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "RW",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -6161,6 +6220,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "R6",
+     "result": "GOAL",
      "gz": "TR"
     },
     {
@@ -11515,6 +11575,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "FB",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -11534,6 +11595,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "C9",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -11553,6 +11615,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "C9",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -11572,6 +11635,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "RW",
+     "result": "SAVE",
      "gz": "BC"
     },
     {
@@ -11580,6 +11644,16 @@
      "t": "05:44",
      "bib": "77",
      "type": "L"
+    },
+    {
+     "sec": 348,
+     "p": "1",
+     "t": "05:48",
+     "bib": "21",
+     "type": "GP",
+     "zone": "FB",
+     "result": "POST",
+     "gz": ""
     },
     {
      "sec": 388,
@@ -11622,6 +11696,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "FB",
+     "result": "SAVE",
      "gz": "BR"
     },
     {
@@ -11638,6 +11713,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "R6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -11687,6 +11763,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "RW",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -11713,6 +11790,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "P7",
+     "result": "SAVE",
      "gz": "MC"
     },
     {
@@ -11722,6 +11800,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -11741,6 +11820,7 @@
      "bib": "99",
      "type": "GS",
      "zone": "LW",
+     "result": "SAVE",
      "gz": "MC"
     },
     {
@@ -11760,6 +11840,7 @@
      "bib": "99",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -11776,6 +11857,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "R9",
+     "result": "GOAL",
      "gz": "BC"
     },
     {
@@ -11812,6 +11894,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "L9",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -11828,6 +11911,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -11857,6 +11941,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -11876,6 +11961,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "L9",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -11895,6 +11981,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "L9",
+     "result": "SAVE",
      "gz": "TR"
     },
     {
@@ -11925,6 +12012,16 @@
      "gz": "BL"
     },
     {
+     "sec": 1840,
+     "p": "2",
+     "t": "00:40",
+     "bib": "21",
+     "type": "GO",
+     "zone": "C9",
+     "result": "MISS",
+     "gz": ""
+    },
+    {
      "sec": 1847,
      "p": "2",
      "t": "00:47",
@@ -11941,6 +12038,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "L6",
+     "result": "GOAL",
      "gz": "TC"
     },
     {
@@ -11987,6 +12085,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -12023,6 +12122,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "L6",
+     "result": "SAVE",
      "gz": "BR"
     },
     {
@@ -12049,6 +12149,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "RW",
+     "result": "SAVE",
      "gz": "MC"
     },
     {
@@ -12085,6 +12186,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "R9",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -12104,6 +12206,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "BT",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -12130,6 +12233,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "RW",
+     "result": "GOAL",
      "gz": "ML"
     },
     {
@@ -12156,6 +12260,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "LW",
+     "result": "GOAL",
      "gz": "BL"
     },
     {
@@ -12199,6 +12304,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "P7",
+     "result": "GOAL",
      "gz": "TR"
     },
     {
@@ -12225,6 +12331,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "L6",
+     "result": "GOAL",
      "gz": "BR"
     },
     {
@@ -12236,6 +12343,16 @@
      "zone": "P7",
      "result": "GOAL",
      "gz": "TL"
+    },
+    {
+     "sec": 3187,
+     "p": "2",
+     "t": "23:07",
+     "bib": "21",
+     "type": "GP",
+     "zone": "C9",
+     "result": "POST",
+     "gz": ""
     },
     {
      "sec": 3191,
@@ -12291,6 +12408,7 @@
      "bib": "21",
      "type": "GS",
      "zone": "BT",
+     "result": "SAVE",
      "gz": "BL"
     },
     {
@@ -12331,6 +12449,7 @@
      "bib": "21",
      "type": "GR",
      "zone": "C6",
+     "result": "GOAL",
      "gz": "TL"
     },
     {
@@ -12350,10 +12469,11 @@
      "bib": "21",
      "type": "GR",
      "zone": "L9",
+     "result": "GOAL",
      "gz": "BR"
     }
    ]
   }
  },
- "updatedAt": "2026-09-23T10:19:22.227Z"
+ "updatedAt": "2026-09-25T08:16:59.386Z"
 }

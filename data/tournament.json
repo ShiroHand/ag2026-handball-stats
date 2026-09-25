@@ -96,7 +96,7 @@
    "name": "China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "HKG",
@@ -124,7 +124,7 @@
    "name": "Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "UZB",
@@ -1054,22 +1054,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 15",
    "unitNum": "28",
-   "status": "START_LIST",
-   "statusDesc": "Start List",
-   "isLive": false,
+   "status": "GETTING_READY",
+   "statusDesc": "Getting Ready",
+   "isLive": true,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
+    "score": "0",
     "winner": false
    },
    "away": {
     "code": "CHN",
     "name": "China",
-    "score": "",
+    "score": "0",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": false
   },
   {
    "id": "M-GPB-001000",
@@ -1810,7 +1811,8 @@
   "W-FNL-001300",
   "M-GPB-000900",
   "W-FNL-001400",
-  "M-GPA-000600"
+  "M-GPA-000600",
+  "W-FNL-001500"
  ],
- "updatedAt": "2026-09-25T08:13:12.796Z"
+ "updatedAt": "2026-09-25T08:17:00.028Z"
 }
