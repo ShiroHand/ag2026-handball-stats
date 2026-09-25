@@ -5,6 +5,7 @@ import {connectionSection, mergeConnections, assistedZoneTable} from './connecti
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.js';
+import {tempoCard, addTempo} from './tempo.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -64,7 +65,7 @@ function agg(list) {
     sz = zAdd(sz, t.shotZone, ['g', 's']);
     t.players.forEach(p => {
       const key = p.bib + '|' + p.name;
-      if (!players.has(key)) players.set(key, {...p, stats: {}, games: 0, shot: {}, gk: {}});
+      if (!players.has(key)) players.set(key, {...p, stats: {}, games: 0, shot: {}, gk: {}, tempo: null, tempoGK: null});
       const a = players.get(key);
       a.games++;
       if (!a.reg && p.reg) a.reg = p.reg;        // 登録番号（顔写真）は取れた試合のものを使う
@@ -74,6 +75,8 @@ function agg(list) {
       });
       zoneAdd(a.shot, p.shot, ['g', 's']);
       zoneAdd(a.gk, p.gk, ['sv', 's', 'g']);
+      if (p.tempo) a.tempo = addTempo(a.tempo, p.tempo, false);
+      if (p.tempoGK) a.tempoGK = addTempo(a.tempoGK, p.tempoGK, true);
     });
   });
   return {stats, shot, gk, gkZone: gz, shotZone: sz, players: [...players.values()]};
@@ -216,6 +219,7 @@ function render() {
 
   /* 選手累計 */
   app.append(playersCard(A, list.length));
+  app.append(tempoCard(A.players, {title: `選手別 攻撃の速さ（${list.length} 試合の累計）`}));
 
   sectionNav(app);
 }

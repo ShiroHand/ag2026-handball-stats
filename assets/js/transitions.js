@@ -203,15 +203,16 @@ function rateBars(side, which) {
    データ側に追加項目は要らない。 */
 /* 次の攻撃を「速さ」の一本の軸で3つに分ける。
      速攻      … 公式が FB と記録したもの（中央値9秒）
-     2次速攻   … FB ではないが20秒以内に打ったもの（中央値13秒）
-     セット攻撃 … 20秒を超えたもの（中央値37秒）
-   20秒は実測した所要時間の谷から選んだ。決定率は 80% / 71% / 59% と段階的に下がる。
+     2次速攻   … FB ではないが15秒以内に打ったもの（中央値11秒）
+     セット攻撃 … 15秒を超えたもの（中央値36秒）
+   15秒は実測した所要時間の山（11〜13秒）の裾で切ったしきい値。
+   20秒（谷の終わり側）で切ると2次速攻の第3四分位が16秒になり遅い攻撃が混ざるため15秒にした。
    ブレイクスルー(BT)はこの軸とは別（どの帯にも現れる）ので、ここには出さない。
    BT の内訳は「位置別の内訳」の表にある。 */
 const BANDS = [
   {key: 'fast', gk: 'fastGoals', secs: 'fastSecs', label: '速攻（FB）'},
-  {key: 'second', gk: 'secondGoals', secs: 'secondSecs', label: '2次速攻（20秒以内）'},
-  {key: 'set', gk: 'setGoals', secs: 'setSecs', label: 'セット攻撃（20秒超）'},
+  {key: 'second', gk: 'secondGoals', secs: 'secondSecs', label: '2次速攻（15秒以内）'},
+  {key: 'set', gk: 'setGoals', secs: 'setSecs', label: 'セット攻撃（15秒超）'},
 ];
 
 function splitBlock(side, which) {
@@ -423,8 +424,8 @@ export function transitionCard(tr, {title = '攻守の切り替え', note = '',
     el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: '次の攻撃の速さ別の内訳'}),
     el('div', {class: 'sub', style: {margin: '-6px 0 10px'},
       text: '次の攻撃がどれだけ速かったかで3つに分けたものです。'
-        + '公式が速攻（FB）と記録したもの、FBではないが20秒以内に打ったもの（2次速攻）、20秒を超えたもの。'
-        + '20秒は所要時間の分布に出る谷から選んだしきい値で、公式の定義ではありません。'
+        + '公式が速攻（FB）と記録したもの、FBではないが15秒以内に打ったもの（2次速攻）、15秒を超えたもの。'
+        + '15秒は所要時間の分布（山は11〜13秒）から選んだしきい値で、公式の定義ではありません。'
         + '「中央値(秒)」にカーソルを合わせると平均と本数が出ます。'
         + 'ブレイクスルー（BT）は速さとは別の軸なのでここには出しません（位置別の内訳の表にあります）。'}),
     el('div', {class: 'sub', style: {margin: '0 0 4px', fontWeight: 700, color: 'var(--navy)'},

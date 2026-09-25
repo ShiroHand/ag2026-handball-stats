@@ -5,6 +5,7 @@ import {connectionSection, mergeConnections} from './connections.js';
 import {eventGridSection, symbolLegend} from './eventgrid.js';
 import {countsFromTeam, kpiBlock, KPI_NOTE} from './kpi.js';
 import {transitionCard} from './transitions.js';
+import {tempoCard} from './tempo.js';
 
 const app = q('#app');
 let T = null, M = null, MAN = null, REP = null;
@@ -70,6 +71,12 @@ function render() {
       defAttacks: n(opp.possessions?.attacks),
     }));
   });
+  [H, A].forEach(t => app.append(tempoCard(t.players || [], {
+    title: `${t.name} — 選手別 攻撃の速さ`,
+    note: '1試合分なので各帯は数本しかありません。'
+      + '攻守が切り替わった直後の攻撃だけを数えているため、'
+      + '合計は選手スタッツのシュート数とは一致しません。',
+  })));
   [H, A].forEach(t => app.append(eventCard(t)));
   [H, A].forEach(t => app.append(playersCard(t)));
   if (MAN) app.append(manualCard());
