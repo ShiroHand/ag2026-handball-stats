@@ -1,8 +1,16 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, CAT, sectionNav} from './core.js';
 import {hbars, legend, lineChart} from './charts.js';
+import {per50, showPer50} from './kpi.js';
 
 const app = q('#app');
+
+/* 50回あたりの得点 − 失点 */
+function diff50(me, op) {
+  const a = per50(n(me.goals), n(me.attacks)), d = per50(n(op.goals), n(op.attacks));
+  if (a === null || d === null) return '–';
+  return (a - d >= 0 ? '+' : '') + (a - d).toFixed(1);
+}
 let T = null, FILES = null, REPORTS = {}, code = null, gender = params.get('g') || 'M';
 
 init();
@@ -98,6 +106,16 @@ function render() {
     kpi('攻撃効率', pct(A.poss.goals, A.poss.attacks, 1), `得点 ${A.poss.goals} / 攻撃 ${A.poss.attacks}`),
     kpi('守備回数', A.possOpp.attacks, `1試合 ${(A.possOpp.attacks / g).toFixed(1)} 回`),
     kpi('被攻撃効率', pct(A.possOpp.goals, A.possOpp.attacks, 1), `失点 ${A.possOpp.goals} / 被攻撃 ${A.possOpp.attacks}`)));
+
+  /* 50回あたりに換算した得点・失点（試合のテンポに左右されない指標） */
+  const p50a = per50(A.poss.goals, A.poss.attacks);
+  const p50d = per50(A.possOpp.goals, A.possOpp.attacks);
+  app.append(el('div', {class: 'grid g3'},
+    kpi('50攻撃あたり得点', showPer50(p50a), '攻撃効率 × 50'),
+    kpi('50守備あたり失点', showPer50(p50d), '被攻撃効率 × 50'),
+    kpi('差引（50回あたり）',
+      (p50a !== null && p50d !== null ? ((p50a - p50d >= 0 ? '+' : '') + (p50a - p50d).toFixed(1)) : '–'),
+      '得点 − 失点。プラスが大きいほど強い')));
 
   app.append(el('div', {class: 'grid g4'},
     kpi('OFリバウンド', A.poss.offReb, `1試合 ${(A.poss.offReb / g).toFixed(1)} 回`),
@@ -298,8 +316,8 @@ function perMatchCard(A) {
   });
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
-    ['対戦相手', '攻撃回数', '得点', '攻撃効率', 'OFリバ', 'DFリバ', 'TO',
-      '守備回数', '失点', '被攻撃効率'].map(h => el('th', {text: h})))));
+    ['対戦相手', '攻撃回数', '得点', '攻撃効率', '50攻撃あたり得点', 'OFリバ', 'DFリバ', 'TO',
+      '守備回数', '失点', '被攻撃効率', '50守備あたり失点', '差引'].map(h => el('th', {text: h})))));
   const tb = el('tbody', {});
   rows.forEach(r => tb.append(el('tr', {},
     el('td', {}, el('div', {class: 'row', style: {gap: '7px'}},
@@ -309,12 +327,15 @@ function perMatchCard(A) {
     el('td', {class: 'num', text: n(r.me.attacks)}),
     el('td', {class: 'num', style: {fontWeight: 700}, text: n(r.me.goals)}),
     el('td', {class: 'num', text: pct(n(r.me.goals), n(r.me.attacks), 1)}),
+    el('td', {class: 'num', text: showPer50(per50(n(r.me.goals), n(r.me.attacks)))}),
     el('td', {class: 'num', text: n(r.me.offReb) || ''}),
     el('td', {class: 'num', text: n(r.me.defReb) || ''}),
     el('td', {class: 'num', text: n(r.me.turnovers) || ''}),
     el('td', {class: 'num', text: n(r.op.attacks)}),
     el('td', {class: 'num', text: n(r.op.goals)}),
-    el('td', {class: 'num', text: pct(n(r.op.goals), n(r.op.attacks), 1)}))));
+    el('td', {class: 'num', text: pct(n(r.op.goals), n(r.op.attacks), 1)}),
+    el('td', {class: 'num', text: showPer50(per50(n(r.op.goals), n(r.op.attacks)))}),
+    el('td', {class: 'num', style: {fontWeight: 700}, text: diff50(r.me, r.op)}))));
   table.append(tb);
 
   const labels = rows.map(r => `${jpDate(r.f.date)} ${r.opp}`);
@@ -349,11 +370,13 @@ function rankingCard() {
       defEff: A.possOpp.attacks ? A.possOpp.goals / A.possOpp.attacks * 100 : 0,
       offReb: A.poss.offReb, defReb: A.poss.defReb, to: A.poss.turnovers,
     };
-  }).filter(Boolean).sort((a, b) => b.eff - a.eff);
+  }).filter(Boolean).map(r => ({...r, margin: (r.eff - r.defEff) / 100 * 50}))
+    .sort((a, b) => b.margin - a.margin);
 
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
-    ['#', 'チーム', '試合', '攻撃回数', '得点', '攻撃効率', '被攻撃効率', 'OFリバ', 'DFリバ', 'TO']
+    ['#', 'チーム', '試合', '攻撃回数', '得点', '攻撃効率', '被攻撃効率',
+      '50攻撃あたり得点', '50守備あたり失点', '差引', 'OFリバ', 'DFリバ', 'TO']
       .map(h => el('th', {text: h})))));
   const tb = el('tbody', {});
   rows.forEach((r, i) => tb.append(el('tr', {style: r.code === code ? {background: '#eaf4fc'} : null},
@@ -365,6 +388,10 @@ function rankingCard() {
     el('td', {class: 'num', text: r.goals}),
     el('td', {class: 'num', style: {fontWeight: 700}, text: r.eff.toFixed(1) + '%'}),
     el('td', {class: 'num', text: r.defEff.toFixed(1) + '%'}),
+    el('td', {class: 'num', text: (r.eff / 100 * 50).toFixed(1)}),
+    el('td', {class: 'num', text: (r.defEff / 100 * 50).toFixed(1)}),
+    el('td', {class: 'num', style: {fontWeight: 700},
+      text: (r.margin >= 0 ? '+' : '') + r.margin.toFixed(1)}),
     el('td', {class: 'num', text: r.offReb || ''}),
     el('td', {class: 'num', text: r.defReb || ''}),
     el('td', {class: 'num', text: r.to || ''}))));

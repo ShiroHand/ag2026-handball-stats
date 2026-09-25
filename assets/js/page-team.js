@@ -1,7 +1,8 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, photoImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
-import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars} from './charts.js';
+import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
+import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -120,17 +121,44 @@ function render() {
     kpi('シュート決定率', pct(A.stats.GOALS, A.stats.SHOTS), `${A.stats.GOALS || 0}/${A.stats.SHOTS || 0}`),
     kpi('GKセーブ率', pct(A.stats.GK_SAVES, A.stats.GK_SHOTS), `${A.stats.GK_SAVES || 0}/${A.stats.GK_SHOTS || 0}`)));
 
+  /* 攻撃のKPI（全試合の累計） */
+  const own = list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[code])), emptyCounts());
+  const foe = list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[oppOf(f)])), emptyCounts());
+  /* 守備側の位置別は相手のシュートマップを合計する。
+     GKスタッツ由来のマップは集計キーの重複で過大になるため使わない
+     （守備分析ページと同じ作り方に揃えている）。 */
+  const oppShot = {};
+  list.forEach(f => {
+    const sm = f.teams[oppOf(f)].shot || {};
+    for (const [z, v] of Object.entries(sm)) {
+      oppShot[z] = oppShot[z] || {g: 0, s: 0};
+      oppShot[z].g += n(v.g); oppShot[z].s += n(v.s);
+    }
+  });
+  app.append(el('div', {class: 'card'},
+    el('h2', {text: `攻撃のKPI — 全${list.length}試合の累計`}),
+    el('div', {class: 'sub', text: KPI_NOTE}),
+    kpiGrid(own, 'att', foe),
+    el('div', {class: 'sub', style: {marginTop: '10px'},
+      text: `1試合あたり: 攻撃 ${(own.attacks / list.length).toFixed(1)} 回 / 得点 ${(own.goals / list.length).toFixed(1)} / シュート ${(own.shots / list.length).toFixed(1)} / ターンオーバー ${(own.turnovers / list.length).toFixed(1)}`})));
+
   /* 累積シュート */
   app.append(el('div', {class: 'card'},
     el('h2', {text: '累積シュートマップ（全試合）'}),
     el('div', {class: 'grid g3'},
-      el('div', {}, el('div', {class: 'sec-title', text: '攻撃 — シュート位置'}), courtMap(A.shot)),
+      el('div', {}, el('div', {class: 'sec-title', text: '攻撃 — シュート位置'}),
+        courtMap(A.shot, {attacks: own.attacks, perLabel: '得点'})),
       el('div', {}, el('div', {class: 'sec-title', text: '攻撃 — ゴールマウス'}), goalMap(A.shotZone, {}, {width: 360}),
         el('div', {class: 'sec-title', style: {marginTop: '12px'}, text: '守備 — GKセーブ位置'}),
         goalMap((A.gkZone || []).map(r => r.map(c => ({g: c.sv, s: c.s}))), {}, {width: 360})),
       el('div', {}, el('div', {class: 'sec-title', text: '守備 — 被シュート位置'}),
-        courtMap(Object.fromEntries(Object.entries(A.gk).map(([k, v]) => [k, {g: v.g, s: v.s}]))),
-        el('div', {class: 'sub', text: '色は相手の決定率（濃い赤ほど失点が多い位置）'})))));
+        courtMap(oppShot, {attacks: foe.attacks, perLabel: '失点'}),
+        el('div', {class: 'sub', text: '色は相手の決定率（濃い赤ほど失点が多い位置）'}))),
+    el('div', {class: 'grid g2', style: {marginTop: '14px'}},
+      el('div', {}, el('div', {class: 'sec-title', text: '攻撃 — 位置別の内訳'}),
+        zoneBreakdownTable(A.shot, {attacks: own.attacks, perLabel: '得点'})),
+      el('div', {}, el('div', {class: 'sec-title', text: '守備 — 位置別の失点内訳'}),
+        zoneBreakdownTable(oppShot, {attacks: foe.attacks, perLabel: '失点', shotLabel: '被シュート'})))));
 
   /* 攻撃内訳 + ドーナツ */
   app.append(el('div', {class: 'card'},

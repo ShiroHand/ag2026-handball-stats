@@ -71,7 +71,18 @@ export function compareRow(label, left, right, {fmtv = (v) => v, hi = 'high'} = 
 
 /* ---------- コート別シュートマップ ---------- */
 /* map: {LW:{g,s}, ...}  */
-export function courtMap(map, {title = '', width = 460} = {}) {
+/* attacks を渡すと、各位置の「50回の攻撃あたり何点そこから取れているか」を併記する。
+   分母はチームの総攻撃回数なので、全位置を足すと 50攻撃あたりの総得点になる。
+   perLabel は守備側で「失点」に言い換えるために使う。 */
+/* コート上の位置が決まらない攻撃。図の下に別枠で並べて、合計が必ず100%になるようにする。 */
+export const OFF_COURT = [
+  {key: 'BT', label: 'ブレイクスルー', en: 'Breakthrough'},
+  {key: 'FB', label: '速攻', en: 'Fast Break'},
+  {key: 'FLY', label: 'フライング', en: 'Flying'},
+];
+export const ALL_ZONE_KEYS = [...POSITIONS.map(p => p.key), ...OFF_COURT.map(z => z.key)];
+
+export function courtMap(map, {title = '', width = 460, attacks = 0, perLabel = '得点', per = 50} = {}) {
   const h = Math.round(width * 0.92);
   const root = svg('svg', {class: 'chart', viewBox: `0 0 100 92`, preserveAspectRatio: 'xMidYMid meet'});
   root.setAttribute('style', `width:100%;max-width:${width}px;height:auto`);
@@ -96,25 +107,120 @@ export function courtMap(map, {title = '', width = 460} = {}) {
     const d = map && map[p.key] || {g: 0, s: 0};
     const g = n(d.g), s = n(d.s);
     const e = s > 0 ? g / s * 100 : null;
-    const w = 20, hh = 9.4;
+    const p50 = attacks > 0 ? g / attacks * per : null;
+    const dp = per <= 10 ? 2 : 1;
+    const w = 20, hh = attacks > 0 ? 12.4 : 9.4;
     const gx = p.x - w / 2, gy = p.y - hh / 2;
     const grp = svg('g', {});
     grp.append(svg('rect', {x: gx, y: gy, width: w, height: hh, rx: 4.7,
       fill: s > 0 ? effColor(e) : 'rgba(255,255,255,.28)',
       stroke: 'rgba(255,255,255,.55)', 'stroke-width': .35}));
-    grp.append(svg('text', {x: p.x, y: gy + 3.6, 'text-anchor': 'middle', 'font-size': 2.5,
-      'font-weight': 600, fill: s > 0 ? effInk(e) : '#ffffff', opacity: .85}, p.en));
-    grp.append(svg('text', {x: p.x, y: gy + 7.6, 'text-anchor': 'middle', 'font-size': 4.2,
-      'font-weight': 700, fill: s > 0 ? effInk(e) : '#ffffff'}, `${g}/${s}`));
-    tip(grp, `<b>${p.label}</b><br>ゴール ${g} / シュート ${s}<br>決定率 ${pct(g, s)}`);
+    const ink = s > 0 ? effInk(e) : '#ffffff';
+    grp.append(svg('text', {x: p.x, y: gy + 3.4, 'text-anchor': 'middle', 'font-size': 2.5,
+      'font-weight': 600, fill: ink, opacity: .85}, p.en));
+    grp.append(svg('text', {x: p.x, y: gy + 7.4, 'text-anchor': 'middle', 'font-size': 4.2,
+      'font-weight': 700, fill: ink}, `${g}/${s}`));
+    if (p50 !== null) {
+      grp.append(svg('text', {x: p.x, y: gy + 11, 'text-anchor': 'middle', 'font-size': 2.9,
+        'font-weight': 700, fill: ink, opacity: .9}, `${per}回 ${p50.toFixed(dp)}`));
+    }
+    const extra = p50 === null ? ''
+      : `<br>${per}攻撃あたり${perLabel} ${p50.toFixed(dp)}`;
+    tip(grp, `<b>${p.label}</b><br>ゴール ${g} / シュート ${s}<br>決定率 ${pct(g, s)}${extra}`);
     root.append(grp);
   });
 
   const box = el('div', {});
   if (title) box.append(el('div', {class: 'sec-title', text: title}));
   box.append(el('div', {class: 'mapbox'}, root));
+
+  /* コート上に置けない攻撃（速攻・ブレイクスルー・フライング）を別枠に並べる。
+     これを足すと、図の合計が KPI の「50回あたり」と完全に一致する。 */
+  const extras = OFF_COURT.filter(z => n(map?.[z.key]?.s) > 0 || n(map?.[z.key]?.g) > 0);
+  if (extras.length) {
+    const strip = el('div', {class: 'offcourt'});
+    strip.append(el('span', {class: 'offcourt-label', text: '位置が定まらない攻撃'}));
+    extras.forEach(z => {
+      const d = map[z.key] || {g: 0, s: 0};
+      const g = n(d.g), s = n(d.s);
+      const e = s > 0 ? g / s * 100 : null;
+      const pill = el('div', {class: 'offcourt-pill'});
+      pill.style.background = s > 0 ? effColor(e) : 'var(--surface-2)';
+      pill.style.color = s > 0 ? effInk(e) : 'var(--ink-3)';
+      pill.append(el('span', {class: 'oc-k', text: z.label}));
+      pill.append(el('span', {class: 'oc-v', text: `${g}/${s}`}));
+      if (attacks > 0) pill.append(el('span', {class: 'oc-p', text: `${per}回 ${(g / attacks * per).toFixed(1)}`}));
+      tip(pill, `<b>${z.label}</b><br>ゴール ${g} / シュート ${s}<br>決定率 ${pct(g, s)}`
+        + (attacks > 0 ? `<br>${per}回あたり${perLabel} ${(g / attacks * per).toFixed(2)}` : ''));
+      strip.append(pill);
+    });
+    box.append(strip);
+  }
+
   box.append(rampLegend('決定率'));
+  if (attacks > 0) {
+    const sumAll = ALL_ZONE_KEYS.reduce((a, k) => a + n(map?.[k]?.g), 0);
+    box.append(el('div', {class: 'sub', style: {margin: '4px 0 0'},
+      text: `上段 = ゴール/シュート（色は決定率）、下段 = ${per}回あたりの${perLabel}。`
+        + `コート${POSITIONS.length}箇所＋別枠を合計すると ${(sumAll / attacks * per).toFixed(1)}`
+        + `（${perLabel}${sumAll} ÷ ${attacks}回 × ${per}）で、KPI と一致します。`}));
+  }
   return box;
+}
+
+/* シュート位置の内訳表。コート図と同じ数字を、合計まで含めて並べる。
+   全ゾーンを足すとチームの総得点・総シュートに一致する（公式値で検証済み）。 */
+export function zoneBreakdownTable(map, {attacks = 0, perLabel = '得点', per = 50, shotLabel = 'シュート'} = {}) {
+  const rows = [
+    ...POSITIONS.map(p => ({key: p.key, label: p.label, group: 'コート上'})),
+    ...OFF_COURT.map(z => ({key: z.key, label: z.label, group: '位置が定まらない'})),
+  ];
+  const tot = rows.reduce((a, r) => {
+    const d = map?.[r.key] || {};
+    return {g: a.g + n(d.g), s: a.s + n(d.s)};
+  }, {g: 0, s: 0});
+
+  const table = el('table', {});
+  const head = ['位置', perLabel, shotLabel, '決定率', `${per}回あたり`, `${perLabel}の構成比`];
+  table.append(el('thead', {}, el('tr', {}, head.map(h => el('th', {text: h})))));
+  const tb = el('tbody', {});
+  let lastGroup = null;
+  rows.forEach(r => {
+    const d = map?.[r.key] || {};
+    const g = n(d.g), s = n(d.s);
+    if (!s && !g) return;
+    if (r.group !== lastGroup) {
+      lastGroup = r.group;
+      tb.append(el('tr', {}, el('td', {colspan: head.length,
+        style: {background: 'var(--surface-2)', fontWeight: 700, fontSize: '11.5px',
+          color: 'var(--ink-3)', textAlign: 'left'}, text: r.group})));
+    }
+    const e = s > 0 ? g / s * 100 : null;
+    const bar = el('span', {class: 'pillbar'});
+    const fill = el('span');
+    fill.style.width = (tot.g > 0 ? g / tot.g * 100 : 0) + '%';
+    fill.style.background = 'var(--blue)';
+    bar.append(fill);
+    tb.append(el('tr', {},
+      el('td', {text: r.label}),
+      el('td', {class: 'num', style: {fontWeight: 700}, text: g || ''}),
+      el('td', {class: 'num', text: s || ''}),
+      el('td', {class: 'num', style: e === null ? null : {color: effColor(e), fontWeight: 700},
+        text: s > 0 ? pct(g, s) : '–'}),
+      el('td', {class: 'num', text: attacks > 0 ? (g / attacks * per).toFixed(1) : '–'}),
+      el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
+        bar, el('span', {class: 'num', style: {fontSize: '11.5px', minWidth: '34px'},
+          text: tot.g > 0 ? pct(g, tot.g) : '–'})))));
+  });
+  tb.append(el('tr', {class: 'total'},
+    el('td', {text: '合計'}),
+    el('td', {class: 'num', text: tot.g}),
+    el('td', {class: 'num', text: tot.s}),
+    el('td', {class: 'num', text: pct(tot.g, tot.s)}),
+    el('td', {class: 'num', text: attacks > 0 ? (tot.g / attacks * per).toFixed(1) : '–'}),
+    el('td', {class: 'num', text: '100%'})));
+  table.append(tb);
+  return el('div', {class: 'tbl-scroll'}, table);
 }
 
 export function rampLegend(label = '決定率') {
@@ -225,11 +331,21 @@ export function lineChart(series, labels, {width = 820, height = 210, yTitle = '
       d += `${pen ? 'L' : 'M'} ${X(i)} ${Y(v)} `;
       pen = true;
     });
-    if (d) root.append(svg('path', {d: d.trim(), fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round'}));
+    if (d) {
+      root.append(svg('path', {
+        d: d.trim(), fill: 'none', stroke: s.color,
+        'stroke-width': s.dash ? 1.5 : 2, 'stroke-linejoin': 'round',
+        'stroke-dasharray': s.dash || null, opacity: s.dash ? 0.65 : 1,
+      }));
+    }
     s.values.forEach((v, i) => {
       if (!finite(v)) return;
-      const c = svg('circle', {cx: X(i), cy: Y(v), r: 4, fill: s.color, stroke: '#fff', 'stroke-width': 2});
-      tip(c, `<b>${s.label}</b><br>${labels[i]}: ${fmtv(v)}`);
+      const c = svg('circle', {
+        cx: X(i), cy: Y(v), r: s.dash ? 2.6 : 4,
+        fill: s.dash ? '#fff' : s.color, stroke: s.color, 'stroke-width': 2,
+        opacity: s.dash ? 0.75 : 1,
+      });
+      tip(c, s.tips?.[i] || `<b>${s.label}</b><br>${labels[i]}: ${fmtv(v)}`);
       root.append(c);
     });
   });

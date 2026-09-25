@@ -220,8 +220,20 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .refresh-note{font-size:11px;color:var(--ink-3)}
 @media(max-width:700px){.refresh-status{flex-basis:100%}}
 
-/* KPI を詰めて並べる */
-.kpi-grid{gap:10px}
+/* KPI を詰めて並べる（枚数が変わっても自動で折り返す） */
+.kpi-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(152px,1fr))}
 .kpi-grid .kpi{padding:8px 10px}
 .kpi-grid .kpi .k{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .kpi-grid .kpi .s{font-size:10px;line-height:1.25;margin-top:1px}
+
+.kpi.kpi-hi{background:var(--blue-soft);border-color:var(--line-2)}
+.kpi.kpi-hi .v{color:var(--navy)}
+
+/* シュート位置図の別枠（速攻・ブレイクスルーなど） */
+.offcourt{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px}
+.offcourt-label{font-size:11px;font-weight:700;color:var(--ink-3);white-space:nowrap}
+.offcourt-pill{display:flex;flex-direction:column;align-items:center;gap:0;
+  border:1px solid var(--line-2);border-radius:9px;padding:4px 11px;min-width:92px;line-height:1.2}
+.offcourt-pill .oc-k{font-size:10px;font-weight:600;opacity:.9}
+.offcourt-pill .oc-v{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.offcourt-pill .oc-p{font-size:9.5px;font-weight:700;opacity:.9;font-variant-numeric:tabular-nums}

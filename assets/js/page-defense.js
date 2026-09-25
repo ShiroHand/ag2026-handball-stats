@@ -1,7 +1,8 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
-import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars} from './charts.js';
+import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
+import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -149,19 +150,32 @@ function render() {
     kpi('1試合の被シュート', (oppShots / D.list.length).toFixed(1),
       `ブロック ${sumBy(D.ownDef, 'blocks')} / スティール ${sumBy(D.ownDef, 'steals')}`)));
 
+  /* 守備のKPI（相手にやらせた内容の累計） */
+  const opp = D.list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[oppOf(f, code)])), emptyCounts());
+  const mine = D.list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[code])), emptyCounts());
+  app.append(el('div', {class: 'card'},
+    el('h2', {text: `守備のKPI — 全${D.list.length}試合の累計`}),
+    el('div', {class: 'sub', text: '相手チームの攻撃を合計したもの。数字が小さいほど良い守備です（相手のターンオーバーだけは多いほど良い）。' + KPI_NOTE}),
+    kpiGrid(opp, 'def', mine),
+    el('div', {class: 'sub', style: {marginTop: '10px'},
+      text: `1試合あたり: 被攻撃 ${(opp.attacks / D.list.length).toFixed(1)} 回 / 失点 ${(opp.goals / D.list.length).toFixed(1)} / 被シュート ${(opp.shots / D.list.length).toFixed(1)} / 相手のTO ${(opp.turnovers / D.list.length).toFixed(1)}`})));
+
   /* --- 被シュートマップ --- */
   app.append(el('div', {class: 'card'},
     el('h2', {text: 'どこから失点しているか'}),
     el('div', {class: 'sub', text: '相手の全シュートを位置別に集計。濃い赤ほど相手の決定率が高い＝守備の弱点。'}),
     el('div', {class: 'grid g3'},
       el('div', {}, el('div', {class: 'sec-title', text: '被シュート位置（相手のゴール / シュート）'}),
-        courtMap(D.conceded)),
+        courtMap(D.conceded, {attacks: opp.attacks, perLabel: '失点'})),
       el('div', {}, el('div', {class: 'sec-title', text: '失点コース（相手が決めた枠内コース）'}),
         goalMap(D.concededZone, {}, {width: 360}),
         el('div', {class: 'sub', style: {marginTop: '6px'}, text: '相手のゴール / 枠内シュート'})),
       el('div', {}, el('div', {class: 'sec-title', text: 'GKセーブコース'}),
         goalMap((D.saveZone || []).map(r => r.map(c => ({g: c.sv, s: c.s}))), {}, {width: 360}),
-        el('div', {class: 'sub', style: {marginTop: '6px'}, text: 'セーブ / 被シュート（コース別）'})))));
+        el('div', {class: 'sub', style: {marginTop: '6px'}, text: 'セーブ / 被シュート（コース別）'}))),
+    el('div', {style: {marginTop: '14px'}},
+      el('div', {class: 'sec-title', text: '位置別の失点内訳'}),
+      zoneBreakdownTable(D.conceded, {attacks: opp.attacks, perLabel: '失点', shotLabel: '被シュート'}))));
 
   /* --- 相手の攻撃内訳 --- */
   app.append(el('div', {class: 'card'},

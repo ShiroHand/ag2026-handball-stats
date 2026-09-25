@@ -65,6 +65,8 @@ function render() {
         el('div', {}, el('div', {class: 'sub', text: 'GKセーブ数'}),
           leaderList(topSavers(gender).slice(0, 12), CAT[3])))));
   }
+  const effCard = efficiencyCard(gender);
+  if (effCard) app.append(effCard);
 
   /* ---- 日程・結果 ---- */
   const card = el('div', {class: 'card'}, el('h2', {text: '日程・結果'}));
@@ -170,6 +172,35 @@ function leaderList(rows, color) {
   return box;
 }
 
+/* 50回あたりの得点・失点でチームを並べる。
+   攻撃回数が多い（テンポが速い）だけで得点が伸びているチームと、
+   1回の攻撃を確実に決めているチームを区別できる。 */
+function efficiencyCard(g) {
+  const rows = (RANK[g]?.teams || []);
+  if (!rows.length) return null;
+  const table = el('table', {});
+  table.append(el('thead', {}, el('tr', {},
+    ['#', 'チーム', '試合', '攻撃回数', '50攻撃あたり得点', '50守備あたり失点', '差引']
+      .map(h => el('th', {text: h})))));
+  const tb = el('tbody', {});
+  rows.forEach((r, i) => tb.append(el('tr', {},
+    el('td', {class: 'num muted', text: i + 1}),
+    el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+      flagImg(r.code, 'flag sm'),
+      el('a', {href: `team.html?team=${r.code}&g=${g}`, text: r.name}))),
+    el('td', {class: 'num', text: r.games}),
+    el('td', {class: 'num', text: r.attacks}),
+    el('td', {class: 'num', text: r.scored.toFixed(1)}),
+    el('td', {class: 'num', text: r.conceded.toFixed(1)}),
+    el('td', {class: 'num', style: {fontWeight: 700, color: r.margin >= 0 ? 'var(--good)' : 'var(--bad)'},
+      text: (r.margin >= 0 ? '+' : '') + r.margin.toFixed(1)}))));
+  table.append(tb);
+  return el('div', {class: 'card'},
+    el('h2', {text: '50回あたりの得点・失点（攻守の効率）'}),
+    el('div', {class: 'sub', text: '攻撃回数50回に換算した得点と失点。試合のテンポに左右されずに攻守の質を比べられます。差引の大きい順。'}),
+    el('div', {class: 'tbl-scroll'}, table));
+}
+
 function topScorers(g) { return RANK[g]?.scorers || []; }
 function topSavers(g) { return RANK[g]?.savers || []; }
 
@@ -196,5 +227,28 @@ async function buildRanking(g) {
     }));
   });
   const rows = (m) => [...m.values()].sort((a, b) => b.v - a.v);
-  RANK[g] = {scorers: rows(sc), savers: rows(sv)};
+
+  /* チームごとの 50回あたり得点・失点 */
+  const tm = new Map();
+  files.filter(f => f.gender === g).forEach(f => {
+    for (const code of [f.home, f.away]) {
+      const me = f.teams[code], op = f.teams[code === f.home ? f.away : f.home];
+      if (!me || !op) continue;
+      const mp = me.possessions || {}, op2 = op.possessions || {};
+      if (!n(mp.attacks) || !n(op2.attacks)) continue;
+      const cur = tm.get(code) || {code, name: me.nameS || me.name || code,
+        games: 0, attacks: 0, goals: 0, defAttacks: 0, conceded: 0};
+      cur.games++;
+      cur.attacks += n(mp.attacks); cur.goals += n(mp.goals);
+      cur.defAttacks += n(op2.attacks); cur.conceded += n(op2.goals);
+      tm.set(code, cur);
+    }
+  });
+  const teams = [...tm.values()].map(t => {
+    const scored = t.attacks ? t.goals / t.attacks * 50 : 0;
+    const conceded = t.defAttacks ? t.conceded / t.defAttacks * 50 : 0;
+    return {...t, scored, conceded, margin: scored - conceded};
+  }).sort((a, b) => b.margin - a.margin);
+
+  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams};
 }

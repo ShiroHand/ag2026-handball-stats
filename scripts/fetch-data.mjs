@@ -279,9 +279,24 @@ function buildPossessions(acts, teams, orgs) {
 
   const out = {};
   for (const [org, x] of Object.entries(T)) {
+    /* 攻撃回数は公式の ATTACK アクションを数えているが、速攻のときに
+       ATTACK が記録されないことがあり、得点数より少なくなる試合がある
+       （得点1本とターンオーバー1本はそれぞれ別の攻撃なので、論理的にありえない）。
+       そこで各5分区間で「得点 + ターンオーバー」を下限として補い、
+       試合合計はその区間の合計に揃える（表の「計」と一致させるため）。
+       公式PDFで攻撃回数が確認できている試合では、ほぼ働かない。 */
+    const p = x.poss;
+    const tl = [...x.timeline.values()].sort((a, b) => parseInt(a.bucket) - parseInt(b.bucket));
+    let floored = 0;
+    for (const w of tl) {
+      const min = w.goals + w.turnovers;
+      if (w.attacks < min) { w.attacksRaw = w.attacks; w.attacks = min; }
+      floored += w.attacks;
+    }
+    if (floored > p.attacks) { p.attacksRaw = p.attacks; p.attacks = floored; }
     out[org] = {
-      possessions: {...x.poss, eff: x.poss.attacks ? +(x.poss.goals / x.poss.attacks * 100).toFixed(1) : 0},
-      timeline: [...x.timeline.values()].sort((a, b) => parseInt(a.bucket) - parseInt(b.bucket)),
+      possessions: {...p, eff: p.attacks ? +(p.goals / p.attacks * 100).toFixed(1) : 0},
+      timeline: tl,
       situations: x.sit, situationsDef: x.sitDef, emptyGoal: x.emptyGoal,
     };
   }
@@ -491,6 +506,87 @@ function buildPlay(rawActions, teams) {
       defActs: [...T.defActs.values()].sort((a, b) =>
         (b.blocks + b.steals) - (a.blocks + a.steals)),
     };
+  }
+  return out;
+}
+
+/* ---------------------------------------------------------------- 事前分布 */
+/* 5分間の割合は試行回数が3〜5回しかなく、そのまま出すとほぼ運の揺れになる
+   （得点0の区間は0%、1回決めれば100%）。そこで大会全体のデータから
+   ベータ分布の事前分布を推定し、各区間を縮小推定する（経験ベイズ）。
+
+     補正後の割合 = (実測の分子 + k × 事前平均) / (実測の分母 + k)
+
+   k は「事前分布を何回分の試行とみなすか」の重み。
+   区間ごとの散らばりのうち、二項分布の揺れでは説明できない分（= 本当の実力差）
+   がどれだけあるかをモーメント法で推定して決める。 */
+const PRIOR_METRICS = [
+  {key: 'eff', num: 'goals', den: 'attacks'},
+  {key: 'assistRate', num: 'assists', den: 'goals'},
+];
+const PRIOR_ACC = {};      // gender -> {windows: {metric: [{x,n}]}, teams: {code: {...}}}
+
+function collectForPriors(file) {
+  const g = file.gender || 'M';
+  const A = PRIOR_ACC[g] || (PRIOR_ACC[g] = {windows: {}, teams: {}});
+  for (const m of PRIOR_METRICS) A.windows[m.key] = A.windows[m.key] || [];
+
+  for (const [code, t] of Object.entries(file.teams || {})) {
+    const T = A.teams[code] || (A.teams[code] = {code, games: 0, goals: 0, attacks: 0, assists: 0});
+    const po = t.possessions || {};
+    if (!N(po.attacks)) continue;
+    T.games++;
+    T.goals += N(t.stats?.GOALS) || N(po.goals);
+    T.attacks += N(po.attacks);
+    T.assists += N(t.derived?.assists) || N(po.assists);
+    for (const w of t.timeline || []) {
+      for (const m of PRIOR_METRICS) {
+        const n = N(w[m.den]);
+        if (n > 0) A.windows[m.key].push({x: Math.min(N(w[m.num]), n), n});
+      }
+    }
+  }
+}
+
+/* モーメント法でベータ二項分布の k(=α+β) を推定する */
+function fitPrior(samples) {
+  const m = samples.length;
+  const sx = samples.reduce((a, s) => a + s.x, 0);
+  const sn = samples.reduce((a, s) => a + s.n, 0);
+  if (m < 6 || sn <= 0) return null;
+  const p = sx / sn;
+  if (p <= 0 || p >= 1) return null;
+  /* 実際の散らばり（分母で重み付け） */
+  const obs = samples.reduce((a, s) => a + s.n * Math.pow(s.x / s.n - p, 2), 0) / sn;
+  /* 二項分布だけで説明できる散らばり */
+  const binom = p * (1 - p) * m / sn;
+  const excess = obs - binom;
+  /* 実力差が見えない（= 全部ただの揺れ）なら強めに縮小する */
+  let k = excess > 1e-9 ? p * (1 - p) / excess - 1 : 300;
+  k = Math.max(3, Math.min(300, k));
+  return {mean: +p.toFixed(4), k: +k.toFixed(1), windows: m, trials: sn};
+}
+
+function buildPriors() {
+  const out = {};
+  for (const [g, A] of Object.entries(PRIOR_ACC)) {
+    const metrics = {};
+    for (const m of PRIOR_METRICS) {
+      const f = fitPrior(A.windows[m.key] || []);
+      if (f) metrics[m.key] = f;
+    }
+    if (!Object.keys(metrics).length) continue;
+    const teams = {};
+    for (const T of Object.values(A.teams)) {
+      if (!T.attacks) continue;
+      teams[T.code] = {
+        games: T.games,
+        eff: +(T.goals / T.attacks).toFixed(4),
+        assistRate: T.goals > 0 ? +(T.assists / T.goals).toFixed(4) : null,
+        attacks: T.attacks, goals: T.goals, assists: T.assists,
+      };
+    }
+    out[g] = {metrics, teams};
   }
   return out;
 }
@@ -747,6 +843,7 @@ async function main() {
     if (await writeIfChanged(path.join(DATA, 'matches', file.id + '.json'), file)) changed++;
     ids.push(file.id);
     detail++;
+    collectForPriors(file);
   }
 
   const tournament = {
@@ -758,6 +855,7 @@ async function main() {
     teams: [...teamMap.values()].sort((a, b) => a.gender.localeCompare(b.gender) || a.code.localeCompare(b.code)),
     matches, standings,
     detailIds: ids,
+    priors: buildPriors(),
     updatedAt: new Date().toISOString(),
   };
   const tChanged = await writeIfChanged(path.join(DATA, 'tournament.json'), tournament);

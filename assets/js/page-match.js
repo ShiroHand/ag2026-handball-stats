@@ -1,8 +1,9 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, photoImg, POSITIONS, POS_LABEL, shortRole, CAT, SERIES, sectionNav} from './core.js';
-import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, lineChart} from './charts.js';
+import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, lineChart, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections} from './connections.js';
 import {eventGridSection, symbolLegend} from './eventgrid.js';
+import {countsFromTeam, kpiBlock, KPI_NOTE} from './kpi.js';
 
 const app = q('#app');
 let T = null, M = null, MAN = null, REP = null;
@@ -190,9 +191,12 @@ function phaseCard(H, A) {
 
 /* ------------------------------------------------------------------ シュートマップ */
 function shootingCard(H, A) {
+  const atk = (t) => Number(REP?.teamStats?.[t.code]?.attacks) || Number(t.possessions?.attacks) || 0;
   const block = (t) => el('div', {},
     el('div', {class: 'sec-title', text: `${t.code} — シュート位置`}),
-    courtMap(t.shot),
+    courtMap(t.shot, {attacks: atk(t), perLabel: '得点'}),
+    el('div', {class: 'sec-title', style: {marginTop: '12px'}, text: `${t.code} — 位置別の内訳`}),
+    zoneBreakdownTable(t.shot, {attacks: atk(t), perLabel: '得点'}),
     el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: `${t.code} — ゴールマウス（枠内コース別）`}),
     goalMap(t.shotZone, {}, {width: 420}),
     el('div', {class: 'sub', style: {marginTop: '6px'}, text: '公式記録にコースが残っているシュートのみ集計'}));
@@ -225,63 +229,14 @@ function gkCard(H, A) {
 
 /* ------------------------------------------------------------------ 選手 */
 /* ------------------------------------------------------------------ KPI */
-/* 1試合の要点を数字だけで並べる。割合は自動で計算する。 */
-function kpiFor(t) {
-  const st = t.stats || {}, po = t.possessions || {};
-  const shots = n(st.SHOTS);
-  const goals = n(st.GOALS);
-  /* シュートの内訳はプレーバイプレーの結果から数える（公式の集計には無いため） */
-  const res = {};
-  for (const s of t.shots || []) res[s.result] = (res[s.result] || 0) + 1;
-  const onTarget = (res.GOAL || 0) + (res.SAVE || 0);
-  const offTarget = (res.POST || 0) + (res.MISS || 0);
-  const hasPlay = (t.shots || []).length > 0;
-
-  /* 攻撃回数は公式PDFの値があればそちらを優先する */
-  const official = REP?.teamStats?.[t.code];
-  const attacks = n(official?.attacks) || n(po.attacks);
-  const turnovers = n(po.turnovers);
-  const assists = n(t.derived?.assists) || n(po.assists);
-
-  /* 枠内 + 枠外 + 被ブロック = 公式のシュート数 になる（ブロックされた分は
-     プレーバイプレーにシュートとして残らないため、個人スタッツから足す） */
-  const blocked = n(t.derived?.blocked);
-
-  const rate = (a, b) => (b > 0 ? Math.round(a / b * 100) + '%' : '–');
-  return [
-    {k: '攻撃回数', v: attacks || '–', s: official ? '公式レポート' : 'プレーバイプレーから算出'},
-    {k: '得点', v: goals},
-    {k: 'ターンオーバー', v: hasPlay ? turnovers : '–'},
-    {k: '攻撃効率', v: rate(goals, attacks), s: '得点 ÷ 攻撃回数'},
-    {k: 'ターンオーバー率', v: hasPlay ? rate(turnovers, attacks) : '–', s: 'TO ÷ 攻撃回数'},
-    {k: 'シュート数', v: shots,
-      s: hasPlay ? `枠内${onTarget}・枠外${offTarget}・被ブロック${blocked}` : ''},
-    {k: '枠内シュート', v: hasPlay ? onTarget : '–', s: hasPlay ? rate(onTarget, shots) + ' / 全シュート' : ''},
-    {k: '枠外・ポスト', v: hasPlay ? offTarget : '–', s: hasPlay ? rate(offTarget, shots) + ' / 全シュート' : ''},
-    {k: 'アシスト', v: assists},
-    {k: 'アシスト率', v: rate(assists, goals), s: 'アシスト ÷ 得点'},
-  ];
-}
-
 function kpiCard(H, A) {
-  const block = (t) => {
-    const grid = el('div', {class: 'grid g5 kpi-grid'});
-    kpiFor(t).forEach(m => grid.append(el('div', {class: 'kpi'},
-      el('div', {class: 'k', text: m.k}),
-      el('div', {class: 'v', text: m.v}),
-      m.s ? el('div', {class: 's', text: m.s}) : null)));
-    return el('div', {},
-      el('div', {class: 'row', style: {gap: '8px', margin: '0 0 8px'}},
-        flagImg(t.code, 'flag sm'),
-        el('span', {style: {fontWeight: 700, color: 'var(--navy)'}, text: t.name})),
-      grid);
-  };
+  const cnt = (t) => countsFromTeam(t, {officialAttacks: REP?.teamStats?.[t.code]?.attacks});
   return el('div', {class: 'card'},
     el('h2', {text: 'KPI'}),
-    el('div', {class: 'sub', text: '攻撃回数・ターンオーバーは公式プレーバイプレーから算出した推定値です（公式PDFレポートがある試合はその攻撃回数を使用）。'}),
-    block(H),
+    el('div', {class: 'sub', text: KPI_NOTE}),
+    kpiBlock(cnt(H), {code: H.code, name: H.name, opp: cnt(A)}),
     el('hr', {class: 'soft'}),
-    block(A));
+    kpiBlock(cnt(A), {code: A.code, name: A.name, opp: cnt(H)}));
 }
 
 /* ------------------------------------------------------- 選手別イベント（記号） */
@@ -407,8 +362,10 @@ const TL_METRICS = [
   {key: 'defReb', label: 'DFリバウンド'},
   {key: 'twoMin', label: '2分間退場'},
   /* 割合は足し算できないので、区間ごとに分子÷分母で出し、「計」は合計どうしの比で出す */
-  {num: 'goals', den: 'attacks', label: '攻撃効率（得点÷攻撃回数）'},
-  {num: 'assists', den: 'goals', label: 'アシスト率（アシスト÷得点）'},
+  {num: 'goals', den: 'attacks', label: '攻撃効率（実測）'},
+  {num: 'goals', den: 'attacks', metric: 'eff', smooth: true, label: '攻撃効率（補正後）'},
+  {num: 'assists', den: 'goals', label: 'アシスト率（実測）'},
+  {num: 'assists', den: 'goals', metric: 'assistRate', smooth: true, label: 'アシスト率（補正後）'},
 ];
 
 function timelineCard(H, A) {
@@ -431,6 +388,51 @@ function timelineCard(H, A) {
   };
   const showPct = (v) => (v === null ? '–' : Math.round(v) + '%');
 
+  /* ---- 事前確率による補正（経験ベイズ） ----
+     5分間は試行が3〜5回しかないので、実測の割合はほとんど運の揺れになる。
+     そこで大会全体から推定したベータ分布を事前分布として混ぜ、
+       補正後 = (分子 + k × 事前平均) / (分母 + k)
+     とする。事前平均はそのチームの大会成績、無ければ男女別の全体平均。
+     k は「事前分布を何回分の試行とみなすか」で、scripts/fetch-data.mjs が推定している。 */
+  const PR = (T.priors || {})[M.gender] || null;
+  const priorOf = (t, metric) => {
+    const g = PR?.metrics?.[metric];
+    if (!g) return null;
+    const own = PR.teams?.[t.code]?.[metric];
+    const enough = (PR.teams?.[t.code]?.attacks || 0) >= 40 && own !== null && own !== undefined;
+    return {k: g.k, mean: enough ? own : g.mean, fromTeam: enough, overall: g.mean};
+  };
+  const bayes = (x, n, pr) => (pr ? (x + pr.k * pr.mean) / (n + pr.k) * 100 : null);
+
+  /* 区間ごとの補正値 */
+  const smoothSeries = (t, metric, num, den) => {
+    const pr = priorOf(t, metric);
+    if (!pr) return buckets.map(() => null);
+    return buckets.map(b => bayes(Math.min(val(t, b, num), val(t, b, den)), val(t, b, den), pr));
+  };
+  /* 累積の補正値（序盤は事前分布に近く、試合が進むほど実測に寄る） */
+  const cumSmooth = (t, metric, num, den) => {
+    const pr = priorOf(t, metric);
+    const xs = cum(series(t, num)), ns = cum(series(t, den));
+    return buckets.map((b, i) => (pr ? bayes(Math.min(xs[i], ns[i]), ns[i], pr) : (ns[i] > 0 ? xs[i] / ns[i] * 100 : null)));
+  };
+  const cumRaw = (t, num, den) => {
+    const xs = cum(series(t, num)), ns = cum(series(t, den));
+    return buckets.map((b, i) => (ns[i] > 0 ? xs[i] / ns[i] * 100 : null));
+  };
+  /* 点ごとの説明（実測の分数と補正後を両方出す） */
+  const ratioTips = (t, metric, num, den, {cumulative = false} = {}) => {
+    const pr = priorOf(t, metric);
+    const xs = cumulative ? cum(series(t, num)) : series(t, num);
+    const ns = cumulative ? cum(series(t, den)) : series(t, den);
+    return buckets.map((b, i) => {
+      const raw = ns[i] > 0 ? Math.round(xs[i] / ns[i] * 100) + '%' : '–';
+      const sm = pr ? Math.round(bayes(Math.min(xs[i], ns[i]), ns[i], pr)) + '%' : '–';
+      return `<b>${t.code}</b> ${b}分${cumulative ? 'まで' : ''}<br>`
+        + `実測: ${xs[i]}/${ns[i]} = ${raw}<br>補正後: ${sm}`;
+    });
+  };
+
   /* 表: 指標ごとに 2 行（両チーム） */
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
@@ -440,11 +442,15 @@ function timelineCard(H, A) {
   TL_METRICS.forEach((m, i) => {
     [H, A].forEach((t, j) => {
       const isRatio = !!m.num;
-      const vals = isRatio ? ratioSeries(t, m.num, m.den) : series(t, m.key);
+      const vals = m.smooth ? smoothSeries(t, m.metric, m.num, m.den)
+        : isRatio ? ratioSeries(t, m.num, m.den) : series(t, m.key);
       const cells = isRatio
         ? vals.map(v => el('td', {class: 'num', text: showPct(v)}))
         : vals.map(v => el('td', {class: 'num', text: v || ''}));
-      const sum = isRatio ? showPct(ratioTotal(t, m.num, m.den)) : vals.reduce((a, b2) => a + b2, 0);
+      /* 補正後の「計」は試合全体の合計に事前確率を混ぜたもの */
+      const sum = m.smooth
+        ? showPct(bayes(Math.min(total(t, m.num), total(t, m.den)), total(t, m.den), priorOf(t, m.metric)))
+        : isRatio ? showPct(ratioTotal(t, m.num, m.den)) : vals.reduce((a, b2) => a + b2, 0);
       tb.append(el('tr', {style: i % 2 ? {background: 'var(--surface-2)'} : null},
         j === 0 ? el('td', {rowspan: 2, style: {fontWeight: 700}, text: m.label}) : null,
         el('td', {style: {fontWeight: 600, color: j ? 'var(--ink-2)' : 'var(--navy)'}, text: t.code}),
@@ -464,20 +470,51 @@ function timelineCard(H, A) {
 
   /* 割合のグラフは縦軸を 0–100% を基本に固定して両チームを見比べられるようにする。
      100% を超える区間（攻撃回数の推定より得点が多い5分など）があれば、そこまで伸ばす。 */
-  const ratioChart = (num, den, label, note) => {
-    const hv = ratioSeries(H, num, den), av = ratioSeries(A, num, den);
-    const peak = Math.max(0, ...[...hv, ...av].filter(v => v !== null));
+  /* 補正に何を使ったかを明示する（何割を事前確率で埋めたかが分かるように） */
+  const priorNote = () => {
+    const rows = [];
+    for (const t of [H, A]) {
+      for (const [metric, label] of [['eff', '攻撃効率'], ['assistRate', 'アシスト率']]) {
+        const pr = priorOf(t, metric);
+        if (!pr) continue;
+        rows.push(`${t.code} ${label}: 事前平均 ${Math.round(pr.mean * 100)}%`
+          + `（${pr.fromTeam ? 'このチームの大会成績' : '大会全体の平均'}）・重み k=${pr.k}`);
+      }
+    }
+    if (!rows.length) {
+      return el('div', {class: 'notice', style: {marginTop: '10px'},
+        text: '事前確率の推定にはもう少し試合数が必要です。いまは実測のみを表示しています。'});
+    }
+    return el('div', {class: 'sub', style: {marginTop: '10px'}},
+      el('b', {text: '補正の中身: '}),
+      '補正後 =（分子 + k × 事前平均）÷（分母 + k）。',
+      el('br'), rows.join(' ／ '));
+  };
+
+  /* 太い実線 = 補正後、細い破線 = 実測。事前分布が無いときは実測だけを実線で出す。 */
+  const ratioChart = (metric, num, den, label, note, {cumulative = false} = {}) => {
+    const raw = (t) => (cumulative ? cumRaw(t, num, den) : ratioSeries(t, num, den));
+    const smooth = (t) => (cumulative ? cumSmooth(t, metric, num, den) : smoothSeries(t, metric, num, den));
+    const hasPrior = !!priorOf(H, metric) || !!priorOf(A, metric);
+    const sets = [];
+    [[H, CAT[0]], [A, CAT[4]]].forEach(([t, color]) => {
+      if (hasPrior) {
+        sets.push({label: `${t.code} 補正後`, color, values: smooth(t), tips: ratioTips(t, metric, num, den, {cumulative})});
+        sets.push({label: `${t.code} 実測`, color, values: raw(t), dash: '3 3', tips: ratioTips(t, metric, num, den, {cumulative})});
+      } else {
+        sets.push({label: t.code, color, values: raw(t)});
+      }
+    });
+    const peak = Math.max(0, ...sets.flatMap(s => s.values).filter(v => v !== null));
     /* 目盛りがきりの良い数字になるように上限を決める（100%以下なら25%刻み、超えたら50%刻み） */
     const top = peak <= 100 ? 100 : Math.ceil(peak / 50) * 50;
     const ticks = peak <= 100 ? 4 : top / 50;
     return el('div', {},
       el('div', {class: 'sec-title', text: label}),
       note ? el('div', {class: 'sub', style: {margin: '-6px 0 8px'}, text: note}) : null,
-      lineChart([
-        {label: H.code, color: CAT[0], values: hv},
-        {label: A.code, color: CAT[4], values: av},
-      ], buckets, {width: 560, height: 200, maxY: top, ticks, fmtv: (v) => Math.round(v) + '%'}),
-      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}]));
+      lineChart(sets, buckets, {width: 560, height: 200, maxY: top, ticks, fmtv: (v) => Math.round(v) + '%'}),
+      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}]),
+      hasPrior ? el('div', {class: 'sub', style: {margin: '4px 0 0'}, text: '実線=補正後（事前確率を加味）／破線=実測'}) : null);
   };
 
   return el('div', {class: 'card'},
@@ -486,8 +523,12 @@ function timelineCard(H, A) {
     el('div', {class: 'grid g2'}, chart('goals', '得点'), chart('attacks', '攻撃回数')),
     el('div', {class: 'grid g2', style: {marginTop: '8px'}}, chart('shots', 'シュート'), chart('turnovers', 'ターンオーバー')),
     el('div', {class: 'grid g2', style: {marginTop: '8px'}},
-      ratioChart('goals', 'attacks', '攻撃効率（得点÷攻撃回数）', '線が途切れている区間は攻撃回数が0です'),
-      ratioChart('assists', 'goals', 'アシスト率（アシスト÷得点）', '線が途切れている区間は得点が0です')),
+      ratioChart('eff', 'goals', 'attacks', '攻撃効率（得点÷攻撃回数）', '線が途切れている区間は攻撃回数が0です'),
+      ratioChart('assistRate', 'assists', 'goals', 'アシスト率（アシスト÷得点）', '線が途切れている区間は得点が0です')),
+    el('div', {class: 'grid g2', style: {marginTop: '8px'}},
+      ratioChart('eff', 'goals', 'attacks', '累積の攻撃効率', 'その時点までの合計で計算。補正後は序盤ほど事前確率に近く、試合が進むほど実測に寄る', {cumulative: true}),
+      ratioChart('assistRate', 'assists', 'goals', '累積のアシスト率', 'その時点までの合計で計算', {cumulative: true})),
+    priorNote(),
     el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '5分ごとの数値'}),
     el('div', {class: 'tbl-scroll'}, table),
     el('div', {style: {marginTop: '16px'}},
