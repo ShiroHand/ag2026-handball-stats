@@ -1054,19 +1054,19 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 15",
    "unitNum": "28",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "22",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "CHN",
     "name": "China",
-    "score": "11",
+    "score": "17",
     "winner": false
    },
    "hasResult": true,
@@ -1085,20 +1085,20 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 10",
    "unitNum": "31",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "12",
+    "score": "22",
     "winner": false
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "29",
-    "winner": false
+    "score": "44",
+    "winner": true
    },
    "hasResult": true,
    "hasStats": true
@@ -1126,8 +1126,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "KUW",
+    "name": "Kuwait",
     "score": "",
     "winner": false
    },
@@ -1180,8 +1180,8 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "KOR",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -1246,8 +1246,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "IRI",
+    "name": "IR Iran",
     "score": "",
     "winner": false
    },
@@ -1300,8 +1300,8 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "BRN",
+    "name": "Bahrain",
     "score": "",
     "winner": false
    },
@@ -1609,10 +1609,24 @@
        "for": "135",
        "against": "86",
        "diff": "49",
-       "qualified": ""
+       "qualified": "Q"
       },
       {
        "rank": "2",
+       "org": "KOR",
+       "name": "Korea",
+       "pts": "5",
+       "played": "4",
+       "won": "2",
+       "lost": "1",
+       "tied": "1",
+       "for": "117",
+       "against": "101",
+       "diff": "16",
+       "qualified": "Q"
+      },
+      {
+       "rank": "3",
        "org": "KUW",
        "name": "Kuwait",
        "pts": "4",
@@ -1623,21 +1637,7 @@
        "for": "117",
        "against": "97",
        "diff": "20",
-       "qualified": ""
-      },
-      {
-       "rank": "3",
-       "org": "KOR",
-       "name": "Korea",
-       "pts": "3",
-       "played": "3",
-       "won": "1",
-       "lost": "1",
-       "tied": "1",
-       "for": "73",
-       "against": "79",
-       "diff": "-6",
-       "qualified": ""
+       "qualified": "Q"
       },
       {
        "rank": "4",
@@ -1651,20 +1651,20 @@
        "for": "98",
        "against": "109",
        "diff": "-11",
-       "qualified": ""
+       "qualified": "Q"
       },
       {
        "rank": "5",
        "org": "KAZ",
        "name": "Kazakhstan",
        "pts": "0",
-       "played": "3",
+       "played": "4",
        "won": "0",
-       "lost": "3",
+       "lost": "4",
        "tied": "0",
-       "for": "62",
-       "against": "114",
-       "diff": "-52",
+       "for": "84",
+       "against": "158",
+       "diff": "-74",
        "qualified": ""
       }
      ]
@@ -1698,14 +1698,14 @@
        "rank": "2",
        "org": "KOR",
        "name": "Korea",
-       "pts": "6",
-       "played": "3",
-       "won": "3",
+       "pts": "8",
+       "played": "4",
+       "won": "4",
        "lost": "0",
        "tied": "0",
-       "for": "133",
-       "against": "47",
-       "diff": "86",
+       "for": "170",
+       "against": "64",
+       "diff": "106",
        "qualified": ""
       },
       {
@@ -1713,13 +1713,13 @@
        "org": "CHN",
        "name": "China",
        "pts": "4",
-       "played": "3",
+       "played": "4",
        "won": "2",
-       "lost": "1",
+       "lost": "2",
        "tied": "0",
-       "for": "98",
-       "against": "71",
-       "diff": "27",
+       "for": "115",
+       "against": "108",
+       "diff": "7",
        "qualified": ""
       },
       {
@@ -1820,26 +1820,26 @@
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4982,
-     "k": 7.8,
-     "windows": 361,
-     "trials": 1652
+     "mean": 0.4965,
+     "k": 7.7,
+     "windows": 371,
+     "trials": 1700
     },
     "assistRate": {
-     "mean": 0.3949,
-     "k": 69.1,
-     "windows": 324,
-     "trials": 823
+     "mean": 0.3945,
+     "k": 65.8,
+     "windows": 333,
+     "trials": 844
     }
    },
    "teams": {
     "KOR": {
      "games": 4,
-     "eff": 0.7209,
-     "assistRate": 0.5032,
-     "attacks": 215,
-     "goals": 155,
-     "assists": 78
+     "eff": 0.7113,
+     "assistRate": 0.5059,
+     "attacks": 239,
+     "goals": 170,
+     "assists": 86
     },
     "HKG": {
      "games": 4,
@@ -1859,10 +1859,10 @@
     },
     "CHN": {
      "games": 4,
-     "eff": 0.545,
-     "assistRate": 0.3578,
-     "attacks": 200,
-     "goals": 109,
+     "eff": 0.5134,
+     "assistRate": 0.3391,
+     "attacks": 224,
+     "goals": 115,
      "assists": 39
     },
     "JPN": {
@@ -1894,16 +1894,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5258,
-     "k": 14.4,
-     "windows": 396,
-     "trials": 1683
+     "mean": 0.5257,
+     "k": 14.6,
+     "windows": 404,
+     "trials": 1729
     },
     "assistRate": {
-     "mean": 0.3638,
-     "k": 27.6,
-     "windows": 364,
-     "trials": 885
+     "mean": 0.3641,
+     "k": 26.1,
+     "windows": 372,
+     "trials": 909
     }
    },
    "teams": {
@@ -1925,11 +1925,11 @@
     },
     "KAZ": {
      "games": 4,
-     "eff": 0.3507,
-     "assistRate": 0.2703,
-     "attacks": 211,
-     "goals": 74,
-     "assists": 20
+     "eff": 0.359,
+     "assistRate": 0.2738,
+     "attacks": 234,
+     "goals": 84,
+     "assists": 23
     },
     "BRN": {
      "games": 4,
@@ -1973,14 +1973,14 @@
     },
     "KOR": {
      "games": 4,
-     "eff": 0.5455,
-     "assistRate": 0.3529,
-     "attacks": 187,
-     "goals": 102,
-     "assists": 36
+     "eff": 0.5571,
+     "assistRate": 0.3675,
+     "attacks": 210,
+     "goals": 117,
+     "assists": 43
     }
    }
   }
  },
- "updatedAt": "2026-09-25T09:28:23.365Z"
+ "updatedAt": "2026-09-25T10:41:39.422Z"
 }
