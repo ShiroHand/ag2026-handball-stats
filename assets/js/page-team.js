@@ -65,7 +65,7 @@ function agg(list) {
     sz = zAdd(sz, t.shotZone, ['g', 's']);
     t.players.forEach(p => {
       const key = p.bib + '|' + p.name;
-      if (!players.has(key)) players.set(key, {...p, stats: {}, games: 0, shot: {}, gk: {}, tempo: null, tempoGK: null});
+      if (!players.has(key)) players.set(key, {...p, stats: {}, games: 0, shot: {}, gk: {}, tempo: null, tempoGK: null, tempoAssist: null, tempoSteal: null});
       const a = players.get(key);
       a.games++;
       if (!a.reg && p.reg) a.reg = p.reg;        // 登録番号（顔写真）は取れた試合のものを使う
@@ -77,6 +77,8 @@ function agg(list) {
       zoneAdd(a.gk, p.gk, ['sv', 's', 'g']);
       if (p.tempo) a.tempo = addTempo(a.tempo, p.tempo, false);
       if (p.tempoGK) a.tempoGK = addTempo(a.tempoGK, p.tempoGK, true);
+      if (p.tempoAssist) a.tempoAssist = addTempo(a.tempoAssist, p.tempoAssist, false);
+      if (p.tempoSteal) a.tempoSteal = addTempo(a.tempoSteal, p.tempoSteal, false);
     });
   });
   return {stats, shot, gk, gkZone: gz, shotZone: sz, players: [...players.values()]};

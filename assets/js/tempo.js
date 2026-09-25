@@ -50,15 +50,27 @@ function shareInk(share) {
 }
 
 /* --------------------------------------------------------------- 選手の表 */
-/* mode: 'shoot'（撃った側）/ 'gk'（浴びた側） */
+/* mode:
+     shoot  … 撃った選手          count=シュート  rate=決定率
+     gk     … 浴びたGK            count=被シュート rate=セーブ率（sv/s）
+     assist … 出し手              count=アシスト  rate=得点率
+     steal  … 奪った選手          count=奪った後の攻撃 rate=得点率 */
+const MODES = {
+  shoot: {count: '本数', rate: '決定率', unit: 'シュート', made: '得点'},
+  gk: {count: '被弾', rate: 'セーブ率', unit: '被シュート', made: 'セーブ'},
+  assist: {count: 'アシスト', rate: '得点率', unit: 'アシスト', made: '得点'},
+  steal: {count: '奪取後', rate: '得点率', unit: '奪った後の攻撃', made: '得点'},
+};
+
 export function tempoTable(rows, mode) {
+  const M = MODES[mode] || MODES.shoot;
   const isGK = mode === 'gk';
   const table = el('table', {});
   const head = el('tr', {},
     el('th', {text: '#'}), el('th', {text: '選手'}), el('th', {text: 'Pos'}));
   TEMPO_BANDS.forEach(b => {
-    head.append(el('th', {class: 'num', text: isGK ? `${b.label} 被弾` : `${b.label} 本数`}));
-    head.append(el('th', {class: 'num', text: isGK ? 'セーブ率' : '決定率'}));
+    head.append(el('th', {class: 'num', text: `${b.label} ${M.count}`}));
+    head.append(el('th', {class: 'num', text: M.rate}));
     head.append(el('th', {class: 'num', text: '構成比'}));
   });
   head.append(el('th', {class: 'num', text: '合計'}));
@@ -104,6 +116,7 @@ export function tempoTable(rows, mode) {
 
 /* --------------------------------------------------------------- 積み上げ棒 */
 function tempoBars(rows, mode) {
+  const M = MODES[mode] || MODES.shoot;
   const isGK = mode === 'gk';
   const max = Math.max(1, ...rows.map(r => tempoShots(r.tempo)));
   const COLORS = BAND_COLORS;
@@ -119,9 +132,8 @@ function tempoBars(rows, mode) {
         style: {width: `${s / max * 100}%`, background: COLORS[i]},
         text: s >= 3 ? String(s) : ''});
       tip(seg, `<b>${playerName(r)}</b><br>${b.label}（${b.sub}）<br>`
-        + `${isGK ? '被シュート' : 'シュート'} ${s}本 / ${isGK ? 'セーブ' : '得点'} `
-        + `${isGK ? n(v.sv) : n(v.g)}（${pct(isGK ? v.sv : v.g, s)}）<br>`
-        + `構成比 ${pct(s, all)}`);
+        + `${M.unit} ${s} / ${M.made} ${isGK ? n(v.sv) : n(v.g)}`
+        + `（${pct(isGK ? v.sv : v.g, s)}）<br>構成比 ${pct(s, all)}`);
       bar.append(seg);
     });
     wrap.append(el('div', {class: 'tempo-row'},
@@ -147,6 +159,18 @@ export function tempoCard(players, opts = {}) {
     .map(p => ({...p, tempo: p.tempoGK}))
     .filter(p => hasTempo(p.tempo))
     .sort((a, b) => tempoShots(b.tempo) - tempoShots(a.tempo));
+  const passers = players
+    .map(p => ({...p, tempo: p.tempoAssist}))
+    .filter(p => hasTempo(p.tempo))
+    .sort((a, b) => tempoShots(b.tempo) - tempoShots(a.tempo));
+  const thieves = players
+    .map(p => ({...p, tempo: p.tempoSteal}))
+    .filter(p => hasTempo(p.tempo))
+    .sort((a, b) => tempoShots(b.tempo) - tempoShots(a.tempo));
+  const gkAssist = passers.filter(p => p.isGK)
+    .reduce((a, p) => a + tempoShots(p.tempo), 0);
+  const gkAssistFast = passers.filter(p => p.isGK)
+    .reduce((a, p) => a + n(p.tempo.fast?.s), 0);
 
   if (!shooters.length && !keepers.length) {
     return el('div', {class: 'card'},
@@ -177,6 +201,31 @@ export function tempoCard(players, opts = {}) {
       el('div', {class: 'tbl-scroll'}, tempoTable(keepers, 'gk')),
       el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: 'GK別 速さの内訳'}),
       tempoBars(keepers, 'gk'), tempoLegend());
+  }
+  if (passers.length) {
+    card.append(
+      el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: '出し手（アシスト）'}),
+      el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
+        text: 'アシストがどの速さの攻撃で出たかです。'
+          + 'アシストは公式の ASSISTS と本数が一致する ASS アクションを使い、'
+          + '同じチームの次のシュート（15秒以内）に結び付けています。'
+          + '相手にボールが渡った時点で打ち切るため、約7%は結び付かず「不明」として除いています。'}),
+      el('div', {class: 'tbl-scroll'}, tempoTable(passers, 'assist')),
+      el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: '出し手別 速さの内訳'}),
+      tempoBars(passers, 'assist'), tempoLegend());
+    if (gkAssist) {
+      card.append(el('div', {class: 'sub', style: {marginTop: '8px'},
+        text: `このうち GK のアシストが ${gkAssist} 本`
+          + (gkAssistFast ? `（うち速攻 ${gkAssistFast} 本）` : '')
+          + '。GKのアウトレットパスがそのまま攻撃になった数です。'}));
+    }
+  }
+  if (thieves.length) {
+    card.append(
+      el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'スティールから'}),
+      el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
+        text: 'ボールを奪った選手ごとに、その直後の自チームの攻撃がどれだけ速かったかです。'}),
+      el('div', {class: 'tbl-scroll'}, tempoTable(thieves, 'steal')));
   }
   card.append(el('div', {class: 'sub', style: {marginTop: '12px'},
     text: opts.note || '攻守が切り替わった直後の攻撃だけを数えています。'

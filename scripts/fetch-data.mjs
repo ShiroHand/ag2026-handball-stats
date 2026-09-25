@@ -424,6 +424,9 @@ function regMap(acts, teams) {
   return out;
 }
 
+/* ASS からシュートまでの許容秒数（これを超えたら紐づけない） */
+const ASSIST_MAX_GAP = 15;
+
 function buildPlay(rawActions, teams) {
   const acts = (rawActions || []).map(normAction).sort((x, y) => x.o - y.o);
   const byOrg = {};
@@ -448,7 +451,17 @@ function buildPlay(rawActions, teams) {
     const actor = a.c[0];
     const org = actor?.org;
 
-    if (a.ac === 'ASS' && org) { pendingAss[org] = {bib: actor.bib, name: actor.n, o: a.o}; continue; }
+    if (a.ac === 'ASS' && org) {
+      pendingAss[org] = {bib: actor.bib, name: actor.n, o: a.o, sec: absSec(a.p, a.t)};
+      continue;
+    }
+    /* 相手が攻撃を始めた＝ボールが渡った。持ち越しのアシストはそこで切る。
+       これが無いと、相手の攻撃をまたいだ何十秒も後のシュートに紐づいてしまう
+       （実測の最大は89秒後）。 */
+    if (a.ac === 'ATTACK' && org) {
+      for (const k of Object.keys(pendingAss)) if (k !== org) pendingAss[k] = null;
+      continue;
+    }
     if (a.ac === 'BLC' && org) { bumpDef(org, actor.bib, actor.n, 'blocks'); continue; }
     if (a.ac === 'ST' && org) { bumpDef(org, actor.bib, actor.n, 'steals'); continue; }
     if (a.ac === 'FRP' && org) { bumpDef(org, actor.bib, actor.n, 'sevenMConceded'); continue; }
@@ -459,12 +472,20 @@ function buildPlay(rawActions, teams) {
     const zone = ACT_ZONE[a.ac];
     if (!zone || !org || !byOrg[org]) continue;
 
-    /* アシストは ASS アクションのみを正とする（公式の ASSISTS 集計と本数が一致することを確認済み）。
-       ゴール側の ActionAssistant フィールドは重複・取りこぼしがあるため使わない。
-       ASS は同じチームの次のシュートに結び付ける。 */
+    /* アシストは ASS アクションのみを正とする（公式の ASSISTS 集計と本数が
+       14/14試合・選手別まで一致することを確認済み）。
+       ゴール側の ActionAssistant フィールドは取りこぼし・別人混入があるため使わない
+       （例: ASS は24番なのに同じ得点の ActionAssistant は9番）。
+
+       ASS は同じチームの次のシュートに結び付ける。ただし秒差が離れすぎているものは
+       別のプレーに紐づいた可能性が高いので捨てる。実測では中央値3秒・90%点6秒で、
+       15秒以内に収めると 278/299（93%）が残る。残り7%は「不明」として扱う。 */
     let asBib = '', asName = '';
     const pa = pendingAss[org];
-    if (pa) { asBib = pa.bib; asName = pa.name; }
+    if (pa) {
+      const gap = absSec(a.p, a.t) - pa.sec;
+      if (gap >= -2 && gap <= ASSIST_MAX_GAP) { asBib = pa.bib; asName = pa.name; }
+    }
     pendingAss[org] = null;
 
     const T = byOrg[org];
@@ -581,8 +602,49 @@ function tempoBand(isFast, gap) {
 const blankTempo = (gk) => Object.fromEntries(TEMPO_KEYS.map(k =>
   [k, gk ? {s: 0, sv: 0, g: 0} : {s: 0, g: 0}]));
 
+/* ASS / ST をあとに続くシュートに結び付ける。
+   buildPlay と同じルール（相手の攻撃開始・ターンオーバー・ピリオド終了で打ち切り、
+   ASS は秒差15秒以内のみ）。キーはアクションの通し番号 o。 */
+function linkPassers(acts) {
+  const ass = new Map(), steal = new Map();
+  const pendA = {}, pendS = {};
+  for (const a of acts) {
+    const org = a.c[0]?.org;
+    if (a.ac === 'ASS' && org) {
+      pendA[org] = {bib: S(a.c[0].bib), sec: absSec(a.p, a.t)}; continue;
+    }
+    if (a.ac === 'ST' && org) {
+      /* スティールした本人はボールを奪った側。次に攻めるのは自分のチーム */
+      pendS[org] = {bib: S(a.c[0].bib), sec: absSec(a.p, a.t)}; continue;
+    }
+    if (a.ac === 'ATTACK' && org) {
+      for (const k of Object.keys(pendA)) if (k !== org) pendA[k] = null;
+      for (const k of Object.keys(pendS)) if (k !== org) pendS[k] = null;
+      continue;
+    }
+    if ((a.ac === 'TO' || a.ac === 'TFT') && org) { pendA[org] = pendS[org] = null; continue; }
+    if (a.ac === 'ENDP') {
+      for (const k of Object.keys(pendA)) pendA[k] = null;
+      for (const k of Object.keys(pendS)) pendS[k] = null;
+      continue;
+    }
+    if (!ACT_ZONE[a.ac] || !org) continue;
+    const sec = absSec(a.p, a.t);
+    const pa = pendA[org];
+    if (pa) {
+      const gap = sec - pa.sec;
+      if (gap >= -2 && gap <= ASSIST_MAX_GAP) ass.set(a.o, pa.bib);
+      pendA[org] = null;
+    }
+    const ps = pendS[org];
+    if (ps) { steal.set(a.o, ps.bib); pendS[org] = null; }
+  }
+  return {ass, steal};
+}
+
 function buildTransitions(acts, orgs, teams) {
   const gkOf = teams ? gkRegMap(acts, teams) : {};
+  const link = linkPassers(acts);
 
   /* 1) 結末の列を作る（元のアクションコードも残す。速攻かどうかの判定に使う） */
   const chain = [];
@@ -597,14 +659,15 @@ function buildTransitions(acts, orgs, teams) {
     const t = a.r === 'GOAL' ? 'GOAL' : a.r === 'SAVE' ? 'SAVE'
             : (a.r === 'POST' || a.r === 'MISS' || a.r === 'BLC') ? 'POST' : '';
     if (t) chain.push({org, type: t, ac: a.ac, sec: absSec(a.p, a.t),
-      bib: S(a.c[0]?.bib), gk: S(a.gk)});
+      bib: S(a.c[0]?.bib), gk: S(a.gk),
+      as: link.ass.get(a.o) || '', st: link.steal.get(a.o) || ''});
   }
 
   /* 2) 持ち主が入れ替わったところを切り替えとして数える */
-  const out = {}, players = {}, gks = {};
+  const out = {}, players = {}, gks = {}, assists = {}, steals = {};
   orgs.forEach(o => {
     out[o] = {afterOwn: blankTrans(), afterOpp: blankTrans()};
-    players[o] = {}; gks[o] = {};
+    players[o] = {}; gks[o] = {}; assists[o] = {}; steals[o] = {};
   });
   const pt = (map, org, bib, isGK) => {
     if (!map[org] || !bib) return null;
@@ -656,8 +719,13 @@ function buildTransitions(acts, orgs, teams) {
         if (next.type === 'SAVE') rec[band].sv++;
       }
     }
+    /* 出し手（アシスト）と、そのポゼッションを作ったスティール */
+    const as = pt(assists, next.org, next.as, false);
+    if (as) { as[band].s++; as[band].g += scored; }
+    const st = pt(steals, next.org, next.st, false);
+    if (st) { st[band].s++; st[band].g += scored; }
   }
-  return {team: out, players, gks};
+  return {team: out, players, gks, assists, steals};
 }
 
 /* ---------------------------------------------------------------- 事前分布 */
@@ -843,8 +911,12 @@ function buildMatchFile(key, res, listed, rawActions) {
     for (const p of teams[org].players) {
       const a = trans.players[org]?.[p.bib];
       const g = trans.gks[org]?.[p.bib];
+      const as = trans.assists[org]?.[p.bib];
+      const st = trans.steals[org]?.[p.bib];
       if (a) p.tempo = a;
       if (g) p.tempoGK = g;
+      if (as) p.tempoAssist = as;
+      if (st) p.tempoSteal = st;
     }
   }
 
