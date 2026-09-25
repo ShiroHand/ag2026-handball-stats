@@ -61,7 +61,7 @@
    "name": "Japan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "KAZ",
@@ -89,7 +89,7 @@
    "name": "Qatar",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 2
+   "played": 3
   },
   {
    "code": "CHN",
@@ -961,8 +961,8 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 9",
    "unitNum": "29",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "BRN",
@@ -992,20 +992,20 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 14",
    "unitNum": "27",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "2",
+    "score": "24",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "2",
-    "winner": false
+    "score": "39",
+    "winner": true
    },
    "hasResult": true,
    "hasStats": true
@@ -1023,22 +1023,23 @@
    "phaseDesc": "Men Preliminary Round Group A",
    "unitDesc": "Men Preliminary Round Group A Match 6",
    "unitNum": "30",
-   "status": "START_LIST",
-   "statusDesc": "Start List",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "QAT",
     "name": "Qatar",
-    "score": "",
+    "score": "25",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "18",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001500",
@@ -1053,8 +1054,8 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 15",
    "unitNum": "28",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "START_LIST",
+   "statusDesc": "Start List",
    "isLive": false,
    "home": {
     "code": "KOR",
@@ -1598,14 +1599,14 @@
        "rank": "1",
        "org": "BRN",
        "name": "Bahrain",
-       "pts": "6",
-       "played": "3",
-       "won": "3",
+       "pts": "8",
+       "played": "4",
+       "won": "4",
        "lost": "0",
        "tied": "0",
-       "for": "107",
-       "against": "61",
-       "diff": "46",
+       "for": "135",
+       "against": "86",
+       "diff": "49",
        "qualified": ""
       },
       {
@@ -1613,13 +1614,13 @@
        "org": "KUW",
        "name": "Kuwait",
        "pts": "4",
-       "played": "3",
+       "played": "4",
        "won": "2",
-       "lost": "1",
+       "lost": "2",
        "tied": "0",
-       "for": "92",
-       "against": "69",
-       "diff": "23",
+       "for": "117",
+       "against": "97",
+       "diff": "20",
        "qualified": ""
       },
       {
@@ -1681,14 +1682,14 @@
        "rank": "1",
        "org": "JPN",
        "name": "Japan",
-       "pts": "8",
-       "played": "4",
-       "won": "4",
+       "pts": "10",
+       "played": "5",
+       "won": "5",
        "lost": "0",
        "tied": "0",
-       "for": "155",
-       "against": "69",
-       "diff": "86",
+       "for": "194",
+       "against": "93",
+       "diff": "101",
        "qualified": ""
       },
       {
@@ -1724,13 +1725,13 @@
        "org": "KAZ",
        "name": "Kazakhstan",
        "pts": "4",
-       "played": "4",
+       "played": "5",
        "won": "2",
-       "lost": "2",
+       "lost": "3",
        "tied": "0",
-       "for": "105",
-       "against": "128",
-       "diff": "-23",
+       "for": "129",
+       "against": "167",
+       "diff": "-38",
        "qualified": ""
       },
       {
@@ -1808,7 +1809,8 @@
   "W-FNL-001200",
   "W-FNL-001300",
   "M-GPB-000900",
-  "W-FNL-001400"
+  "W-FNL-001400",
+  "M-GPA-000600"
  ],
- "updatedAt": "2026-09-25T06:04:39.023Z"
+ "updatedAt": "2026-09-25T07:36:57.528Z"
 }

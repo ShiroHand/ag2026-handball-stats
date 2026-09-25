@@ -1,8 +1,8 @@
 {
  "id": "M-GPB-000900",
  "key": "M.TEAM7-------------.GPB-.000900--",
- "status": "UNOFFICIAL",
- "statusDesc": "Unofficial",
+ "status": "OFFICIAL",
+ "statusDesc": "Official",
  "dateTime": "2026-09-25T13:30:00+09:00",
  "date": "2026-09-25",
  "venue": "Kasugai City Gymnasium",
@@ -12588,5 +12588,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T06:04:38.777Z"
+ "updatedAt": "2026-09-25T07:36:56.681Z"
 }
