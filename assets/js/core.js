@@ -19,6 +19,9 @@ export async function loadJSON(path, {optional = false} = {}) {
   return p;
 }
 
+import {t, isEN, withLang, langToggle} from './i18n.js';
+export {t, isEN, withLang} from './i18n.js';
+
 export const q = (sel, root = document) => root.querySelector(sel);
 export const qa = (sel, root = document) => [...root.querySelectorAll(sel)];
 
@@ -27,15 +30,16 @@ export function el(tag, attrs = {}, ...kids) {
   for (const [k, v] of Object.entries(attrs || {})) {
     if (v === null || v === undefined || v === false) continue;
     if (k === 'class') n.className = v;
-    else if (k === 'html') n.innerHTML = v;
-    else if (k === 'text') n.textContent = v;
+    else if (k === 'html') n.innerHTML = t(v);
+    else if (k === 'text') n.textContent = t(v);
+    else if (k === 'href') n.setAttribute('href', withLang(v));
     else if (k.startsWith('on') && typeof v === 'function') n.addEventListener(k.slice(2), v);
     else if (k === 'style' && typeof v === 'object') Object.assign(n.style, v);
     else n.setAttribute(k, v);
   }
   for (const kid of kids.flat()) {
     if (kid === null || kid === undefined || kid === false) continue;
-    n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    n.append(kid.nodeType ? kid : document.createTextNode(t(String(kid))));
   }
   return n;
 }
@@ -108,7 +112,7 @@ export const SERIES = {
 let _tt;
 export function tip(target, html) {
   if (!_tt) { _tt = el('div', {class: 'tt'}); document.body.append(_tt); }
-  target.addEventListener('mouseenter', () => { _tt.innerHTML = html; _tt.classList.add('on'); });
+  target.addEventListener('mouseenter', () => { _tt.innerHTML = t(html); _tt.classList.add('on'); });
   target.addEventListener('mousemove', (e) => {
     _tt.style.left = Math.min(e.clientX + 14, innerWidth - 270) + 'px';
     _tt.style.top = (e.clientY + 18) + 'px';
@@ -117,8 +121,17 @@ export function tip(target, html) {
 }
 
 /* ---------- 共通ヘッダ ---------- */
+const PAGE_TITLE = {
+  index: 'Overview', match: 'Match report', team: 'Team (attack)',
+  defense: 'Defence', situations: 'Situations', analysis: 'Clusters & factors',
+};
+
 export function renderChrome(active, tournament) {
   const t = tournament || {};
+  if (isEN) {
+    document.documentElement.lang = 'en';
+    document.title = `${PAGE_TITLE[active] || 'Dashboard'} | Asian Games 2026 Handball Dashboard`;
+  }
   const bar = el('div', {class: 'topbar'},
     el('div', {class: 'topbar-in'},
       el('a', {class: 'brand', href: 'index.html'},
@@ -132,6 +145,7 @@ export function renderChrome(active, tournament) {
         el('a', {href: 'situations.html', class: active === 'situations' ? 'on' : '', text: '局面分析'}),
         el('a', {href: 'analysis.html', class: active === 'analysis' ? 'on' : '', text: 'クラスター・因子分析'})),
       el('div', {class: 'spacer'}),
+      langToggle(),
       el('div', {class: 'stamp'},
         el('div', {text: 'データ更新: ' + (t.updatedAt ? jpStamp(t.updatedAt) : '—')}),
         el('div', {text: '出典: 公式リザルト (results.asiangames2026.org)'}))));

@@ -8,7 +8,7 @@
    公式APIはブラウザから直接叩けない（CORS拒否）ため、取得そのものは
    GitHub Actions（GitHubのサーバー）に任せる。ここはその起動と待機を担う。
    ========================================================================== */
-import {el, q} from './core.js';
+import {el, q, t} from './core.js';
 
 const WORKFLOW = 'update-data.yml';
 const POLL_MS = 20000;         // 20秒ごとに確認
@@ -49,7 +49,7 @@ export function refreshBar(tournament) {
   const bar = el('div', {class: 'refresh-bar'});
   const status = el('span', {class: 'refresh-status'});
   const setStatus = (text, tone = '') => {
-    status.textContent = text;
+    status.textContent = t(text);
     status.className = 'refresh-status' + (tone ? ' ' + tone : '');
   };
   setStatus(tournament?.updatedAt
@@ -79,7 +79,7 @@ export function refreshBar(tournament) {
     polling = false;
     clearTimeout(timer);
     fetchBtn.disabled = false;
-    fetchBtn.textContent = '公式データを取り込む';
+    fetchBtn.textContent = t('公式データを取り込む');
     cancelBtn.style.display = 'none';
     if (msg) setStatus(msg, tone);
   };
@@ -107,7 +107,7 @@ export function refreshBar(tournament) {
     window.open(`https://github.com/${repo.owner}/${repo.repo}/actions/workflows/${WORKFLOW}`, '_blank', 'noopener');
     polling = true; tries = 0;
     fetchBtn.disabled = true;
-    fetchBtn.textContent = '取り込み中…';
+    fetchBtn.textContent = t('取り込み中…');
     cancelBtn.style.display = '';
     setStatus('別タブで「Run workflow」を押してください。完了したらこの画面が自動で更新されます。', 'busy');
     timer = setTimeout(poll, POLL_MS);

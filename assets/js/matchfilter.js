@@ -4,7 +4,7 @@
    選択は URL の m= に入れる（例 m=M-GPA-000100,M-GPA-000300）ので、
    絞り込んだ状態のままリンクを共有できる。空なら全試合。
    ========================================================================== */
-import {el, flagImg, jpDate, params, setParam} from './core.js';
+import {el, flagImg, jpDate, params, setParam, t} from './core.js';
 
 /* URL から選択中の試合IDを読む。指定が無ければ null（= 全試合）。 */
 export function selectedFromUrl() {
@@ -32,8 +32,8 @@ export function allMatchFilterCard(all, selected, onChange) {
   const sel = selected ? new Set(selected) : new Set(all.map(f => f.id));
   const countLabel = el('span', {class: 'mf-count'});
   const refresh = () => {
-    countLabel.textContent = sel.size === all.length
-      ? `全${all.length}試合` : `${sel.size} / ${all.length} 試合を分析中`;
+    countLabel.textContent = t(sel.size === all.length
+      ? `全${all.length}試合` : `${sel.size} / ${all.length} 試合を分析中`);
     countLabel.className = 'mf-count' + (sel.size === all.length ? '' : ' on');
   };
   const commit = () => {
@@ -117,9 +117,9 @@ export function matchFilterCard(all, selected, oppOf, onChange) {
   const chips = el('div', {class: 'mf-chips'});
   const countLabel = el('span', {class: 'mf-count'});
   const refreshCount = () => {
-    countLabel.textContent = sel.size === all.length
+    countLabel.textContent = t(sel.size === all.length
       ? `全${all.length}試合`
-      : `${sel.size} / ${all.length} 試合を集計中`;
+      : `${sel.size} / ${all.length} 試合を集計中`);
     countLabel.className = 'mf-count' + (sel.size === all.length ? '' : ' on');
   };
 

@@ -1,7 +1,7 @@
 /* ==========================================================================
    charts.js — 依存なしの SVG チャート群
    ========================================================================== */
-import {el, n, pct, effColor, effInk, tip, POSITIONS, SERIES} from './core.js';
+import {el, n, pct, effColor, effInk, tip, POSITIONS, SERIES, t} from './core.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 export function svg(tag, attrs = {}, ...kids) {
@@ -10,7 +10,7 @@ export function svg(tag, attrs = {}, ...kids) {
     if (v === null || v === undefined || v === false) continue;
     e.setAttribute(k, v);
   }
-  kids.flat().forEach(k => k && e.append(k.nodeType ? k : document.createTextNode(String(k))));
+  kids.flat().forEach(k => k && e.append(k.nodeType ? k : document.createTextNode(t(String(k)))));
   return e;
 }
 

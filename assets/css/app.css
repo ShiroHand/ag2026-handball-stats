@@ -307,3 +307,10 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .tempo-bar{display:flex;height:100%}
 .tempo-seg{display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;cursor:default}
 @media (max-width:640px){.tempo-row{grid-template-columns:96px 1fr}}
+
+/* ---------- 言語切り替え（i18n.js） ---------- */
+.langsw{display:flex;gap:0;border:1px solid rgba(255,255,255,.35);border-radius:6px;overflow:hidden;margin-right:12px;flex:0 0 auto}
+.langsw button{appearance:none;border:0;background:transparent;color:rgba(255,255,255,.75);font:inherit;font-size:11.5px;font-weight:600;padding:4px 9px;cursor:pointer;line-height:1.5;white-space:nowrap}
+.langsw button:hover{background:rgba(255,255,255,.12);color:#fff}
+.langsw button.on{background:#fff;color:var(--navy);cursor:default}
+@media (max-width:640px){.langsw{margin:6px 0 0}.langsw button{padding:3px 8px;font-size:11px}}

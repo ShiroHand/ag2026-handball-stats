@@ -1,5 +1,5 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
-        params, setParam, flagImg, photoImg, CAT} from './core.js';
+        params, setParam, flagImg, photoImg, CAT, withLang} from './core.js';
 import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
 
 const app = q('#app');
@@ -96,7 +96,7 @@ function render() {
           el('span', {class: 'k', text: `実施 ${t.played} 試合`}),
           el('span', {class: 'tag', text: '攻撃'}),
           el('span', {class: 'tag', style: {cursor: 'pointer'},
-            onclick: (e) => { e.preventDefault(); location.href = `defense.html?team=${t.code}&g=${t.gender}`; },
+            onclick: (e) => { e.preventDefault(); location.href = withLang(`defense.html?team=${t.code}&g=${t.gender}`); },
             text: '守備'})))))));
 }
 
