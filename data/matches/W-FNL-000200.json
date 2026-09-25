@@ -250,7 +250,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "37:10",
+     "time": "07:10",
      "stats": {
       "GK_6M_CENTER_GOALS": "1",
       "GK_6M_CENTER_GOALS_SHOTS": "1/1",
@@ -300,7 +300,7 @@
       "GK_WING_GOALS": "2",
       "GK_WING_SAVES_SHOTS": "0/2",
       "GK_WING_SHOTS": "2",
-      "TIME_PLAYED": "2230"
+      "TIME_PLAYED": "430"
      },
      "shot": {
       "LW": {
@@ -1253,7 +1253,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "73:24",
+     "time": "43:24",
      "stats": {
       "6M_CENTER_SAVES": "1",
       "6M_CENTER_SHOTS": "1",
@@ -1274,7 +1274,7 @@
       "FIELD_SHOTS": "4",
       "GOALS": "1",
       "SHOTS": "5",
-      "TIME_PLAYED": "4404"
+      "TIME_PLAYED": "2604"
      },
      "shot": {
       "LW": {
@@ -1504,7 +1504,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "56:57",
+     "time": "26:57",
      "stats": {
       "6M_CENTER_GOALS": "1",
       "6M_CENTER_SHOTS": "1",
@@ -1524,7 +1524,7 @@
       "FIELD_SHOTS": "5",
       "GOALS": "4",
       "SHOTS": "5",
-      "TIME_PLAYED": "3417"
+      "TIME_PLAYED": "1617"
      },
      "shot": {
       "LW": {
@@ -2004,7 +2004,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "57:52",
+     "time": "27:52",
      "stats": {
       "ASSISTS": "1",
       "BT_SAVES": "1",
@@ -2017,7 +2017,7 @@
       "FIELD_SHOTS": "2",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "3472"
+      "TIME_PLAYED": "1672"
      },
      "shot": {
       "LW": {
@@ -2835,7 +2835,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "80:26",
+     "time": "50:26",
      "stats": {
       "6M_CENTER_GOALS": "3",
       "6M_CENTER_POST": "1",
@@ -2866,7 +2866,7 @@
       "FIELD_SHOTS": "16",
       "GOALS": "9",
       "SHOTS": "16",
-      "TIME_PLAYED": "4826"
+      "TIME_PLAYED": "3026"
      },
      "shot": {
       "LW": {
@@ -3096,7 +3096,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "67:45",
+     "time": "37:45",
      "stats": {
       "6M_RIGHT_WING_GOALS": "1",
       "6M_RIGHT_WING_SHOTS": "1",
@@ -3106,7 +3106,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "4065",
+      "TIME_PLAYED": "2265",
       "WING_GOALS": "1",
       "WING_SHOTS": "1"
      },
@@ -3338,7 +3338,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "38:31",
+     "time": "08:31",
      "stats": {
       "6M_CENTER_POST": "1",
       "6M_CENTER_SHOTS": "1",
@@ -3347,7 +3347,7 @@
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "2311"
+      "TIME_PLAYED": "511"
      },
      "shot": {
       "LW": {
@@ -4461,7 +4461,7 @@
      "score": "12-15"
     },
     {
-     "min": "15:00",
+     "min": "29:39",
      "period": "1",
      "bib": "7",
      "name": "ZHAPAROVA A",
@@ -4482,7 +4482,7 @@
      "result": "SAVE",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "12-16"
+     "score": "12-17"
     },
     {
      "min": "2:24",
@@ -4725,7 +4725,7 @@
      "score": "24-31"
     },
     {
-     "min": "30:00",
+     "min": "29:30",
      "period": "2",
      "bib": "9",
      "name": "KHARDINA V",
@@ -4889,8 +4889,8 @@
      "bucket": "15-20",
      "attacks": 5,
      "goals": 2,
-     "shots": 4,
-     "missed": 2,
+     "shots": 3,
+     "missed": 1,
      "saves": 1,
      "turnovers": 1,
      "twoMin": 0,
@@ -4915,8 +4915,8 @@
      "bucket": "25-30",
      "attacks": 6,
      "goals": 1,
-     "shots": 5,
-     "missed": 4,
+     "shots": 6,
+     "missed": 5,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
@@ -4991,41 +4991,15 @@
     },
     {
      "bucket": "55-60",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 1,
-     "shots": 2,
-     "missed": 1,
+     "shots": 3,
+     "missed": 2,
      "saves": 0,
      "turnovers": 0,
      "twoMin": 0,
      "assists": 0,
      "offReb": 1,
-     "defReb": 0
-    },
-    {
-     "bucket": "60-65",
-     "attacks": 0,
-     "goals": 0,
-     "shots": 1,
-     "missed": 1,
-     "saves": 0,
-     "turnovers": 0,
-     "twoMin": 0,
-     "assists": 0,
-     "offReb": 0,
-     "defReb": 0
-    },
-    {
-     "bucket": "NaN-NaN",
-     "attacks": 1,
-     "goals": 0,
-     "shots": 0,
-     "missed": 0,
-     "saves": 0,
-     "turnovers": 0,
-     "twoMin": 0,
-     "assists": 0,
-     "offReb": 0,
      "defReb": 0
     }
    ],
@@ -5298,16 +5272,6 @@
      "gz": "BL"
     },
     {
-     "sec": 900,
-     "p": "1",
-     "t": "15:00",
-     "bib": "7",
-     "type": "X",
-     "zone": "C9",
-     "result": "SAVE",
-     "gz": "BR"
-    },
-    {
      "sec": 904,
      "p": "1",
      "t": "15:04",
@@ -5571,6 +5535,25 @@
      "gz": "BL"
     },
     {
+     "sec": 1779,
+     "p": "1",
+     "t": "29:39",
+     "bib": "7",
+     "type": "X",
+     "zone": "C9",
+     "result": "SAVE",
+     "gz": "BR"
+    },
+    {
+     "sec": 1780,
+     "p": "1",
+     "t": "29:40",
+     "bib": "12",
+     "type": "GR",
+     "zone": "P7",
+     "gz": "TR"
+    },
+    {
      "sec": 1840,
      "p": "2",
      "t": "0:40",
@@ -5586,15 +5569,6 @@
      "t": "1:22",
      "bib": "14",
      "type": "7C"
-    },
-    {
-     "sec": 1894,
-     "p": "2",
-     "t": "1:34",
-     "bib": "12",
-     "type": "GR",
-     "zone": "P7",
-     "gz": "TR"
     },
     {
      "sec": 1944,
@@ -6042,9 +6016,9 @@
      "gz": "BL"
     },
     {
-     "sec": 3600,
+     "sec": 3570,
      "p": "2",
-     "t": "30:00",
+     "t": "29:30",
      "bib": "9",
      "type": "X",
      "zone": "R6",
@@ -6052,9 +6026,9 @@
      "gz": ""
     },
     {
-     "sec": null,
+     "sec": 3580,
      "p": "2",
-     "t": "",
+     "t": "29:40",
      "bib": "1",
      "type": "GR",
      "zone": "LW",
@@ -6521,14 +6495,14 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "51:47",
+     "time": "21:47",
      "stats": {
       "6M_LEFT_WING_SAVES": "1",
       "6M_LEFT_WING_SHOTS": "1",
       "FIELD_GOALS_PERCENT": "0",
       "FIELD_SHOTS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "3107",
+      "TIME_PLAYED": "1307",
       "WING_SAVES": "1",
       "WING_SHOTS": "1"
      },
@@ -6760,7 +6734,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "46:59",
+     "time": "16:59",
      "stats": {
       "6M_LEFT_SAVES": "1",
       "6M_LEFT_SHOTS": "1",
@@ -6777,7 +6751,7 @@
       "FIELD_SHOTS": "2",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "2819"
+      "TIME_PLAYED": "1019"
      },
      "shot": {
       "LW": {
@@ -7485,7 +7459,7 @@
      "func": "AA01",
      "captain": true,
      "isGK": false,
-     "time": "64:14",
+     "time": "34:14",
      "stats": {
       "6M_GOALS": "2",
       "6M_RIGHT_GOALS": "2",
@@ -7509,7 +7483,7 @@
       "FIELD_SHOTS": "14",
       "GOALS": "9",
       "SHOTS": "14",
-      "TIME_PLAYED": "3854"
+      "TIME_PLAYED": "2054"
      },
      "shot": {
       "LW": {
@@ -7739,7 +7713,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "38:59",
+     "time": "08:59",
      "stats": {
       "BT_GOALS": "1",
       "BT_SHOTS": "1",
@@ -7749,7 +7723,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "2339"
+      "TIME_PLAYED": "539"
      },
      "shot": {
       "LW": {
@@ -7979,7 +7953,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "65:02",
+     "time": "35:02",
      "stats": {
       "ASSISTS": "1",
       "EFFICIENCY": "100",
@@ -7990,7 +7964,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "3902"
+      "TIME_PLAYED": "2102"
      },
      "shot": {
       "LW": {
@@ -8220,7 +8194,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "51:14",
+     "time": "21:14",
      "stats": {
       "GK_6M_CENTER_GOALS": "2",
       "GK_6M_CENTER_GOALS_SHOTS": "2/6",
@@ -8299,7 +8273,7 @@
       "GK_WING_SAVES": "1",
       "GK_WING_SAVES_SHOTS": "1/2",
       "GK_WING_SHOTS": "2",
-      "TIME_PLAYED": "3074"
+      "TIME_PLAYED": "1274"
      },
      "shot": {
       "LW": {
@@ -8529,7 +8503,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "67:23",
+     "time": "37:23",
      "stats": {
       "6M_CENTER_SAVES": "1",
       "6M_CENTER_SHOTS": "1",
@@ -8548,7 +8522,7 @@
       "FIELD_SHOTS": "5",
       "GOALS": "3",
       "SHOTS": "5",
-      "TIME_PLAYED": "4043"
+      "TIME_PLAYED": "2243"
      },
      "shot": {
       "LW": {
@@ -8778,7 +8752,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "47:58",
+     "time": "17:58",
      "stats": {
       "6M_RIGHT_WING_SAVES": "1",
       "6M_RIGHT_WING_SHOTS": "1",
@@ -8789,7 +8763,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "2878",
+      "TIME_PLAYED": "1078",
       "WING_SAVES": "1",
       "WING_SHOTS": "1"
      },
@@ -10709,8 +10683,8 @@
      "score": "12-16"
     },
     {
-     "min": "1:34",
-     "period": "2",
+     "min": "29:40",
+     "period": "1",
      "bib": "28",
      "name": "LIU X",
      "role": "CB",
@@ -10985,7 +10959,7 @@
      "score": "24-33"
     },
     {
-     "min": "",
+     "min": "29:40",
      "period": "2",
      "bib": "28",
      "name": "LIU X",
@@ -11178,12 +11152,12 @@
      "goals": 2,
      "shots": 3,
      "missed": 1,
-     "saves": 1,
+     "saves": 0,
      "turnovers": 1,
      "twoMin": 0,
      "assists": 1,
      "offReb": 0,
-     "defReb": 2
+     "defReb": 1
     },
     {
      "bucket": "20-25",
@@ -11201,21 +11175,21 @@
     {
      "bucket": "25-30",
      "attacks": 5,
-     "goals": 6,
-     "shots": 6,
+     "goals": 7,
+     "shots": 7,
      "missed": 0,
-     "saves": 4,
+     "saves": 5,
      "turnovers": 0,
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 4
+     "defReb": 5
     },
     {
      "bucket": "30-35",
      "attacks": 5,
-     "goals": 2,
-     "shots": 3,
+     "goals": 1,
+     "shots": 2,
      "missed": 1,
      "saves": 1,
      "turnovers": 1,
@@ -11279,26 +11253,13 @@
     {
      "bucket": "55-60",
      "attacks": 3,
-     "goals": 3,
-     "shots": 3,
+     "goals": 4,
+     "shots": 4,
      "missed": 0,
      "saves": 1,
      "turnovers": 0,
      "twoMin": 0,
      "assists": 1,
-     "offReb": 0,
-     "defReb": 0
-    },
-    {
-     "bucket": "NaN-NaN",
-     "attacks": 0,
-     "goals": 1,
-     "shots": 1,
-     "missed": 0,
-     "saves": 0,
-     "turnovers": 0,
-     "twoMin": 0,
-     "assists": 0,
      "offReb": 0,
      "defReb": 0
     }
@@ -11567,15 +11528,6 @@
      "type": "GR",
      "zone": "C9",
      "gz": "BL"
-    },
-    {
-     "sec": 900,
-     "p": "1",
-     "t": "15:00",
-     "bib": "16",
-     "type": "GS",
-     "zone": "C9",
-     "gz": "BR"
     },
     {
      "sec": 904,
@@ -11847,9 +11799,18 @@
      "gz": "BL"
     },
     {
-     "sec": 1894,
-     "p": "2",
-     "t": "1:34",
+     "sec": 1779,
+     "p": "1",
+     "t": "29:39",
+     "bib": "16",
+     "type": "GS",
+     "zone": "C9",
+     "gz": "BR"
+    },
+    {
+     "sec": 1780,
+     "p": "1",
+     "t": "29:40",
      "bib": "28",
      "type": "7G",
      "zone": "P7",
@@ -12244,9 +12205,9 @@
      "gz": "BL"
     },
     {
-     "sec": null,
+     "sec": 3580,
      "p": "2",
-     "t": "",
+     "t": "29:40",
      "bib": "28",
      "type": "G",
      "zone": "LW",
@@ -12256,5 +12217,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-23T08:16:10.127Z"
+ "updatedAt": "2026-09-25T06:04:29.947Z"
 }

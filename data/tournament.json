@@ -33,7 +33,7 @@
    "name": "Bahrain",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "CHN",
@@ -82,7 +82,7 @@
    "name": "Kuwait",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "QAT",
@@ -110,14 +110,14 @@
    "name": "Japan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "KAZ",
    "name": "Kazakhstan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "KOR",
@@ -131,14 +131,14 @@
    "name": "Uzbekistan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "VIE",
    "name": "Vietnam",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 3
+   "played": 4
   }
  ],
  "matches": [
@@ -930,22 +930,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 13",
    "unitNum": "26",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "",
+    "score": "21",
     "winner": false
    },
    "away": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "",
-    "winner": false
+    "score": "29",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-GPB-000900",
@@ -960,22 +961,23 @@
    "phaseDesc": "Men Preliminary Round Group B",
    "unitDesc": "Men Preliminary Round Group B Match 9",
    "unitNum": "29",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "UNOFFICIAL",
+   "statusDesc": "Unofficial",
    "isLive": false,
    "home": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "",
-    "winner": false
+    "score": "28",
+    "winner": true
    },
    "away": {
     "code": "KUW",
     "name": "Kuwait",
-    "score": "",
+    "score": "25",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001400",
@@ -990,22 +992,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 14",
    "unitNum": "27",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "2",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "2",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-GPA-000600",
@@ -1020,8 +1023,8 @@
    "phaseDesc": "Men Preliminary Round Group A",
    "unitDesc": "Men Preliminary Round Group A Match 6",
    "unitNum": "30",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "START_LIST",
+   "statusDesc": "Start List",
    "isLive": false,
    "home": {
     "code": "QAT",
@@ -1746,30 +1749,30 @@
       },
       {
        "rank": "6",
-       "org": "VIE",
-       "name": "Vietnam",
-       "pts": "0",
-       "played": "3",
-       "won": "0",
+       "org": "UZB",
+       "name": "Uzbekistan",
+       "pts": "2",
+       "played": "4",
+       "won": "1",
        "lost": "3",
        "tied": "0",
-       "for": "62",
-       "against": "95",
-       "diff": "-33",
+       "for": "68",
+       "against": "144",
+       "diff": "-76",
        "qualified": ""
       },
       {
        "rank": "7",
-       "org": "UZB",
-       "name": "Uzbekistan",
+       "org": "VIE",
+       "name": "Vietnam",
        "pts": "0",
-       "played": "3",
+       "played": "4",
        "won": "0",
-       "lost": "3",
+       "lost": "4",
        "tied": "0",
-       "for": "39",
-       "against": "123",
-       "diff": "-84",
+       "for": "83",
+       "against": "124",
+       "diff": "-41",
        "qualified": ""
       }
      ]
@@ -1802,7 +1805,10 @@
   "M-GPA-000500",
   "W-FNL-001100",
   "M-GPB-000800",
-  "W-FNL-001200"
+  "W-FNL-001200",
+  "W-FNL-001300",
+  "M-GPB-000900",
+  "W-FNL-001400"
  ],
- "updatedAt": "2026-09-23T11:17:40.913Z"
+ "updatedAt": "2026-09-25T06:04:39.023Z"
 }
