@@ -153,7 +153,8 @@ function render() {
       text: `1試合あたり: 攻撃 ${(own.attacks / list.length).toFixed(1)} 回 / 得点 ${(own.goals / list.length).toFixed(1)} / シュート ${(own.shots / list.length).toFixed(1)} / ターンオーバー ${(own.turnovers / list.length).toFixed(1)}`})));
 
   app.append(transitionCard(mergeTransitions(list, code),
-    {title: `攻守の切り替え — ${list.length}試合の累計`}));
+    {title: `攻守の切り替え — ${list.length}試合の累計`,
+      attacks: own.attacks, defAttacks: foe.attacks}));
 
   /* 累積シュート */
   app.append(el('div', {class: 'card'},

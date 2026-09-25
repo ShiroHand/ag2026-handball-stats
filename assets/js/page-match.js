@@ -61,10 +61,15 @@ function render() {
     subtitle: 'この試合でどの選手・どのポジションから得点が生まれたか',
     emptyNote: 'この試合はアシストの記録がありません。',
   })));
-  [H, A].forEach(t => app.append(transitionCard(t.transitions || {}, {
-    title: `${t.name} — 攻守の切り替え`,
-    note: '1試合だけなので各状況は数回しかありません。傾向はチーム分析ページの累計で見てください。',
-  })));
+  [H, A].forEach(t => {
+    const opp = t === H ? A : H;
+    app.append(transitionCard(t.transitions || {}, {
+      title: `${t.name} — 攻守の切り替え`,
+      note: '1試合だけなので各状況は数回しかありません。傾向はチーム分析ページの累計で見てください。',
+      attacks: n(t.possessions?.attacks),
+      defAttacks: n(opp.possessions?.attacks),
+    }));
+  });
   [H, A].forEach(t => app.append(eventCard(t)));
   [H, A].forEach(t => app.append(playersCard(t)));
   if (MAN) app.append(manualCard());

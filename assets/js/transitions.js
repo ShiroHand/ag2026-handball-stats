@@ -68,14 +68,18 @@ const totalOf = (side) => TRANS_KEYS.reduce((a, k) => ({
 }), {n: 0, goals: 0});
 
 /* 1つの向きの表 */
-function tableFor(side, which) {
+function tableFor(side, which, denom) {
   const labels = TRANS_LABEL[which === 'afterOwn' ? 'own' : 'opp'];
   const outcome = which === 'afterOwn' ? '失点' : '得点';
+  /* 50回あたりの分母は KPI と揃える。
+     得点はそのチームの総攻撃回数、失点は総守備回数（＝相手の総攻撃回数）。 */
+  const perHead = which === 'afterOwn' ? '守備50回あたり失点' : '攻撃50回あたり得点';
   const tot = totalOf(side);
   const table = el('table', {});
-  table.append(el('thead', {}, el('tr', {},
-    ['直前の攻撃の終わり方', '回数', outcome, `${outcome}率`, '全体に占める割合']
-      .map(h => el('th', {text: h})))));
+  const head = ['直前の攻撃の終わり方', '回数', outcome, `${outcome}率`];
+  if (denom > 0) head.push(perHead);
+  head.push('全体に占める割合');
+  table.append(el('thead', {}, el('tr', {}, head.map(h => el('th', {text: h})))));
   const tb = el('tbody', {});
   TRANS_KEYS.forEach(k => {
     const v = side?.[k] || {n: 0, goals: 0};
@@ -93,6 +97,7 @@ function tableFor(side, which) {
       el('td', {class: 'num', style: {fontWeight: 700}, text: v.goals || (v.n ? 0 : '–')}),
       el('td', {class: 'num', style: rate === null ? null
         : {color: goodColor(good), fontWeight: 700}, text: rate === null ? '–' : Math.round(rate) + '%'}),
+      denom > 0 ? el('td', {class: 'num', text: (v.goals / denom * 50).toFixed(2)}) : null,
       el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
         bar, el('span', {class: 'num', style: {fontSize: '11.5px', minWidth: '36px'},
           text: tot.n > 0 ? pct(v.n, tot.n) : '–'})))));
@@ -102,6 +107,8 @@ function tableFor(side, which) {
     el('td', {class: 'num', text: tot.n}),
     el('td', {class: 'num', text: tot.goals}),
     el('td', {class: 'num', text: tot.n ? pct(tot.goals, tot.n) : '–'}),
+    denom > 0 ? el('td', {class: 'num', style: {fontWeight: 700},
+      text: (tot.goals / denom * 50).toFixed(2)}) : null,
     el('td', {class: 'num', text: '100%'})));
   table.append(tb);
   return el('div', {class: 'tbl-scroll'}, table);
@@ -140,7 +147,8 @@ function rateBars(side, which) {
 }
 
 /* ---------- カード本体 ---------- */
-export function transitionCard(tr, {title = '攻守の切り替え', note = ''} = {}) {
+export function transitionCard(tr, {title = '攻守の切り替え', note = '',
+  attacks = 0, defAttacks = 0} = {}) {
   const own = totalOf(tr.afterOwn), opp = totalOf(tr.afterOpp);
   if (!own.n && !opp.n) {
     return el('div', {class: 'card'}, el('h2', {text: title}),
@@ -182,11 +190,17 @@ export function transitionCard(tr, {title = '攻守の切り替え', note = ''} 
       el('div', {},
         el('div', {class: 'sec-title', text: '守備 — 自分の攻撃の終わり方別の失点'}),
         rateBars(tr.afterOwn, 'afterOwn'),
-        el('div', {style: {marginTop: '10px'}}, tableFor(tr.afterOwn, 'afterOwn'))),
+        el('div', {style: {marginTop: '10px'}}, tableFor(tr.afterOwn, 'afterOwn', defAttacks))),
       el('div', {},
         el('div', {class: 'sec-title', text: '攻撃 — 相手の攻撃の終わり方別の得点'}),
         rateBars(tr.afterOpp, 'afterOpp'),
-        el('div', {style: {marginTop: '10px'}}, tableFor(tr.afterOpp, 'afterOpp')))),
+        el('div', {style: {marginTop: '10px'}}, tableFor(tr.afterOpp, 'afterOpp', attacks)))),
     el('div', {class: 'sub', style: {marginTop: '10px'},
-      text: `回数が少ない状況（10回未満）の割合は大きく振れます。回数の列を必ず併せて見てください。`}));
+      text: '回数が少ない状況（10回未満）の割合は大きく振れます。回数の列を必ず併せて見てください。'
+        + (attacks > 0 || defAttacks > 0
+          ? `　「50回あたり」の分母はチームの総攻撃回数${attacks ? '（' + attacks + '回）' : ''}`
+            + `／総守備回数${defAttacks ? '（' + defAttacks + '回）' : ''}で、KPIと同じです。`
+            + '切り替えで捉えられない攻撃（ハーフ最初の攻撃など）があるため、'
+            + '合計はKPIの「50回あたり」より少し小さくなります。'
+          : '')}));
 }

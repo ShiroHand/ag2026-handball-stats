@@ -173,7 +173,8 @@ function render() {
       text: `1試合あたり: 被攻撃 ${(opp.attacks / D.list.length).toFixed(1)} 回 / 失点 ${(opp.goals / D.list.length).toFixed(1)} / 被シュート ${(opp.shots / D.list.length).toFixed(1)} / 相手のTO ${(opp.turnovers / D.list.length).toFixed(1)}`})));
 
   app.append(transitionCard(mergeTransitions(D.list, code),
-    {title: `攻守の切り替え — ${D.list.length}試合の累計`}));
+    {title: `攻守の切り替え — ${D.list.length}試合の累計`,
+      attacks: mine.attacks, defAttacks: opp.attacks}));
 
   /* --- 被シュートマップ --- */
   app.append(el('div', {class: 'card'},

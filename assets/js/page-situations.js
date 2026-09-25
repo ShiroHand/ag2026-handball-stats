@@ -151,7 +151,8 @@ function render() {
 
   /* ---- 試合別 ---- */
   app.append(transitionCard(mergeTransitions(A.list, code),
-    {title: `攻守の切り替え — ${A.list.length}試合の累計`}));
+    {title: `攻守の切り替え — ${A.list.length}試合の累計`,
+      attacks: n(A.poss.attacks), defAttacks: n(A.possOpp.attacks)}));
   app.append(perMatchCard(A));
 
   /* ---- 大会内ランキング ---- */

@@ -171,16 +171,19 @@ function transitionRankCard(g) {
         flagImg(r.code, 'flag sm'),
         el('a', {href: `team.html?team=${r.code}&g=${g}`, text: r.name}))),
       el('td', {class: 'num', text: r.games}));
-    TRANS_KEYS.forEach(k => {
-      const v = r.own[k];
-      tr.append(el('td', {class: 'num', title: `${v.goals}/${v.n}`,
-        text: v.n ? Math.round(v.goals / v.n * 100) + '%' : '–'}));
-    });
-    TRANS_KEYS.forEach(k => {
-      const v = r.opp[k];
-      tr.append(el('td', {class: 'num', title: `${v.goals}/${v.n}`,
-        text: v.n ? Math.round(v.goals / v.n * 100) + '%' : '–'}));
-    });
+    /* 率と「50回あたり」を1セルに重ねて出す（列を増やすと横に長くなりすぎるため） */
+    const cell = (v, denom) => {
+      const td = el('td', {class: 'num', title: `${v.goals} / ${v.n}`});
+      if (!v.n) { td.textContent = '–'; return td; }
+      td.append(el('div', {style: {fontWeight: 700}, text: Math.round(v.goals / v.n * 100) + '%'}));
+      if (denom > 0) {
+        td.append(el('div', {style: {fontSize: '10px', color: 'var(--ink-3)'},
+          text: (v.goals / denom * 50).toFixed(2)}));
+      }
+      return td;
+    };
+    TRANS_KEYS.forEach(k => tr.append(cell(r.own[k], r.defAttacks)));
+    TRANS_KEYS.forEach(k => tr.append(cell(r.opp[k], r.attacks)));
     tb.append(tr);
   });
   table.append(tb);
@@ -189,7 +192,8 @@ function transitionRankCard(g) {
     el('div', {class: 'sub',
       text: '左半分は「自分の攻撃がこう終わった直後に失点した割合」（低いほど良い）、'
         + '右半分は「相手の攻撃がこう終わった直後に得点した割合」（高いほど良い）。'
-        + 'セルにカーソルを合わせると実数が出ます。回数が少ない状況は大きく振れます。'}),
+        + '各セルの上段が率、下段が50回あたりの得点／失点（分母は総攻撃回数・総守備回数）。'
+        + 'カーソルを合わせると実数が出ます。回数が少ない状況は大きく振れます。'}),
     el('div', {class: 'tbl-scroll'}, table));
 }
 
@@ -302,8 +306,15 @@ async function buildRanking(g) {
     const anyN = TRANS_KEYS.reduce((a, k) => a + tr.afterOwn[k].n + tr.afterOpp[k].n, 0);
     if (!anyN) return;
     const t0 = mine[0].teams[code];
+    /* 50回あたりの分母（総攻撃回数・総守備回数） */
+    let atk = 0, def = 0;
+    mine.forEach(f => {
+      const opCode = f.home === code ? f.away : f.home;
+      atk += n(f.teams[code]?.possessions?.attacks);
+      def += n(f.teams[opCode]?.possessions?.attacks);
+    });
     trRows.push({code, name: t0.nameS || t0.name || code, games: mine.length,
-      own: tr.afterOwn, opp: tr.afterOpp});
+      own: tr.afterOwn, opp: tr.afterOpp, attacks: atk, defAttacks: def});
   });
   trRows.sort((a, b) => a.code.localeCompare(b.code));
 
