@@ -1,5 +1,6 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
         params, setParam, flagImg, photoImg, CAT} from './core.js';
+import {mergeTransitions, TRANS_KEYS, TRANS_SHORT} from './transitions.js';
 
 const app = q('#app');
 let T = null;
@@ -67,6 +68,8 @@ function render() {
   }
   const effCard = efficiencyCard(gender);
   if (effCard) app.append(effCard);
+  const trCard = transitionRankCard(gender);
+  if (trCard) app.append(trCard);
 
   /* ---- 日程・結果 ---- */
   const card = el('div', {class: 'card'}, el('h2', {text: '日程・結果'}));
@@ -151,6 +154,44 @@ function matchRow(m) {
 /* ---- 選手ランキング（各試合ファイルを集計） ---- */
 const RANK = {};       // gender -> {scorers, savers}
 let _details = null;
+
+/* 攻守の切り替えの大会内ランキング */
+function transitionRankCard(g) {
+  const rows = RANK[g]?.trans || [];
+  if (!rows.length) return null;
+  const table = el('table', {});
+  const head = ['チーム', '試合'];
+  TRANS_KEYS.forEach(k => head.push(`${TRANS_SHORT[k]}直後の失点率`));
+  TRANS_KEYS.forEach(k => head.push(`相手${TRANS_SHORT[k]}直後の得点率`));
+  table.append(el('thead', {}, el('tr', {}, head.map(h => el('th', {text: h})))));
+  const tb = el('tbody', {});
+  rows.forEach(r => {
+    const tr = el('tr', {},
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        flagImg(r.code, 'flag sm'),
+        el('a', {href: `team.html?team=${r.code}&g=${g}`, text: r.name}))),
+      el('td', {class: 'num', text: r.games}));
+    TRANS_KEYS.forEach(k => {
+      const v = r.own[k];
+      tr.append(el('td', {class: 'num', title: `${v.goals}/${v.n}`,
+        text: v.n ? Math.round(v.goals / v.n * 100) + '%' : '–'}));
+    });
+    TRANS_KEYS.forEach(k => {
+      const v = r.opp[k];
+      tr.append(el('td', {class: 'num', title: `${v.goals}/${v.n}`,
+        text: v.n ? Math.round(v.goals / v.n * 100) + '%' : '–'}));
+    });
+    tb.append(tr);
+  });
+  table.append(tb);
+  return el('div', {class: 'card'},
+    el('h2', {text: '攻守の切り替え（大会内比較）'}),
+    el('div', {class: 'sub',
+      text: '左半分は「自分の攻撃がこう終わった直後に失点した割合」（低いほど良い）、'
+        + '右半分は「相手の攻撃がこう終わった直後に得点した割合」（高いほど良い）。'
+        + 'セルにカーソルを合わせると実数が出ます。回数が少ない状況は大きく振れます。'}),
+    el('div', {class: 'tbl-scroll'}, table));
+}
 
 /* 顔写真つきランキング */
 function leaderList(rows, color) {
@@ -250,5 +291,21 @@ async function buildRanking(g) {
     return {...t, scored, conceded, margin: scored - conceded};
   }).sort((a, b) => b.margin - a.margin);
 
-  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams};
+  /* 攻守の切り替え */
+  const trRows = [];
+  const codes = new Set();
+  files.filter(f => f.gender === g).forEach(f => { codes.add(f.home); codes.add(f.away); });
+  codes.forEach(code => {
+    const mine = files.filter(f => f.gender === g && f.teams[code]);
+    if (!mine.length) return;
+    const tr = mergeTransitions(mine, code);
+    const anyN = TRANS_KEYS.reduce((a, k) => a + tr.afterOwn[k].n + tr.afterOpp[k].n, 0);
+    if (!anyN) return;
+    const t0 = mine[0].teams[code];
+    trRows.push({code, name: t0.nameS || t0.name || code, games: mine.length,
+      own: tr.afterOwn, opp: tr.afterOpp});
+  });
+  trRows.sort((a, b) => a.code.localeCompare(b.code));
+
+  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams, trans: trRows};
 }

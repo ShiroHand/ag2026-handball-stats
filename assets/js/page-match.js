@@ -4,6 +4,7 @@ import {donut, legend, compareRow, courtMap, goalMap, stackedBars, rampLegend, l
 import {connectionSection, mergeConnections} from './connections.js';
 import {eventGridSection, symbolLegend} from './eventgrid.js';
 import {countsFromTeam, kpiBlock, KPI_NOTE} from './kpi.js';
+import {transitionCard} from './transitions.js';
 
 const app = q('#app');
 let T = null, M = null, MAN = null, REP = null;
@@ -59,6 +60,10 @@ function render() {
     title: `${t.name} — アシスト連携`,
     subtitle: 'この試合でどの選手・どのポジションから得点が生まれたか',
     emptyNote: 'この試合はアシストの記録がありません。',
+  })));
+  [H, A].forEach(t => app.append(transitionCard(t.transitions || {}, {
+    title: `${t.name} — 攻守の切り替え`,
+    note: '1試合だけなので各状況は数回しかありません。傾向はチーム分析ページの累計で見てください。',
   })));
   [H, A].forEach(t => app.append(eventCard(t)));
   [H, A].forEach(t => app.append(playersCard(t)));

@@ -2,6 +2,7 @@ import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, set
         params, setParam, flagImg, CAT, sectionNav} from './core.js';
 import {hbars, legend, lineChart} from './charts.js';
 import {per50, showPer50} from './kpi.js';
+import {mergeTransitions, transitionCard} from './transitions.js';
 
 const app = q('#app');
 
@@ -149,6 +150,8 @@ function render() {
   app.append(emptyGoalCard(A));
 
   /* ---- 試合別 ---- */
+  app.append(transitionCard(mergeTransitions(A.list, code),
+    {title: `攻守の切り替え — ${A.list.length}試合の累計`}));
   app.append(perMatchCard(A));
 
   /* ---- 大会内ランキング ---- */

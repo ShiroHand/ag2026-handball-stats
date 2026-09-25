@@ -13,7 +13,8 @@
   var FILES = [
     'assets/js/core.js', 'assets/js/charts.js', 'assets/js/connections.js',
     'assets/js/eventgrid.js', 'assets/js/refresh.js', 'assets/js/kpi.js',
-    'assets/js/stats.js', 'assets/js/matchfilter.js', 'assets/css/app.css',
+    'assets/js/stats.js', 'assets/js/matchfilter.js', 'assets/js/transitions.js',
+    'assets/css/app.css',
   ];
 
   function message(text) {
@@ -57,6 +58,30 @@
       var app = document.getElementById('app');
       if (app && app.children.length === 0) recover();
     }, 4000);
+  });
+
+  /* ---- 古いキャッシュの自動検知 ----
+     サイトを更新しても、ブラウザが保持している JS が期限内だとそのまま使われ、
+     エラーも出ないまま「更新が反映されない」状態になる（新しいメニューが出ないなど）。
+
+     同じファイルを「キャッシュを無視して」と「キャッシュ優先で」の2通りで取得し、
+     中身が違えば手元が古いと判断して、取り直してから1回だけ開き直す。
+     バージョン番号を人手で管理しなくてよいのが利点。 */
+  addEventListener('load', function () {
+    setTimeout(function () {
+      if (sessionStorage.getItem(KEY)) return;        // すでに1回やり直している
+      var probe = ['assets/js/core.js', 'assets/js/charts.js'];
+      Promise.all(probe.map(function (f) {
+        return Promise.all([
+          fetch(f, {cache: 'no-store'}).then(function (r) { return r.ok ? r.text() : null; }),
+          fetch(f, {cache: 'force-cache'}).then(function (r) { return r.ok ? r.text() : null; }),
+        ]).then(function (pair) {
+          return pair[0] !== null && pair[1] !== null && pair[0] !== pair[1];
+        }).catch(function () { return false; });
+      })).then(function (stale) {
+        if (stale.some(Boolean)) recover();
+      });
+    }, 1500);
   });
 
   /* 正常に描画できたらフラグを消す */

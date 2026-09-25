@@ -4,6 +4,7 @@ import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars, zoneBre
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
+import {mergeTransitions, transitionCard} from './transitions.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -170,6 +171,9 @@ function render() {
     kpiGrid(opp, 'def', mine),
     el('div', {class: 'sub', style: {marginTop: '10px'},
       text: `1試合あたり: 被攻撃 ${(opp.attacks / D.list.length).toFixed(1)} 回 / 失点 ${(opp.goals / D.list.length).toFixed(1)} / 被シュート ${(opp.shots / D.list.length).toFixed(1)} / 相手のTO ${(opp.turnovers / D.list.length).toFixed(1)}`})));
+
+  app.append(transitionCard(mergeTransitions(D.list, code),
+    {title: `攻守の切り替え — ${D.list.length}試合の累計`}));
 
   /* --- 被シュートマップ --- */
   app.append(el('div', {class: 'card'},

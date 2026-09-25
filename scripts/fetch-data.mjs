@@ -510,6 +510,58 @@ function buildPlay(rawActions, teams) {
   return out;
 }
 
+/* ---------------------------------------------------------------- 攻守の切り替え */
+/* 「直前の攻撃がどう終わったか」で、次の攻撃の成否がどう変わるかを数える。
+
+   攻撃回数は ATTACK アクションで数えているが、速攻のときに ATTACK が記録されない
+   ことがある。切り替えの分析は速攻がいちばん大事なので、ATTACK には頼らず、
+   シュートとターンオーバーの「結末」だけを時系列に並べて連鎖を作る。
+
+   結末の種類:
+     TO   … ミスでボールを失った（ターンオーバー・テクニカルフォルト）
+     GOAL … ゴールを決めた
+     SAVE … シュートがGKにセーブされた
+     POST … シュートが枠外・ポスト（ブロックもここに含める）
+
+   連続する結末で持ち主が入れ替わったところが「切り替え」。
+   同じチームが続く場合はオフェンスリバウンドなので切り替えにはしない。
+   ハーフタイム（ENDP）をまたぐ連鎖は切る。 */
+const TRANS_KEYS = ['TO', 'GOAL', 'SAVE', 'POST'];
+const blankTrans = () => Object.fromEntries(TRANS_KEYS.map(k => [k, {n: 0, goals: 0}]));
+
+function buildTransitions(acts, orgs) {
+  /* 1) 結末の列を作る */
+  const chain = [];
+  for (const a of acts) {
+    if (a.ac === 'ENDP') { chain.push({brk: true}); continue; }
+    const org = a.c[0]?.org;
+    if (!org || !orgs.includes(org)) continue;
+    if (a.ac === 'TO' || a.ac === 'TFT') { chain.push({org, type: 'TO', sec: absSec(a.p, a.t)}); continue; }
+    if (!ACT_ZONE[a.ac]) continue;
+    const t = a.r === 'GOAL' ? 'GOAL' : a.r === 'SAVE' ? 'SAVE'
+            : (a.r === 'POST' || a.r === 'MISS' || a.r === 'BLC') ? 'POST' : '';
+    if (t) chain.push({org, type: t, sec: absSec(a.p, a.t)});
+  }
+
+  /* 2) 持ち主が入れ替わったところを切り替えとして数える */
+  const out = {};
+  orgs.forEach(o => out[o] = {afterOwn: blankTrans(), afterOpp: blankTrans()});
+  for (let i = 0; i < chain.length - 1; i++) {
+    const prev = chain[i], next = chain[i + 1];
+    if (prev.brk || next.brk) continue;
+    if (prev.org === next.org) continue;            // オフェンスリバウンド
+    if (!out[prev.org] || !out[next.org]) continue;
+    const scored = next.type === 'GOAL' ? 1 : 0;
+    /* 自分の攻撃が prev.type で終わった直後、相手はどうだったか（= 自分の失点） */
+    out[prev.org].afterOwn[prev.type].n++;
+    out[prev.org].afterOwn[prev.type].goals += scored;
+    /* 相手の攻撃が prev.type で終わった直後、自分はどうだったか（= 自分の得点） */
+    out[next.org].afterOpp[prev.type].n++;
+    out[next.org].afterOpp[prev.type].goals += scored;
+  }
+  return out;
+}
+
 /* ---------------------------------------------------------------- 事前分布 */
 /* 5分間の割合は試行回数が3〜5回しかなく、そのまま出すとほぼ運の揺れになる
    （得点0の区間は0%、1回決めれば100%）。そこで大会全体のデータから
@@ -684,6 +736,10 @@ function buildMatchFile(key, res, listed, rawActions) {
     if (!teams[org]) continue;
     Object.assign(teams[org], p);
   }
+
+  /* 攻守の切り替え（直前の攻撃の終わり方 → 次の攻撃の成否） */
+  const trans = buildTransitions(sorted, orgsAll);
+  for (const org of orgsAll) teams[org].transitions = trans[org];
 
   /* 選手別の記号タイムライン + 登録番号（顔写真用）。
      名簿（氏名一致）を第一候補、プレーバイプレー由来を補欠とする。 */

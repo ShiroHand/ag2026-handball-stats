@@ -10,6 +10,7 @@ import {loadJSON, el, q, n, pct, renderChrome, renderFoot, setError, setBusy,
 import {scatter, legend, hbars} from './charts.js';
 import {standardize, kmeans, silhouette, pca, adequacy, mean} from './stats.js';
 import {selectedFromUrl, applyFilter, allMatchFilterCard} from './matchfilter.js';
+import {TRANS_KEYS, addTrans, emptyTrans} from './transitions.js';
 
 const app = q('#app');
 let T = null, FILES = null;
@@ -65,6 +66,28 @@ function rowOf(me, op) {
     dSixShare: share(op.shot, SIX, conceded),
     dNineShare: share(op.shot, NINE, conceded),
     dFastShare: share(op.shot, FAST, conceded),
+    /* 攻守の切り替え。回数が少ない状況もあるので、4状況をまとめた率も持っておく */
+    ...transVars(me.transitions),
+  };
+}
+
+/* 切り替えの指標。個別の状況は回数が少ないので、
+   「ミス直後」と「シュートが枠に行かなかった直後」の2つに絞る。 */
+function transVars(tr) {
+  const sum = (side, keys) => keys.reduce((a, k) => ({
+    n: a.n + n(tr?.[side]?.[k]?.n), g: a.g + n(tr?.[side]?.[k]?.goals),
+  }), {n: 0, g: 0});
+  const rate = (o) => (o.n > 0 ? o.g / o.n * 100 : null);
+  const ownTO = sum('afterOwn', ['TO']);
+  const ownMiss = sum('afterOwn', ['SAVE', 'POST']);
+  const oppTO = sum('afterOpp', ['TO']);
+  const oppMiss = sum('afterOpp', ['SAVE', 'POST']);
+  const all = sum('afterOwn', TRANS_KEYS), allA = sum('afterOpp', TRANS_KEYS);
+  return {
+    transDefTO: rate(ownTO) ?? rate(all) ?? 0,
+    transDefMiss: rate(ownMiss) ?? rate(all) ?? 0,
+    transAttTO: rate(oppTO) ?? rate(allA) ?? 0,
+    transAttMiss: rate(oppMiss) ?? rate(allA) ?? 0,
   };
 }
 
@@ -78,6 +101,8 @@ const VARS = {
     {k: 'sixShare', label: '6m得点比率'},
     {k: 'nineShare', label: '9m得点比率'},
     {k: 'fastShare', label: '速攻・BT得点比率'},
+    {k: 'transAttTO', label: '相手ミス直後の得点率'},
+    {k: 'transAttMiss', label: '相手シュート失敗直後の得点率'},
   ],
   def: [
     {k: 'defPer50', label: '50守備あたり失点'},
@@ -87,6 +112,8 @@ const VARS = {
     {k: 'dSixShare', label: '被6m失点比率'},
     {k: 'dNineShare', label: '被9m失点比率'},
     {k: 'dFastShare', label: '被速攻・BT失点比率'},
+    {k: 'transDefTO', label: '自ミス直後の被失点率'},
+    {k: 'transDefMiss', label: '自シュート失敗直後の被失点率'},
   ],
 };
 VARS.all = [...VARS.att, ...VARS.def];
@@ -112,7 +139,7 @@ function build(list) {
       if (!me || !op) continue;
       const cur = byTeam.get(code) || {code, gender: f.gender, name: me.nameS || me.name || code,
         games: 0, atk: 0, def: 0, goals: 0, conceded: 0, shots: 0, to: 0, oppTo: 0,
-        assists: 0, saves: 0, faced: 0, shot: {}, oppShot: {}};
+        assists: 0, saves: 0, faced: 0, shot: {}, oppShot: {}, tr: null};
       const mp = me.possessions || {}, opp = op.possessions || {};
       if (!n(mp.attacks) || !n(opp.attacks)) continue;
       cur.games++;
@@ -130,6 +157,7 @@ function build(list) {
         cur.oppShot[z] = cur.oppShot[z] || {g: 0, s: 0};
         cur.oppShot[z].g += n(v.g); cur.oppShot[z].s += n(v.s);
       }
+      cur.tr = addTrans(cur.tr || emptyTrans(), me.transitions);
       byTeam.set(code, cur);
     }
   });
@@ -151,6 +179,7 @@ function build(list) {
       dSixShare: share(t.oppShot, SIX, t.conceded),
       dNineShare: share(t.oppShot, NINE, t.conceded),
       dFastShare: share(t.oppShot, FAST, t.conceded),
+      ...transVars(t.tr),
     },
   }));
   return {perGame, teams};
