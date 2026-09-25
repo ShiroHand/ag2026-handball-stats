@@ -5324,6 +5324,44 @@
     "shotsAgainst": 1,
     "goalsAgainst": 1
    },
+   "transitions": {
+    "afterOwn": {
+     "TO": {
+      "n": 9,
+      "goals": 8
+     },
+     "GOAL": {
+      "n": 27,
+      "goals": 16
+     },
+     "SAVE": {
+      "n": 5,
+      "goals": 2
+     },
+     "POST": {
+      "n": 2,
+      "goals": 2
+     }
+    },
+    "afterOpp": {
+     "TO": {
+      "n": 7,
+      "goals": 4
+     },
+     "GOAL": {
+      "n": 27,
+      "goals": 17
+     },
+     "SAVE": {
+      "n": 8,
+      "goals": 5
+     },
+     "POST": {
+      "n": 1,
+      "goals": 0
+     }
+    }
+   },
    "events": [
     {
      "sec": 42,
@@ -11673,6 +11711,44 @@
     "shotsAgainst": 0,
     "goalsAgainst": 0
    },
+   "transitions": {
+    "afterOwn": {
+     "TO": {
+      "n": 7,
+      "goals": 4
+     },
+     "GOAL": {
+      "n": 27,
+      "goals": 17
+     },
+     "SAVE": {
+      "n": 8,
+      "goals": 5
+     },
+     "POST": {
+      "n": 1,
+      "goals": 0
+     }
+    },
+    "afterOpp": {
+     "TO": {
+      "n": 9,
+      "goals": 8
+     },
+     "GOAL": {
+      "n": 27,
+      "goals": 16
+     },
+     "SAVE": {
+      "n": 5,
+      "goals": 2
+     },
+     "POST": {
+      "n": 2,
+      "goals": 2
+     }
+    }
+   },
    "events": [
     {
      "sec": 42,
@@ -12647,5 +12723,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:57.544Z"
+ "updatedAt": "2026-09-25T09:24:26.594Z"
 }

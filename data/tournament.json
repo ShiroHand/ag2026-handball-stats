@@ -1060,13 +1060,13 @@
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "7",
+    "score": "19",
     "winner": false
    },
    "away": {
     "code": "CHN",
     "name": "China",
-    "score": "3",
+    "score": "8",
     "winner": false
    },
    "hasResult": true,
@@ -1091,13 +1091,13 @@
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "4",
+    "score": "11",
     "winner": false
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "6",
+    "score": "27",
     "winner": false
    },
    "hasResult": true,
@@ -1820,26 +1820,26 @@
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4988,
-     "k": 7.8,
-     "windows": 351,
-     "trials": 1604
+     "mean": 0.4976,
+     "k": 7.7,
+     "windows": 361,
+     "trials": 1642
     },
     "assistRate": {
-     "mean": 0.395,
-     "k": 53.3,
-     "windows": 315,
-     "trials": 800
+     "mean": 0.3941,
+     "k": 65.2,
+     "windows": 323,
+     "trials": 817
     }
    },
    "teams": {
     "KOR": {
      "games": 4,
-     "eff": 0.733,
-     "assistRate": 0.5143,
-     "attacks": 191,
-     "goals": 140,
-     "assists": 72
+     "eff": 0.7238,
+     "assistRate": 0.5,
+     "attacks": 210,
+     "goals": 152,
+     "assists": 76
     },
     "HKG": {
      "games": 4,
@@ -1859,11 +1859,11 @@
     },
     "CHN": {
      "games": 4,
-     "eff": 0.5739,
-     "assistRate": 0.3564,
-     "attacks": 176,
-     "goals": 101,
-     "assists": 36
+     "eff": 0.5436,
+     "assistRate": 0.3585,
+     "attacks": 195,
+     "goals": 106,
+     "assists": 38
     },
     "JPN": {
      "games": 5,
@@ -1894,16 +1894,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5243,
-     "k": 17.9,
-     "windows": 385,
-     "trials": 1625
+     "mean": 0.5256,
+     "k": 14.4,
+     "windows": 394,
+     "trials": 1678
     },
     "assistRate": {
-     "mean": 0.3685,
-     "k": 26.8,
-     "windows": 354,
-     "trials": 852
+     "mean": 0.3651,
+     "k": 27.7,
+     "windows": 362,
+     "trials": 882
     }
    },
    "teams": {
@@ -1925,11 +1925,11 @@
     },
     "KAZ": {
      "games": 4,
-     "eff": 0.3646,
-     "assistRate": 0.2879,
-     "attacks": 181,
-     "goals": 66,
-     "assists": 19
+     "eff": 0.351,
+     "assistRate": 0.274,
+     "attacks": 208,
+     "goals": 73,
+     "assists": 20
     },
     "BRN": {
      "games": 4,
@@ -1973,14 +1973,14 @@
     },
     "KOR": {
      "games": 4,
-     "eff": 0.4843,
-     "assistRate": 0.3766,
-     "attacks": 159,
-     "goals": 77,
-     "assists": 29
+     "eff": 0.5405,
+     "assistRate": 0.36,
+     "attacks": 185,
+     "goals": 100,
+     "assists": 36
     }
    }
   }
  },
- "updatedAt": "2026-09-25T08:42:22.232Z"
+ "updatedAt": "2026-09-25T09:24:29.114Z"
 }
