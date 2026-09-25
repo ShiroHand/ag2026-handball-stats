@@ -2,7 +2,7 @@
    eventgrid.js — 選手別イベントの記号タイムライン（handball.ai 方式）
    1行 = 1選手、横軸 = 試合経過時間。出来事を記号で置く。
    ========================================================================== */
-import {el, n, pct, tip, shortRole, photoImg, params} from './core.js';
+import {el, pct, tip, shortRole, photoImg, ZONE_LABEL} from './core.js';
 import {svg} from './charts.js';
 
 /* 記号の定義。mark: 円内に描く文字（空なら塗りつぶしの点）  */
@@ -22,24 +22,33 @@ export const EVENT_SYMBOLS = {
   RC:  {mark: '',   fill: '#b3170f', ink: '#fff', label: '失格（レッド）',     group: 'def'},
   GS:  {mark: 'S',  fill: '#1f9d6b', ink: '#fff', label: 'GKセーブ',          group: 'gk'},
   GR:  {mark: '',   fill: '#e4572e', ink: '#fff', label: 'GK失点',            group: 'gk'},
+  GP:  {mark: 'P',  fill: '#7a5bbd', ink: '#fff', label: '被シュートがポスト', group: 'gk', outline: true},
+  GO:  {mark: 'O',  fill: '#5b7183', ink: '#fff', label: '被シュートが枠外',   group: 'gk', outline: true},
 };
 
 const ATT_SET = new Set(['G', '7G', 'GG', 'X', '7X']);
 const MISS_SET = new Set(['X', '7X']);
+/* 枠に飛ばなかったシュート（自分が打った／GKが受けた） */
+const OFF_TARGET = new Set(['POST', 'MISS']);
 
 /* 選手ごとに集計する */
 export function summarize(events, players) {
   const by = new Map();
   const get = (bib) => {
     if (!by.has(bib)) by.set(bib, {bib, ev: [], goals: 0, shots: 0, assists: 0,
-      lost: 0, steals: 0, blocks: 0, twoMin: 0, saves: 0, conceded: 0, sevenC: 0});
+      lost: 0, steals: 0, blocks: 0, twoMin: 0, saves: 0, conceded: 0, sevenC: 0,
+      off: 0, gkOff: 0});
     return by.get(bib);
   };
   for (const p of players) get(p.bib);
   for (const e of events) {
     const r = get(e.bib);
     r.ev.push(e);
-    if (ATT_SET.has(e.type)) { r.shots++; if (!MISS_SET.has(e.type)) r.goals++; }
+    if (ATT_SET.has(e.type)) {
+      r.shots++;
+      if (!MISS_SET.has(e.type)) r.goals++;
+      if (OFF_TARGET.has(e.result)) r.off++;      // 自分のシュートが枠外・ポスト
+    }
     if (e.type === 'A') r.assists++;
     if (e.type === 'L') r.lost++;
     if (e.type === 'S') r.steals++;
@@ -48,30 +57,44 @@ export function summarize(events, players) {
     if (e.type === '2M') r.twoMin++;
     if (e.type === 'GS') r.saves++;
     if (e.type === 'GR') r.conceded++;
+    if (e.type === 'GP' || e.type === 'GO') r.gkOff++;   // 受けたシュートが枠外・ポスト
   }
   return by;
 }
 
 /* 記号ひとつ */
-function marker(x, y, e, r = 8.2) {
+function marker(x, y, e, r) {
   const s = EVENT_SYMBOLS[e.type];
   if (!s) return null;
   const g = svg('g', {class: 'eg-mark'});
-  g.append(svg('circle', {cx: x, cy: y, r, fill: s.fill, stroke: '#fff', 'stroke-width': 1.4}));
+  g.append(svg('circle', {
+    cx: x, cy: y, r,
+    fill: s.outline ? '#fff' : s.fill,
+    stroke: s.outline ? s.fill : '#fff',
+    'stroke-width': s.outline ? 1.8 : 1.2,
+  }));
   if (s.mark) {
     g.append(svg('text', {
-      x, y: y + 3.3, 'text-anchor': 'middle', 'font-size': 9.5,
-      'font-weight': 700, fill: s.ink,
+      x, y: y + r * 0.37, 'text-anchor': 'middle', 'font-size': (r * 1.18).toFixed(1),
+      'font-weight': 700, fill: s.outline ? s.fill : s.ink,
     }, s.mark));
   }
-  const extra = e.zone ? `<br>位置: ${e.zone}` : '';
-  tip(g, `<b>${s.label}</b><br>${e.p}P ${e.t}${extra}`);
+  const parts = [`<b>${s.label}</b>`, `${e.p}P ${e.t}`];
+  if (e.zone) parts.push(`位置: ${ZONE_LABEL[e.zone] || e.zone}`);
+  tip(g, parts.join('<br>'));
   return g;
 }
 
+/* 重なりをよける順番（中央 → 上 → 下 → さらに上下） */
+const OFFSETS = [0, -1, 1, -1.9, 1.9];
+
 /* ---------- 本体 ----------
    rows: [{player, sum}]、横軸は 0 〜 maxSec。 */
-export function eventGrid(rows, {maxSec = 3600, width = 900, rowH = 30, showPhoto = true} = {}) {
+export function eventGrid(rows, {maxSec = 3600, width = 900, rowH = 34} = {}) {
+  /* 記号の半径とずらし幅は、いちばん外側の記号でも行からはみ出さないように決める。
+     必要高さ = |最大ずらし| + 半径 + 枠線 ≤ rowH/2 */
+  const R = Math.max(5, Math.min(7, (rowH / 2 - 1.5) / (1 + Math.max(...OFFSETS.map(Math.abs)) * 0.62)));
+  const lift = R * 0.62;
   const padL = 8, padR = 14, padT = 26;
   const H = padT + rows.length * rowH + 10;
   const plotW = width - padL - padR;
@@ -100,17 +123,21 @@ export function eventGrid(rows, {maxSec = 3600, width = 900, rowH = 30, showPhot
     for (const e of r.sum.ev) {
       if (e.type !== '2M') continue;
       root.append(svg('rect', {
-        x: xOf(e.sec), y: y - 11, width: Math.max(2, xOf(e.sec + 120) - xOf(e.sec)), height: 22,
-        fill: '#d92d20', opacity: 0.12, rx: 3,
+        x: xOf(e.sec), y: y - rowH / 2 + 2, width: Math.max(2, xOf(e.sec + 120) - xOf(e.sec)),
+        height: rowH - 4, fill: '#d92d20', opacity: 0.12, rx: 3,
       }));
     }
-    /* 同時刻に重なったら少し縦にずらす */
-    const seen = [];
+    /* 同時刻に重なったら縦にずらす。ずらし幅は行の高さに収まる範囲に限る。 */
+    const placed = [];
     for (const e of r.sum.ev) {
       const x = xOf(e.sec);
-      const near = seen.filter(v => Math.abs(v - x) < 13).length;
-      seen.push(x);
-      const m = marker(x, y + (near % 2 ? (near % 4 < 2 ? -9 : 9) : 0), e);
+      let dy = 0;
+      for (let step = 0; step < OFFSETS.length; step++) {
+        dy = OFFSETS[step] * lift;
+        if (!placed.some(p => Math.abs(p.x - x) < R * 1.9 && Math.abs(p.dy - dy) < 0.8)) break;
+      }
+      placed.push({x, dy});
+      const m = marker(x, y + dy, e, R);
       if (m) root.append(m);
     }
   });
@@ -155,11 +182,12 @@ export function eventGridSection(team, {maxSec = 3600, gridWidth = 1000} = {}) {
   const names = el('div', {class: 'eg-names'});
   names.append(el('div', {class: 'eg-head', text: '選手'}));
   const stats = el('div', {class: 'eg-stats'});
-  const isGKteam = rows.some(r => r.player.isGK);
+  const head = (text, title) => el('span', {text, title});
   stats.append(el('div', {class: 'eg-head eg-statrow'},
-    el('span', {text: '得点'}), el('span', {text: 'S'}), el('span', {text: '成功率'}),
-    el('span', {text: 'A'}), el('span', {text: 'ミス'}),
-    el('span', {text: isGKteam ? 'SV' : '—'}), el('span', {text: '2分'})));
+    head('得点', '得点'), head('S', 'シュート数'), head('成功率', '得点 ÷ シュート数'),
+    head('枠外', 'ポスト・枠外（GKは受けたシュートのうち枠を外れた数）'),
+    head('A', 'アシスト'), head('ミス', 'ロストボール・テクニカルミス'),
+    head('SV', 'GK: セーブ ÷ 枠内被シュート'), head('2分', '2分間退場')));
 
   for (const r of rows) {
     const p = r.player, s = r.sum;
@@ -172,10 +200,12 @@ export function eventGridSection(team, {maxSec = 3600, gridWidth = 1000} = {}) {
     names.append(cell);
 
     const gkSh = s.saves + s.conceded;
+    const off = s.off + s.gkOff;
     stats.append(el('div', {class: 'eg-statrow num'},
       el('span', {text: s.goals || '–'}),
       el('span', {text: s.shots || '–'}),
       el('span', {text: s.shots ? pct(s.goals, s.shots) : '–'}),
+      el('span', {text: off || '–'}),
       el('span', {text: s.assists || '–'}),
       el('span', {text: s.lost || '–'}),
       el('span', {text: gkSh ? `${s.saves}/${gkSh}` : '–'}),

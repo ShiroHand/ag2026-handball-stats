@@ -365,11 +365,14 @@ function buildEvents(acts, teams) {
       shooterGK && goal ? 'GG' : goal ? (seven ? '7G' : 'G') : (seven ? '7X' : 'X'),
       {zone, result: S(a.r), gz: GZ[a.gz] ? a.gz : ''});
 
-    /* GKは「決められた(GR)」「セーブした(GS)」のみを記録する。
-       ポスト・枠外は GK の働きではないので付けない。 */
+    /* GKが受けたシュートをすべて記録する。
+       GR=失点 / GS=セーブ / GP=ポスト / GO=枠外。
+       セーブ率の分母は GR+GS（枠内被シュート）のみなので、GP・GO は率に影響しない。 */
     const g = gkOf[a.gk];
-    if (g && ev[g.org] && (goal || a.r === 'SAVE')) {
-      push(g.org, a, g.bib, goal ? 'GR' : 'GS', {zone, gz: GZ[a.gz] ? a.gz : ''});
+    if (g && ev[g.org]) {
+      const t = goal ? 'GR' : a.r === 'SAVE' ? 'GS' : a.r === 'POST' ? 'GP'
+              : a.r === 'MISS' ? 'GO' : '';
+      if (t) push(g.org, a, g.bib, t, {zone, result: S(a.r), gz: GZ[a.gz] ? a.gz : ''});
     }
   }
   for (const list of Object.values(ev)) list.sort((x, y) => x.sec - y.sec);

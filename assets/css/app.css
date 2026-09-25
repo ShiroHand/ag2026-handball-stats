@@ -40,8 +40,11 @@ a:hover{text-decoration:underline}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media(max-width:1100px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1100px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}
+  .g5{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .muted{color:var(--ink-3)}
@@ -101,7 +104,7 @@ tbody tr.total td{font-weight:700;background:var(--surface-2);border-top:2px sol
 
 .kpi{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .kpi .k{font-size:11px;color:var(--ink-3);font-weight:600}
-.kpi .v{font-size:22px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.kpi .v{font-size:21px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
 .kpi .s{font-size:11px;color:var(--ink-2)}
 
 /* ---------- court / goal maps ---------- */
@@ -176,7 +179,7 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .eg-head{height:26px;display:flex;align-items:center;font-size:11px;font-weight:700;
   color:var(--navy);background:var(--blue-soft);padding:0 8px;white-space:nowrap}
 .eg-names{border-right:1px solid var(--line-2)}
-.eg-name{height:30px;display:flex;align-items:center;gap:7px;padding:0 9px 0 6px;white-space:nowrap}
+.eg-name{height:34px;display:flex;align-items:center;gap:7px;padding:0 9px 0 6px;white-space:nowrap}
 /* 見出しが1番目の子なので、選手1行目は even。グリッド側の縞と合わせる */
 .eg-name:nth-child(even){background:var(--surface-2)}
 .eg-photo{width:24px;height:24px;border-radius:50%;object-fit:cover;flex:none;
@@ -192,7 +195,7 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .eg-svg{display:block}
 .eg-mark{cursor:default}
 .eg-stats{border-left:1px solid var(--line-2)}
-.eg-statrow{height:30px;display:grid;grid-template-columns:repeat(7,minmax(34px,auto));
+.eg-statrow{height:34px;display:grid;grid-template-columns:repeat(8,minmax(32px,auto));
   align-items:center;font-size:11.5px}
 .eg-statrow span{text-align:center;padding:0 5px;white-space:nowrap}
 .eg-stats > .eg-statrow:nth-child(even){background:var(--surface-2)}
@@ -216,3 +219,9 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .refresh-status.warn{color:var(--bad);font-weight:700}
 .refresh-note{font-size:11px;color:var(--ink-3)}
 @media(max-width:700px){.refresh-status{flex-basis:100%}}
+
+/* KPI を詰めて並べる */
+.kpi-grid{gap:10px}
+.kpi-grid .kpi{padding:8px 10px}
+.kpi-grid .kpi .k{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi-grid .kpi .s{font-size:10px;line-height:1.25;margin-top:1px}

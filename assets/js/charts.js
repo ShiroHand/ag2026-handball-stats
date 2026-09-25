@@ -196,18 +196,21 @@ export function stackedBars(rows, keys, {width = 1100, barH = 20} = {}) {
 }
 
 /* ---------- 5分刻み折れ線 ---------- */
-export function lineChart(series, labels, {width = 820, height = 210, yTitle = ''} = {}) {
-  const pad = {l: 34, r: 12, t: 14, b: 26};
-  const maxY = Math.max(3, ...series.flatMap(s => s.values.map(n)));
+/* values に null を混ぜると、その区間は線を切って点も描かない（データ無しの意味）。
+   maxY を渡すと縦軸を固定でき、割合のグラフを 0–100% に揃えられる。 */
+export function lineChart(series, labels, {width = 820, height = 210, yTitle = '',
+  maxY: fixedMax = null, fmtv = (v) => v, ticks = 4} = {}) {
+  const pad = {l: 38, r: 12, t: 14, b: 26};
+  const finite = (v) => v !== null && v !== undefined && Number.isFinite(n(v));
+  const maxY = fixedMax || Math.max(3, ...series.flatMap(s => s.values.filter(finite).map(n)));
   const iw = width - pad.l - pad.r, ih = height - pad.t - pad.b;
   const X = (i) => pad.l + (labels.length > 1 ? i / (labels.length - 1) * iw : iw / 2);
   const Y = (v) => pad.t + ih - (n(v) / maxY) * ih;
   const root = svg('svg', {class: 'chart', viewBox: `0 0 ${width} ${height}`});
-  const ticks = 4;
   for (let i = 0; i <= ticks; i++) {
     const v = maxY / ticks * i, y = Y(v);
     root.append(svg('line', {x1: pad.l, x2: width - pad.r, y1: y, y2: y, stroke: '#e3eaf1', 'stroke-width': 1}));
-    root.append(svg('text', {x: pad.l - 6, y: y + 4, 'text-anchor': 'end', 'font-size': 10, fill: '#7b8fa1'}, Math.round(v)));
+    root.append(svg('text', {x: pad.l - 6, y: y + 4, 'text-anchor': 'end', 'font-size': 10, fill: '#7b8fa1'}, fmtv(Math.round(v))));
   }
   labels.forEach((lb, i) => {
     const anchor = i === 0 ? 'start' : (i === labels.length - 1 ? 'end' : 'middle');
@@ -215,11 +218,18 @@ export function lineChart(series, labels, {width = 820, height = 210, yTitle = '
     root.append(svg('text', {x, y: height - 7, 'text-anchor': anchor, 'font-size': 10, fill: '#7b8fa1'}, lb));
   });
   series.forEach(s => {
-    const d = s.values.map((v, i) => `${i ? 'L' : 'M'} ${X(i)} ${Y(v)}`).join(' ');
-    root.append(svg('path', {d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round'}));
+    /* データが無い区間で線を切る */
+    let d = '', pen = false;
     s.values.forEach((v, i) => {
+      if (!finite(v)) { pen = false; return; }
+      d += `${pen ? 'L' : 'M'} ${X(i)} ${Y(v)} `;
+      pen = true;
+    });
+    if (d) root.append(svg('path', {d: d.trim(), fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round'}));
+    s.values.forEach((v, i) => {
+      if (!finite(v)) return;
       const c = svg('circle', {cx: X(i), cy: Y(v), r: 4, fill: s.color, stroke: '#fff', 'stroke-width': 2});
-      tip(c, `<b>${s.label}</b><br>${labels[i]}: ${v}`);
+      tip(c, `<b>${s.label}</b><br>${labels[i]}: ${fmtv(v)}`);
       root.append(c);
     });
   });

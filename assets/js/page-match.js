@@ -5,7 +5,7 @@ import {connectionSection, mergeConnections} from './connections.js';
 import {eventGridSection, symbolLegend} from './eventgrid.js';
 
 const app = q('#app');
-let T = null, M = null, MAN = null;
+let T = null, M = null, MAN = null, REP = null;
 
 init();
 async function init() {
@@ -23,6 +23,7 @@ async function open(id) {
   try {
     M = await loadJSON(`data/matches/${id}.json`);
     MAN = await loadJSON(`data/manual/${id}.json`, {optional: true});
+    REP = await loadJSON(`data/reports/${id}.json`, {optional: true});
   } catch (e) { setError(app, e); return; }
   setParam('id', id);
   render();
@@ -47,6 +48,7 @@ function render() {
 
   app.append(matchPicker());
   app.append(headerCard(H, A));
+  app.append(kpiCard(H, A));
   app.append(compareCard(H, A));
   app.append(phaseCard(H, A));
   app.append(shootingCard(H, A));
@@ -222,6 +224,66 @@ function gkCard(H, A) {
 }
 
 /* ------------------------------------------------------------------ 選手 */
+/* ------------------------------------------------------------------ KPI */
+/* 1試合の要点を数字だけで並べる。割合は自動で計算する。 */
+function kpiFor(t) {
+  const st = t.stats || {}, po = t.possessions || {};
+  const shots = n(st.SHOTS);
+  const goals = n(st.GOALS);
+  /* シュートの内訳はプレーバイプレーの結果から数える（公式の集計には無いため） */
+  const res = {};
+  for (const s of t.shots || []) res[s.result] = (res[s.result] || 0) + 1;
+  const onTarget = (res.GOAL || 0) + (res.SAVE || 0);
+  const offTarget = (res.POST || 0) + (res.MISS || 0);
+  const hasPlay = (t.shots || []).length > 0;
+
+  /* 攻撃回数は公式PDFの値があればそちらを優先する */
+  const official = REP?.teamStats?.[t.code];
+  const attacks = n(official?.attacks) || n(po.attacks);
+  const turnovers = n(po.turnovers);
+  const assists = n(t.derived?.assists) || n(po.assists);
+
+  /* 枠内 + 枠外 + 被ブロック = 公式のシュート数 になる（ブロックされた分は
+     プレーバイプレーにシュートとして残らないため、個人スタッツから足す） */
+  const blocked = n(t.derived?.blocked);
+
+  const rate = (a, b) => (b > 0 ? Math.round(a / b * 100) + '%' : '–');
+  return [
+    {k: '攻撃回数', v: attacks || '–', s: official ? '公式レポート' : 'プレーバイプレーから算出'},
+    {k: '得点', v: goals},
+    {k: 'ターンオーバー', v: hasPlay ? turnovers : '–'},
+    {k: '攻撃効率', v: rate(goals, attacks), s: '得点 ÷ 攻撃回数'},
+    {k: 'ターンオーバー率', v: hasPlay ? rate(turnovers, attacks) : '–', s: 'TO ÷ 攻撃回数'},
+    {k: 'シュート数', v: shots,
+      s: hasPlay ? `枠内${onTarget}・枠外${offTarget}・被ブロック${blocked}` : ''},
+    {k: '枠内シュート', v: hasPlay ? onTarget : '–', s: hasPlay ? rate(onTarget, shots) + ' / 全シュート' : ''},
+    {k: '枠外・ポスト', v: hasPlay ? offTarget : '–', s: hasPlay ? rate(offTarget, shots) + ' / 全シュート' : ''},
+    {k: 'アシスト', v: assists},
+    {k: 'アシスト率', v: rate(assists, goals), s: 'アシスト ÷ 得点'},
+  ];
+}
+
+function kpiCard(H, A) {
+  const block = (t) => {
+    const grid = el('div', {class: 'grid g5 kpi-grid'});
+    kpiFor(t).forEach(m => grid.append(el('div', {class: 'kpi'},
+      el('div', {class: 'k', text: m.k}),
+      el('div', {class: 'v', text: m.v}),
+      m.s ? el('div', {class: 's', text: m.s}) : null)));
+    return el('div', {},
+      el('div', {class: 'row', style: {gap: '8px', margin: '0 0 8px'}},
+        flagImg(t.code, 'flag sm'),
+        el('span', {style: {fontWeight: 700, color: 'var(--navy)'}, text: t.name})),
+      grid);
+  };
+  return el('div', {class: 'card'},
+    el('h2', {text: 'KPI'}),
+    el('div', {class: 'sub', text: '攻撃回数・ターンオーバーは公式プレーバイプレーから算出した推定値です（公式PDFレポートがある試合はその攻撃回数を使用）。'}),
+    block(H),
+    el('hr', {class: 'soft'}),
+    block(A));
+}
+
 /* ------------------------------------------------------- 選手別イベント（記号） */
 function eventCard(t) {
   /* 横軸の長さは延長を含めた実際の試合時間に合わせる */
@@ -344,6 +406,9 @@ const TL_METRICS = [
   {key: 'offReb', label: 'OFリバウンド'},
   {key: 'defReb', label: 'DFリバウンド'},
   {key: 'twoMin', label: '2分間退場'},
+  /* 割合は足し算できないので、区間ごとに分子÷分母で出し、「計」は合計どうしの比で出す */
+  {num: 'goals', den: 'attacks', label: '攻撃効率（得点÷攻撃回数）'},
+  {num: 'assists', den: 'goals', label: 'アシスト率（アシスト÷得点）'},
 ];
 
 function timelineCard(H, A) {
@@ -356,6 +421,15 @@ function timelineCard(H, A) {
   const val = (t, b, k) => n((t.timeline || []).find(x => x.bucket === b)?.[k]);
   const series = (t, k) => buckets.map(b => val(t, b, k));
   const cum = (arr) => arr.reduce((acc, v) => (acc.push((acc[acc.length - 1] || 0) + v), acc), []);
+  const total = (t, k) => series(t, k).reduce((a, b) => a + b, 0);
+  /* 割合の推移。分母が 0 の区間は null（グラフでは線を切る） */
+  const ratioSeries = (t, num, den) =>
+    buckets.map(b => { const d = val(t, b, den); return d > 0 ? val(t, b, num) / d * 100 : null; });
+  const ratioTotal = (t, num, den) => {
+    const d = total(t, den);
+    return d > 0 ? total(t, num) / d * 100 : null;
+  };
+  const showPct = (v) => (v === null ? '–' : Math.round(v) + '%');
 
   /* 表: 指標ごとに 2 行（両チーム） */
   const table = el('table', {});
@@ -365,13 +439,17 @@ function timelineCard(H, A) {
   const tb = el('tbody', {});
   TL_METRICS.forEach((m, i) => {
     [H, A].forEach((t, j) => {
-      const vals = series(t, m.key);
-      const tr = el('tr', {style: i % 2 ? {background: 'var(--surface-2)'} : null},
+      const isRatio = !!m.num;
+      const vals = isRatio ? ratioSeries(t, m.num, m.den) : series(t, m.key);
+      const cells = isRatio
+        ? vals.map(v => el('td', {class: 'num', text: showPct(v)}))
+        : vals.map(v => el('td', {class: 'num', text: v || ''}));
+      const sum = isRatio ? showPct(ratioTotal(t, m.num, m.den)) : vals.reduce((a, b2) => a + b2, 0);
+      tb.append(el('tr', {style: i % 2 ? {background: 'var(--surface-2)'} : null},
         j === 0 ? el('td', {rowspan: 2, style: {fontWeight: 700}, text: m.label}) : null,
         el('td', {style: {fontWeight: 600, color: j ? 'var(--ink-2)' : 'var(--navy)'}, text: t.code}),
-        vals.map(v => el('td', {class: 'num', text: v || ''})),
-        el('td', {class: 'num', style: {fontWeight: 700}, text: vals.reduce((a, b2) => a + b2, 0)}));
-      tb.append(tr);
+        cells,
+        el('td', {class: 'num', style: {fontWeight: 700}, text: sum})));
     });
   });
   table.append(tb);
@@ -384,11 +462,32 @@ function timelineCard(H, A) {
     ], buckets, {width: 560, height: 200}),
     legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}]));
 
+  /* 割合のグラフは縦軸を 0–100% を基本に固定して両チームを見比べられるようにする。
+     100% を超える区間（攻撃回数の推定より得点が多い5分など）があれば、そこまで伸ばす。 */
+  const ratioChart = (num, den, label, note) => {
+    const hv = ratioSeries(H, num, den), av = ratioSeries(A, num, den);
+    const peak = Math.max(0, ...[...hv, ...av].filter(v => v !== null));
+    /* 目盛りがきりの良い数字になるように上限を決める（100%以下なら25%刻み、超えたら50%刻み） */
+    const top = peak <= 100 ? 100 : Math.ceil(peak / 50) * 50;
+    const ticks = peak <= 100 ? 4 : top / 50;
+    return el('div', {},
+      el('div', {class: 'sec-title', text: label}),
+      note ? el('div', {class: 'sub', style: {margin: '-6px 0 8px'}, text: note}) : null,
+      lineChart([
+        {label: H.code, color: CAT[0], values: hv},
+        {label: A.code, color: CAT[4], values: av},
+      ], buckets, {width: 560, height: 200, maxY: top, ticks, fmtv: (v) => Math.round(v) + '%'}),
+      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}]));
+  };
+
   return el('div', {class: 'card'},
     el('h2', {text: '5分ごとの推移'}),
     el('div', {class: 'sub', text: '公式プレーバイプレーの時刻から5分区切りで集計。OFリバウンドは同一攻撃内の再シュート、DFリバウンドは相手のシュートをセーブ／ポストで回収した回数（推定）。'}),
     el('div', {class: 'grid g2'}, chart('goals', '得点'), chart('attacks', '攻撃回数')),
     el('div', {class: 'grid g2', style: {marginTop: '8px'}}, chart('shots', 'シュート'), chart('turnovers', 'ターンオーバー')),
+    el('div', {class: 'grid g2', style: {marginTop: '8px'}},
+      ratioChart('goals', 'attacks', '攻撃効率（得点÷攻撃回数）', '線が途切れている区間は攻撃回数が0です'),
+      ratioChart('assists', 'goals', 'アシスト率（アシスト÷得点）', '線が途切れている区間は得点が0です')),
     el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '5分ごとの数値'}),
     el('div', {class: 'tbl-scroll'}, table),
     el('div', {style: {marginTop: '16px'}},
