@@ -290,3 +290,11 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .trans-lead-item .tl-k{font-size:10.5px;font-weight:600;color:var(--ink-3)}
 .trans-lead-item .tl-v{font-size:14px;font-weight:700;color:var(--navy)}
 .trans-lead-item .tl-s{font-size:10.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+.trans-lead-item.tl-bad{border-color:#f3c0b9;background:#fdecea}
+.trans-lead-item.tl-bad .tl-v{color:var(--bad)}
+.trans-lead-item.tl-good{border-color:#b6ddc8;background:#e4f3ec}
+.trans-lead-item.tl-good .tl-v{color:var(--good)}
+
+.split-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:7px;font-size:11.5px;color:var(--ink-2)}
+.split-legend i{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}

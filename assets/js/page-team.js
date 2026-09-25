@@ -4,7 +4,7 @@ import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars, zoneBre
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
-import {mergeTransitions, transitionCard} from './transitions.js';
+import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -155,6 +155,8 @@ function render() {
   app.append(transitionCard(mergeTransitions(list, code),
     {title: `攻守の切り替え — ${list.length}試合の累計`,
       attacks: own.attacks, defAttacks: foe.attacks}));
+
+  app.append(fastPerMatchCard(list, code, {title: '試合ごとの速攻 — 得点・失点の内訳'}) || el('span'));
 
   /* 累積シュート */
   app.append(el('div', {class: 'card'},

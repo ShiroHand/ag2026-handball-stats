@@ -78,6 +78,12 @@ function transVars(tr) {
     n: a.n + n(tr?.[side]?.[k]?.n), g: a.g + n(tr?.[side]?.[k]?.goals),
   }), {n: 0, g: 0});
   const rate = (o) => (o.n > 0 ? o.g / o.n * 100 : null);
+  const fr = (side, keys) => {
+    const o = keys.reduce((a, k) => ({
+      shots: a.shots + n(tr?.[side]?.[k]?.shots), fast: a.fast + n(tr?.[side]?.[k]?.fast),
+    }), {shots: 0, fast: 0});
+    return o.shots > 0 ? o.fast / o.shots * 100 : null;
+  };
   const ownTO = sum('afterOwn', ['TO']);
   const ownMiss = sum('afterOwn', ['SAVE', 'POST']);
   const oppTO = sum('afterOpp', ['TO']);
@@ -88,6 +94,9 @@ function transVars(tr) {
     transDefMiss: rate(ownMiss) ?? rate(all) ?? 0,
     transAttTO: rate(oppTO) ?? rate(allA) ?? 0,
     transAttMiss: rate(oppMiss) ?? rate(allA) ?? 0,
+    /* ターンオーバー直後に速攻へ持ち込まれた／持ち込んだ割合 */
+    transDefFast: fr('afterOwn', ['TO']) ?? fr('afterOwn', TRANS_KEYS) ?? 0,
+    transAttFast: fr('afterOpp', ['TO']) ?? fr('afterOpp', TRANS_KEYS) ?? 0,
   };
 }
 
@@ -103,6 +112,7 @@ const VARS = {
     {k: 'fastShare', label: '速攻・BT得点比率'},
     {k: 'transAttTO', label: '相手ミス直後の得点率'},
     {k: 'transAttMiss', label: '相手シュート失敗直後の得点率'},
+    {k: 'transAttFast', label: '相手ミス後の速攻率'},
   ],
   def: [
     {k: 'defPer50', label: '50守備あたり失点'},
@@ -114,6 +124,7 @@ const VARS = {
     {k: 'dFastShare', label: '被速攻・BT失点比率'},
     {k: 'transDefTO', label: '自ミス直後の被失点率'},
     {k: 'transDefMiss', label: '自シュート失敗直後の被失点率'},
+    {k: 'transDefFast', label: '自ミス後の被速攻率'},
   ],
 };
 VARS.all = [...VARS.att, ...VARS.def];

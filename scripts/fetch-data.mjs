@@ -527,20 +527,54 @@ function buildPlay(rawActions, teams) {
    同じチームが続く場合はオフェンスリバウンドなので切り替えにはしない。
    ハーフタイム（ENDP）をまたぐ連鎖は切る。 */
 const TRANS_KEYS = ['TO', 'GOAL', 'SAVE', 'POST'];
-const blankTrans = () => Object.fromEntries(TRANS_KEYS.map(k => [k, {n: 0, goals: 0}]));
+/* n=切り替え回数 / goals=次の攻撃の得点 / shots=次の攻撃がシュートに到達した数
+   fast=そのシュートが速攻だった数 / fastGoals=そのうち決まった数
+   fastSec*, slowSec* = シュートまでの秒数（速攻とそれ以外で分けて平均を出す） */
+/* 秒数は合計と件数ではなく生の値を持つ。
+   中央値は平均と違って後から合算できないため、試合をまたいで集計するには元の値が要る。
+   1チーム1試合あたり50個程度なので大きさは問題にならない。 */
+const blankTrans = () => Object.fromEntries(TRANS_KEYS.map(k =>
+  [k, {n: 0, goals: 0, shots: 0,
+    fast: 0, fastGoals: 0, fastSecs: [],        // 速攻（公式が FB と記録）
+    second: 0, secondGoals: 0, secondSecs: [],  // 2次速攻（FBではないが20秒以内）
+    set: 0, setGoals: 0, setSecs: [],           // セット攻撃（20秒超）
+    bt: 0, btGoals: 0}]));
+
+/* 2次速攻の境目（秒）。
+   公式は速攻を FB としか記録しないが、FB でない攻撃の所要時間を実測すると
+   10〜15秒に鋭いピークがあり、20秒前後の谷をはさんで 30〜40秒の山に分かれる
+   （谷の位置: セーブ後21-24秒 / 枠外後18-21秒 / ミス後21-24秒 / 失点後15-18秒）。
+   前の山はGKのアウトレットやスローオフから素早く攻めた「2次速攻」にあたる。
+   3帯の中央値は 9秒 / 13秒 / 37秒、決定率は 80% / 71% / 59% と段階的に分かれる。
+   なお20秒は実測の谷から選んだしきい値であって、公式の定義ではない。 */
+const SECOND_WAVE_SEC = 20;
+
+/* 速攻とみなすアクション。
+   FB のみ（FBAG はこの大会の記録には出ないが定義上は存在するので残す）。
+
+   BT（ブレイクスルー）は当初ここに含めていたが、実データで所要時間を調べたところ
+   中央値29秒・10秒以内は11%で、セット攻撃のシュート（CSD 31秒・CLD 35秒）と
+   ほぼ同じ分布だった。1対1で抜いたという意味であって速攻ではないため外した。
+   FB は中央値9秒・10秒以内67%で、速攻として妥当。
+
+   ただし BT は攻撃の質としては独立した情報なので、速攻とも「その他」とも分けて数える。 */
+const FAST_AC = new Set(['FB', 'FBAG']);
+const BT_AC = new Set(['BT']);
 
 function buildTransitions(acts, orgs) {
-  /* 1) 結末の列を作る */
+  /* 1) 結末の列を作る（元のアクションコードも残す。速攻かどうかの判定に使う） */
   const chain = [];
   for (const a of acts) {
     if (a.ac === 'ENDP') { chain.push({brk: true}); continue; }
     const org = a.c[0]?.org;
     if (!org || !orgs.includes(org)) continue;
-    if (a.ac === 'TO' || a.ac === 'TFT') { chain.push({org, type: 'TO', sec: absSec(a.p, a.t)}); continue; }
+    if (a.ac === 'TO' || a.ac === 'TFT') {
+      chain.push({org, type: 'TO', ac: a.ac, sec: absSec(a.p, a.t)}); continue;
+    }
     if (!ACT_ZONE[a.ac]) continue;
     const t = a.r === 'GOAL' ? 'GOAL' : a.r === 'SAVE' ? 'SAVE'
             : (a.r === 'POST' || a.r === 'MISS' || a.r === 'BLC') ? 'POST' : '';
-    if (t) chain.push({org, type: t, sec: absSec(a.p, a.t)});
+    if (t) chain.push({org, type: t, ac: a.ac, sec: absSec(a.p, a.t)});
   }
 
   /* 2) 持ち主が入れ替わったところを切り替えとして数える */
@@ -552,12 +586,29 @@ function buildTransitions(acts, orgs) {
     if (prev.org === next.org) continue;            // オフェンスリバウンド
     if (!out[prev.org] || !out[next.org]) continue;
     const scored = next.type === 'GOAL' ? 1 : 0;
+    const tookShot = next.type !== 'TO';            // TO で終わった＝シュートまで行けなかった
+    const isFast = tookShot && FAST_AC.has(next.ac);
+    const isBT = tookShot && BT_AC.has(next.ac);
+    const gap = Math.max(0, next.sec - prev.sec);
+    const bump = (bucket) => {
+      bucket.n++;
+      bucket.goals += scored;
+      if (tookShot) {
+        bucket.shots++;
+        if (isBT) { bucket.bt++; bucket.btGoals += scored; }   // 位置の内訳用（帯とは別の軸）
+        if (isFast) {
+          bucket.fast++; bucket.fastGoals += scored; bucket.fastSecs.push(gap);
+        } else if (gap <= SECOND_WAVE_SEC) {
+          bucket.second++; bucket.secondGoals += scored; bucket.secondSecs.push(gap);
+        } else {
+          bucket.set++; bucket.setGoals += scored; bucket.setSecs.push(gap);
+        }
+      }
+    };
     /* 自分の攻撃が prev.type で終わった直後、相手はどうだったか（= 自分の失点） */
-    out[prev.org].afterOwn[prev.type].n++;
-    out[prev.org].afterOwn[prev.type].goals += scored;
+    bump(out[prev.org].afterOwn[prev.type]);
     /* 相手の攻撃が prev.type で終わった直後、自分はどうだったか（= 自分の得点） */
-    out[next.org].afterOpp[prev.type].n++;
-    out[next.org].afterOpp[prev.type].goals += scored;
+    bump(out[next.org].afterOpp[prev.type]);
   }
   return out;
 }

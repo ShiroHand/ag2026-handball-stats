@@ -1,6 +1,6 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
         params, setParam, flagImg, photoImg, CAT} from './core.js';
-import {mergeTransitions, TRANS_KEYS, TRANS_SHORT} from './transitions.js';
+import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
 
 const app = q('#app');
 let T = null;
@@ -160,7 +160,7 @@ function transitionRankCard(g) {
   const rows = RANK[g]?.trans || [];
   if (!rows.length) return null;
   const table = el('table', {});
-  const head = ['チーム', '試合'];
+  const head = ['チーム', '試合', '自ミス後に速攻を許した率', '相手ミス後に速攻で攻めた率'];
   TRANS_KEYS.forEach(k => head.push(`${TRANS_SHORT[k]}直後の失点率`));
   TRANS_KEYS.forEach(k => head.push(`相手${TRANS_SHORT[k]}直後の得点率`));
   table.append(el('thead', {}, el('tr', {}, head.map(h => el('th', {text: h})))));
@@ -182,6 +182,23 @@ function transitionRankCard(g) {
       }
       return td;
     };
+    /* ターンオーバー直後に速攻へ持ち込まれた／持ち込んだ割合 */
+    const fastCell = (v, worseIsHigh) => {
+      const fr = fastRate(v), as = fastSec(v);
+      const td = el('td', {class: 'num', title: v.shots ? `${v.fast}/${v.shots}本` : ''});
+      if (fr === null) { td.textContent = '–'; return td; }
+      td.append(el('div', {style: {fontWeight: 700,
+        color: worseIsHigh ? (fr >= 40 ? 'var(--bad)' : 'var(--ink)')
+                           : (fr >= 40 ? 'var(--good)' : 'var(--ink)')},
+        text: Math.round(fr) + '%'}));
+      if (as !== null) {
+        td.append(el('div', {style: {fontSize: '10px', color: 'var(--ink-3)'},
+          text: as.toFixed(as % 1 ? 1 : 0) + '秒'}));
+      }
+      return td;
+    };
+    tr.append(fastCell(r.own.TO, true));
+    tr.append(fastCell(r.opp.TO, false));
     TRANS_KEYS.forEach(k => tr.append(cell(r.own[k], r.defAttacks)));
     TRANS_KEYS.forEach(k => tr.append(cell(r.opp[k], r.attacks)));
     tb.append(tr);
@@ -192,7 +209,8 @@ function transitionRankCard(g) {
     el('div', {class: 'sub',
       text: '左半分は「自分の攻撃がこう終わった直後に失点した割合」（低いほど良い）、'
         + '右半分は「相手の攻撃がこう終わった直後に得点した割合」（高いほど良い）。'
-        + '各セルの上段が率、下段が50回あたりの得点／失点（分母は総攻撃回数・総守備回数）。'
+        + '最初の2列はターンオーバー直後に速攻へ持ち込まれた／持ち込んだ割合（下段はシュートまでの秒数）。'
+        + '残りのセルは上段が率、下段が50回あたりの得点／失点（分母は総攻撃回数・総守備回数）。'
         + 'カーソルを合わせると実数が出ます。回数が少ない状況は大きく振れます。'}),
     el('div', {class: 'tbl-scroll'}, table));
 }
