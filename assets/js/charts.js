@@ -223,6 +223,91 @@ export function zoneBreakdownTable(map, {attacks = 0, perLabel = '得点', per =
   return el('div', {class: 'tbl-scroll'}, table);
 }
 
+/* ---------- 散布図 ----------
+   points: [{x, y, label, color, code, tip, r}]
+   quadrants を渡すと平均線と四象限のラベルを描く。
+   yDown=true で縦軸を下向きに増やす（失点のように「小さいほど良い」軸）。 */
+export function scatter(points, {width = 640, height = 460, xTitle = '', yTitle = '',
+  quadrants = null, yDown = false, arrows = null} = {}) {
+  const pad = {l: 56, r: 22, t: 18, b: 46};
+  const xs = points.map(p => p.x), ys = points.map(p => p.y);
+  const padRange = (arr) => {
+    let lo = Math.min(...arr), hi = Math.max(...arr);
+    if (!Number.isFinite(lo) || !Number.isFinite(hi)) { lo = 0; hi = 1; }
+    const span = (hi - lo) || Math.max(1, Math.abs(hi) * 0.2);
+    return [lo - span * 0.14, hi + span * 0.14];
+  };
+  const [x0, x1] = padRange(xs), [y0, y1] = padRange(ys);
+  const iw = width - pad.l - pad.r, ih = height - pad.t - pad.b;
+  const X = (v) => pad.l + (v - x0) / (x1 - x0) * iw;
+  const Y = (v) => yDown ? pad.t + (v - y0) / (y1 - y0) * ih
+                         : pad.t + ih - (v - y0) / (y1 - y0) * ih;
+
+  const root = svg('svg', {class: 'chart', viewBox: `0 0 ${width} ${height}`});
+  root.append(svg('rect', {x: pad.l, y: pad.t, width: iw, height: ih, fill: '#fbfdff', stroke: '#e3eaf1'}));
+
+  /* 目盛り */
+  const ticks = (lo, hi) => {
+    const step = Math.pow(10, Math.floor(Math.log10((hi - lo) / 4)));
+    const s = [1, 2, 2.5, 5, 10].map(m => m * step).find(m => (hi - lo) / m <= 6) || step;
+    const out = [];
+    for (let v = Math.ceil(lo / s) * s; v <= hi; v += s) out.push(+v.toFixed(6));
+    return out;
+  };
+  ticks(x0, x1).forEach(v => {
+    root.append(svg('line', {x1: X(v), x2: X(v), y1: pad.t, y2: pad.t + ih, stroke: '#eef3f8'}));
+    root.append(svg('text', {x: X(v), y: height - pad.b + 16, 'text-anchor': 'middle',
+      'font-size': 10, fill: '#7b8fa1'}, v));
+  });
+  ticks(y0, y1).forEach(v => {
+    root.append(svg('line', {x1: pad.l, x2: pad.l + iw, y1: Y(v), y2: Y(v), stroke: '#eef3f8'}));
+    root.append(svg('text', {x: pad.l - 7, y: Y(v) + 4, 'text-anchor': 'end',
+      'font-size': 10, fill: '#7b8fa1'}, v));
+  });
+
+  /* 平均線と四象限 */
+  if (quadrants) {
+    const mx = quadrants.x, my = quadrants.y;
+    root.append(svg('line', {x1: X(mx), x2: X(mx), y1: pad.t, y2: pad.t + ih,
+      stroke: '#9fb2c2', 'stroke-dasharray': '4 3'}));
+    root.append(svg('line', {x1: pad.l, x2: pad.l + iw, y1: Y(my), y2: Y(my),
+      stroke: '#9fb2c2', 'stroke-dasharray': '4 3'}));
+    (quadrants.labels || []).forEach(q => {
+      root.append(svg('text', {
+        x: q.at[0] === 'l' ? pad.l + 8 : pad.l + iw - 8,
+        y: q.at[1] === 't' ? pad.t + 15 : pad.t + ih - 7,
+        'text-anchor': q.at[0] === 'l' ? 'start' : 'end',
+        'font-size': 11, 'font-weight': 700, fill: q.color || '#9fb2c2', opacity: .8,
+      }, q.text));
+    });
+  }
+
+  /* 点 */
+  points.forEach(p => {
+    const g = svg('g', {});
+    const r = p.r || 7;
+    g.append(svg('circle', {cx: X(p.x), cy: Y(p.y), r, fill: p.color || '#2ba3e0',
+      stroke: '#fff', 'stroke-width': 1.8, opacity: p.faint ? 0.45 : 1}));
+    if (p.label) {
+      g.append(svg('text', {x: X(p.x), y: Y(p.y) - r - 4, 'text-anchor': 'middle',
+        'font-size': 10.5, 'font-weight': 700, fill: '#152b40', opacity: p.faint ? 0.5 : 1}, p.label));
+    }
+    if (p.tip) tip(g, p.tip);
+    root.append(g);
+  });
+
+  if (xTitle) {
+    root.append(svg('text', {x: pad.l + iw / 2, y: height - 6, 'text-anchor': 'middle',
+      'font-size': 11, 'font-weight': 600, fill: '#4a6377'}, xTitle));
+  }
+  if (yTitle) {
+    root.append(svg('text', {x: 13, y: pad.t + ih / 2, 'text-anchor': 'middle',
+      'font-size': 11, 'font-weight': 600, fill: '#4a6377',
+      transform: `rotate(-90 13 ${pad.t + ih / 2})`}, yTitle));
+  }
+  return root;
+}
+
 export function rampLegend(label = '決定率') {
   const sw = el('span', {class: 'sw'});
   [5, 20, 35, 50, 65, 80, 95].forEach(v => sw.append(el('i', {style: {background: effColor(v)}})));

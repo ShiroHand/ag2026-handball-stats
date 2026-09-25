@@ -12,7 +12,8 @@
   var KEY = 'hbl-cache-reload';
   var FILES = [
     'assets/js/core.js', 'assets/js/charts.js', 'assets/js/connections.js',
-    'assets/js/eventgrid.js', 'assets/js/refresh.js', 'assets/css/app.css',
+    'assets/js/eventgrid.js', 'assets/js/refresh.js', 'assets/js/kpi.js',
+    'assets/js/stats.js', 'assets/js/matchfilter.js', 'assets/css/app.css',
   ];
 
   function message(text) {

@@ -25,6 +25,85 @@ export function writeSelection(all, sel) {
   else setParam('m', [...sel].join(','));
 }
 
+/* ---------- 大会全体の試合フィルター ----------
+   チーム単位ではなく「この大会のどの試合を使うか」を選ぶ版。
+   日付ごとにまとめて並べ、日付見出しをクリックするとその日をまとめて出し入れできる。 */
+export function allMatchFilterCard(all, selected, onChange) {
+  const sel = selected ? new Set(selected) : new Set(all.map(f => f.id));
+  const countLabel = el('span', {class: 'mf-count'});
+  const refresh = () => {
+    countLabel.textContent = sel.size === all.length
+      ? `全${all.length}試合` : `${sel.size} / ${all.length} 試合を分析中`;
+    countLabel.className = 'mf-count' + (sel.size === all.length ? '' : ' on');
+  };
+  const commit = () => {
+    if (!sel.size) return;
+    writeSelection(all, sel);
+    onChange(sel.size === all.length ? null : new Set(sel));
+  };
+
+  const byDay = new Map();
+  all.forEach(f => {
+    if (!byDay.has(f.date)) byDay.set(f.date, []);
+    byDay.get(f.date).push(f);
+  });
+
+  const body = el('div', {class: 'mf-days'});
+  const btns = new Map();
+  [...byDay.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([day, games]) => {
+    const row = el('div', {class: 'mf-day'});
+    row.append(el('button', {
+      class: 'mf-daylabel', text: jpDate(day),
+      title: 'この日の試合をまとめて出し入れ',
+      onclick: () => {
+        const allOn = games.every(f => sel.has(f.id));
+        games.forEach(f => {
+          if (allOn) { if (sel.size > 1) sel.delete(f.id); } else sel.add(f.id);
+          btns.get(f.id)?.classList.toggle('on', sel.has(f.id));
+        });
+        refresh(); commit();
+      },
+    }));
+    const wrap = el('div', {class: 'mf-chips'});
+    games.forEach(f => {
+      const b = el('button', {class: 'mf-chip' + (sel.has(f.id) ? ' on' : ''),
+        title: f.phaseDesc || ''});
+      b.append(flagImg(f.home, 'flag sm'));
+      b.append(el('span', {class: 'mf-main'},
+        el('b', {text: `${f.home} ${f.teams[f.home]?.score}-${f.teams[f.away]?.score} ${f.away}`})));
+      b.append(flagImg(f.away, 'flag sm'));
+      b.onclick = () => {
+        if (sel.has(f.id)) { if (sel.size === 1) return; sel.delete(f.id); b.classList.remove('on'); }
+        else { sel.add(f.id); b.classList.add('on'); }
+        refresh(); commit();
+      };
+      btns.set(f.id, b);
+      wrap.append(b);
+    });
+    row.append(wrap);
+    body.append(row);
+  });
+
+  const setAll = (on) => {
+    sel.clear();
+    (on ? all : all.slice(-4)).forEach(f => sel.add(f.id));
+    btns.forEach((b, id) => b.classList.toggle('on', sel.has(id)));
+    refresh(); commit();
+  };
+
+  refresh();
+  return el('div', {class: 'card mf-card'},
+    el('div', {class: 'row', style: {gap: '10px', marginBottom: '8px'}},
+      el('span', {class: 'mf-title', text: '分析に使う試合'}),
+      countLabel,
+      el('div', {style: {flex: '1'}}),
+      el('button', {class: 'btn ghost sm', text: '全選択', onclick: () => setAll(true)}),
+      el('button', {class: 'btn ghost sm', text: '直近4試合', onclick: () => setAll(false)})),
+    body,
+    el('div', {class: 'sub', style: {margin: '8px 0 0'},
+      text: '試合または日付をクリックして絞り込みます。選んだ状態はURLに残るので共有できます。'}));
+}
+
 /* ---------- フィルターのカード ----------
    all:      そのチームの全試合（古い順）
    selected: Set または null
