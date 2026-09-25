@@ -1553,6 +1553,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "8641374"
     },
     {
@@ -2335,6 +2349,20 @@
       },
       "set": {
        "s": 1,
+       "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
        "g": 0
       }
      },
@@ -3244,6 +3272,20 @@
       "set": {
        "s": 11,
        "g": 6
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "8642622"
@@ -8283,6 +8325,20 @@
        "g": 4
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "6597665"
     },
     {
@@ -8776,6 +8832,20 @@
       "set": {
        "s": 0,
        "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "10937432"
@@ -11137,7 +11207,7 @@
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BR",
-     "assistBib": "11",
+     "assistBib": "",
      "score": "1-2"
     },
     {
@@ -11674,19 +11744,6 @@
      "fromBib": "11",
      "fromName": "LIU C",
      "fromRole": "RB",
-     "toBib": "24",
-     "toName": "QU W",
-     "toRole": "LB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "BT": 1
-     }
-    },
-    {
-     "fromBib": "11",
-     "fromName": "LIU C",
-     "fromRole": "RB",
      "toBib": "10",
      "toName": "SHI Z",
      "toRole": "RW",
@@ -11724,12 +11781,6 @@
     }
    ],
    "posLinks": [
-    {
-     "from": "RB",
-     "to": "LB",
-     "count": 1,
-     "goals": 1
-    },
     {
      "from": "RB",
      "to": "RW",
@@ -13242,5 +13293,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:05.889Z"
+ "updatedAt": "2026-09-25T13:02:08.803Z"
 }

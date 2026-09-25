@@ -762,6 +762,20 @@
        "g": 4
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "908256"
     },
     {
@@ -2955,6 +2969,20 @@
        "g": 0
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "7889874"
     },
     {
@@ -4595,7 +4623,7 @@
      "zone": "FB",
      "result": "GOAL",
      "goalZone": "TC",
-     "assistBib": "39",
+     "assistBib": "",
      "score": "11-4"
     },
     {
@@ -5045,19 +5073,6 @@
    ],
    "connections": [
     {
-     "fromBib": "39",
-     "fromName": "GRAY C",
-     "fromRole": "PV",
-     "toBib": "37",
-     "toName": "MATSUURA M",
-     "toRole": "CB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "FB": 1
-     }
-    },
-    {
      "fromBib": "5",
      "fromName": "KINJO A",
      "fromRole": "RW",
@@ -5085,12 +5100,6 @@
     }
    ],
    "posLinks": [
-    {
-     "from": "PV",
-     "to": "CB",
-     "count": 1,
-     "goals": 1
-    },
     {
      "from": "RW",
      "to": "LB",
@@ -7568,6 +7577,20 @@
        }
       ]
      ],
+     "tempoSteal": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 0
+      }
+     },
      "reg": "1510376"
     },
     {
@@ -13053,5 +13076,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:06.237Z"
+ "updatedAt": "2026-09-25T13:02:09.333Z"
 }

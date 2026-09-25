@@ -1491,6 +1491,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12385520"
     },
     {
@@ -2353,6 +2367,20 @@
        "g": 5
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12387451"
     },
     {
@@ -2614,6 +2642,20 @@
       "set": {
        "s": 2,
        "g": 2
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "12385868"
@@ -3611,6 +3653,20 @@
        "s": 5,
        "sv": 0,
        "g": 4
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "12387854"
@@ -7953,6 +8009,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "5605839"
     },
     {
@@ -8551,6 +8621,20 @@
       },
       "set": {
        "s": 4,
+       "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
        "g": 1
       }
      },
@@ -9283,6 +9367,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "5573545"
     },
     {
@@ -9797,6 +9895,20 @@
       "second": {
        "s": 0,
        "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
       },
       "set": {
        "s": 0,
@@ -11062,7 +11174,7 @@
      "zone": "LW",
      "result": "GOAL",
      "goalZone": "BR",
-     "assistBib": "23",
+     "assistBib": "",
      "score": "3-4"
     },
     {
@@ -11206,7 +11318,7 @@
      "zone": "LW",
      "result": "GOAL",
      "goalZone": "BL",
-     "assistBib": "23",
+     "assistBib": "",
      "score": "13-11"
     },
     {
@@ -11494,7 +11606,7 @@
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "MR",
-     "assistBib": "66",
+     "assistBib": "",
      "score": "24-24"
     },
     {
@@ -11523,19 +11635,6 @@
     }
    ],
    "connections": [
-    {
-     "fromBib": "23",
-     "fromName": "ALADWANI S",
-     "fromRole": "LB",
-     "toBib": "7",
-     "toName": "ALSHAMMARI A",
-     "toRole": "LW",
-     "count": 2,
-     "goals": 2,
-     "zones": {
-      "LW": 2
-     }
-    },
     {
      "fromBib": "13",
      "fromName": "ALADWANI H",
@@ -11600,37 +11699,12 @@
      "zones": {
       "R6": 1
      }
-    },
-    {
-     "fromBib": "66",
-     "fromName": "SALMEEN A",
-     "fromRole": "CB",
-     "toBib": "23",
-     "toName": "ALADWANI S",
-     "toRole": "LB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "BT": 1
-     }
     }
    ],
    "posLinks": [
     {
      "from": "LB",
-     "to": "LW",
-     "count": 2,
-     "goals": 2
-    },
-    {
-     "from": "LB",
      "to": "CB",
-     "count": 2,
-     "goals": 2
-    },
-    {
-     "from": "CB",
-     "to": "LB",
      "count": 2,
      "goals": 2
     },
@@ -11643,6 +11717,12 @@
     {
      "from": "LW",
      "to": "LW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "LB",
      "count": 1,
      "goals": 1
     }
@@ -13118,5 +13198,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:06.572Z"
+ "updatedAt": "2026-09-25T13:02:09.913Z"
 }

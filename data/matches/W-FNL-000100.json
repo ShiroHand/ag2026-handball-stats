@@ -499,6 +499,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "8532956"
     },
     {
@@ -1022,6 +1036,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 2,
+       "g": 2
+      },
+      "set": {
+       "s": 2,
+       "g": 2
+      }
+     },
      "reg": "8533273"
     },
     {
@@ -1255,6 +1283,20 @@
        }
       ]
      ],
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "8531644"
     },
     {
@@ -2651,6 +2693,34 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
+     "tempoSteal": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "8535590"
     },
     {
@@ -3173,6 +3243,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 3,
+       "g": 3
+      }
+     },
      "reg": "8535977"
     },
     {
@@ -3430,6 +3514,20 @@
       "set": {
        "s": 1,
        "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
       }
      },
      "reg": "8540033"
@@ -4471,6 +4569,20 @@
        "g": 3
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 5,
+       "g": 5
+      }
+     },
      "reg": "8532837"
     }
    ],
@@ -4635,7 +4747,7 @@
      "zone": "LW",
      "result": "GOAL",
      "goalZone": "TR",
-     "assistBib": "24",
+     "assistBib": "",
      "score": "1-0"
     },
     {
@@ -5253,19 +5365,6 @@
    ],
    "connections": [
     {
-     "fromBib": "24",
-     "fromName": "KWON H",
-     "fromRole": "LB",
-     "toBib": "7",
-     "toName": "LEE W",
-     "toRole": "LW",
-     "count": 3,
-     "goals": 3,
-     "zones": {
-      "LW": 3
-     }
-    },
-    {
      "fromBib": "23",
      "fromName": "WOO B",
      "fromRole": "LB",
@@ -5304,6 +5403,19 @@
      "zones": {
       "L6": 1,
       "LW": 1
+     }
+    },
+    {
+     "fromBib": "24",
+     "fromName": "KWON H",
+     "fromRole": "LB",
+     "toBib": "7",
+     "toName": "LEE W",
+     "toRole": "LW",
+     "count": 2,
+     "goals": 2,
+     "zones": {
+      "LW": 2
      }
     },
     {
@@ -5454,8 +5566,8 @@
     {
      "from": "LB",
      "to": "LW",
-     "count": 6,
-     "goals": 6
+     "count": 5,
+     "goals": 5
     },
     {
      "from": "CB",
@@ -9363,6 +9475,20 @@
        "g": 0
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "4003219"
     },
     {
@@ -9630,6 +9756,20 @@
       "set": {
        "s": 6,
        "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "4002070"
@@ -10643,6 +10783,20 @@
        "g": 0
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 1
+      }
+     },
      "reg": "4002768"
     },
     {
@@ -10892,6 +11046,20 @@
       "fast": {
        "s": 1,
        "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
       },
       "second": {
        "s": 0,
@@ -11858,7 +12026,7 @@
      "zone": "P7",
      "result": "SAVE",
      "goalZone": "",
-     "assistBib": "33",
+     "assistBib": "",
      "score": "4-1"
     },
     {
@@ -12272,17 +12440,6 @@
    ],
    "connections": [
     {
-     "fromBib": "33",
-     "fromName": "LO K",
-     "fromRole": "CB",
-     "toBib": "18",
-     "toName": "WU L",
-     "toRole": "RB",
-     "count": 1,
-     "goals": 0,
-     "zones": {}
-    },
-    {
      "fromBib": "18",
      "fromName": "WU L",
      "fromRole": "RB",
@@ -12347,12 +12504,6 @@
     }
    ],
    "posLinks": [
-    {
-     "from": "CB",
-     "to": "RB",
-     "count": 1,
-     "goals": 0
-    },
     {
      "from": "RB",
      "to": "LW",
@@ -13922,5 +14073,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:05.442Z"
+ "updatedAt": "2026-09-25T13:02:08.334Z"
 }

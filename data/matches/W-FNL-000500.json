@@ -1779,6 +1779,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 3,
+       "g": 2
+      }
+     },
      "reg": "1506751"
     },
     {
@@ -4371,6 +4385,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
+      }
+     },
      "reg": "1507541"
     }
    ],
@@ -4919,7 +4947,7 @@
      "zone": "RW",
      "result": "GOAL",
      "goalZone": "MR",
-     "assistBib": "7",
+     "assistBib": "",
      "score": "20-20"
     },
     {
@@ -5010,19 +5038,6 @@
      }
     },
     {
-     "fromBib": "7",
-     "fromName": "HA H",
-     "fromRole": "CB",
-     "toBib": "18",
-     "toName": "PHAM L",
-     "toRole": "RW",
-     "count": 2,
-     "goals": 2,
-     "zones": {
-      "RW": 2
-     }
-    },
-    {
      "fromBib": "10",
      "fromName": "NGUYEN A",
      "fromRole": "LB",
@@ -5065,6 +5080,19 @@
      "fromBib": "7",
      "fromName": "HA H",
      "fromRole": "CB",
+     "toBib": "18",
+     "toName": "PHAM L",
+     "toRole": "RW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "RW": 1
+     }
+    },
+    {
+     "fromBib": "7",
+     "fromName": "HA H",
+     "fromRole": "CB",
      "toBib": "14",
      "toName": "NGUYEN N",
      "toRole": "LW",
@@ -5090,8 +5118,8 @@
     {
      "from": "CB",
      "to": "RW",
-     "count": 4,
-     "goals": 4
+     "count": 3,
+     "goals": 3
     },
     {
      "from": "LB",
@@ -8731,6 +8759,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "4003219"
     },
     {
@@ -9002,6 +9044,20 @@
       "set": {
        "s": 12,
        "g": 8
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 4,
+       "g": 4
       }
      },
      "reg": "4002070"
@@ -9990,6 +10046,20 @@
        "g": 3
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "4002768"
     },
     {
@@ -10505,6 +10575,20 @@
       "set": {
        "s": 2,
        "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 2,
+       "g": 1
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "4007726"
@@ -13297,5 +13381,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:08.276Z"
+ "updatedAt": "2026-09-25T13:02:11.887Z"
 }

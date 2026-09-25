@@ -490,6 +490,20 @@
        "g": 0
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12040748"
     },
     {
@@ -1589,6 +1603,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "12042282"
     },
     {
@@ -2437,6 +2465,20 @@
        "g": 0
       }
      },
+     "tempoSteal": {
+      "fast": {
+       "s": 1,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "12044597"
     },
     {
@@ -2925,6 +2967,20 @@
       "set": {
        "s": 1,
        "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 0
       }
      },
      "reg": "12042385"
@@ -4953,7 +5009,7 @@
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BR",
-     "assistBib": "15",
+     "assistBib": "",
      "score": "11-28"
     },
     {
@@ -5104,19 +5160,6 @@
      }
     },
     {
-     "fromBib": "15",
-     "fromName": "LAW C",
-     "fromRole": "RB",
-     "toBib": "99",
-     "toName": "LIN Y",
-     "toRole": "LB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "BT": 1
-     }
-    },
-    {
      "fromBib": "3",
      "fromName": "CHAN T",
      "fromRole": "LB",
@@ -5145,12 +5188,6 @@
     {
      "from": "RB",
      "to": "PV",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "RB",
-     "to": "LB",
      "count": 1,
      "goals": 1
     },
@@ -7213,6 +7250,20 @@
       "set": {
        "s": 1,
        "g": 1
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "16624351"
@@ -9372,6 +9423,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "7954936"
     },
     {
@@ -9902,6 +9967,20 @@
       },
       "set": {
        "s": 3,
+       "g": 2
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
        "g": 2
       }
      },
@@ -10498,6 +10577,20 @@
        "g": 3
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "13955250"
     },
     {
@@ -10760,6 +10853,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "13961526"
     },
     {
@@ -10994,6 +11101,20 @@
        }
       ]
      ],
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "13951265"
     },
     {
@@ -11250,6 +11371,20 @@
       "set": {
        "s": 1,
        "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
       }
      },
      "reg": "13965879"
@@ -11776,7 +11911,7 @@
      "zone": "C6",
      "result": "GOAL",
      "goalZone": "BR",
-     "assistBib": "22",
+     "assistBib": "",
      "score": "10-25"
     },
     {
@@ -12126,19 +12261,6 @@
      }
     },
     {
-     "fromBib": "22",
-     "fromName": "ABDALLA A",
-     "fromRole": "CB",
-     "toBib": "44",
-     "toName": "GUEHIS A",
-     "toRole": "PV",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "C6": 1
-     }
-    },
-    {
      "fromBib": "77",
      "fromName": "HAMAM M",
      "fromRole": "LB",
@@ -12205,12 +12327,6 @@
     {
      "from": "RB",
      "to": "LB",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "CB",
-     "to": "PV",
      "count": 1,
      "goals": 1
     },
@@ -13865,5 +13981,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:08.705Z"
+ "updatedAt": "2026-09-25T13:02:12.412Z"
 }

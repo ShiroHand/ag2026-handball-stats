@@ -1509,6 +1509,20 @@
        }
       ]
      ],
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 4,
+       "g": 4
+      }
+     },
      "reg": "12437474"
     },
     {
@@ -2009,6 +2023,20 @@
        }
       ]
      ],
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12430971"
     },
     {
@@ -2274,6 +2302,20 @@
       "set": {
        "s": 3,
        "g": 2
+      }
+     },
+     "tempoSteal": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "12436787"
@@ -3920,6 +3962,20 @@
        "g": 5
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12434568"
     },
     {
@@ -4952,7 +5008,7 @@
      "zone": "C9",
      "result": "GOAL",
      "goalZone": "TR",
-     "assistBib": "7",
+     "assistBib": "",
      "score": "25-30"
     }
    ],
@@ -5022,19 +5078,6 @@
      "zones": {
       "L6": 1
      }
-    },
-    {
-     "fromBib": "7",
-     "fromName": "ZHOU A",
-     "fromRole": "CB",
-     "toBib": "5",
-     "toName": "WANG X",
-     "toRole": "RB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "C9": 1
-     }
     }
    ],
    "posLinks": [
@@ -5047,8 +5090,8 @@
     {
      "from": "CB",
      "to": "RB",
-     "count": 2,
-     "goals": 2
+     "count": 1,
+     "goals": 1
     },
     {
      "from": "LB",
@@ -7022,6 +7065,20 @@
        "g": 3
       }
      },
+     "tempoSteal": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "16624351"
     },
     {
@@ -7275,6 +7332,20 @@
       },
       "set": {
        "s": 1,
+       "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
        "g": 0
       }
      },
@@ -7825,6 +7896,34 @@
        "g": 3
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
+     "tempoSteal": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "13955699"
     },
     {
@@ -8334,6 +8433,34 @@
       "set": {
        "s": 7,
        "g": 4
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 1,
+       "g": 1
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 3,
+       "g": 3
+      }
+     },
+     "tempoSteal": {
+      "fast": {
+       "s": 1,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "13956482"
@@ -10944,6 +11071,20 @@
        "g": 3
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
+      }
+     },
      "reg": "13965879"
     }
    ],
@@ -11372,7 +11513,7 @@
      "zone": "LW",
      "result": "SAVE",
      "goalZone": "BR",
-     "assistBib": "10",
+     "assistBib": "",
      "score": "13-14"
     },
     {
@@ -11749,17 +11890,6 @@
      "fromBib": "10",
      "fromName": "MARZO F",
      "fromRole": "LB",
-     "toBib": "11",
-     "toName": "MURAD A",
-     "toRole": "LW",
-     "count": 1,
-     "goals": 0,
-     "zones": {}
-    },
-    {
-     "fromBib": "10",
-     "fromName": "MARZO F",
-     "fromRole": "LB",
      "toBib": "13",
      "toName": "MEMISEVIC E",
      "toRole": "RW",
@@ -11800,7 +11930,7 @@
     {
      "from": "LB",
      "to": "LW",
-     "count": 4,
+     "count": 3,
      "goals": 3
     },
     {
@@ -13396,5 +13526,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:10.569Z"
+ "updatedAt": "2026-09-25T13:02:14.664Z"
 }

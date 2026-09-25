@@ -1283,6 +1283,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 3,
+       "g": 3
+      }
+     },
      "reg": "12045563"
     },
     {
@@ -1551,6 +1565,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
+      }
+     },
      "reg": "12042282"
     },
     {
@@ -1807,6 +1835,20 @@
       "set": {
        "s": 3,
        "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "12045668"
@@ -2387,6 +2429,20 @@
        }
       ]
      ],
+     "tempoSteal": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "12044597"
     },
     {
@@ -2908,6 +2964,20 @@
       "set": {
        "s": 1,
        "g": 0
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
       }
      },
      "reg": "12042385"
@@ -4502,6 +4572,20 @@
       "set": {
        "s": 8,
        "g": 2
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "12043253"
@@ -7673,6 +7757,20 @@
        "g": 2
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "932450"
     },
     {
@@ -7934,6 +8032,20 @@
       "set": {
        "s": 3,
        "g": 3
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 2,
+       "g": 2
+      },
+      "set": {
+       "s": 0,
+       "g": 0
       }
      },
      "reg": "932949"
@@ -8429,6 +8541,20 @@
       "set": {
        "s": 2,
        "g": 2
+      }
+     },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 3,
+       "g": 3
       }
      },
      "reg": "931886"
@@ -10053,6 +10179,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 1,
+       "g": 1
+      },
+      "set": {
+       "s": 0,
+       "g": 0
+      }
+     },
      "reg": "934147"
     },
     {
@@ -10810,6 +10950,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 1,
+       "g": 1
+      }
+     },
      "reg": "932814"
     },
     {
@@ -11340,6 +11494,20 @@
        "g": 1
       }
      },
+     "tempoAssist": {
+      "fast": {
+       "s": 0,
+       "g": 0
+      },
+      "second": {
+       "s": 0,
+       "g": 0
+      },
+      "set": {
+       "s": 2,
+       "g": 2
+      }
+     },
      "reg": "934005"
     }
    ],
@@ -11516,7 +11684,7 @@
      "zone": "RW",
      "result": "SAVE",
      "goalZone": "",
-     "assistBib": "5",
+     "assistBib": "",
      "score": "0-1"
     },
     {
@@ -11624,7 +11792,7 @@
      "zone": "L6",
      "result": "GOAL",
      "goalZone": "MR",
-     "assistBib": "23",
+     "assistBib": "",
      "score": "5-9"
     },
     {
@@ -11672,7 +11840,7 @@
      "zone": "LW",
      "result": "POST",
      "goalZone": "",
-     "assistBib": "20",
+     "assistBib": "",
      "score": "5-10"
     },
     {
@@ -11756,7 +11924,7 @@
      "zone": "L6",
      "result": "GOAL",
      "goalZone": "TL",
-     "assistBib": "38",
+     "assistBib": "",
      "score": "9-16"
     },
     {
@@ -12080,7 +12248,7 @@
      "zone": "L6",
      "result": "GOAL",
      "goalZone": "MR",
-     "assistBib": "7",
+     "assistBib": "",
      "score": "14-39"
     },
     {
@@ -12159,19 +12327,6 @@
      }
     },
     {
-     "fromBib": "5",
-     "fromName": "NAKATA K",
-     "fromRole": "RW",
-     "toBib": "5",
-     "toName": "NAKATA K",
-     "toRole": "RW",
-     "count": 2,
-     "goals": 1,
-     "zones": {
-      "RW": 1
-     }
-    },
-    {
      "fromBib": "30",
      "fromName": "FUJISAKA N",
      "fromRole": "CB",
@@ -12183,20 +12338,6 @@
      "zones": {
       "RW": 1,
       "L9": 1
-     }
-    },
-    {
-     "fromBib": "38",
-     "fromName": "MIZUMACHI K",
-     "fromRole": "LB",
-     "toBib": "19",
-     "toName": "SUGIOKA N",
-     "toRole": "LW",
-     "count": 2,
-     "goals": 2,
-     "zones": {
-      "L6": 1,
-      "LW": 1
      }
     },
     {
@@ -12239,30 +12380,6 @@
      }
     },
     {
-     "fromBib": "23",
-     "fromName": "YOSHINO T",
-     "fromRole": "LB",
-     "toBib": "20",
-     "toName": "WATANABE J",
-     "toRole": "RB",
-     "count": 1,
-     "goals": 1,
-     "zones": {
-      "L6": 1
-     }
-    },
-    {
-     "fromBib": "20",
-     "fromName": "WATANABE J",
-     "fromRole": "RB",
-     "toBib": "24",
-     "toName": "GOTO H",
-     "toRole": "LW",
-     "count": 1,
-     "goals": 0,
-     "zones": {}
-    },
-    {
      "fromBib": "20",
      "fromName": "WATANABE J",
      "fromRole": "RB",
@@ -12292,6 +12409,19 @@
      "fromBib": "38",
      "fromName": "MIZUMACHI K",
      "fromRole": "LB",
+     "toBib": "19",
+     "toName": "SUGIOKA N",
+     "toRole": "LW",
+     "count": 1,
+     "goals": 1,
+     "zones": {
+      "LW": 1
+     }
+    },
+    {
+     "fromBib": "38",
+     "fromName": "MIZUMACHI K",
+     "fromRole": "LB",
      "toBib": "5",
      "toName": "NAKATA K",
      "toRole": "RW",
@@ -12302,16 +12432,16 @@
      }
     },
     {
-     "fromBib": "7",
-     "fromName": "TSUTAYA T",
-     "fromRole": "RB",
-     "toBib": "14",
-     "toName": "TANAKA D",
-     "toRole": "CB",
+     "fromBib": "5",
+     "fromName": "NAKATA K",
+     "fromRole": "RW",
+     "toBib": "5",
+     "toName": "NAKATA K",
+     "toRole": "RW",
      "count": 1,
      "goals": 1,
      "zones": {
-      "L6": 1
+      "RW": 1
      }
     },
     {
@@ -12342,68 +12472,50 @@
      "goals": 3
     },
     {
+     "from": "CB",
+     "to": "RW",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "LB",
+     "to": "PV",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "RB",
+     "to": "RB",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "CB",
+     "to": "PV",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "LW",
+     "count": 1,
+     "goals": 1
+    },
+    {
+     "from": "LB",
+     "to": "RW",
+     "count": 1,
+     "goals": 1
+    },
+    {
      "from": "RW",
      "to": "RW",
-     "count": 2,
-     "goals": 1
-    },
-    {
-     "from": "CB",
-     "to": "RW",
-     "count": 2,
-     "goals": 2
-    },
-    {
-     "from": "LB",
-     "to": "LW",
-     "count": 2,
-     "goals": 2
-    },
-    {
-     "from": "LB",
-     "to": "PV",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "LB",
-     "to": "CB",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "LB",
-     "to": "RB",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "RB",
-     "to": "LW",
-     "count": 1,
-     "goals": 0
-    },
-    {
-     "from": "RB",
-     "to": "RB",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "CB",
-     "to": "PV",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "LB",
-     "to": "RW",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "RB",
-     "to": "CB",
      "count": 1,
      "goals": 1
     }
@@ -14126,5 +14238,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T12:48:09.402Z"
+ "updatedAt": "2026-09-25T13:02:13.226Z"
 }
