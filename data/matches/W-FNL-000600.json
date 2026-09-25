@@ -5412,7 +5412,7 @@
     }
    ],
    "possessions": {
-    "attacks": 58,
+    "attacks": 59,
     "goals": 43,
     "shots": 55,
     "missed": 12,
@@ -5422,7 +5422,8 @@
     "assists": 19,
     "offReb": 3,
     "defReb": 23,
-    "eff": 74.1
+    "attacksRaw": 58,
+    "eff": 72.9
    },
    "timeline": [
     {
@@ -5557,7 +5558,7 @@
     },
     {
      "bucket": "50-55",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 5,
      "shots": 6,
      "missed": 1,
@@ -5566,7 +5567,8 @@
      "twoMin": 0,
      "assists": 1,
      "offReb": 1,
-     "defReb": 2
+     "defReb": 2,
+     "attacksRaw": 4
     },
     {
      "bucket": "55-60",
@@ -12907,5 +12909,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:57.940Z"
+ "updatedAt": "2026-09-25T08:40:00.922Z"
 }

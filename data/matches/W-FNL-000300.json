@@ -5018,7 +5018,7 @@
     }
    ],
    "possessions": {
-    "attacks": 41,
+    "attacks": 52,
     "goals": 40,
     "shots": 51,
     "missed": 11,
@@ -5028,7 +5028,8 @@
     "assists": 3,
     "offReb": 0,
     "defReb": 14,
-    "eff": 97.6
+    "attacksRaw": 41,
+    "eff": 76.9
    },
    "timeline": [
     {
@@ -5046,7 +5047,7 @@
     },
     {
      "bucket": "5-10",
-     "attacks": 1,
+     "attacks": 6,
      "goals": 5,
      "shots": 5,
      "missed": 0,
@@ -5055,7 +5056,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 3
+     "defReb": 3,
+     "attacksRaw": 1
     },
     {
      "bucket": "10-15",
@@ -5085,7 +5087,7 @@
     },
     {
      "bucket": "20-25",
-     "attacks": 1,
+     "attacks": 5,
      "goals": 4,
      "shots": 5,
      "missed": 1,
@@ -5094,7 +5096,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 4
+     "defReb": 4,
+     "attacksRaw": 1
     },
     {
      "bucket": "25-30",
@@ -5150,7 +5153,7 @@
     },
     {
      "bucket": "45-50",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 4,
      "shots": 4,
      "missed": 0,
@@ -5159,7 +5162,8 @@
      "twoMin": 0,
      "assists": 1,
      "offReb": 0,
-     "defReb": 1
+     "defReb": 1,
+     "attacksRaw": 3
     },
     {
      "bucket": "50-55",
@@ -5189,7 +5193,7 @@
     },
     {
      "bucket": "60-65",
-     "attacks": 0,
+     "attacks": 1,
      "goals": 1,
      "shots": 1,
      "missed": 0,
@@ -5198,7 +5202,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 0
     }
    ],
    "situations": {
@@ -11018,7 +11023,7 @@
     }
    ],
    "possessions": {
-    "attacks": 55,
+    "attacks": 57,
     "goals": 14,
     "shots": 36,
     "missed": 22,
@@ -11028,7 +11033,8 @@
     "assists": 0,
     "offReb": 0,
     "defReb": 4,
-    "eff": 25.5
+    "attacksRaw": 55,
+    "eff": 24.6
    },
    "timeline": [
     {
@@ -11059,7 +11065,7 @@
     },
     {
      "bucket": "10-15",
-     "attacks": 3,
+     "attacks": 5,
      "goals": 3,
      "shots": 3,
      "missed": 0,
@@ -11068,7 +11074,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 3
     },
     {
      "bucket": "15-20",
@@ -12305,5 +12312,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:57.144Z"
+ "updatedAt": "2026-09-25T08:40:00.137Z"
 }

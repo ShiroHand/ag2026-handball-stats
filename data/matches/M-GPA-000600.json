@@ -5321,7 +5321,7 @@
     }
    ],
    "possessions": {
-    "attacks": 55,
+    "attacks": 57,
     "goals": 37,
     "shots": 51,
     "missed": 14,
@@ -5331,7 +5331,8 @@
     "assists": 11,
     "offReb": 4,
     "defReb": 11,
-    "eff": 67.3
+    "attacksRaw": 55,
+    "eff": 64.9
    },
    "timeline": [
     {
@@ -5375,7 +5376,7 @@
     },
     {
      "bucket": "15-20",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 4,
      "shots": 5,
      "missed": 1,
@@ -5384,7 +5385,8 @@
      "twoMin": 1,
      "assists": 1,
      "offReb": 1,
-     "defReb": 1
+     "defReb": 1,
+     "attacksRaw": 3
     },
     {
      "bucket": "20-25",
@@ -5492,7 +5494,7 @@
     },
     {
      "bucket": "60-65",
-     "attacks": 0,
+     "attacks": 1,
      "goals": 1,
      "shots": 1,
      "missed": 0,
@@ -5501,7 +5503,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 1,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 0
     }
    ],
    "situations": {
@@ -11741,7 +11744,7 @@
     }
    ],
    "possessions": {
-    "attacks": 56,
+    "attacks": 58,
     "goals": 28,
     "shots": 41,
     "missed": 13,
@@ -11751,7 +11754,8 @@
     "assists": 7,
     "offReb": 1,
     "defReb": 9,
-    "eff": 50
+    "attacksRaw": 56,
+    "eff": 48.3
    },
    "timeline": [
     {
@@ -11782,7 +11786,7 @@
     },
     {
      "bucket": "10-15",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 5,
      "shots": 5,
      "missed": 0,
@@ -11791,7 +11795,8 @@
      "twoMin": 0,
      "assists": 1,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 4
     },
     {
      "bucket": "15-20",
@@ -11873,7 +11878,7 @@
     },
     {
      "bucket": "45-50",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 3,
      "shots": 3,
      "missed": 0,
@@ -11882,7 +11887,8 @@
      "twoMin": 0,
      "assists": 1,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 4
     },
     {
      "bucket": "50-55",
@@ -13064,5 +13070,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:59.882Z"
+ "updatedAt": "2026-09-25T08:40:03.696Z"
 }

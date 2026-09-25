@@ -5059,7 +5059,7 @@
     }
    ],
    "possessions": {
-    "attacks": 37,
+    "attacks": 39,
     "goals": 23,
     "shots": 39,
     "missed": 16,
@@ -5069,12 +5069,13 @@
     "assists": 9,
     "offReb": 2,
     "defReb": 11,
-    "eff": 62.2
+    "attacksRaw": 37,
+    "eff": 59
    },
    "timeline": [
     {
      "bucket": "0-5",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 3,
      "shots": 3,
      "missed": 0,
@@ -5083,7 +5084,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 2
+     "defReb": 2,
+     "attacksRaw": 3
     },
     {
      "bucket": "5-10",
@@ -5165,7 +5167,7 @@
     },
     {
      "bucket": "35-40",
-     "attacks": 4,
+     "attacks": 5,
      "goals": 4,
      "shots": 4,
      "missed": 0,
@@ -5174,7 +5176,8 @@
      "twoMin": 1,
      "assists": 0,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 4
     },
     {
      "bucket": "40-45",
@@ -11352,7 +11355,7 @@
     }
    ],
    "possessions": {
-    "attacks": 36,
+    "attacks": 39,
     "goals": 26,
     "shots": 42,
     "missed": 16,
@@ -11362,7 +11365,8 @@
     "assists": 10,
     "offReb": 2,
     "defReb": 9,
-    "eff": 72.2
+    "attacksRaw": 36,
+    "eff": 66.7
    },
    "timeline": [
     {
@@ -11419,7 +11423,7 @@
     },
     {
      "bucket": "20-25",
-     "attacks": 1,
+     "attacks": 2,
      "goals": 2,
      "shots": 2,
      "missed": 0,
@@ -11428,7 +11432,8 @@
      "twoMin": 0,
      "assists": 2,
      "offReb": 0,
-     "defReb": 2
+     "defReb": 2,
+     "attacksRaw": 1
     },
     {
      "bucket": "25-30",
@@ -11510,7 +11515,7 @@
     },
     {
      "bucket": "55-60",
-     "attacks": 3,
+     "attacks": 5,
      "goals": 5,
      "shots": 6,
      "missed": 1,
@@ -11519,7 +11524,8 @@
      "twoMin": 0,
      "assists": 2,
      "offReb": 0,
-     "defReb": 3
+     "defReb": 3,
+     "attacksRaw": 3
     }
    ],
    "situations": {
@@ -12548,5 +12554,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:57.658Z"
+ "updatedAt": "2026-09-25T08:40:00.701Z"
 }

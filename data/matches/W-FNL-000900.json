@@ -11076,7 +11076,7 @@
     }
    ],
    "possessions": {
-    "attacks": 52,
+    "attacks": 54,
     "goals": 37,
     "shots": 51,
     "missed": 14,
@@ -11086,12 +11086,13 @@
     "assists": 17,
     "offReb": 2,
     "defReb": 15,
-    "eff": 71.2
+    "attacksRaw": 52,
+    "eff": 68.5
    },
    "timeline": [
     {
      "bucket": "0-5",
-     "attacks": 2,
+     "attacks": 3,
      "goals": 2,
      "shots": 3,
      "missed": 1,
@@ -11100,7 +11101,8 @@
      "twoMin": 1,
      "assists": 1,
      "offReb": 0,
-     "defReb": 1
+     "defReb": 1,
+     "attacksRaw": 2
     },
     {
      "bucket": "5-10",
@@ -11143,7 +11145,7 @@
     },
     {
      "bucket": "20-25",
-     "attacks": 5,
+     "attacks": 6,
      "goals": 5,
      "shots": 6,
      "missed": 1,
@@ -11152,7 +11154,8 @@
      "twoMin": 0,
      "assists": 3,
      "offReb": 1,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 5
     },
     {
      "bucket": "25-30",
@@ -12415,5 +12418,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:58.961Z"
+ "updatedAt": "2026-09-25T08:40:01.898Z"
 }

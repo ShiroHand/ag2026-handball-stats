@@ -4932,7 +4932,7 @@
     }
    ],
    "possessions": {
-    "attacks": 49,
+    "attacks": 50,
     "goals": 24,
     "shots": 35,
     "missed": 11,
@@ -4942,7 +4942,8 @@
     "assists": 6,
     "offReb": 0,
     "defReb": 11,
-    "eff": 49
+    "attacksRaw": 49,
+    "eff": 48
    },
    "timeline": [
     {
@@ -5012,7 +5013,7 @@
     },
     {
      "bucket": "20-25",
-     "attacks": 3,
+     "attacks": 4,
      "goals": 3,
      "shots": 3,
      "missed": 0,
@@ -5021,7 +5022,8 @@
      "twoMin": 2,
      "assists": 1,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 3
     },
     {
      "bucket": "25-30",
@@ -11132,7 +11134,7 @@
     }
    ],
    "possessions": {
-    "attacks": 47,
+    "attacks": 49,
     "goals": 26,
     "shots": 44,
     "missed": 18,
@@ -11142,7 +11144,8 @@
     "assists": 8,
     "offReb": 1,
     "defReb": 9,
-    "eff": 55.3
+    "attacksRaw": 47,
+    "eff": 53.1
    },
    "timeline": [
     {
@@ -11316,7 +11319,7 @@
     },
     {
      "bucket": "60-65",
-     "attacks": 0,
+     "attacks": 2,
      "goals": 2,
      "shots": 2,
      "missed": 0,
@@ -11325,7 +11328,8 @@
      "twoMin": 0,
      "assists": 0,
      "offReb": 0,
-     "defReb": 0
+     "defReb": 0,
+     "attacksRaw": 0
     }
    ],
    "situations": {
@@ -12355,5 +12359,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:16:57.240Z"
+ "updatedAt": "2026-09-25T08:40:00.223Z"
 }
