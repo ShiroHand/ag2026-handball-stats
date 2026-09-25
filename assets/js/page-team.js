@@ -3,9 +3,11 @@ import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, set
 import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
+import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
+let picked = selectedFromUrl();   // 対象試合の絞り込み（null = 全試合）
 
 init();
 async function init() {
@@ -79,11 +81,12 @@ function agg(list) {
 function render() {
   app.innerHTML = '';
   const teams = T.teams.filter(t => t.gender === gender);
-  const list = myMatches();
+  const allMatches = myMatches();
+  const list = applyFilter(allMatches, picked);
   const meta = T.teams.find(t => t.code === code) || {code, name: code};
 
   /* チーム選択 */
-  const sel = el('select', {onchange: (e) => { code = e.target.value; setParam('team', code); render(); scrollTo({top: 0}); }});
+  const sel = el('select', {onchange: (e) => { code = e.target.value; picked = null; setParam('m', null); setParam('team', code); render(); scrollTo({top: 0}); }});
   teams.forEach(t => sel.append(el('option', {value: t.code, selected: t.code === code ? 'selected' : null,
     text: `${t.code} — ${t.name}（${t.played}試合）`})));
   app.append(el('div', {class: 'row', style: {marginBottom: '14px', gap: '10px'}},
@@ -92,6 +95,7 @@ function render() {
       class: 'chip' + (ev.gender === gender ? ' on' : ''),
       onclick: () => {
         gender = ev.gender; setParam('g', gender);
+        picked = null; setParam('m', null);
         const first = T.teams.find(t => t.gender === gender);
         code = first ? first.code : code; setParam('team', code); render();
       }, text: ev.gender === 'M' ? '男子' : '女子'})))));
@@ -102,13 +106,18 @@ function render() {
       el('div', {},
         el('div', {style: {fontSize: '22px', fontWeight: 700, color: 'var(--navy)'}, text: meta.name}),
         el('div', {class: 'muted', style: {fontSize: '12px'},
-          text: `${code}　/　${gender === 'M' ? '男子' : '女子'}　/　集計対象 ${list.length} 試合`})),
+          text: `${code}　/　${gender === 'M' ? '男子' : '女子'}　/　集計対象 ${list.length} 試合` + (allMatches.length !== list.length ? `（全${allMatches.length}試合中）` : '')})),
       el('div', {style: {flex: '1'}}),
       el('a', {class: 'btn ghost sm', href: `defense.html?team=${code}&g=${gender}`, text: 'このチームの守備分析 →'}))));
 
-  if (!list.length) {
+  if (!allMatches.length) {
     app.append(el('div', {class: 'empty', text: 'まだ集計できる試合がありません。'}));
     return;
+  }
+  if (allMatches.length > 1) {
+    app.append(matchFilterCard(allMatches, picked, (f) => oppOf(f), (next) => {
+      picked = next; render(); scrollTo({top: 0});
+    }));
   }
 
   const A = agg(list);
@@ -136,7 +145,7 @@ function render() {
     }
   });
   app.append(el('div', {class: 'card'},
-    el('h2', {text: `攻撃のKPI — 全${list.length}試合の累計`}),
+    el('h2', {text: `攻撃のKPI — ${list.length}試合の累計`}),
     el('div', {class: 'sub', text: KPI_NOTE}),
     kpiGrid(own, 'att', foe),
     el('div', {class: 'sub', style: {marginTop: '10px'},

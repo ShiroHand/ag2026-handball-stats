@@ -3,9 +3,11 @@ import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, set
 import {donut, legend, courtMap, goalMap, hbars, lineChart, stackedBars, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
+import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
+let picked = selectedFromUrl();   // 対象試合の絞り込み（null = 全試合）
 
 init();
 async function init() {
@@ -36,8 +38,9 @@ const matchesOf = (c) => FILES.filter(f => f.gender === gender && f.teams[c])
 const ZK = ['LW', 'L6', 'C6', 'R6', 'RW', 'L9', 'C9', 'R9', 'P7', 'EG', 'BT', 'FB', 'FLY'];
 
 /* 守備 = 対戦相手の攻撃データの合計 */
-function defAgg(c) {
-  const list = matchesOf(c);
+/* useFilter=false のときは全試合で集計する（大会内ランキングは絞り込みの影響を受けない） */
+function defAgg(c, useFilter = false) {
+  const list = useFilter ? applyFilter(matchesOf(c), picked) : matchesOf(c);
   const conceded = {};                  // 相手の位置別 {g,s}
   ZK.forEach(z => conceded[z] = {g: 0, s: 0});
   let concededZone = null;              // 相手が決めたコース 3×3
@@ -110,7 +113,7 @@ function render() {
   const teams = T.teams.filter(t => t.gender === gender);
   const meta = T.teams.find(t => t.code === code) || {code, name: code};
 
-  const sel = el('select', {onchange: (e) => { code = e.target.value; setParam('team', code); render(); scrollTo({top: 0}); }});
+  const sel = el('select', {onchange: (e) => { code = e.target.value; picked = null; setParam('m', null); setParam('team', code); render(); scrollTo({top: 0}); }});
   teams.forEach(t => sel.append(el('option', {value: t.code, selected: t.code === code ? 'selected' : null,
     text: `${t.code} — ${t.name}（${t.played}試合）`})));
   app.append(el('div', {class: 'row', style: {marginBottom: '14px', gap: '10px'}},
@@ -119,6 +122,7 @@ function render() {
       class: 'chip' + (ev.gender === gender ? ' on' : ''),
       onclick: () => {
         gender = ev.gender; setParam('g', gender);
+        picked = null; setParam('m', null);
         const first = T.teams.find(t => t.gender === gender);
         code = first ? first.code : code; setParam('team', code); render(); scrollTo({top: 0});
       }, text: ev.gender === 'M' ? '男子' : '女子'})))));
@@ -132,12 +136,19 @@ function render() {
         el('div', {class: 'muted', style: {fontSize: '12px'},
           text: `対戦相手の攻撃データを合計して算出　/　${gender === 'M' ? '男子' : '女子'}`})))));
 
-  const D = defAgg(code);
-  if (!D.list.length) {
+  const allMatches = matchesOf(code);
+  if (!allMatches.length) {
     app.append(el('div', {class: 'empty', text: 'まだ集計できる試合がありません。'}));
     app.append(rankingCard());
     return;
   }
+  if (allMatches.length > 1) {
+    app.append(matchFilterCard(allMatches, picked, (f) => oppOf(f, code), (next) => {
+      picked = next; render(); scrollTo({top: 0});
+    }));
+  }
+
+  const D = defAgg(code, true);
 
   const ga = D.list.reduce((a, f) => a + n(f.teams[oppOf(f, code)].score), 0);
   const oppShots = n(D.oppStats.SHOTS), oppGoals = n(D.oppStats.GOALS);
@@ -154,7 +165,7 @@ function render() {
   const opp = D.list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[oppOf(f, code)])), emptyCounts());
   const mine = D.list.reduce((acc, f) => addCounts(acc, countsFromTeam(f.teams[code])), emptyCounts());
   app.append(el('div', {class: 'card'},
-    el('h2', {text: `守備のKPI — 全${D.list.length}試合の累計`}),
+    el('h2', {text: `守備のKPI — ${D.list.length}試合の累計`}),
     el('div', {class: 'sub', text: '相手チームの攻撃を合計したもの。数字が小さいほど良い守備です（相手のターンオーバーだけは多いほど良い）。' + KPI_NOTE}),
     kpiGrid(opp, 'def', mine),
     el('div', {class: 'sub', style: {marginTop: '10px'},

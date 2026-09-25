@@ -525,9 +525,6 @@ function timelineCard(H, A) {
     el('div', {class: 'grid g2', style: {marginTop: '8px'}},
       ratioChart('eff', 'goals', 'attacks', '攻撃効率（得点÷攻撃回数）', '線が途切れている区間は攻撃回数が0です'),
       ratioChart('assistRate', 'assists', 'goals', 'アシスト率（アシスト÷得点）', '線が途切れている区間は得点が0です')),
-    el('div', {class: 'grid g2', style: {marginTop: '8px'}},
-      ratioChart('eff', 'goals', 'attacks', '累積の攻撃効率', 'その時点までの合計で計算。補正後は序盤ほど事前確率に近く、試合が進むほど実測に寄る', {cumulative: true}),
-      ratioChart('assistRate', 'assists', 'goals', '累積のアシスト率', 'その時点までの合計で計算', {cumulative: true})),
     priorNote(),
     el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '5分ごとの数値'}),
     el('div', {class: 'tbl-scroll'}, table),
@@ -537,5 +534,10 @@ function timelineCard(H, A) {
         {label: H.code, color: CAT[0], values: cum(series(H, 'goals'))},
         {label: A.code, color: CAT[4], values: cum(series(A, 'goals'))},
       ], buckets, {width: 900, height: 220}),
-      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}])));
+      legend([{label: H.code, color: CAT[0]}, {label: A.code, color: CAT[4]}])),
+    el('div', {class: 'grid g2', style: {marginTop: '16px'}},
+      ratioChart('eff', 'goals', 'attacks', '累積の攻撃効率',
+        'その時点までの合計で計算。補正後は序盤ほど事前確率に近く、試合が進むほど実測に寄る', {cumulative: true}),
+      ratioChart('assistRate', 'assists', 'goals', '累積のアシスト率',
+        'その時点までの合計で計算', {cumulative: true})));
 }

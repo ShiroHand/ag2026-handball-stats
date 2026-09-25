@@ -237,3 +237,22 @@ table.matrix tbody td:first-child{white-space:nowrap;font-weight:600}
 .offcourt-pill .oc-k{font-size:10px;font-weight:600;opacity:.9}
 .offcourt-pill .oc-v{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
 .offcourt-pill .oc-p{font-size:9.5px;font-weight:700;opacity:.9;font-variant-numeric:tabular-nums}
+
+/* 対象試合フィルター */
+.mf-card{padding:12px 14px}
+.mf-title{font-size:13px;font-weight:700;color:var(--navy);white-space:nowrap}
+.mf-count{font-size:11.5px;color:var(--ink-3);font-weight:600}
+.mf-count.on{color:var(--bad);font-weight:700}
+.mf-chips{display:flex;flex-wrap:wrap;gap:7px}
+.mf-chip{display:flex;align-items:center;gap:7px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line-2);border-radius:9px;
+  padding:5px 10px;color:var(--ink-3);opacity:.55;transition:opacity .12s,border-color .12s}
+.mf-chip:hover{border-color:var(--blue)}
+.mf-chip.on{opacity:1;color:var(--ink);border-color:var(--navy);background:var(--surface-2)}
+.mf-chip .mf-main{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.mf-chip .mf-main b{font-size:12px;font-weight:700}
+.mf-chip .mf-score{font-size:11px;font-variant-numeric:tabular-nums}
+.mf-chip .mf-date{font-size:10.5px;color:var(--ink-3);white-space:nowrap}
+.mf-chip .mf-wl{font-size:10px;font-weight:700;border-radius:4px;padding:1px 5px;color:#fff}
+.mf-chip .mf-wl.w{background:var(--good)}
+.mf-chip .mf-wl.l{background:var(--ink-3)}
