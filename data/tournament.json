@@ -1023,14 +1023,14 @@
    "phaseDesc": "Men Preliminary Round Group A",
    "unitDesc": "Men Preliminary Round Group A Match 6",
    "unitNum": "30",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "QAT",
     "name": "Qatar",
     "score": "37",
-    "winner": false
+    "winner": true
    },
    "away": {
     "code": "JPN",
@@ -1118,8 +1118,8 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "JPN",
+    "name": "Japan",
     "score": "",
     "winner": false
    },
@@ -1184,8 +1184,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "CHN",
+    "name": "China",
     "score": "",
     "winner": false
    },
@@ -1238,8 +1238,8 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "QAT",
+    "name": "Qatar",
     "score": "",
     "winner": false
    },
@@ -1304,8 +1304,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "HKG",
+    "name": "Hong Kong, China",
     "score": "",
     "winner": false
    },
@@ -1534,31 +1534,31 @@
      "rows": [
       {
        "rank": "1",
-       "org": "JPN",
-       "name": "Japan",
-       "pts": "4",
-       "played": "2",
-       "won": "2",
+       "org": "QAT",
+       "name": "Qatar",
+       "pts": "6",
+       "played": "3",
+       "won": "3",
        "lost": "0",
        "tied": "0",
-       "for": "75",
-       "against": "44",
-       "diff": "31",
-       "qualified": ""
+       "for": "107",
+       "against": "70",
+       "diff": "37",
+       "qualified": "Q"
       },
       {
        "rank": "2",
-       "org": "QAT",
-       "name": "Qatar",
+       "org": "JPN",
+       "name": "Japan",
        "pts": "4",
-       "played": "2",
+       "played": "3",
        "won": "2",
-       "lost": "0",
+       "lost": "1",
        "tied": "0",
-       "for": "70",
-       "against": "42",
-       "diff": "28",
-       "qualified": ""
+       "for": "103",
+       "against": "81",
+       "diff": "22",
+       "qualified": "Q"
       },
       {
        "rank": "3",
@@ -1572,7 +1572,7 @@
        "for": "90",
        "against": "87",
        "diff": "3",
-       "qualified": ""
+       "qualified": "Q"
       },
       {
        "rank": "4",
@@ -1586,7 +1586,7 @@
        "for": "60",
        "against": "122",
        "diff": "-62",
-       "qualified": ""
+       "qualified": "Q"
       }
      ]
     },
@@ -1812,5 +1812,5 @@
   "W-FNL-001400",
   "M-GPA-000600"
  ],
- "updatedAt": "2026-09-25T08:00:11.746Z"
+ "updatedAt": "2026-09-25T08:13:12.796Z"
 }

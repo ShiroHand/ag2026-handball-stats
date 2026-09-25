@@ -1,8 +1,8 @@
 {
  "id": "M-GPA-000600",
  "key": "M.TEAM7-------------.GPA-.000600--",
- "status": "RUNNING",
- "statusDesc": "Running",
+ "status": "OFFICIAL",
+ "statusDesc": "Official",
  "dateTime": "2026-09-25T15:30:00+09:00",
  "date": "2026-09-25",
  "venue": "Kasugai City Gymnasium",
@@ -14,7 +14,7 @@
  "phaseDesc": "Men Preliminary Round Group A",
  "unitDesc": "Men Preliminary Round Group A Match 6",
  "unitNum": "30",
- "duration": "00:30:00",
+ "duration": "01:00:00",
  "periods": [
   {
    "desc": "1st Half",
@@ -70,8 +70,8 @@
    "name": "Qatar",
    "nameS": "Qatar",
    "score": 37,
-   "wlt": "T",
-   "rank": "",
+   "wlt": "W",
+   "rank": "1",
    "stats": {
     "2MINUTES": "4",
     "6M_GOALS": "7",
@@ -1305,9 +1305,9 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "06:36",
      "stats": {
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "396"
      },
      "shot": {
       "LW": {
@@ -2038,12 +2038,12 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "04:49",
+     "time": "15:21",
      "stats": {
       "2MINUTES": "1",
       "ASSISTS": "1",
       "FAIRPLAY_POINTS": "2",
-      "TIME_PLAYED": "289"
+      "TIME_PLAYED": "921"
      },
      "shot": {
       "LW": {
@@ -2518,7 +2518,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "28:03",
+     "time": "37:01",
      "stats": {
       "6M_MISSED": "1",
       "6M_RIGHT_WING_GOALS": "3",
@@ -2541,7 +2541,7 @@
       "FLY_SHOTS": "1",
       "GOALS": "5",
       "SHOTS": "7",
-      "TIME_PLAYED": "1683",
+      "TIME_PLAYED": "2221",
       "WING_GOALS": "3",
       "WING_SHOTS": "3"
      },
@@ -2773,7 +2773,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "12:07",
      "stats": {
       "6M_GOALS": "1",
       "6M_RIGHT_GOALS": "1",
@@ -2791,7 +2791,7 @@
       "FIELD_SHOTS": "3",
       "GOALS": "3",
       "SHOTS": "3",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "727"
      },
      "shot": {
       "LW": {
@@ -3021,7 +3021,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "17:37",
+     "time": "24:36",
      "stats": {
       "GK_6M_GOALS": "2",
       "GK_6M_GOALS_SHOTS": "2/2",
@@ -3106,7 +3106,7 @@
       "GK_WING_GOALS_SHOTS": "2/2",
       "GK_WING_SAVES_SHOTS": "0/3",
       "GK_WING_SHOTS": "3",
-      "TIME_PLAYED": "1057"
+      "TIME_PLAYED": "1476"
      },
      "shot": {
       "LW": {
@@ -3582,7 +3582,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:00",
+     "time": "10:17",
      "stats": {
       "9M_CENTER_GOALS": "3",
       "9M_CENTER_SAVES": "1",
@@ -3596,7 +3596,7 @@
       "FIELD_SHOTS": "4",
       "GOALS": "3",
       "SHOTS": "4",
-      "TIME_PLAYED": "0"
+      "TIME_PLAYED": "617"
      },
      "shot": {
       "LW": {
@@ -3826,7 +3826,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "11:40",
+     "time": "16:11",
      "stats": {
       "9M_CENTER_GOALS": "1",
       "9M_CENTER_SHOTS": "1",
@@ -3838,7 +3838,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "1",
-      "TIME_PLAYED": "700"
+      "TIME_PLAYED": "971"
      },
      "shot": {
       "LW": {
@@ -6663,8 +6663,8 @@
    "name": "Japan",
    "nameS": "Japan",
    "score": 28,
-   "wlt": "T",
-   "rank": "",
+   "wlt": "L",
+   "rank": "2",
    "stats": {
     "2MINUTES": "2",
     "6M_GOALS": "3",
@@ -6837,7 +6837,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "18:14",
+     "time": "28:54",
      "stats": {
       "GK_6M_CENTER_GOALS": "1",
       "GK_6M_CENTER_GOALS_SHOTS": "1/1",
@@ -6927,7 +6927,7 @@
       "GK_WING_GOALS_SHOTS": "4/4",
       "GK_WING_SAVES_SHOTS": "0/4",
       "GK_WING_SHOTS": "4",
-      "TIME_PLAYED": "1094"
+      "TIME_PLAYED": "1734"
      },
      "shot": {
       "LW": {
@@ -7651,9 +7651,9 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "09:32",
+     "time": "10:12",
      "stats": {
-      "TIME_PLAYED": "572"
+      "TIME_PLAYED": "612"
      },
      "shot": {
       "LW": {
@@ -8615,7 +8615,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "19:06",
+     "time": "25:23",
      "stats": {
       "6M_LEFT_WING_GOALS": "1",
       "6M_LEFT_WING_SHOTS": "1",
@@ -8627,7 +8627,7 @@
       "FIELD_SHOTS": "1",
       "GOALS": "1",
       "SHOTS": "2",
-      "TIME_PLAYED": "1146",
+      "TIME_PLAYED": "1523",
       "WING_GOALS": "1",
       "WING_SHOTS": "1"
      },
@@ -9426,7 +9426,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "10:28",
+     "time": "33:51",
      "stats": {
       "2MINUTES": "1",
       "6M_GOALS": "1",
@@ -9455,7 +9455,7 @@
       "FIELD_SHOTS": "6",
       "GOALS": "5",
       "SHOTS": "9",
-      "TIME_PLAYED": "628"
+      "TIME_PLAYED": "2031"
      },
      "shot": {
       "LW": {
@@ -9929,9 +9929,9 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "26:41",
+     "time": "27:26",
      "stats": {
-      "TIME_PLAYED": "1601"
+      "TIME_PLAYED": "1646"
      },
      "shot": {
       "LW": {
@@ -10161,7 +10161,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "13:32",
+     "time": "14:54",
      "stats": {
       "9M_BLOCKED": "1",
       "9M_CENTER_BLOCKED": "1",
@@ -10181,7 +10181,7 @@
       "FIELD_SHOTS": "5",
       "GOALS": "2",
       "SHOTS": "5",
-      "TIME_PLAYED": "812"
+      "TIME_PLAYED": "894"
      },
      "shot": {
       "LW": {
@@ -10411,9 +10411,9 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "19:28",
+     "time": "21:29",
      "stats": {
-      "TIME_PLAYED": "1168"
+      "TIME_PLAYED": "1289"
      },
      "shot": {
       "LW": {
@@ -12903,5 +12903,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T08:00:11.744Z"
+ "updatedAt": "2026-09-25T08:13:12.793Z"
 }
