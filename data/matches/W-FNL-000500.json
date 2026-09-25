@@ -5318,37 +5318,217 @@
     "afterOwn": {
      "TO": {
       "n": 6,
-      "goals": 2
+      "goals": 2,
+      "shots": 6,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 2,
+      "secondGoals": 0,
+      "secondSecs": [
+       13,
+       8
+      ],
+      "set": 4,
+      "setGoals": 2,
+      "setSecs": [
+       46,
+       47,
+       52,
+       35
+      ],
+      "bt": 2,
+      "btGoals": 0
      },
      "GOAL": {
       "n": 21,
-      "goals": 13
+      "goals": 13,
+      "shots": 20,
+      "fast": 1,
+      "fastGoals": 1,
+      "fastSecs": [
+       8
+      ],
+      "second": 4,
+      "secondGoals": 3,
+      "secondSecs": [
+       9,
+       6,
+       10,
+       6
+      ],
+      "set": 15,
+      "setGoals": 9,
+      "setSecs": [
+       34,
+       63,
+       34,
+       38,
+       49,
+       77,
+       42,
+       33,
+       24,
+       27,
+       79,
+       83,
+       39,
+       55,
+       29
+      ],
+      "bt": 5,
+      "btGoals": 4
      },
      "SAVE": {
       "n": 9,
-      "goals": 8
+      "goals": 8,
+      "shots": 9,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 3,
+      "secondGoals": 2,
+      "secondSecs": [
+       13,
+       16,
+       5
+      ],
+      "set": 6,
+      "setGoals": 6,
+      "setSecs": [
+       169,
+       43,
+       42,
+       60,
+       37,
+       51
+      ],
+      "bt": 2,
+      "btGoals": 2
      },
      "POST": {
       "n": 2,
-      "goals": 1
+      "goals": 1,
+      "shots": 1,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 0,
+      "secondGoals": 0,
+      "secondSecs": [],
+      "set": 1,
+      "setGoals": 1,
+      "setSecs": [
+       29
+      ],
+      "bt": 0,
+      "btGoals": 0
      }
     },
     "afterOpp": {
      "TO": {
       "n": 2,
-      "goals": 0
+      "goals": 0,
+      "shots": 1,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 0,
+      "secondGoals": 0,
+      "secondSecs": [],
+      "set": 1,
+      "setGoals": 0,
+      "setSecs": [
+       46
+      ],
+      "bt": 0,
+      "btGoals": 0
      },
      "GOAL": {
       "n": 20,
-      "goals": 10
+      "goals": 10,
+      "shots": 17,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 1,
+      "secondGoals": 1,
+      "secondSecs": [
+       19
+      ],
+      "set": 16,
+      "setGoals": 9,
+      "setSecs": [
+       29,
+       42,
+       36,
+       24,
+       45,
+       70,
+       29,
+       28,
+       24,
+       39,
+       29,
+       64,
+       62,
+       41,
+       62,
+       23
+      ],
+      "bt": 4,
+      "btGoals": 3
      },
      "SAVE": {
       "n": 11,
-      "goals": 5
+      "goals": 5,
+      "shots": 10,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 2,
+      "secondGoals": 1,
+      "secondSecs": [
+       8,
+       16
+      ],
+      "set": 8,
+      "setGoals": 4,
+      "setSecs": [
+       34,
+       74,
+       41,
+       58,
+       39,
+       25,
+       32,
+       32
+      ],
+      "bt": 2,
+      "btGoals": 1
      },
      "POST": {
       "n": 4,
-      "goals": 4
+      "goals": 4,
+      "shots": 4,
+      "fast": 1,
+      "fastGoals": 1,
+      "fastSecs": [
+       11
+      ],
+      "second": 1,
+      "secondGoals": 1,
+      "secondSecs": [
+       9
+      ],
+      "set": 2,
+      "setGoals": 2,
+      "setSecs": [
+       24,
+       35
+      ],
+      "bt": 1,
+      "btGoals": 1
      }
     }
    },
@@ -11652,37 +11832,217 @@
     "afterOwn": {
      "TO": {
       "n": 2,
-      "goals": 0
+      "goals": 0,
+      "shots": 1,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 0,
+      "secondGoals": 0,
+      "secondSecs": [],
+      "set": 1,
+      "setGoals": 0,
+      "setSecs": [
+       46
+      ],
+      "bt": 0,
+      "btGoals": 0
      },
      "GOAL": {
       "n": 20,
-      "goals": 10
+      "goals": 10,
+      "shots": 17,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 1,
+      "secondGoals": 1,
+      "secondSecs": [
+       19
+      ],
+      "set": 16,
+      "setGoals": 9,
+      "setSecs": [
+       29,
+       42,
+       36,
+       24,
+       45,
+       70,
+       29,
+       28,
+       24,
+       39,
+       29,
+       64,
+       62,
+       41,
+       62,
+       23
+      ],
+      "bt": 4,
+      "btGoals": 3
      },
      "SAVE": {
       "n": 11,
-      "goals": 5
+      "goals": 5,
+      "shots": 10,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 2,
+      "secondGoals": 1,
+      "secondSecs": [
+       8,
+       16
+      ],
+      "set": 8,
+      "setGoals": 4,
+      "setSecs": [
+       34,
+       74,
+       41,
+       58,
+       39,
+       25,
+       32,
+       32
+      ],
+      "bt": 2,
+      "btGoals": 1
      },
      "POST": {
       "n": 4,
-      "goals": 4
+      "goals": 4,
+      "shots": 4,
+      "fast": 1,
+      "fastGoals": 1,
+      "fastSecs": [
+       11
+      ],
+      "second": 1,
+      "secondGoals": 1,
+      "secondSecs": [
+       9
+      ],
+      "set": 2,
+      "setGoals": 2,
+      "setSecs": [
+       24,
+       35
+      ],
+      "bt": 1,
+      "btGoals": 1
      }
     },
     "afterOpp": {
      "TO": {
       "n": 6,
-      "goals": 2
+      "goals": 2,
+      "shots": 6,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 2,
+      "secondGoals": 0,
+      "secondSecs": [
+       13,
+       8
+      ],
+      "set": 4,
+      "setGoals": 2,
+      "setSecs": [
+       46,
+       47,
+       52,
+       35
+      ],
+      "bt": 2,
+      "btGoals": 0
      },
      "GOAL": {
       "n": 21,
-      "goals": 13
+      "goals": 13,
+      "shots": 20,
+      "fast": 1,
+      "fastGoals": 1,
+      "fastSecs": [
+       8
+      ],
+      "second": 4,
+      "secondGoals": 3,
+      "secondSecs": [
+       9,
+       6,
+       10,
+       6
+      ],
+      "set": 15,
+      "setGoals": 9,
+      "setSecs": [
+       34,
+       63,
+       34,
+       38,
+       49,
+       77,
+       42,
+       33,
+       24,
+       27,
+       79,
+       83,
+       39,
+       55,
+       29
+      ],
+      "bt": 5,
+      "btGoals": 4
      },
      "SAVE": {
       "n": 9,
-      "goals": 8
+      "goals": 8,
+      "shots": 9,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 3,
+      "secondGoals": 2,
+      "secondSecs": [
+       13,
+       16,
+       5
+      ],
+      "set": 6,
+      "setGoals": 6,
+      "setSecs": [
+       169,
+       43,
+       42,
+       60,
+       37,
+       51
+      ],
+      "bt": 2,
+      "btGoals": 2
      },
      "POST": {
       "n": 2,
-      "goals": 1
+      "goals": 1,
+      "shots": 1,
+      "fast": 0,
+      "fastGoals": 0,
+      "fastSecs": [],
+      "second": 0,
+      "secondGoals": 0,
+      "secondSecs": [],
+      "set": 1,
+      "setGoals": 1,
+      "setSecs": [
+       29
+      ],
+      "bt": 0,
+      "btGoals": 0
      }
     }
    },
@@ -12630,5 +12990,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T09:24:26.658Z"
+ "updatedAt": "2026-09-25T12:05:18.586Z"
 }
