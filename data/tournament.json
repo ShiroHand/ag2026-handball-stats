@@ -1029,13 +1029,13 @@
    "home": {
     "code": "QAT",
     "name": "Qatar",
-    "score": "31",
+    "score": "37",
     "winner": false
    },
    "away": {
     "code": "JPN",
     "name": "Japan",
-    "score": "23",
+    "score": "28",
     "winner": false
    },
    "hasResult": true,
@@ -1812,5 +1812,5 @@
   "W-FNL-001400",
   "M-GPA-000600"
  ],
- "updatedAt": "2026-09-25T07:51:25.635Z"
+ "updatedAt": "2026-09-25T08:00:11.746Z"
 }
