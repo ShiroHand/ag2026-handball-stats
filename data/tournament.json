@@ -61,7 +61,7 @@
    "name": "Japan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "KAZ",
@@ -82,7 +82,7 @@
    "name": "Kuwait",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "QAT",
@@ -117,7 +117,7 @@
    "name": "Kazakhstan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "KOR",
@@ -131,7 +131,7 @@
    "name": "Uzbekistan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "VIE",
@@ -1116,22 +1116,23 @@
    "phaseDesc": "Men Quarterfinal",
    "unitDesc": "Men Quarterfinal Match 1",
    "unitNum": "35",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "16",
     "winner": false
    },
    "away": {
     "code": "KUW",
     "name": "Kuwait",
-    "score": "",
+    "score": "8",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001600",
@@ -1146,22 +1147,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 16",
    "unitNum": "32",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "GETTING_READY",
+   "statusDesc": "Getting Ready",
+   "isLive": true,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "",
+    "score": "0",
     "winner": false
    },
    "away": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "",
+    "score": "0",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": false
   },
   {
    "id": "M-QFNL-000200",
@@ -1814,7 +1816,9 @@
   "W-FNL-001400",
   "M-GPA-000600",
   "W-FNL-001500",
-  "M-GPB-001000"
+  "M-GPB-001000",
+  "M-QFNL-000100",
+  "W-FNL-001600"
  ],
  "priors": {
   "W": {
@@ -1894,16 +1898,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5257,
-     "k": 14.6,
-     "windows": 404,
-     "trials": 1729
+     "mean": 0.5259,
+     "k": 15,
+     "windows": 414,
+     "trials": 1774
     },
     "assistRate": {
-     "mean": 0.3641,
-     "k": 26.1,
-     "windows": 372,
-     "trials": 909
+     "mean": 0.3644,
+     "k": 28.5,
+     "windows": 381,
+     "trials": 933
     }
    },
    "teams": {
@@ -1916,12 +1920,12 @@
      "assists": 28
     },
     "KUW": {
-     "games": 4,
-     "eff": 0.5392,
-     "assistRate": 0.4274,
-     "attacks": 217,
-     "goals": 117,
-     "assists": 50
+     "games": 5,
+     "eff": 0.5208,
+     "assistRate": 0.416,
+     "attacks": 240,
+     "goals": 125,
+     "assists": 52
     },
     "KAZ": {
      "games": 4,
@@ -1948,12 +1952,12 @@
      "assists": 38
     },
     "JPN": {
-     "games": 3,
-     "eff": 0.6205,
-     "assistRate": 0.4369,
-     "attacks": 166,
-     "goals": 103,
-     "assists": 45
+     "games": 4,
+     "eff": 0.633,
+     "assistRate": 0.437,
+     "attacks": 188,
+     "goals": 119,
+     "assists": 52
     },
     "HKG": {
      "games": 3,
@@ -1982,5 +1986,5 @@
    }
   }
  },
- "updatedAt": "2026-09-25T10:41:39.422Z"
+ "updatedAt": "2026-09-26T03:28:34.698Z"
 }
