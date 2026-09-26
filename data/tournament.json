@@ -96,14 +96,14 @@
    "name": "China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "HKG",
    "name": "Hong Kong, China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "JPN",
@@ -1147,8 +1147,8 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 16",
    "unitNum": "32",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "KAZ",
@@ -1184,13 +1184,13 @@
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "8",
+    "score": "20",
     "winner": false
    },
    "away": {
     "code": "CHN",
     "name": "China",
-    "score": "5",
+    "score": "16",
     "winner": false
    },
    "hasResult": true,
@@ -1209,22 +1209,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 17",
    "unitNum": "33",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "",
+    "score": "2",
     "winner": false
    },
    "away": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "",
+    "score": "2",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-QFNL-000300",
@@ -1820,22 +1821,23 @@
   "M-GPB-001000",
   "M-QFNL-000100",
   "W-FNL-001600",
-  "M-QFNL-000200"
+  "M-QFNL-000200",
+  "W-FNL-001700"
  ],
  "priors": {
   "W": {
    "metrics": {
     "eff": {
      "mean": 0.4942,
-     "k": 8.4,
-     "windows": 397,
-     "trials": 1817
+     "k": 8.5,
+     "windows": 399,
+     "trials": 1825
     },
     "assistRate": {
-     "mean": 0.3909,
-     "k": 80.3,
-     "windows": 356,
-     "trials": 898
+     "mean": 0.3902,
+     "k": 83.8,
+     "windows": 358,
+     "trials": 902
     }
    },
    "teams": {
@@ -1848,11 +1850,11 @@
      "assists": 86
     },
     "HKG": {
-     "games": 4,
-     "eff": 0.3899,
-     "assistRate": 0.3647,
-     "attacks": 218,
-     "goals": 85,
+     "games": 5,
+     "eff": 0.3919,
+     "assistRate": 0.3563,
+     "attacks": 222,
+     "goals": 87,
      "assists": 31
     },
     "KAZ": {
@@ -1864,12 +1866,12 @@
      "assists": 68
     },
     "CHN": {
-     "games": 4,
-     "eff": 0.5134,
-     "assistRate": 0.3391,
-     "attacks": 224,
-     "goals": 115,
-     "assists": 39
+     "games": 5,
+     "eff": 0.5132,
+     "assistRate": 0.3419,
+     "attacks": 228,
+     "goals": 117,
+     "assists": 40
     },
     "JPN": {
      "games": 5,
@@ -1900,16 +1902,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5285,
-     "k": 13.9,
-     "windows": 435,
-     "trials": 1877
+     "mean": 0.5262,
+     "k": 15.7,
+     "windows": 447,
+     "trials": 1927
     },
     "assistRate": {
-     "mean": 0.369,
-     "k": 24.8,
-     "windows": 400,
-     "trials": 992
+     "mean": 0.3718,
+     "k": 24.5,
+     "windows": 411,
+     "trials": 1014
     }
    },
    "teams": {
@@ -1947,11 +1949,11 @@
     },
     "CHN": {
      "games": 4,
-     "eff": 0.5614,
-     "assistRate": 0.4167,
-     "attacks": 171,
-     "goals": 96,
-     "assists": 40
+     "eff": 0.5408,
+     "assistRate": 0.4245,
+     "attacks": 196,
+     "goals": 106,
+     "assists": 45
     },
     "JPN": {
      "games": 4,
@@ -1979,14 +1981,14 @@
     },
     "KOR": {
      "games": 5,
-     "eff": 0.5605,
-     "assistRate": 0.392,
-     "attacks": 223,
-     "goals": 125,
-     "assists": 49
+     "eff": 0.5524,
+     "assistRate": 0.4015,
+     "attacks": 248,
+     "goals": 137,
+     "assists": 55
     }
    }
   }
  },
- "updatedAt": "2026-09-26T05:14:45.836Z"
+ "updatedAt": "2026-09-26T06:03:56.226Z"
 }

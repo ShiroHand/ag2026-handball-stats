@@ -1,0 +1,123 @@
+{
+ "id": "W-FNL-001600",
+ "key": "W.TEAM7-------------.FNL-.001600--",
+ "codes": [
+  "KAZ",
+  "UZB"
+ ],
+ "updatedAt": "2026-09-26T06:03:56.625Z",
+ "emptyGoal": {
+  "situations": {
+   "KAZ": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "UZB": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "KAZ": {
+    "v7x6": {},
+    "v6x6": {},
+    "other": {}
+   },
+   "UZB": {
+    "v7x6": {},
+    "v6x6": {},
+    "other": {}
+   }
+  },
+  "duration": {
+   "KAZ": {},
+   "UZB": {}
+  },
+  "substitutions": {
+   "KAZ": {
+    "courtToGk": 3,
+    "courtToCourt": 31,
+    "total": 34
+   },
+   "UZB": {
+    "courtToGk": 4,
+    "courtToCourt": 125,
+    "total": 129
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001600--.C77_1_0.pdf",
+ "teamStats": {
+  "KAZ": {
+   "attacks": 58,
+   "efficiency": 60
+  },
+  "UZB": {
+   "attacks": 57,
+   "efficiency": 35
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001600--.C83_1_0.pdf"
+}

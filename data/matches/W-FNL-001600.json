@@ -1,8 +1,8 @@
 {
  "id": "W-FNL-001600",
  "key": "W.TEAM7-------------.FNL-.001600--",
- "status": "UNOFFICIAL",
- "statusDesc": "Unofficial",
+ "status": "OFFICIAL",
+ "statusDesc": "Official",
  "dateTime": "2026-09-26T12:30:00+09:00",
  "date": "2026-09-26",
  "venue": "ENTRIO",
@@ -13362,5 +13362,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-26T05:14:45.444Z"
+ "updatedAt": "2026-09-26T06:03:55.555Z"
 }
