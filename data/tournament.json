@@ -33,7 +33,7 @@
    "name": "Bahrain",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "CHN",
@@ -47,14 +47,14 @@
    "name": "Hong Kong, China",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "IRI",
    "name": "IR Iran",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "JPN",
@@ -89,7 +89,7 @@
    "name": "Qatar",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "CHN",
@@ -124,7 +124,7 @@
    "name": "Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "UZB",
@@ -138,7 +138,7 @@
    "name": "Vietnam",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 4
+   "played": 5
   }
  ],
  "matches": [
@@ -1209,19 +1209,19 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 17",
    "unitNum": "33",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "19",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "11",
+    "score": "19",
     "winner": false
    },
    "hasResult": true,
@@ -1240,22 +1240,23 @@
    "phaseDesc": "Men Quarterfinal",
    "unitDesc": "Men Quarterfinal Match 3",
    "unitNum": "37",
-   "status": "START_LIST",
-   "statusDesc": "Start List",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "QAT",
     "name": "Qatar",
-    "score": "",
-    "winner": false
+    "score": "31",
+    "winner": true
    },
    "away": {
     "code": "IRI",
     "name": "IR Iran",
-    "score": "",
+    "score": "25",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001800",
@@ -1270,22 +1271,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 18",
    "unitNum": "34",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
-    "winner": false
+    "score": "46",
+    "winner": true
    },
    "away": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "",
+    "score": "18",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-QFNL-000400",
@@ -1300,22 +1302,23 @@
    "phaseDesc": "Men Quarterfinal",
    "unitDesc": "Men Quarterfinal Match 4",
    "unitNum": "38",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "",
+    "score": "16",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001900",
@@ -1430,8 +1433,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "BRN",
+    "name": "Bahrain",
     "score": "",
     "winner": false
    },
@@ -1460,8 +1463,8 @@
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "QAT",
+    "name": "Qatar",
     "score": "",
     "winner": false
    },
@@ -1686,6 +1689,20 @@
      "rows": [
       {
        "rank": "1",
+       "org": "KOR",
+       "name": "Korea",
+       "pts": "10",
+       "played": "5",
+       "won": "5",
+       "lost": "0",
+       "tied": "0",
+       "for": "216",
+       "against": "82",
+       "diff": "134",
+       "qualified": ""
+      },
+      {
+       "rank": "2",
        "org": "JPN",
        "name": "Japan",
        "pts": "10",
@@ -1699,21 +1716,21 @@
        "qualified": ""
       },
       {
-       "rank": "2",
-       "org": "KOR",
-       "name": "Korea",
-       "pts": "8",
-       "played": "4",
-       "won": "4",
-       "lost": "0",
+       "rank": "3",
+       "org": "CHN",
+       "name": "China",
+       "pts": "6",
+       "played": "5",
+       "won": "3",
+       "lost": "2",
        "tied": "0",
-       "for": "170",
-       "against": "64",
-       "diff": "106",
+       "for": "152",
+       "against": "127",
+       "diff": "25",
        "qualified": ""
       },
       {
-       "rank": "3",
+       "rank": "4",
        "org": "KAZ",
        "name": "Kazakhstan",
        "pts": "6",
@@ -1727,31 +1744,17 @@
        "qualified": ""
       },
       {
-       "rank": "4",
-       "org": "CHN",
-       "name": "China",
-       "pts": "4",
-       "played": "4",
-       "won": "2",
-       "lost": "2",
-       "tied": "0",
-       "for": "115",
-       "against": "108",
-       "diff": "7",
-       "qualified": ""
-      },
-      {
        "rank": "5",
        "org": "HKG",
        "name": "Hong Kong, China",
        "pts": "2",
-       "played": "4",
+       "played": "5",
        "won": "1",
-       "lost": "3",
+       "lost": "4",
        "tied": "0",
-       "for": "85",
-       "against": "144",
-       "diff": "-59",
+       "for": "104",
+       "against": "181",
+       "diff": "-77",
        "qualified": ""
       },
       {
@@ -1773,13 +1776,13 @@
        "org": "VIE",
        "name": "Vietnam",
        "pts": "0",
-       "played": "4",
+       "played": "5",
        "won": "0",
-       "lost": "4",
+       "lost": "5",
        "tied": "0",
-       "for": "83",
-       "against": "124",
-       "diff": "-41",
+       "for": "101",
+       "against": "170",
+       "diff": "-69",
        "qualified": ""
       }
      ]
@@ -1822,40 +1825,43 @@
   "M-QFNL-000100",
   "W-FNL-001600",
   "M-QFNL-000200",
-  "W-FNL-001700"
+  "W-FNL-001700",
+  "M-QFNL-000300",
+  "W-FNL-001800",
+  "M-QFNL-000400"
  ],
  "priors": {
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4949,
+     "mean": 0.4946,
      "k": 8.9,
-     "windows": 410,
-     "trials": 1875
+     "windows": 448,
+     "trials": 2056
     },
     "assistRate": {
-     "mean": 0.3955,
-     "k": 60.1,
-     "windows": 368,
-     "trials": 928
+     "mean": 0.4002,
+     "k": 46.1,
+     "windows": 403,
+     "trials": 1017
     }
    },
    "teams": {
     "KOR": {
-     "games": 4,
-     "eff": 0.7113,
-     "assistRate": 0.5059,
-     "attacks": 239,
-     "goals": 170,
-     "assists": 86
+     "games": 5,
+     "eff": 0.7176,
+     "assistRate": 0.5231,
+     "attacks": 301,
+     "goals": 216,
+     "assists": 113
     },
     "HKG": {
      "games": 5,
-     "eff": 0.3887,
-     "assistRate": 0.3438,
-     "attacks": 247,
-     "goals": 96,
-     "assists": 33
+     "eff": 0.3782,
+     "assistRate": 0.3462,
+     "attacks": 275,
+     "goals": 104,
+     "assists": 36
     },
     "KAZ": {
      "games": 6,
@@ -1867,11 +1873,11 @@
     },
     "CHN": {
      "games": 5,
-     "eff": 0.5296,
-     "assistRate": 0.3955,
-     "attacks": 253,
-     "goals": 134,
-     "assists": 53
+     "eff": 0.5371,
+     "assistRate": 0.3882,
+     "attacks": 283,
+     "goals": 152,
+     "assists": 59
     },
     "JPN": {
      "games": 5,
@@ -1882,12 +1888,12 @@
      "assists": 84
     },
     "VIE": {
-     "games": 4,
-     "eff": 0.4029,
-     "assistRate": 0.3253,
-     "attacks": 206,
-     "goals": 83,
-     "assists": 27
+     "games": 5,
+     "eff": 0.3783,
+     "assistRate": 0.3069,
+     "attacks": 267,
+     "goals": 101,
+     "assists": 31
     },
     "UZB": {
      "games": 5,
@@ -1902,26 +1908,26 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5283,
-     "k": 15.6,
-     "windows": 453,
-     "trials": 1961
+     "mean": 0.5221,
+     "k": 16.4,
+     "windows": 502,
+     "trials": 2193
     },
     "assistRate": {
-     "mean": 0.3736,
-     "k": 24.6,
-     "windows": 418,
-     "trials": 1036
+     "mean": 0.3764,
+     "k": 30.6,
+     "windows": 463,
+     "trials": 1145
     }
    },
    "teams": {
     "IRI": {
-     "games": 4,
-     "eff": 0.5,
-     "assistRate": 0.2857,
-     "attacks": 196,
-     "goals": 98,
-     "assists": 28
+     "games": 5,
+     "eff": 0.498,
+     "assistRate": 0.3089,
+     "attacks": 247,
+     "goals": 123,
+     "assists": 38
     },
     "KUW": {
      "games": 5,
@@ -1940,12 +1946,12 @@
      "assists": 23
     },
     "BRN": {
-     "games": 4,
-     "eff": 0.6398,
-     "assistRate": 0.3778,
-     "attacks": 211,
-     "goals": 135,
-     "assists": 51
+     "games": 5,
+     "eff": 0.6277,
+     "assistRate": 0.3895,
+     "attacks": 274,
+     "goals": 172,
+     "assists": 67
     },
     "CHN": {
      "games": 4,
@@ -1964,20 +1970,20 @@
      "assists": 63
     },
     "HKG": {
-     "games": 3,
-     "eff": 0.3509,
-     "assistRate": 0.4167,
-     "attacks": 171,
-     "goals": 60,
-     "assists": 25
+     "games": 4,
+     "eff": 0.3248,
+     "assistRate": 0.4211,
+     "attacks": 234,
+     "goals": 76,
+     "assists": 32
     },
     "QAT": {
-     "games": 3,
-     "eff": 0.6485,
-     "assistRate": 0.3178,
-     "attacks": 165,
-     "goals": 107,
-     "assists": 34
+     "games": 4,
+     "eff": 0.6273,
+     "assistRate": 0.3261,
+     "attacks": 220,
+     "goals": 138,
+     "assists": 45
     },
     "KOR": {
      "games": 5,
@@ -1990,5 +1996,5 @@
    }
   }
  },
- "updatedAt": "2026-09-26T06:43:20.766Z"
+ "updatedAt": "2026-09-26T11:18:21.329Z"
 }
