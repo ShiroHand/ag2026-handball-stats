@@ -1159,7 +1159,7 @@
    "away": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "4",
+    "score": "5",
     "winner": false
    },
    "hasResult": true,
@@ -1826,14 +1826,14 @@
     "eff": {
      "mean": 0.4951,
      "k": 7.9,
-     "windows": 378,
-     "trials": 1723
+     "windows": 379,
+     "trials": 1725
     },
     "assistRate": {
-     "mean": 0.3927,
-     "k": 69.8,
-     "windows": 339,
-     "trials": 853
+     "mean": 0.3923,
+     "k": 71.2,
+     "windows": 340,
+     "trials": 854
     }
    },
    "teams": {
@@ -1855,9 +1855,9 @@
     },
     "KAZ": {
      "games": 6,
-     "eff": 0.4327,
+     "eff": 0.4313,
      "assistRate": 0.4,
-     "attacks": 312,
+     "attacks": 313,
      "goals": 135,
      "assists": 54
     },
@@ -1887,10 +1887,10 @@
     },
     "UZB": {
      "games": 5,
-     "eff": 0.3051,
-     "assistRate": 0.2361,
-     "attacks": 236,
-     "goals": 72,
+     "eff": 0.308,
+     "assistRate": 0.2329,
+     "attacks": 237,
+     "goals": 73,
      "assists": 17
     }
    }
@@ -1986,5 +1986,5 @@
    }
   }
  },
- "updatedAt": "2026-09-26T03:45:50.666Z"
+ "updatedAt": "2026-09-26T03:47:31.313Z"
 }
