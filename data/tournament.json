@@ -40,7 +40,7 @@
    "name": "China",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 3
+   "played": 4
   },
   {
    "code": "HKG",
@@ -75,7 +75,7 @@
    "name": "Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "KUW",
@@ -1116,19 +1116,19 @@
    "phaseDesc": "Men Quarterfinal",
    "unitDesc": "Men Quarterfinal Match 1",
    "unitNum": "35",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "23",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "KUW",
     "name": "Kuwait",
-    "score": "12",
+    "score": "32",
     "winner": false
    },
    "hasResult": true,
@@ -1147,19 +1147,19 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 16",
    "unitNum": "32",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "UNOFFICIAL",
+   "statusDesc": "Unofficial",
+   "isLive": false,
    "home": {
     "code": "KAZ",
     "name": "Kazakhstan",
-    "score": "6",
-    "winner": false
+    "score": "35",
+    "winner": true
    },
    "away": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "5",
+    "score": "20",
     "winner": false
    },
    "hasResult": true,
@@ -1178,22 +1178,23 @@
    "phaseDesc": "Men Quarterfinal",
    "unitDesc": "Men Quarterfinal Match 2",
    "unitNum": "36",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
+    "score": "8",
     "winner": false
    },
    "away": {
     "code": "CHN",
     "name": "China",
-    "score": "",
+    "score": "5",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-001700",
@@ -1422,8 +1423,8 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "JPN",
+    "name": "Japan",
     "score": "",
     "winner": false
    },
@@ -1712,6 +1713,20 @@
       },
       {
        "rank": "3",
+       "org": "KAZ",
+       "name": "Kazakhstan",
+       "pts": "6",
+       "played": "6",
+       "won": "3",
+       "lost": "3",
+       "tied": "0",
+       "for": "164",
+       "against": "187",
+       "diff": "-23",
+       "qualified": ""
+      },
+      {
+       "rank": "4",
        "org": "CHN",
        "name": "China",
        "pts": "4",
@@ -1722,20 +1737,6 @@
        "for": "115",
        "against": "108",
        "diff": "7",
-       "qualified": ""
-      },
-      {
-       "rank": "4",
-       "org": "KAZ",
-       "name": "Kazakhstan",
-       "pts": "4",
-       "played": "5",
-       "won": "2",
-       "lost": "3",
-       "tied": "0",
-       "for": "129",
-       "against": "167",
-       "diff": "-38",
        "qualified": ""
       },
       {
@@ -1757,13 +1758,13 @@
        "org": "UZB",
        "name": "Uzbekistan",
        "pts": "2",
-       "played": "4",
+       "played": "5",
        "won": "1",
-       "lost": "3",
+       "lost": "4",
        "tied": "0",
-       "for": "68",
-       "against": "144",
-       "diff": "-76",
+       "for": "88",
+       "against": "179",
+       "diff": "-91",
        "qualified": ""
       },
       {
@@ -1818,22 +1819,23 @@
   "W-FNL-001500",
   "M-GPB-001000",
   "M-QFNL-000100",
-  "W-FNL-001600"
+  "W-FNL-001600",
+  "M-QFNL-000200"
  ],
  "priors": {
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4951,
-     "k": 7.9,
-     "windows": 379,
-     "trials": 1725
+     "mean": 0.4942,
+     "k": 8.4,
+     "windows": 397,
+     "trials": 1817
     },
     "assistRate": {
-     "mean": 0.3923,
-     "k": 71.2,
-     "windows": 340,
-     "trials": 854
+     "mean": 0.3909,
+     "k": 80.3,
+     "windows": 356,
+     "trials": 898
     }
    },
    "teams": {
@@ -1855,11 +1857,11 @@
     },
     "KAZ": {
      "games": 6,
-     "eff": 0.4313,
-     "assistRate": 0.4,
-     "attacks": 313,
-     "goals": 135,
-     "assists": 54
+     "eff": 0.4568,
+     "assistRate": 0.4146,
+     "attacks": 359,
+     "goals": 164,
+     "assists": 68
     },
     "CHN": {
      "games": 4,
@@ -1887,27 +1889,27 @@
     },
     "UZB": {
      "games": 5,
-     "eff": 0.308,
-     "assistRate": 0.2329,
-     "attacks": 237,
-     "goals": 73,
-     "assists": 17
+     "eff": 0.311,
+     "assistRate": 0.2273,
+     "attacks": 283,
+     "goals": 88,
+     "assists": 20
     }
    }
   },
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5274,
-     "k": 14.8,
-     "windows": 416,
-     "trials": 1790
+     "mean": 0.5285,
+     "k": 13.9,
+     "windows": 435,
+     "trials": 1877
     },
     "assistRate": {
-     "mean": 0.3633,
-     "k": 24.7,
-     "windows": 384,
-     "trials": 944
+     "mean": 0.369,
+     "k": 24.8,
+     "windows": 400,
+     "trials": 992
     }
    },
    "teams": {
@@ -1921,11 +1923,11 @@
     },
     "KUW": {
      "games": 5,
-     "eff": 0.5202,
-     "assistRate": 0.4109,
-     "attacks": 248,
-     "goals": 129,
-     "assists": 53
+     "eff": 0.5341,
+     "assistRate": 0.396,
+     "attacks": 279,
+     "goals": 149,
+     "assists": 59
     },
     "KAZ": {
      "games": 4,
@@ -1944,20 +1946,20 @@
      "assists": 51
     },
     "CHN": {
-     "games": 3,
-     "eff": 0.566,
-     "assistRate": 0.4222,
-     "attacks": 159,
-     "goals": 90,
-     "assists": 38
+     "games": 4,
+     "eff": 0.5614,
+     "assistRate": 0.4167,
+     "attacks": 171,
+     "goals": 96,
+     "assists": 40
     },
     "JPN": {
      "games": 4,
-     "eff": 0.6429,
-     "assistRate": 0.4286,
-     "attacks": 196,
-     "goals": 126,
-     "assists": 54
+     "eff": 0.6167,
+     "assistRate": 0.45,
+     "attacks": 227,
+     "goals": 140,
+     "assists": 63
     },
     "HKG": {
      "games": 3,
@@ -1976,15 +1978,15 @@
      "assists": 34
     },
     "KOR": {
-     "games": 4,
-     "eff": 0.5571,
-     "assistRate": 0.3675,
-     "attacks": 210,
-     "goals": 117,
-     "assists": 43
+     "games": 5,
+     "eff": 0.5605,
+     "assistRate": 0.392,
+     "attacks": 223,
+     "goals": 125,
+     "assists": 49
     }
    }
   }
  },
- "updatedAt": "2026-09-26T03:47:31.313Z"
+ "updatedAt": "2026-09-26T05:14:45.836Z"
 }
