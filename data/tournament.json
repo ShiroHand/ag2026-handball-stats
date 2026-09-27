@@ -110,7 +110,7 @@
    "name": "Japan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "KAZ",
@@ -124,7 +124,7 @@
    "name": "Korea",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "UZB",
@@ -1364,19 +1364,19 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 20",
    "unitNum": "40",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
+   "isLive": false,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "17",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "13",
+    "score": "27",
     "winner": false
    },
    "hasResult": true,
@@ -1395,22 +1395,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 21",
    "unitNum": "41",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "23",
     "winner": false
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
-    "winner": false
+    "score": "27",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-SFNL-000100",
@@ -1693,14 +1694,14 @@
        "rank": "1",
        "org": "KOR",
        "name": "Korea",
-       "pts": "10",
-       "played": "5",
-       "won": "5",
+       "pts": "12",
+       "played": "6",
+       "won": "6",
        "lost": "0",
        "tied": "0",
-       "for": "216",
-       "against": "82",
-       "diff": "134",
+       "for": "243",
+       "against": "105",
+       "diff": "138",
        "qualified": ""
       },
       {
@@ -1708,27 +1709,27 @@
        "org": "JPN",
        "name": "Japan",
        "pts": "10",
-       "played": "5",
+       "played": "6",
        "won": "5",
-       "lost": "0",
+       "lost": "1",
        "tied": "0",
-       "for": "194",
-       "against": "93",
-       "diff": "101",
+       "for": "217",
+       "against": "120",
+       "diff": "97",
        "qualified": ""
       },
       {
        "rank": "3",
        "org": "CHN",
        "name": "China",
-       "pts": "6",
-       "played": "5",
-       "won": "3",
+       "pts": "8",
+       "played": "6",
+       "won": "4",
        "lost": "2",
        "tied": "0",
-       "for": "152",
-       "against": "127",
-       "diff": "25",
+       "for": "189",
+       "against": "154",
+       "diff": "35",
        "qualified": ""
       },
       {
@@ -1778,13 +1779,13 @@
        "org": "VIE",
        "name": "Vietnam",
        "pts": "0",
-       "played": "5",
+       "played": "6",
        "won": "0",
-       "lost": "5",
+       "lost": "6",
        "tied": "0",
-       "for": "101",
-       "against": "170",
-       "diff": "-69",
+       "for": "128",
+       "against": "207",
+       "diff": "-79",
        "qualified": ""
       }
      ]
@@ -1832,32 +1833,33 @@
   "W-FNL-001800",
   "M-QFNL-000200",
   "W-FNL-001900",
-  "W-FNL-002000"
+  "W-FNL-002000",
+  "W-FNL-002100"
  ],
  "priors": {
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4946,
-     "k": 9.6,
-     "windows": 486,
-     "trials": 2228
+     "mean": 0.4933,
+     "k": 10.7,
+     "windows": 522,
+     "trials": 2404
     },
     "assistRate": {
-     "mean": 0.402,
-     "k": 46.1,
-     "windows": 440,
-     "trials": 1102
+     "mean": 0.4047,
+     "k": 59.5,
+     "windows": 474,
+     "trials": 1186
     }
    },
    "teams": {
     "KOR": {
-     "games": 5,
-     "eff": 0.7152,
-     "assistRate": 0.5231,
-     "attacks": 302,
-     "goals": 216,
-     "assists": 113
+     "games": 6,
+     "eff": 0.6769,
+     "assistRate": 0.5103,
+     "attacks": 359,
+     "goals": 243,
+     "assists": 124
     },
     "HKG": {
      "games": 6,
@@ -1877,27 +1879,27 @@
     },
     "CHN": {
      "games": 6,
-     "eff": 0.5452,
-     "assistRate": 0.3846,
-     "attacks": 310,
-     "goals": 169,
-     "assists": 65
+     "eff": 0.5526,
+     "assistRate": 0.3862,
+     "attacks": 342,
+     "goals": 189,
+     "assists": 73
     },
     "JPN": {
-     "games": 5,
-     "eff": 0.6736,
-     "assistRate": 0.433,
-     "attacks": 288,
-     "goals": 194,
-     "assists": 84
+     "games": 6,
+     "eff": 0.6308,
+     "assistRate": 0.4424,
+     "attacks": 344,
+     "goals": 217,
+     "assists": 96
     },
     "VIE": {
      "games": 6,
-     "eff": 0.3878,
-     "assistRate": 0.3158,
-     "attacks": 294,
-     "goals": 114,
-     "assists": 36
+     "eff": 0.3938,
+     "assistRate": 0.3281,
+     "attacks": 325,
+     "goals": 128,
+     "assists": 42
     },
     "UZB": {
      "games": 6,
@@ -2000,5 +2002,5 @@
    }
   }
  },
- "updatedAt": "2026-09-27T07:12:56.963Z"
+ "updatedAt": "2026-09-27T10:43:37.818Z"
 }
