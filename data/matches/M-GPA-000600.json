@@ -4761,7 +4761,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "1-0"
+     "score": "1-0",
+     "gkBib": "1",
+     "band": ""
     },
     {
      "min": "1:53",
@@ -4773,7 +4775,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "13",
-     "score": "2-1"
+     "score": "2-1",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "3:19",
@@ -4785,7 +4789,9 @@
      "result": "SAVE",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "6:55",
@@ -4797,7 +4803,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "7:19",
@@ -4809,7 +4817,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "1",
+     "band": "second"
     },
     {
      "min": "7:29",
@@ -4821,7 +4831,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "3-2"
+     "score": "3-2",
+     "gkBib": "1",
+     "band": ""
     },
     {
      "min": "8:47",
@@ -4833,7 +4845,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "10",
-     "score": "4-3"
+     "score": "4-3",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "9:46",
@@ -4845,7 +4859,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "10",
-     "score": "5-4"
+     "score": "5-4",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "11:18",
@@ -4857,7 +4873,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "10",
-     "score": "6-5"
+     "score": "6-5",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "13:24",
@@ -4869,7 +4887,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "10",
-     "score": "7-7"
+     "score": "7-7",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "14:12",
@@ -4881,7 +4901,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "15",
-     "score": "8-8"
+     "score": "8-8",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "15:12",
@@ -4893,7 +4915,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "9-9"
+     "score": "9-9",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "16:48",
@@ -4905,7 +4929,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "10-10"
+     "score": "10-10",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "18:11",
@@ -4917,7 +4943,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "22",
-     "score": "11-11"
+     "score": "11-11",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "19:19",
@@ -4929,7 +4957,9 @@
      "result": "SAVE",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "11-11"
+     "score": "11-11",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "19:41",
@@ -4941,7 +4971,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "12-11"
+     "score": "12-11",
+     "gkBib": "21",
+     "band": ""
     },
     {
      "min": "22:07",
@@ -4953,7 +4985,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "10",
-     "score": "13-11"
+     "score": "13-11",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "23:29",
@@ -4965,7 +4999,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "14-12"
+     "score": "14-12",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "25:01",
@@ -4977,7 +5013,9 @@
      "result": "SAVE",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "14-12"
+     "score": "14-12",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "26:31",
@@ -4989,7 +5027,9 @@
      "result": "SAVE",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "14-12"
+     "score": "14-12",
+     "gkBib": "21",
+     "band": ""
     },
     {
      "min": "26:52",
@@ -5001,7 +5041,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "14-12"
+     "score": "14-12",
+     "gkBib": "21",
+     "band": ""
     },
     {
      "min": "27:10",
@@ -5013,7 +5055,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "15-12"
+     "score": "15-12",
+     "gkBib": "21",
+     "band": "fast"
     },
     {
      "min": "27:34",
@@ -5025,7 +5069,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "16-12"
+     "score": "16-12",
+     "gkBib": "21",
+     "band": "fast"
     },
     {
      "min": "28:56",
@@ -5037,7 +5083,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "17-12"
+     "score": "17-12",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "29:51",
@@ -5049,7 +5097,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "18-12"
+     "score": "18-12",
+     "gkBib": "",
+     "band": "second"
     },
     {
      "min": "1:22",
@@ -5061,7 +5111,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "19-14"
+     "score": "19-14",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "1:52",
@@ -5073,7 +5125,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "20-14"
+     "score": "20-14",
+     "gkBib": "21",
+     "band": "fast"
     },
     {
      "min": "2:56",
@@ -5085,7 +5139,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "10",
-     "score": "21-15"
+     "score": "21-15",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "3:57",
@@ -5097,7 +5153,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "",
-     "score": "22-15"
+     "score": "22-15",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "4:46",
@@ -5109,7 +5167,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "23-15"
+     "score": "23-15",
+     "gkBib": "21",
+     "band": ""
     },
     {
      "min": "6:58",
@@ -5121,7 +5181,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "23-16"
+     "score": "23-16",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "7:43",
@@ -5133,7 +5195,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "24-16"
+     "score": "24-16",
+     "gkBib": "",
+     "band": "second"
     },
     {
      "min": "9:43",
@@ -5145,7 +5209,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "22",
-     "score": "25-16"
+     "score": "25-16",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "11:26",
@@ -5157,7 +5223,9 @@
      "result": "SAVE",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "25-18"
+     "score": "25-18",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "12:40",
@@ -5169,7 +5237,9 @@
      "result": "MISS",
      "goalZone": "",
      "assistBib": "",
-     "score": "25-19"
+     "score": "25-19",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "12:56",
@@ -5181,7 +5251,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "26-19"
+     "score": "26-19",
+     "gkBib": "21",
+     "band": "fast"
     },
     {
      "min": "14:16",
@@ -5193,7 +5265,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "26-19"
+     "score": "26-19",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "15:47",
@@ -5205,7 +5279,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "",
-     "score": "27-20"
+     "score": "27-20",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "17:03",
@@ -5217,7 +5293,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "28-21"
+     "score": "28-21",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "18:04",
@@ -5229,7 +5307,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "29-21"
+     "score": "29-21",
+     "gkBib": "21",
+     "band": "set"
     },
     {
      "min": "20:08",
@@ -5241,7 +5321,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "30-22"
+     "score": "30-22",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "21:22",
@@ -5253,7 +5335,9 @@
      "result": "SAVE",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "30-22"
+     "score": "30-22",
+     "gkBib": "1",
+     "band": ""
     },
     {
      "min": "22:38",
@@ -5265,7 +5349,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "31-23"
+     "score": "31-23",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "23:54",
@@ -5277,7 +5363,9 @@
      "result": "SAVE",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "31-24"
+     "score": "31-24",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "24:33",
@@ -5289,7 +5377,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "32-25"
+     "score": "32-25",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "25:43",
@@ -5301,7 +5391,9 @@
      "result": "GOAL",
      "goalZone": "MC",
      "assistBib": "",
-     "score": "33-26"
+     "score": "33-26",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "27:08",
@@ -5313,7 +5405,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "34-26"
+     "score": "34-26",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "27:41",
@@ -5325,7 +5419,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "11",
-     "score": "35-26"
+     "score": "35-26",
+     "gkBib": "1",
+     "band": "fast"
     },
     {
      "min": "28:34",
@@ -5337,7 +5433,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "36-27"
+     "score": "36-27",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "29:37",
@@ -5349,7 +5447,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "36-28"
+     "score": "36-28",
+     "gkBib": "1",
+     "band": "set"
     },
     {
      "min": "30:00",
@@ -5361,7 +5461,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "37-28"
+     "score": "37-28",
+     "gkBib": "1",
+     "band": ""
     }
    ],
    "connections": [
@@ -11878,7 +11980,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "7",
-     "score": "1-1"
+     "score": "1-1",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "2:25",
@@ -11890,7 +11994,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "4:09",
@@ -11902,7 +12008,9 @@
      "result": "SAVE",
      "goalZone": "TC",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "5:46",
@@ -11914,7 +12022,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "6:18",
@@ -11926,7 +12036,9 @@
      "result": "SAVE",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "33",
+     "band": ""
     },
     {
      "min": "7:05",
@@ -11938,7 +12050,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "2-2"
+     "score": "2-2",
+     "gkBib": "33",
+     "band": "second"
     },
     {
      "min": "7:55",
@@ -11950,7 +12064,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "3-3"
+     "score": "3-3",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "9:20",
@@ -11962,7 +12078,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "4-4"
+     "score": "4-4",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "10:36",
@@ -11974,7 +12092,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "5-5"
+     "score": "5-5",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "11:49",
@@ -11986,7 +12106,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "14",
-     "score": "6-6"
+     "score": "6-6",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "12:28",
@@ -11998,7 +12120,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "",
-     "score": "6-7"
+     "score": "6-7",
+     "gkBib": "33",
+     "band": ""
     },
     {
      "min": "13:54",
@@ -12010,7 +12134,9 @@
      "result": "GOAL",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "7-8"
+     "score": "7-8",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "14:36",
@@ -12022,7 +12148,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "",
-     "score": "8-9"
+     "score": "8-9",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "15:49",
@@ -12034,7 +12162,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "9-10"
+     "score": "9-10",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "17:25",
@@ -12046,7 +12176,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "10-11"
+     "score": "10-11",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "18:32",
@@ -12058,7 +12190,9 @@
      "result": "SAVE",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "11-11"
+     "score": "11-11",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "20:54",
@@ -12070,7 +12204,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "12-11"
+     "score": "12-11",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "22:33",
@@ -12082,7 +12218,9 @@
      "result": "GOAL",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "13-12"
+     "score": "13-12",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "24:33",
@@ -12094,7 +12232,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "14-12"
+     "score": "14-12",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "28:21",
@@ -12106,7 +12246,9 @@
      "result": "SAVE",
      "goalZone": "ML",
      "assistBib": "",
-     "score": "16-12"
+     "score": "16-12",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "29:51",
@@ -12118,7 +12260,9 @@
      "result": "SAVE",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "18-12"
+     "score": "18-12",
+     "gkBib": "12",
+     "band": "second"
     },
     {
      "min": "29:53",
@@ -12130,7 +12274,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "18-13"
+     "score": "18-13",
+     "gkBib": "12",
+     "band": ""
     },
     {
      "min": "0:47",
@@ -12142,7 +12288,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "18-14"
+     "score": "18-14",
+     "gkBib": "12",
+     "band": ""
     },
     {
      "min": "2:18",
@@ -12154,7 +12302,9 @@
      "result": "GOAL",
      "goalZone": "TR",
      "assistBib": "",
-     "score": "20-15"
+     "score": "20-15",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "6:00",
@@ -12166,7 +12316,9 @@
      "result": "GOAL",
      "goalZone": "MR",
      "assistBib": "",
-     "score": "23-16"
+     "score": "23-16",
+     "gkBib": "12",
+     "band": "second"
     },
     {
      "min": "8:55",
@@ -12178,7 +12330,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "24-16"
+     "score": "24-16",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "9:56",
@@ -12190,7 +12344,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "23",
-     "score": "25-17"
+     "score": "25-17",
+     "gkBib": "12",
+     "band": "second"
     },
     {
      "min": "10:37",
@@ -12202,7 +12358,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "25-18"
+     "score": "25-18",
+     "gkBib": "12",
+     "band": "fast"
     },
     {
      "min": "11:40",
@@ -12214,7 +12372,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "25-19"
+     "score": "25-19",
+     "gkBib": "12",
+     "band": "second"
     },
     {
      "min": "13:37",
@@ -12226,7 +12386,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "26-19"
+     "score": "26-19",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "15:14",
@@ -12238,7 +12400,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "23",
-     "score": "26-20"
+     "score": "26-20",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "15:58",
@@ -12250,7 +12414,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "27-21"
+     "score": "27-21",
+     "gkBib": "",
+     "band": "second"
     },
     {
      "min": "19:23",
@@ -12262,7 +12428,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "29-22"
+     "score": "29-22",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "22:04",
@@ -12274,7 +12442,9 @@
      "result": "GOAL",
      "goalZone": "BC",
      "assistBib": "",
-     "score": "30-23"
+     "score": "30-23",
+     "gkBib": "12",
+     "band": "set"
     },
     {
      "min": "23:06",
@@ -12286,7 +12456,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "",
-     "score": "31-24"
+     "score": "31-24",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "24:10",
@@ -12298,7 +12470,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "",
-     "score": "31-25"
+     "score": "31-25",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "25:03",
@@ -12310,7 +12484,9 @@
      "result": "GOAL",
      "goalZone": "TL",
      "assistBib": "20",
-     "score": "32-26"
+     "score": "32-26",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "26:21",
@@ -12322,7 +12498,9 @@
      "result": "POST",
      "goalZone": "",
      "assistBib": "",
-     "score": "33-26"
+     "score": "33-26",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "27:33",
@@ -12334,7 +12512,9 @@
      "result": "SAVE",
      "goalZone": "BL",
      "assistBib": "",
-     "score": "34-26"
+     "score": "34-26",
+     "gkBib": "33",
+     "band": "set"
     },
     {
      "min": "27:51",
@@ -12346,7 +12526,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "30",
-     "score": "35-27"
+     "score": "35-27",
+     "gkBib": "33",
+     "band": "second"
     },
     {
      "min": "29:08",
@@ -12358,7 +12540,9 @@
      "result": "GOAL",
      "goalZone": "BR",
      "assistBib": "30",
-     "score": "36-28"
+     "score": "36-28",
+     "gkBib": "33",
+     "band": "set"
     }
    ],
    "connections": [
@@ -14076,5 +14260,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-25T13:02:21.403Z"
+ "updatedAt": "2026-09-27T11:35:00.341Z"
 }
