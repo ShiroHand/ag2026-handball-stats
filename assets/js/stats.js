@@ -191,3 +191,51 @@ export function adequacy(n, p) {
   return {level: 'ok', ratio,
     text: `標本${n}件 ÷ 変数${p}個 = ${ratio.toFixed(1)}倍。探索的に読むには十分です。`};
 }
+
+/* ---------- 最小二乗回帰 ----------
+   標準化済みの X と y を渡す前提。係数はそのまま「標準化偏回帰係数」になり、
+   単位の違う指標どうしで効き目を比べられる。
+   正規方程式をガウスの消去法で解く。変数どうしが強く相関していると
+   解が不安定になるので、呼び出し側で多重共線性に注意すること。 */
+export function ols(X, y) {
+  const n = X.length, p = n ? X[0].length : 0;
+  if (n < p + 2) return null;
+  /* A = XᵀX（切片は標準化済みなので不要）, b = Xᵀy */
+  const A = Array.from({length: p}, () => new Array(p).fill(0));
+  const b = new Array(p).fill(0);
+  for (let i = 0; i < p; i++) {
+    for (let j = i; j < p; j++) {
+      let s = 0;
+      for (let r = 0; r < n; r++) s += X[r][i] * X[r][j];
+      A[i][j] = A[j][i] = s;
+    }
+    let s2 = 0;
+    for (let r = 0; r < n; r++) s2 += X[r][i] * y[r];
+    b[i] = s2;
+  }
+  /* ガウスの消去法（部分ピボット選択つき） */
+  const M = A.map((row, i) => [...row, b[i]]);
+  for (let c = 0; c < p; c++) {
+    let piv = c;
+    for (let r = c + 1; r < p; r++) if (Math.abs(M[r][c]) > Math.abs(M[piv][c])) piv = r;
+    if (Math.abs(M[piv][c]) < 1e-9) return null;
+    [M[c], M[piv]] = [M[piv], M[c]];
+    for (let r = 0; r < p; r++) {
+      if (r === c) continue;
+      const f = M[r][c] / M[c][c];
+      for (let k = c; k <= p; k++) M[r][k] -= f * M[c][k];
+    }
+  }
+  const coef = [];
+  for (let i = 0; i < p; i++) coef.push(M[i][p] / M[i][i]);
+  /* 決定係数 */
+  let ssRes = 0, ssTot = 0;
+  const my = y.reduce((a, v) => a + v, 0) / n;
+  for (let r = 0; r < n; r++) {
+    let pred = 0;
+    for (let i = 0; i < p; i++) pred += coef[i] * X[r][i];
+    ssRes += (y[r] - pred) ** 2;
+    ssTot += (y[r] - my) ** 2;
+  }
+  return {coef, r2: ssTot > 0 ? 1 - ssRes / ssTot : 0, n, p};
+}

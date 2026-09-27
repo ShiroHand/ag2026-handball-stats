@@ -1,11 +1,12 @@
 import {loadJSON, el, q, n, pct, jpDate, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, photoImg, shortRole, CAT, SERIES, sectionNav} from './core.js';
+        params, setParam, flagImg, photoImg, shortRole, tip, CAT, SERIES, sectionNav} from './core.js';
 import {donut, legend, courtMap, goalMap, stackedBars, lineChart, hbars, zoneBreakdownTable} from './charts.js';
 import {connectionSection, mergeConnections, assistedZoneTable} from './connections.js';
 import {countsFromTeam, addCounts, emptyCounts, kpiGrid, KPI_NOTE} from './kpi.js';
 import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.js';
 import {tempoCard, addTempo} from './tempo.js';
+import {buildRef, gkSummary} from './gkstats.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -222,6 +223,7 @@ function render() {
   /* 選手累計 */
   app.append(playersCard(A, list.length));
   app.append(tempoCard(A.players, {title: `選手別 攻撃の速さ（${list.length} 試合の累計）`}));
+  app.append(gaeCard(list, A));
 
   sectionNav(app);
 }
@@ -340,4 +342,91 @@ function fmtSec(sec) {
   const h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
   return h ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
            : `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
+
+/* ---------- 期待得点との差（選手版） ----------
+   GK分析で使っている「位置×コース別の大会平均決定率」を撃った側に当てる。
+   決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分ける。
+   基準にはその選手自身のぶんを除いた平均を使う（leave-one-out）。 */
+function gaeCard(list, A) {
+  /* 参照表は同じカテゴリの全試合から作る（対象試合だけだと薄くなるため） */
+  const all = [];
+  FILES.filter(f => f.gender === gender).forEach(f => {
+    for (const c of Object.keys(f.teams)) all.push(...(f.teams[c].shots || []));
+  });
+  const ref = buildRef(all);
+
+  const byBib = new Map();
+  list.forEach(f => {
+    const t = f.teams[code]; if (!t) return;
+    for (const sh of t.shots || []) {
+      const cur = byBib.get(sh.bib) || {bib: sh.bib, name: sh.name, role: sh.role, shots: []};
+      cur.shots.push(sh);
+      byBib.set(sh.bib, cur);
+    }
+  });
+  const regOf = {};
+  (A.players || []).forEach(p => { if (p.reg) regOf[p.bib] = p.reg; });
+
+  const rows = [...byBib.values()]
+    .map(p => ({...p, sum: gkSummary(p.shots, ref)}))
+    .filter(p => p.sum.xn >= 5)
+    .map(p => ({...p, gae: p.sum.xgoals - p.sum.xg}))
+    .sort((a, b) => b.gae - a.gae);
+
+  if (!rows.length) {
+    return el('div', {class: 'card'},
+      el('h2', {text: '選手別 期待得点との差'}),
+      el('div', {class: 'sub', text: 'コースが記録されたシュートが5本以上の選手がいません。'}));
+  }
+
+  const table = el('table', {});
+  table.append(el('thead', {}, el('tr', {},
+    ['#', '選手', 'Pos', 'シュート', '枠内', '得点', '決定率',
+      '期待得点', '差', '100本あたり'].map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
+  const tb = el('tbody', {});
+  let tXg = 0, tG = 0, tN = 0;
+  rows.forEach(p => {
+    const s = p.sum;
+    tXg += s.xg; tG += s.xgoals; tN += s.xn;
+    const td = el('td', {class: 'num', style: {fontWeight: 700,
+      color: p.gae > 0.05 ? 'var(--good)' : (p.gae < -0.05 ? 'var(--bad)' : '')},
+      text: (p.gae > 0 ? '+' : '') + p.gae.toFixed(1)});
+    tip(td, `コースが記録されている ${s.xn} 本が対象<br>`
+      + `期待得点 ${s.xg.toFixed(1)} / 実際の得点 ${s.xgoals}<br>`
+      + 'プラスが大きいほど、平均的な選手より多く決めた');
+    tb.append(el('tr', {},
+      el('td', {class: 'num muted', text: p.bib}),
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        photoImg(regOf[p.bib], p.name, 'photo sm'), el('span', {text: p.name}))),
+      el('td', {text: shortRole(p.role)}),
+      el('td', {class: 'num', text: s.n}),
+      el('td', {class: 'num', text: s.onTarget}),
+      el('td', {class: 'num', text: s.goals}),
+      el('td', {class: 'num', text: s.n ? pct(s.goals, s.n) : ''}),
+      el('td', {class: 'num muted', text: s.xg.toFixed(1)}),
+      td,
+      el('td', {class: 'num', text: s.xn ? ((p.gae / s.xn * 100) > 0 ? '+' : '') + (p.gae / s.xn * 100).toFixed(1) : ''})));
+  });
+  tb.append(el('tr', {class: 'total'},
+    el('td', {}), el('td', {text: '合計'}), el('td', {}), el('td', {}), el('td', {}),
+    el('td', {class: 'num', text: tG}), el('td', {}),
+    el('td', {class: 'num', text: tXg.toFixed(1)}),
+    el('td', {class: 'num', text: ((tG - tXg) > 0 ? '+' : '') + (tG - tXg).toFixed(1)}),
+    el('td', {})));
+  table.append(tb);
+
+  return el('div', {class: 'card'},
+    el('h2', {text: '選手別 期待得点との差'}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
+      text: 'シュート1本ずつについて「位置とコースが同じシュートを大会平均の選手が打ったら'
+        + '何点入るか」を足し上げ、実際の得点と比べたものです。'
+        + '決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。'
+        + 'コースは枠内に飛んだシュートにしか付かないので、枠外・ポストは対象外です。'
+        + '基準にはその選手自身のぶんを除いた平均を使っています。'}),
+    el('div', {class: 'tbl-scroll'}, table),
+    el('div', {class: 'sub', style: {marginTop: '8px'},
+      text: `コースが記録されたシュートが5本以上の選手のみ。対象 ${tN} 本。`
+        + '本数が少ない選手の差は大きく振れるので、「100本あたり」と併せて見てください。'}));
 }

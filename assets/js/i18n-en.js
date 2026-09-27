@@ -104,6 +104,13 @@ export const EN_TPL = {
   '{} 試合 / 被シュート {} 本（枠内 {}・枠外/ポスト {}）':
     '{} matches / {} shots faced (on target {}, off target or post {})',
   '{}箇所＋別枠を合計すると': ' zones plus the off-court group total ',
+  '{}　標本 チーム×試合 {}件・決定係数 R² = {}': '{}  ·  {} team-match rows  ·  R² = {}',
+  'コースが記録されたシュートが5本以上の選手のみ。対象 {} 本。':
+    'Only players with at least five shots with a recorded placement. {} shots in scope.',
+  'セーブして味方ボールになった {} 回<br>': '{} saves that gave us the ball<br>',
+  'その攻撃で得点 {}（{}）': 'Goals from those attacks {} ({})',
+  '期待得点 {} / 実際の得点 {}<br>': 'Expected {} / actual {}<br>',
+  '平均との差 {}{} 標準偏差': '{}{} SD from the mean',
   '変数{}個・{}人': '{} variables, {} players',
   'コースが記録されている {} 本が対象<br>': '{} shots with a recorded placement<br>',
   'コースが記録されている {} 本が対象<br>期待失点 {} / 実失点 {}':
@@ -935,4 +942,123 @@ export const EN = {
   ' — 選手別イベント（記号）': ' — player timeline (symbols)',
   '総得点': 'Total goals',
   '枠内': 'On target',
+
+  /* ---------- 発展分析 ---------- */
+  '発展分析': 'Advanced',
+  '5ファクター（バスケの Four Factors + 攻撃効率）': 'Five factors (basketball’s Four Factors plus attack efficiency)',
+  'バスケットボールの Four Factors（決定率・ターンオーバー率・':
+    'Basketball’s Four Factors (shooting %, turnover rate,',
+  'オフェンスリバウンド率・フリースロー率）をハンドボールに置き換え、':
+    'offensive rebound rate and free-throw rate) translated to handball, with',
+  '攻撃効率を5つめに加えたものです。分母はすべて攻撃回数。':
+    'attack efficiency added as a fifth. Every denominator is the number of attacks.',
+  'オフェンスリバウンド率': 'Offensive rebound rate',
+  '7m獲得率': '7m rate',
+  '差引(50回)': 'Net (per 50)',
+  '差引/回': 'Net per case',
+  '色は大会平均からの離れ具合（緑＝良い側、赤＝悪い側）。':
+    'Shading shows the distance from the tournament average (green = better, red = worse).',
+  'ターンオーバー率だけは少ないほうが良いので色を反転しています。':
+    'Turnover rate is inverted, since fewer is better.',
+  'どの要素が効いているか': 'Which factor matters',
+  '① 4要素 → 攻撃効率': '① Four factors → attack efficiency',
+  '② 5要素 → 50回あたりの差引': '② Five factors → net per 50 possessions',
+  '数値は標準化偏回帰係数です。単位の違う指標どうしで効き目を比べられます。':
+    'The numbers are standardised regression coefficients, so metrics with different units can be compared.',
+  '②では攻撃効率が他の4要素の結果でもあるため、4要素の係数を吸収します':
+    'In ②, attack efficiency is itself the result of the other four, so it absorbs their coefficients',
+  '（多重共線性）。①と併せて読んでください。': ' (multicollinearity). Read it together with ①.',
+  'オフェンスリバウンド率はハンドボールでは攻撃の3%程度しか起きないため、':
+    'Offensive rebounds happen on only about 3% of handball attacks, so',
+  'バスケの Four Factors ほどは効きません。': 'they matter far less than in basketball.',
+  '回帰を計算できませんでした。': 'The regression could not be computed.',
+  '試合数が足りません。': 'Not enough matches.',
+
+  'ゲームステート（点差）別': 'By game state (score difference)',
+  'サッカー分析の基本的な考え方です。攻撃を始めた時点の点差で分けています。':
+    'A staple of football analytics. Attacks are split by the score difference when they started.',
+  '「強いから効率が良い」のか「リードしているから効率が良く見える」のかを切り分けられます。':
+    'It separates “efficient because they are strong” from “efficient-looking because they are ahead”.',
+  '3点以上リード': '3+ ahead', '1〜2点リード': '1–2 ahead', '同点': 'Level',
+  '1〜2点ビハインド': '1–2 behind', '3点以上ビハインド': '3+ behind',
+  '点差別の攻撃効率': 'Attack efficiency by score difference',
+  'ビハインドの効率が高く出るのは、負けているチームが攻めざるを得ないからだけでなく、':
+    'Efficiency when behind is inflated not only because a trailing team has to attack, but also because',
+  '点差が開いた試合では強いチームの守備が緩む影響も混ざります。':
+    'the stronger side eases off defensively once the margin grows.',
+  'チーム単位で見るときは、同点・接戦の行だけを比べるのが安全です。':
+    'For team comparisons, the level and one-goal rows are the safest to read.',
+
+  'サイドアウト構造 — 失点後に返せるか': 'Side-out structure — can you answer back?',
+  'バレーボールの中核概念「サーブ権を失ったあと、次で取り返せるか」の翻訳です。':
+    'A translation of volleyball’s central idea: after losing the serve, can you win the next rally?',
+  '失点した直後の自分の攻撃で取り返した割合を「返し率」、':
+    'The answer-back rate is how often the attack right after conceding produces a goal;',
+  '自分が得点した直後に相手に取り返された割合を「被返し率」としています。':
+    'the answered rate is how often the opponent scores right after we do.',
+  '返せない状態が続くと一気に点差が開くので、連続失点の起点になります。':
+    'Failing to answer back repeatedly is where runs of conceded goals begin.',
+  '失点した回数': 'Times conceded', '返した': 'Answered', '返し率': 'Answer-back %',
+  '得点した回数': 'Times scored', '返された': 'Answered by opp', '被返し率': 'Answered %',
+  '「差」は 返し率 − そのチームの攻撃効率です。プラスなら失点直後にむしろ強く、':
+    '“Diff” is answer-back % minus that team’s attack efficiency. Positive means they are sharper right after conceding;',
+  'マイナスなら失点がもう1点を呼びやすいことになります。':
+    'negative means conceding tends to bring another goal.',
+  '失点直後はスローオフから始まるため相手の守備が整っており、':
+    'The attack after conceding starts from a throw-off against a set defence, so',
+  '大会全体では攻撃効率より低く出るのが普通です。':
+    'it is normally below attack efficiency across the tournament.',
+
+  '2分退場のコスト': 'The cost of a 2-minute suspension',
+  'ラグビーのシンビン分析と同じ考え方です。退場の記録時刻から120秒の区間を作り、':
+    'The same idea as rugby’s sin-bin analysis. A 120-second window is built from each recorded suspension,',
+  'その間に実際に何点動いたかを数えています。': 'and the goals that actually went in during it are counted.',
+  'ファウルで止めることの是非を、感覚ではなく点数で議論するための材料です。':
+    'It puts a number on whether stopping an attack with a foul is worth it.',
+  '2分退場': '2-min suspensions', '退場': 'Suspensions',
+  '退場中の失点': 'Conceded while short', '退場中の得点': 'Scored while short',
+  '相手の退場': 'Opponent suspensions', 'その間の得点': 'Goals in that time',
+  '退場の多い選手（2回以上）': 'Most-suspended players (2 or more)',
+  '同時に2人が退場している時間は、チーム合計では二重に数えないよう区間を統合しています。':
+    'Overlapping windows are merged for the team totals so the same time is not counted twice.',
+  '選手別だけは区間ごとに割り当てているので、同時退場では同じ失点が複数人に付きます。':
+    'The per-player table assigns goals per window, so a goal during a double suspension is charged to both players.',
+  '「誰の退場が高くついたか」の目安として読んでください。':
+    'Read it as a rough guide to whose suspensions proved expensive.',
+
+  /* ---------- 期待得点との差（選手） ---------- */
+  '選手別 期待得点との差': 'Goals above expected by player',
+  'シュート1本ずつについて「位置とコースが同じシュートを大会平均の選手が打ったら':
+    'For every shot, we ask how many goals an average player in this tournament would score',
+  '何点入るか」を足し上げ、実際の得点と比べたものです。':
+    'from the same zone and placement, then compare with what actually went in.',
+  '決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。':
+    'It separates “high conversion because the shots were easy” from genuine finishing.',
+  'コースは枠内に飛んだシュートにしか付かないので、枠外・ポストは対象外です。':
+    'Placement is recorded only for shots on target, so off-target and post attempts are excluded.',
+  '基準にはその選手自身のぶんを除いた平均を使っています。':
+    'The baseline leaves out the player’s own shots.',
+  'コースが記録されたシュートが5本以上の選手がいません。':
+    'No player has five or more shots with a recorded placement.',
+  '本数が少ない選手の差は大きく振れるので、「100本あたり」と併せて見てください。':
+    'The difference swings a lot on few shots, so read it alongside the per-100 column.',
+  'プラスが大きいほど、平均的な選手より多く決めた':
+    'The higher the value, the more goals than an average player would have scored',
+  '期待得点': 'Expected goals',
+  '100本あたり': 'Per 100',
+
+  /* ---------- セーブの質 ---------- */
+  'セーブの質 — アウトレット': 'Save quality — the outlet',
+  'バレーボールのレセプション評価と同じ発想です。': 'The same idea as rating a volleyball reception.',
+  '弾くセーブとキャッチして即アウトレットのセーブは価値が違いますが、':
+    'A parried save and a caught save that feeds an instant outlet are worth different amounts, but',
+  '公式データにその区別はありません。そこで「セーブの直後に味方が':
+    'the official data does not distinguish them. So it is measured by result:',
+  'どれだけ速く攻められたか」という結果で測ります。':
+    'how quickly the team attacked right after the save.',
+  'セーブから始まった攻撃': 'Attacks started by a save',
+  '速攻になった': 'Became a fast break',
+  '2次速攻になった': 'Became a second wave',
+  'その攻撃での得点': 'Goals from those attacks',
+  'セーブ後の速攻率': 'Fast break after save %',
 };

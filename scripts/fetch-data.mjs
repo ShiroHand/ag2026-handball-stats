@@ -181,18 +181,36 @@ const bucketLabel = (sec) => {
   return `${b}-${b + 5}`;
 };
 
+/* ゲームステート（点差）の区分。攻撃開始時点の点差で分ける。 */
+const STATE_KEYS = ['lead3', 'lead1', 'tied', 'behind1', 'behind3'];
+
 /* ポゼッション・リバウンド・数的状況・時間帯を組み立てる */
 function buildPossessions(acts, teams, orgs) {
   const RECOVERED = new Set(['SAVE', 'POST', 'BLC']);   // 守備側がボールを回収し得る結末
   const blank = () => ({attacks: 0, goals: 0, shots: 0, missed: 0, saves: 0,
     turnovers: 0, twoMin: 0, assists: 0, offReb: 0, defReb: 0});
   const T = {};
+  const blankState = () => Object.fromEntries(STATE_KEYS.map(k => [k, blank()]));
   orgs.forEach(o => T[o] = {
     poss: blank(), timeline: new Map(),
     sit: {equal: blank(), up: blank(), down: blank()},
     sitDef: {equal: blank(), up: blank(), down: blank()},
+    state: blankState(), stateDef: blankState(),
     emptyGoal: {shotsFor: 0, goalsFor: 0, shotsAgainst: 0, goalsAgainst: 0},
   });
+  /* 点差（ゲームステート）。公式の score 欄に頼らず、GOAL を自前で数えて
+     攻撃開始時点の点差を出す。どちらがホームかを知らなくて済む。 */
+  const score = {};
+  orgs.forEach(o => score[o] = 0);
+  const stateKey = (org) => {
+    const opp = other(org);
+    const d = score[org] - (opp ? score[opp] : 0);
+    if (d >= 3) return 'lead3';
+    if (d >= 1) return 'lead1';
+    if (d === 0) return 'tied';
+    if (d >= -2) return 'behind1';
+    return 'behind3';
+  };
   const other = (o) => orgs.find(x => x !== o);
   const tl = (o, sec) => {
     const k = bucketLabel(sec);
@@ -235,16 +253,25 @@ function buildPossessions(acts, teams, orgs) {
       if (org && T[org]) {
         const opp = other(org);
         /* 攻撃開始時点の人数差でそのポゼッション全体を分類する（回数と得点の分母を揃えるため） */
-        cur = {org, shots: [], sec, kAtt: sitKey(org, sec), kDef: opp ? sitKey(opp, sec) : 'equal'};
+        cur = {org, shots: [], sec, kAtt: sitKey(org, sec), kDef: opp ? sitKey(opp, sec) : 'equal',
+          kState: stateKey(org), kStateDef: opp ? stateKey(opp) : 'tied'};
         T[org].poss.attacks++;
         tl(org, sec).attacks++;
         T[org].sit[cur.kAtt].attacks++;
-        if (opp) T[opp].sitDef[cur.kDef].attacks++;
+        T[org].state[cur.kState].attacks++;
+        if (opp) { T[opp].sitDef[cur.kDef].attacks++; T[opp].stateDef[cur.kStateDef].attacks++; }
       }
       continue;
     }
     if (a.ac === 'ENDP') { closePoss(); continue; }
-    if (a.ac === 'TO' && org && T[org]) { T[org].poss.turnovers++; tl(org, sec).turnovers++; closePoss(); continue; }
+    if (a.ac === 'TO' && org && T[org]) {
+      T[org].poss.turnovers++; tl(org, sec).turnovers++;
+      const ks = (cur && cur.org === org) ? cur.kState : stateKey(org);
+      T[org].state[ks].turnovers++;
+      const oppTo = other(org);
+      if (oppTo) T[oppTo].stateDef[(cur && cur.org === org) ? cur.kStateDef : stateKey(oppTo)].turnovers++;
+      closePoss(); continue;
+    }
     if (a.ac === 'TMS' && org && T[org]) { T[org].poss.twoMin++; tl(org, sec).twoMin++; continue; }
     if (a.ac === 'ASS' && org && T[org]) { T[org].poss.assists++; tl(org, sec).assists++; continue; }
 
@@ -269,6 +296,15 @@ function buildPossessions(acts, teams, orgs) {
       const sd = T[opp].sitDef[kd];
       sd.shots++; if (goal) sd.goals++; else sd.missed++;
     }
+
+    /* ゲームステート（攻撃開始時点の点差で分類） */
+    const gs = T[org].state[inPoss ? cur.kState : stateKey(org)];
+    gs.shots++; if (goal) gs.goals++; else gs.missed++;
+    if (opp) {
+      const gd = T[opp].stateDef[inPoss ? cur.kStateDef : stateKey(opp)];
+      gd.shots++; if (goal) gd.goals++; else gd.missed++;
+    }
+    if (goal) score[org]++;                 // 点差の更新はシュート処理の最後で
 
     /* 無人ゴール（相手がGKを下げていた局面の結果） */
     if (a.ac === 'EG') {
@@ -306,7 +342,9 @@ function buildPossessions(acts, teams, orgs) {
     out[org] = {
       possessions: {...p, eff: p.attacks ? +(p.goals / p.attacks * 100).toFixed(1) : 0},
       timeline: tl,
-      situations: x.sit, situationsDef: x.sitDef, emptyGoal: x.emptyGoal,
+      situations: x.sit, situationsDef: x.sitDef,
+      gameState: x.state, gameStateDef: x.stateDef,
+      emptyGoal: x.emptyGoal,
     };
   }
   return out;
@@ -677,11 +715,11 @@ function buildTransitions(acts, orgs, teams) {
   }
 
   /* 2) 持ち主が入れ替わったところを切り替えとして数える */
-  const out = {}, players = {}, gks = {}, assists = {}, steals = {};
+  const out = {}, players = {}, gks = {}, assists = {}, steals = {}, outlet = {};
   const bands = new Map();          // アクション番号 → 速さの帯（shots[] に配るため）
   orgs.forEach(o => {
     out[o] = {afterOwn: blankTrans(), afterOpp: blankTrans()};
-    players[o] = {}; gks[o] = {}; assists[o] = {}; steals[o] = {};
+    players[o] = {}; gks[o] = {}; assists[o] = {}; steals[o] = {}; outlet[o] = {};
   });
   const pt = (map, org, bib, isGK) => {
     if (!map[org] || !bib) return null;
@@ -734,13 +772,94 @@ function buildTransitions(acts, orgs, teams) {
         if (next.type === 'SAVE') rec[band].sv++;
       }
     }
+    /* セーブの「質」: そのセーブのあと、味方が速攻に持ち込めたか。
+       弾くセーブとキャッチして即アウトレットのセーブは価値が違うが、
+       公式データにその区別は無いので「結果」で測る（バレーのレセプション評価と同じ発想）。
+       prev はセーブされたシュート＝GKは next.org 側にいる。 */
+    if (prev.type === 'SAVE') {
+      const g2 = gkOf[prev.gk];
+      if (g2 && g2.org === next.org) {
+        const m = outlet[g2.org];
+        const rec = m[g2.bib] || (m[g2.bib] = {n: 0, goals: 0, fast: 0, second: 0, set: 0});
+        rec.n++; rec.goals += scored; rec[band]++;
+      }
+    }
+
     /* 出し手（アシスト）と、そのポゼッションを作ったスティール */
     const as = pt(assists, next.org, next.as, false);
     if (as) { as[band].s++; as[band].g += scored; }
     const st = pt(steals, next.org, next.st, false);
     if (st) { st[band].s++; st[band].g += scored; }
   }
-  return {team: out, players, gks, assists, steals, bands};
+  return {team: out, players, gks, assists, steals, outlet, bands};
+}
+
+/* ---------------------------------------------------------- 2分退場のコスト */
+/* 退場の記録時刻から120秒の区間を作り、その間に実際に何点動いたかを数える。
+   ・rate 用には区間の和集合（重複退場を二重に数えない）で秒数と得失点を出す
+   ・選手別には区間ごとに割り当てる（同時退場では同じ得点が複数人に付く。
+     「誰の退場が高くついたか」の目安として読む） */
+const SUSP_SEC = 120;
+function buildSuspensions(acts, orgs) {
+  const wins = [];                 // {org, bib, from, to}
+  const goals = [];                // {org, sec}
+  for (const a of acts) {
+    const org = a.c[0]?.org;
+    if (!org || !orgs.includes(org)) continue;
+    if (a.ac === 'TMS') {
+      const s0 = absSec(a.p, a.t);
+      if (Number.isFinite(s0)) wins.push({org, bib: S(a.c[0]?.bib), from: s0, to: s0 + SUSP_SEC});
+      continue;
+    }
+    if (ACT_ZONE[a.ac] && a.r === 'GOAL') {
+      const s0 = absSec(a.p, a.t);
+      if (Number.isFinite(s0)) goals.push({org, sec: s0});
+    }
+  }
+  const other = (o) => orgs.find(x => x !== o);
+  const out = {};
+  orgs.forEach(o => out[o] = {
+    own: {n: 0, sec: 0, against: 0, forGoals: 0},   // 自分が退場者を出している間
+    opp: {n: 0, sec: 0, forGoals: 0, against: 0},   // 相手が退場者を出している間
+    players: [],
+  });
+
+  for (const org of orgs) {
+    const opp = other(org);
+    const mine = wins.filter(w => w.org === org);
+    /* 和集合の区間を作る */
+    const merged = [];
+    [...mine].sort((a, b) => a.from - b.from).forEach(w => {
+      const last = merged[merged.length - 1];
+      if (last && w.from <= last.to) last.to = Math.max(last.to, w.to);
+      else merged.push({from: w.from, to: w.to});
+    });
+    const inAny = (sec) => merged.some(m => sec >= m.from && sec < m.to);
+    out[org].own.n = mine.length;
+    out[org].own.sec = merged.reduce((a, m) => a + (m.to - m.from), 0);
+    for (const g of goals) {
+      if (!inAny(g.sec)) continue;
+      if (g.org === org) out[org].own.forGoals++; else out[org].own.against++;
+    }
+    if (opp) {
+      out[opp].opp.n = out[org].own.n;
+      out[opp].opp.sec = out[org].own.sec;
+      out[opp].opp.forGoals = out[org].own.against;
+      out[opp].opp.against = out[org].own.forGoals;
+    }
+    /* 選手別（区間ごと） */
+    const byBib = {};
+    for (const w of mine) {
+      const rec = byBib[w.bib] || (byBib[w.bib] = {bib: w.bib, n: 0, against: 0, forGoals: 0});
+      rec.n++;
+      for (const g of goals) {
+        if (g.sec < w.from || g.sec >= w.to) continue;
+        if (g.org === org) rec.forGoals++; else rec.against++;
+      }
+    }
+    out[org].players = Object.values(byBib).sort((a, b) => b.against - a.against);
+  }
+  return out;
 }
 
 /* ---------------------------------------------------------------- 事前分布 */
@@ -918,6 +1037,10 @@ function buildMatchFile(key, res, listed, rawActions) {
     Object.assign(teams[org], p);
   }
 
+  /* 2分退場のコスト */
+  const susp = buildSuspensions(sorted, orgsAll);
+  for (const org of orgsAll) teams[org].suspension = susp[org];
+
   /* 攻守の切り替え（直前の攻撃の終わり方 → 次の攻撃の成否） */
   const trans = buildTransitions(sorted, orgsAll, teams);
   for (const org of orgsAll) {
@@ -931,6 +1054,8 @@ function buildMatchFile(key, res, listed, rawActions) {
     for (const p of teams[org].players) {
       const a = trans.players[org]?.[p.bib];
       const g = trans.gks[org]?.[p.bib];
+      const ot = trans.outlet[org]?.[p.bib];
+      if (ot) p.outlet = ot;
       const as = trans.assists[org]?.[p.bib];
       const st = trans.steals[org]?.[p.bib];
       if (a) p.tempo = a;

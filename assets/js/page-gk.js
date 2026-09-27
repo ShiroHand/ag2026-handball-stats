@@ -47,12 +47,14 @@ function collect(list) {
         if (!isGK(p)) continue;
         const key = code + '|' + p.bib;
         const cur = gks.get(key) || {key, code, bib: p.bib, name: playerName(p),
-          reg: p.reg || '', gender: f.gender, games: 0, shots: []};
+          reg: p.reg || '', gender: f.gender, games: 0, shots: [],
+          outlet: {n: 0, goals: 0, fast: 0, second: 0, set: 0}};
         if (!cur.reg && p.reg) cur.reg = p.reg;
         const faced = (op.shots || []).filter(s => s.gkBib === p.bib);
         if (!faced.length && !n(p.stats?.GK_SHOTS)) continue;
         cur.games++;
         cur.shots.push(...faced);
+        if (p.outlet) for (const k of ['n', 'goals', 'fast', 'second', 'set']) cur.outlet[k] += n(p.outlet[k]);
         gks.set(key, cur);
       }
     }
@@ -154,6 +156,18 @@ function refTable(ref) {
 }
 
 /* ---------- GK一覧 ---------- */
+/* セーブの「質」: そのセーブのあと味方が速攻に持ち込めた割合 */
+const outletTd = (o) => {
+  const td = el('td', {class: 'num', style: {fontWeight: 700},
+    text: o && o.n ? pct(o.fast, o.n) : '·'});
+  if (o && o.n) {
+    tip(td, `セーブして味方ボールになった ${o.n} 回<br>`
+      + `速攻 ${o.fast} / 2次速攻 ${o.second} / セット ${o.set}<br>`
+      + `その攻撃で得点 ${o.goals}（${pct(o.goals, o.n)}）`);
+  }
+  return td;
+};
+
 const xgTd = (s) => {
   const td = el('td', {class: 'num muted', text: s.xg.toFixed(1)});
   tip(td, `コースが記録されている ${s.xn} 本が対象<br>`
@@ -165,7 +179,8 @@ function rankCard(rows) {
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
     ['GK', 'チーム', '試合', '被シュート', '枠内', 'セーブ', '失点', 'セーブ率',
-      '期待失点', 'GSAA', '速攻セーブ率', '遅攻セーブ率'].map(h => el('th', {text: h})))));
+      '期待失点', 'GSAA', '速攻セーブ率', '遅攻セーブ率',
+      'セーブ後の速攻率'].map(h => el('th', {text: h})))));
   const tb = el('tbody', {});
   rows.forEach(r => {
     const s = r.sum;
@@ -190,7 +205,8 @@ function rankCard(rows) {
       xgTd(s),
       td,
       el('td', {class: 'num', text: saveRate(fast) || '·'}),
-      el('td', {class: 'num', text: saveRate(set) || '·'})));
+      el('td', {class: 'num', text: saveRate(set) || '·'}),
+      outletTd(r.outlet)));
   });
   table.append(tb);
 
@@ -242,6 +258,22 @@ function detailCard(r, ref) {
   box.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'シュート位置別'}),
     bandFiltered(r, ref, 'pos'));
 
+  /* セーブの質（アウトレット） */
+  if (r.outlet && r.outlet.n) {
+    const o = r.outlet;
+    box.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'セーブの質 — アウトレット'}),
+      el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
+        text: 'バレーボールのレセプション評価と同じ発想です。'
+          + '弾くセーブとキャッチして即アウトレットのセーブは価値が違いますが、'
+          + '公式データにその区別はありません。そこで「セーブの直後に味方が'
+          + 'どれだけ速く攻められたか」という結果で測ります。'}),
+      el('div', {class: 'kpi-grid', style: {marginBottom: '6px'}},
+        gkKpi('セーブから始まった攻撃', o.n, ''),
+        gkKpi('速攻になった', o.fast, pct(o.fast, o.n)),
+        gkKpi('2次速攻になった', o.second, pct(o.second, o.n)),
+        gkKpi('その攻撃での得点', o.goals, pct(o.goals, o.n))));
+  }
+
   /* コース別（帯でしぼれる） */
   box.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'コース別（枠内のみ）'}),
     bandFiltered(r, ref, 'course'));
@@ -249,6 +281,13 @@ function detailCard(r, ref) {
   return box;
 }
 
+
+function gkKpi(label, value, sub) {
+  return el('div', {class: 'kpi'},
+    el('div', {class: 'k', text: label}),
+    el('div', {class: 'v', text: String(value)}),
+    sub ? el('div', {class: 's', text: sub}) : null);
+}
 
 /* 速さの帯 */
 const BANDS = [

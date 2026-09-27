@@ -123,7 +123,8 @@ export function tip(target, html) {
 /* ---------- 共通ヘッダ ---------- */
 const PAGE_TITLE = {
   index: 'Overview', match: 'Match report', team: 'Team (attack)',
-  defense: 'Defence', gk: 'Goalkeeping', situations: 'Situations', analysis: 'Clusters & factors',
+  defense: 'Defence', gk: 'Goalkeeping', situations: 'Situations',
+  advanced: 'Advanced', analysis: 'Clusters & factors',
 };
 
 export function renderChrome(active, tournament) {
@@ -144,6 +145,7 @@ export function renderChrome(active, tournament) {
         el('a', {href: 'defense.html', class: active === 'defense' ? 'on' : '', text: '守備分析'}),
         el('a', {href: 'gk.html', class: active === 'gk' ? 'on' : '', text: 'GK分析'}),
         el('a', {href: 'situations.html', class: active === 'situations' ? 'on' : '', text: '局面分析'}),
+        el('a', {href: 'advanced.html', class: active === 'advanced' ? 'on' : '', text: '発展分析'}),
         el('a', {href: 'analysis.html', class: active === 'analysis' ? 'on' : '', text: 'クラスター・因子分析'})),
       el('div', {class: 'spacer'}),
       langToggle(),
