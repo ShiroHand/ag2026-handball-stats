@@ -9,8 +9,7 @@ import {loadJSON, el, q, n, pct, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, photoImg, shortRole, CAT, sectionNav} from './core.js';
 import {scatter, legend, hbars} from './charts.js';
 import {standardize, kmeans, silhouette, pca, adequacy, mean} from './stats.js';
-import {PLAYER_VARS, POS_GROUP, GK_VARS, buildPlayers, buildGKs,
-        zWithinGroup, zPlain} from './playerpca.js';
+import {POS_GROUP, GK_VARS, buildGKs, zPlain} from './playerpca.js';
 import {selectedFromUrl, applyFilter, allMatchFilterCard} from './matchfilter.js';
 import {TRANS_KEYS, addTrans, emptyTrans} from './transitions.js';
 
@@ -259,7 +258,6 @@ function render() {
   app.append(pcaCard('att', '攻撃だけの因子分析', allPerGame, teams));
   app.append(pcaCard('def', '守備だけの因子分析', allPerGame, teams));
   app.append(pcaCard('all', '攻守をまとめた因子分析', allPerGame, teams));
-  app.append(playerPcaCard(list));
   app.append(gkPcaCard(list));
   sectionNav(app);
 }
@@ -499,76 +497,7 @@ function pcaCard(kind, title, perGame, teams) {
 }
 
 
-/* ---------- 選手・GKの主成分分析 ---------- */
-/* しきい値は大会の進み具合に合わせて自動で選ぶ。null = 自動。 */
-const SHOT_STEPS = [8, 10, 15, 20];
-const MIN_MINUTES = 40;
-let minShots = null;
-let posMode = 'all';          // 'all'（群内標準化）または POS_GROUP の key
-
-function playerPcaCard(list) {
-  /* 男女は水準も役割の使われ方も違うので、選んだカテゴリの中だけで分析する */
-  const pool = buildPlayers(list).filter(p => p.min >= MIN_MINUTES);
-  const vars = PLAYER_VARS;
-  const inPos = (p) => (posMode === 'all' ? true : p.group === posMode);
-  const countAt = (t2) => pool.filter(p => p.shots >= t2 && inPos(p)).length;
-  const need = posMode === 'all' ? vars.length * 4 : vars.length * 2;
-  const auto = [...SHOT_STEPS].reverse().find(t2 => countAt(t2) >= need) || SHOT_STEPS[0];
-  const th = minShots || auto;
-  const rowsAll = pool.filter(p => p.shots >= th && inPos(p));
-
-  const posChips = el('div', {class: 'chips'});
-  [['all', 'すべて（群内標準化）'], ...POS_GROUP.map(g => [g.key, g.label])].forEach(([k, label]) => {
-    posChips.append(el('button', {
-      class: 'chip' + (posMode === k ? ' on' : ''),
-      text: label,
-      onclick: () => { posMode = k; minShots = null; render(); },
-    }));
-  });
-  const shotChips = el('div', {class: 'chips'});
-  SHOT_STEPS.forEach(v => shotChips.append(el('button', {
-    class: 'chip' + (th === v ? ' on' : ''),
-    text: `シュート${v}本以上（${countAt(v)}人）`,
-    onclick: () => { minShots = v; render(); },
-  })));
-
-  const box = el('div', {class: 'card'},
-    el('h2', {text: '選手の因子分析'}),
-    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
-      text: '選んだカテゴリ（男子／女子）の中だけで分析しています。'
-        + '「すべて」を選んだときは、ウイング／サイドバック／センター／ポストの4群に分け、'
-        + '群の中で標準化してから合わせます。混ぜてそのまま回すと第1主成分が'
-        + '「ウイングらしさ ↔ バックらしさ」になってしまうためです。'
-        + 'ポジションを1つ選べば、その中だけで主成分を出します。'
-        + 'GKは下の「GKの因子分析」で扱います。'}),
-    el('div', {class: 'row', style: {gap: '10px', marginBottom: '6px'}},
-      el('span', {class: 'muted', style: {fontSize: '12px'}, text: 'ポジション'}), posChips),
-    el('div', {class: 'row', style: {gap: '10px', marginBottom: '10px'}},
-      el('span', {class: 'muted', style: {fontSize: '12px'}, text: '対象'}), shotChips),
-    el('div', {class: 'sub', style: {margin: '0 0 8px'},
-      text: `出場${MIN_MINUTES}分以上の選手が対象です。`
-        + '60分あたりの指標を使うので、出場時間が短い選手は入れていません。'}));
-
-  const {z, rows} = posMode === 'all'
-    ? zWithinGroup(rowsAll, vars)
-    : zPlain(rowsAll, vars);
-  return finishPca(box, z, rows, vars, {
-    colorBy: 'group',
-    note: posMode === 'all'
-      ? '群の中で標準化しているので、得点は「同じポジションの選手と比べて」という意味になります。'
-        + 'ポジションをまたいだ絶対的な順位ではありません。'
-        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
-        + '群の平均で埋めています。'
-      : 'このポジションの選手だけで標準化しています。'
-        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
-        + '平均で埋めています。',
-    empty: '主成分を計算できませんでした。選手数が足りません。',
-    counts: posMode === 'all'
-      ? POS_GROUP.map(g => `${g.label} ${rows.filter(r => r.group === g.key).length}`).join('・')
-      : '',
-  });
-}
-
+/* ---------- GKの主成分分析 ---------- */
 function gkPcaCard(list) {
   const rows0 = buildGKs(list, gender).filter(g => g.sum.onTarget >= 20);
   const vars = GK_VARS;

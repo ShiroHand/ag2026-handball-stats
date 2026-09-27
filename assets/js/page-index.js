@@ -1,6 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
-        params, setParam, flagImg, photoImg, CAT, withLang} from './core.js';
+        params, setParam, flagImg, photoImg, shortRole, tip, CAT, withLang} from './core.js';
 import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
+import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
 
 const app = q('#app');
 let T = null;
@@ -66,6 +67,11 @@ function render() {
         el('div', {}, el('div', {class: 'sub', text: 'GKセーブ数'}),
           leaderList(topSavers(gender).slice(0, 12), CAT[3])))));
   }
+  const gaeCard = playerRankCard(gender, 'gae');
+  if (gaeCard) app.append(gaeCard);
+  const conCard = playerRankCard(gender, 'contrib');
+  if (conCard) app.append(conCard);
+
   const effCard = efficiencyCard(gender);
   if (effCard) app.append(effCard);
   const trCard = transitionRankCard(gender);
@@ -336,5 +342,103 @@ async function buildRanking(g) {
   });
   trRows.sort((a, b) => a.code.localeCompare(b.code));
 
-  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams, trans: trRows};
+  /* 選手ランキング（期待得点との差・攻撃の貢献度）。
+     平均の基準はカテゴリ全体なので、ここでまとめて作る。 */
+  const mine = files.filter(f => f.gender === g);
+  let players = [], cost = null, means = {};
+  if (mine.length) {
+    cost = costModel(mine);
+    players = buildContrib(mine, mine, cost);
+    means = groupMeans(players);
+    players.forEach(r => {
+      const m = means[r.group];
+      r.adj = m ? r.per60 - m.mean : null;
+    });
+  }
+
+  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams, trans: trRows, players, cost, means};
+}
+
+
+/* ---------- 選手ランキング（期待得点との差・攻撃の貢献度） ---------- */
+/* kind: 'gae'（フィニッシュだけ）/ 'contrib'（ミス・退場まで含めた貢献度）
+   貢献度は素の合計だとポジションで順位が決まってしまうので、
+   同ポジション平均との差を主指標にする（チーム分析ページと同じ）。 */
+function playerRankCard(g, kind) {
+  const R = RANK[g];
+  if (!R || !R.players || !R.players.length) return null;
+  const isGae = kind === 'gae';
+  const rows = R.players
+    .filter(r => (isGae ? r.xn >= 10 : (r.shots >= 10 && r.min >= 40)))
+    .map(r => ({...r, key: isGae ? r.gae : (r.adj ?? -99)}))
+    .filter(r => r.key > -98)
+    .sort((a, b) => b.key - a.key);
+  if (rows.length < 5) return null;
+
+  const table = (arr) => {
+    const t = el('table', {});
+    t.append(el('thead', {}, el('tr', {},
+      (isGae
+        ? ['#', '選手', 'チーム', 'Pos', '枠内', '得点', '期待得点', '差', '100本あたり']
+        : ['#', '選手', 'チーム', 'Pos', '出場', 'フィニッシュ', 'ミス', '合計', '同ポジ差'])
+        .map((h, i) => el('th', {class: i < 4 ? '' : 'num', text: h})))));
+    const tb = el('tbody', {});
+    arr.forEach((r, i) => {
+      const cells = isGae
+        ? [r.xn, r.xgoals, r.xg.toFixed(1),
+          (r.gae > 0 ? '+' : '') + r.gae.toFixed(1),
+          r.xn ? ((r.gae / r.xn * 100) > 0 ? '+' : '') + (r.gae / r.xn * 100).toFixed(1) : '']
+        : [Math.round(r.min), (r.gae > 0 ? '+' : '') + r.gae.toFixed(1), r.to,
+          (r.total > 0 ? '+' : '') + r.total.toFixed(1),
+          (r.adj > 0 ? '+' : '') + r.adj.toFixed(2)];
+      const tr = el('tr', {},
+        el('td', {class: 'num muted', text: i + 1}),
+        el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+          photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
+        el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
+          flagImg(r.code, 'flag sm'), el('span', {text: r.code}))),
+        el('td', {text: shortRole(r.role)}),
+        cells.map((c, j) => el('td', {class: 'num',
+          style: {fontWeight: j === cells.length - (isGae ? 2 : 1) ? 700 : 400}, text: c})));
+      tip(tr, `<b>${r.name}</b>（${r.code}・${shortRole(r.role)}）<br>`
+        + `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本<br>`
+        + `フィニッシュ ${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+        + `誤差 ±${r.se.toFixed(1)}点`);
+      tb.append(tr);
+    });
+    t.append(tb);
+    return el('div', {class: 'tbl-scroll'}, t);
+  };
+
+  const head = isGae
+    ? {title: '期待得点との差 ランキング',
+      sub: 'シュート1本ずつについて「位置とコースが同じシュートを大会平均の選手が打ったら'
+        + '何点入るか」を足し上げ、実際の得点と比べたものです。'
+        + '決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。'
+        + 'コースが記録された枠内シュートが10本以上の選手が対象です。'}
+    : {title: '攻撃の貢献度 ランキング',
+      sub: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
+        + '並べ替えは「同ポジ平均との差（60分あたり）」で行っています。'
+        + '素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。'
+        + 'シュート10本以上・出場40分以上が対象です。'};
+
+  const box = el('div', {class: 'card'},
+    el('h2', {text: head.title}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'}, text: head.sub}),
+    el('div', {class: 'sec-title', text: '上位15人'}),
+    table(rows.slice(0, 15)),
+    el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: '下位10人'}),
+    table(rows.slice(-10).reverse()));
+
+  if (!isGae && R.cost) {
+    box.append(el('div', {class: 'sub', style: {marginTop: '10px'},
+      text: `換算レートは大会データから推定しています。ミス1回 −${R.cost.toCost.toFixed(2)}点、`
+        + `2分退場1回 −${R.cost.suspCost.toFixed(2)}点。`
+        + 'アシストは公式の定義上ほぼ得点にしか記録されないため合算していません。'}));
+  }
+  box.append(el('div', {class: 'sub', style: {marginTop: '6px'},
+    text: 'これは総合評価ではありません。守備の記録がほとんど無く、'
+      + 'スクリーンや7mを獲得する動きは1つも入りません。'
+      + '行にカーソルを合わせると内訳と誤差が出ます。'}));
+  return box;
 }

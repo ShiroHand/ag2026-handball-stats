@@ -10,7 +10,7 @@
    ========================================================================== */
 import {loadJSON, el, q, n, pct, fmt, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, effColor, effInk, sectionNav, tip, CAT} from './core.js';
-import {hbars, legend} from './charts.js';
+import {hbars, legend, rampLegend} from './charts.js';
 import {standardize, ols} from './stats.js';
 import {selectedFromUrl, applyFilter, allMatchFilterCard} from './matchfilter.js';
 
@@ -212,6 +212,8 @@ const STATES = [
   {k: 'behind3', label: '3点以上ビハインド'},
 ];
 
+let stateTeam = 'all';        // ゲームステート表の対象チーム
+
 function gameStateCard(rs) {
   const box = el('div', {class: 'card'},
     el('h2', {text: 'ゲームステート（点差）別'}),
@@ -219,6 +221,37 @@ function gameStateCard(rs) {
       text: 'サッカー分析の基本的な考え方です。攻撃を始めた時点の点差で分けています。'
         + '「強いから効率が良い」のか「リードしているから効率が良く見える」のかを切り分けられます。'}));
 
+  const codes = [...new Set(rs.map(r => r.code))].sort();
+  if (!codes.includes(stateTeam)) stateTeam = 'all';
+  const chips = el('div', {class: 'chips', style: {marginBottom: '10px'}});
+  const host = el('div', {});
+  [['all', 'すべて'], ...codes.map(c => [c, c])].forEach(([k, label]) => {
+    chips.append(el('button', {
+      class: 'chip' + (stateTeam === k ? ' on' : ''),
+      text: label,
+      onclick: (e) => {
+        stateTeam = k;
+        [...chips.children].forEach(c => c.className = 'chip');
+        e.currentTarget.className = 'chip on';
+        draw();
+      }}));
+  });
+  box.append(el('div', {class: 'row', style: {gap: '10px'}},
+    el('span', {class: 'muted', style: {fontSize: '12px'}, text: 'チーム'}), chips), host);
+
+  const draw = () => {
+    host.innerHTML = '';
+    const use = stateTeam === 'all' ? rs : rs.filter(r => r.code === stateTeam);
+    host.append(stateBody(use, stateTeam));
+  };
+  draw();
+  box.append(teamStateMatrix(rs));
+  return box;
+}
+
+/* 1チームぶん／全体ぶんの表と棒グラフ */
+function stateBody(rs, who) {
+  const box = el('div', {});
   const agg = (key) => {
     const out = {};
     STATES.forEach(s => out[s.k] = {attacks: 0, goals: 0, shots: 0, turnovers: 0});
@@ -264,10 +297,60 @@ function gameStateCard(rs) {
   box.append(el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '点差別の攻撃効率'}),
     hbars(eff, {valueKey: 'v', labelKey: 'label', color: CAT[0], fmtv: (v) => v + '%', labelWidth: '150px'}),
     el('div', {class: 'sub', style: {marginTop: '8px'},
-      text: 'ビハインドの効率が高く出るのは、負けているチームが攻めざるを得ないからだけでなく、'
-        + '点差が開いた試合では強いチームの守備が緩む影響も混ざります。'
-        + 'チーム単位で見るときは、同点・接戦の行だけを比べるのが安全です。'}));
+      text: who === 'all'
+        ? '全チームを合計しているので、この表は構造的に対称になります'
+          + '（自分の「3点リード時の攻撃」は相手の「3点ビハインド時の守備」なので）。'
+          + 'チームを選ぶと、そのチームだけの数字になります。'
+        : 'ビハインドの効率が高く出るのは、負けているチームが攻めざるを得ないからだけでなく、'
+          + '点差が開いた試合では強いチームの守備が緩む影響も混ざります。'
+          + '比べるときは同点・接戦の行を見るのが安全です。'}));
   return box;
+}
+
+/* チーム × 点差 の攻撃効率マトリクス */
+function teamStateMatrix(rs) {
+  const m = new Map();
+  for (const r of rs) {
+    const c = m.get(r.code) || {code: r.code, games: 0, s: {}};
+    c.games++;
+    for (const st of STATES) {
+      const v = r.state?.[st.k]; if (!v) continue;
+      const a = c.s[st.k] = c.s[st.k] || {attacks: 0, goals: 0};
+      a.attacks += n(v.attacks); a.goals += n(v.goals);
+    }
+    m.set(r.code, c);
+  }
+  const table = el('table', {});
+  table.append(el('thead', {}, el('tr', {},
+    [el('th', {text: 'チーム'}), el('th', {class: 'num', text: '試合'}),
+      ...STATES.map(s => el('th', {class: 'num', text: s.label})),
+      el('th', {class: 'num', text: '全体'})])));
+  const tb = el('tbody', {});
+  [...m.values()].sort((a, b) => a.code.localeCompare(b.code)).forEach(c => {
+    let ta = 0, tg = 0;
+    const tr = el('tr', {}, el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
+      flagImg(c.code, 'flag sm'), el('span', {text: c.code}))),
+      el('td', {class: 'num', text: c.games}));
+    STATES.forEach(s => {
+      const v = c.s[s.k] || {attacks: 0, goals: 0};
+      ta += v.attacks; tg += v.goals;
+      const e = v.attacks ? v.goals / v.attacks * 100 : null;
+      const td = el('td', {class: 'num', text: v.attacks >= 5 ? fmt(e, 0) + '%' : '·'});
+      if (v.attacks >= 5) { td.style.background = effColor(e); td.style.color = effInk(e); }
+      if (v.attacks) tip(td, `${s.label}<br>得点 ${v.goals} / 攻撃 ${v.attacks}<br>攻撃効率 ${fmt(e, 1)}%`);
+      tr.append(td);
+    });
+    tr.append(el('td', {class: 'num', style: {fontWeight: 700}, text: ta ? fmt(tg / ta * 100, 0) + '%' : '·'}));
+    tb.append(tr);
+  });
+  table.append(tb);
+  return el('div', {},
+    el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'チーム × 点差 の攻撃効率'}),
+    el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
+      text: '攻撃回数が5回未満のセルは「·」にしています。'
+        + 'リードしているときだけ効率が高いチームと、点差に関係なく安定しているチームを見分けられます。'}),
+    el('div', {class: 'tbl-scroll'}, table),
+    rampLegend('攻撃効率'));
 }
 
 /* ---------- 3. サイドアウト構造 ---------- */

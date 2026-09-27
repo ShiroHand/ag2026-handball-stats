@@ -1072,6 +1072,37 @@ export const EN = {
 
   /* ---------- 攻撃の貢献度 ---------- */
   '攻撃の貢献度（得点換算）': 'Attacking contribution (in goals)',
+  '期待得点との差 ランキング': 'Goals above expected — ranking',
+  '攻撃の貢献度 ランキング': 'Attacking contribution — ranking',
+  '上位15人': 'Top 15', '下位10人': 'Bottom 10',
+  '同ポジ差': 'vs position',
+  'コースが記録された枠内シュートが10本以上の選手が対象です。':
+    'Players with at least 10 shots on target with a recorded placement.',
+  'シュート10本以上・出場40分以上が対象です。':
+    'Players with at least 10 shots and 40 minutes played.',
+  '並べ替えは「同ポジ平均との差（60分あたり）」で行っています。':
+    'Sorted by the difference from the position average, per 60 minutes.',
+  '素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。':
+    'Sorting by the raw total would penalise the positions that handle the ball most.',
+  'アシストは公式の定義上ほぼ得点にしか記録されないため合算していません。':
+    'Assists are not added in, as the official definition records them almost only on goals.',
+  'これは総合評価ではありません。守備の記録がほとんど無く、':
+    'This is not an overall rating. Defensive actions are barely recorded, and',
+  'スクリーンや7mを獲得する動きは1つも入りません。':
+    'screening and drawing 7m throws do not appear at all.',
+  '行にカーソルを合わせると内訳と誤差が出ます。': 'Hover a row for the breakdown and the error.',
+  'チーム × 点差 の攻撃効率': 'Attack efficiency by team × score difference',
+  '攻撃回数が5回未満のセルは「·」にしています。': 'Cells with fewer than five attacks are shown as “·”.',
+  'リードしているときだけ効率が高いチームと、点差に関係なく安定しているチームを見分けられます。':
+    'It separates teams that are only efficient when ahead from those that stay steady whatever the score.',
+  '全チームを合計しているので、この表は構造的に対称になります':
+    'With every team pooled, this table is symmetric by construction',
+  '（自分の「3点リード時の攻撃」は相手の「3点ビハインド時の守備」なので）。':
+    ' (one team’s “attacking 3+ ahead” is the other’s “defending 3+ behind”).',
+  'チームを選ぶと、そのチームだけの数字になります。': 'Pick a team to see that team alone.',
+  '比べるときは同点・接戦の行を見るのが安全です。':
+    'The level and one-goal rows are the safest to compare.',
+  '全体': 'Overall',
   'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。':
     'Finishing, turnovers and 2-minute suspensions converted into the same currency — goals — and added up.',
   'バスケットボールの BPM やサッカーの VAEP と同じ考え方で、':
