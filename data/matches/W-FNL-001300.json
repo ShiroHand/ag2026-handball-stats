@@ -540,6 +540,13 @@
        }
       ]
      ],
+     "outlet": {
+      "n": 2,
+      "goals": 1,
+      "fast": 0,
+      "second": 0,
+      "set": 2
+     },
      "tempoGK": {
       "fast": {
        "s": 2,
@@ -3407,6 +3414,13 @@
        }
       ]
      ],
+     "outlet": {
+      "n": 2,
+      "goals": 0,
+      "fast": 0,
+      "second": 1,
+      "set": 1
+     },
      "tempoGK": {
       "fast": {
        "s": 4,
@@ -5584,11 +5598,163 @@
      "defReb": 0
     }
    },
+   "gameState": {
+    "lead3": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "lead1": {
+     "attacks": 1,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "tied": {
+     "attacks": 12,
+     "goals": 7,
+     "shots": 10,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 5,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind1": {
+     "attacks": 7,
+     "goals": 4,
+     "shots": 5,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind3": {
+     "attacks": 30,
+     "goals": 10,
+     "shots": 22,
+     "missed": 12,
+     "saves": 0,
+     "turnovers": 10,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "gameStateDef": {
+    "lead3": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "lead1": {
+     "attacks": 8,
+     "goals": 7,
+     "shots": 10,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "tied": {
+     "attacks": 6,
+     "goals": 2,
+     "shots": 8,
+     "missed": 6,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind1": {
+     "attacks": 7,
+     "goals": 6,
+     "shots": 7,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind3": {
+     "attacks": 28,
+     "goals": 14,
+     "shots": 23,
+     "missed": 9,
+     "saves": 0,
+     "turnovers": 7,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
    "emptyGoal": {
     "shotsFor": 0,
     "goalsFor": 0,
     "shotsAgainst": 0,
     "goalsAgainst": 0
+   },
+   "suspension": {
+    "own": {
+     "n": 2,
+     "sec": 240,
+     "against": 3,
+     "forGoals": 1
+    },
+    "opp": {
+     "n": 5,
+     "sec": 600,
+     "forGoals": 5,
+     "against": 5
+    },
+    "players": [
+     {
+      "bib": "6",
+      "n": 1,
+      "against": 2,
+      "forGoals": 1
+     },
+     {
+      "bib": "27",
+      "n": 1,
+      "against": 1,
+      "forGoals": 0
+     }
+    ]
    },
    "transitions": {
     "afterOwn": {
@@ -8981,6 +9147,13 @@
        }
       ]
      ],
+     "outlet": {
+      "n": 6,
+      "goals": 2,
+      "fast": 1,
+      "second": 1,
+      "set": 4
+     },
      "tempoGK": {
       "fast": {
        "s": 1,
@@ -9991,6 +10164,13 @@
        }
       ]
      ],
+     "outlet": {
+      "n": 1,
+      "goals": 1,
+      "fast": 0,
+      "second": 0,
+      "set": 1
+     },
      "tempoGK": {
       "fast": {
        "s": 0,
@@ -12041,11 +12221,181 @@
      "defReb": 0
     }
    },
+   "gameState": {
+    "lead3": {
+     "attacks": 28,
+     "goals": 14,
+     "shots": 23,
+     "missed": 9,
+     "saves": 0,
+     "turnovers": 7,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "lead1": {
+     "attacks": 7,
+     "goals": 6,
+     "shots": 7,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "tied": {
+     "attacks": 6,
+     "goals": 2,
+     "shots": 8,
+     "missed": 6,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind1": {
+     "attacks": 8,
+     "goals": 7,
+     "shots": 10,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind3": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
+   "gameStateDef": {
+    "lead3": {
+     "attacks": 30,
+     "goals": 10,
+     "shots": 22,
+     "missed": 12,
+     "saves": 0,
+     "turnovers": 10,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "lead1": {
+     "attacks": 7,
+     "goals": 4,
+     "shots": 5,
+     "missed": 1,
+     "saves": 0,
+     "turnovers": 1,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "tied": {
+     "attacks": 12,
+     "goals": 7,
+     "shots": 10,
+     "missed": 3,
+     "saves": 0,
+     "turnovers": 5,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind1": {
+     "attacks": 1,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    },
+    "behind3": {
+     "attacks": 0,
+     "goals": 0,
+     "shots": 0,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 0,
+     "offReb": 0,
+     "defReb": 0
+    }
+   },
    "emptyGoal": {
     "shotsFor": 0,
     "goalsFor": 0,
     "shotsAgainst": 0,
     "goalsAgainst": 0
+   },
+   "suspension": {
+    "own": {
+     "n": 5,
+     "sec": 600,
+     "against": 5,
+     "forGoals": 5
+    },
+    "opp": {
+     "n": 2,
+     "sec": 240,
+     "forGoals": 3,
+     "against": 1
+    },
+    "players": [
+     {
+      "bib": "4",
+      "n": 1,
+      "against": 2,
+      "forGoals": 1
+     },
+     {
+      "bib": "10",
+      "n": 1,
+      "against": 2,
+      "forGoals": 0
+     },
+     {
+      "bib": "20",
+      "n": 1,
+      "against": 1,
+      "forGoals": 2
+     },
+     {
+      "bib": "3",
+      "n": 1,
+      "against": 0,
+      "forGoals": 1
+     },
+     {
+      "bib": "17",
+      "n": 1,
+      "against": 0,
+      "forGoals": 1
+     }
+    ]
    },
    "transitions": {
     "afterOwn": {
@@ -13305,5 +13655,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T11:35:00.034Z"
+ "updatedAt": "2026-09-27T12:17:16.707Z"
 }
