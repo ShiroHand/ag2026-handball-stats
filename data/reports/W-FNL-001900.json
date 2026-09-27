@@ -1,0 +1,138 @@
+{
+ "id": "W-FNL-001900",
+ "key": "W.TEAM7-------------.FNL-.001900--",
+ "codes": [
+  "UZB",
+  "HKG"
+ ],
+ "updatedAt": "2026-09-27T06:31:10.052Z",
+ "emptyGoal": {
+  "situations": {
+   "UZB": {
+    "v7x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "v6x6": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   },
+   "HKG": {
+    "v7x6": {
+     "attacks": 2,
+     "goals": 1,
+     "saves": 1,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 50,
+     "goalsAgainst": 1
+    },
+    "v6x6": {
+     "attacks": 1,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 1,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 1
+    },
+    "other": {
+     "attacks": 0,
+     "goals": 0,
+     "saves": 0,
+     "missed": 0,
+     "blocked": 0,
+     "post": 0,
+     "turnovers": 0,
+     "pct": 0,
+     "goalsAgainst": 0
+    }
+   }
+  },
+  "timeline": {
+   "UZB": {
+    "v7x6": {},
+    "v6x6": {},
+    "other": {}
+   },
+   "HKG": {
+    "v7x6": {
+     "45-50": {
+      "goals": 1,
+      "attacks": 2
+     }
+    },
+    "v6x6": {
+     "45-50": {
+      "goals": 0,
+      "attacks": 1
+     }
+    },
+    "other": {}
+   }
+  },
+  "duration": {
+   "UZB": {},
+   "HKG": {
+    "15-30s": {
+     "goals": 1,
+     "attacks": 3
+    }
+   }
+  },
+  "substitutions": {
+   "UZB": {
+    "courtToGk": 5,
+    "courtToCourt": 103,
+    "total": 108
+   },
+   "HKG": {
+    "courtToGk": 19,
+    "courtToCourt": 98,
+    "total": 117
+   }
+  }
+ },
+ "emptyGoalSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001900--.C77_1_0.pdf",
+ "teamStats": {
+  "UZB": {
+   "attacks": 58,
+   "efficiency": 48
+  },
+  "HKG": {
+   "attacks": 58,
+   "efficiency": 47
+  }
+ },
+ "teamStatsSource": "https://results.asiangames2026.org/ag2026/reports/ENG.HBLWTEAM7-------------FNL-001900--.C83_1_0.pdf"
+}

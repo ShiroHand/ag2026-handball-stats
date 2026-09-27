@@ -779,12 +779,12 @@
        "g": 3
       },
       "second": {
-       "s": 1,
-       "g": 1
+       "s": 0,
+       "g": 0
       },
       "set": {
-       "s": 4,
-       "g": 0
+       "s": 5,
+       "g": 1
       }
      },
      "tempoAssist": {
@@ -2704,12 +2704,12 @@
        "g": 1
       },
       "second": {
-       "s": 2,
-       "g": 2
+       "s": 1,
+       "g": 1
       },
       "set": {
-       "s": 2,
-       "g": 2
+       "s": 3,
+       "g": 3
       }
      },
      "reg": "8535590"
@@ -5439,7 +5439,7 @@
      "score": "45-18"
     },
     {
-     "min": "29:44",
+     "min": "30:00",
      "period": "2",
      "bib": "7",
      "name": "LEE W",
@@ -5844,7 +5844,7 @@
     }
    ],
    "possessions": {
-    "attacks": 62,
+    "attacks": 63,
     "goals": 46,
     "shots": 56,
     "missed": 10,
@@ -5855,7 +5855,7 @@
     "offReb": 2,
     "defReb": 18,
     "attacksRaw": 59,
-    "eff": 74.2
+    "eff": 73
    },
    "timeline": [
     {
@@ -6007,15 +6007,29 @@
     {
      "bucket": "55-60",
      "attacks": 6,
-     "goals": 5,
-     "shots": 6,
+     "goals": 4,
+     "shots": 5,
      "missed": 1,
      "saves": 5,
      "turnovers": 0,
      "twoMin": 0,
-     "assists": 5,
+     "assists": 4,
      "offReb": 0,
      "defReb": 3
+    },
+    {
+     "bucket": "60-65",
+     "attacks": 1,
+     "goals": 1,
+     "shots": 1,
+     "missed": 0,
+     "saves": 0,
+     "turnovers": 0,
+     "twoMin": 0,
+     "assists": 1,
+     "offReb": 0,
+     "defReb": 0,
+     "attacksRaw": 0
     }
    ],
    "situations": {
@@ -6225,21 +6239,21 @@
        11,
        11
       ],
-      "second": 3,
-      "secondGoals": 3,
+      "second": 2,
+      "secondGoals": 2,
       "secondSecs": [
        10,
-       9,
-       11
+       9
       ],
-      "set": 5,
-      "setGoals": 4,
+      "set": 6,
+      "setGoals": 5,
       "setSecs": [
        48,
        39,
        31,
        17,
-       28
+       28,
+       27
       ],
       "bt": 3,
       "btGoals": 3
@@ -7559,16 +7573,16 @@
      "gz": "TL"
     },
     {
-     "sec": 3582,
+     "sec": 3600,
      "p": "2",
-     "t": "29:42",
+     "t": "30:00",
      "bib": "20",
      "type": "A"
     },
     {
-     "sec": 3584,
+     "sec": 3600,
      "p": "2",
-     "t": "29:44",
+     "t": "30:00",
      "bib": "7",
      "type": "G",
      "zone": "LW",
@@ -10948,14 +10962,14 @@
        "g": 8
       },
       "second": {
-       "s": 8,
+       "s": 7,
        "sv": 0,
-       "g": 8
+       "g": 7
       },
       "set": {
-       "s": 16,
+       "s": 17,
        "sv": 3,
-       "g": 11
+       "g": 12
       }
      },
      "reg": "1508943"
@@ -13002,21 +13016,21 @@
        11,
        11
       ],
-      "second": 3,
-      "secondGoals": 3,
+      "second": 2,
+      "secondGoals": 2,
       "secondSecs": [
        10,
-       9,
-       11
+       9
       ],
-      "set": 5,
-      "setGoals": 4,
+      "set": 6,
+      "setGoals": 5,
       "setSecs": [
        48,
        39,
        31,
        17,
-       28
+       28,
+       27
       ],
       "bt": 3,
       "btGoals": 3
@@ -14409,9 +14423,9 @@
      "type": "L"
     },
     {
-     "sec": 3584,
+     "sec": 3600,
      "p": "2",
-     "t": "29:44",
+     "t": "30:00",
      "bib": "17",
      "type": "GR",
      "zone": "LW",
@@ -14421,5 +14435,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-26T11:18:20.979Z"
+ "updatedAt": "2026-09-27T06:31:07.698Z"
 }

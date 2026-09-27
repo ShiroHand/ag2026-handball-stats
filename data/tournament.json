@@ -96,14 +96,14 @@
    "name": "China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "HKG",
    "name": "Hong Kong, China",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "JPN",
@@ -131,14 +131,14 @@
    "name": "Uzbekistan",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "VIE",
    "name": "Vietnam",
    "gender": "W",
    "event": "W.TEAM7-------------",
-   "played": 5
+   "played": 6
   }
  ],
  "matches": [
@@ -1166,8 +1166,8 @@
    "hasStats": true
   },
   {
-   "id": "M-QFNL-000200",
-   "key": "M.TEAM7-------------.QFNL.000200--",
+   "id": "M-QFNL-000300",
+   "key": "M.TEAM7-------------.QFNL.000300--",
    "date": "2026-09-26",
    "dateTime": "2026-09-26T14:00:00+09:00",
    "venue": "Kasugai City Gymnasium",
@@ -1176,7 +1176,7 @@
    "gender": "M",
    "phase": "M.TEAM7-------------.QFNL",
    "phaseDesc": "Men Quarterfinal",
-   "unitDesc": "Men Quarterfinal Match 2",
+   "unitDesc": "Men Quarterfinal Match 3",
    "unitNum": "36",
    "status": "OFFICIAL",
    "statusDesc": "Official",
@@ -1228,8 +1228,8 @@
    "hasStats": true
   },
   {
-   "id": "M-QFNL-000300",
-   "key": "M.TEAM7-------------.QFNL.000300--",
+   "id": "M-QFNL-000400",
+   "key": "M.TEAM7-------------.QFNL.000400--",
    "date": "2026-09-26",
    "dateTime": "2026-09-26T16:00:00+09:00",
    "venue": "Kasugai City Gymnasium",
@@ -1238,7 +1238,7 @@
    "gender": "M",
    "phase": "M.TEAM7-------------.QFNL",
    "phaseDesc": "Men Quarterfinal",
-   "unitDesc": "Men Quarterfinal Match 3",
+   "unitDesc": "Men Quarterfinal Match 4",
    "unitNum": "37",
    "status": "OFFICIAL",
    "statusDesc": "Official",
@@ -1290,8 +1290,8 @@
    "hasStats": true
   },
   {
-   "id": "M-QFNL-000400",
-   "key": "M.TEAM7-------------.QFNL.000400--",
+   "id": "M-QFNL-000200",
+   "key": "M.TEAM7-------------.QFNL.000200--",
    "date": "2026-09-26",
    "dateTime": "2026-09-26T18:00:00+09:00",
    "venue": "Kasugai City Gymnasium",
@@ -1300,7 +1300,7 @@
    "gender": "M",
    "phase": "M.TEAM7-------------.QFNL",
    "phaseDesc": "Men Quarterfinal",
-   "unitDesc": "Men Quarterfinal Match 4",
+   "unitDesc": "Men Quarterfinal Match 2",
    "unitNum": "38",
    "status": "OFFICIAL",
    "statusDesc": "Official",
@@ -1333,22 +1333,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 19",
    "unitNum": "39",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "UZB",
     "name": "Uzbekistan",
-    "score": "",
-    "winner": false
+    "score": "28",
+    "winner": true
    },
    "away": {
     "code": "HKG",
     "name": "Hong Kong, China",
-    "score": "",
+    "score": "27",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "W-FNL-002000",
@@ -1363,22 +1364,23 @@
    "phaseDesc": "Women Women's Round",
    "unitDesc": "Women Women's Round Match 20",
    "unitNum": "40",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "",
+    "score": "0",
     "winner": false
    },
    "away": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "",
+    "score": "0",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": false
   },
   {
    "id": "W-FNL-002100",
@@ -1745,30 +1747,30 @@
       },
       {
        "rank": "5",
-       "org": "HKG",
-       "name": "Hong Kong, China",
-       "pts": "2",
-       "played": "5",
-       "won": "1",
+       "org": "UZB",
+       "name": "Uzbekistan",
+       "pts": "4",
+       "played": "6",
+       "won": "2",
        "lost": "4",
        "tied": "0",
-       "for": "104",
-       "against": "181",
-       "diff": "-77",
+       "for": "116",
+       "against": "206",
+       "diff": "-90",
        "qualified": ""
       },
       {
        "rank": "6",
-       "org": "UZB",
-       "name": "Uzbekistan",
+       "org": "HKG",
+       "name": "Hong Kong, China",
        "pts": "2",
-       "played": "5",
+       "played": "6",
        "won": "1",
-       "lost": "4",
+       "lost": "5",
        "tied": "0",
-       "for": "88",
-       "against": "179",
-       "diff": "-91",
+       "for": "131",
+       "against": "209",
+       "diff": "-78",
        "qualified": ""
       },
       {
@@ -1824,44 +1826,46 @@
   "M-GPB-001000",
   "M-QFNL-000100",
   "W-FNL-001600",
-  "M-QFNL-000200",
-  "W-FNL-001700",
   "M-QFNL-000300",
+  "W-FNL-001700",
+  "M-QFNL-000400",
   "W-FNL-001800",
-  "M-QFNL-000400"
+  "M-QFNL-000200",
+  "W-FNL-001900",
+  "W-FNL-002000"
  ],
  "priors": {
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4946,
-     "k": 8.9,
-     "windows": 448,
-     "trials": 2056
+     "mean": 0.4926,
+     "k": 9.5,
+     "windows": 476,
+     "trials": 2176
     },
     "assistRate": {
-     "mean": 0.4002,
-     "k": 46.1,
-     "windows": 403,
-     "trials": 1017
+     "mean": 0.403,
+     "k": 46.3,
+     "windows": 428,
+     "trials": 1072
     }
    },
    "teams": {
     "KOR": {
      "games": 5,
-     "eff": 0.7176,
+     "eff": 0.7152,
      "assistRate": 0.5231,
-     "attacks": 301,
+     "attacks": 302,
      "goals": 216,
      "assists": 113
     },
     "HKG": {
-     "games": 5,
-     "eff": 0.3782,
-     "assistRate": 0.3462,
-     "attacks": 275,
-     "goals": 104,
-     "assists": 36
+     "games": 6,
+     "eff": 0.3922,
+     "assistRate": 0.3588,
+     "attacks": 334,
+     "goals": 131,
+     "assists": 47
     },
     "KAZ": {
      "games": 6,
@@ -1872,10 +1876,10 @@
      "assists": 68
     },
     "CHN": {
-     "games": 5,
-     "eff": 0.5371,
+     "games": 6,
+     "eff": 0.5352,
      "assistRate": 0.3882,
-     "attacks": 283,
+     "attacks": 284,
      "goals": 152,
      "assists": 59
     },
@@ -1888,20 +1892,20 @@
      "assists": 84
     },
     "VIE": {
-     "games": 5,
-     "eff": 0.3783,
+     "games": 6,
+     "eff": 0.3769,
      "assistRate": 0.3069,
-     "attacks": 267,
+     "attacks": 268,
      "goals": 101,
      "assists": 31
     },
     "UZB": {
-     "games": 5,
-     "eff": 0.311,
-     "assistRate": 0.2273,
-     "attacks": 283,
-     "goals": 88,
-     "assists": 20
+     "games": 6,
+     "eff": 0.3402,
+     "assistRate": 0.2931,
+     "attacks": 341,
+     "goals": 116,
+     "assists": 34
     }
    }
   },
@@ -1996,5 +2000,5 @@
    }
   }
  },
- "updatedAt": "2026-09-26T11:18:21.329Z"
+ "updatedAt": "2026-09-27T06:31:09.581Z"
 }
