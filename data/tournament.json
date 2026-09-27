@@ -1370,17 +1370,17 @@
    "home": {
     "code": "CHN",
     "name": "China",
-    "score": "0",
+    "score": "17",
     "winner": false
    },
    "away": {
     "code": "VIE",
     "name": "Vietnam",
-    "score": "0",
+    "score": "13",
     "winner": false
    },
    "hasResult": true,
-   "hasStats": false
+   "hasStats": true
   },
   {
    "id": "W-FNL-002100",
@@ -1838,16 +1838,16 @@
   "W": {
    "metrics": {
     "eff": {
-     "mean": 0.4926,
-     "k": 9.5,
-     "windows": 476,
-     "trials": 2176
+     "mean": 0.4946,
+     "k": 9.6,
+     "windows": 486,
+     "trials": 2228
     },
     "assistRate": {
-     "mean": 0.403,
-     "k": 46.3,
-     "windows": 428,
-     "trials": 1072
+     "mean": 0.402,
+     "k": 46.1,
+     "windows": 440,
+     "trials": 1102
     }
    },
    "teams": {
@@ -1877,11 +1877,11 @@
     },
     "CHN": {
      "games": 6,
-     "eff": 0.5352,
-     "assistRate": 0.3882,
-     "attacks": 284,
-     "goals": 152,
-     "assists": 59
+     "eff": 0.5452,
+     "assistRate": 0.3846,
+     "attacks": 310,
+     "goals": 169,
+     "assists": 65
     },
     "JPN": {
      "games": 5,
@@ -1893,11 +1893,11 @@
     },
     "VIE": {
      "games": 6,
-     "eff": 0.3769,
-     "assistRate": 0.3069,
-     "attacks": 268,
-     "goals": 101,
-     "assists": 31
+     "eff": 0.3878,
+     "assistRate": 0.3158,
+     "attacks": 294,
+     "goals": 114,
+     "assists": 36
     },
     "UZB": {
      "games": 6,
@@ -2000,5 +2000,5 @@
    }
   }
  },
- "updatedAt": "2026-09-27T06:31:09.581Z"
+ "updatedAt": "2026-09-27T07:12:56.963Z"
 }
