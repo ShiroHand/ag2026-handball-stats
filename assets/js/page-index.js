@@ -400,10 +400,11 @@ function playerRankCard(g, kind) {
     const t = el('table', {});
     t.append(el('thead', {}, el('tr', {},
       (isGae
-        ? ['#', '選手', 'チーム', 'Pos', 'シュート', '枠外・ブロック', '得点',
+        ? ['#', '選手', 'チーム', '背番号', 'Pos', 'シュート', '枠外・ブロック', '得点',
           '期待得点', '差（位置基準）', '差（コース基準）']
-        : ['#', '選手', 'チーム', 'Pos', '出場', 'フィニッシュ', 'ミス', '合計', '同ポジ差'])
-        .map((h, i) => el('th', {class: i < 4 ? '' : 'num', text: h})))));
+        : ['#', '選手', 'チーム', '背番号', 'Pos', '出場', 'フィニッシュ', 'ミス', '合計', '同ポジ差'])
+        /* 左から 順位 / 選手 / チーム は左寄せ、背番号から右は数字寄せ（Pos は左） */
+        .map((h, i) => el('th', {class: (i < 3 || i === 4) ? '' : 'num', text: h})))));
     const tb = el('tbody', {});
     arr.forEach((r, i) => {
       const cells = isGae
@@ -419,6 +420,7 @@ function playerRankCard(g, kind) {
           photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
         el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
           flagImg(r.code, 'flag sm'), el('span', {text: r.code}))),
+        el('td', {class: 'num muted', text: r.bib}),
         el('td', {text: shortRole(r.role)}),
         cells.map((c, j) => el('td', {class: 'num',
           style: {fontWeight: j === cells.length - (isGae ? 2 : 1) ? 700 : 400}, text: c})));
@@ -508,7 +510,7 @@ function gkRankCard(g) {
   const table = (arr) => {
     const t = el('table', {});
     t.append(el('thead', {}, el('tr', {},
-      ['#', 'GK', 'チーム', '試合', '被シュート', '枠内', 'セーブ', '失点', 'セーブ率',
+      ['#', 'GK', 'チーム', '背番号', '試合', '被シュート', '枠内', 'セーブ', '失点', 'セーブ率',
         '期待失点', 'GSAA', 'セーブ後の速攻率'].map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
     const tb = el('tbody', {});
     arr.forEach((r, i) => {
@@ -522,6 +524,7 @@ function gkRankCard(g) {
           photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
         el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
           flagImg(r.code, 'flag sm'), el('span', {text: r.code}))),
+        el('td', {class: 'num muted', text: r.bib}),
         el('td', {class: 'num', text: r.games}),
         el('td', {class: 'num', text: s.n}),
         el('td', {class: 'num', text: s.onTarget}),

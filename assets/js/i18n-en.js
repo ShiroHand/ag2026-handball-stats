@@ -140,6 +140,7 @@ export const EN_TPL = {
 };
 
 export const EN = {
+  '背番号': 'No.',
   'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。並べ替えは「同ポジ平均との差（60分あたり）」で行っています。素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。シュート10本以上・出場40分以上が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。換算レートと同ポジ平均は全ポジションのデータから出しているので、絞っても値は変わりません。':
     'Finishing, turnovers and 2-minute suspensions converted into goals and added up. Sorted by the difference from the positional average (per 60 minutes), because a raw total penalises the positions that touch the ball most. Minimum 10 shots and 40 minutes. Filter by position to rank only players with the same role — the conversion rates and positional averages come from every position, so the values themselves do not change.',
   '「大会平均の選手が同じシュートを打ったら何点入るか」と実際の得点を比べたものです。決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。位置基準は全シュートが対象で枠外も罰せられ、コース基準は枠内に飛んだシュートだけが対象でGKとの勝負だけを見ます。2つの差が大きい選手は、枠に飛ばす技術と決め切る技術のどちらかに偏りがあります。並べ替えは位置基準です。シュート10本以上の選手が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。期待得点の基準表は全ポジションのシュートから作っているので、絞っても値は変わりません。':
