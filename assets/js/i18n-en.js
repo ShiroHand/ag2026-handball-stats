@@ -9,6 +9,16 @@
    ========================================================================== */
 
 export const EN_TPL = {
+  '換算レートは大会データから推定しています。ミス1回 −{}点、2分退場1回 −{}点。アシスト1本はパスが届いた位置の期待得点の{}倍で、平均0.27点です。これは「その位置に立てたこと自体の価値」という未配分の枠から払っているので、アシストを足してもシューターの点は減りません。':
+    'Conversion rates are estimated from this tournament’s data: a turnover costs {}, a 2-minute suspension {}. An assist is worth {} of the expected goals at the zone the pass reached — 0.27 on average. It is paid out of the value of getting into that position, which is credited to nobody, so adding assists takes nothing away from the shooter.',
+  '^アシスト {} 本 × 1本あたり {}点 × {} = +{}点<br>':
+    'Assists {} × {} goals each × {} = +{}<br>',
+  '1本あたりの値は、パスが届いた位置の期待得点（平均 {}）から決まります<br>':
+    'The per-assist value comes from the expected goals at the zone the pass reached (mean {})<br>',
+  '^うち {} 本はプレーバイプレーでシュートに結びつきました。残りは本人の平均で補っています':
+    '{} of them were matched to a shot in the play-by-play; the rest use this player’s own average.',
+  '^フィニッシュ（位置基準）{} / アシスト +{} / ミス {} / 退場 {}<br>':
+    'Finishing (zone basis) {} / assists +{} / turnovers {} / suspensions {}<br>',
   '^{}　{}人（全員）':
     '{} — all {} players',
   'コースが記録されたシュートが5本以上の選手のみ。位置基準の対象 {} 本、コース基準の対象 {} 本。本数が少ない選手の差は大きく振れます。並べ替えは位置基準で行っています。':
@@ -140,6 +150,16 @@ export const EN_TPL = {
 };
 
 export const EN = {
+  'フィニッシュ・アシスト・ミス・2分退場を同じ「点」に換算して足したものです。バスケットボールの BPM やサッカーの VAEP と同じ考え方で、換算レートは大会データから推定しています。フィニッシュは位置基準（枠外込み）を使います。ターンオーバーを課金しながら枠外シュートを0点にするのは筋が通らないためです。コース基準の値も参考として並べていますが、合計には入れていません。':
+    'Finishing, assists, turnovers and 2-minute suspensions converted into the same currency — goals — and added up. The same idea as basketball’s BPM or football’s VAEP; the conversion rates are estimated from this tournament’s data. Finishing uses the zone basis (off-target shots included), because charging for turnovers while pricing a missed target at zero would be inconsistent. The course-basis figure is shown for reference but is not part of the total.',
+  'アシストは「作ったチャンスの価値」の一部として配っています。シューターに渡しているのは実得点と期待得点の差、つまりフィニッシュのぶんだけで、その位置に立てたこと自体の価値は誰にも配られていません。そこから払うので、アシストを足してもシューターの点は1点も減りません。1本あたりはパスが届いた位置の期待得点の0.41倍で、速攻へのパス0.33点・ウイングへ0.28点・ポストへ0.25点・9mへの振り0.17点、平均0.27点です。バスケットボールの Win Shares が1本のシュートをパサーとシューターで折半するのと同じ水準（得点の正味価値0.544点の半分）に合わせています。':
+    'Assists are paid out of the value of the chance created. The shooter receives only the gap between actual and expected goals — the finishing part — so the value of getting into that position in the first place is credited to nobody. Assists are paid from there, which means adding them takes nothing away from the shooter. Each assist is worth 0.41 of the expected goals at the zone the pass reached: 0.33 for a pass on a fast break, 0.28 to a wing, 0.25 to a pivot, 0.17 for a swing out to 9 m — 0.27 on average. That matches basketball’s Win Shares, which splits a made basket evenly between passer and scorer (half of a goal’s net value of 0.544).',
+  'ただしこの0.27点は測定値ではなく取り決めです。このデータではアシストが付いたシュートの期待得点は0.654、付いていないシュートは0.639で、ほぼ差がありません。突破や7mという同じくらい価値の高い終わり方にアシストが付かないためで、「アシストが良いチャンスを作った証拠」はデータからは出てきません。':
+    'That 0.27 is a convention, not a measurement. In this data, shots with an assist have an expected value of 0.654 and shots without one 0.639 — almost identical, because breakthroughs and 7 m throws are just as valuable and never carry an assist. The data offers no evidence that an assist marks a better chance.',
+  'フィニッシュ・アシスト・ミス・2分退場を同じ「点」に換算して足したものです。並べ替えは「同ポジ平均との差（60分あたり）」で行っています。素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。シュート10本以上・出場40分以上が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。換算レートと同ポジ平均は全ポジションのデータから出しているので、絞っても値は変わりません。':
+    'Finishing, assists, turnovers and 2-minute suspensions converted into goals and added up. Sorted by the difference from the positional average (per 60 minutes), because a raw total penalises the positions that touch the ball most. Minimum 10 shots and 40 minutes. Filter by position to rank only players with the same role — the conversion rates and positional averages come from every position, so the values themselves do not change.',
+  'すべてプレーバイプレーでシュートに結びついています':
+    'All matched to a shot in the play-by-play.',
   '背番号': 'No.',
   'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。並べ替えは「同ポジ平均との差（60分あたり）」で行っています。素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。シュート10本以上・出場40分以上が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。換算レートと同ポジ平均は全ポジションのデータから出しているので、絞っても値は変わりません。':
     'Finishing, turnovers and 2-minute suspensions converted into goals and added up. Sorted by the difference from the positional average (per 60 minutes), because a raw total penalises the positions that touch the ball most. Minimum 10 shots and 40 minutes. Filter by position to rank only players with the same role — the conversion rates and positional averages come from every position, so the values themselves do not change.',

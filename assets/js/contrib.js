@@ -13,11 +13,23 @@
      と定義し、全ポゼッションの平均 V̄ を基準にする。
        ターンオーバーの損 = V̄ − V(TO)  … 実測で約 0.64点
 
-   ■ アシストを合算しない理由
-     公式のアシストは「得点に直結したパス」と定義されているため、
-     ほぼ得点にしか記録されない（アシスト有の決定率 98.7% / 無 41.9%）。
-     この差はパスの巧拙ではなく定義による循環なので、点に換算できない。
-     別列で本数を並記する。
+   ■ アシストの値段の出し方
+     公式のアシストは「得点に直結したパス」と定義されているため、ほぼ得点にしか
+     記録されない。実際このデータでも、アシストが付いたシュートの期待得点は 0.654、
+     付いていないシュートは 0.639 でほぼ同じだった（突破や7mという同じくらい
+     価値の高い終わり方にアシストが付かないため）。
+     つまり「アシストが良いチャンスを作った証拠」はデータから測れない。
+
+     そこで、バスケの Win Shares（Dean Oliver）と同じく会計上の取り決めとして配る。
+     ただし配る原資をはっきりさせる。シューターに渡しているのは
+     「実得点 − 期待得点」＝フィニッシュのぶんだけで、
+     その位置に立てたこと自体の価値（期待得点そのもの）は誰にも配られていない。
+     アシストはこの未配分の枠から払うので、シューターは1点も減らない。
+
+       アシスト1本の値 = ASSIST_SHARE × その位置の期待得点
+
+     ウイングへのパス 0.28点 / ポストへのキスパス 0.25点 / 9mへの振り 0.17点。
+     平均すると 0.27点で、Oliver の 50/50（得点の正味価値0.544の半分）と同水準になる。
 
    ■ 記録されていないもの
      ブロック0.5回・スティール0.9回（1選手あたり大会累計）しか記録が無く、
@@ -33,6 +45,11 @@ export const POS_GROUP = [
   {key: 'cb', label: 'センター', roles: ['CB']},
   {key: 'pivot', label: 'ポスト', roles: ['P', 'PV', 'LP']},
 ];
+/* アシストに配る、作ったチャンスの価値（期待得点）の割合。
+   0.41 は「アシスト付きシュートの平均期待得点 0.654 × 0.41 ≒ 0.27点」となる値で、
+   Oliver の 50/50（得点の正味価値 0.544 の半分 = 0.27点）に合わせてある。 */
+export const ASSIST_SHARE = 0.41;
+
 const GROUP_OF = {};
 POS_GROUP.forEach(g => g.roles.forEach(r => GROUP_OF[r] = g.key));
 export const groupOfRole = (r) => GROUP_OF[String(r || '').toUpperCase()] || 'other';
@@ -96,7 +113,7 @@ export function buildContrib(list, refList, cost) {
           role: p.role, group: groupOfRole(p.role), reg: p.reg || '', games: 0,
           sec: 0, shots: 0, goals: 0, assists: 0, to: 0, susp: 0,
           xg: 0, xn: 0, xgoals: 0, varSum: 0,
-          xgZ: 0, nZ: 0, varZ: 0, offTarget: 0, shotList: []};
+          xgZ: 0, nZ: 0, varZ: 0, offTarget: 0, shotList: [], astZones: []};
         if (!c.reg && p.reg) c.reg = p.reg;
         c.games++;
         c.sec += n(p.stats?.TIME_PLAYED);
@@ -109,9 +126,23 @@ export function buildContrib(list, refList, cost) {
       for (const s of t.shots || []) {
         const c = map.get(code + '|' + s.bib);
         if (c) c.shotList.push(s);
+        /* パスを出した側に、そのシュートがどの位置から打たれたかを渡す */
+        if (s.assistBib && s.zone) {
+          const a = map.get(code + '|' + s.assistBib);
+          if (a) a.astZones.push(s.zone);
+        }
       }
     }
   }
+
+  /* 大会全体で、アシストが付いたシュートの平均期待得点。
+     プレーバイプレーでシュートに結びつけられなかったアシストを補うときに使う。 */
+  let astAllX = 0, astAllN = 0;
+  for (const s of all) {
+    if (!s.assistBib || !s.zone) continue;
+    astAllX += zref.expect(s.zone, null); astAllN++;
+  }
+  const astBaseX = astAllN ? astAllX / astAllN : zref.base;
 
   const out = [];
   for (const c of map.values()) {
@@ -145,13 +176,23 @@ export function buildContrib(list, refList, cost) {
       c.xgZ += p; c.nZ++; c.varZ += p * (1 - p);
       if (!ON_TARGET.has(s.result)) c.offTarget++;
     }
+    /* アシスト。公式のアシスト数のうちシュートに結びつけられたのは大会全体で約92%。
+       結びつかなかったぶんは、その選手自身のパスの平均値（無ければ大会平均）で補い、
+       公式の本数ぶんきちんと配る。 */
+    let astX = 0;
+    for (const z of c.astZones) astX += zref.expect(z, null);
+    const astLinked = c.astZones.length;
+    const astPer = astLinked ? astX / astLinked : astBaseX;
+    const astN = Math.max(c.assists, astLinked);
+    const astVal = ASSIST_SHARE * astPer * astN;
+
     const min = c.sec / 60;
     const gaeCourse = c.xgoals - c.xg;          // 位置×コース基準（枠内のみ）
     const gae = c.goals - c.xgZ;                // 位置基準（枠外込み）← 合計に使う
     const toLoss = -cost.toCost * c.to;
     const spLoss = -cost.suspCost * c.susp;
-    const total = gae + toLoss + spLoss;
-    out.push({...c, min, gae, gaeCourse, toLoss, spLoss, total,
+    const total = gae + astVal + toLoss + spLoss;
+    out.push({...c, min, gae, gaeCourse, astVal, astPer, astLinked, astN, toLoss, spLoss, total,
       per60: min > 0 ? total / min * 60 : 0,
       se: Math.sqrt(c.varZ + cost.toCost ** 2 * c.to + cost.suspCost ** 2 * c.susp),
       seCourse: Math.sqrt(c.varSum),

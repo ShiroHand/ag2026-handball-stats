@@ -1,7 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
         params, setParam, flagImg, photoImg, shortRole, tip, CAT, withLang} from './core.js';
 import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
-import {costModel, buildContrib, groupMeans, groupLabel, POS_GROUP} from './contrib.js';
+import {costModel, buildContrib, groupMeans, groupLabel, POS_GROUP, ASSIST_SHARE} from './contrib.js';
 import {collectGKs, buildRef, gkSummary} from './gkstats.js';
 
 const app = q('#app');
@@ -402,7 +402,8 @@ function playerRankCard(g, kind) {
       (isGae
         ? ['#', '選手', 'チーム', '背番号', 'Pos', 'シュート', '枠外・ブロック', '得点',
           '期待得点', '差（位置基準）', '差（コース基準）']
-        : ['#', '選手', 'チーム', '背番号', 'Pos', '出場', 'フィニッシュ', 'ミス', '合計', '同ポジ差'])
+        : ['#', '選手', 'チーム', '背番号', 'Pos', '出場', 'フィニッシュ', 'アシスト', 'ミス',
+          '合計', '同ポジ差'])
         /* 左から 順位 / 選手 / チーム は左寄せ、背番号から右は数字寄せ（Pos は左） */
         .map((h, i) => el('th', {class: (i < 3 || i === 4) ? '' : 'num', text: h})))));
     const tb = el('tbody', {});
@@ -411,7 +412,8 @@ function playerRankCard(g, kind) {
         ? [r.nZ, r.offTarget || '', r.goals, r.xgZ.toFixed(1),
           (r.gae > 0 ? '+' : '') + r.gae.toFixed(1),
           (r.gaeCourse > 0 ? '+' : '') + r.gaeCourse.toFixed(1)]
-        : [Math.round(r.min), (r.gae > 0 ? '+' : '') + r.gae.toFixed(1), r.to,
+        : [Math.round(r.min), (r.gae > 0 ? '+' : '') + r.gae.toFixed(1),
+          r.astN ? `${r.astN}（+${r.astVal.toFixed(1)}）` : '0', r.to,
           (r.total > 0 ? '+' : '') + r.total.toFixed(1),
           (r.adj > 0 ? '+' : '') + r.adj.toFixed(2)];
       const tr = el('tr', {},
@@ -426,7 +428,8 @@ function playerRankCard(g, kind) {
           style: {fontWeight: j === cells.length - (isGae ? 2 : 1) ? 700 : 400}, text: c})));
       tip(tr, `<b>${r.name}</b>（${r.code}・${shortRole(r.role)}）<br>`
         + `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本<br>`
-        + `フィニッシュ（位置基準）${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+        + `フィニッシュ（位置基準）${r.gae.toFixed(1)} / アシスト +${r.astVal.toFixed(1)}`
+        + ` / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
         + `誤差 ±${r.se.toFixed(1)}点`);
       tb.append(tr);
     });
@@ -445,7 +448,7 @@ function playerRankCard(g, kind) {
         + 'ポジションで絞ると、同じ役割の選手だけを並べられます。'
         + '期待得点の基準表は全ポジションのシュートから作っているので、絞っても値は変わりません。'}
     : {title: '攻撃の貢献度 ランキング',
-      sub: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
+      sub: 'フィニッシュ・アシスト・ミス・2分退場を同じ「点」に換算して足したものです。'
         + '並べ替えは「同ポジ平均との差（60分あたり）」で行っています。'
         + '素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。'
         + 'シュート10本以上・出場40分以上が対象です。'
@@ -493,7 +496,9 @@ function playerRankCard(g, kind) {
     box.append(el('div', {class: 'sub', style: {marginTop: '10px'},
       text: `換算レートは大会データから推定しています。ミス1回 −${R.cost.toCost.toFixed(2)}点、`
         + `2分退場1回 −${R.cost.suspCost.toFixed(2)}点。`
-        + 'アシストは公式の定義上ほぼ得点にしか記録されないため合算していません。'}));
+        + `アシスト1本はパスが届いた位置の期待得点の${ASSIST_SHARE}倍で、平均0.27点です。`
+        + 'これは「その位置に立てたこと自体の価値」という未配分の枠から払っているので、'
+        + 'アシストを足してもシューターの点は減りません。'}));
   }
   box.append(el('div', {class: 'sub', style: {marginTop: '6px'},
     text: 'これは総合評価ではありません。守備の記録がほとんど無く、'

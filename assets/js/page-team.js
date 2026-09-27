@@ -7,7 +7,7 @@ import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.js';
 import {tempoCard, addTempo} from './tempo.js';
 import {buildRef, gkSummary} from './gkstats.js';
-import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
+import {costModel, buildContrib, groupMeans, groupLabel, ASSIST_SHARE} from './contrib.js';
 import {buildZoneRef} from './gkstats.js';
 
 const app = q('#app');
@@ -494,7 +494,7 @@ function contribCard(list) {
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
     ['#', '選手', 'Pos', '出場', 'シュート', '得点', 'フィニッシュ', '（参考）コース基準',
-      'ミス', '退場', '合計', '60分あたり', '同ポジ平均との差', 'アシスト']
+      'アシスト', 'ミス', '退場', '合計', '60分あたり', '同ポジ平均との差']
       .map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
   const tb = el('tbody', {});
   mine.forEach(r => {
@@ -508,6 +508,16 @@ function contribCard(list) {
     tip(finC, `コース基準（枠内のみ）。${r.xn} 本が対象<br>`
       + `期待得点 ${r.xg.toFixed(1)} / 実際の得点 ${r.xgoals}<br>`
       + '合計には使っていません');
+    const asTd = el('td', {class: 'num', style: {fontWeight: 600,
+      color: r.astVal > 0.05 ? 'var(--good)' : ''},
+      text: r.astN ? `${r.astN}（+${r.astVal.toFixed(1)}）` : '0'});
+    if (r.astN) {
+      tip(asTd, `アシスト ${r.astN} 本 × 1本あたり ${r.astPer.toFixed(2)}点 × ${ASSIST_SHARE} = +${r.astVal.toFixed(1)}点<br>`
+        + `1本あたりの値は、パスが届いた位置の期待得点（平均 ${r.astPer.toFixed(2)}）から決まります<br>`
+        + (r.astLinked < r.astN
+          ? `うち ${r.astLinked} 本はプレーバイプレーでシュートに結びつきました。残りは本人の平均で補っています`
+          : 'すべてプレーバイプレーでシュートに結びついています'));
+    }
     const toTd = el('td', {class: 'num', text: r.to ? `${r.to}（${r.toLoss.toFixed(1)}）` : '0'});
     tip(toTd, `ミス ${r.to} 回 × ${cost.toCost.toFixed(2)}点 = ${r.toLoss.toFixed(1)}点`);
     const spTd = el('td', {class: 'num', text: r.susp ? `${r.susp}（${r.spLoss.toFixed(1)}）` : '0'});
@@ -520,7 +530,7 @@ function contribCard(list) {
         + `この選手 ${r.per60.toFixed(2)}<br>誤差 ±${(r.se / r.min * 60).toFixed(2)}（60分あたり）`);
     }
     const tot = el('td', {class: 'num', text: (r.total > 0 ? '+' : '') + r.total.toFixed(1)});
-    tip(tot, `フィニッシュ（位置基準）${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+    tip(tot, `フィニッシュ（位置基準）${r.gae.toFixed(1)} / アシスト +${r.astVal.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
       + `誤差 ±${r.se.toFixed(1)}点`);
     tb.append(el('tr', {},
       el('td', {class: 'num muted', text: r.bib}),
@@ -530,10 +540,9 @@ function contribCard(list) {
       el('td', {class: 'num', text: Math.round(r.min)}),
       el('td', {class: 'num', text: r.shots}),
       el('td', {class: 'num', text: r.goals}),
-      fin, finC, toTd, spTd, tot,
+      fin, finC, asTd, toTd, spTd, tot,
       el('td', {class: 'num muted', text: r.per60.toFixed(2)}),
-      adj,
-      el('td', {class: 'num', text: r.assists || ''})));
+      adj));
   });
   table.append(tb);
 
@@ -541,7 +550,7 @@ function contribCard(list) {
   return el('div', {class: 'card'},
     el('h2', {text: '攻撃の貢献度（得点換算）'}),
     el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
-      text: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
+      text: 'フィニッシュ・アシスト・ミス・2分退場を同じ「点」に換算して足したものです。'
         + 'バスケットボールの BPM やサッカーの VAEP と同じ考え方で、'
         + '換算レートは大会データから推定しています。'
         + 'フィニッシュは位置基準（枠外込み）を使います。'
@@ -560,9 +569,19 @@ function contribCard(list) {
           .map(k => `${groupLabel(k)} ${means[k].mean.toFixed(2)}`).join('・')} と差があり、`
         + 'ボールに触る回数の多いポジションほどミスが増えるためです。'}),
     el('div', {class: 'sub', style: {marginTop: '6px'},
-      text: 'アシストは合算していません。公式のアシストは「得点に直結したパス」と定義されており、'
-        + 'ほぼ得点にしか記録されないため（アシスト有の決定率98.7%・無41.9%）、'
-        + 'この差はパスの巧拙ではなく定義による循環で、点に換算できないからです。'}),
+      text: 'アシストは「作ったチャンスの価値」の一部として配っています。'
+        + 'シューターに渡しているのは実得点と期待得点の差、つまりフィニッシュのぶんだけで、'
+        + 'その位置に立てたこと自体の価値は誰にも配られていません。そこから払うので、'
+        + 'アシストを足してもシューターの点は1点も減りません。'
+        + `1本あたりはパスが届いた位置の期待得点の${ASSIST_SHARE}倍で、`
+        + '速攻へのパス0.33点・ウイングへ0.28点・ポストへ0.25点・9mへの振り0.17点、平均0.27点です。'
+        + 'バスケットボールの Win Shares が1本のシュートをパサーとシューターで折半するのと'
+        + '同じ水準（得点の正味価値0.544点の半分）に合わせています。'}),
+    el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: 'ただしこの0.27点は測定値ではなく取り決めです。'
+        + 'このデータではアシストが付いたシュートの期待得点は0.654、付いていないシュートは0.639で、'
+        + 'ほぼ差がありません。突破や7mという同じくらい価値の高い終わり方にアシストが付かないためで、'
+        + '「アシストが良いチャンスを作った証拠」はデータからは出てきません。'}),
     el('div', {class: 'sub', style: {marginTop: '6px'},
       text: 'これは総合評価ではありません。ブロックとスティールは1選手あたり大会累計で'
         + '1.4回しか記録が無く、スクリーン・7mを獲得する動き・守備のポジショニングは'
