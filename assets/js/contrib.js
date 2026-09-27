@@ -25,7 +25,7 @@
      したがってこれは「総合評価」ではなく「攻撃の一部の貢献度」である。
    ========================================================================== */
 import {n} from './core.js';
-import {ON_TARGET, buildRef} from './gkstats.js';
+import {ON_TARGET, buildRef, buildZoneRef} from './gkstats.js';
 
 export const POS_GROUP = [
   {key: 'wing', label: 'ウイング', roles: ['LW', 'RW']},
@@ -78,7 +78,8 @@ export function buildContrib(list, refList, cost) {
   refList.forEach(f => {
     for (const c of Object.keys(f.teams)) all.push(...(f.teams[c].shots || []));
   });
-  const ref = buildRef(all);
+  const ref = buildRef(all);          // 位置×コース（枠内のみ）
+  const zref = buildZoneRef(all);     // 位置のみ（枠外込み）
 
   const map = new Map();
   for (const f of list) {
@@ -94,7 +95,8 @@ export function buildContrib(list, refList, cost) {
         const c = map.get(key) || {key, code, bib: p.bib, name: p.nameS || p.name || p.bib,
           role: p.role, group: groupOfRole(p.role), reg: p.reg || '', games: 0,
           sec: 0, shots: 0, goals: 0, assists: 0, to: 0, susp: 0,
-          xg: 0, xn: 0, xgoals: 0, varSum: 0, shotList: []};
+          xg: 0, xn: 0, xgoals: 0, varSum: 0,
+          xgZ: 0, nZ: 0, varZ: 0, offTarget: 0, shotList: []};
         if (!c.reg && p.reg) c.reg = p.reg;
         c.games++;
         c.sec += n(p.stats?.TIME_PLAYED);
@@ -130,14 +132,29 @@ export function buildContrib(list, refList, cost) {
       c.xg += p; c.xn++; c.varSum += p * (1 - p);
       if (s.result === 'GOAL') c.xgoals++;
     }
+    /* 位置基準（枠外込み）。こちらは全シュートが対象。 */
+    const ownZone = {};
+    for (const s of c.shotList) {
+      if (!s.zone) continue;
+      const o = ownZone[s.zone] = ownZone[s.zone] || {n: 0, g: 0};
+      o.n++; if (s.result === 'GOAL') o.g++;
+    }
+    for (const s of c.shotList) {
+      if (!s.zone) continue;
+      const p = zref.expect(s.zone, ownZone[s.zone]);
+      c.xgZ += p; c.nZ++; c.varZ += p * (1 - p);
+      if (!ON_TARGET.has(s.result)) c.offTarget++;
+    }
     const min = c.sec / 60;
-    const gae = c.xgoals - c.xg;
+    const gaeCourse = c.xgoals - c.xg;          // 位置×コース基準（枠内のみ）
+    const gae = c.goals - c.xgZ;                // 位置基準（枠外込み）← 合計に使う
     const toLoss = -cost.toCost * c.to;
     const spLoss = -cost.suspCost * c.susp;
     const total = gae + toLoss + spLoss;
-    out.push({...c, min, gae, toLoss, spLoss, total,
+    out.push({...c, min, gae, gaeCourse, toLoss, spLoss, total,
       per60: min > 0 ? total / min * 60 : 0,
-      se: Math.sqrt(c.varSum + cost.toCost ** 2 * c.to + cost.suspCost ** 2 * c.susp),
+      se: Math.sqrt(c.varZ + cost.toCost ** 2 * c.to + cost.suspCost ** 2 * c.susp),
+      seCourse: Math.sqrt(c.varSum),
     });
   }
   return out;

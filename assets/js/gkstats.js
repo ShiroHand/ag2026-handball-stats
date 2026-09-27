@@ -117,6 +117,41 @@ export function buildRef(shots) {
     }};
 }
 
+/* ------------------------------------------------- 位置だけの参照表（枠外込み） */
+/* buildRef は「枠内に飛んだシュートの、位置×コース別の決定率」なので、
+   枠を外したシュートは対象外になる。撃った側の評価に使うと
+   「枠を外すことが罰せられない」という穴ができる（ターンオーバーは課金するのに）。
+   そこで、枠外・ブロックも含めた全シュートを対象に、位置だけで決定率を出す表も用意する。
+
+     位置×コース基準 … 同じコースに飛ばしたとき、平均より入ったか（GKとの勝負のみ）
+     位置基準        … その位置から打つ選手として、平均より多く決めたか（枠外込み）
+
+   実測の位置別決定率（男子41試合）: C9 46% / L9 42% / 6m 65-69% / BT 69% / FB 77% / 7m 74%。 */
+export function buildZoneRef(shots) {
+  const pos = {};
+  let allG = 0, allN = 0;
+  for (const s of shots) {
+    if (!s.zone) continue;
+    const g = s.result === 'GOAL' ? 1 : 0;
+    (pos[s.zone] = pos[s.zone] || {n: 0, g: 0}).n++; pos[s.zone].g += g;
+    allN++; allG += g;
+  }
+  const base = allN ? allG / allN : 0.6;
+  const K = 12;
+  const raw = (zone, own) => {
+    const p = pos[zone] || {n: 0, g: 0};
+    const o = own || {n: 0, g: 0};
+    const nn = Math.max(0, p.n - o.n), gg = Math.max(0, p.g - o.g);
+    return (gg + K * base) / (nn + K);
+  };
+  /* 縮小で期待値の合計が実得点からずれるので、参照集合の上で合計が一致するよう較正する */
+  let sum = 0;
+  for (const s of shots) { if (s.zone) sum += raw(s.zone, null); }
+  const cal = sum > 0 ? allG / sum : 1;
+  return {pos, base, cal, n: allN, g: allG,
+    expect: (zone, own) => Math.min(0.995, raw(zone, own) * cal)};
+}
+
 /* ---------------------------------------------------------------- GKを集める */
 /* 相手チームの shots[] のうち gkBib が一致するものが、そのGKの被シュート。
    大会トップのランキングとGK分析ページの両方から使う。 */

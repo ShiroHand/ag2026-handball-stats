@@ -1,7 +1,7 @@
 import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setError,
         params, setParam, flagImg, photoImg, shortRole, tip, CAT, withLang} from './core.js';
 import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
-import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
+import {costModel, buildContrib, groupMeans, groupLabel, POS_GROUP} from './contrib.js';
 import {collectGKs, buildRef, gkSummary} from './gkstats.js';
 
 const app = q('#app');
@@ -378,31 +378,38 @@ async function buildRanking(g) {
 /* ---------- 選手ランキング（期待得点との差・攻撃の貢献度） ---------- */
 /* kind: 'gae'（フィニッシュだけ）/ 'contrib'（ミス・退場まで含めた貢献度）
    貢献度は素の合計だとポジションで順位が決まってしまうので、
-   同ポジション平均との差を主指標にする（チーム分析ページと同じ）。 */
+   同ポジション平均との差を主指標にする（チーム分析ページと同じ）。
+
+   ポジションが違えば役割が違うので、並べる相手もポジションで絞れるようにする。
+   ただし計算そのもの（期待得点の基準表・換算レート・同ポジ平均）は
+   全ポジションのシュートから作る。絞るのは「表示する相手」だけ。 */
+let posFilter = {gae: 'all', contrib: 'all'};
+
 function playerRankCard(g, kind) {
   const R = RANK[g];
   if (!R || !R.players || !R.players.length) return null;
   const isGae = kind === 'gae';
-  const rows = R.players
-    .filter(r => (isGae ? r.xn >= 10 : (r.shots >= 10 && r.min >= 40)))
+  const all = R.players
+    .filter(r => (isGae ? r.nZ >= 10 : (r.shots >= 10 && r.min >= 40)))
     .map(r => ({...r, key: isGae ? r.gae : (r.adj ?? -99)}))
     .filter(r => r.key > -98)
     .sort((a, b) => b.key - a.key);
-  if (rows.length < 5) return null;
+  if (all.length < 5) return null;
 
   const table = (arr) => {
     const t = el('table', {});
     t.append(el('thead', {}, el('tr', {},
       (isGae
-        ? ['#', '選手', 'チーム', 'Pos', '枠内', '得点', '期待得点', '差', '100本あたり']
+        ? ['#', '選手', 'チーム', 'Pos', 'シュート', '枠外・ブロック', '得点',
+          '期待得点', '差（位置基準）', '差（コース基準）']
         : ['#', '選手', 'チーム', 'Pos', '出場', 'フィニッシュ', 'ミス', '合計', '同ポジ差'])
         .map((h, i) => el('th', {class: i < 4 ? '' : 'num', text: h})))));
     const tb = el('tbody', {});
     arr.forEach((r, i) => {
       const cells = isGae
-        ? [r.xn, r.xgoals, r.xg.toFixed(1),
+        ? [r.nZ, r.offTarget || '', r.goals, r.xgZ.toFixed(1),
           (r.gae > 0 ? '+' : '') + r.gae.toFixed(1),
-          r.xn ? ((r.gae / r.xn * 100) > 0 ? '+' : '') + (r.gae / r.xn * 100).toFixed(1) : '']
+          (r.gaeCourse > 0 ? '+' : '') + r.gaeCourse.toFixed(1)]
         : [Math.round(r.min), (r.gae > 0 ? '+' : '') + r.gae.toFixed(1), r.to,
           (r.total > 0 ? '+' : '') + r.total.toFixed(1),
           (r.adj > 0 ? '+' : '') + r.adj.toFixed(2)];
@@ -417,7 +424,7 @@ function playerRankCard(g, kind) {
           style: {fontWeight: j === cells.length - (isGae ? 2 : 1) ? 700 : 400}, text: c})));
       tip(tr, `<b>${r.name}</b>（${r.code}・${shortRole(r.role)}）<br>`
         + `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本<br>`
-        + `フィニッシュ ${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+        + `フィニッシュ（位置基準）${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
         + `誤差 ±${r.se.toFixed(1)}点`);
       tb.append(tr);
     });
@@ -427,23 +434,58 @@ function playerRankCard(g, kind) {
 
   const head = isGae
     ? {title: '期待得点との差 ランキング',
-      sub: 'シュート1本ずつについて「位置とコースが同じシュートを大会平均の選手が打ったら'
-        + '何点入るか」を足し上げ、実際の得点と比べたものです。'
+      sub: '「大会平均の選手が同じシュートを打ったら何点入るか」と実際の得点を比べたものです。'
         + '決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。'
-        + 'コースが記録された枠内シュートが10本以上の選手が対象です。'}
+        + '位置基準は全シュートが対象で枠外も罰せられ、コース基準は枠内に飛んだシュートだけが対象で'
+        + 'GKとの勝負だけを見ます。2つの差が大きい選手は、'
+        + '枠に飛ばす技術と決め切る技術のどちらかに偏りがあります。'
+        + '並べ替えは位置基準です。シュート10本以上の選手が対象です。'
+        + 'ポジションで絞ると、同じ役割の選手だけを並べられます。'
+        + '期待得点の基準表は全ポジションのシュートから作っているので、絞っても値は変わりません。'}
     : {title: '攻撃の貢献度 ランキング',
       sub: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
         + '並べ替えは「同ポジ平均との差（60分あたり）」で行っています。'
         + '素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。'
-        + 'シュート10本以上・出場40分以上が対象です。'};
+        + 'シュート10本以上・出場40分以上が対象です。'
+        + 'ポジションで絞ると、同じ役割の選手だけを並べられます。'
+        + '換算レートと同ポジ平均は全ポジションのデータから出しているので、絞っても値は変わりません。'};
+
+  /* ---- ポジション絞り込み ---- */
+  /* 3人未満の群はチップを出さない（順位を付ける意味が薄いため）。試合が増えれば出る。 */
+  const avail = POS_GROUP.filter(gr => all.filter(r => r.group === gr.key).length >= 3);
+  if (!avail.some(gr => gr.key === posFilter[kind])) posFilter[kind] = 'all';
+  const chips = el('div', {class: 'chips'});
+  const host = el('div', {});
+  const draw = () => {
+    const k = posFilter[kind];
+    const rows = k === 'all' ? all : all.filter(r => r.group === k);
+    host.innerHTML = '';
+    if (k === 'all') {
+      host.append(el('div', {class: 'sec-title', text: '上位15人'}), table(rows.slice(0, 15)),
+        el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: '下位10人'}),
+        table(rows.slice(-10).reverse()));
+    } else {
+      host.append(el('div', {class: 'sec-title',
+        text: `${groupLabel(k)}　${rows.length}人（全員）`}), table(rows));
+    }
+  };
+  [{key: 'all', label: 'すべて'}, ...avail].forEach(gr => chips.append(el('button', {
+    class: 'chip' + (posFilter[kind] === gr.key ? ' on' : ''),
+    text: gr.label,
+    onclick: (e) => {
+      posFilter[kind] = gr.key;
+      [...chips.children].forEach(c => c.className = 'chip');
+      e.currentTarget.className = 'chip on';
+      draw();
+    }})));
+  draw();
 
   const box = el('div', {class: 'card'},
     el('h2', {text: head.title}),
     el('div', {class: 'sub', style: {margin: '-4px 0 10px'}, text: head.sub}),
-    el('div', {class: 'sec-title', text: '上位15人'}),
-    table(rows.slice(0, 15)),
-    el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: '下位10人'}),
-    table(rows.slice(-10).reverse()));
+    el('div', {class: 'row', style: {gap: '10px', marginBottom: '10px'}},
+      el('span', {class: 'muted', style: {fontSize: '12px'}, text: 'ポジション'}), chips),
+    host);
 
   if (!isGae && R.cost) {
     box.append(el('div', {class: 'sub', style: {marginTop: '10px'},

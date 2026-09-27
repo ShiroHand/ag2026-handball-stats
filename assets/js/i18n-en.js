@@ -9,6 +9,10 @@
    ========================================================================== */
 
 export const EN_TPL = {
+  '^{}　{}人（全員）':
+    '{} — all {} players',
+  'コースが記録されたシュートが5本以上の選手のみ。位置基準の対象 {} 本、コース基準の対象 {} 本。本数が少ない選手の差は大きく振れます。並べ替えは位置基準で行っています。':
+    'Players with at least 5 shots whose course was recorded. Zone basis covers {} shots, course basis {}. Differences swing widely on small samples. Sorted by the zone basis.',
   ' {} {}-{} {}（{}）': ' {} {}-{} {} ({})',
   ' — {}（{}試合）': ' — {} ({} matches)',
   '{}: 事前平均 {}%': '{}: prior mean {}%',
@@ -136,6 +140,24 @@ export const EN_TPL = {
 };
 
 export const EN = {
+  'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。並べ替えは「同ポジ平均との差（60分あたり）」で行っています。素の合計で並べるとボールに触る回数の多いポジションが不利になるためです。シュート10本以上・出場40分以上が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。換算レートと同ポジ平均は全ポジションのデータから出しているので、絞っても値は変わりません。':
+    'Finishing, turnovers and 2-minute suspensions converted into goals and added up. Sorted by the difference from the positional average (per 60 minutes), because a raw total penalises the positions that touch the ball most. Minimum 10 shots and 40 minutes. Filter by position to rank only players with the same role — the conversion rates and positional averages come from every position, so the values themselves do not change.',
+  '「大会平均の選手が同じシュートを打ったら何点入るか」と実際の得点を比べたものです。決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。位置基準は全シュートが対象で枠外も罰せられ、コース基準は枠内に飛んだシュートだけが対象でGKとの勝負だけを見ます。2つの差が大きい選手は、枠に飛ばす技術と決め切る技術のどちらかに偏りがあります。並べ替えは位置基準です。シュート10本以上の選手が対象です。ポジションで絞ると、同じ役割の選手だけを並べられます。期待得点の基準表は全ポジションのシュートから作っているので、絞っても値は変わりません。':
+    'Compares a player’s actual goals with what a tournament-average player would have scored from the same shots. It separates “high conversion because the shots were easy” from genuine finishing. The zone basis covers every shot, so missing the target costs you; the course basis covers only shots on target and looks purely at the duel with the goalkeeper. A player with a large gap between the two is lopsided. Sorted by the zone basis; minimum 10 shots. Filter by position to rank only players with the same role — the expected-goals reference table is built from every position, so the values themselves do not change.',
+  'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。バスケットボールの BPM やサッカーの VAEP と同じ考え方で、換算レートは大会データから推定しています。フィニッシュは位置基準（枠外込み）を使います。ターンオーバーを課金しながら枠外シュートを0点にするのは筋が通らないためです。コース基準の値も参考として並べていますが、合計には入れていません。':
+    'Finishing, turnovers and 2-minute suspensions converted into the same currency — goals — and added up. The same idea as basketball’s BPM or football’s VAEP; the conversion rates are estimated from this tournament’s data. Finishing uses the zone basis (off-target shots included), because charging for turnovers while pricing a missed target at zero would be inconsistent. The course-basis figure is shown for reference but is not part of the total.',
+  '「大会平均の選手が同じシュートを打ったら何点入るか」と実際の得点を比べたものです。決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。基準は2種類あります。位置基準は全シュートが対象で、枠を外したぶんも罰せられます。コース基準は枠内に飛んだシュートだけが対象で、同じコースに飛ばしたときに平均より入ったか、つまりGKとの勝負だけを見ます。2つの差が大きい選手は、枠に飛ばす技術と決め切る技術のどちらかに偏りがあります。どちらも基準にはその選手自身のぶんを除いた平均を使っています。':
+    'Compares a player’s actual goals with what a tournament-average player would have scored from the same shots. It separates “high conversion because the shots were easy” from genuine finishing. There are two baselines. The zone basis covers every shot, so missing the target costs you. The course basis covers only shots on target and asks whether the ball went in more often than average when aimed at the same corner — the duel with the goalkeeper alone. A player with a large gap between the two is lopsided: either getting the ball on target, or beating the keeper once it is. Both baselines exclude the player’s own shots.',
+  '（参考）コース基準':
+    '(ref.) course basis',
+  '差（コース基準）':
+    'Diff (course)',
+  '差（位置基準）':
+    'Diff (zone)',
+  'コース基準の期待得点':
+    'Expected goals (course)',
+  '位置基準の期待得点':
+    'Expected goals (zone)',
   /* ---------- ナビ・全体 ---------- */
   '大会トップ': 'Overview',
   '試合レポート': 'Match report',

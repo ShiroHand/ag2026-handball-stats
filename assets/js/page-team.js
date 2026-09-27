@@ -8,6 +8,7 @@ import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.
 import {tempoCard, addTempo} from './tempo.js';
 import {buildRef, gkSummary} from './gkstats.js';
 import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
+import {buildZoneRef} from './gkstats.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -358,6 +359,7 @@ function gaeCard(list, A) {
     for (const c of Object.keys(f.teams)) all.push(...(f.teams[c].shots || []));
   });
   const ref = buildRef(all);
+  const zref = buildZoneRef(all);
 
   const byBib = new Map();
   list.forEach(f => {
@@ -374,8 +376,24 @@ function gaeCard(list, A) {
   const rows = [...byBib.values()]
     .map(p => ({...p, sum: gkSummary(p.shots, ref)}))
     .filter(p => p.sum.xn >= 5)
-    .map(p => ({...p, gae: p.sum.xgoals - p.sum.xg}))
-    .sort((a, b) => b.gae - a.gae);
+    .map(p => {
+      /* 位置基準（枠外込み）。自分のぶんは基準から抜く */
+      const own = {};
+      p.shots.forEach(s => {
+        if (!s.zone) return;
+        const o = own[s.zone] = own[s.zone] || {n: 0, g: 0};
+        o.n++; if (s.result === 'GOAL') o.g++;
+      });
+      let xgZ = 0, nZ = 0, goals = 0, off = 0;
+      p.shots.forEach(s => {
+        if (!s.zone) return;
+        xgZ += zref.expect(s.zone, own[s.zone]); nZ++;
+        if (s.result === 'GOAL') goals++;
+        if (!['GOAL', 'SAVE'].includes(s.result)) off++;
+      });
+      return {...p, gae: p.sum.xgoals - p.sum.xg, gaeZ: goals - xgZ, xgZ, nZ, goalsAll: goals, off};
+    })
+    .sort((a, b) => b.gaeZ - a.gaeZ);
 
   if (!rows.length) {
     return el('div', {class: 'card'},
@@ -385,19 +403,22 @@ function gaeCard(list, A) {
 
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
-    ['#', '選手', 'Pos', 'シュート', '枠内', '得点', '決定率',
-      '期待得点', '差', '100本あたり'].map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
+    ['#', '選手', 'Pos', 'シュート', '枠内', '枠外・ブロック', '得点', '決定率',
+      '位置基準の期待得点', '差（位置基準）', 'コース基準の期待得点', '差（コース基準）']
+      .map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
   const tb = el('tbody', {});
-  let tXg = 0, tG = 0, tN = 0;
+  let tXg = 0, tG = 0, tN = 0, tXz = 0, tGz = 0, tNz = 0;
+  const diffTd = (v, note) => {
+    const td = el('td', {class: 'num', style: {fontWeight: 700,
+      color: v > 0.05 ? 'var(--good)' : (v < -0.05 ? 'var(--bad)' : '')},
+      text: (v > 0 ? '+' : '') + v.toFixed(1)});
+    tip(td, note);
+    return td;
+  };
   rows.forEach(p => {
     const s = p.sum;
     tXg += s.xg; tG += s.xgoals; tN += s.xn;
-    const td = el('td', {class: 'num', style: {fontWeight: 700,
-      color: p.gae > 0.05 ? 'var(--good)' : (p.gae < -0.05 ? 'var(--bad)' : '')},
-      text: (p.gae > 0 ? '+' : '') + p.gae.toFixed(1)});
-    tip(td, `コースが記録されている ${s.xn} 本が対象<br>`
-      + `期待得点 ${s.xg.toFixed(1)} / 実際の得点 ${s.xgoals}<br>`
-      + 'プラスが大きいほど、平均的な選手より多く決めた');
+    tXz += p.xgZ; tGz += p.goalsAll; tNz += p.nZ;
     tb.append(el('tr', {},
       el('td', {class: 'num muted', text: p.bib}),
       el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
@@ -405,32 +426,40 @@ function gaeCard(list, A) {
       el('td', {text: shortRole(p.role)}),
       el('td', {class: 'num', text: s.n}),
       el('td', {class: 'num', text: s.onTarget}),
-      el('td', {class: 'num', text: s.goals}),
-      el('td', {class: 'num', text: s.n ? pct(s.goals, s.n) : ''}),
+      el('td', {class: 'num', text: p.off || ''}),
+      el('td', {class: 'num', text: p.goalsAll}),
+      el('td', {class: 'num', text: s.n ? pct(p.goalsAll, s.n) : ''}),
+      el('td', {class: 'num muted', text: p.xgZ.toFixed(1)}),
+      diffTd(p.gaeZ, `全シュート ${p.nZ} 本が対象（枠外・ブロック込み）<br>`
+        + `期待得点 ${p.xgZ.toFixed(1)} / 実際の得点 ${p.goalsAll}`),
       el('td', {class: 'num muted', text: s.xg.toFixed(1)}),
-      td,
-      el('td', {class: 'num', text: s.xn ? ((p.gae / s.xn * 100) > 0 ? '+' : '') + (p.gae / s.xn * 100).toFixed(1) : ''})));
+      diffTd(p.gae, `コースが記録されている ${s.xn} 本が対象（枠内のみ）<br>`
+        + `期待得点 ${s.xg.toFixed(1)} / 実際の得点 ${s.xgoals}`)));
   });
   tb.append(el('tr', {class: 'total'},
-    el('td', {}), el('td', {text: '合計'}), el('td', {}), el('td', {}), el('td', {}),
-    el('td', {class: 'num', text: tG}), el('td', {}),
+    el('td', {}), el('td', {text: '合計'}), el('td', {}), el('td', {}), el('td', {}), el('td', {}),
+    el('td', {class: 'num', text: tGz}), el('td', {}),
+    el('td', {class: 'num', text: tXz.toFixed(1)}),
+    el('td', {class: 'num', text: ((tGz - tXz) > 0 ? '+' : '') + (tGz - tXz).toFixed(1)}),
     el('td', {class: 'num', text: tXg.toFixed(1)}),
-    el('td', {class: 'num', text: ((tG - tXg) > 0 ? '+' : '') + (tG - tXg).toFixed(1)}),
-    el('td', {})));
+    el('td', {class: 'num', text: ((tG - tXg) > 0 ? '+' : '') + (tG - tXg).toFixed(1)})));
   table.append(tb);
 
   return el('div', {class: 'card'},
     el('h2', {text: '選手別 期待得点との差'}),
     el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
-      text: 'シュート1本ずつについて「位置とコースが同じシュートを大会平均の選手が打ったら'
-        + '何点入るか」を足し上げ、実際の得点と比べたものです。'
+      text: '「大会平均の選手が同じシュートを打ったら何点入るか」と実際の得点を比べたものです。'
         + '決定率が高いのは簡単な位置から打っているからなのか、本当に上手いのかを切り分けられます。'
-        + 'コースは枠内に飛んだシュートにしか付かないので、枠外・ポストは対象外です。'
-        + '基準にはその選手自身のぶんを除いた平均を使っています。'}),
+        + '基準は2種類あります。位置基準は全シュートが対象で、枠を外したぶんも罰せられます。'
+        + 'コース基準は枠内に飛んだシュートだけが対象で、同じコースに飛ばしたときに'
+        + '平均より入ったか、つまりGKとの勝負だけを見ます。'
+        + '2つの差が大きい選手は、枠に飛ばす技術と決め切る技術のどちらかに偏りがあります。'
+        + 'どちらも基準にはその選手自身のぶんを除いた平均を使っています。'}),
     el('div', {class: 'tbl-scroll'}, table),
     el('div', {class: 'sub', style: {marginTop: '8px'},
-      text: `コースが記録されたシュートが5本以上の選手のみ。対象 ${tN} 本。`
-        + '本数が少ない選手の差は大きく振れるので、「100本あたり」と併せて見てください。'}));
+      text: `コースが記録されたシュートが5本以上の選手のみ。位置基準の対象 ${tNz} 本、`
+        + `コース基準の対象 ${tN} 本。`
+        + '本数が少ない選手の差は大きく振れます。並べ替えは位置基準で行っています。'}));
 }
 
 
@@ -464,15 +493,21 @@ function contribCard(list) {
 
   const table = el('table', {});
   table.append(el('thead', {}, el('tr', {},
-    ['#', '選手', 'Pos', '出場', 'シュート', '得点', 'フィニッシュ', 'ミス', '退場',
-      '合計', '60分あたり', '同ポジ平均との差', 'アシスト']
+    ['#', '選手', 'Pos', '出場', 'シュート', '得点', 'フィニッシュ', '（参考）コース基準',
+      'ミス', '退場', '合計', '60分あたり', '同ポジ平均との差', 'アシスト']
       .map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
   const tb = el('tbody', {});
   mine.forEach(r => {
-    const fin = el('td', {class: 'num', style: {color: r.gae > 0.05 ? 'var(--good)' : (r.gae < -0.05 ? 'var(--bad)' : '')},
+    const fin = el('td', {class: 'num', style: {fontWeight: 600,
+      color: r.gae > 0.05 ? 'var(--good)' : (r.gae < -0.05 ? 'var(--bad)' : '')},
       text: (r.gae > 0 ? '+' : '') + r.gae.toFixed(1)});
-    tip(fin, `コースが記録されている ${r.xn} 本が対象<br>`
-      + `期待得点 ${r.xg.toFixed(1)} / 実際の得点 ${r.xgoals}`);
+    tip(fin, `位置基準（枠外込み）。全シュート ${r.nZ} 本が対象<br>`
+      + `期待得点 ${r.xgZ.toFixed(1)} / 実際の得点 ${r.goals}`);
+    const finC = el('td', {class: 'num muted',
+      text: (r.gaeCourse > 0 ? '+' : '') + r.gaeCourse.toFixed(1)});
+    tip(finC, `コース基準（枠内のみ）。${r.xn} 本が対象<br>`
+      + `期待得点 ${r.xg.toFixed(1)} / 実際の得点 ${r.xgoals}<br>`
+      + '合計には使っていません');
     const toTd = el('td', {class: 'num', text: r.to ? `${r.to}（${r.toLoss.toFixed(1)}）` : '0'});
     tip(toTd, `ミス ${r.to} 回 × ${cost.toCost.toFixed(2)}点 = ${r.toLoss.toFixed(1)}点`);
     const spTd = el('td', {class: 'num', text: r.susp ? `${r.susp}（${r.spLoss.toFixed(1)}）` : '0'});
@@ -485,7 +520,7 @@ function contribCard(list) {
         + `この選手 ${r.per60.toFixed(2)}<br>誤差 ±${(r.se / r.min * 60).toFixed(2)}（60分あたり）`);
     }
     const tot = el('td', {class: 'num', text: (r.total > 0 ? '+' : '') + r.total.toFixed(1)});
-    tip(tot, `フィニッシュ ${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+    tip(tot, `フィニッシュ（位置基準）${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
       + `誤差 ±${r.se.toFixed(1)}点`);
     tb.append(el('tr', {},
       el('td', {class: 'num muted', text: r.bib}),
@@ -495,7 +530,7 @@ function contribCard(list) {
       el('td', {class: 'num', text: Math.round(r.min)}),
       el('td', {class: 'num', text: r.shots}),
       el('td', {class: 'num', text: r.goals}),
-      fin, toTd, spTd, tot,
+      fin, finC, toTd, spTd, tot,
       el('td', {class: 'num muted', text: r.per60.toFixed(2)}),
       adj,
       el('td', {class: 'num', text: r.assists || ''})));
@@ -508,7 +543,10 @@ function contribCard(list) {
     el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
       text: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
         + 'バスケットボールの BPM やサッカーの VAEP と同じ考え方で、'
-        + '換算レートは大会データから推定しています。'}),
+        + '換算レートは大会データから推定しています。'
+        + 'フィニッシュは位置基準（枠外込み）を使います。'
+        + 'ターンオーバーを課金しながら枠外シュートを0点にするのは筋が通らないためです。'
+        + 'コース基準の値も参考として並べていますが、合計には入れていません。'}),
     el('div', {class: 'kpi-grid', style: {marginBottom: '12px'}},
       ck('攻撃1回の期待得点', cost.ev.toFixed(3) + '点', ''),
       ck('ミス1回の損', '−' + cost.toCost.toFixed(2) + '点', 'ミス直後は相手が ' + rate(cost.pTO) + ' 得点'),
