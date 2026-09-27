@@ -444,13 +444,17 @@ function contribCard(list) {
   const cost = costModel(sameCat);
   const poolAll = buildContrib(sameCat, sameCat, cost);   // 平均の基準はカテゴリ全体
   const means = groupMeans(poolAll);
+  /* 表示条件は groupMeans の母集団と必ず同じにする。
+     ずれていると「6本しか打っていない選手を、10本以上の選手だけで作った平均」と
+     比べることになり、出場時間の短い選手ほど60分あたりの値が振れて誤読を招く。 */
+  const MIN_SHOTS = 10, MIN_MIN = 40;
   const mine = buildContrib(list, sameCat, cost)
-    .filter(r => r.code === code && r.shots >= 5 && r.min >= 20);
+    .filter(r => r.code === code && r.shots >= MIN_SHOTS && r.min >= MIN_MIN);
 
   if (!mine.length) {
     return el('div', {class: 'card'},
       el('h2', {text: '攻撃の貢献度（得点換算）'}),
-      el('div', {class: 'sub', text: '対象になる選手がいません（シュート5本以上・出場20分以上）。'}));
+      el('div', {class: 'sub', text: '対象になる選手がいません（シュート10本以上・出場40分以上）。'}));
   }
   mine.forEach(r => {
     const m = means[r.group];
@@ -525,6 +529,10 @@ function contribCard(list) {
       text: 'これは総合評価ではありません。ブロックとスティールは1選手あたり大会累計で'
         + '1.4回しか記録が無く、スクリーン・7mを獲得する動き・守備のポジショニングは'
         + '1つも入りません。守備の良い選手は不当に低く出ます。'}),
+    el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: '対象はシュート10本以上・出場40分以上の選手です。'
+        + '比較の基準になる同ポジション平均も同じ条件の選手から作っているので、'
+        + '「少ない出場時間の選手が、たくさん出ている選手の平均と比べられる」ことは起きません。'}),
     el('div', {class: 'sub', style: {marginTop: '6px'},
       text: '誤差は数値にカーソルを合わせると出ます。大会を通して1人あたり±2点前後あるので、'
         + '近い値どうしを区別することはできません。上位と下位を見分ける用途に限ってください。'}));

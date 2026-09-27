@@ -2,6 +2,7 @@ import {loadJSON, el, q, n, pct, jpDate, jpTime, renderChrome, renderFoot, setEr
         params, setParam, flagImg, photoImg, shortRole, tip, CAT, withLang} from './core.js';
 import {mergeTransitions, TRANS_KEYS, TRANS_SHORT, fastRate, fastSec} from './transitions.js';
 import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
+import {collectGKs, buildRef, gkSummary} from './gkstats.js';
 
 const app = q('#app');
 let T = null;
@@ -71,6 +72,9 @@ function render() {
   if (gaeCard) app.append(gaeCard);
   const conCard = playerRankCard(gender, 'contrib');
   if (conCard) app.append(conCard);
+
+  const gkCard = gkRankCard(gender);
+  if (gkCard) app.append(gkCard);
 
   const effCard = efficiencyCard(gender);
   if (effCard) app.append(effCard);
@@ -356,7 +360,18 @@ async function buildRanking(g) {
     });
   }
 
-  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams, trans: trRows, players, cost, means};
+  /* GK（GSAA） */
+  let gkRows = [];
+  if (mine.length) {
+    const {gks, all} = collectGKs(mine);
+    const ref = buildRef(all);
+    gkRows = gks.map(x => ({...x, sum: gkSummary(x.shots, ref)}))
+      .filter(x => x.sum.onTarget >= 20)
+      .sort((a, b) => b.sum.gsaa - a.sum.gsaa);
+  }
+
+  RANK[g] = {scorers: rows(sc), savers: rows(sv), teams, trans: trRows,
+    players, cost, means, gks: gkRows};
 }
 
 
@@ -441,4 +456,59 @@ function playerRankCard(g, kind) {
       + 'スクリーンや7mを獲得する動きは1つも入りません。'
       + '行にカーソルを合わせると内訳と誤差が出ます。'}));
   return box;
+}
+
+
+/* ---------- GKランキング（GSAA） ---------- */
+function gkRankCard(g) {
+  const rows = RANK[g]?.gks || [];
+  if (rows.length < 3) return null;
+  const table = (arr) => {
+    const t = el('table', {});
+    t.append(el('thead', {}, el('tr', {},
+      ['#', 'GK', 'チーム', '試合', '被シュート', '枠内', 'セーブ', '失点', 'セーブ率',
+        '期待失点', 'GSAA', 'セーブ後の速攻率'].map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
+    const tb = el('tbody', {});
+    arr.forEach((r, i) => {
+      const s = r.sum;
+      const td = el('td', {class: 'num', style: {fontWeight: 700,
+        color: s.gsaa > 0 ? 'var(--good)' : (s.gsaa < 0 ? 'var(--bad)' : '')},
+        text: (s.gsaa > 0 ? '+' : '') + s.gsaa.toFixed(1)});
+      const tr = el('tr', {},
+        el('td', {class: 'num muted', text: i + 1}),
+        el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+          photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
+        el('td', {}, el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
+          flagImg(r.code, 'flag sm'), el('span', {text: r.code}))),
+        el('td', {class: 'num', text: r.games}),
+        el('td', {class: 'num', text: s.n}),
+        el('td', {class: 'num', text: s.onTarget}),
+        el('td', {class: 'num', text: s.saves}),
+        el('td', {class: 'num', text: s.goals}),
+        el('td', {class: 'num', style: {fontWeight: 700}, text: pct(s.saves, s.onTarget)}),
+        el('td', {class: 'num muted', text: s.xg.toFixed(1)}),
+        td,
+        el('td', {class: 'num', text: r.outlet && r.outlet.n ? pct(r.outlet.fast, r.outlet.n) : '·'}));
+      tip(tr, `<b>${r.name}</b>（${r.code}）<br>`
+        + `コースが記録されている ${s.xn} 本が対象<br>`
+        + `期待失点 ${s.xg.toFixed(1)} / 同じ ${s.xn} 本での実失点 ${s.xgoals}<br>`
+        + (r.outlet && r.outlet.n
+          ? `セーブして味方ボールになった ${r.outlet.n} 回（速攻 ${r.outlet.fast}）` : ''));
+      tb.append(tr);
+    });
+    t.append(tb);
+    return el('div', {class: 'tbl-scroll'}, t);
+  };
+  return el('div', {class: 'card'},
+    el('h2', {text: 'GKランキング — 平均的なGKとの差（GSAA）'}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
+      text: 'GSAA = 期待失点 − 実失点。浴びたシュート1本ずつについて「位置とコースが同じシュートを'
+        + '大会平均のGKが受けたら何点入っていたか」を足し上げ、実際の失点を引いたものです。'
+        + 'セーブ率は浴びたシュートの質に左右されますが、GSAAはそれを補正します。'
+        + '枠内シュートを20本以上浴びたGKが対象です。'}),
+    table(rows),
+    el('div', {class: 'sub', style: {marginTop: '8px'},
+      text: '「セーブ後の速攻率」はセーブの直後に味方が速攻へ持ち込めた割合です。'
+        + 'セーブ率が同じでも、速攻に繋がるセーブをするGKとそうでないGKを見分けられます。'
+        + '内訳はGK分析のページにあります。'}));
 }

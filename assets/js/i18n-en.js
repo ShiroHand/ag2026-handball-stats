@@ -116,6 +116,7 @@ export const EN_TPL = {
   'コースが記録されたシュートが5本以上の選手のみ。対象 {} 本。':
     'Only players with at least five shots with a recorded placement. {} shots in scope.',
   'セーブして味方ボールになった {} 回<br>': '{} saves that gave us the ball<br>',
+  'セーブして味方ボールになった {} 回（速攻 {}）': '{} saves that gave us the ball ({} fast breaks)',
   'その攻撃で得点 {}（{}）': 'Goals from those attacks {} ({})',
   '期待得点 {} / 実際の得点 {}<br>': 'Expected {} / actual {}<br>',
   '平均との差 {}{} 標準偏差': '{}{} SD from the mean',
@@ -1073,6 +1074,14 @@ export const EN = {
   /* ---------- 攻撃の貢献度 ---------- */
   '攻撃の貢献度（得点換算）': 'Attacking contribution (in goals)',
   '期待得点との差 ランキング': 'Goals above expected — ranking',
+  'GKランキング — 平均的なGKとの差（GSAA）': 'Goalkeeper ranking — goals saved above average (GSAA)',
+  '枠内シュートを20本以上浴びたGKが対象です。':
+    'Goalkeepers who faced at least 20 shots on target are included.',
+  '「セーブ後の速攻率」はセーブの直後に味方が速攻へ持ち込めた割合です。':
+    '“Fast break after save %” is how often the team turned the save straight into a fast break.',
+  'セーブ率が同じでも、速攻に繋がるセーブをするGKとそうでないGKを見分けられます。':
+    'Two keepers with the same save percentage can differ sharply on this.',
+  '内訳はGK分析のページにあります。': 'The breakdown is on the goalkeeping page.',
   '攻撃の貢献度 ランキング': 'Attacking contribution — ranking',
   '上位15人': 'Top 15', '下位10人': 'Bottom 10',
   '同ポジ差': 'vs position',
@@ -1138,8 +1147,14 @@ export const EN = {
     'Hover a number for its error. It is around ±2 goals per player over the tournament, so',
   '近い値どうしを区別することはできません。上位と下位を見分ける用途に限ってください。':
     'values close together cannot be told apart. Use it only to separate the top from the bottom.',
-  '対象になる選手がいません（シュート5本以上・出場20分以上）。':
-    'No players qualify (5+ shots and 20+ minutes).',
+  '対象になる選手がいません（シュート10本以上・出場40分以上）。':
+    'No players qualify (10+ shots and 40+ minutes).',
+  '対象はシュート10本以上・出場40分以上の選手です。':
+    'Players with at least 10 shots and 40 minutes are included.',
+  '比較の基準になる同ポジション平均も同じ条件の選手から作っているので、':
+    'The position average used as the benchmark is built from players meeting the same conditions,',
+  '「少ない出場時間の選手が、たくさん出ている選手の平均と比べられる」ことは起きません。':
+    'so a player with little court time is never compared against an average built from heavy minutes.',
   '実測でも60分あたりの平均は': 'The observed per-60 averages are ',
   'と差があり、': ', which differ',
 };

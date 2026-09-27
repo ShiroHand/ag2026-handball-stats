@@ -117,6 +117,38 @@ export function buildRef(shots) {
     }};
 }
 
+/* ---------------------------------------------------------------- GKを集める */
+/* 相手チームの shots[] のうち gkBib が一致するものが、そのGKの被シュート。
+   大会トップのランキングとGK分析ページの両方から使う。 */
+export function collectGKs(list) {
+  const gks = new Map();
+  const all = [];
+  for (const f of list) {
+    for (const code of Object.keys(f.teams)) {
+      const me = f.teams[code], op = f.teams[code === f.home ? f.away : f.home];
+      if (!me || !op) continue;
+      for (const s of me.shots || []) all.push(s);
+      for (const p of me.players || []) {
+        if (!/^(gk|g)$/i.test(p.role || '')) continue;
+        const key = code + '|' + p.bib;
+        const cur = gks.get(key) || {key, code, bib: p.bib, gender: f.gender,
+          name: p.nameS || p.name || p.bib, reg: p.reg || '', games: 0, shots: [],
+          outlet: {n: 0, goals: 0, fast: 0, second: 0, set: 0}};
+        if (!cur.reg && p.reg) cur.reg = p.reg;
+        const faced = (op.shots || []).filter(s => s.gkBib === p.bib);
+        if (!faced.length) continue;
+        cur.games++;
+        cur.shots.push(...faced);
+        if (p.outlet) for (const k of ['n', 'goals', 'fast', 'second', 'set']) {
+          cur.outlet[k] += n(p.outlet[k]);
+        }
+        gks.set(key, cur);
+      }
+    }
+  }
+  return {gks: [...gks.values()], all};
+}
+
 /* ---------------------------------------------------------------- GKの集計 */
 /* shots は「そのGKが浴びたシュート」。ref は同じ性別の参照表。 */
 export function gkSummary(shots, ref) {
