@@ -7,6 +7,7 @@ import {selectedFromUrl, applyFilter, matchFilterCard} from './matchfilter.js';
 import {mergeTransitions, transitionCard, fastPerMatchCard} from './transitions.js';
 import {tempoCard, addTempo} from './tempo.js';
 import {buildRef, gkSummary} from './gkstats.js';
+import {costModel, buildContrib, groupMeans, groupLabel} from './contrib.js';
 
 const app = q('#app');
 let T = null, FILES = null, code = null, gender = params.get('g') || 'M';
@@ -224,6 +225,7 @@ function render() {
   app.append(playersCard(A, list.length));
   app.append(tempoCard(A.players, {title: `選手別 攻撃の速さ（${list.length} 試合の累計）`}));
   app.append(gaeCard(list, A));
+  app.append(contribCard(list));
 
   sectionNav(app);
 }
@@ -429,4 +431,108 @@ function gaeCard(list, A) {
     el('div', {class: 'sub', style: {marginTop: '8px'},
       text: `コースが記録されたシュートが5本以上の選手のみ。対象 ${tN} 本。`
         + '本数が少ない選手の差は大きく振れるので、「100本あたり」と併せて見てください。'}));
+}
+
+
+/* ---------- 攻撃の貢献度（得点換算） ----------
+   フィニッシュ（期待得点との差）・ミス・2分退場を同じ「点」に換算して足す。
+   換算レートは大会データから推定する（contrib.js）。
+   アシストは公式の定義上ほぼ得点にしか記録されないため点に換算できないので、
+   合算せず別列で並記する。守備はほとんど記録が無いので、これは総合評価ではない。 */
+function contribCard(list) {
+  const sameCat = FILES.filter(f => f.gender === gender);
+  const cost = costModel(sameCat);
+  const poolAll = buildContrib(sameCat, sameCat, cost);   // 平均の基準はカテゴリ全体
+  const means = groupMeans(poolAll);
+  const mine = buildContrib(list, sameCat, cost)
+    .filter(r => r.code === code && r.shots >= 5 && r.min >= 20);
+
+  if (!mine.length) {
+    return el('div', {class: 'card'},
+      el('h2', {text: '攻撃の貢献度（得点換算）'}),
+      el('div', {class: 'sub', text: '対象になる選手がいません（シュート5本以上・出場20分以上）。'}));
+  }
+  mine.forEach(r => {
+    const m = means[r.group];
+    r.adj = m ? r.per60 - m.mean : null;
+  });
+  mine.sort((a, b) => (b.adj ?? -99) - (a.adj ?? -99));
+
+  const table = el('table', {});
+  table.append(el('thead', {}, el('tr', {},
+    ['#', '選手', 'Pos', '出場', 'シュート', '得点', 'フィニッシュ', 'ミス', '退場',
+      '合計', '60分あたり', '同ポジ平均との差', 'アシスト']
+      .map((h, i) => el('th', {class: i < 3 ? '' : 'num', text: h})))));
+  const tb = el('tbody', {});
+  mine.forEach(r => {
+    const fin = el('td', {class: 'num', style: {color: r.gae > 0.05 ? 'var(--good)' : (r.gae < -0.05 ? 'var(--bad)' : '')},
+      text: (r.gae > 0 ? '+' : '') + r.gae.toFixed(1)});
+    tip(fin, `コースが記録されている ${r.xn} 本が対象<br>`
+      + `期待得点 ${r.xg.toFixed(1)} / 実際の得点 ${r.xgoals}`);
+    const toTd = el('td', {class: 'num', text: r.to ? `${r.to}（${r.toLoss.toFixed(1)}）` : '0'});
+    tip(toTd, `ミス ${r.to} 回 × ${cost.toCost.toFixed(2)}点 = ${r.toLoss.toFixed(1)}点`);
+    const spTd = el('td', {class: 'num', text: r.susp ? `${r.susp}（${r.spLoss.toFixed(1)}）` : '0'});
+    if (r.susp) tip(spTd, `2分退場 ${r.susp} 回 × ${cost.suspCost.toFixed(2)}点 = ${r.spLoss.toFixed(1)}点`);
+    const adj = el('td', {class: 'num', style: {fontWeight: 700,
+      color: r.adj > 0 ? 'var(--good)' : (r.adj < 0 ? 'var(--bad)' : '')},
+      text: r.adj === null ? '·' : (r.adj > 0 ? '+' : '') + r.adj.toFixed(2)});
+    if (r.adj !== null) {
+      tip(adj, `${groupLabel(r.group)}の平均 ${means[r.group].mean.toFixed(2)}（${means[r.group].n}人）<br>`
+        + `この選手 ${r.per60.toFixed(2)}<br>誤差 ±${(r.se / r.min * 60).toFixed(2)}（60分あたり）`);
+    }
+    const tot = el('td', {class: 'num', text: (r.total > 0 ? '+' : '') + r.total.toFixed(1)});
+    tip(tot, `フィニッシュ ${r.gae.toFixed(1)} / ミス ${r.toLoss.toFixed(1)} / 退場 ${r.spLoss.toFixed(1)}<br>`
+      + `誤差 ±${r.se.toFixed(1)}点`);
+    tb.append(el('tr', {},
+      el('td', {class: 'num muted', text: r.bib}),
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
+      el('td', {text: shortRole(r.role)}),
+      el('td', {class: 'num', text: Math.round(r.min)}),
+      el('td', {class: 'num', text: r.shots}),
+      el('td', {class: 'num', text: r.goals}),
+      fin, toTd, spTd, tot,
+      el('td', {class: 'num muted', text: r.per60.toFixed(2)}),
+      adj,
+      el('td', {class: 'num', text: r.assists || ''})));
+  });
+  table.append(tb);
+
+  const rate = (v) => (v * 100).toFixed(0) + '%';
+  return el('div', {class: 'card'},
+    el('h2', {text: '攻撃の貢献度（得点換算）'}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
+      text: 'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。'
+        + 'バスケットボールの BPM やサッカーの VAEP と同じ考え方で、'
+        + '換算レートは大会データから推定しています。'}),
+    el('div', {class: 'kpi-grid', style: {marginBottom: '12px'}},
+      ck('攻撃1回の期待得点', cost.ev.toFixed(3) + '点', ''),
+      ck('ミス1回の損', '−' + cost.toCost.toFixed(2) + '点', 'ミス直後は相手が ' + rate(cost.pTO) + ' 得点'),
+      ck('2分退場1回の損', '−' + cost.suspCost.toFixed(2) + '点', `実測 ${cost.suspN} 回から`),
+      ck('得点で終わった直後', rate(cost.pGoal), '相手の得点率（最も低い）')),
+    el('div', {class: 'tbl-scroll'}, table),
+    el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: 'この数字の読み方'}),
+    el('div', {class: 'sub',
+      text: '主指標は「同ポジ平均との差」です。素の合計で並べるとポジションで順位が決まってしまいます。'
+        + `実測でも60分あたりの平均は ${Object.keys(means).filter(k => means[k])
+          .map(k => `${groupLabel(k)} ${means[k].mean.toFixed(2)}`).join('・')} と差があり、`
+        + 'ボールに触る回数の多いポジションほどミスが増えるためです。'}),
+    el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: 'アシストは合算していません。公式のアシストは「得点に直結したパス」と定義されており、'
+        + 'ほぼ得点にしか記録されないため（アシスト有の決定率98.7%・無41.9%）、'
+        + 'この差はパスの巧拙ではなく定義による循環で、点に換算できないからです。'}),
+    el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: 'これは総合評価ではありません。ブロックとスティールは1選手あたり大会累計で'
+        + '1.4回しか記録が無く、スクリーン・7mを獲得する動き・守備のポジショニングは'
+        + '1つも入りません。守備の良い選手は不当に低く出ます。'}),
+    el('div', {class: 'sub', style: {marginTop: '6px'},
+      text: '誤差は数値にカーソルを合わせると出ます。大会を通して1人あたり±2点前後あるので、'
+        + '近い値どうしを区別することはできません。上位と下位を見分ける用途に限ってください。'}));
+}
+
+function ck(label, value, sub) {
+  return el('div', {class: 'kpi'},
+    el('div', {class: 'k', text: label}),
+    el('div', {class: 'v', text: String(value)}),
+    sub ? el('div', {class: 's', text: sub}) : null);
 }

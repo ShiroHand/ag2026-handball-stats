@@ -104,6 +104,14 @@ export const EN_TPL = {
   '{} 試合 / 被シュート {} 本（枠内 {}・枠外/ポスト {}）':
     '{} matches / {} shots faced (on target {}, off target or post {})',
   '{}箇所＋別枠を合計すると': ' zones plus the off-court group total ',
+  '{}の平均 {}（{}人）<br>': '{} average {} ({} players)<br>',
+  'この選手 {}<br>誤差 ±{}（60分あたり）': 'This player {}<br>Error ±{} (per 60 min)',
+  'フィニッシュ {} / ミス {} / 退場 {}<br>': 'Finishing {} / turnovers {} / suspensions {}<br>',
+  '誤差 ±{}点': 'Error ±{} goals',
+  '期待得点 {} / 実際の得点 {}': 'Expected {} / actual {}',
+  '実測 {} 回から': 'from {} observed cases',
+  'ミス {} 回 × {}点 = {}点': '{} turnovers × {} goals = {} goals',
+  '2分退場 {} 回 × {}点 = {}点': '{} suspensions × {} goals = {} goals',
   '{}　標本 チーム×試合 {}件・決定係数 R² = {}': '{}  ·  {} team-match rows  ·  R² = {}',
   'コースが記録されたシュートが5本以上の選手のみ。対象 {} 本。':
     'Only players with at least five shots with a recorded placement. {} shots in scope.',
@@ -1061,4 +1069,46 @@ export const EN = {
   '2次速攻になった': 'Became a second wave',
   'その攻撃での得点': 'Goals from those attacks',
   'セーブ後の速攻率': 'Fast break after save %',
+
+  /* ---------- 攻撃の貢献度 ---------- */
+  '攻撃の貢献度（得点換算）': 'Attacking contribution (in goals)',
+  'フィニッシュ・ミス・2分退場を同じ「点」に換算して足したものです。':
+    'Finishing, turnovers and 2-minute suspensions converted into the same currency — goals — and added up.',
+  'バスケットボールの BPM やサッカーの VAEP と同じ考え方で、':
+    'The same idea as basketball’s BPM or football’s VAEP;',
+  '換算レートは大会データから推定しています。': 'the conversion rates are estimated from this tournament’s data.',
+  '攻撃1回の期待得点': 'Expected goals per attack',
+  'ミス1回の損': 'Cost of one turnover',
+  '2分退場1回の損': 'Cost of one suspension',
+  'ミス直後は相手が': 'After a turnover the opponent scores ',
+  '得点で終わった直後': 'Right after we score',
+  '相手の得点率（最も低い）': 'Opponent scoring rate (the lowest)',
+  'フィニッシュ': 'Finishing',
+  '同ポジ平均との差': 'vs position average',
+  '60分あたり': 'Per 60 min',
+  'この数字の読み方': 'How to read this',
+  '主指標は「同ポジ平均との差」です。素の合計で並べるとポジションで順位が決まってしまいます。':
+    'The headline number is “vs position average”. Ranking by the raw total simply ranks by position.',
+  'ボールに触る回数の多いポジションほどミスが増えるためです。':
+    'because the more a position handles the ball, the more turnovers it makes.',
+  'アシストは合算していません。公式のアシストは「得点に直結したパス」と定義されており、':
+    'Assists are not added in. An official assist is defined as a pass leading directly to a goal,',
+  'ほぼ得点にしか記録されないため（アシスト有の決定率98.7%・無41.9%）、':
+    'so it is recorded almost only on goals (conversion 98.7% with an assist, 41.9% without).',
+  'この差はパスの巧拙ではなく定義による循環で、点に換算できないからです。':
+    'That gap is circular — it comes from the definition, not from the quality of the pass — so it cannot be priced in goals.',
+  'これは総合評価ではありません。ブロックとスティールは1選手あたり大会累計で':
+    'This is not an overall rating. Blocks and steals together are recorded only',
+  '1.4回しか記録が無く、スクリーン・7mを獲得する動き・守備のポジショニングは':
+    '1.4 times per player across the whole tournament, and screening, drawing 7m and defensive positioning are',
+  '1つも入りません。守備の良い選手は不当に低く出ます。':
+    'not recorded at all. Good defenders come out unfairly low.',
+  '誤差は数値にカーソルを合わせると出ます。大会を通して1人あたり±2点前後あるので、':
+    'Hover a number for its error. It is around ±2 goals per player over the tournament, so',
+  '近い値どうしを区別することはできません。上位と下位を見分ける用途に限ってください。':
+    'values close together cannot be told apart. Use it only to separate the top from the bottom.',
+  '対象になる選手がいません（シュート5本以上・出場20分以上）。':
+    'No players qualify (5+ shots and 20+ minutes).',
+  '実測でも60分あたりの平均は': 'The observed per-60 averages are ',
+  'と差があり、': ', which differ',
 };
