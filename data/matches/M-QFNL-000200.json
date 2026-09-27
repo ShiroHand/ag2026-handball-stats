@@ -4151,7 +4151,7 @@
      "bib": "95",
      "name": "MOHAMED Mohamed",
      "nameS": "MOHAMED M",
-     "role": "P",
+     "role": "LB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -4383,7 +4383,7 @@
      "bib": "99",
      "name": "ALSAYYAD Husain",
      "nameS": "ALSAYYAD H",
-     "role": "P",
+     "role": "CB",
      "func": "AA01",
      "captain": true,
      "isGK": false,
@@ -14617,5 +14617,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T11:35:01.439Z"
+ "updatedAt": "2026-09-27T11:57:36.813Z"
 }

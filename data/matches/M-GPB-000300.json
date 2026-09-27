@@ -10777,7 +10777,7 @@
      "bib": "95",
      "name": "MOHAMED Mohamed",
      "nameS": "MOHAMED M",
-     "role": "P",
+     "role": "LB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -11052,7 +11052,7 @@
      "bib": "99",
      "name": "ALSAYYAD Husain",
      "nameS": "ALSAYYAD H",
-     "role": "P",
+     "role": "CB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -11567,7 +11567,7 @@
      "period": "1",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "FB",
      "result": "GOAL",
      "goalZone": "BR",
@@ -11651,7 +11651,7 @@
      "period": "1",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "FB",
      "result": "GOAL",
      "goalZone": "BR",
@@ -11665,7 +11665,7 @@
      "period": "1",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "L6",
      "result": "SAVE",
      "goalZone": "TR",
@@ -11735,7 +11735,7 @@
      "period": "1",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BR",
@@ -11749,7 +11749,7 @@
      "period": "1",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "C9",
      "result": "MISS",
      "goalZone": "",
@@ -11763,7 +11763,7 @@
      "period": "2",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "C9",
      "result": "POST",
      "goalZone": "",
@@ -11805,7 +11805,7 @@
      "period": "2",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BL",
@@ -11819,7 +11819,7 @@
      "period": "2",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BL",
@@ -11889,7 +11889,7 @@
      "period": "2",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "BT",
      "result": "GOAL",
      "goalZone": "BL",
@@ -11931,7 +11931,7 @@
      "period": "2",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "C9",
      "result": "GOAL",
      "goalZone": "TC",
@@ -12141,7 +12141,7 @@
     {
      "fromBib": "95",
      "fromName": "MOHAMED M",
-     "fromRole": "PV",
+     "fromRole": "LB",
      "toBib": "17",
      "toName": "KADHEM A",
      "toRole": "RB",
@@ -12155,7 +12155,7 @@
     {
      "fromBib": "95",
      "fromName": "MOHAMED M",
-     "fromRole": "PV",
+     "fromRole": "LB",
      "toBib": "77",
      "toName": "KHAMIS J",
      "toRole": "CB",
@@ -12194,10 +12194,10 @@
     {
      "fromBib": "99",
      "fromName": "ALSAYYAD H",
-     "fromRole": "PV",
+     "fromRole": "CB",
      "toBib": "95",
      "toName": "MOHAMED M",
-     "toRole": "PV",
+     "toRole": "LB",
      "count": 1,
      "goals": 1,
      "zones": {
@@ -12207,7 +12207,7 @@
     {
      "fromBib": "95",
      "fromName": "MOHAMED M",
-     "fromRole": "PV",
+     "fromRole": "LB",
      "toBib": "33",
      "toName": "MADAN H",
      "toRole": "PV",
@@ -12223,7 +12223,7 @@
      "fromRole": "RB",
      "toBib": "99",
      "toName": "ALSAYYAD H",
-     "toRole": "PV",
+     "toRole": "CB",
      "count": 1,
      "goals": 1,
      "zones": {
@@ -12259,7 +12259,7 @@
     {
      "fromBib": "99",
      "fromName": "ALSAYYAD H",
-     "fromRole": "PV",
+     "fromRole": "CB",
      "toBib": "33",
      "toName": "MADAN H",
      "toRole": "PV",
@@ -12298,7 +12298,7 @@
     {
      "fromBib": "99",
      "fromName": "ALSAYYAD H",
-     "fromRole": "PV",
+     "fromRole": "CB",
      "toBib": "88",
      "toName": "ALI H",
      "toRole": "RB",
@@ -12311,7 +12311,7 @@
     {
      "fromBib": "99",
      "fromName": "ALSAYYAD H",
-     "fromRole": "PV",
+     "fromRole": "CB",
      "toBib": "18",
      "toName": "FADHUL A",
      "toRole": "OTH",
@@ -12363,16 +12363,16 @@
    ],
    "posLinks": [
     {
-     "from": "PV",
-     "to": "PV",
-     "count": 3,
-     "goals": 3
+     "from": "CB",
+     "to": "RB",
+     "count": 2,
+     "goals": 2
     },
     {
-     "from": "PV",
+     "from": "LB",
      "to": "RB",
-     "count": 3,
-     "goals": 3
+     "count": 2,
+     "goals": 2
     },
     {
      "from": "RW",
@@ -12381,7 +12381,13 @@
      "goals": 2
     },
     {
-     "from": "PV",
+     "from": "CB",
+     "to": "OTH",
+     "count": 2,
+     "goals": 2
+    },
+    {
+     "from": "LB",
      "to": "CB",
      "count": 1,
      "goals": 1
@@ -12394,30 +12400,30 @@
     },
     {
      "from": "CB",
-     "to": "RB",
+     "to": "LB",
      "count": 1,
      "goals": 1
     },
     {
-     "from": "RB",
+     "from": "LB",
      "to": "PV",
      "count": 1,
      "goals": 1
     },
     {
+     "from": "RB",
+     "to": "CB",
+     "count": 1,
+     "goals": 1
+    },
+    {
      "from": "CB",
-     "to": "OTH",
+     "to": "PV",
      "count": 1,
      "goals": 1
     },
     {
      "from": "RW",
-     "to": "OTH",
-     "count": 1,
-     "goals": 1
-    },
-    {
-     "from": "PV",
      "to": "OTH",
      "count": 1,
      "goals": 1
@@ -13960,5 +13966,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T11:34:56.942Z"
+ "updatedAt": "2026-09-27T11:57:33.957Z"
 }

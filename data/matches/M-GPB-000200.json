@@ -11173,7 +11173,7 @@
      "bib": "95",
      "name": "MOHAMED Mohamed",
      "nameS": "MOHAMED M",
-     "role": "P",
+     "role": "LB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -11441,7 +11441,7 @@
      "bib": "99",
      "name": "ALSAYYAD Husain",
      "nameS": "ALSAYYAD H",
-     "role": "P",
+     "role": "CB",
      "func": "AA01",
      "captain": false,
      "isGK": false,
@@ -12037,7 +12037,7 @@
      "period": "1",
      "bib": "95",
      "name": "MOHAMED M",
-     "role": "PV",
+     "role": "LB",
      "zone": "L6",
      "result": "SAVE",
      "goalZone": "TR",
@@ -12359,7 +12359,7 @@
      "period": "2",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "L6",
      "result": "GOAL",
      "goalZone": "BR",
@@ -12387,7 +12387,7 @@
      "period": "2",
      "bib": "99",
      "name": "ALSAYYAD H",
-     "role": "PV",
+     "role": "CB",
      "zone": "C9",
      "result": "POST",
      "goalZone": "",
@@ -12639,7 +12639,7 @@
     {
      "fromBib": "95",
      "fromName": "MOHAMED M",
-     "fromRole": "PV",
+     "fromRole": "LB",
      "toBib": "17",
      "toName": "KADHEM A",
      "toRole": "RB",
@@ -12665,7 +12665,7 @@
     {
      "fromBib": "95",
      "fromName": "MOHAMED M",
-     "fromRole": "PV",
+     "fromRole": "LB",
      "toBib": "29",
      "toName": "SHUBBAR S",
      "toRole": "LW",
@@ -12723,7 +12723,7 @@
      "goals": 3
     },
     {
-     "from": "PV",
+     "from": "LB",
      "to": "RB",
      "count": 1,
      "goals": 1
@@ -12735,7 +12735,7 @@
      "goals": 1
     },
     {
-     "from": "PV",
+     "from": "LB",
      "to": "LW",
      "count": 1,
      "goals": 1
@@ -14531,5 +14531,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T11:34:55.839Z"
+ "updatedAt": "2026-09-27T11:57:33.134Z"
 }
