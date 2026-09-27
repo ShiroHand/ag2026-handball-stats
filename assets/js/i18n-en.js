@@ -15,11 +15,11 @@ export const EN_TPL = {
   '　/　{}　/　集計対象 {} 試合': '  /  {}  /  {} matches',
   ' / {} 試合を集計中': ' / aggregating {} matches',
   ' / {} 試合を分析中': ' / analysing {} matches',
-  ' / {} 本': ' / {}',
+  '^ / {} 本': ' / {}',
   ' を読み込めませんでした ({})': ' could not be loaded ({})',
   ' {}点（{}%）': ' {} goals ({}%)',
   '（{}{} ÷ {}回 × {}）で、KPI と一致します。': '({} {} ÷ {} × {}), which matches the KPI.',
-  '{}回 {}': '{}/poss {}',
+  '^{}回 {}': '{}/poss {}',
   '{}試合の被シュート': 'Shots faced in {} matches',
   '{}人分あります（{}）。': 'for {} player(s) ({}). ',
   '（{}回）': ' ({})',
@@ -32,7 +32,7 @@ export const EN_TPL = {
   '/{} セーブ（{}%）': '/{} saves ({}%)',
   '/{}　低いほど良い': '/{}  lower is better',
   '／総守備回数{}で、KPIと同じです。': '/ total defensive possessions {}, same as the KPI.',
-  '/{}本': '/{}',
+  '^/{}本': '/{}',
   '<b>{} → {}</b><br>アシスト {} 本 / 得点 ': '<b>{} → {}</b><br>Assists {} / Goals ',
   '<b>{}</b> {}分{}<br>': '<b>{}</b> {} min {}<br>',
   '<b>{}</b>（{}試合）<br>': '<b>{}</b> ({} matches)<br>',
@@ -72,7 +72,7 @@ export const EN_TPL = {
   '上段 = ゴール/シュート（色は決定率）、下段 = {}回あたりの{}。': 'Top row = goals/shots (colour = shooting %), bottom row = per-{} {}.',
   '選手 累計スタッツ（{} 試合）': 'Player totals ({} matches)',
   '選手別 攻撃の速さ（{} 試合の累計）': 'Attack tempo by player ({} matches)',
-  '全{}試合': 'All {} matches',
+  '^全{}試合': 'All {} matches',
   '相手のシュートまで中央値{}秒': 'median {}s to the opponent shot',
   '相手の{}の直後 {}%': 'Right after the opponent {} {}%',
   '相手{}直後の得点率': 'Scoring rate right after an opponent {}',
@@ -81,7 +81,7 @@ export const EN_TPL = {
   '大会内 攻撃効率ランキング（{}）': 'Attack efficiency ranking ({})',
   '大会内 守備ランキング（{}）': 'Defensive ranking ({})',
   '第1＋第2主成分で全体の {}% を説明しています。': 'PC1 and PC2 together explain {}% of the variance.',
-  '第{}主成分': 'PC{}',
+  '^第{}主成分': 'PC{}',
   '得点 {} / 攻撃 ': 'Goals {} / Attacks ',
   '標本{}件 ÷ 変数{}個 = {}倍。探索的に読むには十分です。': '{} samples ÷ {} variables = {}×. Enough for an exploratory read.',
   '標本{}件 ÷ 変数{}個 = {}倍。目安の5倍にやや届きません。大枠の傾向は読めますが、細かい順位は動きます。': '{} samples ÷ {} variables = {}×, a little short of the usual 5× guideline. Broad patterns hold, but fine rankings will move.',
@@ -95,6 +95,27 @@ export const EN_TPL = {
   '平均 {}秒 / n=': 'Average {}s / n=',
   '変数{}個・チーム×試合{}件。男女それぞれの中で標準化してから合わせています': '{} variables, {} team-match rows. Standardised within each gender before pooling',
   '枠内{}・枠外{}・ブロック': 'On target {} · off target {} · blocked',
+
+
+  /* ---- GK分析・選手の因子分析（追補） ---- */
+  '{} — 内訳': '{} — breakdown',
+  '{} → {}<br>失点 {} / 浴びた {}': '{} → {}<br>Conceded {} / faced {}',
+  '{} → {}<br>得点 {} / 本数 {}': '{} → {}<br>Goals {} / shots {}',
+  '{} 試合 / 被シュート {} 本（枠内 {}・枠外/ポスト {}）':
+    '{} matches / {} shots faced (on target {}, off target or post {})',
+  '{}箇所＋別枠を合計すると': ' zones plus the off-court group total ',
+  'コースが記録されている {} 本が対象<br>': '{} shots with a recorded placement<br>',
+  'コースが記録されている {} 本が対象<br>期待失点 {} / 実失点 {}':
+    '{} shots with a recorded placement<br>Expected {} / actual {}',
+  'コースが記録されているのは {} 本です。': 'and {} of those have a recorded placement.',
+  'このGKの枠内被シュートは {} 本。位置13 × コース9 = 117 セルなので、':
+    'This keeper faced {} shots on target. With 13 zones × 9 placements = 117 cells,',
+  'シュート{}本以上（{}人）': '{}+ shots ({})',
+  '期待失点 {} / 同じ {} 本での実失点 {}': 'Expected {} / actual {} over the same {} shots',
+  '期待失点 {} − 実失点 {} = {}': 'Expected {} − actual {} = {}',
+  '出場{}分以上の選手が対象です。': 'Players with at least {} minutes played are included.',
+  '変数{}個・選手{}人（{}）。': '{} variables, {} players ({}).',
+  '対象のシュート {} 本。うち枠内 {} 本で、': '{} shots in this selection, {} of them on target,',
 };
 
 export const EN = {
@@ -753,4 +774,118 @@ export const EN = {
   '法で分類しました。': ' clustering was used.',
   'の向き': ' direction',
   '太さと数字': 'thickness and number',
+
+  /* ---------- GK分析ページ ---------- */
+  'GK分析': 'Goalkeeping',
+  '前提 — このページで使うデータ': 'Before you read — the data behind this page',
+  '公式データではコースが枠内のシュートにしか付かないため、':
+    'The official data records a placement only for shots on target, so',
+  '枠外・ポストは位置別と速さ別までは出せますが、コース別には出せません。':
+    'off-target and post attempts can be broken down by zone and by tempo, but not by placement.',
+  '速さの帯はシュートの約85%に付きます（ハーフ最初の攻撃、':
+    'About 85% of shots carry a tempo band (the first attack of a half,',
+  'オフェンスリバウンドからの再シュート、時刻が取れなかった数本は帯が付きません）。':
+    'repeat shots after an offensive rebound and a few with no usable timestamp have none).',
+  '枠内シュートの決定率（位置 × コース・大会平均）':
+    'Conversion on shots on target (zone × placement, tournament average)',
+  '期待失点の基準になる表です。標本の薄いセルは位置別の平均へ縮小しています（経験ベイズ）。':
+    'This is the baseline for expected goals. Thin cells are shrunk towards the zone average (empirical Bayes).',
+  'セルの数字は「得点 / 本数」。': 'Each cell shows goals / shots.',
+  'GK一覧 — 平均的なGKとの差（GSAA）': 'Goalkeepers — goals saved above average (GSAA)',
+  'GSAA = 期待失点 − 実失点。浴びたシュート1本ずつについて「位置とコースが同じシュートを':
+    'GSAA = expected goals against − actual goals against. For every shot faced, we ask how many goals',
+  '大会平均のGKが受けたら何点入っていたか」を足し上げ、実際の失点を引いたものです。':
+    'an average keeper in this tournament would have conceded from the same zone and placement, then subtract what actually went in.',
+  'セーブ率は浴びたシュートの質に左右されますが、GSAAはそれを補正します。':
+    'Save percentage depends on the quality of the shots faced; GSAA corrects for it.',
+  '基準にはそのGK自身のぶんを除いた平均を使っています（自分の成績が基準に混ざらないように）。':
+    'The baseline leaves out the keeper’s own shots, so their record does not feed into their own benchmark.',
+  'GKを選択': 'Select a goalkeeper',
+  '期待失点': 'Expected',
+  '速攻セーブ率': 'Save % vs fast breaks',
+  '遅攻セーブ率': 'Save % vs set attacks',
+  '速さの帯別': 'By tempo band',
+  '帯が付かないシュート（ハーフ最初の攻撃など）はこの表に入りません。':
+    'Shots with no tempo band (the first attack of a half, for example) are not in this table.',
+  '帯なし（ハーフ最初の攻撃など）': 'No band (first attack of a half, etc.)',
+  'シュート位置別': 'By shot zone',
+  'コース別（枠内のみ）': 'By placement (shots on target only)',
+  'セルは「失点 / 浴びた本数」。色が濃い赤ほど決められている場所です。':
+    'Each cell shows goals conceded / shots faced. Darker red means more goals go in there.',
+  'ニア／ファー別': 'Near / far side',
+  'シュート位置から見て近いポスト側がニア、遠い側がファー。':
+    'Near is the post closer to the shooter, far is the one further away.',
+  '左右のウイング・サイドを合算できるので標本が倍になります。':
+    'This lets left and right be combined, which doubles the sample.',
+  '中央（センター・7m・速攻）は左右の別が無いため分けています。':
+    'Central shots (centre, 7m, fast breaks) have no near or far side, so they are listed separately.',
+  '位置 × コース': 'Zone × placement',
+  'どの位置からどのコースへ打たれているか。セルは「失点 / 浴びた本数」です。':
+    'Where shots come from and where they go. Each cell shows goals conceded / shots faced.',
+  'このGKが浴びた': 'This keeper',
+  '大会全体': 'Whole tournament',
+  '1セルあたり平均1本前後にしかなりません。個人の傾向として読むのは無理があります。':
+    'that is about one shot per cell, which is too thin to read as an individual tendency.',
+  '「大会全体」に切り替えると、どの位置からどのコースを狙うのが定石かが見えます。':
+    'Switch to “Whole tournament” to see which placements are standard from each zone.',
+  'この範囲にGKの記録がありません。': 'No goalkeeper records in this selection.',
+  '浴びた': 'Faced',
+  '<br>プラスが大きいほど、平均的なGKより多く止めた':
+    '<br>The higher the value, the more shots stopped than an average keeper would have',
+  '区分': 'Group',
+  'ファー上': 'Far high', 'ファー中': 'Far middle', 'ファー下': 'Far low',
+  'ニア上': 'Near high', 'ニア中': 'Near middle', 'ニア下': 'Near low',
+  '中央上': 'Centre high', '中央中': 'Centre middle', '中央下': 'Centre low',
+  '左上': 'Top L', '中上': 'Top C', '右上': 'Top R',
+  '左中': 'Mid L', '中央': 'Mid C', '右中': 'Mid R',
+  '左下': 'Bot L', '中下': 'Bot C', '右下': 'Bot R',
+
+  /* ---------- 選手の因子分析 ---------- */
+  '選手の因子分析': 'Factor analysis — players',
+  '全ポジションを混ぜてそのまま回すと、第1主成分が「ウイングらしさ ↔ バックらしさ」':
+    'Pooling every position would make the first component simply “wing-like ↔ back-like”,',
+  'になってしまいます。シュート位置・決定率・アシスト率のすべてがポジションで':
+    'because shot zone, conversion and assist rate all differ',
+  '構造的に違うためです。そこでウイング／サイドバック／センター／ポストの4群に分け、':
+    'structurally by position. So players are split into wings, side backs, centre backs and pivots,',
+  '群の中で標準化してから合わせています。GKはGK分析のページで扱います。':
+    'standardised within each group and then pooled. Goalkeepers are covered on the goalkeeping page.',
+  '4人に満たない群は標準化が効かないため外しています。':
+    'Groups with fewer than four players are left out, as standardising them is meaningless.',
+  '60分あたりの指標を使うので、出場時間が短い選手は入れていません。':
+    'The metrics are per 60 minutes, so players with little court time are excluded.',
+  '選手の位置': 'Where the players sit',
+  '第1主成分の上位5人': 'Top 5 on PC1',
+  '第1主成分の下位5人': 'Bottom 5 on PC1',
+  '群の中で標準化しているので、得点は「同じポジションの選手と比べて」という意味になります。':
+    'Because standardisation happens within each group, the scores mean “compared with players in the same position”.',
+  'ポジションをまたいだ絶対的な順位ではありません。': 'They are not an absolute ranking across positions.',
+  '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、':
+    '“Placement spread” cannot be computed for players with fewer than four shots with a recorded placement,',
+  '群の平均で埋めています。': 'so the group average is used for them.',
+  '主成分を計算できませんでした。選手数が足りません。':
+    'The components could not be computed: too few players.',
+  'サイドバック': 'Side back',
+  '60分あたり得点': 'Goals per 60 min',
+  '60分あたりシュート': 'Shots per 60 min',
+  '60分あたりアシスト': 'Assists per 60 min',
+  '60分あたりミス': 'Turnovers per 60 min',
+  '60分あたり守備関与': 'Blocks + steals per 60 min',
+  '60分あたり7m': '7m attempts per 60 min',
+  '被ブロック率': 'Blocked rate',
+  '速攻シュート比率': 'Fast-break share of shots',
+  'コースの散らばり': 'Placement spread',
+  '対象': 'Included',
+  '主成分 +側:': ' positive:',
+  '主成分 −側:': ' negative:',
+  '+側:': ' positive:',
+  '−側:': ' negative:',
+  '攻撃の': 'of attacks',
+  ' — アシスト連携': ' — assist network',
+  ' — ゴールマウス（枠内コース別）': ' — goal mouth (by placement)',
+  ' — 選手スタッツ': ' — player stats',
+  ' — 選手別イベント': ' — player timeline',
+  ' — 選手別イベント（記号）': ' — player timeline (symbols)',
+  '総得点': 'Total goals',
+  '枠内': 'On target',
 };

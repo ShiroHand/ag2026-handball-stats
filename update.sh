@@ -12,7 +12,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 echo "▶ 最新のリモートを取り込みます"
-git pull --rebase --quiet
+# --autostash: 未コミットの変更があっても止まらない（退避して pull 後に戻す）。
+# これが無いと、編集途中のファイルがあるだけで "cannot pull with rebase" で失敗する。
+git pull --rebase --autostash --quiet
 
 echo "▶ 公式APIから取得します"
 node scripts/fetch-data.mjs

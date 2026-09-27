@@ -429,6 +429,7 @@ const ASSIST_MAX_GAP = 15;
 
 function buildPlay(rawActions, teams) {
   const acts = (rawActions || []).map(normAction).sort((x, y) => x.o - y.o);
+  const gkOfShot = gkRegMap(acts, teams);
   const byOrg = {};
   for (const code of Object.keys(teams)) {
     byOrg[code] = {
@@ -495,6 +496,9 @@ function buildPlay(rawActions, teams) {
       role: roleOf(org, actor.bib), zone, result: S(a.r),
       goalZone: GZ[a.gz] ? a.gz : '', assistBib: asBib,
       score: `${a.sh}-${a.sa}`,
+      /* 浴びたGK（背番号）。GK分析ページで位置×コース×速さを掛け合わせるために持つ。
+         band（速攻/2次速攻/セット）は buildTransitions のあとで o を鍵に埋める。 */
+      gkBib: S(gkOfShot[a.gk]?.bib || ''), o: a.o, band: '',
     });
 
     if (!asBib) continue;
@@ -658,13 +662,14 @@ function buildTransitions(acts, orgs, teams) {
     if (!ACT_ZONE[a.ac]) continue;
     const t = a.r === 'GOAL' ? 'GOAL' : a.r === 'SAVE' ? 'SAVE'
             : (a.r === 'POST' || a.r === 'MISS' || a.r === 'BLC') ? 'POST' : '';
-    if (t) chain.push({org, type: t, ac: a.ac, sec: absSec(a.p, a.t),
+    if (t) chain.push({org, type: t, ac: a.ac, sec: absSec(a.p, a.t), o: a.o,
       bib: S(a.c[0]?.bib), gk: S(a.gk),
       as: link.ass.get(a.o) || '', st: link.steal.get(a.o) || ''});
   }
 
   /* 2) 持ち主が入れ替わったところを切り替えとして数える */
   const out = {}, players = {}, gks = {}, assists = {}, steals = {};
+  const bands = new Map();          // アクション番号 → 速さの帯（shots[] に配るため）
   orgs.forEach(o => {
     out[o] = {afterOwn: blankTrans(), afterOpp: blankTrans()};
     players[o] = {}; gks[o] = {}; assists[o] = {}; steals[o] = {};
@@ -708,6 +713,7 @@ function buildTransitions(acts, orgs, teams) {
 
     /* 3) 同じ判定を撃った選手と浴びたGKにも割り当てる */
     if (!band) continue;
+    bands.set(next.o, band);
     const shooter = pt(players, next.org, next.bib, false);
     if (shooter) { shooter[band].s++; shooter[band].g += scored; }
     const g = gkOf[next.gk];
@@ -725,7 +731,7 @@ function buildTransitions(acts, orgs, teams) {
     const st = pt(steals, next.org, next.st, false);
     if (st) { st[band].s++; st[band].g += scored; }
   }
-  return {team: out, players, gks, assists, steals};
+  return {team: out, players, gks, assists, steals, bands};
 }
 
 /* ---------------------------------------------------------------- 事前分布 */
@@ -907,6 +913,11 @@ function buildMatchFile(key, res, listed, rawActions) {
   const trans = buildTransitions(sorted, orgsAll, teams);
   for (const org of orgsAll) {
     teams[org].transitions = trans.team[org];
+    /* シュート1本ごとに速さの帯を配る（GK分析で掛け合わせるため） */
+    for (const sh of teams[org].shots || []) {
+      sh.band = trans.bands.get(sh.o) || '';
+      delete sh.o;                  // 帯を配ったら通し番号は不要
+    }
     /* 速さの内訳を選手レコードにも入れる（GK は浴びた側で数える） */
     for (const p of teams[org].players) {
       const a = trans.players[org]?.[p.bib];

@@ -53,13 +53,18 @@ const HAS_JP = /[぀-ヿ㐀-鿿]/;
    ・固定部分に日本語が無いルールは意味が無いうえ、他のルールを壊すので捨てる
    ・固定部分が長い（＝具体的な）ルールから順に当てる */
 const TPL_RULES = isEN ? Object.entries(EN_TPL)
-  .map(([ja, en]) => ({ja, en, lit: ja.split('{}').join('')}))
+  .map(([ja, en]) => ({ja, en, lit: ja.replace(/^\^/, '').split('{}').join('')}))
   .filter(r => HAS_JP.test(r.lit))
   .sort((a, b) => b.lit.length - a.lit.length)
   .map(({ja, en}) => {
-    const src = ja.split('{}')
-      .map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('([^<]{1,30}?)');
-    return {re: new RegExp(src, 'g'), en};
+    /* 先頭が ^ のルールは「文字列全体がこの形のときだけ」当てる。
+       固定部分が短いルール（第{}主成分 など）を部分一致させると、
+       たまたま同じ語を含む長い文を壊してしまうため。 */
+    const full = ja.startsWith('^');
+    const body = full ? ja.slice(1) : ja;
+    const src = body.split('{}')
+      .map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('([^<。]{1,60}?)');
+    return {re: new RegExp(full ? '^' + src + '$' : src, 'g'), en};
   }) : [];
 
 /* 辞書のキーを長い順に。最長一致で当てるため */

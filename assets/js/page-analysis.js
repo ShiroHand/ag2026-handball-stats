@@ -6,9 +6,10 @@
    ・主成分分析を「攻撃のみ」「守備のみ」「攻守まとめて」の3通り
    ========================================================================== */
 import {loadJSON, el, q, n, pct, renderChrome, renderFoot, setError, setBusy,
-        params, setParam, flagImg, CAT, sectionNav} from './core.js';
+        params, setParam, flagImg, photoImg, shortRole, CAT, sectionNav} from './core.js';
 import {scatter, legend, hbars} from './charts.js';
 import {standardize, kmeans, silhouette, pca, adequacy, mean} from './stats.js';
+import {PLAYER_VARS, POS_GROUP, buildPlayers, zWithinGroup} from './playerpca.js';
 import {selectedFromUrl, applyFilter, allMatchFilterCard} from './matchfilter.js';
 import {TRANS_KEYS, addTrans, emptyTrans} from './transitions.js';
 
@@ -257,6 +258,7 @@ function render() {
   app.append(pcaCard('att', '攻撃だけの因子分析', allPerGame, teams));
   app.append(pcaCard('def', '守備だけの因子分析', allPerGame, teams));
   app.append(pcaCard('all', '攻守をまとめた因子分析', allPerGame, teams));
+  app.append(playerPcaCard(list, other));
   sectionNav(app);
 }
 
@@ -492,4 +494,156 @@ function pcaCard(kind, title, perGame, teams) {
     el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
       text: '絶対値が 0.5 を超える変数が、その主成分の意味を決めています。緑＝プラス、赤＝マイナス。'}),
     el('div', {class: 'tbl-scroll'}, loadTable));
+}
+
+
+/* ---------- 選手の主成分分析 ---------- */
+/* しきい値。少ないシュートの選手を入れると割合指標がほとんど運になるが、
+   厳しくしすぎると標本が足りなくなる。大会の進み具合に合わせて自動で選び、
+   チップで手動でも切り替えられるようにしてある。null = 自動。 */
+const SHOT_STEPS = [10, 15, 20, 30];
+const MIN_MINUTES = 40;
+let minShots = null;
+
+function playerPcaCard(list, other) {
+  /* チーム分析と同じで、標本を増やすため両カテゴリを使い、
+     標準化はポジション群の中（＝カテゴリもまたがない）で行う */
+  const pool = buildPlayers([...list, ...other]).filter(p => p.min >= MIN_MINUTES);
+  const vars = PLAYER_VARS;
+  const countAt = (th) => pool.filter(p => p.shots >= th).length;
+  /* 変数の4倍の人数が残る中で、いちばん厳しいしきい値を既定にする */
+  const auto = [...SHOT_STEPS].reverse().find(th => countAt(th) >= vars.length * 4) || SHOT_STEPS[0];
+  const th = minShots || auto;
+  const rowsAll = pool.filter(p => p.shots >= th);
+
+  const chips = el('div', {class: 'chips'});
+  SHOT_STEPS.forEach(v => chips.append(el('button', {
+    class: 'chip' + (th === v ? ' on' : ''),
+    text: `シュート${v}本以上（${countAt(v)}人）`,
+    onclick: () => { minShots = v; render(); },
+  })));
+
+  const head = el('div', {class: 'card'},
+    el('h2', {text: '選手の因子分析'}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
+      text: '全ポジションを混ぜてそのまま回すと、第1主成分が「ウイングらしさ ↔ バックらしさ」'
+        + 'になってしまいます。シュート位置・決定率・アシスト率のすべてがポジションで'
+        + '構造的に違うためです。そこでウイング／サイドバック／センター／ポストの4群に分け、'
+        + '群の中で標準化してから合わせています。GKはGK分析のページで扱います。'}),
+    el('div', {class: 'row', style: {gap: '10px', marginBottom: '10px'}},
+      el('span', {class: 'muted', style: {fontSize: '12px'}, text: '対象'}), chips),
+    el('div', {class: 'sub', style: {margin: '0 0 6px'},
+      text: `出場${MIN_MINUTES}分以上の選手が対象です。`
+        + '60分あたりの指標を使うので、出場時間が短い選手は入れていません。'}));
+
+  const {z, rows} = zWithinGroup(rowsAll, vars);
+  const adq = adequacy(rows.length, vars.length);
+  if (rows.length < vars.length + 2 || !z.length) {
+    head.append(el('div', {class: 'notice', text: adq.text}));
+    return head;
+  }
+  const P = pca(z);
+  if (!P) {
+    head.append(el('div', {class: 'notice', text: '主成分を計算できませんでした。選手数が足りません。'}));
+    return head;
+  }
+
+  const counts = POS_GROUP.map(g => `${g.label} ${rows.filter(r => r.group === g.key).length}`)
+    .join('・');
+  head.append(el('div', {class: 'sub', style: {marginBottom: '8px'},
+    text: `変数${vars.length}個・選手${rows.length}人（${counts}）。`
+      + '4人に満たない群は標準化が効かないため外しています。'}));
+  head.append(el('div', {class: 'notice notice-' + adq.level, style: {marginBottom: '12px'}, text: adq.text}));
+
+  const top = (k, sign) => vars.map((v, j) => ({v, l: P.loadings[k][j]}))
+    .filter(x => (sign > 0 ? x.l > 0.35 : x.l < -0.35))
+    .sort((a, b) => Math.abs(b.l) - Math.abs(a.l)).slice(0, 3).map(x => x.v.label).join('・') || '—';
+
+  const COLORS = {wing: CAT[0], back: CAT[2], cb: CAT[1], pivot: CAT[3]};
+  const pts = rows.map((r, i) => ({
+    x: +P.scores[i][0].toFixed(3), y: +P.scores[i][1].toFixed(3),
+    label: r.bib + ' ' + r.name, color: COLORS[r.group] || CAT[5], r: 6,
+    tip: `<b>${r.name}</b>（${r.code}・${shortRole(r.role)}）<br>`
+      + `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本（${pct(r.goals, r.shots)}）<br>`
+      + `第1主成分 ${P.scores[i][0].toFixed(2)} / 第2主成分 ${P.scores[i][1].toFixed(2)}`,
+  }));
+
+  /* 負荷量の表 */
+  const loadTable = el('table', {});
+  loadTable.append(el('thead', {}, el('tr', {},
+    ['変数', '第1主成分', '第2主成分'].map(h => el('th', {text: h})))));
+  const ltb = el('tbody', {});
+  vars.map((v, j) => ({v, l1: P.loadings[0][j], l2: P.loadings[1][j]}))
+    .sort((a, b) => Math.abs(b.l1) - Math.abs(a.l1))
+    .forEach(r => ltb.append(el('tr', {},
+      el('td', {text: r.v.label}),
+      loadCell(r.l1), loadCell(r.l2))));
+  loadTable.append(ltb);
+
+  /* 主成分得点の上位・下位 */
+  const ranked = rows.map((r, i) => ({r, s: P.scores[i][0]})).sort((a, b) => b.s - a.s);
+  const listOf = (arr) => el('div', {class: 'tbl-scroll'}, (() => {
+    const t2 = el('table', {});
+    t2.append(el('thead', {}, el('tr', {},
+      ['選手', 'チーム', 'Pos', '試合', '分', '得点', '決定率', '第1主成分'].map(h => el('th', {text: h})))));
+    const tb2 = el('tbody', {});
+    arr.forEach(({r, s}) => tb2.append(el('tr', {},
+      el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
+        photoImg(r.reg, r.name, 'photo sm'), el('span', {text: r.name}))),
+      el('td', {text: r.code}),
+      el('td', {text: shortRole(r.role)}),
+      el('td', {class: 'num', text: r.games}),
+      el('td', {class: 'num', text: Math.round(r.min)}),
+      el('td', {class: 'num', text: r.goals}),
+      el('td', {class: 'num', text: pct(r.goals, r.shots)}),
+      el('td', {class: 'num', style: {fontWeight: 700}, text: s.toFixed(2)}))));
+    t2.append(tb2);
+    return t2;
+  })());
+
+  head.append(
+    el('div', {class: 'grid g2'},
+      el('div', {},
+        el('div', {class: 'sec-title', text: '各主成分が説明する情報量'}),
+        hbars(P.ratio.slice(0, 5).map((r, i) => ({label: `第${i + 1}主成分`, v: +(r * 100).toFixed(1)})),
+          {valueKey: 'v', labelKey: 'label', color: CAT[1], fmtv: (v) => v + '%', labelWidth: '92px'}),
+        el('div', {class: 'sub', style: {marginTop: '6px'},
+          text: `第1＋第2主成分で全体の ${(P.cumulative[1] * 100).toFixed(0)}% を説明しています。`}),
+        el('div', {class: 'sec-title', style: {marginTop: '14px'}, text: '軸の意味'}),
+        el('div', {class: 'axis-read'},
+          el('div', {}, el('b', {text: '第1主成分 +側: '}), top(0, 1)),
+          el('div', {}, el('b', {text: '第1主成分 −側: '}), top(0, -1)),
+          el('div', {style: {marginTop: '6px'}}, el('b', {text: '第2主成分 +側: '}), top(1, 1)),
+          el('div', {}, el('b', {text: '第2主成分 −側: '}), top(1, -1)))),
+      el('div', {},
+        el('div', {class: 'sec-title', text: '選手の位置'}),
+        scatter(pts, {width: 560, height: 420, xTitle: '第1主成分', yTitle: '第2主成分',
+          quadrants: {x: 0, y: 0, labels: []}}),
+        legend(POS_GROUP.map(g => ({label: g.label, color: COLORS[g.key]}))))),
+    el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '負荷量（変数と主成分の相関）'}),
+    el('div', {class: 'tbl-scroll'}, loadTable),
+    el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '第1主成分の上位5人'}),
+    listOf(ranked.slice(0, 5)),
+    el('div', {class: 'sec-title', style: {marginTop: '12px'}, text: '第1主成分の下位5人'}),
+    listOf(ranked.slice(-5).reverse()),
+    el('div', {class: 'sub', style: {marginTop: '10px'},
+      text: '群の中で標準化しているので、得点は「同じポジションの選手と比べて」という意味になります。'
+        + 'ポジションをまたいだ絶対的な順位ではありません。'
+        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
+        + '群の平均で埋めています。'}));
+  return head;
+}
+
+function loadCell(x) {
+  const td = el('td', {class: 'num'});
+  const bar = el('span', {class: 'load-bar'});
+  const fill = el('span', {class: 'load-fill'});
+  fill.style.width = Math.abs(x) * 50 + '%';
+  fill.style.background = x >= 0 ? 'var(--good)' : 'var(--bad)';
+  fill.style.marginLeft = x >= 0 ? '50%' : (50 - Math.abs(x) * 50) + '%';
+  bar.append(fill);
+  td.append(el('div', {class: 'row', style: {gap: '6px', flexWrap: 'nowrap'}},
+    bar, el('span', {style: {minWidth: '38px', fontWeight: Math.abs(x) > 0.5 ? 700 : 400},
+      text: x.toFixed(2)})));
+  return td;
 }
