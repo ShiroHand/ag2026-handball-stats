@@ -138,6 +138,15 @@ const ACT_ZONE = {
 const GZ = {TL: [0, 0], TC: [0, 1], TR: [0, 2], ML: [1, 0], MC: [1, 1], MR: [1, 2],
   BL: [2, 0], BC: [2, 1], BR: [2, 2]};
 
+/* 公式記録のポジションが実態と違う選手の補正。
+   現地で確認した内容を優先する。キーは「チーム|背番号」。
+   例: バーレーンの95番はLB、99番はCB（公式記録はどちらもP）。 */
+const ROLE_FIX = {
+  'BRN|95': 'LB',
+  'BRN|99': 'CB',
+};
+const fixRole = (org, bib, role) => ROLE_FIX[`${org}|${bib}`] || role;
+
 /* 選手ポジションの正規化（連携図のノード） */
 const ROLE_NODE = {
   GK: 'GK', G: 'GK',
@@ -849,7 +858,7 @@ function buildMatchFile(key, res, listed, rawActions) {
           bib: S(m.Bib),
           name: S(m.Name),
           nameS: S(m.NameS || m.Name),
-          role: S(m.Position),
+          role: fixRole(c.Org, S(m.Bib), S(m.Position)),
           func: S(m.Function),
           captain: !!m.Captain,
           isGK: /^(gk|g)$/i.test(S(m.Position)) || /goalkeeper/i.test(S(m.Position)) || !!m.InFieldGK || !!m.Stats?.GK_SHOTS || !!m.Stats?.ST_GK_SHOTS,

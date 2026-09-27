@@ -277,7 +277,7 @@ export const POSITIONS = [
 export const POS_LABEL = Object.fromEntries(POSITIONS.map(p => [p.key, p.label]));
 /* コート図に出ない攻撃フェーズも含めた全ゾーン名 */
 export const ZONE_LABEL = {
-  ...POS_LABEL, BT: 'ブレイクスルー', FB: '速攻', FLY: 'フライング',
+  ...POS_LABEL, BT: 'ブレイクスルー', FB: '速攻', FLY: 'スカイシュート',
 };
 
 /* 選手ポジション表記 */

@@ -9,7 +9,8 @@ import {loadJSON, el, q, n, pct, renderChrome, renderFoot, setError, setBusy,
         params, setParam, flagImg, photoImg, shortRole, CAT, sectionNav} from './core.js';
 import {scatter, legend, hbars} from './charts.js';
 import {standardize, kmeans, silhouette, pca, adequacy, mean} from './stats.js';
-import {PLAYER_VARS, POS_GROUP, buildPlayers, zWithinGroup} from './playerpca.js';
+import {PLAYER_VARS, POS_GROUP, GK_VARS, buildPlayers, buildGKs,
+        zWithinGroup, zPlain} from './playerpca.js';
 import {selectedFromUrl, applyFilter, allMatchFilterCard} from './matchfilter.js';
 import {TRANS_KEYS, addTrans, emptyTrans} from './transitions.js';
 
@@ -258,7 +259,8 @@ function render() {
   app.append(pcaCard('att', '攻撃だけの因子分析', allPerGame, teams));
   app.append(pcaCard('def', '守備だけの因子分析', allPerGame, teams));
   app.append(pcaCard('all', '攻守をまとめた因子分析', allPerGame, teams));
-  app.append(playerPcaCard(list, other));
+  app.append(playerPcaCard(list));
+  app.append(gkPcaCard(list));
   sectionNav(app);
 }
 
@@ -497,95 +499,144 @@ function pcaCard(kind, title, perGame, teams) {
 }
 
 
-/* ---------- 選手の主成分分析 ---------- */
-/* しきい値。少ないシュートの選手を入れると割合指標がほとんど運になるが、
-   厳しくしすぎると標本が足りなくなる。大会の進み具合に合わせて自動で選び、
-   チップで手動でも切り替えられるようにしてある。null = 自動。 */
-const SHOT_STEPS = [10, 15, 20, 30];
+/* ---------- 選手・GKの主成分分析 ---------- */
+/* しきい値は大会の進み具合に合わせて自動で選ぶ。null = 自動。 */
+const SHOT_STEPS = [8, 10, 15, 20];
 const MIN_MINUTES = 40;
 let minShots = null;
+let posMode = 'all';          // 'all'（群内標準化）または POS_GROUP の key
 
-function playerPcaCard(list, other) {
-  /* チーム分析と同じで、標本を増やすため両カテゴリを使い、
-     標準化はポジション群の中（＝カテゴリもまたがない）で行う */
-  const pool = buildPlayers([...list, ...other]).filter(p => p.min >= MIN_MINUTES);
+function playerPcaCard(list) {
+  /* 男女は水準も役割の使われ方も違うので、選んだカテゴリの中だけで分析する */
+  const pool = buildPlayers(list).filter(p => p.min >= MIN_MINUTES);
   const vars = PLAYER_VARS;
-  const countAt = (th) => pool.filter(p => p.shots >= th).length;
-  /* 変数の4倍の人数が残る中で、いちばん厳しいしきい値を既定にする */
-  const auto = [...SHOT_STEPS].reverse().find(th => countAt(th) >= vars.length * 4) || SHOT_STEPS[0];
+  const inPos = (p) => (posMode === 'all' ? true : p.group === posMode);
+  const countAt = (t2) => pool.filter(p => p.shots >= t2 && inPos(p)).length;
+  const need = posMode === 'all' ? vars.length * 4 : vars.length * 2;
+  const auto = [...SHOT_STEPS].reverse().find(t2 => countAt(t2) >= need) || SHOT_STEPS[0];
   const th = minShots || auto;
-  const rowsAll = pool.filter(p => p.shots >= th);
+  const rowsAll = pool.filter(p => p.shots >= th && inPos(p));
 
-  const chips = el('div', {class: 'chips'});
-  SHOT_STEPS.forEach(v => chips.append(el('button', {
+  const posChips = el('div', {class: 'chips'});
+  [['all', 'すべて（群内標準化）'], ...POS_GROUP.map(g => [g.key, g.label])].forEach(([k, label]) => {
+    posChips.append(el('button', {
+      class: 'chip' + (posMode === k ? ' on' : ''),
+      text: label,
+      onclick: () => { posMode = k; minShots = null; render(); },
+    }));
+  });
+  const shotChips = el('div', {class: 'chips'});
+  SHOT_STEPS.forEach(v => shotChips.append(el('button', {
     class: 'chip' + (th === v ? ' on' : ''),
     text: `シュート${v}本以上（${countAt(v)}人）`,
     onclick: () => { minShots = v; render(); },
   })));
 
-  const head = el('div', {class: 'card'},
+  const box = el('div', {class: 'card'},
     el('h2', {text: '選手の因子分析'}),
     el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
-      text: '全ポジションを混ぜてそのまま回すと、第1主成分が「ウイングらしさ ↔ バックらしさ」'
-        + 'になってしまいます。シュート位置・決定率・アシスト率のすべてがポジションで'
-        + '構造的に違うためです。そこでウイング／サイドバック／センター／ポストの4群に分け、'
-        + '群の中で標準化してから合わせています。GKはGK分析のページで扱います。'}),
+      text: '選んだカテゴリ（男子／女子）の中だけで分析しています。'
+        + '「すべて」を選んだときは、ウイング／サイドバック／センター／ポストの4群に分け、'
+        + '群の中で標準化してから合わせます。混ぜてそのまま回すと第1主成分が'
+        + '「ウイングらしさ ↔ バックらしさ」になってしまうためです。'
+        + 'ポジションを1つ選べば、その中だけで主成分を出します。'
+        + 'GKは下の「GKの因子分析」で扱います。'}),
+    el('div', {class: 'row', style: {gap: '10px', marginBottom: '6px'}},
+      el('span', {class: 'muted', style: {fontSize: '12px'}, text: 'ポジション'}), posChips),
     el('div', {class: 'row', style: {gap: '10px', marginBottom: '10px'}},
-      el('span', {class: 'muted', style: {fontSize: '12px'}, text: '対象'}), chips),
-    el('div', {class: 'sub', style: {margin: '0 0 6px'},
+      el('span', {class: 'muted', style: {fontSize: '12px'}, text: '対象'}), shotChips),
+    el('div', {class: 'sub', style: {margin: '0 0 8px'},
       text: `出場${MIN_MINUTES}分以上の選手が対象です。`
         + '60分あたりの指標を使うので、出場時間が短い選手は入れていません。'}));
 
-  const {z, rows} = zWithinGroup(rowsAll, vars);
+  const {z, rows} = posMode === 'all'
+    ? zWithinGroup(rowsAll, vars)
+    : zPlain(rowsAll, vars);
+  return finishPca(box, z, rows, vars, {
+    colorBy: 'group',
+    note: posMode === 'all'
+      ? '群の中で標準化しているので、得点は「同じポジションの選手と比べて」という意味になります。'
+        + 'ポジションをまたいだ絶対的な順位ではありません。'
+        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
+        + '群の平均で埋めています。'
+      : 'このポジションの選手だけで標準化しています。'
+        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
+        + '平均で埋めています。',
+    empty: '主成分を計算できませんでした。選手数が足りません。',
+    counts: posMode === 'all'
+      ? POS_GROUP.map(g => `${g.label} ${rows.filter(r => r.group === g.key).length}`).join('・')
+      : '',
+  });
+}
+
+function gkPcaCard(list) {
+  const rows0 = buildGKs(list, gender).filter(g => g.sum.onTarget >= 20);
+  const vars = GK_VARS;
+  const box = el('div', {class: 'card'},
+    el('h2', {text: 'GKの因子分析'}),
+    el('div', {class: 'sub', style: {margin: '-4px 0 10px'},
+      text: '枠内シュートを20本以上浴びたGKが対象です。選んだカテゴリの中だけで分析しています。'
+        + '部分集合のセーブ率（速攻だけ、上段だけ、など）は本数が少ないので、'
+        + 'カテゴリの平均へ縮小してから使っています（経験ベイズ）。'
+        + 'そうしないと「速攻を2本浴びて2本止めた＝100%」が最大の分散になってしまいます。'}));
+  const {z, rows} = zPlain(rows0, vars);
+  return finishPca(box, z, rows, vars, {
+    colorBy: 'code',
+    note: 'GKは人数が少ないので、負荷量の細かい順位は試合が増えると動きます。'
+      + '軸の向き（どういうGKが+側か）を読む程度にしてください。'
+      + 'GSAAは「平均的なGKなら入っていた点数 − 実際の失点」で、GK分析のページと同じ計算です。',
+    empty: '主成分を計算できませんでした。GKの人数が足りません。',
+    counts: '',
+    extra: (r) => `${r.games}試合 / 被シュート${r.faced}本 / セーブ率 ${pct(r.sum.saves, r.sum.onTarget)}`,
+  });
+}
+
+/* 主成分の描画は選手もGKも同じなので共通化する */
+const GRP_COLORS = {wing: CAT[0], back: CAT[2], cb: CAT[1], pivot: CAT[3]};
+
+function finishPca(box, z, rows, vars, opt) {
   const adq = adequacy(rows.length, vars.length);
   if (rows.length < vars.length + 2 || !z.length) {
-    head.append(el('div', {class: 'notice', text: adq.text}));
-    return head;
+    box.append(el('div', {class: 'notice', text: adq.text}));
+    return box;
   }
   const P = pca(z);
   if (!P) {
-    head.append(el('div', {class: 'notice', text: '主成分を計算できませんでした。選手数が足りません。'}));
-    return head;
+    box.append(el('div', {class: 'notice', text: opt.empty}));
+    return box;
   }
-
-  const counts = POS_GROUP.map(g => `${g.label} ${rows.filter(r => r.group === g.key).length}`)
-    .join('・');
-  head.append(el('div', {class: 'sub', style: {marginBottom: '8px'},
-    text: `変数${vars.length}個・選手${rows.length}人（${counts}）。`
-      + '4人に満たない群は標準化が効かないため外しています。'}));
-  head.append(el('div', {class: 'notice notice-' + adq.level, style: {marginBottom: '12px'}, text: adq.text}));
+  box.append(el('div', {class: 'sub', style: {marginBottom: '8px'},
+    text: `変数${vars.length}個・${rows.length}人`
+      + (opt.counts ? `（${opt.counts}）` : '') + '。'}));
+  box.append(el('div', {class: 'notice notice-' + adq.level, style: {marginBottom: '12px'}, text: adq.text}));
 
   const top = (k, sign) => vars.map((v, j) => ({v, l: P.loadings[k][j]}))
     .filter(x => (sign > 0 ? x.l > 0.35 : x.l < -0.35))
     .sort((a, b) => Math.abs(b.l) - Math.abs(a.l)).slice(0, 3).map(x => x.v.label).join('・') || '—';
 
-  const COLORS = {wing: CAT[0], back: CAT[2], cb: CAT[1], pivot: CAT[3]};
   const pts = rows.map((r, i) => ({
     x: +P.scores[i][0].toFixed(3), y: +P.scores[i][1].toFixed(3),
-    label: r.bib + ' ' + r.name, color: COLORS[r.group] || CAT[5], r: 6,
+    label: r.bib + ' ' + r.name,
+    color: opt.colorBy === 'group' ? (GRP_COLORS[r.group] || CAT[5]) : CAT[0], r: 6,
     tip: `<b>${r.name}</b>（${r.code}・${shortRole(r.role)}）<br>`
-      + `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本（${pct(r.goals, r.shots)}）<br>`
-      + `第1主成分 ${P.scores[i][0].toFixed(2)} / 第2主成分 ${P.scores[i][1].toFixed(2)}`,
+      + (opt.extra ? opt.extra(r) : `${r.games}試合 ${Math.round(r.min)}分 / ${r.goals}点 ${r.shots}本（${pct(r.goals, r.shots)}）`)
+      + `<br>第1主成分 ${P.scores[i][0].toFixed(2)} / 第2主成分 ${P.scores[i][1].toFixed(2)}`,
   }));
 
-  /* 負荷量の表 */
   const loadTable = el('table', {});
   loadTable.append(el('thead', {}, el('tr', {},
     ['変数', '第1主成分', '第2主成分'].map(h => el('th', {text: h})))));
   const ltb = el('tbody', {});
   vars.map((v, j) => ({v, l1: P.loadings[0][j], l2: P.loadings[1][j]}))
     .sort((a, b) => Math.abs(b.l1) - Math.abs(a.l1))
-    .forEach(r => ltb.append(el('tr', {},
-      el('td', {text: r.v.label}),
-      loadCell(r.l1), loadCell(r.l2))));
+    .forEach(r => ltb.append(el('tr', {}, el('td', {text: r.v.label}), loadCell(r.l1), loadCell(r.l2))));
   loadTable.append(ltb);
 
-  /* 主成分得点の上位・下位 */
   const ranked = rows.map((r, i) => ({r, s: P.scores[i][0]})).sort((a, b) => b.s - a.s);
-  const listOf = (arr) => el('div', {class: 'tbl-scroll'}, (() => {
+  const listOf = (arr) => {
     const t2 = el('table', {});
     t2.append(el('thead', {}, el('tr', {},
-      ['選手', 'チーム', 'Pos', '試合', '分', '得点', '決定率', '第1主成分'].map(h => el('th', {text: h})))));
+      ['選手', 'チーム', 'Pos', '試合', '第1主成分'].map(h => el('th', {text: h})))));
     const tb2 = el('tbody', {});
     arr.forEach(({r, s}) => tb2.append(el('tr', {},
       el('td', {}, el('div', {class: 'row', style: {gap: '7px', flexWrap: 'nowrap'}},
@@ -593,15 +644,12 @@ function playerPcaCard(list, other) {
       el('td', {text: r.code}),
       el('td', {text: shortRole(r.role)}),
       el('td', {class: 'num', text: r.games}),
-      el('td', {class: 'num', text: Math.round(r.min)}),
-      el('td', {class: 'num', text: r.goals}),
-      el('td', {class: 'num', text: pct(r.goals, r.shots)}),
       el('td', {class: 'num', style: {fontWeight: 700}, text: s.toFixed(2)}))));
     t2.append(tb2);
-    return t2;
-  })());
+    return el('div', {class: 'tbl-scroll'}, t2);
+  };
 
-  head.append(
+  box.append(
     el('div', {class: 'grid g2'},
       el('div', {},
         el('div', {class: 'sec-title', text: '各主成分が説明する情報量'}),
@@ -619,19 +667,17 @@ function playerPcaCard(list, other) {
         el('div', {class: 'sec-title', text: '選手の位置'}),
         scatter(pts, {width: 560, height: 420, xTitle: '第1主成分', yTitle: '第2主成分',
           quadrants: {x: 0, y: 0, labels: []}}),
-        legend(POS_GROUP.map(g => ({label: g.label, color: COLORS[g.key]}))))),
+        opt.colorBy === 'group'
+          ? legend(POS_GROUP.map(g => ({label: g.label, color: GRP_COLORS[g.key]})))
+          : null)),
     el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '負荷量（変数と主成分の相関）'}),
     el('div', {class: 'tbl-scroll'}, loadTable),
     el('div', {class: 'sec-title', style: {marginTop: '16px'}, text: '第1主成分の上位5人'}),
     listOf(ranked.slice(0, 5)),
     el('div', {class: 'sec-title', style: {marginTop: '12px'}, text: '第1主成分の下位5人'}),
     listOf(ranked.slice(-5).reverse()),
-    el('div', {class: 'sub', style: {marginTop: '10px'},
-      text: '群の中で標準化しているので、得点は「同じポジションの選手と比べて」という意味になります。'
-        + 'ポジションをまたいだ絶対的な順位ではありません。'
-        + '「コースの散らばり」はコースが記録されたシュートが4本未満の選手では出せないため、'
-        + '群の平均で埋めています。'}));
-  return head;
+    el('div', {class: 'sub', style: {marginTop: '10px'}, text: opt.note}));
+  return box;
 }
 
 function loadCell(x) {

@@ -104,6 +104,7 @@ export const EN_TPL = {
   '{} 試合 / 被シュート {} 本（枠内 {}・枠外/ポスト {}）':
     '{} matches / {} shots faced (on target {}, off target or post {})',
   '{}箇所＋別枠を合計すると': ' zones plus the off-court group total ',
+  '変数{}個・{}人': '{} variables, {} players',
   'コースが記録されている {} 本が対象<br>': '{} shots with a recorded placement<br>',
   'コースが記録されている {} 本が対象<br>期待失点 {} / 実失点 {}':
     '{} shots with a recorded placement<br>Expected {} / actual {}',
@@ -831,6 +832,47 @@ export const EN = {
   'この範囲にGKの記録がありません。': 'No goalkeeper records in this selection.',
   '浴びた': 'Faced',
   'すべて': 'All',
+  'スカイシュート': 'Kempa',
+  'スカイシュート・無人ゴール': 'Kempa / empty goal',
+  'すべて（群内標準化）': 'All (standardised within group)',
+  'ポジション': 'Position',
+  'GKの因子分析': 'Factor analysis — goalkeepers',
+  '選んだカテゴリ（男子／女子）の中だけで分析しています。':
+    'The analysis runs inside the selected category (men or women) only.',
+  '「すべて」を選んだときは、ウイング／サイドバック／センター／ポストの4群に分け、':
+    'With “All” selected, players are split into wings, side backs, centre backs and pivots,',
+  '群の中で標準化してから合わせます。混ぜてそのまま回すと第1主成分が':
+    'standardised within each group and then pooled. Pooling them raw would make the first component',
+  '「ウイングらしさ ↔ バックらしさ」になってしまうためです。':
+    'simply “wing-like ↔ back-like”.',
+  'ポジションを1つ選べば、その中だけで主成分を出します。':
+    'Pick a single position to run the components inside that group alone.',
+  'GKは下の「GKの因子分析」で扱います。': 'Goalkeepers are covered in the card below.',
+  'このポジションの選手だけで標準化しています。': 'Standardised within this position only.',
+  '平均で埋めています。': 'so the average is used for them.',
+  '枠内シュートを20本以上浴びたGKが対象です。選んだカテゴリの中だけで分析しています。':
+    'Goalkeepers who faced at least 20 shots on target, within the selected category only.',
+  '部分集合のセーブ率（速攻だけ、上段だけ、など）は本数が少ないので、':
+    'Save rates on subsets (fast breaks only, high shots only, and so on) rest on few shots, so they are',
+  'カテゴリの平均へ縮小してから使っています（経験ベイズ）。':
+    'shrunk towards the category average first (empirical Bayes).',
+  'そうしないと「速攻を2本浴びて2本止めた＝100%」が最大の分散になってしまいます。':
+    'Without that, “faced two fast breaks and stopped both = 100%” would dominate the variance.',
+  'GKは人数が少ないので、負荷量の細かい順位は試合が増えると動きます。':
+    'There are few goalkeepers, so the fine ordering of the loadings will move as more matches are played.',
+  '軸の向き（どういうGKが+側か）を読む程度にしてください。':
+    'Read the direction of the axes rather than the exact positions.',
+  'GSAAは「平均的なGKなら入っていた点数 − 実際の失点」で、GK分析のページと同じ計算です。':
+    'GSAA is expected goals against minus actual goals against, the same calculation as on the goalkeeping page.',
+  '主成分を計算できませんでした。GKの人数が足りません。':
+    'The components could not be computed: too few goalkeepers.',
+  '速攻のセーブ率': 'Save % vs fast breaks',
+  'セット攻撃のセーブ率': 'Save % vs set attacks',
+  '上段のセーブ率': 'Save % on high shots',
+  '下段のセーブ率': 'Save % on low shots',
+  '9mのセーブ率': 'Save % vs 9m',
+  '6m・ウイングのセーブ率': 'Save % vs 6m and wings',
+  '被シュート100本あたりGSAA': 'GSAA per 100 shots faced',
   'フライング・無人ゴール': 'Flying shot / empty goal',
   '帯が付かないシュート（ハーフの最初の攻撃、オフェンスリバウンドからの再シュートなど）は':
     'Shots with no tempo band (the first attack of a half, repeat shots after an offensive rebound and so on)',

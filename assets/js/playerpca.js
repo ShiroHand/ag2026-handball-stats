@@ -16,6 +16,7 @@
    ========================================================================== */
 import {n, pct} from './core.js';
 import {standardize} from './stats.js';
+import {buildRef, gkSummary} from './gkstats.js';
 
 export const POS_GROUP = [
   {key: 'wing', label: 'ウイング', roles: ['LW', 'RW']},
@@ -139,4 +140,107 @@ export function zWithinGroup(rows, vars) {
   }
   const keep = kept.sort((a, b) => a - b);
   return {z: keep.map(i => out[i]), rows: keep.map(i => rows[i])};
+}
+
+
+/* ---------------------------------------------------------------- 単純な標準化 */
+/* ポジションを1つに絞ったときや、GKのように群分けが要らないときに使う。 */
+export function zPlain(rows, vars) {
+  if (!rows.length) return {z: [], rows: []};
+  const fill = {};
+  for (const v of vars) {
+    const xs = rows.map(r => r.vals[v.k]).filter(x => Number.isFinite(x));
+    fill[v.k] = xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
+  }
+  const mat = rows.map(r => vars.map(v => {
+    const x = r.vals[v.k];
+    return Number.isFinite(x) ? x : fill[v.k];
+  }));
+  const {z} = standardize(mat);
+  return {z, rows};
+}
+
+/* ---------------------------------------------------------------- GK */
+export const GK_VARS = [
+  {k: 'savePct', label: 'セーブ率'},
+  {k: 'saveFast', label: '速攻のセーブ率'},
+  {k: 'saveSet', label: 'セット攻撃のセーブ率'},
+  {k: 'saveHigh', label: '上段のセーブ率'},
+  {k: 'saveLow', label: '下段のセーブ率'},
+  {k: 'saveNine', label: '9mのセーブ率'},
+  {k: 'saveClose', label: '6m・ウイングのセーブ率'},
+  {k: 'gsaa100', label: '被シュート100本あたりGSAA'},
+];
+
+const HIGH = new Set(['TL', 'TC', 'TR']);
+const LOW = new Set(['BL', 'BC', 'BR']);
+
+/* 部分集合のセーブ率は本数が少ないので縮小する。
+   縮小の行き先は「その選手自身の全体セーブ率」ではなく「カテゴリの平均」にする。
+   自分の平均へ寄せると、どの部分集合もセーブ率そのものと強く相関してしまい、
+   主成分が1本（＝総合力）にほぼ潰れてしまうため。
+   k=8 は「8本ぶんはカテゴリ平均とみなす」という重み。 */
+const SUB_K = 8;
+/* 全体セーブ率も、カテゴリの平均へ軽く縮小する。 */
+const ALL_K = 20;
+
+export function buildGKs(list, gender) {
+  const use = list.filter(f => f.gender === gender);
+  const all = [];
+  const byGK = new Map();
+  for (const f of use) {
+    for (const code of Object.keys(f.teams)) {
+      const me = f.teams[code], op = f.teams[code === f.home ? f.away : f.home];
+      if (!me || !op) continue;
+      for (const s of me.shots || []) all.push(s);
+      for (const p of me.players || []) {
+        if (!/^(gk|g)$/i.test(p.role || '')) continue;
+        const key = code + '|' + p.bib;
+        const cur = byGK.get(key) || {key, code, bib: p.bib, gender: f.gender,
+          name: p.nameS || p.name || p.bib, role: 'GK', reg: p.reg || '',
+          games: 0, shots: []};
+        if (!cur.reg && p.reg) cur.reg = p.reg;
+        const faced = (op.shots || []).filter(x => x.gkBib === p.bib);
+        if (!faced.length) continue;
+        cur.games++; cur.shots.push(...faced);
+        byGK.set(key, cur);
+      }
+    }
+  }
+  const ref = buildRef(all);
+  const rows = [...byGK.values()].map(g => ({...g, sum: gkSummary(g.shots, ref)}))
+    .filter(g => g.sum.onTarget > 0);
+  if (!rows.length) return [];
+
+  /* カテゴリ全体のセーブ率（縮小の行き先） */
+  let tS = 0, tN = 0;
+  rows.forEach(r => { tS += r.sum.saves; tN += r.sum.onTarget; });
+  const base = tN ? tS / tN : 0.3;
+
+  const rate = (saves, onT, toward, k) => (onT + k > 0 ? (saves + k * toward) / (onT + k) * 100 : null);
+
+  for (const r of rows) {
+    const s = r.sum;
+    const own = (s.saves + ALL_K * base) / (s.onTarget + ALL_K);
+    const pick = (keys, src) => {
+      let sv = 0, on = 0;
+      for (const k of keys) {
+        const v = src[k]; if (!v) continue;
+        sv += v.saves; on += v.n - v.off;
+      }
+      return rate(sv, on, base, SUB_K);
+    };
+    r.faced = s.n;
+    r.vals = {
+      savePct: own * 100,
+      saveFast: pick(['fast'], s.band),
+      saveSet: pick(['set'], s.band),
+      saveHigh: pick([...HIGH], s.course),
+      saveLow: pick([...LOW], s.course),
+      saveNine: pick(['nine'], s.group),
+      saveClose: pick(['six', 'wing'], s.group),
+      gsaa100: s.xn ? s.gsaa / s.xn * 100 : 0,
+    };
+  }
+  return rows;
 }

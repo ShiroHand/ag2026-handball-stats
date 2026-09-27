@@ -29,7 +29,7 @@ export const POS_GROUPS = [
   {key: 'p7', label: '7m', zones: ['P7']},
   {key: 'fb', label: '速攻', zones: ['FB']},
   {key: 'bt', label: 'ブレイクスルー', zones: ['BT']},
-  {key: 'other', label: 'フライング・無人ゴール', zones: ['FLY', 'EG']},
+  {key: 'other', label: 'スカイシュート・無人ゴール', zones: ['FLY', 'EG']},
 ];
 const GROUP_OF = {};
 POS_GROUPS.forEach(g => g.zones.forEach(z => GROUP_OF[z] = g.key));
