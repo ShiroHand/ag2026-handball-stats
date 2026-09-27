@@ -234,38 +234,81 @@ function detailCard(r, ref) {
   box.append(el('div', {class: 'sec-title', text: '速さの帯別'}),
     el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
       text: '攻守が切り替わった直後の攻撃を、シュートまでの速さで3つに分けたものです。'
-        + '帯が付かないシュート（ハーフ最初の攻撃など）はこの表に入りません。'}),
-    el('div', {class: 'tbl-scroll'}, breakTable(
-      [['fast', '速攻（FB）'], ['second', '2次速攻（15秒以内）'], ['set', 'セット攻撃（15秒超）'],
-        ['none', '帯なし（ハーフ最初の攻撃など）']],
-      k => s.band[k])));
+        + '帯が付かないシュート（ハーフの最初の攻撃、オフェンスリバウンドからの再シュートなど）は'
+        + 'セット攻撃に含めています。'}),
+    el('div', {class: 'tbl-scroll'}, breakTable(BANDS.map(b => [b.key, b.label]), k => s.band[k])));
 
-  /* ポジション群別 */
+  /* ポジション群別（帯でしぼれる） */
   box.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'シュート位置別'}),
-    el('div', {class: 'tbl-scroll'}, breakTable(
-      POS_GROUPS.map(g => [g.key, g.label]), k => s.group[k])));
+    bandFiltered(r, ref, 'pos'));
 
-  /* コース別 */
-  const zones = [[], [], []];
-  COURSES.forEach((c, i) => {
-    const v = s.course[c] || {n: 0, saves: 0, goals: 0};
-    zones[Math.floor(i / 3)][i % 3] = {g: v.goals, s: v.goals + v.saves};
-  });
+  /* コース別（帯でしぼれる） */
   box.append(el('div', {class: 'sec-title', style: {marginTop: '18px'}, text: 'コース別（枠内のみ）'}),
-    el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
-      text: 'セルは「失点 / 浴びた本数」。色が濃い赤ほど決められている場所です。'}),
-    el('div', {class: 'row', style: {gap: '18px', alignItems: 'flex-start'}},
-      el('div', {}, goalMap(zones), rampLegend('被決定率')),
-      el('div', {style: {flex: '1 1 260px'}},
-        el('div', {class: 'sec-title', text: 'ニア／ファー別'}),
-        el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
-          text: 'シュート位置から見て近いポスト側がニア、遠い側がファー。'
-            + '左右のウイング・サイドを合算できるので標本が倍になります。'
-            + '中央（センター・7m・速攻）は左右の別が無いため分けています。'}),
-        el('div', {class: 'tbl-scroll'}, breakTable(
-          NEARFAR.map(x => [x.key, x.label]), k => s.nearfar[k], true)))));
+    bandFiltered(r, ref, 'course'));
 
   return box;
+}
+
+
+/* 速さの帯 */
+const BANDS = [
+  {key: 'fast', label: '速攻（FB）'},
+  {key: 'second', label: '2次速攻（15秒以内）'},
+  {key: 'set', label: 'セット攻撃（15秒超）'},
+];
+
+/* 帯で絞り込めるセクション。kind: 'pos'（位置別）/ 'course'（コース別） */
+function bandFiltered(r, ref, kind) {
+  const KEY = 'gk-band-' + kind;
+  let band = bandFiltered[KEY] || 'all';
+  const chips = el('div', {class: 'chips', style: {marginBottom: '10px'}});
+  const host = el('div', {});
+
+  const draw = () => {
+    host.innerHTML = '';
+    const shots = band === 'all' ? r.shots
+      : r.shots.filter(x => (x.band || 'set') === band);
+    const sum = gkSummary(shots, ref);
+
+    if (kind === 'pos') {
+      host.append(el('div', {class: 'tbl-scroll'},
+        breakTable(POS_GROUPS.map(g => [g.key, g.label]), k => sum.group[k])));
+      return;
+    }
+    const zones = [[], [], []];
+    COURSES.forEach((c, i) => {
+      const v = sum.course[c] || {n: 0, saves: 0, goals: 0};
+      zones[Math.floor(i / 3)][i % 3] = {g: v.goals, s: v.goals + v.saves};
+    });
+    host.append(el('div', {class: 'sub', style: {margin: '0 0 8px'},
+      text: 'セルは「失点 / 浴びた本数」。色が濃い赤ほど決められている場所です。'}),
+      el('div', {class: 'row', style: {gap: '18px', alignItems: 'flex-start'}},
+        el('div', {}, goalMap(zones), rampLegend('被決定率')),
+        el('div', {style: {flex: '1 1 260px'}},
+          el('div', {class: 'sec-title', text: 'ニア／ファー別'}),
+          el('div', {class: 'sub', style: {margin: '-6px 0 8px'},
+            text: 'シュート位置から見て近いポスト側がニア、遠い側がファー。'
+              + '左右のウイング・サイドを合算できるので標本が倍になります。'
+              + '中央（センター・7m・速攻）は左右の別が無いため分けています。'}),
+          el('div', {class: 'tbl-scroll'}, breakTable(
+            NEARFAR.map(x => [x.key, x.label]), k => sum.nearfar[k], true)))));
+  };
+
+  const count = (k) => (k === 'all' ? r.shots.length
+    : r.shots.filter(x => (x.band || 'set') === k).length);
+  [['all', 'すべて'], ...BANDS.map(b => [b.key, b.label])].forEach(([k, label]) => {
+    chips.append(el('button', {
+      class: 'chip' + (band === k ? ' on' : ''),
+      text: `${label}（${count(k)}本）`,
+      onclick: (e) => {
+        band = k; bandFiltered[KEY] = k;
+        [...chips.children].forEach(c => c.className = 'chip');
+        e.currentTarget.className = 'chip on';
+        draw();
+      }}));
+  });
+  draw();
+  return el('div', {}, chips, host);
 }
 
 /* 帯・位置群・ニアファーで共通の内訳表 */

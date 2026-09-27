@@ -27,11 +27,13 @@ export const POS_GROUPS = [
   {key: 'six', label: '6m', zones: ['L6', 'C6', 'R6']},
   {key: 'nine', label: '9m', zones: ['L9', 'C9', 'R9']},
   {key: 'p7', label: '7m', zones: ['P7']},
-  {key: 'fast', label: '速攻・BT', zones: ['FB', 'BT', 'FLY', 'EG']},
+  {key: 'fb', label: '速攻', zones: ['FB']},
+  {key: 'bt', label: 'ブレイクスルー', zones: ['BT']},
+  {key: 'other', label: 'フライング・無人ゴール', zones: ['FLY', 'EG']},
 ];
 const GROUP_OF = {};
 POS_GROUPS.forEach(g => g.zones.forEach(z => GROUP_OF[z] = g.key));
-export const groupOfZone = (z) => GROUP_OF[z] || 'fast';
+export const groupOfZone = (z) => GROUP_OF[z] || 'other';
 
 /* ---------------------------------------------------------------- ニア／ファー */
 /* コースは絶対位置（左上〜右下）なので、左右のウイングを合算できない。
@@ -164,7 +166,9 @@ export function gkSummary(shots, ref) {
       if (isSave) b.saves++; else if (isGoal) b.goals++; else b.off++;
       if (x !== null) { b.xn++; b.xg += x; if (isGoal) b.xgoals++; }
     };
-    add(out.band, s.band || 'none');   // 帯が付かないぶんも数えて合計が合うようにする
+    /* 帯が付かないシュート（ハーフ最初の攻撃、オフェンスリバウンドからの再シュートなど）は
+       セット攻撃に含める。別建てにすると読みにくいうえ、大半はセットの攻撃なので。 */
+    add(out.band, s.band || 'set');
     add(out.group, groupOfZone(zone));
     if (on && s.goalZone) {
       add(out.course, s.goalZone);

@@ -830,6 +830,11 @@ export const EN = {
     'Switch to “Whole tournament” to see which placements are standard from each zone.',
   'この範囲にGKの記録がありません。': 'No goalkeeper records in this selection.',
   '浴びた': 'Faced',
+  'すべて': 'All',
+  'フライング・無人ゴール': 'Flying shot / empty goal',
+  '帯が付かないシュート（ハーフの最初の攻撃、オフェンスリバウンドからの再シュートなど）は':
+    'Shots with no tempo band (the first attack of a half, repeat shots after an offensive rebound and so on)',
+  'セット攻撃に含めています。': ' are counted as set attacks.',
   '<br>プラスが大きいほど、平均的なGKより多く止めた':
     '<br>The higher the value, the more shots stopped than an average keeper would have',
   '区分': 'Group',
