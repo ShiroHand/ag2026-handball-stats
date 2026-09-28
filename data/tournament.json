@@ -75,7 +75,7 @@
    "name": "Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "KUW",
@@ -89,7 +89,7 @@
    "name": "Qatar",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "CHN",
@@ -1426,8 +1426,8 @@
    "phaseDesc": "Men Semifinal",
    "unitDesc": "Men Semifinal Match 1",
    "unitNum": "42",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "JPN",
@@ -1457,22 +1457,23 @@
    "phaseDesc": "Men Semifinal",
    "unitDesc": "Men Semifinal Match 2",
    "unitNum": "43",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
+    "score": "30",
     "winner": false
    },
    "away": {
     "code": "QAT",
     "name": "Qatar",
-    "score": "",
-    "winner": false
+    "score": "32",
+    "winner": true
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-FNL-000200",
@@ -1491,14 +1492,14 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "JPN",
+    "name": "Japan",
     "score": "",
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "KOR",
+    "name": "Korea",
     "score": "",
     "winner": false
    },
@@ -1521,14 +1522,14 @@
    "statusDesc": "Scheduled",
    "isLive": false,
    "home": {
-    "code": "",
-    "name": "",
+    "code": "BRN",
+    "name": "Bahrain",
     "score": "",
     "winner": false
    },
    "away": {
-    "code": "",
-    "name": "",
+    "code": "QAT",
+    "name": "Qatar",
     "score": "",
     "winner": false
    },
@@ -1836,7 +1837,8 @@
   "W-FNL-001900",
   "W-FNL-002000",
   "W-FNL-002100",
-  "M-SFNL-000100"
+  "M-SFNL-000100",
+  "M-SFNL-000200"
  ],
  "priors": {
   "W": {
@@ -1916,16 +1918,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5254,
-     "k": 18.2,
-     "windows": 526,
-     "trials": 2305
+     "mean": 0.5284,
+     "k": 18.9,
+     "windows": 550,
+     "trials": 2409
     },
     "assistRate": {
-     "mean": 0.3823,
-     "k": 32.7,
-     "windows": 487,
-     "trials": 1211
+     "mean": 0.3826,
+     "k": 31.5,
+     "windows": 511,
+     "trials": 1273
     }
    },
    "teams": {
@@ -1986,23 +1988,23 @@
      "assists": 32
     },
     "QAT": {
-     "games": 4,
+     "games": 5,
      "eff": 0.6273,
-     "assistRate": 0.3261,
-     "attacks": 220,
-     "goals": 138,
-     "assists": 45
+     "assistRate": 0.3412,
+     "attacks": 271,
+     "goals": 170,
+     "assists": 58
     },
     "KOR": {
-     "games": 5,
-     "eff": 0.5602,
-     "assistRate": 0.4027,
-     "attacks": 266,
-     "goals": 149,
-     "assists": 60
+     "games": 6,
+     "eff": 0.5611,
+     "assistRate": 0.3966,
+     "attacks": 319,
+     "goals": 179,
+     "assists": 71
     }
    }
   }
  },
- "updatedAt": "2026-09-28T07:35:56.802Z"
+ "updatedAt": "2026-09-28T12:11:13.986Z"
 }
