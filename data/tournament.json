@@ -33,7 +33,7 @@
    "name": "Bahrain",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "CHN",
@@ -61,7 +61,7 @@
    "name": "Japan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 4
+   "played": 5
   },
   {
    "code": "KAZ",
@@ -1426,22 +1426,23 @@
    "phaseDesc": "Men Semifinal",
    "unitDesc": "Men Semifinal Match 1",
    "unitNum": "42",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "GETTING_READY",
+   "statusDesc": "Getting Ready",
+   "isLive": true,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "0",
     "winner": false
    },
    "away": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "",
+    "score": "0",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": false
   },
   {
    "id": "M-SFNL-000200",
@@ -1834,7 +1835,8 @@
   "M-QFNL-000200",
   "W-FNL-001900",
   "W-FNL-002000",
-  "W-FNL-002100"
+  "W-FNL-002100",
+  "M-SFNL-000100"
  ],
  "priors": {
   "W": {
@@ -2002,5 +2004,5 @@
    }
   }
  },
- "updatedAt": "2026-09-27T10:43:37.818Z"
+ "updatedAt": "2026-09-28T05:59:33.785Z"
 }
