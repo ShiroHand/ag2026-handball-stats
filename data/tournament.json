@@ -1432,13 +1432,13 @@
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "16",
+    "score": "23",
     "winner": false
    },
    "away": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "16",
+    "score": "27",
     "winner": false
    },
    "hasResult": true,
@@ -1916,16 +1916,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5226,
-     "k": 17.6,
-     "windows": 514,
-     "trials": 2252
+     "mean": 0.5246,
+     "k": 18,
+     "windows": 522,
+     "trials": 2280
     },
     "assistRate": {
-     "mean": 0.3781,
-     "k": 33.2,
-     "windows": 475,
-     "trials": 1177
+     "mean": 0.3821,
+     "k": 31.2,
+     "windows": 483,
+     "trials": 1196
     }
    },
    "teams": {
@@ -1955,11 +1955,11 @@
     },
     "BRN": {
      "games": 6,
-     "eff": 0.6184,
-     "assistRate": 0.4043,
-     "attacks": 304,
-     "goals": 188,
-     "assists": 76
+     "eff": 0.6258,
+     "assistRate": 0.4171,
+     "attacks": 318,
+     "goals": 199,
+     "assists": 83
     },
     "CHN": {
      "games": 4,
@@ -1971,11 +1971,11 @@
     },
     "JPN": {
      "games": 5,
-     "eff": 0.6094,
-     "assistRate": 0.4359,
-     "attacks": 256,
-     "goals": 156,
-     "assists": 68
+     "eff": 0.6074,
+     "assistRate": 0.4451,
+     "attacks": 270,
+     "goals": 164,
+     "assists": 73
     },
     "HKG": {
      "games": 4,
@@ -2004,5 +2004,5 @@
    }
   }
  },
- "updatedAt": "2026-09-28T06:39:49.707Z"
+ "updatedAt": "2026-09-28T07:21:29.165Z"
 }
