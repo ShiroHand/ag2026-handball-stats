@@ -1426,23 +1426,23 @@
    "phaseDesc": "Men Semifinal",
    "unitDesc": "Men Semifinal Match 1",
    "unitNum": "42",
-   "status": "GETTING_READY",
-   "statusDesc": "Getting Ready",
+   "status": "RUNNING",
+   "statusDesc": "Running",
    "isLive": true,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "0",
+    "score": "16",
     "winner": false
    },
    "away": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "0",
+    "score": "16",
     "winner": false
    },
    "hasResult": true,
-   "hasStats": false
+   "hasStats": true
   },
   {
    "id": "M-SFNL-000200",
@@ -1916,16 +1916,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5221,
-     "k": 16.4,
-     "windows": 502,
-     "trials": 2193
+     "mean": 0.5226,
+     "k": 17.6,
+     "windows": 514,
+     "trials": 2252
     },
     "assistRate": {
-     "mean": 0.3764,
-     "k": 30.6,
-     "windows": 463,
-     "trials": 1145
+     "mean": 0.3781,
+     "k": 33.2,
+     "windows": 475,
+     "trials": 1177
     }
    },
    "teams": {
@@ -1954,12 +1954,12 @@
      "assists": 23
     },
     "BRN": {
-     "games": 5,
-     "eff": 0.6277,
-     "assistRate": 0.3895,
-     "attacks": 274,
-     "goals": 172,
-     "assists": 67
+     "games": 6,
+     "eff": 0.6184,
+     "assistRate": 0.4043,
+     "attacks": 304,
+     "goals": 188,
+     "assists": 76
     },
     "CHN": {
      "games": 4,
@@ -1970,12 +1970,12 @@
      "assists": 50
     },
     "JPN": {
-     "games": 4,
-     "eff": 0.6167,
-     "assistRate": 0.45,
-     "attacks": 227,
-     "goals": 140,
-     "assists": 63
+     "games": 5,
+     "eff": 0.6094,
+     "assistRate": 0.4359,
+     "attacks": 256,
+     "goals": 156,
+     "assists": 68
     },
     "HKG": {
      "games": 4,
@@ -2004,5 +2004,5 @@
    }
   }
  },
- "updatedAt": "2026-09-28T05:59:33.785Z"
+ "updatedAt": "2026-09-28T06:39:49.707Z"
 }
