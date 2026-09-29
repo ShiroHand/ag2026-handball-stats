@@ -269,7 +269,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "33:17",
+     "time": "00:00",
      "stats": {
       "6M_GOALS": "1",
       "6M_LEFT_GOALS": "1",
@@ -551,7 +551,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "59:28",
+     "time": "00:00",
      "stats": {
       "EFFICIENCY": "100",
       "EG_GOALS": "1",
@@ -922,7 +922,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "13:31",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "811"
      },
@@ -1154,7 +1154,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "26:26",
+     "time": "00:00",
      "stats": {
       "6M_CENTER_SAVES": "1",
       "6M_CENTER_SHOTS": "1",
@@ -1445,7 +1445,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "47:40",
+     "time": "00:00",
      "stats": {
       "6M_RIGHT_WING_SAVES": "2",
       "6M_RIGHT_WING_SHOTS": "2",
@@ -1935,7 +1935,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "16:12",
+     "time": "00:00",
      "stats": {
       "6M_GOALS": "3",
       "6M_LEFT_GOALS": "2",
@@ -2218,7 +2218,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "33:45",
+     "time": "00:00",
      "stats": {
       "6M_CENTER_GOALS": "1",
       "6M_CENTER_SHOTS": "1",
@@ -2479,7 +2479,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "22:24",
+     "time": "00:00",
      "stats": {
       "6M_CENTER_GOALS": "1",
       "6M_CENTER_SHOTS": "1",
@@ -2765,7 +2765,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "24:41",
+     "time": "00:00",
      "stats": {
       "6M_GOALS": "1",
       "6M_LEFT_GOALS": "1",
@@ -3036,7 +3036,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "54:36",
+     "time": "00:00",
      "stats": {
       "6M_LEFT_WING_GOALS": "1",
       "6M_LEFT_WING_SHOTS": "1",
@@ -3323,7 +3323,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "24:45",
+     "time": "00:00",
      "stats": {
       "6M_GOALS": "3",
       "6M_RIGHT_GOALS": "3",
@@ -3614,7 +3614,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "34:08",
+     "time": "00:00",
      "stats": {
       "6M_GOALS": "2",
       "6M_POST": "1",
@@ -3881,7 +3881,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "16:52",
+     "time": "00:00",
      "stats": {
       "6M_CENTER_GOALS": "1",
       "6M_CENTER_SHOTS": "1",
@@ -4162,7 +4162,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "05:21",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "321"
      },
@@ -14929,5 +14929,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:17.804Z"
+ "updatedAt": "2026-09-29T18:50:44.408Z"
 }
