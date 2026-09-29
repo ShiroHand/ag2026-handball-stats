@@ -2521,7 +2521,7 @@
      "nameS": "KALI A",
      "role": "LW",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "10:36",
      "stats": {
@@ -11635,7 +11635,7 @@
      "nameS": "ALSAYYAD H",
      "role": "CB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "32:39",
      "stats": {
@@ -14869,5 +14869,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:13.788Z"
+ "updatedAt": "2026-09-29T08:38:35.234Z"
 }

@@ -1937,7 +1937,7 @@
      "nameS": "ALADWANI S",
      "role": "LB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "39:30",
      "stats": {
@@ -10243,7 +10243,7 @@
      "nameS": "KALI A",
      "role": "LW",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "09:50",
      "stats": {
@@ -15232,5 +15232,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:15.553Z"
+ "updatedAt": "2026-09-29T08:38:38.715Z"
 }

@@ -2406,7 +2406,7 @@
      "nameS": "KALI A",
      "role": "LW",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "00:-25",
      "stats": {
@@ -8337,7 +8337,7 @@
      "nameS": "SIAVOSHISHAHENAYATI M",
      "role": "GK",
      "func": "AA01",
-     "captain": true,
+     "captain": false,
      "isGK": true,
      "time": "16:53",
      "stats": {
@@ -8655,7 +8655,7 @@
      "nameS": "RAHNAMA M",
      "role": "LB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "51:51",
      "stats": {
@@ -13924,5 +13924,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:15.965Z"
+ "updatedAt": "2026-09-29T08:38:40.296Z"
 }

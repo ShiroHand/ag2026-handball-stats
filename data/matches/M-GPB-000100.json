@@ -1513,7 +1513,7 @@
      "nameS": "SIAVOSHISHAHENAYATI M",
      "role": "GK",
      "func": "AA01",
-     "captain": true,
+     "captain": false,
      "isGK": true,
      "time": "30:10",
      "stats": {
@@ -1859,7 +1859,7 @@
      "nameS": "RAHNAMA M",
      "role": "LB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "07:46",
      "stats": {
@@ -8620,7 +8620,7 @@
      "nameS": "ALADWANI S",
      "role": "LB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "86:44",
      "stats": {
@@ -13700,5 +13700,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:13.503Z"
+ "updatedAt": "2026-09-29T08:38:34.731Z"
 }

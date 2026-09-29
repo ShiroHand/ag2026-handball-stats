@@ -61,7 +61,7 @@
    "name": "Japan",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "KAZ",
@@ -75,7 +75,7 @@
    "name": "Korea",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 6
+   "played": 7
   },
   {
    "code": "KUW",
@@ -1488,22 +1488,23 @@
    "phaseDesc": "Men Final",
    "unitDesc": "Men Final Bronze Medal Match",
    "unitNum": "44",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
-   "isLive": false,
+   "status": "RUNNING",
+   "statusDesc": "Running",
+   "isLive": true,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "",
+    "score": "17",
     "winner": false
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "",
+    "score": "12",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   },
   {
    "id": "M-FNL-000100",
@@ -1838,7 +1839,8 @@
   "W-FNL-002000",
   "W-FNL-002100",
   "M-SFNL-000100",
-  "M-SFNL-000200"
+  "M-SFNL-000200",
+  "M-FNL-000200"
  ],
  "priors": {
   "W": {
@@ -1918,16 +1920,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5284,
-     "k": 18.9,
-     "windows": 550,
-     "trials": 2409
+     "mean": 0.5282,
+     "k": 19.7,
+     "windows": 564,
+     "trials": 2465
     },
     "assistRate": {
-     "mean": 0.3826,
-     "k": 31.5,
-     "windows": 511,
-     "trials": 1273
+     "mean": 0.3817,
+     "k": 34.3,
+     "windows": 524,
+     "trials": 1302
     }
    },
    "teams": {
@@ -1972,12 +1974,12 @@
      "assists": 50
     },
     "JPN": {
-     "games": 5,
-     "eff": 0.6042,
-     "assistRate": 0.4386,
-     "attacks": 283,
-     "goals": 171,
-     "assists": 75
+     "games": 6,
+     "eff": 0.6045,
+     "assistRate": 0.4362,
+     "attacks": 311,
+     "goals": 188,
+     "assists": 82
     },
     "HKG": {
      "games": 4,
@@ -1996,15 +1998,15 @@
      "assists": 58
     },
     "KOR": {
-     "games": 6,
-     "eff": 0.5611,
-     "assistRate": 0.3966,
-     "attacks": 319,
-     "goals": 179,
-     "assists": 71
+     "games": 7,
+     "eff": 0.5504,
+     "assistRate": 0.3927,
+     "attacks": 347,
+     "goals": 191,
+     "assists": 75
     }
    }
   }
  },
- "updatedAt": "2026-09-28T12:11:13.986Z"
+ "updatedAt": "2026-09-29T08:38:48.597Z"
 }

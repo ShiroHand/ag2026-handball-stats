@@ -8525,7 +8525,7 @@
      "nameS": "ALSHAMMARI A",
      "role": "LW",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "00:00",
      "stats": {
@@ -15179,5 +15179,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:17.197Z"
+ "updatedAt": "2026-09-29T08:38:44.718Z"
 }

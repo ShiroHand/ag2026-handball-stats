@@ -7490,7 +7490,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "04:06",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "246"
      },
@@ -7722,7 +7722,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "01:52",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "112"
      },
@@ -7954,7 +7954,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "04:20",
+     "time": "00:00",
      "stats": {
       "BLOCKS": "1",
       "TIME_PLAYED": "260"
@@ -8187,7 +8187,7 @@
      "func": "AP01",
      "captain": false,
      "isGK": false,
-     "time": "48:32",
+     "time": "00:00",
      "stats": {
       "7M_GOALS": "3",
       "7M_POST": "1",
@@ -8486,7 +8486,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "55:52",
+     "time": "00:00",
      "stats": {
       "2MINUTES": "1",
       "6M_GOALS": "1",
@@ -8756,7 +8756,7 @@
      "func": "AA01",
      "captain": true,
      "isGK": true,
-     "time": "51:45",
+     "time": "00:00",
      "stats": {
       "ASSISTS": "2",
       "GK_6M_CENTER_GOALS": "3",
@@ -9123,7 +9123,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "20:30",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "1230"
      },
@@ -9355,7 +9355,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "48:21",
+     "time": "00:00",
      "stats": {
       "2MINUTES": "1",
       "6M_GOALS": "1",
@@ -9643,7 +9643,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "07:46",
+     "time": "00:00",
      "stats": {
       "9M_CENTER_MISSED": "1",
       "9M_CENTER_SHOTS": "1",
@@ -9918,7 +9918,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "00:03",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "3"
      },
@@ -10150,7 +10150,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "58:47",
+     "time": "00:00",
      "stats": {
       "EFFICIENCY": "67",
       "FB_GOALS": "2",
@@ -10405,7 +10405,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "26:38",
+     "time": "00:00",
      "stats": {
       "2MINUTES": "1",
       "6M_CENTER_GOALS": "1",
@@ -10663,7 +10663,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": true,
-     "time": "00:52",
+     "time": "00:00",
      "stats": {
       "GK_7M_GOALS": "3",
       "GK_7M_GOALS_SHOTS": "3/3",
@@ -10929,7 +10929,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "10:45",
+     "time": "00:00",
      "stats": {
       "2MINUTES": "1",
       "6M_CENTER_GOALS": "1",
@@ -11187,7 +11187,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "02:05",
+     "time": "00:00",
      "stats": {
       "TIME_PLAYED": "125"
      },
@@ -11419,7 +11419,7 @@
      "func": "AA01",
      "captain": false,
      "isGK": false,
-     "time": "58:48",
+     "time": "00:00",
      "stats": {
       "6M_RIGHT_WING_GOALS": "4",
       "6M_RIGHT_WING_POST": "1",
@@ -14382,5 +14382,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:17.645Z"
+ "updatedAt": "2026-09-29T08:38:46.037Z"
 }

@@ -11082,7 +11082,7 @@
      "nameS": "ALSAYYAD H",
      "role": "CB",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": true,
      "time": "41:53",
      "stats": {
@@ -13922,5 +13922,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:16.538Z"
+ "updatedAt": "2026-09-29T08:38:41.797Z"
 }
