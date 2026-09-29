@@ -1488,19 +1488,19 @@
    "phaseDesc": "Men Final",
    "unitDesc": "Men Final Bronze Medal Match",
    "unitNum": "44",
-   "status": "RUNNING",
-   "statusDesc": "Running",
-   "isLive": true,
+   "status": "UNOFFICIAL",
+   "statusDesc": "Unofficial",
+   "isLive": false,
    "home": {
     "code": "JPN",
     "name": "Japan",
-    "score": "17",
-    "winner": false
+    "score": "37",
+    "winner": true
    },
    "away": {
     "code": "KOR",
     "name": "Korea",
-    "score": "12",
+    "score": "32",
     "winner": false
    },
    "hasResult": true,
@@ -1920,16 +1920,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5282,
-     "k": 19.7,
-     "windows": 564,
-     "trials": 2465
+     "mean": 0.5311,
+     "k": 19.8,
+     "windows": 574,
+     "trials": 2527
     },
     "assistRate": {
-     "mean": 0.3817,
-     "k": 34.3,
-     "windows": 524,
-     "trials": 1302
+     "mean": 0.386,
+     "k": 41,
+     "windows": 535,
+     "trials": 1342
     }
    },
    "teams": {
@@ -1975,11 +1975,11 @@
     },
     "JPN": {
      "games": 6,
-     "eff": 0.6045,
-     "assistRate": 0.4362,
-     "attacks": 311,
-     "goals": 188,
-     "assists": 82
+     "eff": 0.6082,
+     "assistRate": 0.4519,
+     "attacks": 342,
+     "goals": 208,
+     "assists": 94
     },
     "HKG": {
      "games": 4,
@@ -1999,14 +1999,14 @@
     },
     "KOR": {
      "games": 7,
-     "eff": 0.5504,
-     "assistRate": 0.3927,
-     "attacks": 347,
-     "goals": 191,
-     "assists": 75
+     "eff": 0.5582,
+     "assistRate": 0.3981,
+     "attacks": 378,
+     "goals": 211,
+     "assists": 84
     }
    }
   }
  },
- "updatedAt": "2026-09-29T08:38:48.597Z"
+ "updatedAt": "2026-09-29T09:36:51.511Z"
 }
