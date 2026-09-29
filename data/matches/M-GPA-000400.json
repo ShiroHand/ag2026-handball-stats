@@ -7040,7 +7040,7 @@
      "nameS": "MADADI A",
      "role": "LW",
      "func": "AA01",
-     "captain": false,
+     "captain": true,
      "isGK": false,
      "time": "31:51",
      "stats": {
@@ -14036,5 +14036,5 @@
    ]
   }
  },
- "updatedAt": "2026-09-27T12:17:15.362Z"
+ "updatedAt": "2026-09-29T12:39:44.220Z"
 }

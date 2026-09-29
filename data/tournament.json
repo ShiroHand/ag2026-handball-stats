@@ -33,7 +33,7 @@
    "name": "Bahrain",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 6
+   "played": 7
   },
   {
    "code": "CHN",
@@ -89,7 +89,7 @@
    "name": "Qatar",
    "gender": "M",
    "event": "M.TEAM7-------------",
-   "played": 5
+   "played": 6
   },
   {
    "code": "CHN",
@@ -1488,8 +1488,8 @@
    "phaseDesc": "Men Final",
    "unitDesc": "Men Final Bronze Medal Match",
    "unitNum": "44",
-   "status": "UNOFFICIAL",
-   "statusDesc": "Unofficial",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "JPN",
@@ -1519,22 +1519,23 @@
    "phaseDesc": "Men Final",
    "unitDesc": "Men Final Gold Medal Match",
    "unitNum": "45",
-   "status": "SCHEDULED",
-   "statusDesc": "Scheduled",
+   "status": "OFFICIAL",
+   "statusDesc": "Official",
    "isLive": false,
    "home": {
     "code": "BRN",
     "name": "Bahrain",
-    "score": "",
-    "winner": false
+    "score": "33",
+    "winner": true
    },
    "away": {
     "code": "QAT",
     "name": "Qatar",
-    "score": "",
+    "score": "32",
     "winner": false
    },
-   "hasResult": false
+   "hasResult": true,
+   "hasStats": true
   }
  ],
  "standings": [
@@ -1840,7 +1841,8 @@
   "W-FNL-002100",
   "M-SFNL-000100",
   "M-SFNL-000200",
-  "M-FNL-000200"
+  "M-FNL-000200",
+  "M-FNL-000100"
  ],
  "priors": {
   "W": {
@@ -1920,16 +1922,16 @@
   "M": {
    "metrics": {
     "eff": {
-     "mean": 0.5311,
-     "k": 19.8,
-     "windows": 574,
-     "trials": 2527
+     "mean": 0.534,
+     "k": 20.9,
+     "windows": 599,
+     "trials": 2635
     },
     "assistRate": {
-     "mean": 0.386,
-     "k": 41,
-     "windows": 535,
-     "trials": 1342
+     "mean": 0.3866,
+     "k": 37.1,
+     "windows": 559,
+     "trials": 1407
     }
    },
    "teams": {
@@ -1958,12 +1960,12 @@
      "assists": 23
     },
     "BRN": {
-     "games": 6,
-     "eff": 0.6273,
-     "assistRate": 0.4203,
-     "attacks": 330,
-     "goals": 207,
-     "assists": 87
+     "games": 7,
+     "eff": 0.625,
+     "assistRate": 0.4458,
+     "attacks": 384,
+     "goals": 240,
+     "assists": 107
     },
     "CHN": {
      "games": 4,
@@ -1990,12 +1992,12 @@
      "assists": 32
     },
     "QAT": {
-     "games": 5,
-     "eff": 0.6273,
-     "assistRate": 0.3412,
-     "attacks": 271,
-     "goals": 170,
-     "assists": 58
+     "games": 6,
+     "eff": 0.6215,
+     "assistRate": 0.3168,
+     "attacks": 325,
+     "goals": 202,
+     "assists": 64
     },
     "KOR": {
      "games": 7,
@@ -2008,5 +2010,5 @@
    }
   }
  },
- "updatedAt": "2026-09-29T09:36:51.511Z"
+ "updatedAt": "2026-09-29T12:39:55.098Z"
 }
