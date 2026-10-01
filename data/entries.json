@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-09-23T05:49:54.926Z",
+ "updatedAt": "2026-10-01T00:52:17.890Z",
  "participants": [
   {
    "reg": "649612",
@@ -48,12 +48,6 @@
    "org": "BRN",
    "gender": "M",
    "name": "FADHUL Ahmed"
-  },
-  {
-   "reg": "651531",
-   "org": "BRN",
-   "gender": "M",
-   "name": "FARSAN Jaffar"
   },
   {
    "reg": "13654776",
@@ -144,12 +138,6 @@
    "org": "CHN",
    "gender": "W",
    "name": "JIANG Xintong"
-  },
-  {
-   "reg": "12432482",
-   "org": "CHN",
-   "gender": "M",
-   "name": "LI Shuang"
   },
   {
    "reg": "12432667",
@@ -300,12 +288,6 @@
    "org": "CHN",
    "gender": "M",
    "name": "ZHOU Ao"
-  },
-  {
-   "reg": "12438071",
-   "org": "CHN",
-   "gender": "M",
-   "name": "ZHU Zhengxiang"
   },
   {
    "reg": "4006547",
@@ -588,12 +570,6 @@
    "org": "IRI",
    "gender": "M",
    "name": "ROBAT Omid"
-  },
-  {
-   "reg": "12381198",
-   "org": "IRI",
-   "gender": "M",
-   "name": "SHOKOUHIPOUR Taha"
   },
   {
    "reg": "12381421",
@@ -1082,12 +1058,6 @@
    "name": "KIM Taegwan"
   },
   {
-   "reg": "8536634",
-   "org": "KOR",
-   "gender": "M",
-   "name": "KIM Taeung"
-  },
-  {
    "reg": "8536213",
    "org": "KOR",
    "gender": "M",
@@ -1166,12 +1136,6 @@
    "name": "WON Minjun"
   },
   {
-   "reg": "8524636",
-   "org": "KOR",
-   "gender": "W",
-   "name": "WON Seonpil"
-  },
-  {
    "reg": "8535977",
    "org": "KOR",
    "gender": "W",
@@ -1194,12 +1158,6 @@
    "org": "KUW",
    "gender": "M",
    "name": "ALADWANI Saif"
-  },
-  {
-   "reg": "8415966",
-   "org": "KUW",
-   "gender": "M",
-   "name": "ALHADDAD Mahdi"
   },
   {
    "reg": "7410519",
@@ -1226,18 +1184,6 @@
    "name": "ALMUTAWA Husain"
   },
   {
-   "reg": "13265448",
-   "org": "KUW",
-   "gender": "M",
-   "name": "ALSANAD Salman"
-  },
-  {
-   "reg": "11719524",
-   "org": "KUW",
-   "gender": "M",
-   "name": "ALSANEA Mohamad"
-  },
-  {
    "reg": "11714624",
    "org": "KUW",
    "gender": "M",
@@ -1248,12 +1194,6 @@
    "org": "KUW",
    "gender": "M",
    "name": "ALSHAMMARI Abdulrahman"
-  },
-  {
-   "reg": "15001633",
-   "org": "KUW",
-   "gender": "M",
-   "name": "ALTHAFIRI Abdulaziz"
   },
   {
    "reg": "11722211",
@@ -1322,12 +1262,6 @@
    "name": "ALI Youssef"
   },
   {
-   "reg": "7955821",
-   "org": "QAT",
-   "gender": "M",
-   "name": "BERRACHED Allaedine"
-  },
-  {
    "reg": "7951163",
    "org": "QAT",
    "gender": "M",
@@ -1346,12 +1280,6 @@
    "name": "EBAID Ebrahim"
   },
   {
-   "reg": "16634017",
-   "org": "QAT",
-   "gender": "M",
-   "name": "ELMENIAWY Ahmed"
-  },
-  {
    "reg": "13955250",
    "org": "QAT",
    "gender": "M",
@@ -1362,12 +1290,6 @@
    "org": "QAT",
    "gender": "M",
    "name": "HAMAM Mohamedali"
-  },
-  {
-   "reg": "16628760",
-   "org": "QAT",
-   "gender": "M",
-   "name": "HEIBA Moustafa"
   },
   {
    "reg": "16624351",
@@ -1392,12 +1314,6 @@
    "org": "QAT",
    "gender": "M",
    "name": "MEMISEVIC Eldar"
-  },
-  {
-   "reg": "16637053",
-   "org": "QAT",
-   "gender": "M",
-   "name": "MESSAOUD Nidhal"
   },
   {
    "reg": "7954394",
